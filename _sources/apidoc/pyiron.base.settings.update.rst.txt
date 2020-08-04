@@ -1,0 +1,7 @@
+pyiron.base.settings.update module
+==================================
+
+.. automodule:: pyiron.base.settings.update
+   :members:
+   :undoc-members:
+   :show-inheritance:

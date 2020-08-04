@@ -1,0 +1,26 @@
+pyiron.atomistics.structure package
+===================================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pyiron.atomistics.structure.atom
+   pyiron.atomistics.structure.atoms
+   pyiron.atomistics.structure.generator
+   pyiron.atomistics.structure.ovito
+   pyiron.atomistics.structure.periodic_table
+   pyiron.atomistics.structure.phonopy
+   pyiron.atomistics.structure.pyironase
+   pyiron.atomistics.structure.pyscal
+   pyiron.atomistics.structure.sparse_list
+
+Module contents
+---------------
+
+.. automodule:: pyiron.atomistics.structure
+   :members:
+   :undoc-members:
+   :show-inheritance:

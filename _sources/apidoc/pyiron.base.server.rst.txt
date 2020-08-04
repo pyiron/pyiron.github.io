@@ -1,0 +1,20 @@
+pyiron.base.server package
+==========================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pyiron.base.server.generic
+   pyiron.base.server.queuestatus
+   pyiron.base.server.runmode
+
+Module contents
+---------------
+
+.. automodule:: pyiron.base.server
+   :members:
+   :undoc-members:
+   :show-inheritance:

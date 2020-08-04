@@ -1,0 +1,786 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.base.pyio.parser module &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>pyiron.base.pyio.parser module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/pyiron.base.pyio.parser.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-pyiron.base.pyio.parser">
+<span id="pyiron-base-pyio-parser-module"></span><h1>pyiron.base.pyio.parser module<a class="headerlink" href="#module-pyiron.base.pyio.parser" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pyiron.base.pyio.parser.LogTag">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.base.pyio.parser.</code><code class="sig-name descname">LogTag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag_dict</span></em>, <em class="sig-param"><span class="n">h5_dict</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">key_dict</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#LogTag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.LogTag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>LogTag object to parse for a specific pattern in the output file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tag_dict</strong> (<em>dict</em>) – Dictionary with tags/patterns as key and an additional dictionary to describe the data
+structure. The data structure dictionary can contain the following keys:
+- “arg”: position of the argument - or dimension (“:”, “:,:”)
+- “type”: Python data type
+- “h5”: HDF5 key to store the information
+- “rows”: number of rows from the line where the tag was found
+- “splitTag”: split the tag - [True/False]
+- “splitArg”: split the argument - [True/False]
+- “lineSkip”: skip a line
+- “func”: function to convert the data</p></li>
+<li><p><strong>h5_dict</strong> (<em>dict</em>) – Translation dictionary of output tags as keys to the tags used on the HDF5 file as values.</p></li>
+<li><p><strong>key_dict</strong> (<em>dict</em>) – Translation dictionary of python internal tags as keys to the output tags as values.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.LogTag.apply_func">
+<code class="sig-name descname">apply_func</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#LogTag.apply_func"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.LogTag.apply_func" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the function on a given value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>dict</em><em>, </em><em>list</em><em>, </em><em>float</em><em>, </em><em>int</em>) – value to apply the function on</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>result of applying the function</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict, list, float, int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.LogTag.arg">
+<code class="sig-name descname">arg</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#LogTag.arg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.LogTag.arg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get tag argument</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>tag arguments</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.LogTag.current">
+<em class="property">property </em><code class="sig-name descname">current</code><a class="headerlink" href="#pyiron.base.pyio.parser.LogTag.current" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current tag</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>current tag</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.LogTag.dyn_tags">
+<em class="property">property </em><code class="sig-name descname">dyn_tags</code><a class="headerlink" href="#pyiron.base.pyio.parser.LogTag.dyn_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get dynamic tags</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dynamic tags</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.LogTag.get_item">
+<code class="sig-name descname">get_item</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="n">default</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#LogTag.get_item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.LogTag.get_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>If item is part of the current dictionary keys the corresponding value is returned otherwise the default is
+returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>item</strong> (<em>str</em>) – dictionary key</p></li>
+<li><p><strong>default</strong> (<em>list</em><em>, </em><em>dict</em><em>, </em><em>int</em><em>, </em><em>float</em>) – Default value</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>The values connected to the key item in the current dictionary and if item is not a</dt><dd><p>key in the current dictionary return the default value.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list, dict, int, float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.LogTag.h5">
+<code class="sig-name descname">h5</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#LogTag.h5"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.LogTag.h5" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translate current tag to HDF5 tag using the tag dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>hdf5 key name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.LogTag.h5_dict">
+<em class="property">property </em><code class="sig-name descname">h5_dict</code><a class="headerlink" href="#pyiron.base.pyio.parser.LogTag.h5_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get translation dictionary of output tags as keys to the tags used on the HDF5 file as values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>h5 dictionary</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.LogTag.is_func">
+<code class="sig-name descname">is_func</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#LogTag.is_func"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.LogTag.is_func" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if a function is defined to convert the data - if “func” is included in the tag_dict dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>[True/ False]</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.LogTag.is_item">
+<code class="sig-name descname">is_item</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item_line</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#LogTag.is_item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.LogTag.is_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the current line - item_line - matches one of the provided tags, if that is the case set the tag to be
+the current tag and update the val_list with the corresponding values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>item_line</strong> (<em>str</em>) – Line of the output file</p></li>
+<li><p><strong>start</strong> (<em>int</em>) – Character to start with when parsing the item_line - default=0</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[True/False]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.LogTag.key_dict">
+<em class="property">property </em><code class="sig-name descname">key_dict</code><a class="headerlink" href="#pyiron.base.pyio.parser.LogTag.key_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get translation dictionary of python internal tags as keys to the output tags as values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>key dictionary</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.LogTag.line_skip">
+<code class="sig-name descname">line_skip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#LogTag.line_skip"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.LogTag.line_skip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check how many lines should be skipped.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>[True/ False]</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.LogTag.resolve_dynamic_variable">
+<code class="sig-name descname">resolve_dynamic_variable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#LogTag.resolve_dynamic_variable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.LogTag.resolve_dynamic_variable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resolve dynamic variable using the key_dict dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>val</strong> – values to resolve</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.LogTag.rows">
+<code class="sig-name descname">rows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#LogTag.rows"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.LogTag.rows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of rows to parse</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>number of rows</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int, str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.LogTag.set_item">
+<code class="sig-name descname">set_item</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag_vals</span></em>, <em class="sig-param"><span class="n">log_file</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#LogTag.set_item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.LogTag.set_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set LogTag item</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tag_vals</strong> (<em>dict</em>) – tag value dictionary</p></li>
+<li><p><strong>log_file</strong> (<a class="reference internal" href="#pyiron.base.pyio.parser.Logstatus" title="pyiron.base.pyio.parser.Logstatus"><em>Logstatus</em></a>) – Logstatus object</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>tag name, tag values, rows, line skip [True/False]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.LogTag.tag_dict">
+<em class="property">property </em><code class="sig-name descname">tag_dict</code><a class="headerlink" href="#pyiron.base.pyio.parser.LogTag.tag_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get tag dictionary with tags/patterns as key and an additional dictionary to describe the data
+structure. The data structure dictionary can contain the following keys:
+- “arg”: position of the argument - or dimension (“:”, “:,:”)
+- “type”: Python data type
+- “h5”: HDF5 key to store the information
+- “rows”: number of rows from the line where the tag was found
+- “splitTag”: split the tag - [True/False]
+- “splitArg”: split the argument - [True/False]
+- “lineSkip”: skip a line
+- “func”: function to convert the data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>tag dictionary</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.LogTag.tag_first_word">
+<em class="property">property </em><code class="sig-name descname">tag_first_word</code><a class="headerlink" href="#pyiron.base.pyio.parser.LogTag.tag_first_word" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get first word of the tag</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>first word</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.LogTag.tag_name">
+<em class="property">property </em><code class="sig-name descname">tag_name</code><a class="headerlink" href="#pyiron.base.pyio.parser.LogTag.tag_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get tag name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>tag name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.LogTag.test_split">
+<code class="sig-name descname">test_split</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#LogTag.test_split"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.LogTag.test_split" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the argument or the tag should be split - if “splitArg” or “splitTag” is included in the tag_dict
+dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>[True/ False]</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.LogTag.translate">
+<code class="sig-name descname">translate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#LogTag.translate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.LogTag.translate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translate current tag to HDF5 tag using the h5_dict dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>item</strong> (<em>str</em>) – Python tag</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>HDF5 tag</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pyiron.base.pyio.parser.Logstatus">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.base.pyio.parser.</code><code class="sig-name descname">Logstatus</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">h5</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">iter_levels</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#Logstatus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.Logstatus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Generic Parser for parsing output files by searching for a specific pattern structure and extracting the data that
+follows the pattern into the status_dict dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>iter_levels</strong> (<em>int</em>) – Levels of iteration - default = 1</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.Logstatus.append">
+<code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span></em>, <em class="sig-param"><span class="n">data_to_append</span></em>, <em class="sig-param"><span class="n">vec</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#Logstatus.append"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.Logstatus.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append data to the LogStatus object status_dict dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>title</strong> (<em>str</em>) – Title of the data to append</p></li>
+<li><p><strong>data_to_append</strong> (<em>list</em><em>,</em><em>dict</em>) – the data can be of various types</p></li>
+<li><p><strong>vec</strong> (<em>bool</em>) – [True/False] if the data is a single vector instead of a matrix or a tensor</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.Logstatus.combine_mat">
+<code class="sig-name descname">combine_mat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x_key</span></em>, <em class="sig-param"><span class="n">xy_key</span></em>, <em class="sig-param"><span class="n">xz_key</span></em>, <em class="sig-param"><span class="n">y_key</span></em>, <em class="sig-param"><span class="n">yz_key</span></em>, <em class="sig-param"><span class="n">z_key</span></em>, <em class="sig-param"><span class="n">combined_key</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#Logstatus.combine_mat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.Logstatus.combine_mat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Combine three lists representing the x,y,z coordinates, by accessing them from the status_dict dictionary,
+combining them, store them under the combined_key and remove the other three keys.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_key</strong> (<em>str</em>) – key of the x coordinates</p></li>
+<li><p><strong>y_key</strong> (<em>str</em>) – key of the y coordinates</p></li>
+<li><p><strong>z_key</strong> (<em>str</em>) – key of the z coordinates</p></li>
+<li><p><strong>combined_key</strong> (<em>str</em>) – name of the combined coordinates</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.Logstatus.combine_xyz">
+<code class="sig-name descname">combine_xyz</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x_key</span></em>, <em class="sig-param"><span class="n">y_key</span></em>, <em class="sig-param"><span class="n">z_key</span></em>, <em class="sig-param"><span class="n">combined_key</span></em>, <em class="sig-param"><span class="n">as_vector</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#Logstatus.combine_xyz"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.Logstatus.combine_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Combine three lists representing the x,y,z coordinates, by accessing them from the status_dict dictionary,
+combining them, store them under the combined_key and remove the other three keys.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_key</strong> (<em>str</em>) – key of the x coordinates</p></li>
+<li><p><strong>y_key</strong> (<em>str</em>) – key of the y coordinates</p></li>
+<li><p><strong>z_key</strong> (<em>str</em>) – key of the z coordinates</p></li>
+<li><p><strong>combined_key</strong> (<em>str</em>) – name of the combined coordinates</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.Logstatus.convert_unit">
+<code class="sig-name descname">convert_unit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">factor</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#Logstatus.convert_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.Logstatus.convert_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.Logstatus.extract_file">
+<code class="sig-name descname">extract_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_name</span></em>, <em class="sig-param"><span class="n">tag_dict</span></em>, <em class="sig-param"><span class="n">h5_dict</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">key_dict</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#Logstatus.extract_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.Logstatus.extract_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main function of the LogStatus class to extract data from an output file by searching for the tag dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> (<em>str</em>) – absolute path to the output file</p></li>
+<li><p><strong>tag_dict</strong> (<em>dict</em>) – Dictionary with tags/patterns as key and an additional dictionary to describe the data
+structure. The data structure dictionary can contain the following keys:
+- “arg”: position of the argument - or dimension (“:”, “:,:”)
+- “type”: Python data type
+- “h5”: HDF5 key to store the information
+- “rows”: number of rows from the line where the tag was found
+- “splitTag”: split the tag - [True/False]
+- “splitArg”: split the argument - [True/False]
+- “lineSkip”: skip a line
+- “func”: function to convert the data</p></li>
+<li><p><strong>h5_dict</strong> (<em>dict</em>) – Translation dictionary of output tags as keys to the tags used on the HDF5 file as values.</p></li>
+<li><p><strong>key_dict</strong> (<em>dict</em>) – Translation dictionary of python internal tags as keys to the output tags as values.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.Logstatus.extract_from_list">
+<code class="sig-name descname">extract_from_list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">list_of_lines</span></em>, <em class="sig-param"><span class="n">tag_dict</span></em>, <em class="sig-param"><span class="n">h5_dict</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">key_dict</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#Logstatus.extract_from_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.Logstatus.extract_from_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main function of the LogStatus class to extract data from an output file by searching for the tag dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> (<em>str</em>) – absolute path to the output file</p></li>
+<li><p><strong>tag_dict</strong> (<em>dict</em>) – Dictionary with tags/patterns as key and an additional dictionary to describe the data
+structure. The data structure dictionary can contain the following keys:
+- “arg”: position of the argument - or dimension (“:”, “:,:”)
+- “type”: Python data type
+- “h5”: HDF5 key to store the information
+- “rows”: number of rows from the line where the tag was found
+- “splitTag”: split the tag - [True/False]
+- “splitArg”: split the argument - [True/False]
+- “lineSkip”: skip a line
+- “func”: function to convert the data</p></li>
+<li><p><strong>h5_dict</strong> (<em>dict</em>) – Translation dictionary of output tags as keys to the tags used on the HDF5 file as values.</p></li>
+<li><p><strong>key_dict</strong> (<em>dict</em>) – Translation dictionary of python internal tags as keys to the output tags as values.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.Logstatus.extract_item">
+<em class="property">static </em><code class="sig-name descname">extract_item</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">l_item</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#Logstatus.extract_item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.Logstatus.extract_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to extract information from a single line - currently very specific for the Lammps output</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>l_item</strong> (<em>str</em>) – line to extract information from</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the tag_string as string and the arguments as list</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str, list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.Logstatus.raise_iter">
+<code class="sig-name descname">raise_iter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dim</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#Logstatus.raise_iter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.Logstatus.raise_iter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Increase the iteration level</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dim</strong> (<em>int</em>) – position - default = 0</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.Logstatus.reset_iter">
+<code class="sig-name descname">reset_iter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dim</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#Logstatus.reset_iter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.Logstatus.reset_iter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset iteration level</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dim</strong> (<em>int</em>) – reset value - default = 0</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.pyio.parser.Logstatus.to_hdf">
+<code class="sig-name descname">to_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#Logstatus.to_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.Logstatus.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the LogStatus object status_dict dictionary in an HDF5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>hdf</strong> (<a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.ProjectHDFio" title="pyiron.base.generic.hdfio.ProjectHDFio"><em>ProjectHDFio</em></a>) – HDF5 object to store the dictionary in.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.base.pyio.parser.extract_data_from_file">
+<code class="sig-prename descclassname">pyiron.base.pyio.parser.</code><code class="sig-name descname">extract_data_from_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_name</span></em>, <em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">num_args</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#extract_data_from_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.extract_data_from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>General purpose routine to extract any static from a log (text) file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> (<em>str</em>) – file name or path to the file, can either be absolute or relative</p></li>
+<li><p><strong>tag</strong> (<em>str</em>) – string at the beginning of the line</p></li>
+<li><p><strong>num_args</strong> (<em>int</em>) – number of arguments separated by ‘ ‘ or ‘,’ to extract after the tag</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of arguments extracted as strings</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.base.pyio.parser.extract_data_from_str_lst">
+<code class="sig-prename descclassname">pyiron.base.pyio.parser.</code><code class="sig-name descname">extract_data_from_str_lst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">str_lst</span></em>, <em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">num_args</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/pyio/parser.html#extract_data_from_str_lst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.pyio.parser.extract_data_from_str_lst" title="Permalink to this definition">¶</a></dt>
+<dd><p>General purpose routine to extract any static from a log (text) file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> (<em>str</em>) – file name or path to the file, can either be absolute or relative</p></li>
+<li><p><strong>tag</strong> (<em>str</em>) – string at the beginning of the line</p></li>
+<li><p><strong>num_args</strong> (<em>int</em>) – number of arguments separated by ‘ ‘ or ‘,’ to extract after the tag</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of arguments extracted as strings</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

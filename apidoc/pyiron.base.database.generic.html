@@ -1,0 +1,621 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.base.database.generic module &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>pyiron.base.database.generic module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/pyiron.base.database.generic.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-pyiron.base.database.generic">
+<span id="pyiron-base-database-generic-module"></span><h1>pyiron.base.database.generic module<a class="headerlink" href="#module-pyiron.base.database.generic" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pyiron.base.database.generic.AutorestoredConnection">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.base.database.generic.</code><code class="sig-name descname">AutorestoredConnection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">engine</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/generic.html#AutorestoredConnection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.generic.AutorestoredConnection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="pyiron.base.database.generic.AutorestoredConnection.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/generic.html#AutorestoredConnection.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.generic.AutorestoredConnection.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.generic.AutorestoredConnection.execute">
+<code class="sig-name descname">execute</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/generic.html#AutorestoredConnection.execute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.generic.AutorestoredConnection.execute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pyiron.base.database.generic.DatabaseAccess">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.base.database.generic.</code><code class="sig-name descname">DatabaseAccess</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">connection_string</span></em>, <em class="sig-param"><span class="n">table_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/generic.html#DatabaseAccess"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.generic.DatabaseAccess" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A core element of PyIron, which generally deals with accessing the database: getting, sending, changing some data
+to the db.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>connection_string</strong> (<em>str</em>) – SQLalchemy connection string which specifies the database to connect to
+typical form: dialect+driver://username:password&#64;host:port/database
+example: ‘postgresql://scott:tiger&#64;cmcent56.mpie.de/mdb’</p></li>
+<li><p><strong>table_name</strong> (<em>str</em>) – database table name, a simple string like: ‘simulation’</p></li>
+</ul>
+</dd>
+</dl>
+<p>Murat Han Celik</p>
+<dl class="py method">
+<dt id="pyiron.base.database.generic.DatabaseAccess.add_column">
+<code class="sig-name descname">add_column</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">col_name</span></em>, <em class="sig-param"><span class="n">col_type</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/generic.html#DatabaseAccess.add_column"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.generic.DatabaseAccess.add_column" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an additional column - required for modification on the database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>col_name</strong> (<em>str</em><em>, </em><em>list</em>) – name of the new column, normal string like: ‘myColumn’</p></li>
+<li><p><strong>(</strong><strong>str</strong><strong>, </strong><strong>list</strong> (<em>col_type</em>) – SQL type of the new column, SQL type like: ‘varchar(50)’</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.generic.DatabaseAccess.add_item_dict">
+<code class="sig-name descname">add_item_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">par_dict</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/generic.html#DatabaseAccess.add_item_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.generic.DatabaseAccess.add_item_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new database item</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>par_dict</strong> (<em>dict</em>) – <dl class="simple">
+<dt>Dictionary with the item values and column names as keys, like:</dt><dd><p>{‘chemicalformula’: ‘BO’,</p>
+</dd>
+</dl>
+<p>’computer’: ‘localhost’,
+‘hamilton’: ‘VAMPS’,
+‘hamversion’: ‘1.1’,
+‘job’: ‘testing’,
+‘subjob’ : ‘SubJob’,
+‘parentid’: 0L,
+‘myCol’: ‘Blubbablub’,
+‘project’: ‘database.testing’,
+‘projectpath’: ‘/root/directory/tmp’,
+‘status’: ‘KAAAA’,
+‘timestart’: datetime(2016, 5, 2, 11, 31, 4, 253377),
+‘timestop’: datetime(2016, 5, 2, 11, 31, 4, 371165),
+‘totalcputime’: 0.117788,
+‘username’: ‘Test’}</p>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Database ID of the item created as an int, like: 3</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.generic.DatabaseAccess.change_column_type">
+<code class="sig-name descname">change_column_type</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">col_name</span></em>, <em class="sig-param"><span class="n">col_type</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/generic.html#DatabaseAccess.change_column_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.generic.DatabaseAccess.change_column_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modify data type of an existing column - required for modification on the database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>col_name</strong> (<em>str</em><em>, </em><em>list</em>) – name of the new column, normal string like: ‘myColumn’</p></li>
+<li><p><strong>(</strong><strong>str</strong><strong>, </strong><strong>list</strong> (<em>col_type</em>) – SQL type of the new column, SQL type like: ‘varchar(50)’</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.generic.DatabaseAccess.delete_item">
+<code class="sig-name descname">delete_item</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/generic.html#DatabaseAccess.delete_item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.generic.DatabaseAccess.delete_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete Item from database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>item_id</strong> (<em>int</em>) – Databse Item ID (Integer), like: 38</p>
+</dd>
+</dl>
+<p>Returns:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.generic.DatabaseAccess.get_item_by_id">
+<code class="sig-name descname">get_item_by_id</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/generic.html#DatabaseAccess.get_item_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.generic.DatabaseAccess.get_item_by_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get item from database by searching for a specific item Id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>item_id</strong> (<em>int</em>) – Databse Item ID (Integer), like: 38</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Dictionary where the key is the column name, like:</dt><dd><dl class="simple">
+<dt>{‘chemicalformula’: u’BO’,</dt><dd><p>’computer’: u’localhost’,
+‘hamilton’: u’VAMPS’,
+‘hamversion’: u’1.1’,
+‘id’: 1,
+‘job’: u’testing’,
+‘masterid’: None,
+‘parentid’: 0,
+‘project’: u’database.testing’,
+‘projectpath’: u’/root/directory/tmp’,
+‘status’: u’KAAAA’,
+‘subjob’: u’SubJob’,
+‘timestart’: datetime.datetime(2016, 5, 2, 11, 31, 4, 253377),
+‘timestop’: datetime.datetime(2016, 5, 2, 11, 31, 4, 371165),
+‘totalcputime’: 0.117788,
+‘username’: u’Test’}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.generic.DatabaseAccess.get_items_dict">
+<code class="sig-name descname">get_items_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item_dict</span></em>, <em class="sig-param"><span class="n">return_all_columns</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/generic.html#DatabaseAccess.get_items_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.generic.DatabaseAccess.get_items_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>item_dict</strong> (<em>dict</em>) – <p>a dict type, which has a certain syntax for this function:
+a normal dict like {‘hamilton’: ‘VAMPE’, ‘hamversion’: ‘1.1’} has similarities with a
+simple query like</p>
+<blockquote>
+<div><p>select * from table_name where hamilton = ‘VAMPE AND hamversion = ‘1.1’</p>
+</div></blockquote>
+<p>as seen it puts an AND for every key, value combination in the dict and searches for it.</p>
+<p>another syntax is for an OR statement, simply: {‘hamilton’: [‘VAMPE’, ‘LAMMPS’]}, the
+query would be:</p>
+<blockquote>
+<div><p>select * from table_name where hamilton = ‘VAMPE’ OR hamilton = ‘LAMMPS’</p>
+</div></blockquote>
+<dl class="simple">
+<dt>and lastly for a LIKE statement, simply: {‘project’: ‘database.%’}, the query would be</dt><dd><p>select * from table_name where project LIKE ‘database.%’</p>
+</dd>
+</dl>
+<p>that means you can simply add the syntax for a like statement like ‘%’ and it will
+automatically operate a like-search</p>
+<dl class="simple">
+<dt>of course you can also use a more complex select method, with everything in use:</dt><dd><dl class="simple">
+<dt>{‘hamilton’: [‘VAMPE’, ‘LAMMPS’],</dt><dd><p>’project’: ‘databse%’,
+‘hamversion’: ‘1.1’}</p>
+</dd>
+<dt>select * from table_name where (hamilton = ‘VAMPE’ Or hamilton = ‘LAMMPS’) AND</dt><dd><p>(project LIKE ‘database%’) AND hamversion = ‘1.1’</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>return_all_columns</strong> (<em>bool</em>) – return all columns or only the ‘id’ - still the format stays the same.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>the function returns a list of dicts like get_items_sql, but it does not format datetime:</dt><dd><dl class="simple">
+<dt>[{‘chemicalformula’: u’Ni108’,</dt><dd><p>’computer’: u’mapc157’,
+‘hamilton’: u’LAMMPS’,
+‘hamversion’: u’1.1’,
+‘id’: 24,
+‘job’: u’DOF_1_0’,
+‘parentid’: 21L,
+‘project’: u’lammps.phonons.Ni_fcc’,
+‘projectpath’: u’D:/PyIron/PyIron_data/projects’,
+‘status’: u’finished’,
+‘timestart’: datetime.datetime(2016, 6, 24, 10, 17, 3, 140000),
+‘timestop’: datetime.datetime(2016, 6, 24, 10, 17, 3, 173000),
+‘totalcputime’: 0.033,
+‘username’: u’test’},</p>
+</dd>
+<dt>{‘chemicalformula’: u’Ni108’,</dt><dd><p>’computer’: u’mapc157’,
+‘hamilton’: u’LAMMPS’,
+‘hamversion’: u’1.1’,
+‘id’: 21,
+‘job’: u’ref’,
+‘parentid’: 20L,
+‘project’: u’lammps.phonons.Ni_fcc’,
+‘projectpath’: u’D:/PyIron/PyIron_data/projects’,
+‘status’: u’finished’,
+‘timestart’: datetime.datetime(2016, 6, 24, 10, 17, 2, 429000),
+‘timestop’: datetime.datetime(2016, 6, 24, 10, 17, 2, 463000),
+‘totalcputime’: 0.034,
+‘username’: u’test’},…….]</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.generic.DatabaseAccess.get_items_sql">
+<code class="sig-name descname">get_items_sql</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">where_condition</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sql_statement</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/generic.html#DatabaseAccess.get_items_sql"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.generic.DatabaseAccess.get_items_sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>Submit an SQL query to the database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>where_condition</strong> (<em>str</em>) – SQL where query, query like: “project LIKE ‘lammps.phonons.Ni_fcc%’”</p></li>
+<li><p><strong>sql_statement</strong> (<em>str</em>) – general SQL query, normal SQL statement</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>get a list of dictionaries, where each dictionary represents one item of the table like:</dt><dd><dl class="simple">
+<dt>[{u’chemicalformula’: u’BO’,</dt><dd><p>u’computer’: u’localhost’,
+u’hamilton’: u’VAMPS’,
+u’hamversion’: u’1.1’,
+u’id’: 1,
+u’job’: u’testing’,
+u’masterid’: None,
+u’parentid’: 0,
+u’project’: u’database.testing’,
+u’projectpath’: u’/TESTING’,
+u’status’: u’KAAAA’,
+u’subjob’: u’testJob’,
+u’timestart’: u’2016-05-02 11:31:04.253377’,
+u’timestop’: u’2016-05-02 11:31:04.371165’,
+u’totalcputime’: 0.117788,
+u’username’: u’User’},</p>
+</dd>
+<dt>{u’chemicalformula’: u’BO’,</dt><dd><p>u’computer’: u’localhost’,
+u’hamilton’: u’VAMPS’,
+u’hamversion’: u’1.1’,
+u’id’: 2,
+u’job’: u’testing’,
+u’masterid’: 0,
+u’parentid’: 0,
+u’project’: u’database.testing’,
+u’projectpath’: u’/TESTING’,
+u’status’: u’KAAAA’,
+u’subjob’: u’testJob’,
+u’timestart’: u’2016-05-02 11:31:04.253377’,
+u’timestop’: u’2016-05-02 11:31:04.371165’,
+u’totalcputime’: 0.117788,
+u’username’: u’User’}…..]</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.generic.DatabaseAccess.get_table_headings">
+<code class="sig-name descname">get_table_headings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/generic.html#DatabaseAccess.get_table_headings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.generic.DatabaseAccess.get_table_headings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get column names</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>table_name</strong> (<em>str</em>) – simple string of a table_name like: ‘jobs_username’</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>list of column names like:</dt><dd><p>[‘id’,
+‘parentid’,
+‘masterid’,
+‘projectpath’,
+‘project’,
+‘job’,
+‘subjob’,
+‘chemicalformula’,
+‘status’,
+‘hamilton’,
+‘hamversion’,
+‘username’,
+‘computer’,
+‘timestart’,
+‘timestop’,
+‘totalcputime’]</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.generic.DatabaseAccess.item_update">
+<code class="sig-name descname">item_update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">par_dict</span></em>, <em class="sig-param"><span class="n">item_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/generic.html#DatabaseAccess.item_update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.generic.DatabaseAccess.item_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modify Item in database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>par_dict</strong> (<em>dict</em>) – <p>Dictionary of the parameters to be modified,, where the key is the column name.
+{‘job’ : ‘maximize’,</p>
+<blockquote>
+<div><p>’subjob’ : ‘testing’,
+……..}</p>
+</div></blockquote>
+</p></li>
+<li><p><strong>item_id</strong> (<em>int</em><em>, </em><em>list</em>) – Database Item ID (Integer) - ‘38’  can also be [38]</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.generic.DatabaseAccess.query_for_element">
+<code class="sig-name descname">query_for_element</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">element</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/generic.html#DatabaseAccess.query_for_element"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.generic.DatabaseAccess.query_for_element" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.generic.DatabaseAccess.regexp">
+<em class="property">static </em><code class="sig-name descname">regexp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expr</span></em>, <em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/generic.html#DatabaseAccess.regexp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.generic.DatabaseAccess.regexp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Regex function for SQLite
+:param expr: str, regex expression
+:param item: str, item which needs to be checked</p>
+<p>Returns:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.generic.DatabaseAccess.viewer_mode">
+<em class="property">property </em><code class="sig-name descname">viewer_mode</code><a class="headerlink" href="#pyiron.base.database.generic.DatabaseAccess.viewer_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get viewer_mode - if viewer_mode is enable pyiron has read only access to the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>returns TRUE when viewer_mode is enabled</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

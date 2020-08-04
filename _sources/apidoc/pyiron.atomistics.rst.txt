@@ -1,0 +1,24 @@
+pyiron.atomistics package
+=========================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pyiron.atomistics.generic
+   pyiron.atomistics.job
+   pyiron.atomistics.master
+   pyiron.atomistics.nma
+   pyiron.atomistics.structure
+   pyiron.atomistics.thermodynamics
+   pyiron.atomistics.volumetric
+
+Module contents
+---------------
+
+.. automodule:: pyiron.atomistics
+   :members:
+   :undoc-members:
+   :show-inheritance:

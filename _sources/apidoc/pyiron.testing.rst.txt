@@ -1,0 +1,19 @@
+pyiron.testing package
+======================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pyiron.testing.executable
+   pyiron.testing.randomatomistic
+
+Module contents
+---------------
+
+.. automodule:: pyiron.testing
+   :members:
+   :undoc-members:
+   :show-inheritance:

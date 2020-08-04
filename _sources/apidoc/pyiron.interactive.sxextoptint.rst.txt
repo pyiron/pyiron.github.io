@@ -1,0 +1,7 @@
+pyiron.interactive.sxextoptint module
+=====================================
+
+.. automodule:: pyiron.interactive.sxextoptint
+   :members:
+   :undoc-members:
+   :show-inheritance:

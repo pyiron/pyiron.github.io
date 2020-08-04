@@ -1,0 +1,7 @@
+pyiron.atomistics.generic.object\_type module
+=============================================
+
+.. automodule:: pyiron.atomistics.generic.object_type
+   :members:
+   :undoc-members:
+   :show-inheritance:

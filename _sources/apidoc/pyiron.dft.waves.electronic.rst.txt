@@ -1,0 +1,7 @@
+pyiron.dft.waves.electronic module
+==================================
+
+.. automodule:: pyiron.dft.waves.electronic
+   :members:
+   :undoc-members:
+   :show-inheritance:

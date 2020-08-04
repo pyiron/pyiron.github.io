@@ -1,0 +1,7 @@
+pyiron.base.settings.logger module
+==================================
+
+.. automodule:: pyiron.base.settings.logger
+   :members:
+   :undoc-members:
+   :show-inheritance:

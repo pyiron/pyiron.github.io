@@ -1,0 +1,7 @@
+pyiron.atomistics.nma.nma module
+================================
+
+.. automodule:: pyiron.atomistics.nma.nma
+   :members:
+   :undoc-members:
+   :show-inheritance:

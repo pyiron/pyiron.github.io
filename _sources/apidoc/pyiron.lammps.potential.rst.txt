@@ -1,0 +1,7 @@
+pyiron.lammps.potential module
+==============================
+
+.. automodule:: pyiron.lammps.potential
+   :members:
+   :undoc-members:
+   :show-inheritance:

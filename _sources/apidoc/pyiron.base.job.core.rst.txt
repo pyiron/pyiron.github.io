@@ -1,0 +1,7 @@
+pyiron.base.job.core module
+===========================
+
+.. automodule:: pyiron.base.job.core
+   :members:
+   :undoc-members:
+   :show-inheritance:

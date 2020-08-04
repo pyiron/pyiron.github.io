@@ -1,0 +1,7 @@
+pyiron.testing.randomatomistic module
+=====================================
+
+.. automodule:: pyiron.testing.randomatomistic
+   :members:
+   :undoc-members:
+   :show-inheritance:

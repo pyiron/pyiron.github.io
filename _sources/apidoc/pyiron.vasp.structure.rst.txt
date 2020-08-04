@@ -1,0 +1,7 @@
+pyiron.vasp.structure module
+============================
+
+.. automodule:: pyiron.vasp.structure
+   :members:
+   :undoc-members:
+   :show-inheritance:

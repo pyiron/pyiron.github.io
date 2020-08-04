@@ -1,0 +1,7 @@
+pyiron.atomistics.job.structurecontainer module
+===============================================
+
+.. automodule:: pyiron.atomistics.job.structurecontainer
+   :members:
+   :undoc-members:
+   :show-inheritance:

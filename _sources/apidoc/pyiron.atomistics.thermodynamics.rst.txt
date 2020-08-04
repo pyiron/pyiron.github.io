@@ -1,0 +1,18 @@
+pyiron.atomistics.thermodynamics package
+========================================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pyiron.atomistics.thermodynamics.thermo_bulk
+
+Module contents
+---------------
+
+.. automodule:: pyiron.atomistics.thermodynamics
+   :members:
+   :undoc-members:
+   :show-inheritance:

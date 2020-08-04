@@ -1,0 +1,18 @@
+pyiron.atomistics.volumetric package
+====================================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pyiron.atomistics.volumetric.generic
+
+Module contents
+---------------
+
+.. automodule:: pyiron.atomistics.volumetric
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,7 @@
+pyiron.vasp.volumetric\_data module
+===================================
+
+.. automodule:: pyiron.vasp.volumetric_data
+   :members:
+   :undoc-members:
+   :show-inheritance:

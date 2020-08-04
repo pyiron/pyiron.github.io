@@ -1,0 +1,7 @@
+pyiron.vasp.procar module
+=========================
+
+.. automodule:: pyiron.vasp.procar
+   :members:
+   :undoc-members:
+   :show-inheritance:

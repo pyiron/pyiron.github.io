@@ -1,0 +1,1040 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.table.datamining &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.table.datamining</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.table.datamining</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="kn">import</span> <span class="nn">codecs</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">dill</span> <span class="k">as</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span>
+<span class="kn">from</span> <span class="nn">pandas.errors</span> <span class="kn">import</span> <span class="n">EmptyDataError</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="nn">types</span>
+
+<span class="kn">from</span> <span class="nn">pyiron.base.job.generic</span> <span class="kn">import</span> <span class="n">GenericJob</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.generic.hdfio</span> <span class="kn">import</span> <span class="n">FileHDFio</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.master.generic</span> <span class="kn">import</span> <span class="n">get_function_from_string</span>
+<span class="kn">from</span> <span class="nn">pyiron.table.funct</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">get_incar</span><span class="p">,</span>
+    <span class="n">get_sigma</span><span class="p">,</span>
+    <span class="n">get_total_number_of_atoms</span><span class="p">,</span>
+    <span class="n">get_elements</span><span class="p">,</span>
+    <span class="n">get_convergence_check</span><span class="p">,</span>
+    <span class="n">get_number_of_species</span><span class="p">,</span>
+    <span class="n">get_number_of_ionic_steps</span><span class="p">,</span>
+    <span class="n">get_ismear</span><span class="p">,</span>
+    <span class="n">get_encut</span><span class="p">,</span>
+    <span class="n">get_n_kpts</span><span class="p">,</span>
+    <span class="n">get_n_equ_kpts</span><span class="p">,</span>
+    <span class="n">get_number_of_final_electronic_steps</span><span class="p">,</span>
+    <span class="n">get_majority_species</span><span class="p">,</span>
+    <span class="n">get_job_name</span><span class="p">,</span>
+    <span class="n">get_job_id</span><span class="p">,</span>
+    <span class="n">get_energy_tot</span><span class="p">,</span>
+    <span class="n">get_energy_free</span><span class="p">,</span>
+    <span class="n">get_energy_int</span><span class="p">,</span>
+    <span class="n">get_energy_tot_per_atom</span><span class="p">,</span>
+    <span class="n">get_energy_free_per_atom</span><span class="p">,</span>
+    <span class="n">get_energy_int_per_atom</span><span class="p">,</span>
+    <span class="n">get_e_conv_level</span><span class="p">,</span>
+    <span class="n">get_f_states</span><span class="p">,</span>
+    <span class="n">get_e_band</span><span class="p">,</span>
+    <span class="n">get_majority_crystal_structure</span><span class="p">,</span>
+    <span class="n">get_equilibrium_parameters</span><span class="p">,</span>
+    <span class="n">get_structure</span><span class="p">,</span>
+    <span class="n">get_forces</span><span class="p">,</span>
+    <span class="n">get_magnetic_structure</span><span class="p">,</span>
+    <span class="n">get_average_waves</span><span class="p">,</span>
+    <span class="n">get_plane_waves</span><span class="p">,</span>
+    <span class="n">get_ekin_error</span><span class="p">,</span>
+    <span class="n">get_volume</span><span class="p">,</span>
+    <span class="n">get_volume_per_atom</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Uday Gajera, Jan Janssen, Joerg Neugebauer&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2020, Max-Planck-Institut für Eisenforschung GmbH - &quot;</span>
+    <span class="s2">&quot;Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.0.1&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;janssen@mpie.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;development&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;Sep 1, 2018&quot;</span>
+
+
+<div class="viewcode-block" id="FunctionContainer"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.FunctionContainer">[docs]</a><span class="k">class</span> <span class="nc">FunctionContainer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class which is able to append, store and retreive a set of functions.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_user_function_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_system_function_lst</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">get_incar</span><span class="p">,</span>
+            <span class="n">get_sigma</span><span class="p">,</span>
+            <span class="n">get_total_number_of_atoms</span><span class="p">,</span>
+            <span class="n">get_elements</span><span class="p">,</span>
+            <span class="n">get_convergence_check</span><span class="p">,</span>
+            <span class="n">get_number_of_species</span><span class="p">,</span>
+            <span class="n">get_number_of_ionic_steps</span><span class="p">,</span>
+            <span class="n">get_ismear</span><span class="p">,</span>
+            <span class="n">get_encut</span><span class="p">,</span>
+            <span class="n">get_n_kpts</span><span class="p">,</span>
+            <span class="n">get_n_equ_kpts</span><span class="p">,</span>
+            <span class="n">get_number_of_final_electronic_steps</span><span class="p">,</span>
+            <span class="n">get_majority_species</span><span class="p">,</span>
+            <span class="n">get_job_name</span><span class="p">,</span>
+            <span class="n">get_job_id</span><span class="p">,</span>
+            <span class="n">get_energy_tot</span><span class="p">,</span>
+            <span class="n">get_energy_free</span><span class="p">,</span>
+            <span class="n">get_energy_int</span><span class="p">,</span>
+            <span class="n">get_energy_tot_per_atom</span><span class="p">,</span>
+            <span class="n">get_energy_free_per_atom</span><span class="p">,</span>
+            <span class="n">get_energy_int_per_atom</span><span class="p">,</span>
+            <span class="n">get_e_conv_level</span><span class="p">,</span>
+            <span class="n">get_f_states</span><span class="p">,</span>
+            <span class="n">get_e_band</span><span class="p">,</span>
+            <span class="n">get_majority_crystal_structure</span><span class="p">,</span>
+            <span class="n">get_equilibrium_parameters</span><span class="p">,</span>
+            <span class="n">get_structure</span><span class="p">,</span>
+            <span class="n">get_forces</span><span class="p">,</span>
+            <span class="n">get_magnetic_structure</span><span class="p">,</span>
+            <span class="n">get_average_waves</span><span class="p">,</span>
+            <span class="n">get_plane_waves</span><span class="p">,</span>
+            <span class="n">get_ekin_error</span><span class="p">,</span>
+            <span class="n">get_volume</span><span class="p">,</span>
+            <span class="n">get_volume_per_atom</span><span class="p">,</span>
+        <span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_system_function_dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">:</span> <span class="kc">False</span> <span class="k">for</span> <span class="n">func</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system_function_lst</span>
+        <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_system_function_dict</span><span class="p">[</span><span class="s2">&quot;get_job_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_function_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="n">funct</span>
+            <span class="k">for</span> <span class="n">funct</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system_function_lst</span>
+            <span class="k">if</span> <span class="n">funct</span><span class="o">.</span><span class="vm">__name__</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system_function_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+            <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system_function_dict</span><span class="p">[</span><span class="n">funct</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span>
+        <span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_user_function_dict</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">_to_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_to_pickle</span><span class="p">(</span>
+            <span class="n">hdf</span><span class="o">=</span><span class="n">hdf</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s2">&quot;user_function_dict&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_user_function_dict</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_to_pickle</span><span class="p">(</span>
+            <span class="n">hdf</span><span class="o">=</span><span class="n">hdf</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s2">&quot;system_function_dict&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_system_function_dict</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_from_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_user_function_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_from_pickle</span><span class="p">(</span><span class="n">hdf</span><span class="o">=</span><span class="n">hdf</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s2">&quot;user_function_dict&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_system_function_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_from_pickle</span><span class="p">(</span>
+            <span class="n">hdf</span><span class="o">=</span><span class="n">hdf</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s2">&quot;system_function_dict&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_user_function_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span>
+                <span class="s1">&#39;lambda job: {&quot;&#39;</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s1">&#39;&quot;:&#39;</span> <span class="o">+</span> <span class="n">item</span> <span class="o">+</span> <span class="s2">&quot;}&quot;</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">FunctionType</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_user_function_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">job</span><span class="p">:</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">item</span><span class="p">(</span><span class="n">job</span><span class="p">)}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;unsupported function type!&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_user_function_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_system_function_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_system_function_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_system_function_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">FunctionContainer</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__getattr__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__dir__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_system_function_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_to_pickle</span><span class="p">(</span><span class="n">hdf</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="n">hdf</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">codecs</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">value</span><span class="p">),</span> <span class="s2">&quot;base64&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_from_pickle</span><span class="p">(</span><span class="n">hdf</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">pickle</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">codecs</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">hdf</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="s2">&quot;base64&quot;</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="JobFilters"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.JobFilters">[docs]</a><span class="k">class</span> <span class="nc">JobFilters</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Certain predefined job filters</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="JobFilters.job_type"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.JobFilters.job_type">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">job_type</span><span class="p">(</span><span class="n">job_type</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">filter_job_type</span><span class="p">(</span><span class="n">job</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">job</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="n">job_type</span>
+        <span class="k">return</span> <span class="n">filter_job_type</span></div>
+
+<div class="viewcode-block" id="JobFilters.job_name_contains"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.JobFilters.job_name_contains">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">job_name_contains</span><span class="p">(</span><span class="n">job_name_segment</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">filter_job_name_segment</span><span class="p">(</span><span class="n">job</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">job_name_segment</span> <span class="ow">in</span> <span class="n">job</span><span class="o">.</span><span class="n">job_name</span>
+        <span class="k">return</span> <span class="n">filter_job_name_segment</span></div></div>
+
+
+<div class="viewcode-block" id="PyironTable"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.PyironTable">[docs]</a><span class="k">class</span> <span class="nc">PyironTable</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class for easy, efficient, and pythonic analysis of data from pyiron projects</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        project (pyiron.project.Project/None): The project to analyze</span>
+<span class="sd">        name (str): Name of the pyiron table</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_project</span> <span class="o">=</span> <span class="n">project</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({})</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">convert_to_object</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_db_filter_function</span> <span class="o">=</span> <span class="n">always_true_pandas</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_db_filter_function_str</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">always_true_pandas</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_filter_function</span> <span class="o">=</span> <span class="n">always_true</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_filter_function_str</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">always_true</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_filter</span> <span class="o">=</span> <span class="n">JobFilters</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span> <span class="o">=</span> <span class="n">FunctionContainer</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_csv_file</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_file</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">EMPTY_STR</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Object containing pre-defined filter functions</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            pyiron.table.datamining.JobFilters: The object containing the filters</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_file_name_csv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_csv_file</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project</span><span class="o">.</span><span class="n">path</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;.csv&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_csv_file</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_file_name_txt</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project</span><span class="o">.</span><span class="n">path</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;.txt&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Name of the table. Takes the project name if not specified</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: Name of the table</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project</span><span class="o">.</span><span class="n">name</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">db_filter_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Function to filter the a project database table before job specific functions are applied.</span>
+
+<span class="sd">        The function must take a pyiron project table in the pandas.DataFrame format (project.job_table()) and return a</span>
+<span class="sd">        boolean pandas.DataSeries with the same number of rows as the project table</span>
+
+<span class="sd">        Example:</span>
+
+<span class="sd">            def function(df):</span>
+<span class="sd">                return (df[&quot;chemicalformula&quot;==&quot;H2&quot;]) &amp; (df[&quot;hamilton&quot;==&quot;Vasp&quot;])</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db_filter_function</span>
+
+    <span class="nd">@db_filter_function</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">db_filter_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">funct</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_db_filter_function</span> <span class="o">=</span> <span class="n">funct</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_db_filter_function_str</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">funct</span><span class="p">)</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">IOError</span><span class="p">):</span>
+            <span class="k">pass</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">filter_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Function to filter each job before more expensive functions are applied</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_function</span>
+
+    <span class="nd">@filter_function</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">filter_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">funct</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_filter_function</span> <span class="o">=</span> <span class="n">funct</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_filter_function_str</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">funct</span><span class="p">)</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">IOError</span><span class="p">):</span>
+            <span class="k">pass</span>
+
+<div class="viewcode-block" id="PyironTable.to_hdf"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.PyironTable.to_hdf">[docs]</a>    <span class="k">def</span> <span class="nf">to_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">file</span> <span class="o">=</span> <span class="n">FileHDFio</span><span class="p">(</span><span class="n">file_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_project</span><span class="o">.</span><span class="n">path</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;.h5&quot;</span><span class="p">,</span> <span class="n">h5_path</span><span class="o">=</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">_to_hdf</span><span class="p">(</span><span class="n">file</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PyironTable.from_hdf"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.PyironTable.from_hdf">[docs]</a>    <span class="k">def</span> <span class="nf">from_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">file</span> <span class="o">=</span> <span class="n">FileHDFio</span><span class="p">(</span><span class="n">file_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_project</span><span class="o">.</span><span class="n">path</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;.h5&quot;</span><span class="p">,</span> <span class="n">h5_path</span><span class="o">=</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">_from_hdf</span><span class="p">(</span><span class="n">file</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PyironTable.save"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.PyironTable.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_save_csv</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="PyironTable.load"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.PyironTable.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">from_hdf</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_csv</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="PyironTable.create_table"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.PyironTable.create_table">[docs]</a>    <span class="k">def</span> <span class="nf">create_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enforce_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">job_status_list</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">skip_table_update</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">filter_funct</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter_function</span>
+        <span class="k">if</span> <span class="n">job_status_list</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">job_status_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;finished&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_file</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">file</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">file</span> <span class="o">=</span> <span class="n">FileHDFio</span><span class="p">(</span>
+                    <span class="n">file_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_project</span><span class="o">.</span><span class="n">path</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;.h5&quot;</span><span class="p">,</span> <span class="n">h5_path</span><span class="o">=</span><span class="s2">&quot;/&quot;</span>
+                <span class="p">)</span>
+            <span class="n">temp_user_function_dict</span><span class="p">,</span> <span class="n">temp_system_function_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_data_from_hdf5</span><span class="p">(</span>
+                <span class="n">hdf</span><span class="o">=</span><span class="n">file</span>
+            <span class="p">)</span>
+            <span class="n">job_stored_ids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_job_ids</span><span class="p">()</span>
+            <span class="n">job_update_lst</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_project</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">job_id</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">job_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_filtered_job_ids_from_project</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">job_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">job_stored_ids</span>
+            <span class="p">]</span>
+            <span class="n">job_update_lst</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">job</span>
+                <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">job_update_lst</span>
+                <span class="k">if</span> <span class="n">job</span><span class="o">.</span><span class="n">status</span> <span class="ow">in</span> <span class="n">job_status_list</span> <span class="ow">and</span> <span class="n">filter_funct</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+            <span class="p">]</span>
+            <span class="n">keys_update_user_lst</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">key</span>
+                <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">_user_function_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">temp_user_function_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+            <span class="p">]</span>
+            <span class="n">keys_update_system_lst</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">k</span>
+                <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">_system_function_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">v</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">temp_system_function_dict</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+            <span class="p">]</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="nb">len</span><span class="p">(</span><span class="n">job_update_lst</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+                <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">keys_update_user_lst</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+                <span class="ow">and</span> <span class="n">keys_update_system_lst</span> <span class="o">==</span> <span class="mi">0</span>
+                <span class="ow">and</span> <span class="ow">not</span> <span class="n">enforce_update</span>
+            <span class="p">):</span>
+                <span class="n">skip_table_update</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">job_update_lst</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_project</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">job_id</span><span class="p">)</span> 
+                <span class="k">for</span> <span class="n">job_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_filtered_job_ids_from_project</span><span class="p">()</span>
+            <span class="p">]</span>
+            <span class="n">job_update_lst</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">job</span>
+                <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">job_update_lst</span>
+                <span class="k">if</span> <span class="n">job</span><span class="o">.</span><span class="n">status</span> <span class="ow">in</span> <span class="n">job_status_list</span> <span class="ow">and</span> <span class="n">filter_funct</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+            <span class="p">]</span>
+            <span class="n">keys_update_user_lst</span><span class="p">,</span> <span class="n">keys_update_system_lst</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">skip_table_update</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">job_update_lst</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">df_new_ids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_iterate_over_job_lst</span><span class="p">(</span>
+                <span class="n">job_lst</span><span class="o">=</span><span class="n">job_update_lst</span><span class="p">,</span> <span class="n">function_lst</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">_function_lst</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">df_new_ids</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({})</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">skip_table_update</span> <span class="ow">and</span> <span class="p">(</span>
+            <span class="nb">len</span><span class="p">(</span><span class="n">keys_update_user_lst</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">keys_update_system_lst</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span>
+        <span class="p">):</span>
+            <span class="n">job_update_lst</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_project</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">job_id</span><span class="p">)</span> <span class="k">for</span> <span class="n">job_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_job_ids</span><span class="p">()</span>
+            <span class="p">]</span>
+            <span class="n">job_update_lst</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">job</span>
+                <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">job_update_lst</span>
+                <span class="k">if</span> <span class="n">job</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">job</span><span class="o">.</span><span class="n">status</span> <span class="ow">in</span> <span class="n">job_status_list</span> <span class="ow">and</span> <span class="n">filter_funct</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+            <span class="p">]</span>
+            <span class="n">function_lst</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">v</span>
+                <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">_user_function_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys_update_system_lst</span>
+            <span class="p">]</span> <span class="o">+</span> <span class="p">[</span>
+                <span class="n">funct</span>
+                <span class="k">for</span> <span class="n">funct</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">_system_function_lst</span>
+                <span class="k">if</span> <span class="n">funct</span><span class="o">.</span><span class="vm">__name__</span> <span class="ow">in</span> <span class="n">keys_update_system_lst</span>
+            <span class="p">]</span>
+            <span class="n">df_new_keys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_iterate_over_job_lst</span><span class="p">(</span>
+                <span class="n">job_lst</span><span class="o">=</span><span class="n">job_update_lst</span><span class="p">,</span> <span class="n">function_lst</span><span class="o">=</span><span class="n">function_lst</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">df_new_keys</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({})</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_new_keys</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+                <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">,</span> <span class="n">df_new_keys</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_new_ids</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">,</span> <span class="n">df_new_ids</span><span class="p">],</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span>
+                <span class="n">drop</span><span class="o">=</span><span class="kc">True</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_new_ids</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_df</span> <span class="o">=</span> <span class="n">df_new_ids</span></div>
+
+<div class="viewcode-block" id="PyironTable.convert_dict"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.PyironTable.convert_dict">[docs]</a>    <span class="k">def</span> <span class="nf">convert_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dict</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">str_to_value</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">input_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span></div>
+
+<div class="viewcode-block" id="PyironTable.refill_dict"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.PyironTable.refill_dict">[docs]</a>    <span class="k">def</span> <span class="nf">refill_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">diff_dict_lst</span><span class="p">):</span>
+        <span class="n">total_key_lst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">total_lst_of_keys</span><span class="p">(</span><span class="n">diff_dict_lst</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">sub_dict</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">diff_dict_lst</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">total_key_lst</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sub_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                    <span class="n">sub_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">EMPTY_STR</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">sub_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">str_to_value</span><span class="p">(</span><span class="n">sub_dict</span><span class="p">[</span><span class="n">key</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="PyironTable.col_to_value"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.PyironTable.col_to_value">[docs]</a>    <span class="k">def</span> <span class="nf">col_to_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col_name</span><span class="p">):</span>
+        <span class="n">val_lst</span><span class="p">,</span> <span class="n">key_lst</span><span class="p">,</span> <span class="n">ind_lst</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">[</span><span class="n">col_name</span><span class="p">]):</span>
+            <span class="c1">#             print (&#39;name: &#39;, ind, name)</span>
+            <span class="c1">#             if name == self.EMPTY_STR:</span>
+            <span class="c1">#                 continue</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)</span>
+            <span class="n">ind_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span>
+            <span class="n">key_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">val_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="mi">1</span><span class="p">:])))</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">key_lst</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="n">key_lst</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val_lst</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;key not unique: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">key_lst</span><span class="p">)))</span></div>
+
+<div class="viewcode-block" id="PyironTable.get_dataframe"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.PyironTable.get_dataframe">[docs]</a>    <span class="k">def</span> <span class="nf">get_dataframe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span></div>
+
+<div class="viewcode-block" id="PyironTable.list_nodes"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.PyironTable.list_nodes">[docs]</a>    <span class="k">def</span> <span class="nf">list_nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PyironTable.list_groups"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.PyironTable.list_groups">[docs]</a>    <span class="k">def</span> <span class="nf">list_groups</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">[</span><span class="s2">&quot;col_0&quot;</span><span class="p">]))</span></div>
+
+<div class="viewcode-block" id="PyironTable.str_to_value"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.PyironTable.str_to_value">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">str_to_value</span><span class="p">(</span><span class="n">input_val</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">input_val</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">input_val</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">return</span> <span class="nb">eval</span><span class="p">(</span><span class="n">input_val</span><span class="p">)</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">SyntaxError</span><span class="p">,</span> <span class="ne">NameError</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">input_val</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;.TRUE.&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="s2">&quot;.True.&quot;</span><span class="p">]:</span>
+                    <span class="k">return</span> <span class="kc">True</span>
+                <span class="k">if</span> <span class="n">input_val</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;.FALSE.&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s2">&quot;.False.&quot;</span><span class="p">]:</span>
+                    <span class="k">return</span> <span class="kc">False</span>
+                <span class="k">return</span> <span class="n">input_val</span></div>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_apply_function_on_job</span><span class="p">(</span><span class="n">funct</span><span class="p">,</span> <span class="n">job</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">funct</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{}</span>
+
+<div class="viewcode-block" id="PyironTable.total_lst_of_keys"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.PyironTable.total_lst_of_keys">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">total_lst_of_keys</span><span class="p">(</span><span class="n">diff_dict_lst</span><span class="p">):</span>
+        <span class="n">total_key_lst</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">sub_dict</span> <span class="ow">in</span> <span class="n">diff_dict_lst</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">sub_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">total_key_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="n">total_key_lst</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">max_level</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">rename_dict</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_groups</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_level</span><span class="p">):</span>
+                <span class="n">rename_dict</span><span class="p">[</span><span class="s2">&quot;col_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="s2">&quot;col_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+            <span class="n">new_table</span> <span class="o">=</span> <span class="n">PyironTable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_project</span><span class="p">[</span><span class="n">item</span><span class="p">])</span>
+            <span class="n">new_table</span><span class="o">.</span><span class="n">_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;col_0&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">new_table</span><span class="o">.</span><span class="n">_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">rename_dict</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">new_table</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">[</span><span class="n">item</span><span class="p">])</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Human readable string representation</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: pandas Dataframe structure as string</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_is_file</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file_name_csv</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_save_csv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file_name_csv</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_load_csv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file_name_csv</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_project_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">pr_len</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">EMPTY_STR</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">level</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="n">pr_len</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">i</span><span class="p">:</span>
+                <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span>
+        <span class="k">return</span> <span class="n">lst</span>
+
+    <span class="k">def</span> <span class="nf">_get_data_from_hdf5</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf</span><span class="p">):</span>
+        <span class="n">temp_user_function_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">_from_pickle</span><span class="p">(</span>
+            <span class="n">hdf</span><span class="o">=</span><span class="n">hdf</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s2">&quot;user_function_dict&quot;</span>
+        <span class="p">)</span>
+        <span class="n">temp_system_function_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">_from_pickle</span><span class="p">(</span>
+            <span class="n">hdf</span><span class="o">=</span><span class="n">hdf</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s2">&quot;system_function_dict&quot;</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">temp_user_function_dict</span><span class="p">,</span> <span class="n">temp_system_function_dict</span>
+
+    <span class="k">def</span> <span class="nf">_get_job_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="o">.</span><span class="n">job_id</span><span class="o">.</span><span class="n">values</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+
+    <span class="k">def</span> <span class="nf">_get_filtered_job_ids_from_project</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="n">project_table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project</span><span class="o">.</span><span class="n">job_table</span><span class="p">(</span><span class="n">recursive</span><span class="o">=</span><span class="n">recursive</span><span class="p">)</span>
+        <span class="n">filter_funct</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db_filter_function</span>
+        <span class="k">return</span> <span class="n">project_table</span><span class="p">[</span><span class="n">filter_funct</span><span class="p">(</span><span class="n">project_table</span><span class="p">)][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_apply_list_of_functions_on_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job</span><span class="p">,</span> <span class="n">fucntion_lst</span><span class="p">):</span>
+        <span class="n">diff_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">funct</span> <span class="ow">in</span> <span class="n">fucntion_lst</span><span class="p">:</span>
+            <span class="n">funct_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_apply_function_on_job</span><span class="p">(</span><span class="n">funct</span><span class="p">,</span> <span class="n">job</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">funct_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">diff_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">return</span> <span class="n">diff_dict</span>
+
+    <span class="k">def</span> <span class="nf">_iterate_over_job_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_lst</span><span class="p">,</span> <span class="n">function_lst</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+        <span class="n">pr_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_project</span><span class="o">.</span><span class="n">project_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">))</span>
+        <span class="n">diff_dict_lst</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">job_inspect</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">job_lst</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_to_object</span><span class="p">:</span>
+                <span class="n">job</span> <span class="o">=</span> <span class="n">job_inspect</span><span class="o">.</span><span class="n">load_object</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">job</span> <span class="o">=</span> <span class="n">job_inspect</span>
+            <span class="n">diff_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_apply_list_of_functions_on_job</span><span class="p">(</span>
+                <span class="n">job</span><span class="o">=</span><span class="n">job</span><span class="p">,</span> <span class="n">fucntion_lst</span><span class="o">=</span><span class="n">function_lst</span>
+            <span class="p">)</span>
+            <span class="n">pr_lst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_project_list</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">project_path</span><span class="p">,</span> <span class="n">pr_len</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">ic</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pr_lst</span><span class="p">):</span>
+                <span class="n">diff_dict</span><span class="p">[</span><span class="s2">&quot;col_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ic</span><span class="p">)]</span> <span class="o">=</span> <span class="n">col</span>
+            <span class="n">diff_dict_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">diff_dict</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">refill_dict</span><span class="p">(</span><span class="n">diff_dict_lst</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">diff_dict_lst</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_repr_html_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Internal helper function to represent the GenericParameters object within the Jupyter Framework</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            HTML: Jupyter HTML object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="o">.</span><span class="n">_repr_html_</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="TableJob"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.TableJob">[docs]</a><span class="k">class</span> <span class="nc">TableJob</span><span class="p">(</span><span class="n">GenericJob</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">job_name</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">TableJob</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="n">job_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.1&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;TableJob&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_analysis_project</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pyiron_table</span> <span class="o">=</span> <span class="n">PyironTable</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_enforce_update</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_project_level</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">analysis_project</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">project</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pyiron_table</span><span class="o">.</span><span class="n">filter</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">project_level</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project_level</span>
+
+    <span class="nd">@project_level</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">project_level</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_project_level</span> <span class="o">=</span> <span class="n">level</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">db_filter_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pyiron_table</span><span class="o">.</span><span class="n">db_filter_function</span>
+
+    <span class="nd">@db_filter_function</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">db_filter_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">funct</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pyiron_table</span><span class="o">.</span><span class="n">db_filter_function</span> <span class="o">=</span> <span class="n">funct</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">filter_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pyiron_table</span><span class="o">.</span><span class="n">filter_function</span>
+
+    <span class="nd">@filter_function</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">filter_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">funct</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pyiron_table</span><span class="o">.</span><span class="n">filter_function</span> <span class="o">=</span> <span class="n">funct</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pyiron_table</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pyiron_table</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ref_project</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">analysis_project</span>
+
+    <span class="nd">@ref_project</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">ref_project</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">analysis_project</span> <span class="o">=</span> <span class="n">project</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">analysis_project</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_analysis_project</span>
+
+    <span class="nd">@analysis_project</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">analysis_project</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_analysis_project</span> <span class="o">=</span> <span class="n">project</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pyiron_table</span> <span class="o">=</span> <span class="n">PyironTable</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_analysis_project</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pyiron_table</span><span class="o">.</span><span class="n">add</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">convert_to_object</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pyiron_table</span><span class="o">.</span><span class="n">convert_to_object</span>
+
+    <span class="nd">@convert_to_object</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">convert_to_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conv_to_obj</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pyiron_table</span><span class="o">.</span><span class="n">convert_to_object</span> <span class="o">=</span> <span class="n">conv_to_obj</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">enforce_update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_enforce_update</span>
+
+    <span class="nd">@enforce_update</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">enforce_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enforce</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">enforce</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">enforce</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_enforce_update</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">finished</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">created</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_enforce_update</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">()</span>
+
+<div class="viewcode-block" id="TableJob.to_hdf"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.TableJob.to_hdf">[docs]</a>    <span class="k">def</span> <span class="nf">to_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Store pyiron table job in HDF5</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            hdf:</span>
+<span class="sd">            group_name:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">TableJob</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="n">hdf</span><span class="o">=</span><span class="n">hdf</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="n">group_name</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf5_input</span><span class="p">:</span>
+            <span class="n">hdf5_input</span><span class="p">[</span><span class="s2">&quot;bool_dict&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;enforce_update&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_enforce_update</span><span class="p">,</span>
+                <span class="s2">&quot;convert_to_object&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pyiron_table</span><span class="o">.</span><span class="n">convert_to_object</span><span class="p">,</span>
+            <span class="p">}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pyiron_table</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">_to_hdf</span><span class="p">(</span><span class="n">hdf5_input</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_analysis_project</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">hdf5_input</span><span class="p">[</span><span class="s2">&quot;project&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_analysis_project</span><span class="o">.</span><span class="n">path</span><span class="p">,</span>
+                    <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_analysis_project</span><span class="o">.</span><span class="n">user</span><span class="p">,</span>
+                    <span class="s2">&quot;sql_query&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_analysis_project</span><span class="o">.</span><span class="n">sql_query</span><span class="p">,</span>
+                    <span class="s2">&quot;filter&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_analysis_project</span><span class="o">.</span><span class="n">_filter</span><span class="p">,</span>
+                    <span class="s2">&quot;inspect_mode&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_analysis_project</span><span class="o">.</span><span class="n">_inspect_mode</span><span class="p">,</span>
+                <span class="p">}</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pyiron_table</span><span class="o">.</span><span class="n">_filter_function</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">hdf5_input</span><span class="p">[</span><span class="s2">&quot;filter&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">pyiron_table</span><span class="o">.</span><span class="n">_filter_function</span>
+                    <span class="p">)</span>
+                <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">IOError</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pyiron_table</span><span class="o">.</span><span class="n">_filter_function_str</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">hdf5_input</span><span class="p">[</span><span class="s2">&quot;filter&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pyiron_table</span><span class="o">.</span><span class="n">_filter_function_str</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pyiron_table</span><span class="o">.</span><span class="n">_db_filter_function</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">hdf5_input</span><span class="p">[</span><span class="s2">&quot;db_filter&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">pyiron_table</span><span class="o">.</span><span class="n">_db_filter_function</span>
+                    <span class="p">)</span>
+                <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">IOError</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pyiron_table</span><span class="o">.</span><span class="n">_db_filter_function_str</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">hdf5_input</span><span class="p">[</span><span class="s2">&quot;db_filter&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pyiron_table</span><span class="o">.</span><span class="n">_db_filter_function_str</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pyiron_table</span><span class="o">.</span><span class="n">_df</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;output&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf5_output</span><span class="p">:</span>
+                <span class="n">hdf5_output</span><span class="p">[</span><span class="s2">&quot;table&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pyiron_table</span><span class="o">.</span><span class="n">_df</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="TableJob.from_hdf"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.TableJob.from_hdf">[docs]</a>    <span class="k">def</span> <span class="nf">from_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Restore pyiron table job from HDF5</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            hdf:</span>
+<span class="sd">            group_name:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">TableJob</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">from_hdf</span><span class="p">(</span><span class="n">hdf</span><span class="o">=</span><span class="n">hdf</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="n">group_name</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf5_input</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s2">&quot;project&quot;</span> <span class="ow">in</span> <span class="n">hdf5_input</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">():</span>
+                <span class="n">project_dict</span> <span class="o">=</span> <span class="n">hdf5_input</span><span class="p">[</span><span class="s2">&quot;project&quot;</span><span class="p">]</span>
+                <span class="n">project</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span>
+                    <span class="n">path</span><span class="o">=</span><span class="n">project_dict</span><span class="p">[</span><span class="s2">&quot;path&quot;</span><span class="p">],</span>
+                    <span class="n">user</span><span class="o">=</span><span class="n">project_dict</span><span class="p">[</span><span class="s2">&quot;user&quot;</span><span class="p">],</span>
+                    <span class="n">sql_query</span><span class="o">=</span><span class="n">project_dict</span><span class="p">[</span><span class="s2">&quot;sql_query&quot;</span><span class="p">],</span>
+                <span class="p">)</span>
+                <span class="n">project</span><span class="o">.</span><span class="n">_filter</span> <span class="o">=</span> <span class="n">project_dict</span><span class="p">[</span><span class="s2">&quot;filter&quot;</span><span class="p">]</span>
+                <span class="n">project</span><span class="o">.</span><span class="n">_inspect_mode</span> <span class="o">=</span> <span class="n">project_dict</span><span class="p">[</span><span class="s2">&quot;inspect_mode&quot;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">analysis_project</span> <span class="o">=</span> <span class="n">project</span>
+            <span class="k">if</span> <span class="s2">&quot;filter&quot;</span> <span class="ow">in</span> <span class="n">hdf5_input</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pyiron_table</span><span class="o">.</span><span class="n">_filter_function_str</span> <span class="o">=</span> <span class="n">hdf5_input</span><span class="p">[</span><span class="s2">&quot;filter&quot;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pyiron_table</span><span class="o">.</span><span class="n">filter_function</span> <span class="o">=</span> <span class="n">get_function_from_string</span><span class="p">(</span>
+                    <span class="n">hdf5_input</span><span class="p">[</span><span class="s2">&quot;filter&quot;</span><span class="p">]</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="s2">&quot;db_filter&quot;</span> <span class="ow">in</span> <span class="n">hdf5_input</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pyiron_table</span><span class="o">.</span><span class="n">_db_filter_function_str</span> <span class="o">=</span> <span class="n">hdf5_input</span><span class="p">[</span><span class="s2">&quot;db_filter&quot;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pyiron_table</span><span class="o">.</span><span class="n">db_filter_function</span> <span class="o">=</span> <span class="n">get_function_from_string</span><span class="p">(</span>
+                    <span class="n">hdf5_input</span><span class="p">[</span><span class="s2">&quot;db_filter&quot;</span><span class="p">]</span>
+                <span class="p">)</span>
+            <span class="n">bool_dict</span> <span class="o">=</span> <span class="n">hdf5_input</span><span class="p">[</span><span class="s2">&quot;bool_dict&quot;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_enforce_update</span> <span class="o">=</span> <span class="n">bool_dict</span><span class="p">[</span><span class="s2">&quot;enforce_update&quot;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pyiron_table</span><span class="o">.</span><span class="n">convert_to_object</span> <span class="o">=</span> <span class="n">bool_dict</span><span class="p">[</span><span class="s2">&quot;convert_to_object&quot;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pyiron_table</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">_from_hdf</span><span class="p">(</span><span class="n">hdf5_input</span><span class="p">)</span>
+        <span class="n">pyiron_table</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="s2">&quot;pyirontable.csv&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">pyiron_table</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_pyiron_table</span><span class="o">.</span><span class="n">_df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">pyiron_table</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_pyiron_table</span><span class="o">.</span><span class="n">_csv_file</span> <span class="o">=</span> <span class="n">pyiron_table</span>
+            <span class="k">except</span> <span class="n">EmptyDataError</span><span class="p">:</span>
+                <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;output&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf5_output</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s2">&quot;table&quot;</span> <span class="ow">in</span> <span class="n">hdf5_output</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">():</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_pyiron_table</span><span class="o">.</span><span class="n">_df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+                        <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">hdf5_output</span><span class="p">[</span><span class="s2">&quot;table&quot;</span><span class="p">])</span>
+                    <span class="p">)</span></div>
+
+<div class="viewcode-block" id="TableJob.validate_ready_to_run"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.TableJob.validate_ready_to_run">[docs]</a>    <span class="k">def</span> <span class="nf">validate_ready_to_run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_analysis_project</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Analysis project not defined!&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TableJob.run_static"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.TableJob.run_static">[docs]</a>    <span class="k">def</span> <span class="nf">run_static</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_create_working_directory</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_table</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">finished</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">run</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="TableJob.update_table"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.TableJob.update_table">[docs]</a>    <span class="k">def</span> <span class="nf">update_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_status_list</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the pyiron table object, add new columns if a new function was added or add new rows for new jobs</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            job_status_list (list/None): List of job status which are added to the table by default [&quot;finished&quot;]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">job_status_list</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">job_status_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;finished&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">item_update</span><span class="p">({</span><span class="s2">&quot;timestart&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()},</span> <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf5_input</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pyiron_table</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span>
+                <span class="n">enforce_update</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_enforce_update</span><span class="p">,</span>
+                <span class="n">file</span><span class="o">=</span><span class="n">hdf5_input</span><span class="p">,</span>
+                <span class="n">level</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_project_level</span><span class="p">,</span>
+                <span class="n">job_status_list</span><span class="o">=</span><span class="n">job_status_list</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pyiron_table</span><span class="o">.</span><span class="n">_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="s2">&quot;pyirontable.csv&quot;</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span>
+        <span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;output&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf5_output</span><span class="p">:</span>
+            <span class="n">hdf5_output</span><span class="p">[</span><span class="s2">&quot;table&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pyiron_table</span><span class="o">.</span><span class="n">_df</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">item_update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_runtime</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TableJob.write_input"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.TableJob.write_input">[docs]</a>    <span class="k">def</span> <span class="nf">write_input</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="TableJob.get_dataframe"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.TableJob.get_dataframe">[docs]</a>    <span class="k">def</span> <span class="nf">get_dataframe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            pandas.Dataframe</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pyiron_table</span><span class="o">.</span><span class="n">_df</span></div></div>
+
+
+<div class="viewcode-block" id="always_true_pandas"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.always_true_pandas">[docs]</a><span class="k">def</span> <span class="nf">always_true_pandas</span><span class="p">(</span><span class="n">job_table</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A function which returns a pandas Series with all True values based on the size of the input pandas dataframe</span>
+<span class="sd">    Args:</span>
+<span class="sd">        job_table (pandas.DataFrame): Input dataframe</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pandas.Series: A series of True values</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">Series</span>
+    <span class="k">return</span> <span class="n">Series</span><span class="p">([</span><span class="kc">True</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">job_table</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">job_table</span><span class="o">.</span><span class="n">index</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="always_true"><a class="viewcode-back" href="../../../apidoc/pyiron.table.datamining.html#pyiron.table.datamining.always_true">[docs]</a><span class="k">def</span> <span class="nf">always_true</span><span class="p">(</span><span class="n">_</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A function that always returns True no matter what!</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: True</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

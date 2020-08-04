@@ -1,0 +1,358 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.atomistics.nma.nma &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.atomistics.nma.nma</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.atomistics.nma.nma</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">tamkin</span>
+
+<span class="kn">from</span> <span class="nn">pyiron.atomistics.job.atomistic</span> <span class="kn">import</span> <span class="n">Trajectory</span>
+
+<span class="kn">from</span> <span class="nn">molmod.units</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">molmod.constants</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">molmod.periodic</span> <span class="kn">import</span> <span class="n">periodic</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">pt</span>
+
+<div class="viewcode-block" id="NMA"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.nma.nma.html#pyiron.atomistics.nma.nma.NMA">[docs]</a><span class="k">class</span> <span class="nc">NMA</span><span class="p">(</span><span class="n">tamkin</span><span class="o">.</span><span class="n">NMA</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This is a generic module to do a Normal Mode Analysis on a job type,</span>
+<span class="sd">    which calculates the gradient and the hessian using TAMkin based on a job object.</span>
+<span class="sd">    With the NMA object you can animate a certain mode and plot the IR spectrum.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">job</span><span class="p">,</span> <span class="n">atomic_units</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">job</span> <span class="o">=</span> <span class="n">job</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">job</span><span class="p">[</span><span class="s1">&#39;output/generic/hessian&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">job</span><span class="p">[</span><span class="s1">&#39;output/generic/forces&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">structure</span> <span class="o">=</span> <span class="n">job</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">atomic_units</span><span class="p">:</span>
+                <span class="n">mol</span> <span class="o">=</span> <span class="n">tamkin</span><span class="o">.</span><span class="n">Molecule</span><span class="p">(</span><span class="n">structure</span><span class="o">.</span><span class="n">get_atomic_numbers</span><span class="p">(),</span><span class="n">structure</span><span class="o">.</span><span class="n">get_positions</span><span class="p">(),</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">structure</span><span class="o">.</span><span class="n">get_masses</span><span class="p">())</span><span class="o">*</span><span class="n">amu</span><span class="p">,</span>
+                                  <span class="n">job</span><span class="p">[</span><span class="s1">&#39;output/generic/energy_tot&#39;</span><span class="p">],</span><span class="n">job</span><span class="p">[</span><span class="s1">&#39;output/generic/forces&#39;</span><span class="p">]</span><span class="o">*-</span><span class="mi">1</span> <span class="p">,</span><span class="n">job</span><span class="p">[</span><span class="s1">&#39;output/generic/hessian&#39;</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">mol</span> <span class="o">=</span> <span class="n">tamkin</span><span class="o">.</span><span class="n">Molecule</span><span class="p">(</span><span class="n">structure</span><span class="o">.</span><span class="n">get_atomic_numbers</span><span class="p">(),</span><span class="n">structure</span><span class="o">.</span><span class="n">get_positions</span><span class="p">()</span><span class="o">*</span><span class="n">angstrom</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">structure</span><span class="o">.</span><span class="n">get_masses</span><span class="p">())</span><span class="o">*</span><span class="n">amu</span><span class="p">,</span>
+                                  <span class="n">job</span><span class="p">[</span><span class="s1">&#39;output/generic/energy_tot&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">electronvolt</span><span class="p">,</span><span class="n">job</span><span class="p">[</span><span class="s1">&#39;output/generic/forces&#39;</span><span class="p">]</span><span class="o">*-</span><span class="mi">1</span><span class="o">*</span><span class="n">electronvolt</span><span class="o">/</span><span class="n">angstrom</span> <span class="p">,</span><span class="n">job</span><span class="p">[</span><span class="s1">&#39;output/generic/hessian&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">electronvolt</span><span class="o">/</span><span class="n">angstrom</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;An NMA calculation requires a gradient and hessian.&#39;</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">NMA</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+
+<div class="viewcode-block" id="NMA.animate_nma_mode"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.nma.nma.html#pyiron.atomistics.nma.nma.NMA.animate_nma_mode">[docs]</a>    <span class="k">def</span> <span class="nf">animate_nma_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">index</span><span class="p">,</span><span class="n">amplitude</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span><span class="n">frames</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span><span class="n">spacefill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">particle_size</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">            Visualize the normal mode corresponding to an index</span>
+
+<span class="sd">            **Arguments**</span>
+
+<span class="sd">            index       index corresponding to a normal mode</span>
+
+<span class="sd">            amplitude   size of the deviation of the normal mode</span>
+
+<span class="sd">            frames      number of frames that constitute the full mode (lower means faster movement)</span>
+
+<span class="sd">            spacefill   remove atom bonds</span>
+
+<span class="sd">            particle size</span>
+<span class="sd">                        size of the atoms in the structure</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This mode corresponds to a frequency of </span><span class="si">{}</span><span class="s2"> 1/cm&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">freqs</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">/</span><span class="n">lightspeed</span><span class="o">/</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="n">centimeter</span><span class="p">)))</span>
+        <span class="n">coordinates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coordinates</span>
+        <span class="n">symbols</span> <span class="o">=</span> <span class="p">[</span><span class="n">periodic</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">symbol</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">numbers</span><span class="p">]</span>
+
+        <span class="n">mode</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">modes</span><span class="p">[:,</span><span class="n">index</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">masses3</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">mode</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">masses3</span><span class="p">)</span>
+        <span class="n">mode</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span>
+
+        <span class="n">positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">frames</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">symbols</span><span class="p">),</span><span class="mi">3</span><span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">frame</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">frames</span><span class="p">):</span>
+            <span class="n">factor</span> <span class="o">=</span> <span class="n">amplitude</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span><span class="o">/</span><span class="n">frames</span><span class="p">)</span>
+            <span class="n">positions</span><span class="p">[</span><span class="n">frame</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">coordinates</span> <span class="o">+</span> <span class="n">factor</span><span class="o">*</span><span class="n">mode</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span><span class="o">/</span><span class="n">angstrom</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">nglview</span>
+        <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;The animate_nma_mode() function requires the package nglview to be installed&quot;</span><span class="p">)</span>
+
+        <span class="n">animation</span> <span class="o">=</span> <span class="n">nglview</span><span class="o">.</span><span class="n">show_asetraj</span><span class="p">(</span><span class="n">Trajectory</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">job</span><span class="o">.</span><span class="n">structure</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">spacefill</span><span class="p">:</span>
+            <span class="n">animation</span><span class="o">.</span><span class="n">add_spacefill</span><span class="p">(</span><span class="n">radius_type</span><span class="o">=</span><span class="s1">&#39;vdw&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">particle_size</span><span class="p">)</span>
+            <span class="n">animation</span><span class="o">.</span><span class="n">remove_ball_and_stick</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">animation</span><span class="o">.</span><span class="n">add_ball_and_stick</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">animation</span></div>
+
+<div class="viewcode-block" id="NMA.plot_IR_spectrum"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.nma.nma.html#pyiron.atomistics.nma.nma.NMA.plot_IR_spectrum">[docs]</a>    <span class="k">def</span> <span class="nf">plot_IR_spectrum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">lightspeed</span><span class="o">/</span><span class="n">centimeter</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span><span class="n">intensities</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">charges</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Plot IR spectrum based on Lorentzian width, freqs can be scaled through scale</span>
+<span class="sd">            Intensities can be provided (e.g. from a Gaussian job) or calculated from the charges</span>
+
+<span class="sd">            **Arguments**</span>
+
+<span class="sd">            width       width of the Lorentzian function</span>
+
+<span class="sd">            scale       scales the frequencies with this factor</span>
+
+<span class="sd">            intensities</span>
+<span class="sd">                        IR intensities for spectrum, can be read from Gaussian job</span>
+
+<span class="sd">            charges     charges to calculate IR intensities, from e.g. Yaff simulation</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">intensities</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">intensities</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">freqs</span><span class="p">)</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zeros</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">intensities</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">charges</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;This function requires the charges or the intensities to calculate the line shape&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">intensities</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">charges</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Please only provide either the intensities or the charges&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">xr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5001</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">lightspeed</span><span class="o">/</span><span class="n">centimeter</span>
+            <span class="n">alphas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xr</span><span class="p">))</span>
+
+            <span class="c1"># Calculate intensities</span>
+            <span class="n">amps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">modes</span>
+            <span class="n">freqs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">freqs</span> <span class="o">*</span> <span class="n">scale</span>
+            <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="p">(</span><span class="n">wn</span><span class="p">,</span> <span class="n">ampn</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">zeros</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">amps</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">zeros</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))):</span> <span class="c1">#self.zeros contain the indices of the zero frequencies</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">charges</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">intensity</span> <span class="o">=</span> <span class="mf">0.0</span>
+                    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+                        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">qi</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">charges</span><span class="p">):</span>
+                            <span class="n">idx</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="n">k</span>
+                            <span class="n">intensity</span> <span class="o">+=</span> <span class="p">(</span><span class="n">qi</span><span class="o">*</span><span class="n">ampn</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">intensity</span> <span class="o">=</span> <span class="n">intensities</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+                <span class="n">alphas</span> <span class="o">+=</span> <span class="n">intensity</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_lorentz</span><span class="p">(</span><span class="n">xr</span><span class="p">,</span><span class="n">wn</span><span class="p">,</span><span class="n">width</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mode </span><span class="si">%i</span><span class="s1">:    freq = </span><span class="si">%.3f</span><span class="s1"> 1/cm    IR ampl. = </span><span class="si">%.3e</span><span class="s1"> a.u.&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">wn</span><span class="o">/</span><span class="p">(</span><span class="n">lightspeed</span><span class="o">/</span><span class="n">centimeter</span><span class="p">),</span> <span class="n">intensity</span><span class="p">))</span>
+
+
+            <span class="n">pt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+            <span class="n">pt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xr</span><span class="o">/</span><span class="p">(</span><span class="n">lightspeed</span><span class="o">/</span><span class="n">centimeter</span><span class="p">),</span><span class="n">alphas</span><span class="p">)</span>
+            <span class="n">pt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency [1/cm]&#39;</span><span class="p">)</span>
+            <span class="n">pt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Absorption [a.u.]&#39;</span><span class="p">)</span>
+            <span class="n">pt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_lorentz</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">w</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Lorentzian line shape function, p is position of max, w is FWHM and x is current frequency</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mf">1.</span><span class="o">/</span><span class="p">(</span><span class="mf">1.</span><span class="o">+</span><span class="p">((</span><span class="n">p</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">w</span><span class="o">/</span><span class="mf">2.</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

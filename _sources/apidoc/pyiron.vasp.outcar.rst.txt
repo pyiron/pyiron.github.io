@@ -1,0 +1,7 @@
+pyiron.vasp.outcar module
+=========================
+
+.. automodule:: pyiron.vasp.outcar
+   :members:
+   :undoc-members:
+   :show-inheritance:

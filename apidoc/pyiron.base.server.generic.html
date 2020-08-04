@@ -1,0 +1,528 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.base.server.generic module &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>pyiron.base.server.generic module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/pyiron.base.server.generic.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-pyiron.base.server.generic">
+<span id="pyiron-base-server-generic-module"></span><h1>pyiron.base.server.generic module<a class="headerlink" href="#module-pyiron.base.server.generic" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pyiron.base.server.generic.Server">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.base.server.generic.</code><code class="sig-name descname">Server</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">queue</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cores</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">threads</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">run_mode</span><span class="o">=</span><span class="default_value">'modal'</span></em>, <em class="sig-param"><span class="n">new_hdf</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/server/generic.html#Server"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.server.generic.Server" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pyiron.base.generic.template.html#pyiron.base.generic.template.PyironObject" title="pyiron.base.generic.template.PyironObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyiron.base.generic.template.PyironObject</span></code></a></p>
+<p>Generic Server object to handle the execution environment for the job</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<em>str</em>) – hostname of the local machine</p></li>
+<li><p><strong>queue</strong> (<em>str</em>) – queue name of the currently selected queue</p></li>
+<li><p><strong>cores</strong> (<em>int</em>) – number of cores</p></li>
+<li><p><strong>run_mode</strong> (<a class="reference internal" href="pyiron.base.server.runmode.html#pyiron.base.server.runmode.Runmode" title="pyiron.base.server.runmode.Runmode"><em>pyiron.base.server.runmode.Runmode</em></a>) – mode of the job [‘modal’, ‘non_modal’, ‘queue’, ‘manual’]</p></li>
+<li><p><strong>new_hdf</strong> (<em>bool</em>) – create a new HDF5 file [True/False] - default=True</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: send_to_db</code></dt>
+<dd><p>boolean option to decide which jobs should be store in the external/public database.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: structure_id</code></dt>
+<dd><p>the structure ID to be linked to an external/public database.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: host</code></dt>
+<dd><p>the hostname of the current system.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: queue</code></dt>
+<dd><p>the que selected for a current simulation.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: cores</code></dt>
+<dd><p>the number of cores selected for the current simulation.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: run_time</code></dt>
+<dd><p>the run time in seconds selected for the current simulation.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: run_mode</code></dt>
+<dd><p>the run mode of the job [‘modal’, ‘non_modal’, ‘queue’, ‘manual’]</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: new_hdf</code></dt>
+<dd><p>defines whether a subjob should be stored in the same HDF5 file or in a new one.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.server.generic.Server.accept_crash">
+<em class="property">property </em><code class="sig-name descname">accept_crash</code><a class="headerlink" href="#pyiron.base.server.generic.Server.accept_crash" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.server.generic.Server.cores">
+<em class="property">property </em><code class="sig-name descname">cores</code><a class="headerlink" href="#pyiron.base.server.generic.Server.cores" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of cores selected for the current simulation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>number of cores</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.server.generic.Server.db_entry">
+<code class="sig-name descname">db_entry</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/server/generic.html#Server.db_entry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.server.generic.Server.db_entry" title="Permalink to this definition">¶</a></dt>
+<dd><p>connect all the info regarding the server into a single word that can be used e.g. as entry in a database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>server info as single word</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.server.generic.Server.from_hdf">
+<code class="sig-name descname">from_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span></em>, <em class="sig-param"><span class="n">group_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/server/generic.html#Server.from_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.server.generic.Server.from_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recover Server object in HDF5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdf</strong> – HDF5 object</p></li>
+<li><p><strong>group_name</strong> – node name in the HDF5 file</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.server.generic.Server.list_queues">
+<em class="property">static </em><code class="sig-name descname">list_queues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/server/generic.html#Server.list_queues"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.server.generic.Server.list_queues" title="Permalink to this definition">¶</a></dt>
+<dd><p>List the available Job scheduler provided by the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.server.generic.Server.memory_limit">
+<em class="property">property </em><code class="sig-name descname">memory_limit</code><a class="headerlink" href="#pyiron.base.server.generic.Server.memory_limit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.server.generic.Server.new_hdf">
+<em class="property">property </em><code class="sig-name descname">new_hdf</code><a class="headerlink" href="#pyiron.base.server.generic.Server.new_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>New_hdf5 defines whether a subjob should be stored in the same HDF5 file or in a new one.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>[True / False]</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.server.generic.Server.queue">
+<em class="property">property </em><code class="sig-name descname">queue</code><a class="headerlink" href="#pyiron.base.server.generic.Server.queue" title="Permalink to this definition">¶</a></dt>
+<dd><p>The que selected for a current simulation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>schedulers_name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.server.generic.Server.queue_id">
+<em class="property">property </em><code class="sig-name descname">queue_id</code><a class="headerlink" href="#pyiron.base.server.generic.Server.queue_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the queue ID - the ID in the queuing system is most likely not the same as the job ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>queue ID</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.server.generic.Server.queue_list">
+<em class="property">property </em><code class="sig-name descname">queue_list</code><a class="headerlink" href="#pyiron.base.server.generic.Server.queue_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List the available Job scheduler provided by the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.server.generic.Server.queue_view">
+<em class="property">property </em><code class="sig-name descname">queue_view</code><a class="headerlink" href="#pyiron.base.server.generic.Server.queue_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>List the available Job scheduler provided by the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(pandas.DataFrame)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.server.generic.Server.run_mode">
+<em class="property">property </em><code class="sig-name descname">run_mode</code><a class="headerlink" href="#pyiron.base.server.generic.Server.run_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the run mode of the job</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>[‘modal’, ‘non_modal’, ‘queue’, ‘manual’]</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(str/pyiron.base.server.runmode.Runmode)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.server.generic.Server.run_time">
+<em class="property">property </em><code class="sig-name descname">run_time</code><a class="headerlink" href="#pyiron.base.server.generic.Server.run_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>The run time in seconds selected for the current simulation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>run time in seconds</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.server.generic.Server.send_to_db">
+<em class="property">property </em><code class="sig-name descname">send_to_db</code><a class="headerlink" href="#pyiron.base.server.generic.Server.send_to_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the boolean option to decide which jobs should be store in the external/public database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>[True/False]</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.server.generic.Server.structure_id">
+<em class="property">property </em><code class="sig-name descname">structure_id</code><a class="headerlink" href="#pyiron.base.server.generic.Server.structure_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the structure ID to be linked to an external/public database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>structure ID</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.server.generic.Server.threads">
+<em class="property">property </em><code class="sig-name descname">threads</code><a class="headerlink" href="#pyiron.base.server.generic.Server.threads" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.server.generic.Server.to_hdf">
+<code class="sig-name descname">to_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span></em>, <em class="sig-param"><span class="n">group_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/server/generic.html#Server.to_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.server.generic.Server.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store Server object in HDF5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdf</strong> – HDF5 object</p></li>
+<li><p><strong>group_name</strong> (<em>str</em>) – node name in the HDF5 file</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.server.generic.Server.view_queues">
+<em class="property">static </em><code class="sig-name descname">view_queues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/server/generic.html#Server.view_queues"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.server.generic.Server.view_queues" title="Permalink to this definition">¶</a></dt>
+<dd><p>List the available Job scheduler provided by the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(pandas.DataFrame)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

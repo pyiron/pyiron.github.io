@@ -1,0 +1,20 @@
+pyiron.thermodynamics package
+=============================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pyiron.thermodynamics.hessian
+   pyiron.thermodynamics.interfacemethod
+   pyiron.thermodynamics.sxphonons
+
+Module contents
+---------------
+
+.. automodule:: pyiron.thermodynamics
+   :members:
+   :undoc-members:
+   :show-inheritance:

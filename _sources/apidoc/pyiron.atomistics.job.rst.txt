@@ -1,0 +1,22 @@
+pyiron.atomistics.job package
+=============================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pyiron.atomistics.job.atomistic
+   pyiron.atomistics.job.interactive
+   pyiron.atomistics.job.interactivewrapper
+   pyiron.atomistics.job.potentials
+   pyiron.atomistics.job.structurecontainer
+
+Module contents
+---------------
+
+.. automodule:: pyiron.atomistics.job
+   :members:
+   :undoc-members:
+   :show-inheritance:

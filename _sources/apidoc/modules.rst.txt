@@ -1,0 +1,7 @@
+pyiron
+======
+
+.. toctree::
+   :maxdepth: 4
+
+   pyiron

@@ -1,0 +1,1054 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.atomistics.master.murnaghan &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.atomistics.master.murnaghan</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.atomistics.master.murnaghan</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.integrate</span>
+<span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="k">as</span> <span class="nn">spy</span>
+<span class="kn">import</span> <span class="nn">scipy.constants</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">pyiron.atomistics.structure.atoms</span> <span class="kn">import</span> <span class="n">Atoms</span><span class="p">,</span> <span class="n">ase_to_pyiron</span>
+<span class="kn">from</span> <span class="nn">pyiron.atomistics.master.parallel</span> <span class="kn">import</span> <span class="n">AtomisticParallelMaster</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.master.parallel</span> <span class="kn">import</span> <span class="n">JobGenerator</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Joerg Neugebauer, Jan Janssen&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2020, Max-Planck-Institut für Eisenforschung GmbH - &quot;</span>
+    <span class="s2">&quot;Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;janssen@mpie.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;production&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;Sep 1, 2017&quot;</span>
+
+
+<span class="n">eV_div_A3_to_GPa</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="mf">1e21</span> <span class="o">/</span> <span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">physical_constants</span><span class="p">[</span><span class="s2">&quot;joule-electron volt relationship&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_debye_kernel</span><span class="p">(</span><span class="n">xi</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">xi</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="debye_integral"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.debye_integral">[docs]</a><span class="k">def</span> <span class="nf">debye_integral</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">scipy</span><span class="o">.</span><span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="n">_debye_kernel</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="debye_function"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.debye_function">[docs]</a><span class="k">def</span> <span class="nf">debye_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;__len__&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span> <span class="o">/</span> <span class="n">xx</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">debye_integral</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span> <span class="k">for</span> <span class="n">xx</span> <span class="ow">in</span> <span class="n">x</span><span class="p">])</span>
+    <span class="k">return</span> <span class="mi">3</span> <span class="o">/</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">debye_integral</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></div>
+
+
+<span class="c1"># https://gitlab.com/ase/ase/blob/master/ase/eos.py</span>
+<div class="viewcode-block" id="birchmurnaghan_energy"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.birchmurnaghan_energy">[docs]</a><span class="k">def</span> <span class="nf">birchmurnaghan_energy</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">BP</span><span class="p">,</span> <span class="n">V0</span><span class="p">):</span>
+    <span class="s2">&quot;BirchMurnaghan equation from PRB 70, 224107&quot;</span>
+    <span class="n">eta</span> <span class="o">=</span> <span class="p">(</span><span class="n">V0</span> <span class="o">/</span> <span class="n">V</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">E0</span> <span class="o">+</span> <span class="mi">9</span> <span class="o">*</span> <span class="n">B0</span> <span class="o">*</span> <span class="n">V0</span> <span class="o">/</span> <span class="mi">16</span> <span class="o">*</span> <span class="p">(</span><span class="n">eta</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span>
+        <span class="mi">6</span> <span class="o">+</span> <span class="n">BP</span> <span class="o">*</span> <span class="p">(</span><span class="n">eta</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">eta</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="vinet_energy"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.vinet_energy">[docs]</a><span class="k">def</span> <span class="nf">vinet_energy</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">BP</span><span class="p">,</span> <span class="n">V0</span><span class="p">):</span>
+    <span class="s2">&quot;Vinet equation from PRB 70, 224107&quot;</span>
+    <span class="n">eta</span> <span class="o">=</span> <span class="p">(</span><span class="n">V</span> <span class="o">/</span> <span class="n">V0</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">E0</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">B0</span> <span class="o">*</span> <span class="n">V0</span> <span class="o">/</span> <span class="p">(</span><span class="n">BP</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span>
+        <span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">BP</span> <span class="o">*</span> <span class="p">(</span><span class="n">eta</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">eta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">BP</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">eta</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="murnaghan"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.murnaghan">[docs]</a><span class="k">def</span> <span class="nf">murnaghan</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">BP</span><span class="p">,</span> <span class="n">V0</span><span class="p">):</span>
+    <span class="s2">&quot;From PRB 28,5480 (1983&quot;</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="n">E0</span> <span class="o">+</span> <span class="n">B0</span> <span class="o">*</span> <span class="n">V</span> <span class="o">/</span> <span class="n">BP</span> <span class="o">*</span> <span class="p">(((</span><span class="n">V0</span> <span class="o">/</span> <span class="n">V</span><span class="p">)</span> <span class="o">**</span> <span class="n">BP</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">BP</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">V0</span> <span class="o">*</span> <span class="n">B0</span> <span class="o">/</span> <span class="p">(</span><span class="n">BP</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">E</span></div>
+
+
+<div class="viewcode-block" id="birch"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.birch">[docs]</a><span class="k">def</span> <span class="nf">birch</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">BP</span><span class="p">,</span> <span class="n">V0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    From Intermetallic compounds: Principles and Practice, Vol. I: Principles</span>
+<span class="sd">    Chapter 9 pages 195-210 by M. Mehl. B. Klein, D. Papaconstantopoulos</span>
+<span class="sd">    paper downloaded from Web</span>
+
+<span class="sd">    case where n=0</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">E0</span>
+        <span class="o">+</span> <span class="mi">9</span> <span class="o">/</span> <span class="mi">8</span> <span class="o">*</span> <span class="n">B0</span> <span class="o">*</span> <span class="n">V0</span> <span class="o">*</span> <span class="p">((</span><span class="n">V0</span> <span class="o">/</span> <span class="n">V</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="o">+</span> <span class="mi">9</span> <span class="o">/</span> <span class="mi">16</span> <span class="o">*</span> <span class="n">B0</span> <span class="o">*</span> <span class="n">V0</span> <span class="o">*</span> <span class="p">(</span><span class="n">BP</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">V0</span> <span class="o">/</span> <span class="n">V</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">3</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">E</span></div>
+
+
+<div class="viewcode-block" id="pouriertarantola"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.pouriertarantola">[docs]</a><span class="k">def</span> <span class="nf">pouriertarantola</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">BP</span><span class="p">,</span> <span class="n">V0</span><span class="p">):</span>
+    <span class="s2">&quot;Pourier-Tarantola equation from PRB 70, 224107&quot;</span>
+    <span class="n">eta</span> <span class="o">=</span> <span class="p">(</span><span class="n">V</span> <span class="o">/</span> <span class="n">V0</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">squiggle</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">eta</span><span class="p">)</span>
+
+    <span class="n">E</span> <span class="o">=</span> <span class="n">E0</span> <span class="o">+</span> <span class="n">B0</span> <span class="o">*</span> <span class="n">V0</span> <span class="o">*</span> <span class="n">squiggle</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">6</span> <span class="o">*</span> <span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="n">squiggle</span> <span class="o">*</span> <span class="p">(</span><span class="n">BP</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">E</span></div>
+
+
+<div class="viewcode-block" id="fitfunction"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.fitfunction">[docs]</a><span class="k">def</span> <span class="nf">fitfunction</span><span class="p">(</span><span class="n">parameters</span><span class="p">,</span> <span class="n">vol</span><span class="p">,</span> <span class="n">fittype</span><span class="o">=</span><span class="s2">&quot;vinet&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fit the energy volume curve</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        parameters (list): [E0, B0, BP, V0] list of fit parameters</span>
+<span class="sd">        vol (float/numpy.dnarray): single volume or a vector of volumes as numpy array</span>
+<span class="sd">        fittype (str): on of the following [&#39;birch&#39;, &#39;birchmurnaghan&#39;, &#39;murnaghan&#39;, &#39;pouriertarantola&#39;, &#39;vinet&#39;]</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        (float/numpy.dnarray): single energy as float or a vector of energies as numpy array</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="p">[</span><span class="n">E0</span><span class="p">,</span> <span class="n">b0</span><span class="p">,</span> <span class="n">bp</span><span class="p">,</span> <span class="n">V0</span><span class="p">]</span> <span class="o">=</span> <span class="n">parameters</span>
+    <span class="c1"># Unit correction</span>
+    <span class="n">B0</span> <span class="o">=</span> <span class="n">b0</span> <span class="o">/</span> <span class="n">eV_div_A3_to_GPa</span>
+    <span class="n">BP</span> <span class="o">=</span> <span class="n">bp</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">vol</span>
+    <span class="k">if</span> <span class="n">fittype</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;birchmurnaghan&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">birchmurnaghan_energy</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">BP</span><span class="p">,</span> <span class="n">V0</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">fittype</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;vinet&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">vinet_energy</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">BP</span><span class="p">,</span> <span class="n">V0</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">fittype</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;murnaghan&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">murnaghan</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">BP</span><span class="p">,</span> <span class="n">V0</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">fittype</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;pouriertarantola&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">pouriertarantola</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">BP</span><span class="p">,</span> <span class="n">V0</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">fittype</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;birch&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">birch</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">BP</span><span class="p">,</span> <span class="n">V0</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span></div>
+
+
+<div class="viewcode-block" id="fit_leastsq"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.fit_leastsq">[docs]</a><span class="k">def</span> <span class="nf">fit_leastsq</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">datax</span><span class="p">,</span> <span class="n">datay</span><span class="p">,</span> <span class="n">fittype</span><span class="o">=</span><span class="s2">&quot;vinet&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Least square fit</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        p0 (list): [E0, B0, BP, V0] list of fit parameters</span>
+<span class="sd">        datax (float/numpy.dnarray): volumes to fit</span>
+<span class="sd">        datay (float/numpy.dnarray): energies corresponding to the volumes</span>
+<span class="sd">        fittype (str): on of the following [&#39;birch&#39;, &#39;birchmurnaghan&#39;, &#39;murnaghan&#39;, &#39;pouriertarantola&#39;, &#39;vinet&#39;]</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: [E0, B0, BP, V0], [E0_err, B0_err, BP_err, V0_err]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># http://stackoverflow.com/questions/14581358/getting-standard-errors-on-fitted-parameters-using-the-optimize-leastsq-method-i</span>
+
+    <span class="n">errfunc</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">p</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">fittype</span><span class="p">:</span> <span class="n">fitfunction</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">fittype</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span>
+
+    <span class="n">pfit</span><span class="p">,</span> <span class="n">pcov</span><span class="p">,</span> <span class="n">infodict</span><span class="p">,</span> <span class="n">errmsg</span><span class="p">,</span> <span class="n">success</span> <span class="o">=</span> <span class="n">spy</span><span class="o">.</span><span class="n">leastsq</span><span class="p">(</span>
+        <span class="n">errfunc</span><span class="p">,</span> <span class="n">p0</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">datax</span><span class="p">,</span> <span class="n">datay</span><span class="p">,</span> <span class="n">fittype</span><span class="p">),</span> <span class="n">full_output</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">epsfcn</span><span class="o">=</span><span class="mf">0.0001</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">datay</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">p0</span><span class="p">))</span> <span class="ow">and</span> <span class="n">pcov</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">s_sq</span> <span class="o">=</span> <span class="p">(</span><span class="n">errfunc</span><span class="p">(</span><span class="n">pfit</span><span class="p">,</span> <span class="n">datax</span><span class="p">,</span> <span class="n">datay</span><span class="p">,</span> <span class="n">fittype</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span>
+            <span class="nb">len</span><span class="p">(</span><span class="n">datay</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">p0</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">pcov</span> <span class="o">=</span> <span class="n">pcov</span> <span class="o">*</span> <span class="n">s_sq</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">pcov</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+
+    <span class="n">error</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pfit</span><span class="p">)):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">error</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">pcov</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">])</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">error</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mf">0.00</span><span class="p">)</span>
+    <span class="n">pfit_leastsq</span> <span class="o">=</span> <span class="n">pfit</span>
+    <span class="n">perr_leastsq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pfit_leastsq</span><span class="p">,</span> <span class="n">perr_leastsq</span></div>
+
+
+<div class="viewcode-block" id="DebyeModel"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.DebyeModel">[docs]</a><span class="k">class</span> <span class="nc">DebyeModel</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate Thermodynamic Properties based on the Murnaghan output</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">murnaghan</span><span class="p">,</span> <span class="n">num_steps</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_murnaghan</span> <span class="o">=</span> <span class="n">murnaghan</span>
+
+        <span class="c1"># self._atoms_per_cell = len(murnaghan.structure)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_v_min</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_v_max</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_num_steps</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_volume</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_init_volume</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_steps</span> <span class="o">=</span> <span class="n">num_steps</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fit_volume</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_debye_T</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_init_volume</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">vol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_murnaghan</span><span class="p">[</span><span class="s2">&quot;output/volume&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_v_min</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_v_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">vol</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">vol</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_set_volume</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_v_min</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_v_max</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_steps</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_volume</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_v_min</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_v_max</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_steps</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_reset</span><span class="p">()</span>
+            <span class="c1"># print (&#39;set_volume: &#39;, self._num_steps)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">num_steps</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_steps</span>
+
+    <span class="nd">@num_steps</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">num_steps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_num_steps</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_volume</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">volume</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_volume</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_init_volume</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_set_volume</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_volume</span>
+
+    <span class="nd">@volume</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">volume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">volume_lst</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_volume</span> <span class="o">=</span> <span class="n">volume_lst</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_v_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">volume_lst</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_v_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">volume_lst</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_reset</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_debye_T</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="DebyeModel.polynomial"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.DebyeModel.polynomial">[docs]</a>    <span class="k">def</span> <span class="nf">polynomial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">poly_fit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">volumes</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">poly_fit</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_murnaghan</span><span class="o">.</span><span class="n">fit_polynomial</span><span class="p">()</span>  <span class="c1"># TODO: include polyfit in output</span>
+            <span class="n">poly_fit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_murnaghan</span><span class="o">.</span><span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;poly_fit&quot;</span><span class="p">]</span>
+        <span class="n">p_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">poly_fit</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">volumes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">p_fit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">volume</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">p_fit</span><span class="p">(</span><span class="n">volumes</span><span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">debye_temperature</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_debye_T</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_debye_T</span>
+
+        <span class="n">GPaTokBar</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="n">Ang3_to_Bohr3</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">angstrom</span> <span class="o">**</span> <span class="mi">3</span>
+            <span class="o">/</span> <span class="n">scipy</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">physical_constants</span><span class="p">[</span><span class="s2">&quot;Bohr radius&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">3</span>
+        <span class="p">)</span>
+        <span class="n">convert</span> <span class="o">=</span> <span class="mf">67.48</span>  <span class="c1"># conversion factor, Moruzzi Eq. (4)</span>
+        <span class="n">empirical</span> <span class="o">=</span> <span class="mf">0.617</span>  <span class="c1"># empirical factor, Moruzzi Eq. (6)</span>
+        <span class="n">gamma_low</span><span class="p">,</span> <span class="n">gamma_high</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span>  <span class="c1"># low/high T gamma</span>
+
+        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_murnaghan</span><span class="p">[</span><span class="s2">&quot;output&quot;</span><span class="p">]</span>
+        <span class="n">V0</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="s2">&quot;equilibrium_volume&quot;</span><span class="p">]</span>
+        <span class="n">B0</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="s2">&quot;equilibrium_bulk_modulus&quot;</span><span class="p">]</span>
+        <span class="n">Bp</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="s2">&quot;equilibrium_b_prime&quot;</span><span class="p">]</span>
+
+        <span class="n">vol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">volume</span>
+
+        <span class="n">mass</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_murnaghan</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">get_masses</span><span class="p">())</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">mass</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+                <span class="s2">&quot;Debye temperature only for single species systems!&quot;</span>
+            <span class="p">)</span>
+        <span class="n">mass</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">mass</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">r0</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">V0</span> <span class="o">*</span> <span class="n">Ang3_to_Bohr3</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span> <span class="o">**</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="mf">3.0</span><span class="p">)</span>
+        <span class="n">debye_zero</span> <span class="o">=</span> <span class="n">empirical</span> <span class="o">*</span> <span class="n">convert</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">r0</span> <span class="o">*</span> <span class="n">B0</span> <span class="o">*</span> <span class="n">GPaTokBar</span> <span class="o">/</span> <span class="n">mass</span><span class="p">)</span>
+        <span class="c1"># print(&#39;r0, B0, Bp, mass, V0&#39;, r0, B0, Bp, mass, V0)</span>
+        <span class="c1"># print(&#39;gamma_low, gamma_high: &#39;, gamma_low, gamma_high)</span>
+        <span class="c1"># print(&#39;debye_zero, V0: &#39;, debye_zero, V0)</span>
+        <span class="k">if</span> <span class="n">vol</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WARNING: vol: &quot;</span><span class="p">,</span> <span class="n">vol</span><span class="p">)</span>
+
+        <span class="n">debye_low</span> <span class="o">=</span> <span class="n">debye_zero</span> <span class="o">*</span> <span class="p">(</span><span class="n">V0</span> <span class="o">/</span> <span class="n">vol</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="n">gamma_low</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">Bp</span><span class="p">))</span>
+        <span class="n">debye_high</span> <span class="o">=</span> <span class="n">debye_zero</span> <span class="o">*</span> <span class="p">(</span><span class="n">V0</span> <span class="o">/</span> <span class="n">vol</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="n">gamma_high</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">Bp</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_debye_T</span> <span class="o">=</span> <span class="p">(</span><span class="n">debye_low</span><span class="p">,</span> <span class="n">debye_high</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_debye_T</span>
+
+<div class="viewcode-block" id="DebyeModel.energy_vib"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.DebyeModel.energy_vib">[docs]</a>    <span class="k">def</span> <span class="nf">energy_vib</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">debye_T</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">low_T_limit</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="n">kB</span> <span class="o">=</span> <span class="mf">0.086173422</span> <span class="o">/</span> <span class="mi">1000</span>  <span class="c1"># eV/K</span>
+        <span class="k">if</span> <span class="n">debye_T</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">low_T_limit</span><span class="p">:</span>
+                <span class="n">debye_T</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">debye_temperature</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># low</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">debye_T</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">debye_temperature</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># high</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">debye_T</span><span class="p">,</span> <span class="s2">&quot;__len__&quot;</span><span class="p">):</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="mf">9.0</span> <span class="o">/</span> <span class="mf">8.0</span> <span class="o">*</span> <span class="n">kB</span> <span class="o">*</span> <span class="n">d_T</span>
+                <span class="o">+</span> <span class="n">T</span> <span class="o">*</span> <span class="n">kB</span> <span class="o">*</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">d_T</span> <span class="o">/</span> <span class="n">T</span><span class="p">))</span> <span class="o">-</span> <span class="n">debye_function</span><span class="p">(</span><span class="n">d_T</span> <span class="o">/</span> <span class="n">T</span><span class="p">))</span>
+                <span class="k">for</span> <span class="n">d_T</span> <span class="ow">in</span> <span class="n">debye_T</span>
+            <span class="p">]</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="mf">9.0</span> <span class="o">/</span> <span class="mf">8.0</span> <span class="o">*</span> <span class="n">kB</span> <span class="o">*</span> <span class="n">debye_T</span> <span class="o">+</span> <span class="n">T</span> <span class="o">*</span> <span class="n">kB</span> <span class="o">*</span> <span class="p">(</span>
+                <span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">debye_T</span> <span class="o">/</span> <span class="n">T</span><span class="p">))</span> <span class="o">-</span> <span class="n">debye_function</span><span class="p">(</span><span class="n">debye_T</span> <span class="o">/</span> <span class="n">T</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="n">atoms_per_cell</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_murnaghan</span><span class="o">.</span><span class="n">structure</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">atoms_per_cell</span> <span class="o">*</span> <span class="n">val</span></div></div>
+
+
+<div class="viewcode-block" id="MurnaghanJobGenerator"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.MurnaghanJobGenerator">[docs]</a><span class="k">class</span> <span class="nc">MurnaghanJobGenerator</span><span class="p">(</span><span class="n">JobGenerator</span><span class="p">):</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">parameter_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            (list)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">parameter_lst</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">strain</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span>
+            <span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;vol_range&quot;</span><span class="p">],</span>
+            <span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;vol_range&quot;</span><span class="p">],</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;num_points&quot;</span><span class="p">],</span>
+        <span class="p">):</span>
+            <span class="n">basis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="n">basis</span><span class="o">.</span><span class="n">set_cell</span><span class="p">(</span><span class="n">basis</span><span class="o">.</span><span class="n">cell</span> <span class="o">*</span> <span class="n">strain</span> <span class="o">**</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="mf">3.0</span><span class="p">),</span> <span class="n">scale_atoms</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">parameter_lst</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">strain</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="n">basis</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">parameter_lst</span>
+
+<div class="viewcode-block" id="MurnaghanJobGenerator.job_name"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.MurnaghanJobGenerator.job_name">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">job_name</span><span class="p">(</span><span class="n">parameter</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;strain_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">parameter</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MurnaghanJobGenerator.modify_job"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.MurnaghanJobGenerator.modify_job">[docs]</a>    <span class="k">def</span> <span class="nf">modify_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job</span><span class="p">,</span> <span class="n">parameter</span><span class="p">):</span>
+        <span class="n">job</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">parameter</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">job</span></div></div>
+
+
+<div class="viewcode-block" id="EnergyVolumeFit"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.EnergyVolumeFit">[docs]</a><span class="k">class</span> <span class="nc">EnergyVolumeFit</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fit energy volume curves</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        volume_lst (list/numpy.dnarray): vector of volumes</span>
+<span class="sd">        energy_lst (list/numpy.dnarray): vector of energies</span>
+
+<span class="sd">    Attributes:</span>
+
+<span class="sd">        .. attribute:: volume_lst</span>
+
+<span class="sd">            vector of volumes</span>
+
+<span class="sd">        .. attribute:: energy_lst</span>
+
+<span class="sd">            vector of energies</span>
+
+<span class="sd">        .. attribute:: fit_dict</span>
+
+<span class="sd">            dictionary of fit parameters</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">volume_lst</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">energy_lst</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_volume_lst</span> <span class="o">=</span> <span class="n">volume_lst</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_energy_lst</span> <span class="o">=</span> <span class="n">energy_lst</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fit_dict</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">volume_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_volume_lst</span>
+
+    <span class="nd">@volume_lst</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">volume_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vol_lst</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_volume_lst</span> <span class="o">=</span> <span class="n">vol_lst</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">energy_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_energy_lst</span>
+
+    <span class="nd">@energy_lst</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">energy_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">eng_lst</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_energy_lst</span> <span class="o">=</span> <span class="n">eng_lst</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">fit_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit_dict</span>
+
+    <span class="k">def</span> <span class="nf">_get_volume_and_energy_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">volume_lst</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">energy_lst</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Internal function to get the vector of volumes and the vector of energies</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            volume_lst (list/numpy.dnarray/None): vector of volumes</span>
+<span class="sd">            energy_lst (list/numpy.dnarray/None): vector of energies</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list: vector of volumes and vector of energies</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">volume_lst</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_volume_lst</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Volume list not set.&quot;</span><span class="p">)</span>
+            <span class="n">volume_lst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_volume_lst</span>
+        <span class="k">if</span> <span class="n">energy_lst</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_energy_lst</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Volume list not set.&quot;</span><span class="p">)</span>
+            <span class="n">energy_lst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_energy_lst</span>
+        <span class="k">return</span> <span class="n">volume_lst</span><span class="p">,</span> <span class="n">energy_lst</span>
+
+<div class="viewcode-block" id="EnergyVolumeFit.fit_eos_general_intern"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.EnergyVolumeFit.fit_eos_general_intern">[docs]</a>    <span class="k">def</span> <span class="nf">fit_eos_general_intern</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fittype</span><span class="o">=</span><span class="s2">&quot;birchmurnaghan&quot;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fit_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_eos_general</span><span class="p">(</span>
+            <span class="n">volume_lst</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_volume_lst</span><span class="p">,</span> <span class="n">energy_lst</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_energy_lst</span><span class="p">,</span> <span class="n">fittype</span><span class="o">=</span><span class="n">fittype</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="EnergyVolumeFit.fit_eos_general"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.EnergyVolumeFit.fit_eos_general">[docs]</a>    <span class="k">def</span> <span class="nf">fit_eos_general</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">volume_lst</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">energy_lst</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fittype</span><span class="o">=</span><span class="s2">&quot;birchmurnaghan&quot;</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fit on of the equations of state</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            volume_lst (list/numpy.dnarray/None): vector of volumes</span>
+<span class="sd">            energy_lst (list/numpy.dnarray/None): vector of energies</span>
+<span class="sd">            fittype (str): on of the following [&#39;birch&#39;, &#39;birchmurnaghan&#39;, &#39;murnaghan&#39;, &#39;pouriertarantola&#39;, &#39;vinet&#39;]</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: dictionary with fit results</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">volume_lst</span><span class="p">,</span> <span class="n">energy_lst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_volume_and_energy_lst</span><span class="p">(</span>
+            <span class="n">volume_lst</span><span class="o">=</span><span class="n">volume_lst</span><span class="p">,</span> <span class="n">energy_lst</span><span class="o">=</span><span class="n">energy_lst</span>
+        <span class="p">)</span>
+        <span class="n">fit_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">pfit_leastsq</span><span class="p">,</span> <span class="n">perr_leastsq</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit_leastsq</span><span class="p">(</span>
+            <span class="n">volume_lst</span><span class="o">=</span><span class="n">volume_lst</span><span class="p">,</span> <span class="n">energy_lst</span><span class="o">=</span><span class="n">energy_lst</span><span class="p">,</span> <span class="n">fittype</span><span class="o">=</span><span class="n">fittype</span>
+        <span class="p">)</span>
+        <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;fit_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fittype</span>
+        <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;volume_eq&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pfit_leastsq</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;energy_eq&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pfit_leastsq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;bulkmodul_eq&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pfit_leastsq</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;b_prime_eq&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pfit_leastsq</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;least_square_error&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">perr_leastsq</span>  <span class="c1"># [e0, b0, bP, v0]</span>
+
+        <span class="k">return</span> <span class="n">fit_dict</span></div>
+
+<div class="viewcode-block" id="EnergyVolumeFit.fit_polynomial"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.EnergyVolumeFit.fit_polynomial">[docs]</a>    <span class="k">def</span> <span class="nf">fit_polynomial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">volume_lst</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">energy_lst</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fit_order</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fit a polynomial</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            volume_lst (list/numpy.dnarray/None): vector of volumes</span>
+<span class="sd">            energy_lst (list/numpy.dnarray/None): vector of energies</span>
+<span class="sd">            fit_order (int): Degree of the polynomial</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: dictionary with fit results</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">volume_lst</span><span class="p">,</span> <span class="n">energy_lst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_volume_and_energy_lst</span><span class="p">(</span>
+            <span class="n">volume_lst</span><span class="o">=</span><span class="n">volume_lst</span><span class="p">,</span> <span class="n">energy_lst</span><span class="o">=</span><span class="n">energy_lst</span>
+        <span class="p">)</span>
+        <span class="n">fit_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># compute a polynomial fit</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">volume_lst</span><span class="p">,</span> <span class="n">energy_lst</span><span class="p">,</span> <span class="n">fit_order</span><span class="p">)</span>
+        <span class="n">p_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+        <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;poly_fit&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">z</span>
+
+        <span class="c1"># get equilibrium lattice constant</span>
+        <span class="c1"># search for the local minimum with the lowest energy</span>
+        <span class="n">p_deriv_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyder</span><span class="p">(</span><span class="n">p_fit</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">roots</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roots</span><span class="p">(</span><span class="n">p_deriv_1</span><span class="p">)</span>
+
+        <span class="c1"># volume_eq_lst = np.array([np.real(r) for r in roots if np.abs(np.imag(r)) &lt; 1e-10])</span>
+        <span class="n">volume_eq_lst</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">roots</span>
+                <span class="k">if</span> <span class="p">(</span>
+                    <span class="nb">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">r</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mf">1e-10</span>
+                    <span class="ow">and</span> <span class="n">r</span> <span class="o">&gt;=</span> <span class="nb">min</span><span class="p">(</span><span class="n">volume_lst</span><span class="p">)</span>
+                    <span class="ow">and</span> <span class="n">r</span> <span class="o">&lt;=</span> <span class="nb">max</span><span class="p">(</span><span class="n">volume_lst</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="n">e_eq_lst</span> <span class="o">=</span> <span class="n">p_fit</span><span class="p">(</span><span class="n">volume_eq_lst</span><span class="p">)</span>
+        <span class="n">arg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">e_eq_lst</span><span class="p">)</span>
+        <span class="c1"># print (&quot;v_eq:&quot;, arg, e_eq_lst)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">e_eq_lst</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">e_eq</span> <span class="o">=</span> <span class="n">e_eq_lst</span><span class="p">[</span><span class="n">arg</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">volume_eq</span> <span class="o">=</span> <span class="n">volume_eq_lst</span><span class="p">[</span><span class="n">arg</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="c1"># get bulk modulus at equ. lattice const.</span>
+        <span class="n">p_2deriv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyder</span><span class="p">(</span><span class="n">p_fit</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">p_3deriv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyder</span><span class="p">(</span><span class="n">p_fit</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="n">a2</span> <span class="o">=</span> <span class="n">p_2deriv</span><span class="p">(</span><span class="n">volume_eq</span><span class="p">)</span>
+        <span class="n">a3</span> <span class="o">=</span> <span class="n">p_3deriv</span><span class="p">(</span><span class="n">volume_eq</span><span class="p">)</span>
+
+        <span class="n">b_prime</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">volume_eq</span> <span class="o">*</span> <span class="n">a3</span> <span class="o">/</span> <span class="n">a2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;fit_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;polynomial&quot;</span>
+        <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;fit_order&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fit_order</span>
+        <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;volume_eq&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">volume_eq</span>
+        <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;energy_eq&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">e_eq</span>
+        <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;bulkmodul_eq&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">eV_div_A3_to_GPa</span> <span class="o">*</span> <span class="n">volume_eq</span> <span class="o">*</span> <span class="n">a2</span>
+        <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;b_prime_eq&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">b_prime</span>
+        <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;least_square_error&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_error</span><span class="p">(</span><span class="n">volume_lst</span><span class="p">,</span> <span class="n">energy_lst</span><span class="p">,</span> <span class="n">p_fit</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">fit_dict</span></div>
+
+    <span class="k">def</span> <span class="nf">_fit_leastsq</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">volume_lst</span><span class="p">,</span> <span class="n">energy_lst</span><span class="p">,</span> <span class="n">fittype</span><span class="o">=</span><span class="s2">&quot;birchmurnaghan&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Internal helper function for the least square fit</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            volume_lst (list/numpy.dnarray/None): vector of volumes</span>
+<span class="sd">            energy_lst (list/numpy.dnarray/None): vector of energies</span>
+<span class="sd">            fittype (str): on of the following [&#39;birch&#39;, &#39;birchmurnaghan&#39;, &#39;murnaghan&#39;, &#39;pouriertarantola&#39;, &#39;vinet&#39;]</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list: [E0, B0, BP, V0], [E0_err, B0_err, BP_err, V0_err]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">vol_lst</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">volume_lst</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+        <span class="n">eng_lst</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">energy_lst</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">vol_lst</span><span class="p">,</span> <span class="n">eng_lst</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">v0</span> <span class="o">=</span> <span class="o">-</span><span class="n">b</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+        <span class="n">pfit_leastsq</span><span class="p">,</span> <span class="n">perr_leastsq</span> <span class="o">=</span> <span class="n">fit_leastsq</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">a</span> <span class="o">*</span> <span class="n">v0</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">v0</span> <span class="o">+</span> <span class="n">c</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">eV_div_A3_to_GPa</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">v0</span><span class="p">],</span>
+            <span class="n">vol_lst</span><span class="p">,</span>
+            <span class="n">eng_lst</span><span class="p">,</span>
+            <span class="n">fittype</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">pfit_leastsq</span><span class="p">,</span> <span class="n">perr_leastsq</span>  <span class="c1"># [e0, b0, bP, v0]</span>
+
+<div class="viewcode-block" id="EnergyVolumeFit.get_error"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.EnergyVolumeFit.get_error">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_error</span><span class="p">(</span><span class="n">x_lst</span><span class="p">,</span> <span class="n">y_lst</span><span class="p">,</span> <span class="n">p_fit</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            x_lst:</span>
+<span class="sd">            y_lst:</span>
+<span class="sd">            p_fit:</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            numpy.dnarray</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">y_fit_lst</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">p_fit</span><span class="p">(</span><span class="n">x_lst</span><span class="p">))</span>
+        <span class="n">error_lst</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_lst</span> <span class="o">-</span> <span class="n">y_fit_lst</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">error_lst</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EnergyVolumeFit.fit_energy"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.EnergyVolumeFit.fit_energy">[docs]</a>    <span class="k">def</span> <span class="nf">fit_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">volume_lst</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gives the energy value for the corresponding energy volume fit defined in the fit dictionary.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            volume_lst: list of volumes</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list of energies</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit_dict</span><span class="p">:</span>
+            <span class="k">return</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;parameter &#39;fit_dict&#39; has to be defined!&quot;</span><span class="p">)</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">volume_lst</span>
+        <span class="n">e0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit_dict</span><span class="p">[</span><span class="s2">&quot;energy_eq&quot;</span><span class="p">]</span>
+        <span class="n">b0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit_dict</span><span class="p">[</span><span class="s2">&quot;bulkmodul_eq&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">eV_div_A3_to_GPa</span>
+        <span class="n">b_p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit_dict</span><span class="p">[</span><span class="s2">&quot;b_prime_eq&quot;</span><span class="p">]</span>
+        <span class="n">v0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit_dict</span><span class="p">[</span><span class="s2">&quot;volume_eq&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit_dict</span><span class="p">[</span><span class="s2">&quot;fit_type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;birch&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">birch</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">e0</span><span class="p">,</span> <span class="n">b0</span><span class="p">,</span> <span class="n">b_p</span><span class="p">,</span> <span class="n">v0</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit_dict</span><span class="p">[</span><span class="s2">&quot;fit_type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;birchmurnaghan&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">birchmurnaghan_energy</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">e0</span><span class="p">,</span> <span class="n">b0</span><span class="p">,</span> <span class="n">b_p</span><span class="p">,</span> <span class="n">v0</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit_dict</span><span class="p">[</span><span class="s2">&quot;fit_type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;murnaghan&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">murnaghan</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">e0</span><span class="p">,</span> <span class="n">b0</span><span class="p">,</span> <span class="n">b_p</span><span class="p">,</span> <span class="n">v0</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit_dict</span><span class="p">[</span><span class="s2">&quot;fit_type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;pouriertarantola&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pouriertarantola</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">e0</span><span class="p">,</span> <span class="n">b0</span><span class="p">,</span> <span class="n">b_p</span><span class="p">,</span> <span class="n">v0</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vinet_energy</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">e0</span><span class="p">,</span> <span class="n">b0</span><span class="p">,</span> <span class="n">b_p</span><span class="p">,</span> <span class="n">v0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EnergyVolumeFit.birchmurnaghan_energy"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.EnergyVolumeFit.birchmurnaghan_energy">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">birchmurnaghan_energy</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">BP</span><span class="p">,</span> <span class="n">V0</span><span class="p">):</span>
+        <span class="s2">&quot;BirchMurnaghan equation from PRB 70, 224107&quot;</span>
+        <span class="k">return</span> <span class="n">birchmurnaghan_energy</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">BP</span><span class="p">,</span> <span class="n">V0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EnergyVolumeFit.vinet_energy"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.EnergyVolumeFit.vinet_energy">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">vinet_energy</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">BP</span><span class="p">,</span> <span class="n">V0</span><span class="p">):</span>
+        <span class="s2">&quot;Vinet equation from PRB 70, 224107&quot;</span>
+        <span class="k">return</span> <span class="n">vinet_energy</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">BP</span><span class="p">,</span> <span class="n">V0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EnergyVolumeFit.murnaghan"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.EnergyVolumeFit.murnaghan">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">murnaghan</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">BP</span><span class="p">,</span> <span class="n">V0</span><span class="p">):</span>
+        <span class="s2">&quot;From PRB 28,5480 (1983&quot;</span>
+        <span class="k">return</span> <span class="n">murnaghan</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">BP</span><span class="p">,</span> <span class="n">V0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EnergyVolumeFit.birch"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.EnergyVolumeFit.birch">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">birch</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">BP</span><span class="p">,</span> <span class="n">V0</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        From Intermetallic compounds: Principles and Practice, Vol. I: Principles</span>
+<span class="sd">        Chapter 9 pages 195-210 by M. Mehl. B. Klein, D. Papaconstantopoulos</span>
+<span class="sd">        paper downloaded from Web</span>
+
+<span class="sd">        case where n=0</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">birch</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">BP</span><span class="p">,</span> <span class="n">V0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EnergyVolumeFit.pouriertarantola"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.EnergyVolumeFit.pouriertarantola">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">pouriertarantola</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">BP</span><span class="p">,</span> <span class="n">V0</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">pouriertarantola</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">BP</span><span class="p">,</span> <span class="n">V0</span><span class="p">)</span></div></div>
+
+
+<span class="c1"># ToDo: not all abstract methods implemented</span>
+<div class="viewcode-block" id="Murnaghan"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.Murnaghan">[docs]</a><span class="k">class</span> <span class="nc">Murnaghan</span><span class="p">(</span><span class="n">AtomisticParallelMaster</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">job_name</span><span class="o">=</span><span class="s2">&quot;murnaghan&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            project:</span>
+<span class="sd">            job_name:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Murnaghan</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="n">job_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;Murnaghan&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.3.0&quot;</span>
+
+        <span class="c1"># print (&quot;h5_path: &quot;, self.project_hdf5._h5_path)</span>
+
+        <span class="c1"># define default input</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;num_points&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="s2">&quot;number of sample points&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;fit_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;polynomial&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;[&#39;polynomial&#39;, &#39;birch&#39;, &#39;birchmurnaghan&#39;, &#39;murnaghan&#39;, &#39;pouriertarantola&#39;, &#39;vinet&#39;]&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;fit_order&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;order of the fit polynom&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;vol_range&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="mf">0.1</span><span class="p">,</span>
+            <span class="s2">&quot;relative volume variation around volume defined by ref_ham&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">debye_model</span> <span class="o">=</span> <span class="n">DebyeModel</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fit_module</span> <span class="o">=</span> <span class="n">EnergyVolumeFit</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">fit_dict</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_debye_T</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_job_generator</span> <span class="o">=</span> <span class="n">MurnaghanJobGenerator</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">debye_model</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">equilibrium_volume</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;volume_eq&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">equilibrium_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;energy_eq&quot;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="Murnaghan.fit_polynomial"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.Murnaghan.fit_polynomial">[docs]</a>    <span class="k">def</span> <span class="nf">fit_polynomial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fit_order</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">vol_erg_dic</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">poly_fit</span><span class="p">(</span><span class="n">fit_order</span><span class="o">=</span><span class="n">fit_order</span><span class="p">,</span> <span class="n">vol_erg_dic</span><span class="o">=</span><span class="n">vol_erg_dic</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Murnaghan.fit_murnaghan"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.Murnaghan.fit_murnaghan">[docs]</a>    <span class="k">def</span> <span class="nf">fit_murnaghan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vol_erg_dic</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit_eos_general</span><span class="p">(</span><span class="n">vol_erg_dic</span><span class="o">=</span><span class="n">vol_erg_dic</span><span class="p">,</span> <span class="n">fittype</span><span class="o">=</span><span class="s2">&quot;murnaghan&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Murnaghan.fit_birch_murnaghan"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.Murnaghan.fit_birch_murnaghan">[docs]</a>    <span class="k">def</span> <span class="nf">fit_birch_murnaghan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vol_erg_dic</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit_eos_general</span><span class="p">(</span><span class="n">vol_erg_dic</span><span class="o">=</span><span class="n">vol_erg_dic</span><span class="p">,</span> <span class="n">fittype</span><span class="o">=</span><span class="s2">&quot;birchmurnaghan&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Murnaghan.fit_vinet"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.Murnaghan.fit_vinet">[docs]</a>    <span class="k">def</span> <span class="nf">fit_vinet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vol_erg_dic</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit_eos_general</span><span class="p">(</span><span class="n">vol_erg_dic</span><span class="o">=</span><span class="n">vol_erg_dic</span><span class="p">,</span> <span class="n">fittype</span><span class="o">=</span><span class="s2">&quot;vinet&quot;</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_fit_eos_general</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vol_erg_dic</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fittype</span><span class="o">=</span><span class="s2">&quot;birchmurnaghan&quot;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_fit_module</span><span class="p">(</span><span class="n">vol_erg_dic</span><span class="o">=</span><span class="n">vol_erg_dic</span><span class="p">)</span>
+        <span class="n">fit_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_module</span><span class="o">.</span><span class="n">fit_eos_general</span><span class="p">(</span><span class="n">fittype</span><span class="o">=</span><span class="n">fittype</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;fit_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;fit_type&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;fit_order&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf5_input</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="n">hdf5_input</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;output&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf5</span><span class="p">:</span>
+            <span class="n">hdf5</span><span class="p">[</span><span class="s2">&quot;equilibrium_energy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;energy_eq&quot;</span><span class="p">]</span>
+            <span class="n">hdf5</span><span class="p">[</span><span class="s2">&quot;equilibrium_volume&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;volume_eq&quot;</span><span class="p">]</span>
+            <span class="n">hdf5</span><span class="p">[</span><span class="s2">&quot;equilibrium_bulk_modulus&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;bulkmodul_eq&quot;</span><span class="p">]</span>
+            <span class="n">hdf5</span><span class="p">[</span><span class="s2">&quot;equilibrium_b_prime&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;b_prime_eq&quot;</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">fit_dict</span> <span class="o">=</span> <span class="n">fit_dict</span>
+        <span class="k">return</span> <span class="n">fit_dict</span>
+
+    <span class="k">def</span> <span class="nf">_fit_leastsq</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">volume_lst</span><span class="p">,</span> <span class="n">energy_lst</span><span class="p">,</span> <span class="n">fittype</span><span class="o">=</span><span class="s2">&quot;birchmurnaghan&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_module</span><span class="o">.</span><span class="n">_fit_leastsq</span><span class="p">(</span>
+            <span class="n">volume_lst</span><span class="o">=</span><span class="n">volume_lst</span><span class="p">,</span> <span class="n">energy_lst</span><span class="o">=</span><span class="n">energy_lst</span><span class="p">,</span> <span class="n">fittype</span><span class="o">=</span><span class="n">fittype</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_set_fit_module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vol_erg_dic</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">vol_erg_dic</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s2">&quot;volume&quot;</span> <span class="ow">in</span> <span class="n">vol_erg_dic</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="ow">and</span> <span class="s2">&quot;energy&quot;</span> <span class="ow">in</span> <span class="n">vol_erg_dic</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fit_module</span> <span class="o">=</span> <span class="n">EnergyVolumeFit</span><span class="p">(</span>
+                    <span class="n">volume_lst</span><span class="o">=</span><span class="n">vol_erg_dic</span><span class="p">[</span><span class="s2">&quot;volume&quot;</span><span class="p">],</span> <span class="n">energy_lst</span><span class="o">=</span><span class="n">vol_erg_dic</span><span class="p">[</span><span class="s2">&quot;energy&quot;</span><span class="p">]</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">KeyError</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_to_pandas</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fit_module</span> <span class="o">=</span> <span class="n">EnergyVolumeFit</span><span class="p">(</span>
+                <span class="n">volume_lst</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">energy_lst</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;energy&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+            <span class="p">)</span>
+
+<div class="viewcode-block" id="Murnaghan.poly_fit"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.Murnaghan.poly_fit">[docs]</a>    <span class="k">def</span> <span class="nf">poly_fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fit_order</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">vol_erg_dic</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_fit_module</span><span class="p">(</span><span class="n">vol_erg_dic</span><span class="o">=</span><span class="n">vol_erg_dic</span><span class="p">)</span>
+        <span class="n">fit_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_module</span><span class="o">.</span><span class="n">fit_polynomial</span><span class="p">(</span><span class="n">fit_order</span><span class="o">=</span><span class="n">fit_order</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">fit_dict</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Minimum could not be found!&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;fit_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;fit_type&quot;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;fit_order&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;fit_order&quot;</span><span class="p">]</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf5_input</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="n">hdf5_input</span><span class="p">)</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;output&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf5</span><span class="p">:</span>
+                <span class="n">hdf5</span><span class="p">[</span><span class="s2">&quot;equilibrium_energy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;energy_eq&quot;</span><span class="p">]</span>
+                <span class="n">hdf5</span><span class="p">[</span><span class="s2">&quot;equilibrium_volume&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;volume_eq&quot;</span><span class="p">]</span>
+                <span class="n">hdf5</span><span class="p">[</span><span class="s2">&quot;equilibrium_bulk_modulus&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;bulkmodul_eq&quot;</span><span class="p">]</span>
+                <span class="n">hdf5</span><span class="p">[</span><span class="s2">&quot;equilibrium_b_prime&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;b_prime_eq&quot;</span><span class="p">]</span>
+
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;output&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf5</span><span class="p">:</span>
+                <span class="n">structure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="n">iteration_step</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="n">Atoms</span><span class="p">):</span>
+                    <span class="n">structure</span> <span class="o">=</span> <span class="n">ase_to_pyiron</span><span class="p">(</span><span class="n">structure</span><span class="p">)</span>
+                <span class="n">structure</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="n">hdf5</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">fit_dict</span> <span class="o">=</span> <span class="n">fit_dict</span>
+        <span class="k">return</span> <span class="n">fit_dict</span></div>
+
+<div class="viewcode-block" id="Murnaghan.list_structures"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.Murnaghan.list_structures">[docs]</a>    <span class="k">def</span> <span class="nf">list_structures</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">structure</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">parameter</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">parameter</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job_generator</span><span class="o">.</span><span class="n">parameter_list</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span></div>
+
+<div class="viewcode-block" id="Murnaghan.collect_output"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.Murnaghan.collect_output">[docs]</a>    <span class="k">def</span> <span class="nf">collect_output</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive</span><span class="p">:</span>
+            <span class="n">ham</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">child_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">erg_lst</span> <span class="o">=</span> <span class="n">ham</span><span class="p">[</span><span class="s2">&quot;output/generic/energy_tot&quot;</span><span class="p">]</span>
+            <span class="n">vol_lst</span> <span class="o">=</span> <span class="n">ham</span><span class="p">[</span><span class="s2">&quot;output/generic/volume&quot;</span><span class="p">]</span>
+            <span class="n">arg_lst</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">vol_lst</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_output</span><span class="p">[</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">vol_lst</span><span class="p">[</span><span class="n">arg_lst</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_output</span><span class="p">[</span><span class="s2">&quot;energy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">erg_lst</span><span class="p">[</span><span class="n">arg_lst</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">erg_lst</span><span class="p">,</span> <span class="n">vol_lst</span><span class="p">,</span> <span class="n">err_lst</span><span class="p">,</span> <span class="n">id_lst</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">job_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">child_ids</span><span class="p">:</span>
+                <span class="n">ham</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">job_id</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;job_id: &quot;</span><span class="p">,</span> <span class="n">job_id</span><span class="p">,</span> <span class="n">ham</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
+                <span class="k">if</span> <span class="s2">&quot;energy_tot&quot;</span> <span class="ow">in</span> <span class="n">ham</span><span class="p">[</span><span class="s2">&quot;output/generic&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">():</span>
+                    <span class="n">energy</span> <span class="o">=</span> <span class="n">ham</span><span class="p">[</span><span class="s2">&quot;output/generic/energy_tot&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="k">elif</span> <span class="s2">&quot;energy_pot&quot;</span> <span class="ow">in</span> <span class="n">ham</span><span class="p">[</span><span class="s2">&quot;output/generic&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">():</span>
+                    <span class="n">energy</span> <span class="o">=</span> <span class="n">ham</span><span class="p">[</span><span class="s2">&quot;output/generic/energy_pot&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Neither energy_pot or energy_tot was found.&#39;</span><span class="p">)</span>
+                <span class="n">volume</span> <span class="o">=</span> <span class="n">ham</span><span class="p">[</span><span class="s2">&quot;output/generic/volume&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">erg_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">energy</span><span class="p">))</span>
+                <span class="n">err_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">energy</span><span class="p">))</span>
+                <span class="n">vol_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">volume</span><span class="p">)</span>
+                <span class="n">id_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">job_id</span><span class="p">)</span>
+            <span class="n">vol_lst</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vol_lst</span><span class="p">)</span>
+            <span class="n">erg_lst</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">erg_lst</span><span class="p">)</span>
+            <span class="n">err_lst</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">err_lst</span><span class="p">)</span>
+            <span class="n">id_lst</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">id_lst</span><span class="p">)</span>
+            <span class="n">arg_lst</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">vol_lst</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_output</span><span class="p">[</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">vol_lst</span><span class="p">[</span><span class="n">arg_lst</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_output</span><span class="p">[</span><span class="s2">&quot;energy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">erg_lst</span><span class="p">[</span><span class="n">arg_lst</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_output</span><span class="p">[</span><span class="s2">&quot;error&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">err_lst</span><span class="p">[</span><span class="n">arg_lst</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_output</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">id_lst</span><span class="p">[</span><span class="n">arg_lst</span><span class="p">]</span>
+
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;output&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf5_out</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_output</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">hdf5_out</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;fit_type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;polynomial&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fit_polynomial</span><span class="p">(</span><span class="n">fit_order</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;fit_order&quot;</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_fit_eos_general</span><span class="p">(</span><span class="n">fittype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;fit_type&quot;</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="Murnaghan.plot"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.Murnaghan.plot">[docs]</a>    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">plt_show</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+        <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_dict</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;fit_type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;polynomial&quot;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fit_polynomial</span><span class="p">(</span><span class="n">fit_order</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;fit_order&quot;</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_fit_eos_general</span><span class="p">(</span><span class="n">fittype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;fit_type&quot;</span><span class="p">])</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_to_pandas</span><span class="p">()</span>
+        <span class="n">vol_lst</span><span class="p">,</span> <span class="n">erg_lst</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;energy&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+        <span class="n">x_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">vol_lst</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">vol_lst</span><span class="p">),</span> <span class="n">num_steps</span><span class="p">)</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_dict</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;fit_type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;polynomial&quot;</span><span class="p">:</span>
+                <span class="n">p_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;poly_fit&quot;</span><span class="p">])</span>
+                <span class="n">least_square_error</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_module</span><span class="o">.</span><span class="n">get_error</span><span class="p">(</span><span class="n">vol_lst</span><span class="p">,</span> <span class="n">erg_lst</span><span class="p">,</span> <span class="n">p_fit</span><span class="p">)</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Murnaghan: error: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">least_square_error</span><span class="p">))</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+                    <span class="n">x_i</span><span class="p">,</span>
+                    <span class="n">p_fit</span><span class="p">(</span><span class="n">x_i</span><span class="p">),</span>
+                    <span class="s2">&quot;-&quot;</span><span class="p">,</span>
+                    <span class="n">label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;fit_type&quot;</span><span class="p">],</span>
+                    <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+                    <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">V0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;volume_eq&quot;</span><span class="p">]</span>
+                <span class="n">E0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;energy_eq&quot;</span><span class="p">]</span>
+                <span class="n">B0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;bulkmodul_eq&quot;</span><span class="p">]</span>
+                <span class="n">BP</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_dict</span><span class="p">[</span><span class="s2">&quot;b_prime_eq&quot;</span><span class="p">]</span>
+                <span class="n">eng_fit_lst</span> <span class="o">=</span> <span class="n">fitfunction</span><span class="p">(</span><span class="n">parameters</span><span class="o">=</span><span class="p">[</span><span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">BP</span><span class="p">,</span> <span class="n">V0</span><span class="p">],</span>
+                                          <span class="n">vol</span><span class="o">=</span><span class="n">x_i</span><span class="p">,</span>
+                                          <span class="n">fittype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;fit_type&quot;</span><span class="p">])</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+                    <span class="n">x_i</span><span class="p">,</span>
+                    <span class="n">eng_fit_lst</span><span class="p">,</span>
+                    <span class="s2">&quot;-&quot;</span><span class="p">,</span>
+                    <span class="n">label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;fit_type&quot;</span><span class="p">],</span>
+                    <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+                    <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                <span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vol_lst</span><span class="p">,</span> <span class="n">erg_lst</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Volume ($\AA^3$)&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;energy (eV)&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">plt_show</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Murnaghan.get_structure"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.master.murnaghan.html#pyiron.atomistics.master.murnaghan.Murnaghan.get_structure">[docs]</a>    <span class="k">def</span> <span class="nf">get_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iteration_step</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Returns: Structure with equilibrium volume</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">structure</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">iteration_step</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">snapshot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="n">old_vol</span> <span class="o">=</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">get_volume</span><span class="p">()</span>
+            <span class="n">new_vol</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s2">&quot;output/equilibrium_volume&quot;</span><span class="p">]</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="n">new_vol</span> <span class="o">/</span> <span class="n">old_vol</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="mf">3.0</span><span class="p">)</span>
+            <span class="n">new_cell</span> <span class="o">=</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">cell</span> <span class="o">*</span> <span class="n">k</span>
+            <span class="n">snapshot</span><span class="o">.</span><span class="n">set_cell</span><span class="p">(</span><span class="n">new_cell</span><span class="p">,</span> <span class="n">scale_atoms</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">snapshot</span>
+        <span class="k">elif</span> <span class="n">iteration_step</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;iteration_step should be either 0 or -1.&quot;</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

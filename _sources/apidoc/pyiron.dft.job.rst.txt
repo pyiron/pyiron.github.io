@@ -1,0 +1,18 @@
+pyiron.dft.job package
+======================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pyiron.dft.job.generic
+
+Module contents
+---------------
+
+.. automodule:: pyiron.dft.job
+   :members:
+   :undoc-members:
+   :show-inheritance:

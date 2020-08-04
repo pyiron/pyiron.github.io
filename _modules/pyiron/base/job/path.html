@@ -1,0 +1,715 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.base.job.path &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.base.job.path</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.base.job.path</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">posixpath</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.generic.hdfio</span> <span class="kn">import</span> <span class="n">ProjectHDFio</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.job.core</span> <span class="kn">import</span> <span class="n">JobCore</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.project.generic</span> <span class="kn">import</span> <span class="n">Project</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The JobPath class enables quick access to the HDF5 data file without loading the full object</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Joerg Neugebauer, Jan Janssen&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2020, Max-Planck-Institut für Eisenforschung GmbH - &quot;</span>
+    <span class="s2">&quot;Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;janssen@mpie.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;production&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;Sep 1, 2017&quot;</span>
+
+
+<div class="viewcode-block" id="JobPathBase"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.job.path.html#pyiron.base.job.path.JobPathBase">[docs]</a><span class="k">class</span> <span class="nc">JobPathBase</span><span class="p">(</span><span class="n">JobCore</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The JobPath class is derived from the JobCore and is used as a lean version of the GenericJob class. Instead of</span>
+<span class="sd">    loading the full pyiron object the JobPath class only provides access to the HDF5 file, which should be enough</span>
+<span class="sd">    for most analysis.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        db (DatabaseAccess): database object</span>
+<span class="sd">        job_id (int): Job ID - optional, but either a job ID or a database entry db_entry has to be provided.</span>
+<span class="sd">        db_entry (dict): database entry {&quot;job&quot;:, &quot;subjob&quot;:, &quot;projectpath&quot;:, &quot;project&quot;:, &quot;hamilton&quot;:, &quot;hamversion&quot;:,</span>
+<span class="sd">                                         &quot;status&quot;:} and optional entries are {&quot;id&quot;:, &quot;masterid&quot;:, &quot;parentid&quot;:}</span>
+<span class="sd">        user (str): current unix/linux/windows user who is running pyiron</span>
+
+<span class="sd">    Attributes:</span>
+
+<span class="sd">        .. attribute:: job_name</span>
+
+<span class="sd">            name of the job, which has to be unique within the project</span>
+
+<span class="sd">        .. attribute:: status</span>
+
+<span class="sd">            execution status of the job, can be one of the following [initialized, appended, created, submitted, running,</span>
+<span class="sd">                                                                      aborted, collect, suspended, refresh, busy, finished]</span>
+
+<span class="sd">        .. attribute:: job_id</span>
+
+<span class="sd">            unique id to identify the job in the pyiron database</span>
+
+<span class="sd">        .. attribute:: parent_id</span>
+
+<span class="sd">            job id of the predecessor job - the job which was executed before the current one in the current job series</span>
+
+<span class="sd">        .. attribute:: master_id</span>
+
+<span class="sd">            job id of the master job - a meta job which groups a series of jobs, which are executed either in parallel or in</span>
+<span class="sd">            serial.</span>
+
+<span class="sd">        .. attribute:: child_ids</span>
+
+<span class="sd">            list of child job ids - only meta jobs have child jobs - jobs which list the meta job as their master</span>
+
+<span class="sd">        .. attribute:: project</span>
+
+<span class="sd">            Project instance the jobs is located in</span>
+
+<span class="sd">        .. attribute:: project_hdf5</span>
+
+<span class="sd">            ProjectHDFio instance which points to the HDF5 file the job is stored in</span>
+
+<span class="sd">        .. attribute:: job_info_str</span>
+
+<span class="sd">            short string to describe the job by it is job_name and job ID - mainly used for logging</span>
+
+<span class="sd">        .. attribute:: working_directory</span>
+
+<span class="sd">            working directory of the job is executed in - outside the HDF5 file</span>
+
+<span class="sd">        .. attribute:: path</span>
+
+<span class="sd">            path to the job as a combination of absolute file system path and path within the HDF5 file.</span>
+
+<span class="sd">        .. attribute:: is_root</span>
+
+<span class="sd">            boolean if the HDF5 object is located at the root level of the HDF5 file</span>
+
+<span class="sd">        .. attribute:: is_open</span>
+
+<span class="sd">            boolean if the HDF5 file is currently opened - if an active file handler exists</span>
+
+<span class="sd">        .. attribute:: is_empty</span>
+
+<span class="sd">            boolean if the HDF5 file is empty</span>
+
+<span class="sd">        .. attribute:: base_name</span>
+
+<span class="sd">            name of the HDF5 file but without any file extension</span>
+
+<span class="sd">        .. attribute:: file_path</span>
+
+<span class="sd">            directory where the HDF5 file is located</span>
+
+<span class="sd">        .. attribute:: h5_path</span>
+
+<span class="sd">            path inside the HDF5 file - also stored as absolute path</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_path</span><span class="p">):</span>
+        <span class="n">job_path_lst</span> <span class="o">=</span> <span class="n">job_path</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.h5&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">job_path_lst</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span>
+
+        <span class="n">sub_job</span> <span class="o">=</span> <span class="n">job_path_lst</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">h5_path</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">sub_job</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sub_job</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">h5_path</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sub_job</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="n">hdf_project</span> <span class="o">=</span> <span class="n">ProjectHDFio</span><span class="p">(</span>
+            <span class="n">project</span><span class="o">=</span><span class="n">Project</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">job_path_lst</span><span class="p">[</span><span class="mi">0</span><span class="p">])),</span>
+            <span class="n">file_name</span><span class="o">=</span><span class="n">job_path_lst</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;.h5&quot;</span><span class="p">,</span>
+            <span class="n">h5_path</span><span class="o">=</span><span class="n">h5_path</span><span class="p">,</span>
+            <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">JobPathBase</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">project</span><span class="o">=</span><span class="n">hdf_project</span><span class="p">,</span> <span class="n">job_name</span><span class="o">=</span><span class="n">job_path_lst</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">is_root</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if the current h5_path is pointing to the HDF5 root group.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: [True/False]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">is_root</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if the HDF5 file is empty</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: [True/False]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">is_empty</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">base_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Name of the HDF5 file - but without the file extension .h5</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: file name without the file extension</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">base_name</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">file_path</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Path where the HDF5 file is located - posixpath.dirname()</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: HDF5 file location</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">file_path</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">h5_path</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the path in the HDF5 file starting from the root group - meaning this path starts with &#39;/&#39;</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: HDF5 path</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">h5_path</span>
+
+    <span class="nd">@h5_path</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">h5_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the path in the HDF5 file starting from the root group</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            path (str): HDF5 path</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">h5_path</span> <span class="o">=</span> <span class="n">path</span>
+
+<div class="viewcode-block" id="JobPathBase.create_group"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.job.path.html#pyiron.base.job.path.JobPathBase.create_group">[docs]</a>    <span class="k">def</span> <span class="nf">create_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create an HDF5 group - similar to a folder in the filesystem - the HDF5 groups allow the users to structure their</span>
+<span class="sd">        data.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            name (str): name of the HDF5 group</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            FileHDFio: FileHDFio object pointing to the new group</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">create_group</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="JobPathBase.open"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.job.path.html#pyiron.base.job.path.JobPathBase.open">[docs]</a>    <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">h5_rel_path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create an HDF5 group and enter this specific group. If the group exists in the HDF5 path only the h5_path is</span>
+<span class="sd">        set correspondingly otherwise the group is created first.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            h5_rel_path (str): relative path from the current HDF5 path - h5_path - to the new group</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            FileHDFio: FileHDFio object pointing to the new group</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">h5_rel_path</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="JobPathBase.close"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.job.path.html#pyiron.base.job.path.JobPathBase.close">[docs]</a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Close the current HDF5 path and return to the path before the last open</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="JobPathBase.remove_file"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.job.path.html#pyiron.base.job.path.JobPathBase.remove_file">[docs]</a>    <span class="k">def</span> <span class="nf">remove_file</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Remove the HDF5 file with all the related content</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">remove_file</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="JobPathBase.put"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.job.path.html#pyiron.base.job.path.JobPathBase.put">[docs]</a>    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Store data inside the HDF5 file</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            key (str): key to store the data</span>
+<span class="sd">            value (pandas.DataFrame, pandas.Series, dict, list, float, int): basically any kind of data is supported</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="fm">__setitem__</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="JobPathBase.listdirs"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.job.path.html#pyiron.base.job.path.JobPathBase.listdirs">[docs]</a>    <span class="k">def</span> <span class="nf">listdirs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        equivalent to os.listdirs (consider groups as equivalent to dirs)</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            (list): list of groups in pytables for the path self.h5_path</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">list_groups</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="JobPathBase.list_dirs"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.job.path.html#pyiron.base.job.path.JobPathBase.list_dirs">[docs]</a>    <span class="k">def</span> <span class="nf">list_dirs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        equivalent to os.listdirs (consider groups as equivalent to dirs)</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            (list): list of groups in pytables for the path self.h5_path</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">list_groups</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="JobPathBase.keys"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.job.path.html#pyiron.base.job.path.JobPathBase.keys">[docs]</a>    <span class="k">def</span> <span class="nf">keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        List all groups and nodes of the HDF5 file - where groups are equivalent to directories and nodes to files.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list: all groups and nodes</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="JobPathBase.values"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.job.path.html#pyiron.base.job.path.JobPathBase.values">[docs]</a>    <span class="k">def</span> <span class="nf">values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        List all values for all groups and nodes of the HDF5 file</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list: list of all values</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">values</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="JobPathBase.items"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.job.path.html#pyiron.base.job.path.JobPathBase.items">[docs]</a>    <span class="k">def</span> <span class="nf">items</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        List all keys and values as items of all groups and nodes of the HDF5 file</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list: list of sets (key, value)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">items</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="JobPathBase.groups"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.job.path.html#pyiron.base.job.path.JobPathBase.groups">[docs]</a>    <span class="k">def</span> <span class="nf">groups</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Filter HDF5 file by groups</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            FileHDFio: an HDF5 file which is filtered by groups</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="JobPathBase.nodes"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.job.path.html#pyiron.base.job.path.JobPathBase.nodes">[docs]</a>    <span class="k">def</span> <span class="nf">nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Filter HDF5 file by nodes</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            FileHDFio: an HDF5 file which is filtered by nodes</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">nodes</span><span class="p">()</span></div>
+
+    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compatibility function for the with statement</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="fm">__enter__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_val</span><span class="p">,</span> <span class="n">exc_tb</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compatibility function for the with statement</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="fm">__exit__</span><span class="p">(</span><span class="n">exc_type</span><span class="o">=</span><span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_val</span><span class="o">=</span><span class="n">exc_val</span><span class="p">,</span> <span class="n">exc_tb</span><span class="o">=</span><span class="n">exc_tb</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Store data inside the HDF5 file</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            key (str): key to store the data</span>
+<span class="sd">            value (pandas.DataFrame, pandas.Series, dict, list, float, int): basically any kind of data is supported</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="fm">__setitem__</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__delitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete item from the HDF5 file</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            key (str): key of the item to delete</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="fm">__delitem__</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Machine readable string representation</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: list all nodes and groups as string</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Human readable string representation</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: list all nodes and groups as string</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        When the object is deleted the HDF5 file has to be closed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">_store</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get/ read data from the HDF5 file</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            item (str, slice): path to the data or key of the data object</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict, list, float, int: data or data object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_files</span><span class="p">():</span>
+            <span class="n">file_name</span> <span class="o">=</span> <span class="n">posixpath</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">item</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="JobPath"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.job.path.html#pyiron.base.job.path.JobPath">[docs]</a><span class="k">class</span> <span class="nc">JobPath</span><span class="p">(</span><span class="n">JobPathBase</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The JobPath class is derived from the JobCore and is used as a lean version of the GenericJob class. Instead of</span>
+<span class="sd">    loading the full pyiron object the JobPath class only provides access to the HDF5 file, which should be enough</span>
+<span class="sd">    for most analysis.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        db (DatabaseAccess): database object</span>
+<span class="sd">        job_id (int): Job ID - optional, but either a job ID or a database entry db_entry has to be provided.</span>
+<span class="sd">        db_entry (dict): database entry {&quot;job&quot;:, &quot;subjob&quot;:, &quot;projectpath&quot;:, &quot;project&quot;:, &quot;hamilton&quot;:, &quot;hamversion&quot;:,</span>
+<span class="sd">                                         &quot;status&quot;:} and optional entries are {&quot;id&quot;:, &quot;masterid&quot;:, &quot;parentid&quot;:}</span>
+<span class="sd">        user (str): current unix/linux/windows user who is running pyiron</span>
+
+<span class="sd">    Attributes:</span>
+
+<span class="sd">        .. attribute:: job_name</span>
+
+<span class="sd">            name of the job, which has to be unique within the project</span>
+
+<span class="sd">        .. attribute:: status</span>
+
+<span class="sd">            execution status of the job, can be one of the following [initialized, appended, created, submitted, running,</span>
+<span class="sd">                                                                      aborted, collect, suspended, refresh, busy, finished]</span>
+
+<span class="sd">        .. attribute:: job_id</span>
+
+<span class="sd">            unique id to identify the job in the pyiron database</span>
+
+<span class="sd">        .. attribute:: parent_id</span>
+
+<span class="sd">            job id of the predecessor job - the job which was executed before the current one in the current job series</span>
+
+<span class="sd">        .. attribute:: master_id</span>
+
+<span class="sd">            job id of the master job - a meta job which groups a series of jobs, which are executed either in parallel or in</span>
+<span class="sd">            serial.</span>
+
+<span class="sd">        .. attribute:: child_ids</span>
+
+<span class="sd">            list of child job ids - only meta jobs have child jobs - jobs which list the meta job as their master</span>
+
+<span class="sd">        .. attribute:: project</span>
+
+<span class="sd">            Project instance the jobs is located in</span>
+
+<span class="sd">        .. attribute:: project_hdf5</span>
+
+<span class="sd">            ProjectHDFio instance which points to the HDF5 file the job is stored in</span>
+
+<span class="sd">        .. attribute:: job_info_str</span>
+
+<span class="sd">            short string to describe the job by it is job_name and job ID - mainly used for logging</span>
+
+<span class="sd">        .. attribute:: working_directory</span>
+
+<span class="sd">            working directory of the job is executed in - outside the HDF5 file</span>
+
+<span class="sd">        .. attribute:: path</span>
+
+<span class="sd">            path to the job as a combination of absolute file system path and path within the HDF5 file.</span>
+
+<span class="sd">        .. attribute:: is_root</span>
+
+<span class="sd">            boolean if the HDF5 object is located at the root level of the HDF5 file</span>
+
+<span class="sd">        .. attribute:: is_open</span>
+
+<span class="sd">            boolean if the HDF5 file is currently opened - if an active file handler exists</span>
+
+<span class="sd">        .. attribute:: is_empty</span>
+
+<span class="sd">            boolean if the HDF5 file is empty</span>
+
+<span class="sd">        .. attribute:: base_name</span>
+
+<span class="sd">            name of the HDF5 file but without any file extension</span>
+
+<span class="sd">        .. attribute:: file_path</span>
+
+<span class="sd">            directory where the HDF5 file is located</span>
+
+<span class="sd">        .. attribute:: h5_path</span>
+
+<span class="sd">            path inside the HDF5 file - also stored as absolute path</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">job_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">db_entry</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">db_entry</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">db</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">db_entry</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">get_item_by_id</span><span class="p">(</span><span class="n">job_id</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">db_entry</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;job ID </span><span class="si">{0}</span><span class="s2"> does not exist!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">job_id</span><span class="p">))</span>
+        <span class="n">hdf5_file</span> <span class="o">=</span> <span class="n">db_entry</span><span class="p">[</span><span class="s2">&quot;subjob&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;.h5&quot;</span>
+        <span class="k">if</span> <span class="n">db_entry</span><span class="p">[</span><span class="s2">&quot;projectpath&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">job_path</span> <span class="o">=</span> <span class="n">db_entry</span><span class="p">[</span><span class="s2">&quot;projectpath&quot;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">job_path</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="n">job_path</span> <span class="o">+=</span> <span class="n">db_entry</span><span class="p">[</span><span class="s2">&quot;project&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">hdf5_file</span> <span class="o">+</span> <span class="n">db_entry</span><span class="p">[</span><span class="s2">&quot;subjob&quot;</span><span class="p">]</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">JobPath</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">job_path</span><span class="o">=</span><span class="n">job_path</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="s2">&quot;hamilton&quot;</span> <span class="ow">in</span> <span class="n">db_entry</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="n">db_entry</span><span class="p">[</span><span class="s2">&quot;hamilton&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s2">&quot;hamversion&quot;</span> <span class="ow">in</span> <span class="n">db_entry</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__version__</span> <span class="o">=</span> <span class="n">db_entry</span><span class="p">[</span><span class="s2">&quot;hamversion&quot;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="s2">&quot;id&quot;</span> <span class="ow">in</span> <span class="n">db_entry</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_job_id</span> <span class="o">=</span> <span class="n">db_entry</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s2">&quot;status&quot;</span> <span class="ow">in</span> <span class="n">db_entry</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_status</span> <span class="o">=</span> <span class="n">db_entry</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s2">&quot;masterid&quot;</span> <span class="ow">in</span> <span class="n">db_entry</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_master_id</span> <span class="o">=</span> <span class="n">db_entry</span><span class="p">[</span><span class="s2">&quot;masterid&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s2">&quot;parentid&quot;</span> <span class="ow">in</span> <span class="n">db_entry</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_parent_id</span> <span class="o">=</span> <span class="n">db_entry</span><span class="p">[</span><span class="s2">&quot;parentid&quot;</span><span class="p">]</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

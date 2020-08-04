@@ -1,0 +1,680 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.gpaw.pyiron_ase &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.gpaw.pyiron_ase</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.gpaw.pyiron_ase</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="kn">from</span> <span class="nn">ase</span> <span class="kn">import</span> <span class="n">Atoms</span>
+<span class="kn">from</span> <span class="nn">ase.constraints</span> <span class="kn">import</span> <span class="n">dict2constraint</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.job.interactive</span> <span class="kn">import</span> <span class="n">InteractiveBase</span>
+<span class="kn">from</span> <span class="nn">pyiron.atomistics.job.interactive</span> <span class="kn">import</span> <span class="n">GenericInteractiveOutput</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">ase.cell</span> <span class="kn">import</span> <span class="n">Cell</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">Cell</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2020, Max-Planck-Institut für Eisenforschung GmbH - &quot;</span>
+    <span class="s2">&quot;Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;janssen@mpie.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;development&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;Sep 1, 2018&quot;</span>
+
+
+<div class="viewcode-block" id="AseJob"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseJob">[docs]</a><span class="k">class</span> <span class="nc">AseJob</span><span class="p">(</span><span class="n">InteractiveBase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">job_name</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">AseJob</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="n">job_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;AseJob&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__version__</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="kc">None</span>
+        <span class="p">)</span>  <span class="c1"># Reset the version number to the executable is set automatically</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;cells&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;energy_pot&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;forces&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;positions&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;steps&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;indices&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;volume&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="n">GenericInteractiveOutput</span><span class="p">(</span><span class="n">job</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_python_only_job</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_cellfromdict</span><span class="p">(</span><span class="n">celldict</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">Cell</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Cell</span><span class="p">(</span><span class="o">**</span><span class="n">celldict</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">celldict</span>
+
+    <span class="k">def</span> <span class="nf">_todict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">atoms_dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;symbols&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">get_chemical_symbols</span><span class="p">(),</span>
+            <span class="s2">&quot;positions&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">get_positions</span><span class="p">(),</span>
+            <span class="s2">&quot;pbc&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">get_pbc</span><span class="p">(),</span>
+            <span class="s2">&quot;celldisp&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">get_celldisp</span><span class="p">(),</span>
+            <span class="s2">&quot;constraint&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">todict</span><span class="p">()</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">constraints</span><span class="p">],</span>
+            <span class="s2">&quot;info&quot;</span><span class="p">:</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">info</span><span class="p">),</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="n">Cell</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">atoms_dict</span><span class="p">[</span><span class="s2">&quot;cell&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">get_cell</span><span class="p">()</span><span class="o">.</span><span class="n">todict</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">atoms_dict</span><span class="p">[</span><span class="s2">&quot;cell&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">get_cell</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="s2">&quot;tags&quot;</span><span class="p">):</span>
+            <span class="n">atoms_dict</span><span class="p">[</span><span class="s2">&quot;tags&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">get_tags</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="s2">&quot;masses&quot;</span><span class="p">):</span>
+            <span class="n">atoms_dict</span><span class="p">[</span><span class="s2">&quot;masses&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">get_masses</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="s2">&quot;momenta&quot;</span><span class="p">):</span>
+            <span class="n">atoms_dict</span><span class="p">[</span><span class="s2">&quot;momenta&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">get_momenta</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="s2">&quot;initial_magmoms&quot;</span><span class="p">):</span>
+            <span class="n">atoms_dict</span><span class="p">[</span><span class="s2">&quot;magmoms&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">get_initial_magnetic_moments</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="s2">&quot;initial_charges&quot;</span><span class="p">):</span>
+            <span class="n">atoms_dict</span><span class="p">[</span><span class="s2">&quot;charges&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">get_initial_charges</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">_calc</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">calculator_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">_calc</span><span class="o">.</span><span class="n">todict</span><span class="p">()</span>
+            <span class="n">calculator_dict</span><span class="p">[</span><span class="s2">&quot;calculator_class&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">_calc</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="n">calculator_dict</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">_calc</span><span class="o">.</span><span class="n">label</span>
+            <span class="n">atoms_dict</span><span class="p">[</span><span class="s2">&quot;calculator&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">calculator_dict</span>
+        <span class="k">return</span> <span class="n">atoms_dict</span>
+
+    <span class="k">def</span> <span class="nf">_fromdict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">atoms_dict</span><span class="p">):</span>
+        <span class="n">atoms_dict_copy</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">atoms_dict</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;calculator&quot;</span> <span class="ow">in</span> <span class="n">atoms_dict_copy</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">calculator_dict</span> <span class="o">=</span> <span class="n">atoms_dict_copy</span><span class="p">[</span><span class="s2">&quot;calculator&quot;</span><span class="p">]</span>
+            <span class="n">calculator_class</span> <span class="o">=</span> <span class="n">calculator_dict</span><span class="p">[</span><span class="s2">&quot;calculator_class&quot;</span><span class="p">]</span>
+            <span class="k">del</span> <span class="n">calculator_dict</span><span class="p">[</span><span class="s2">&quot;calculator_class&quot;</span><span class="p">]</span>
+            <span class="n">atoms_dict_copy</span><span class="p">[</span><span class="s2">&quot;calculator&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dict2calculator</span><span class="p">(</span>
+                <span class="n">calculator_class</span><span class="p">,</span> <span class="n">calculator_dict</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;constraint&quot;</span> <span class="ow">in</span> <span class="n">atoms_dict_copy</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">atoms_dict_copy</span><span class="p">[</span><span class="s2">&quot;constraint&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">dict2constraint</span><span class="p">(</span><span class="n">const_dict</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">const_dict</span> <span class="ow">in</span> <span class="n">atoms_dict_copy</span><span class="p">[</span><span class="s2">&quot;constraint&quot;</span><span class="p">]</span>
+            <span class="p">]</span>
+        <span class="n">atoms_dict_copy</span><span class="p">[</span><span class="s2">&quot;cell&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cellfromdict</span><span class="p">(</span><span class="n">celldict</span><span class="o">=</span><span class="n">atoms_dict_copy</span><span class="p">[</span><span class="s2">&quot;cell&quot;</span><span class="p">])</span>
+        <span class="n">atoms</span> <span class="o">=</span> <span class="n">Atoms</span><span class="p">(</span><span class="o">**</span><span class="n">atoms_dict_copy</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">atoms</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">atoms</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_dict2calculator</span><span class="p">(</span><span class="n">class_path</span><span class="p">,</span> <span class="n">class_dict</span><span class="p">):</span>
+        <span class="n">module_loaded</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">class_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="n">module_class</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">module_loaded</span><span class="p">,</span> <span class="n">class_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">module_class</span><span class="p">(</span><span class="o">**</span><span class="n">class_dict</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">structure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span>
+
+    <span class="nd">@structure</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basis</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span> <span class="o">=</span> <span class="n">basis</span>
+
+<div class="viewcode-block" id="AseJob.to_hdf"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseJob.to_hdf">[docs]</a>    <span class="k">def</span> <span class="nf">to_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">AseJob</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="n">hdf</span><span class="o">=</span><span class="n">hdf</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="n">group_name</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf_input</span><span class="p">:</span>
+            <span class="n">hdf_input</span><span class="p">[</span><span class="s2">&quot;structure&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_todict</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="AseJob.from_hdf"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseJob.from_hdf">[docs]</a>    <span class="k">def</span> <span class="nf">from_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">AseJob</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">from_hdf</span><span class="p">(</span><span class="n">hdf</span><span class="o">=</span><span class="n">hdf</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="n">group_name</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf_input</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fromdict</span><span class="p">(</span><span class="n">hdf_input</span><span class="p">[</span><span class="s2">&quot;structure&quot;</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="AseJob.run_static"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseJob.run_static">[docs]</a>    <span class="k">def</span> <span class="nf">run_static</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;ASEJob requires interactive mode.&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AseJob.run_if_interactive"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseJob.run_if_interactive">[docs]</a>    <span class="k">def</span> <span class="nf">run_if_interactive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactive_collect</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="AseJob.interactive_close"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseJob.interactive_close">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">collect</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span> <span class="o">&gt;</span> <span class="mi">0</span>
+            <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">]])</span> <span class="o">!=</span> <span class="mi">0</span>
+        <span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_flush</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s2">&quot;interactive&quot;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;output&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s2">&quot;interactive&quot;</span> <span class="ow">in</span> <span class="n">h5</span><span class="o">.</span><span class="n">list_groups</span><span class="p">():</span>
+                <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">h5</span><span class="p">[</span><span class="s2">&quot;interactive&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">():</span>
+                    <span class="n">h5</span><span class="p">[</span><span class="s2">&quot;generic/&quot;</span> <span class="o">+</span> <span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s2">&quot;interactive/&quot;</span> <span class="o">+</span> <span class="n">key</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">finished</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="AseJob.interactive_forces_getter"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseJob.interactive_forces_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_forces_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">get_forces</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="AseJob.interactive_energy_pot_getter"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseJob.interactive_energy_pot_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_energy_pot_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="AseJob.interactive_indices_getter"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseJob.interactive_indices_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_indices_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">element_lst</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">get_chemical_symbols</span><span class="p">())))</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">element_lst</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">el</span><span class="p">)</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">get_chemical_symbols</span><span class="p">()]</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="AseJob.interactive_positions_getter"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseJob.interactive_positions_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_positions_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="AseJob.interactive_steps_getter"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseJob.interactive_steps_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_steps_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">]])</span></div>
+
+<div class="viewcode-block" id="AseJob.interactive_time_getter"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseJob.interactive_time_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_time_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_steps_getter</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="AseJob.interactive_volume_getter"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseJob.interactive_volume_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_volume_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">get_volume</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="AseJob.interactive_cells_getter"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseJob.interactive_cells_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_cells_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="AseJob.interactive_collect"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseJob.interactive_collect">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_collect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s2">&quot;cells&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;cells&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_cells_getter</span><span class="p">())</span>
+        <span class="k">if</span> <span class="s2">&quot;energy_pot&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;energy_pot&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">interactive_energy_pot_getter</span><span class="p">()</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;energy_tot&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;energy_tot&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">interactive_energy_tot_getter</span><span class="p">()</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;forces&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;forces&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_forces_getter</span><span class="p">())</span>
+        <span class="k">if</span> <span class="s2">&quot;positions&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;positions&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">interactive_positions_getter</span><span class="p">()</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;pressures&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;pressures&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">interactive_pressures_getter</span><span class="p">()</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;steps&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;steps&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_steps_getter</span><span class="p">())</span>
+        <span class="k">if</span> <span class="s2">&quot;temperatures&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;temperatures&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">interactive_temperatures_getter</span><span class="p">()</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;time&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_time_getter</span><span class="p">())</span>
+        <span class="k">if</span> <span class="s2">&quot;indices&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;indices&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_indices_getter</span><span class="p">())</span>
+        <span class="k">if</span> <span class="s2">&quot;spin_constraints&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;spin_constraints&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">interactive_spin_constraints_getter</span><span class="p">()</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;magnetic_forces&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_structure_current</span><span class="o">.</span><span class="n">get_initial_magnetic_moments</span><span class="p">()):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;magnetic_forces&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">interactive_magnetic_forces_getter</span><span class="p">()</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;magnetic_forces&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s2">&quot;unwrapped_positions&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;unwrapped_positions&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">interactive_unwrapped_positions_getter</span><span class="p">()</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;volume&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_volume_getter</span><span class="p">())</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span> <span class="o">&gt;</span> <span class="mi">0</span>
+            <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">]])</span>
+            <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_flush_frequency</span>
+            <span class="o">==</span> <span class="mi">0</span>
+        <span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_flush</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s2">&quot;interactive&quot;</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="AseAdapter"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseAdapter">[docs]</a><span class="k">class</span> <span class="nc">AseAdapter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ham</span><span class="p">,</span> <span class="n">fast_mode</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span> <span class="o">=</span> <span class="n">ham</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fast_mode</span> <span class="o">=</span> <span class="n">fast_mode</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive</span> <span class="ow">and</span> <span class="n">fast_mode</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;velocities&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                <span class="s2">&quot;energy_kin&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                <span class="s2">&quot;momenta&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                <span class="s2">&quot;positions&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                <span class="s2">&quot;energy_pot&quot;</span><span class="p">:</span> <span class="p">[]</span>
+            <span class="p">}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">interactive_cache</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;velocities&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                <span class="s2">&quot;energy_kin&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                <span class="s2">&quot;momenta&quot;</span><span class="p">:</span> <span class="p">[]</span>
+            <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">arrays</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;positions&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
+                <span class="s2">&quot;numbers&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">numbers</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">arrays</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;positions&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
+                <span class="s2">&quot;numbers&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">get_atomic_numbers</span><span class="p">(),</span>
+            <span class="p">}</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">communicator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="AseAdapter.get_masses"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseAdapter.get_masses">[docs]</a>    <span class="k">def</span> <span class="nf">get_masses</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">get_masses</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="AseAdapter.get_positions"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseAdapter.get_positions">[docs]</a>    <span class="k">def</span> <span class="nf">get_positions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">arrays</span><span class="p">[</span><span class="s2">&quot;positions&quot;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="AseAdapter.set_positions"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseAdapter.set_positions">[docs]</a>    <span class="k">def</span> <span class="nf">set_positions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">positions</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">arrays</span><span class="p">[</span><span class="s2">&quot;positions&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">positions</span></div>
+
+<div class="viewcode-block" id="AseAdapter.get_forces"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseAdapter.get_forces">[docs]</a>    <span class="k">def</span> <span class="nf">get_forces</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">md</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fast_mode</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">interactive_positions_setter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">arrays</span><span class="p">[</span><span class="s2">&quot;positions&quot;</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;positions&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">arrays</span><span class="p">[</span><span class="s2">&quot;positions&quot;</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">interactive_execute</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;energy_pot&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">interactive_energy_pot_getter</span><span class="p">())</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">interactive_forces_getter</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">positions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">arrays</span><span class="p">[</span><span class="s2">&quot;positions&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">delete_existing_job</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">forces</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="AseAdapter.interactive_close"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseAdapter.interactive_close">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">interactive_store_in_cache</span><span class="p">(</span>
+            <span class="s2">&quot;velocities&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;velocities&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">interactive_store_in_cache</span><span class="p">(</span>
+            <span class="s2">&quot;energy_kin&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;energy_kin&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fast_mode</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">interactive_store_in_cache</span><span class="p">(</span>
+                <span class="s2">&quot;positions&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;positions&quot;</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">interactive_store_in_cache</span><span class="p">(</span>
+                <span class="s2">&quot;energy_pot&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;energy_pot&quot;</span><span class="p">][::</span><span class="mi">2</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">interactive_store_in_cache</span><span class="p">(</span>
+                <span class="s2">&quot;energy_tot&quot;</span><span class="p">,</span>
+                <span class="p">(</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;energy_pot&quot;</span><span class="p">][::</span><span class="mi">2</span><span class="p">])</span>
+                    <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;energy_kin&quot;</span><span class="p">])</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">interactive_store_in_cache</span><span class="p">(</span>
+                <span class="s2">&quot;energy_tot&quot;</span><span class="p">,</span>
+                <span class="p">(</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">energy_pot</span><span class="p">)[::</span><span class="mi">2</span><span class="p">]</span>
+                    <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;energy_kin&quot;</span><span class="p">])</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">interactive_close</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="AseAdapter.get_number_of_atoms"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseAdapter.get_number_of_atoms">[docs]</a>    <span class="k">def</span> <span class="nf">get_number_of_atoms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">get_number_of_atoms</span><span class="p">()</span></div>
+
+    <span class="c1"># ASE functions</span>
+<div class="viewcode-block" id="AseAdapter.get_kinetic_energy"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseAdapter.get_kinetic_energy">[docs]</a>    <span class="k">def</span> <span class="nf">get_kinetic_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the kinetic energy.&quot;&quot;&quot;</span>
+        <span class="n">momenta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">arrays</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;momenta&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">momenta</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>
+        <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">vdot</span><span class="p">(</span><span class="n">momenta</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_velocities</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="AseAdapter.set_momenta"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseAdapter.set_momenta">[docs]</a>    <span class="k">def</span> <span class="nf">set_momenta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">momenta</span><span class="p">,</span> <span class="n">apply_constraint</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set momenta.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">apply_constraint</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">constraints</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">momenta</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">momenta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">momenta</span><span class="p">)</span>  <span class="c1"># modify a copy</span>
+            <span class="k">for</span> <span class="n">constraint</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">constraint</span><span class="p">,</span> <span class="s2">&quot;adjust_momenta&quot;</span><span class="p">):</span>
+                    <span class="n">constraint</span><span class="o">.</span><span class="n">adjust_momenta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">momenta</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="s2">&quot;momenta&quot;</span><span class="p">,</span> <span class="n">momenta</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;velocities&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_velocities</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="s2">&quot;energy_kin&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_kinetic_energy</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="AseAdapter.set_velocities"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseAdapter.set_velocities">[docs]</a>    <span class="k">def</span> <span class="nf">set_velocities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">velocities</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set the momenta by specifying the velocities.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_momenta</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_masses</span><span class="p">()[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">*</span> <span class="n">velocities</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AseAdapter.get_momenta"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseAdapter.get_momenta">[docs]</a>    <span class="k">def</span> <span class="nf">get_momenta</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get array of momenta.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="s2">&quot;momenta&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">arrays</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">arrays</span><span class="p">[</span><span class="s2">&quot;momenta&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="AseAdapter.set_array"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseAdapter.set_array">[docs]</a>    <span class="k">def</span> <span class="nf">set_array</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Update array.</span>
+
+<span class="sd">        If *shape* is not *None*, the shape of *a* will be checked.</span>
+<span class="sd">        If *a* is *None*, then the array is deleted.&quot;&quot;&quot;</span>
+
+        <span class="n">b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">arrays</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">b</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">new_array</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">shape</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">arrays</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span> <span class="o">!=</span> <span class="n">b</span><span class="o">.</span><span class="n">shape</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                        <span class="s2">&quot;Array has wrong shape </span><span class="si">%s</span><span class="s2"> != </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="n">b</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">a</span></div>
+
+<div class="viewcode-block" id="AseAdapter.get_angular_momentum"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseAdapter.get_angular_momentum">[docs]</a>    <span class="k">def</span> <span class="nf">get_angular_momentum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get total angular momentum with respect to the center of mass.&quot;&quot;&quot;</span>
+        <span class="n">com</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_center_of_mass</span><span class="p">()</span>
+        <span class="n">positions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_positions</span><span class="p">()</span>
+        <span class="n">positions</span> <span class="o">-=</span> <span class="n">com</span>  <span class="c1"># translate center of mass to origin</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_momenta</span><span class="p">())</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AseAdapter.new_array"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseAdapter.new_array">[docs]</a>    <span class="k">def</span> <span class="nf">new_array</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add new array.</span>
+
+<span class="sd">        If *shape* is not *None*, the shape of *a* will be checked.&quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">dtype</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">shape</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">a</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,)</span> <span class="o">+</span> <span class="n">shape</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">a</span><span class="o">.</span><span class="n">flags</span><span class="p">[</span><span class="s2">&quot;C_CONTIGUOUS&quot;</span><span class="p">]:</span>
+                <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">arrays</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span>
+
+        <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">arrays</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Array has wrong length: </span><span class="si">%d</span><span class="s2"> != </span><span class="si">%d</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)))</span>
+            <span class="k">break</span>
+
+        <span class="k">if</span> <span class="n">shape</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">!=</span> <span class="n">shape</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Array has wrong shape </span><span class="si">%s</span><span class="s2"> != </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">shape</span><span class="p">))</span>
+            <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">arrays</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span></div>
+
+<div class="viewcode-block" id="AseAdapter.has"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseAdapter.has">[docs]</a>    <span class="k">def</span> <span class="nf">has</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check for existence of array.</span>
+
+<span class="sd">        name must be one of: &#39;tags&#39;, &#39;momenta&#39;, &#39;masses&#39;, &#39;initial_magmoms&#39;,</span>
+<span class="sd">        &#39;initial_charges&#39;.&quot;&quot;&quot;</span>
+        <span class="c1"># XXX extend has to calculator properties</span>
+        <span class="k">return</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">arrays</span></div>
+
+<div class="viewcode-block" id="AseAdapter.get_center_of_mass"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseAdapter.get_center_of_mass">[docs]</a>    <span class="k">def</span> <span class="nf">get_center_of_mass</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scaled</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the center of mass.</span>
+
+<span class="sd">        If scaled=True the center of mass in scaled coordinates</span>
+<span class="sd">        is returned.&quot;&quot;&quot;</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_masses</span><span class="p">()</span>
+        <span class="n">com</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">arrays</span><span class="p">[</span><span class="s2">&quot;positions&quot;</span><span class="p">])</span> <span class="o">/</span> <span class="n">m</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">scaled</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fast_mode</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">cells</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">com</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">cells</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">com</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">com</span></div>
+
+<div class="viewcode-block" id="AseAdapter.get_velocities"><a class="viewcode-back" href="../../../apidoc/pyiron.gpaw.pyiron_ase.html#pyiron.gpaw.pyiron_ase.AseAdapter.get_velocities">[docs]</a>    <span class="k">def</span> <span class="nf">get_velocities</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get array of velocities.&quot;&quot;&quot;</span>
+        <span class="n">momenta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">arrays</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;momenta&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">momenta</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_masses</span><span class="p">()</span>
+        <span class="c1"># m = self.arrays.get(&#39;masses&#39;)</span>
+        <span class="c1"># if m is None:</span>
+        <span class="c1">#     m = atomic_masses[self.arrays[&#39;numbers&#39;]]</span>
+        <span class="k">return</span> <span class="n">momenta</span> <span class="o">/</span> <span class="n">m</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ham</span><span class="o">.</span><span class="n">structure</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

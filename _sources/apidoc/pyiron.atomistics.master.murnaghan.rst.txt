@@ -1,0 +1,7 @@
+pyiron.atomistics.master.murnaghan module
+=========================================
+
+.. automodule:: pyiron.atomistics.master.murnaghan
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,23 @@
+pyiron.sphinx package
+=====================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pyiron.sphinx.base
+   pyiron.sphinx.interactive
+   pyiron.sphinx.potential
+   pyiron.sphinx.sphinx
+   pyiron.sphinx.structure
+   pyiron.sphinx.volumetric_data
+
+Module contents
+---------------
+
+.. automodule:: pyiron.sphinx
+   :members:
+   :undoc-members:
+   :show-inheritance:

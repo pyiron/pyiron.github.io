@@ -1,0 +1,7 @@
+pyiron.table.funct module
+=========================
+
+.. automodule:: pyiron.table.funct
+   :members:
+   :undoc-members:
+   :show-inheritance:

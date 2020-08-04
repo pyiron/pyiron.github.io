@@ -1,0 +1,7 @@
+pyiron.base.project.path module
+===============================
+
+.. automodule:: pyiron.base.project.path
+   :members:
+   :undoc-members:
+   :show-inheritance:

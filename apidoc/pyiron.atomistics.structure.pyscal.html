@@ -1,0 +1,353 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.atomistics.structure.pyscal module &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>pyiron.atomistics.structure.pyscal module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/pyiron.atomistics.structure.pyscal.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-pyiron.atomistics.structure.pyscal">
+<span id="pyiron-atomistics-structure-pyscal-module"></span><h1>pyiron.atomistics.structure.pyscal module<a class="headerlink" href="#module-pyiron.atomistics.structure.pyscal" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="pyiron.atomistics.structure.pyscal.analyse_centro_symmetry">
+<code class="sig-prename descclassname">pyiron.atomistics.structure.pyscal.</code><code class="sig-name descname">analyse_centro_symmetry</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">atoms</span></em>, <em class="sig-param"><span class="n">num_neighbors</span><span class="o">=</span><span class="default_value">12</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/atomistics/structure/pyscal.html#analyse_centro_symmetry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.atomistics.structure.pyscal.analyse_centro_symmetry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Analyse centrosymmetry parameter</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>atoms</strong> – Atoms object</p></li>
+<li><p><strong>num_neighbors</strong> (<em>int</em>) – number of neighbors</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of centrosymmetry parameter</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>csm (list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.atomistics.structure.pyscal.analyse_cna_adaptive">
+<code class="sig-prename descclassname">pyiron.atomistics.structure.pyscal.</code><code class="sig-name descname">analyse_cna_adaptive</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">atoms</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'total'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/atomistics/structure/pyscal.html#analyse_cna_adaptive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.atomistics.structure.pyscal.analyse_cna_adaptive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use common neighbor analysis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>atoms</strong> (<em>pyiron.structure.atoms.Atoms</em>) – The structure to analyze.</p></li>
+<li><p><strong>mode</strong> (<em>&quot;total&quot;/&quot;numeric&quot;/&quot;str&quot;</em>) – Controls the style and level</p></li>
+<li><p><strong>detail of the output.</strong> (<em>of</em>) – </p></li>
+<li><p><strong>total</strong> – return number of atoms belonging to each structure</p></li>
+<li><p><strong>numeric</strong> – return a per atom list of numbers- 0 for unknown,
+1 fcc, 2 hcp, 3 bcc and 4 icosa</p></li>
+<li><p><strong>str</strong> – return a per atom string of sructures</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(depends on <cite>mode</cite>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.atomistics.structure.pyscal.analyse_voronoi_volume">
+<code class="sig-prename descclassname">pyiron.atomistics.structure.pyscal.</code><code class="sig-name descname">analyse_voronoi_volume</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">atoms</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/atomistics/structure/pyscal.html#analyse_voronoi_volume"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.atomistics.structure.pyscal.analyse_voronoi_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the Voronoi volume of atoms</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>atoms</strong> – (pyiron.structure.atoms.Atoms): The structure to analyze.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.atomistics.structure.pyscal.get_steinhardt_parameter_job">
+<code class="sig-prename descclassname">pyiron.atomistics.structure.pyscal.</code><code class="sig-name descname">get_steinhardt_parameter_job</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job</span></em>, <em class="sig-param"><span class="n">neighbor_method</span><span class="o">=</span><span class="default_value">'cutoff'</span></em>, <em class="sig-param"><span class="n">cutoff</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">n_clusters</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">q</span><span class="o">=</span><span class="default_value">4, 6</span></em>, <em class="sig-param"><span class="n">averaged</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">clustering</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">iteration_step</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/atomistics/structure/pyscal.html#get_steinhardt_parameter_job"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.atomistics.structure.pyscal.get_steinhardt_parameter_job" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate Steinhardts parameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>job</strong> (<em>job</em>) – pyiron job</p></li>
+<li><p><strong>neighbor_method</strong> (<em>str</em>) – can be [‘cutoff’, ‘voronoi’]</p></li>
+<li><p><strong>cutoff</strong> (<em>float</em>) – can be 0 for adaptive cutoff or any other value</p></li>
+<li><p><strong>n_clusters</strong> (<em>int</em>) – number of clusters for K means clustering</p></li>
+<li><p><strong>q</strong> (<em>list</em>) – can be from 2-12, the required q values to be calculated</p></li>
+<li><p><strong>averaged</strong> (<em>bool</em>) – If True, calculates the averaged versions of the parameter</p></li>
+<li><p><strong>clustering</strong> (<em>bool</em>) – If True, cluster based on the q values</p></li>
+<li><p><strong>iteration_step</strong> (<em>int</em>) – The step at which the configuration is to be used</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>calculated q parameters</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>q (list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.atomistics.structure.pyscal.get_steinhardt_parameter_structure">
+<code class="sig-prename descclassname">pyiron.atomistics.structure.pyscal.</code><code class="sig-name descname">get_steinhardt_parameter_structure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">structure</span></em>, <em class="sig-param"><span class="n">neighbor_method</span><span class="o">=</span><span class="default_value">'cutoff'</span></em>, <em class="sig-param"><span class="n">cutoff</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">n_clusters</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">q</span><span class="o">=</span><span class="default_value">4, 6</span></em>, <em class="sig-param"><span class="n">averaged</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">clustering</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/atomistics/structure/pyscal.html#get_steinhardt_parameter_structure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.atomistics.structure.pyscal.get_steinhardt_parameter_structure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate Steinhardts parameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>job</strong> (<em>job</em>) – pyiron job</p></li>
+<li><p><strong>neighbor_method</strong> (<em>str</em>) – can be [‘cutoff’, ‘voronoi’]</p></li>
+<li><p><strong>cutoff</strong> (<em>float</em>) – can be 0 for adaptive cutoff or any other value</p></li>
+<li><p><strong>n_clusters</strong> (<em>int</em>) – number of clusters for K means clustering</p></li>
+<li><p><strong>q</strong> (<em>list</em>) – can be from 2-12, the required q values to be calculated</p></li>
+<li><p><strong>averaged</strong> (<em>bool</em>) – If True, calculates the averaged versions of the parameter</p></li>
+<li><p><strong>clustering</strong> (<em>bool</em>) – If True, cluster based on the q values</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>calculated q parameters</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>q (list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

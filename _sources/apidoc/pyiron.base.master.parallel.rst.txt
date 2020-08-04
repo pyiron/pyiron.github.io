@@ -1,0 +1,7 @@
+pyiron.base.master.parallel module
+==================================
+
+.. automodule:: pyiron.base.master.parallel
+   :members:
+   :undoc-members:
+   :show-inheritance:

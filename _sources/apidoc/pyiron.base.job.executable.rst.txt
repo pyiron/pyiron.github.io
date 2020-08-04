@@ -1,0 +1,7 @@
+pyiron.base.job.executable module
+=================================
+
+.. automodule:: pyiron.base.job.executable
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,7 @@
+pyiron.atomistics.structure.generator module
+============================================
+
+.. automodule:: pyiron.atomistics.structure.generator
+   :members:
+   :undoc-members:
+   :show-inheritance:

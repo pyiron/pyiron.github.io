@@ -1,0 +1,1041 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.lammps.control &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.lammps.control</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.lammps.control</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.generic.parameters</span> <span class="kn">import</span> <span class="n">GenericParameters</span>
+<span class="kn">import</span> <span class="nn">scipy.constants</span> <span class="k">as</span> <span class="nn">spc</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Joerg Neugebauer, Sudarsan Surendralal, Jan Janssen&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2020, Max-Planck-Institut für Eisenforschung GmbH - &quot;</span>
+    <span class="s2">&quot;Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Sudarsan Surendralal&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;surendralal@mpie.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;production&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;Sep 1, 2017&quot;</span>
+
+
+<span class="c1"># Conversion factors for transfroming pyiron units to Lammps units (alphabetical)</span>
+<span class="n">AMU_TO_G</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">atomic_mass</span> <span class="o">*</span> <span class="n">spc</span><span class="o">.</span><span class="n">kilo</span>
+<span class="n">AMU_TO_KG</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">atomic_mass</span>
+<span class="n">ANG_PER_FS_TO_ANG_PER_PS</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">pico</span> <span class="o">/</span> <span class="n">spc</span><span class="o">.</span><span class="n">femto</span>
+<span class="n">ANG_PER_FS_TO_BOHR_PER_FS</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">angstrom</span> <span class="o">/</span> <span class="n">spc</span><span class="o">.</span><span class="n">physical_constants</span><span class="p">[</span><span class="s1">&#39;Bohr radius&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ANG_PER_FS_TO_CM_PER_S</span> <span class="o">=</span> <span class="p">(</span><span class="n">spc</span><span class="o">.</span><span class="n">angstrom</span> <span class="o">/</span> <span class="n">spc</span><span class="o">.</span><span class="n">femto</span><span class="p">)</span> <span class="o">/</span> <span class="n">spc</span><span class="o">.</span><span class="n">centi</span>
+<span class="n">ANG_PER_FS_TO_M_PER_S</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">angstrom</span> <span class="o">/</span> <span class="n">spc</span><span class="o">.</span><span class="n">femto</span>
+<span class="n">ANG_TO_BOHR</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">angstrom</span> <span class="o">/</span> <span class="n">spc</span><span class="o">.</span><span class="n">physical_constants</span><span class="p">[</span><span class="s1">&#39;Bohr radius&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ANG_TO_CM</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">angstrom</span> <span class="o">/</span> <span class="n">spc</span><span class="o">.</span><span class="n">centi</span>
+<span class="n">ANG_TO_M</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">angstrom</span>
+<span class="n">EL_TO_COUL</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">elementary_charge</span>
+<span class="n">EV_PER_ANG_TO_DYNE</span> <span class="o">=</span> <span class="p">(</span><span class="n">spc</span><span class="o">.</span><span class="n">electron_volt</span> <span class="o">/</span> <span class="n">spc</span><span class="o">.</span><span class="n">angstrom</span><span class="p">)</span> <span class="o">/</span> <span class="n">spc</span><span class="o">.</span><span class="n">dyne</span>
+<span class="n">EV_PER_ANG_TO_HA_PER_BOHR</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">physical_constants</span><span class="p">[</span><span class="s2">&quot;electron volt-hartree relationship&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> \
+                            <span class="n">spc</span><span class="o">.</span><span class="n">physical_constants</span><span class="p">[</span><span class="s1">&#39;Bohr radius&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">spc</span><span class="o">.</span><span class="n">angstrom</span>
+<span class="n">EV_PER_ANG_TO_KCAL_PER_MOL_ANG</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">eV</span> <span class="o">/</span> <span class="p">(</span><span class="n">spc</span><span class="o">.</span><span class="n">kilo</span> <span class="o">*</span> <span class="n">spc</span><span class="o">.</span><span class="n">calorie</span> <span class="o">/</span> <span class="n">spc</span><span class="o">.</span><span class="n">N_A</span><span class="p">)</span>
+<span class="n">EV_PER_ANG_TO_N</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">electron_volt</span> <span class="o">/</span> <span class="n">spc</span><span class="o">.</span><span class="n">angstrom</span>
+<span class="n">EV_TO_ERG</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">electron_volt</span> <span class="o">/</span> <span class="n">spc</span><span class="o">.</span><span class="n">erg</span>
+<span class="n">EV_TO_HA</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">physical_constants</span><span class="p">[</span><span class="s2">&quot;electron volt-hartree relationship&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">EV_TO_J</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">electron_volt</span>
+<span class="n">EV_TO_KCAL_PER_MOL</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">eV</span> <span class="o">/</span> <span class="p">(</span><span class="n">spc</span><span class="o">.</span><span class="n">kilo</span> <span class="o">*</span> <span class="n">spc</span><span class="o">.</span><span class="n">calorie</span> <span class="o">/</span> <span class="n">spc</span><span class="o">.</span><span class="n">N_A</span><span class="p">)</span>
+<span class="n">FS_TO_PS</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">femto</span> <span class="o">/</span> <span class="n">spc</span><span class="o">.</span><span class="n">pico</span>
+<span class="n">FS_TO_S</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">femto</span>
+<span class="n">GPA_TO_ATM</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">giga</span> <span class="o">/</span> <span class="n">spc</span><span class="o">.</span><span class="n">atm</span>
+<span class="n">GPA_TO_BAR</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">giga</span> <span class="o">/</span> <span class="n">spc</span><span class="o">.</span><span class="n">bar</span>
+<span class="n">GPA_TO_BARYE</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">giga</span> <span class="o">/</span> <span class="p">(</span><span class="n">spc</span><span class="o">.</span><span class="n">micro</span> <span class="o">*</span> <span class="n">spc</span><span class="o">.</span><span class="n">bar</span><span class="p">)</span>  <span class="c1"># &quot;barye&quot; = 1e-6 bar</span>
+<span class="n">GPA_TO_PA</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">giga</span>
+
+<span class="c1"># Conversions for most of the Lammps units to Pyiron units</span>
+<span class="c1"># Lammps units source doc: https://lammps.sandia.gov/doc/units.html</span>
+<span class="c1"># Pyrion units source doc: https://pyiron.github.io/source/faq.html</span>
+<span class="c1"># At time of writing, not all these conversion factors are used, but may be helpful later.</span>
+<span class="n">LAMMPS_UNIT_CONVERSIONS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;metal&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;mass&quot;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">,</span>
+        <span class="s2">&quot;distance&quot;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">,</span>
+        <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="n">FS_TO_PS</span><span class="p">,</span>
+        <span class="s2">&quot;energy&quot;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">,</span>
+        <span class="s2">&quot;velocity&quot;</span><span class="p">:</span> <span class="n">ANG_PER_FS_TO_ANG_PER_PS</span><span class="p">,</span>
+        <span class="s2">&quot;force&quot;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">,</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">,</span>
+        <span class="s2">&quot;pressure&quot;</span><span class="p">:</span> <span class="n">GPA_TO_BAR</span><span class="p">,</span>
+        <span class="s2">&quot;charge&quot;</span><span class="p">:</span> <span class="mf">1.</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;si&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;mass&quot;</span><span class="p">:</span> <span class="n">AMU_TO_KG</span><span class="p">,</span>
+        <span class="s2">&quot;distance&quot;</span><span class="p">:</span> <span class="n">ANG_TO_M</span><span class="p">,</span>
+        <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="n">FS_TO_S</span><span class="p">,</span>
+        <span class="s2">&quot;energy&quot;</span><span class="p">:</span> <span class="n">EV_TO_J</span><span class="p">,</span>
+        <span class="s2">&quot;velocity&quot;</span><span class="p">:</span> <span class="n">ANG_PER_FS_TO_M_PER_S</span><span class="p">,</span>
+        <span class="s2">&quot;force&quot;</span><span class="p">:</span> <span class="n">EV_PER_ANG_TO_N</span><span class="p">,</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">,</span>
+        <span class="s2">&quot;pressure&quot;</span><span class="p">:</span> <span class="n">GPA_TO_PA</span><span class="p">,</span>
+        <span class="s2">&quot;charge&quot;</span><span class="p">:</span> <span class="n">EL_TO_COUL</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;cgs&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;mass&quot;</span><span class="p">:</span> <span class="n">AMU_TO_G</span><span class="p">,</span>
+        <span class="s2">&quot;distance&quot;</span><span class="p">:</span> <span class="n">ANG_TO_CM</span><span class="p">,</span>
+        <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="n">FS_TO_S</span><span class="p">,</span>
+        <span class="s2">&quot;energy&quot;</span><span class="p">:</span> <span class="n">EV_TO_ERG</span><span class="p">,</span>
+        <span class="s2">&quot;velocity&quot;</span><span class="p">:</span> <span class="n">ANG_PER_FS_TO_CM_PER_S</span><span class="p">,</span>
+        <span class="s2">&quot;force&quot;</span><span class="p">:</span> <span class="n">EV_PER_ANG_TO_DYNE</span><span class="p">,</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">,</span>
+        <span class="s2">&quot;pressure&quot;</span><span class="p">:</span> <span class="n">GPA_TO_BARYE</span><span class="p">,</span>
+        <span class="s2">&quot;charge&quot;</span><span class="p">:</span> <span class="mf">4.8032044e-10</span>  <span class="c1"># In statCoulombs, but these are deprecated and thus not in scipt.constants</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;real&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;mass&quot;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">,</span>
+        <span class="s2">&quot;distance&quot;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">,</span>
+        <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">,</span>
+        <span class="s2">&quot;energy&quot;</span><span class="p">:</span> <span class="n">EV_TO_KCAL_PER_MOL</span><span class="p">,</span>
+        <span class="s2">&quot;velocity&quot;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">,</span>
+        <span class="s2">&quot;force&quot;</span><span class="p">:</span> <span class="n">EV_PER_ANG_TO_KCAL_PER_MOL_ANG</span><span class="p">,</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">,</span>
+        <span class="s2">&quot;pressure&quot;</span><span class="p">:</span> <span class="n">GPA_TO_ATM</span><span class="p">,</span>
+        <span class="s2">&quot;charge&quot;</span><span class="p">:</span> <span class="mf">1.</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;electron&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;mass&quot;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">,</span>
+        <span class="s2">&quot;distance&quot;</span><span class="p">:</span> <span class="n">ANG_TO_BOHR</span><span class="p">,</span>
+        <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">,</span>
+        <span class="s2">&quot;energy&quot;</span><span class="p">:</span> <span class="n">EV_TO_HA</span><span class="p">,</span>
+        <span class="s2">&quot;velocity&quot;</span><span class="p">:</span> <span class="n">ANG_PER_FS_TO_BOHR_PER_FS</span><span class="p">,</span>
+        <span class="s2">&quot;force&quot;</span><span class="p">:</span> <span class="n">EV_PER_ANG_TO_HA_PER_BOHR</span><span class="p">,</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">,</span>
+        <span class="s2">&quot;pressure&quot;</span><span class="p">:</span> <span class="n">GPA_TO_PA</span><span class="p">,</span>
+        <span class="s2">&quot;charge&quot;</span><span class="p">:</span> <span class="mf">1.</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="LammpsControl"><a class="viewcode-back" href="../../../apidoc/pyiron.lammps.control.html#pyiron.lammps.control.LammpsControl">[docs]</a><span class="k">class</span> <span class="nc">LammpsControl</span><span class="p">(</span><span class="n">GenericParameters</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">qwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">LammpsControl</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">input_file_name</span><span class="o">=</span><span class="n">input_file_name</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="s2">&quot;control_inp&quot;</span><span class="p">,</span> <span class="n">comment_char</span><span class="o">=</span><span class="s2">&quot;#&quot;</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_init_block_dict</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dataset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset</span>
+
+    <span class="k">def</span> <span class="nf">_init_block_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">block_dict</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+        <span class="n">block_dict</span><span class="p">[</span><span class="s2">&quot;read_restart&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;read_restart&quot;</span>
+        <span class="n">block_dict</span><span class="p">[</span><span class="s2">&quot;structure&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;units&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;dimension&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;boundary&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;atom_style&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;read_data&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;include&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">block_dict</span><span class="p">[</span><span class="s2">&quot;potential&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;group&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;set&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pair_style&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pair_coeff&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;bond_style&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;bond_coeff&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;angle_style&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;angle_coeff&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;kspace_style&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;neighbor&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">block_dict</span><span class="p">[</span><span class="s2">&quot;compute&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;compute&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;fix&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;variable&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;fix_modify&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">block_dict</span><span class="p">[</span><span class="s2">&quot;setup&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;min_style&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;min_modify&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;neigh_modify&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;velocity&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;timestep&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;dielectric&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;reset_timestep&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">block_dict</span><span class="p">[</span><span class="s2">&quot;control&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;dump&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;dump_modify&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;thermo_style&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;thermo_modify&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;thermo&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">block_dict</span><span class="p">[</span><span class="s2">&quot;run&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;run&quot;</span><span class="p">,</span> <span class="s2">&quot;minimize&quot;</span><span class="p">)</span>
+        <span class="n">block_dict</span><span class="p">[</span><span class="s2">&quot;write_restart&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;write_restart&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_block_dict</span> <span class="o">=</span> <span class="n">block_dict</span>
+
+<div class="viewcode-block" id="LammpsControl.load_default"><a class="viewcode-back" href="../../../apidoc/pyiron.lammps.control.html#pyiron.lammps.control.LammpsControl.load_default">[docs]</a>    <span class="k">def</span> <span class="nf">load_default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_content</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">file_content</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">file_content</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="s2">&quot;units                 metal</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="o">+</span> <span class="s2">&quot;dimension             3</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="o">+</span> <span class="s2">&quot;boundary              p p p</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="o">+</span> <span class="s2">&quot;atom_style            atomic</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="o">+</span> <span class="s2">&quot;read_data             structure.inp</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="o">+</span> <span class="s2">&quot;include               potential.inp</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="o">+</span> <span class="s2">&quot;fix___ensemble        all nve</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="o">+</span> <span class="s2">&quot;variable___dumptime   equal 100</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="o">+</span> <span class="s2">&quot;variable___thermotime equal 100</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="o">+</span> <span class="s2">&quot;dump___1              all custom $</span><span class="si">{dumptime}</span><span class="s2"> dump.out id type xsu ysu zsu fx fy fz vx vy vz</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="o">+</span> <span class="s2">&quot;dump_modify___1       sort id format line </span><span class="se">\&quot;</span><span class="si">%d</span><span class="s2"> </span><span class="si">%d</span><span class="s2"> </span><span class="si">%20.15g</span><span class="s2"> </span><span class="si">%20.15g</span><span class="s2"> </span><span class="si">%20.15g</span><span class="s2"> </span><span class="si">%20.15g</span><span class="s2"> </span><span class="si">%20.15g</span><span class="s2"> </span><span class="si">%20.15g</span><span class="s2"> </span><span class="si">%20.15g</span><span class="s2"> </span><span class="si">%20.15g</span><span class="s2"> </span><span class="si">%20.15g</span><span class="se">\&quot;\n</span><span class="s2">&quot;</span>
+                <span class="o">+</span> <span class="s2">&quot;thermo_style          custom step temp pe etotal pxx pxy pxz pyy pyz pzz vol</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="o">+</span> <span class="s2">&quot;thermo_modify         format float </span><span class="si">%20.15g</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="o">+</span> <span class="s2">&quot;thermo                $</span><span class="si">{thermotime}</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="o">+</span> <span class="s2">&quot;run                   0</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">load_string</span><span class="p">(</span><span class="n">file_content</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="LammpsControl.pressure_to_lammps"><a class="viewcode-back" href="../../../apidoc/pyiron.lammps.control.html#pyiron.lammps.control.LammpsControl.pressure_to_lammps">[docs]</a>    <span class="k">def</span> <span class="nf">pressure_to_lammps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pressure</span><span class="p">,</span> <span class="n">rotation_matrix</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert a singular value, list of values, or combination of values to the appropriate six elements for Lammps</span>
+<span class="sd">        pxx, pyy, pzz, pxy, pxz, and pyz pressure tensor representation.</span>
+
+<span class="sd">        Lammps handles complex cells in a particular way, namely by using an upper triangular cell. This means we may</span>
+<span class="sd">        need to convert our pressure tensor to a new coordinate frame. We also handle that transformation here.</span>
+
+<span class="sd">        Finally, we also ensure that the units are converted from pyiron&#39;s GPa to whatever Lammps needs.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            pressure (float/list/tuple/numpy.ndarray): The pressure(s) to convert.</span>
+<span class="sd">            rotation_matrix (numpy.ndarray): The 3x3 matrix rotating from the pyiron to Lammps coordinate frame.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            (numpy.ndarray): pxx, pyy, pzz, pxy, pxz, and pyz to be passed to Lammps.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Get something with six elements</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">pressure</span><span class="p">,</span> <span class="s2">&quot;__len__&quot;</span><span class="p">):</span>
+            <span class="n">pressure</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pressure</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">[</span><span class="kc">None</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pressure</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Pressure can have a maximum of 6 values, (x, y, z, xy, xz, and yz), but got &quot;</span> <span class="o">+</span>
+                                 <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pressure</span><span class="p">)))</span>
+            <span class="n">all_pressures</span> <span class="o">=</span> <span class="mi">6</span> <span class="o">*</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span>
+            <span class="n">all_pressures</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">pressure</span><span class="p">)]</span> <span class="o">=</span> <span class="n">pressure</span>
+            <span class="n">pressure</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">all_pressures</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+        <span class="c1"># Cell degrees of freedom can be kept fixed using None for the pressure, check where that&#39;s done.</span>
+        <span class="n">not_none_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">pressure</span><span class="o">!=</span><span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">not_none_mask</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Pressure cannot have a length but all be None&quot;</span><span class="p">)</span>
+
+        <span class="c1"># If necessary, rotate the pressure tensor to the Lammps coordinate frame</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="n">rotation_matrix</span><span class="p">),</span> <span class="mi">3</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">not_none_mask</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cells which are not orthorhombic or rectangular are incompatible with Lammps &quot;</span>
+                                 <span class="s2">&quot;constant pressure calculations unless the entire pressure tensor is defined.&quot;</span>
+                                 <span class="s2">&quot;The reason is that Lammps demands such cells be represented with an &quot;</span>
+                                 <span class="s2">&quot;upper-triangular unit cell, thus a rotation between Lammps and pyiron coordinate&quot;</span>
+                                 <span class="s2">&quot;frames is required; it is not possible to rotate the pressure tensor if any of &quot;</span>
+                                 <span class="s2">&quot;its components is None.&quot;</span><span class="p">)</span>
+            <span class="n">pxx</span><span class="p">,</span> <span class="n">pyy</span><span class="p">,</span> <span class="n">pzz</span><span class="p">,</span> <span class="n">pxy</span><span class="p">,</span> <span class="n">pxz</span><span class="p">,</span> <span class="n">pyz</span> <span class="o">=</span> <span class="n">pressure</span>
+            <span class="n">pressure_tensor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                <span class="p">[[</span><span class="n">pxx</span><span class="p">,</span> <span class="n">pxy</span><span class="p">,</span> <span class="n">pxz</span><span class="p">],</span>
+                 <span class="p">[</span><span class="n">pxy</span><span class="p">,</span> <span class="n">pyy</span><span class="p">,</span> <span class="n">pyz</span><span class="p">],</span>
+                 <span class="p">[</span><span class="n">pxz</span><span class="p">,</span> <span class="n">pyz</span><span class="p">,</span> <span class="n">pzz</span><span class="p">]]</span>
+            <span class="p">)</span>
+            <span class="n">lammps_pressure_tensor</span> <span class="o">=</span> <span class="n">rotation_matrix</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">pressure_tensor</span> <span class="o">@</span> <span class="n">rotation_matrix</span>
+            <span class="n">pressure</span> <span class="o">=</span> <span class="n">lammps_pressure_tensor</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+
+        <span class="n">pressure</span><span class="p">[</span><span class="n">not_none_mask</span><span class="p">]</span> <span class="o">*=</span> <span class="n">LAMMPS_UNIT_CONVERSIONS</span><span class="p">[</span><span class="bp">self</span><span class="p">[</span><span class="s2">&quot;units&quot;</span><span class="p">]][</span><span class="s2">&quot;pressure&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">pressure</span></div>
+
+<div class="viewcode-block" id="LammpsControl.calc_minimize"><a class="viewcode-back" href="../../../apidoc/pyiron.lammps.control.html#pyiron.lammps.control.LammpsControl.calc_minimize">[docs]</a>    <span class="k">def</span> <span class="nf">calc_minimize</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">ionic_energy_tolerance</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+        <span class="n">ionic_force_tolerance</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span>
+        <span class="n">max_iter</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span>
+        <span class="n">pressure</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">n_print</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+        <span class="n">style</span><span class="o">=</span><span class="s1">&#39;cg&#39;</span><span class="p">,</span>
+        <span class="n">rotation_matrix</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets parameters required for minimization.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ionic_energy_tolerance (float): If the magnitude of difference between energies of two consecutive steps is lower than or</span>
+<span class="sd">                equal to `ionic_energy_tolerance`, the minimisation terminates. (Default is 0.0 eV.)</span>
+<span class="sd">            ionic_force_tolerance (float): If the magnitude of the global force vector at a step is lower than or equal to `ionic_force_tolerance`, the</span>
+<span class="sd">                minimisation terminates. (Default is 1e-4 eV/angstrom.)</span>
+<span class="sd">            e_tol (float): Sam as ionic_energy_tolerance (deprecated)</span>
+<span class="sd">            f_tol (float): Sam as ionic_force_tolerance (deprecated)</span>
+<span class="sd">            max_iter (int): Maximum number of minimisation steps to carry out. If the minimisation converges before</span>
+<span class="sd">                `max_iter` steps, terminate at the converged step. If the minimisation does not converge up to</span>
+<span class="sd">                `max_iter` steps, terminate at the `max_iter` step. (Default is 100000.)</span>
+<span class="sd">            pressure (None/float/numpy.ndarray/list): Target pressure. If set to None, an NVE or an NVT calculation is</span>
+<span class="sd">                performed. A list of up to length 6 can be given to specify xx, yy, zz, xy, xz, and yz components of</span>
+<span class="sd">                the pressure tensor, respectively. These values can mix floats and `None` to allow only certain degrees</span>
+<span class="sd">                of cell freedom to change. (Default is None, run isochorically.)</span>
+<span class="sd">            n_print (int): Write (dump or print) to the output file every n steps (Default: 100)</span>
+<span class="sd">            style (&#39;cg&#39;/&#39;sd&#39;/other values from Lammps docs): The style of the numeric minimization, either conjugate</span>
+<span class="sd">                gradient, steepest descent, or other keys permissible from the Lammps docs on &#39;min_style&#39;. (Default</span>
+<span class="sd">                is &#39;cg&#39; -- conjugate gradient.)</span>
+<span class="sd">            rotation_matrix (numpy.ndarray): The rotation matrix from the pyiron to Lammps coordinate frame.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># This docstring is a source for the calc_minimize method in pyiron.lammps.base.LammpsBase.calc_minimize and</span>
+        <span class="c1"># pyiron.lammps.interactive.LammpsInteractive.calc_minimize -- Please ensure that changes to signature or</span>
+        <span class="c1"># defaults stay consistent!</span>
+
+        <span class="n">max_evaluations</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">max_iter</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="p">[</span><span class="s2">&quot;units&quot;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">LAMMPS_UNIT_CONVERSIONS</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+        <span class="n">energy_units</span> <span class="o">=</span> <span class="n">LAMMPS_UNIT_CONVERSIONS</span><span class="p">[</span><span class="bp">self</span><span class="p">[</span><span class="s2">&quot;units&quot;</span><span class="p">]][</span><span class="s2">&quot;energy&quot;</span><span class="p">]</span>
+        <span class="n">force_units</span> <span class="o">=</span> <span class="n">LAMMPS_UNIT_CONVERSIONS</span><span class="p">[</span><span class="bp">self</span><span class="p">[</span><span class="s2">&quot;units&quot;</span><span class="p">]][</span><span class="s2">&quot;force&quot;</span><span class="p">]</span>
+        <span class="n">pressure_units</span> <span class="o">=</span> <span class="n">LAMMPS_UNIT_CONVERSIONS</span><span class="p">[</span><span class="bp">self</span><span class="p">[</span><span class="s2">&quot;units&quot;</span><span class="p">]][</span><span class="s2">&quot;pressure&quot;</span><span class="p">]</span>
+
+        <span class="n">ionic_energy_tolerance</span> <span class="o">*=</span> <span class="n">energy_units</span>
+        <span class="n">ionic_force_tolerance</span> <span class="o">*=</span> <span class="n">force_units</span>
+
+        <span class="k">if</span> <span class="n">pressure</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="kc">None</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">pressure</span><span class="p">])</span><span class="o">.</span><span class="n">flatten</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">rotation_matrix</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">rotation_matrix</span><span class="p">),</span> <span class="mi">1</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s1">&#39;Pressure cannot contain None if upper triangle in cell is defined&#39;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">rotation_matrix</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">pressure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pressure_to_lammps</span><span class="p">(</span><span class="n">pressure</span><span class="p">,</span> <span class="n">rotation_matrix</span><span class="p">)</span>
+            <span class="n">str_press</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+            <span class="k">for</span> <span class="n">press</span><span class="p">,</span> <span class="n">str_axis</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">pressure</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot; x &quot;</span><span class="p">,</span> <span class="s2">&quot; y &quot;</span><span class="p">,</span> <span class="s2">&quot; z &quot;</span><span class="p">,</span> <span class="s2">&quot; xy &quot;</span><span class="p">,</span> <span class="s2">&quot; xz &quot;</span><span class="p">,</span> <span class="s2">&quot; yz &quot;</span><span class="p">]):</span>
+                <span class="k">if</span> <span class="n">press</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">str_press</span> <span class="o">+=</span> <span class="n">str_axis</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">press</span><span class="o">*</span><span class="n">pressure_units</span> <span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">str_press</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Pressure values cannot all be None&quot;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">str_press</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">str_press</span> <span class="o">+=</span> <span class="s2">&quot; couple none&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">fix___ensemble</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;all box/relax&quot;</span> <span class="o">+</span> <span class="n">str_press</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">remove_keys</span><span class="p">([</span><span class="s2">&quot;fix___nve&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">min_style</span><span class="o">=</span><span class="n">style</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set</span><span class="p">(</span>
+            <span class="n">minimize</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">ionic_energy_tolerance</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot; &quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ionic_force_tolerance</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot; &quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">max_iter</span><span class="p">))</span>
+            <span class="o">+</span> <span class="s2">&quot; &quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">max_evaluations</span><span class="p">))</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">remove_keys</span><span class="p">([</span><span class="s2">&quot;run&quot;</span><span class="p">,</span> <span class="s2">&quot;velocity&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modify</span><span class="p">(</span><span class="n">variable___dumptime</span><span class="o">=</span><span class="s2">&quot;equal &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n_print</span><span class="p">),</span> <span class="n">thermo</span><span class="o">=</span><span class="n">n_print</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modify</span><span class="p">(</span><span class="n">variable___thermotime</span><span class="o">=</span><span class="s2">&quot;equal &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n_print</span><span class="p">),</span> <span class="n">thermo</span><span class="o">=</span><span class="n">n_print</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="LammpsControl.calc_static"><a class="viewcode-back" href="../../../apidoc/pyiron.lammps.control.html#pyiron.lammps.control.LammpsControl.calc_static">[docs]</a>    <span class="k">def</span> <span class="nf">calc_static</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">run</span><span class="o">=</span><span class="s2">&quot;0&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">remove_keys</span><span class="p">([</span><span class="s2">&quot;minimize&quot;</span><span class="p">,</span> <span class="s2">&quot;velocity&quot;</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="LammpsControl.set_initial_velocity"><a class="viewcode-back" href="../../../apidoc/pyiron.lammps.control.html#pyiron.lammps.control.LammpsControl.set_initial_velocity">[docs]</a>    <span class="k">def</span> <span class="nf">set_initial_velocity</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">temperature</span><span class="p">,</span>
+        <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">gaussian</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">append_value</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">zero_lin_momentum</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">zero_rot_momentum</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">job_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create initial velocities via velocity all create. More information can be found on LAMMPS website:</span>
+<span class="sd">        https://lammps.sandia.gov/doc/velocity.html</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            temperature: (int or float)</span>
+<span class="sd">            seed: (int) Seed for the initial random number generator</span>
+<span class="sd">            gaussian: (True/False) Create velocity according to the Gaussian distribution (otherwise uniform)</span>
+<span class="sd">            append_value: (True/False) Add the velocity values to the current velocities (probably not functional now)</span>
+<span class="sd">            zero_lin_momentum: (True/False) Cancel the total linear momentum</span>
+<span class="sd">            zero_rot_momentum: (True/False) Cancel the total angular momentum</span>
+<span class="sd">            job_name: (str) job name to generate seed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">seed</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">seed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate_seed_from_job</span><span class="p">(</span><span class="n">job_name</span><span class="o">=</span><span class="n">job_name</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">arg</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">gaussian</span><span class="p">:</span>
+            <span class="n">arg</span> <span class="o">=</span> <span class="s2">&quot; dist gaussian&quot;</span>
+        <span class="k">if</span> <span class="n">append_value</span><span class="p">:</span>
+            <span class="n">arg</span> <span class="o">+=</span> <span class="s2">&quot; sum yes&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">zero_lin_momentum</span><span class="p">:</span>
+            <span class="n">arg</span> <span class="o">+=</span> <span class="s2">&quot; mom no&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">zero_rot_momentum</span><span class="p">:</span>
+            <span class="n">arg</span> <span class="o">+=</span> <span class="s2">&quot; rot no&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modify</span><span class="p">(</span>
+            <span class="n">velocity</span><span class="o">=</span><span class="s2">&quot;all create &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span> <span class="o">+</span> <span class="n">arg</span><span class="p">,</span>
+            <span class="n">append_if_not_present</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="LammpsControl.generate_seed_from_job"><a class="viewcode-back" href="../../../apidoc/pyiron.lammps.control.html#pyiron.lammps.control.LammpsControl.generate_seed_from_job">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">generate_seed_from_job</span><span class="p">(</span><span class="n">job_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a unique seed from the job name.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            job_name (str): job_name of the current job to generate the seed</span>
+<span class="sd">            seed (int): integer to access part of the seed</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            int: random seed generated based on the hash</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span>
+            <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">job_name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(),</span> <span class="mi">16</span><span class="p">))[</span>
+                <span class="mi">5</span> <span class="o">*</span> <span class="n">seed</span> <span class="p">:</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">seed</span> <span class="o">+</span> <span class="mi">5</span>
+            <span class="p">]</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="LammpsControl.calc_md"><a class="viewcode-back" href="../../../apidoc/pyiron.lammps.control.html#pyiron.lammps.control.LammpsControl.calc_md">[docs]</a>    <span class="k">def</span> <span class="nf">calc_md</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">temperature</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">pressure</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">n_ionic_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+        <span class="n">time_step</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="n">n_print</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+        <span class="n">temperature_damping_timescale</span><span class="o">=</span><span class="mf">100.0</span><span class="p">,</span>
+        <span class="n">pressure_damping_timescale</span><span class="o">=</span><span class="mf">1000.0</span><span class="p">,</span>
+        <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">tloop</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">initial_temperature</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">langevin</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">delta_temp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">delta_press</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">job_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="n">rotation_matrix</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set an MD calculation within LAMMPS. Nosé Hoover is used by default.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            temperature (None/float/list): Target temperature value(-s). If set to None, an NVE calculation is performed.</span>
+<span class="sd">                                           It is required when the pressure is set or langevin is set</span>
+<span class="sd">                                           It can be a list of temperature values, containing the initial target</span>
+<span class="sd">                                           temperature and the final target temperature (in between the target value</span>
+<span class="sd">                                           is varied linearly).</span>
+<span class="sd">            pressure (None/float/numpy.ndarray/list): Target pressure. If set to None, an NVE or an NVT calculation is</span>
+<span class="sd">                performed. A list of up to length 6 can be given to specify xx, yy, zz, xy, xz, and yz components of</span>
+<span class="sd">                the pressure tensor, respectively. These values can mix floats and `None` to allow only certain degrees</span>
+<span class="sd">                of cell freedom to change. (Default is None, run isochorically.)</span>
+<span class="sd">            n_ionic_steps (int): Number of ionic steps</span>
+<span class="sd">            time_step (float): Step size in fs between two steps.</span>
+<span class="sd">            n_print (int):  Print frequency</span>
+<span class="sd">            temperature_damping_timescale (float): The time associated with the thermostat adjusting the temperature.</span>
+<span class="sd">                                                   (In fs. After rescaling to appropriate time units, is equivalent to</span>
+<span class="sd">                                                   Lammps&#39; `Tdamp`.)</span>
+<span class="sd">            pressure_damping_timescale (float): The time associated with the barostat adjusting the temperature.</span>
+<span class="sd">                                                (In fs. After rescaling to appropriate time units, is equivalent to</span>
+<span class="sd">                                                Lammps&#39; `Pdamp`.)</span>
+<span class="sd">            seed (int):  Seed for the random number generation (required for the velocity creation)</span>
+<span class="sd">            tloop:</span>
+<span class="sd">            initial_temperature (None/float):  Initial temperature according to which the initial velocity field</span>
+<span class="sd">                                               is created. If None, the initial temperature will be twice the target</span>
+<span class="sd">                                               temperature (which would go immediately down to the target temperature</span>
+<span class="sd">                                               as described in equipartition theorem). If 0, the velocity field is not</span>
+<span class="sd">                                               initialized (in which case  the initial velocity given in structure will</span>
+<span class="sd">                                               be used). If any other number is given, this value is going to be used</span>
+<span class="sd">                                               for the initial temperature.</span>
+<span class="sd">            langevin (bool): (True or False) Activate Langevin dynamics</span>
+<span class="sd">            delta_temp (float): Thermostat timescale, but in your Lammps time units, whatever those are. (DEPRECATED.)</span>
+<span class="sd">            delta_press (float): Barostat timescale, but in your Lammps time units, whatever those are. (DEPRECATED.)</span>
+<span class="sd">            job_name (str): Job name of the job to generate a unique random seed.</span>
+<span class="sd">            rotation_matrix (numpy.ndarray): The rotation matrix from the pyiron to Lammps coordinate frame.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="p">[</span><span class="s2">&quot;units&quot;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">LAMMPS_UNIT_CONVERSIONS</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+        <span class="n">time_units</span> <span class="o">=</span> <span class="n">LAMMPS_UNIT_CONVERSIONS</span><span class="p">[</span><span class="bp">self</span><span class="p">[</span><span class="s2">&quot;units&quot;</span><span class="p">]][</span><span class="s2">&quot;time&quot;</span><span class="p">]</span>
+        <span class="n">temperature_units</span> <span class="o">=</span> <span class="n">LAMMPS_UNIT_CONVERSIONS</span><span class="p">[</span><span class="bp">self</span><span class="p">[</span><span class="s2">&quot;units&quot;</span><span class="p">]][</span><span class="s2">&quot;temperature&quot;</span><span class="p">]</span>
+
+        <span class="c1"># Transform time</span>
+        <span class="k">if</span> <span class="n">time_step</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="p">[</span><span class="s2">&quot;timestep&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">time_step</span> <span class="o">*</span> <span class="n">time_units</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+        <span class="c1"># Transform thermostat strength (time)</span>
+        <span class="k">if</span> <span class="n">delta_temp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                <span class="s2">&quot;WARNING: `delta_temp` is deprecated, please use `temperature_damping_timescale`.&quot;</span>
+            <span class="p">)</span>
+            <span class="n">temperature_damping_timescale</span> <span class="o">=</span> <span class="n">delta_temp</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">temperature_damping_timescale</span> <span class="o">*=</span> <span class="n">time_units</span>
+
+        <span class="c1"># Transform barostat strength (time)</span>
+        <span class="k">if</span> <span class="n">delta_press</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                <span class="s2">&quot;WARNING: `delta_press` is deprecated, please use `pressure_damping_timescale`.&quot;</span>
+            <span class="p">)</span>
+            <span class="n">pressure_damping_timescale</span> <span class="o">=</span> <span class="n">delta_press</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">pressure_damping_timescale</span> <span class="o">*=</span> <span class="n">time_units</span>
+
+        <span class="c1"># Transform temperature</span>
+        <span class="k">if</span> <span class="n">temperature</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">temperature</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">temperature</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">temperature</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">temperature</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+            <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;At most two temperatures can be provided &quot;</span>
+                                 <span class="s2">&quot;(for a linearly ramping target temperature), &quot;</span>
+                                 <span class="s2">&quot;but got </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">temperature</span><span class="p">)))</span>
+            <span class="n">temperature</span> <span class="o">*=</span> <span class="n">temperature_units</span>
+
+        <span class="c1"># Apply initial overheating (default uses the theorem of equipartition of energy between KE and PE)</span>
+        <span class="k">if</span> <span class="n">initial_temperature</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">temperature</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">initial_temperature</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">temperature</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">seed</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">seed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate_seed_from_job</span><span class="p">(</span><span class="n">job_name</span><span class="o">=</span><span class="n">job_name</span><span class="p">)</span>
+
+        <span class="c1"># Set thermodynamic ensemble</span>
+        <span class="k">if</span> <span class="n">pressure</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># NPT</span>
+
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">pressure</span><span class="p">])</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span><span class="o">!=</span><span class="kc">None</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;At least one component of pressure must be other than None&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">pressure</span><span class="p">,</span> <span class="s2">&quot;__len__&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">pressure</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Pressure must be a float or a vector with length &lt;= 6&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">temperature</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">temperature</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Target temperature for fix nvt/npt/nph cannot be 0 or negative&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">rotation_matrix</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">pressure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pressure_to_lammps</span><span class="p">(</span><span class="n">pressure</span><span class="p">,</span> <span class="n">rotation_matrix</span><span class="p">)</span>
+
+            <span class="n">pressure_string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+            <span class="k">for</span> <span class="n">coord</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="s2">&quot;xy&quot;</span><span class="p">,</span> <span class="s2">&quot;xz&quot;</span><span class="p">,</span> <span class="s2">&quot;yz&quot;</span><span class="p">],</span> <span class="n">pressure</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">pressure_string</span> <span class="o">+=</span> <span class="s2">&quot; </span><span class="si">{0}</span><span class="s2"> </span><span class="si">{1}</span><span class="s2"> </span><span class="si">{1}</span><span class="s2"> </span><span class="si">{2}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">coord</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">pressure_damping_timescale</span><span class="p">)</span>
+                    <span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">langevin</span><span class="p">:</span>  <span class="c1"># NPT(Langevin)</span>
+                <span class="n">fix_ensemble_str</span> <span class="o">=</span> <span class="s2">&quot;all nph&quot;</span> <span class="o">+</span> <span class="n">pressure_string</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">modify</span><span class="p">(</span>
+                    <span class="n">fix___langevin</span><span class="o">=</span><span class="s2">&quot;all langevin </span><span class="si">{0}</span><span class="s2"> </span><span class="si">{1}</span><span class="s2"> </span><span class="si">{2}</span><span class="s2"> </span><span class="si">{3}</span><span class="s2"> zero yes&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="nb">str</span><span class="p">(</span><span class="n">temperature</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+                        <span class="nb">str</span><span class="p">(</span><span class="n">temperature</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+                        <span class="nb">str</span><span class="p">(</span><span class="n">temperature_damping_timescale</span><span class="p">),</span>
+                        <span class="nb">str</span><span class="p">(</span><span class="n">seed</span><span class="p">),</span>
+                    <span class="p">),</span>
+                    <span class="n">append_if_not_present</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>  <span class="c1"># NPT(Nose-Hoover)</span>
+                <span class="n">fix_ensemble_str</span> <span class="o">=</span> <span class="s2">&quot;all npt temp </span><span class="si">{0}</span><span class="s2"> </span><span class="si">{1}</span><span class="s2"> </span><span class="si">{2}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="nb">str</span><span class="p">(</span><span class="n">temperature</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+                    <span class="nb">str</span><span class="p">(</span><span class="n">temperature</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+                    <span class="nb">str</span><span class="p">(</span><span class="n">temperature_damping_timescale</span><span class="p">),</span>
+                <span class="p">)</span>
+                <span class="n">fix_ensemble_str</span> <span class="o">+=</span> <span class="n">pressure_string</span>
+        <span class="k">elif</span> <span class="n">temperature</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># NVT</span>
+            <span class="k">if</span> <span class="n">temperature</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Target temperature for fix nvt/npt/nph cannot be 0 or negative&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">langevin</span><span class="p">:</span>  <span class="c1"># NVT(Langevin)</span>
+                <span class="n">fix_ensemble_str</span> <span class="o">=</span> <span class="s2">&quot;all nve&quot;</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">modify</span><span class="p">(</span>
+                    <span class="n">fix___langevin</span><span class="o">=</span><span class="s2">&quot;all langevin </span><span class="si">{0}</span><span class="s2"> </span><span class="si">{1}</span><span class="s2"> </span><span class="si">{2}</span><span class="s2"> </span><span class="si">{3}</span><span class="s2"> zero yes&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="nb">str</span><span class="p">(</span><span class="n">temperature</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+                        <span class="nb">str</span><span class="p">(</span><span class="n">temperature</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+                        <span class="nb">str</span><span class="p">(</span><span class="n">temperature_damping_timescale</span><span class="p">),</span>
+                        <span class="nb">str</span><span class="p">(</span><span class="n">seed</span><span class="p">),</span>
+                    <span class="p">),</span>
+                    <span class="n">append_if_not_present</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>  <span class="c1"># NVT(Nose-Hoover)</span>
+                <span class="n">fix_ensemble_str</span> <span class="o">=</span> <span class="s2">&quot;all nvt temp </span><span class="si">{0}</span><span class="s2"> </span><span class="si">{1}</span><span class="s2"> </span><span class="si">{2}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="nb">str</span><span class="p">(</span><span class="n">temperature</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+                    <span class="nb">str</span><span class="p">(</span><span class="n">temperature</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+                    <span class="nb">str</span><span class="p">(</span><span class="n">temperature_damping_timescale</span><span class="p">),</span>
+                <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># NVE</span>
+            <span class="k">if</span> <span class="n">langevin</span><span class="p">:</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Temperature not set; Langevin ignored.&quot;</span><span class="p">)</span>
+            <span class="n">fix_ensemble_str</span> <span class="o">=</span> <span class="s2">&quot;all nve&quot;</span>
+            <span class="n">initial_temperature</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">if</span> <span class="n">tloop</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">fix_ensemble_str</span> <span class="o">+=</span> <span class="s2">&quot; tloop &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tloop</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">remove_keys</span><span class="p">([</span><span class="s2">&quot;minimize&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modify</span><span class="p">(</span>
+            <span class="n">fix___ensemble</span><span class="o">=</span><span class="n">fix_ensemble_str</span><span class="p">,</span>
+            <span class="n">variable___dumptime</span><span class="o">=</span><span class="s2">&quot; equal </span><span class="si">{}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_print</span><span class="p">),</span>
+            <span class="n">thermo</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">n_print</span><span class="p">),</span>
+            <span class="n">run</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">n_ionic_steps</span><span class="p">),</span>
+            <span class="n">append_if_not_present</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modify</span><span class="p">(</span>
+            <span class="n">fix___ensemble</span><span class="o">=</span><span class="n">fix_ensemble_str</span><span class="p">,</span>
+            <span class="n">variable___thermotime</span><span class="o">=</span><span class="s2">&quot; equal </span><span class="si">{}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_print</span><span class="p">),</span>
+            <span class="n">thermo</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">n_print</span><span class="p">),</span>
+            <span class="n">run</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">n_ionic_steps</span><span class="p">),</span>
+            <span class="n">append_if_not_present</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">initial_temperature</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_initial_velocity</span><span class="p">(</span>
+                <span class="n">temperature</span><span class="o">=</span><span class="n">initial_temperature</span><span class="p">,</span>
+                <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
+                <span class="n">gaussian</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">job_name</span><span class="o">=</span><span class="n">job_name</span>
+            <span class="p">)</span></div>
+
+<div class="viewcode-block" id="LammpsControl.calc_vcsgc"><a class="viewcode-back" href="../../../apidoc/pyiron.lammps.control.html#pyiron.lammps.control.LammpsControl.calc_vcsgc">[docs]</a>    <span class="k">def</span> <span class="nf">calc_vcsgc</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">mu</span><span class="p">,</span>
+        <span class="n">ordered_element_list</span><span class="p">,</span>
+        <span class="n">target_concentration</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">kappa</span><span class="o">=</span><span class="mf">1000.</span><span class="p">,</span>
+        <span class="n">mc_step_interval</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+        <span class="n">swap_fraction</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+        <span class="n">temperature_mc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">window_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">window_moves</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">temperature</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">pressure</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">n_ionic_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+        <span class="n">time_step</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="n">n_print</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+        <span class="n">temperature_damping_timescale</span><span class="o">=</span><span class="mf">100.0</span><span class="p">,</span>
+        <span class="n">pressure_damping_timescale</span><span class="o">=</span><span class="mf">1000.0</span><span class="p">,</span>
+        <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">initial_temperature</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">langevin</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">job_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Run variance-constrained semi-grand-canonical MD/MC for a binary system. In addition to VC-SGC arguments, all</span>
+<span class="sd">        arguments for a regular MD calculation are also accepted.</span>
+
+<span class="sd">        https://vcsgc-lammps.materialsmodeling.org</span>
+
+<span class="sd">        Note:</span>
+<span class="sd">            For easy visualization later (with `get_structure`), it is highly recommended that the initial structure</span>
+<span class="sd">            contain at least one atom of each species.</span>
+
+<span class="sd">        Warning:</span>
+<span class="sd">            Assumes the units are metal, otherwise units for the constraints may be off.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            mu (dict): A dictionary of chemical potentials, one for each element the potential treats, where the</span>
+<span class="sd">                dictionary keys are just the chemical symbol. Note that only the *relative* chemical potentials are used</span>
+<span class="sd">                here, such that the swap acceptance probability is influenced by the chemical potential difference</span>
+<span class="sd">                between the two species (a more negative value increases the odds of swapping *to* that element.)</span>
+<span class="sd">            ordered_element_list (list): A list of the chemical species symbols in the order they appear in the</span>
+<span class="sd">                definition of the potential in the Lammps&#39; input file.</span>
+<span class="sd">            target_concentration: A dictionary of target simulation domain concentrations for each species *in the</span>
+<span class="sd">                potential*. Dictionary keys should be the chemical symbol of the corresponding species, and the sum of</span>
+<span class="sd">                all concentrations must be 1. (Default is None, which runs regular semi-grand-canonical MD/MC without</span>
+<span class="sd">                any variance constraint.)</span>
+<span class="sd">            kappa: Variance constraint for the MC. Larger value means a tighter adherence to the target concentrations.</span>
+<span class="sd">                (Default is 1000.)</span>
+<span class="sd">            mc_step_interval (int): How many steps of MD between each set of MC moves. (Default is 100.) Must divide the</span>
+<span class="sd">                number of ionic steps evenly.</span>
+<span class="sd">            swap_fraction (float): The fraction of atoms whose species is swapped at each MC phase. (Default is 0.1.)</span>
+<span class="sd">            temperature_mc (float): The temperature for accepting MC steps. (Default is None, which uses the MD</span>
+<span class="sd">                temperature.)</span>
+<span class="sd">            window_size (float): The size of the sampling window for parallel calculations as a fraction of something</span>
+<span class="sd">                unspecified in the VC-SGC docs, but it must lie between 0.5 and 1. (Default is None, window is</span>
+<span class="sd">                determined automatically.)</span>
+<span class="sd">            window_moves (int): The number of times the sampling window is moved during one MC cycle. (Default is None,</span>
+<span class="sd">                number of moves is determined automatically.)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">calc_md</span><span class="p">(</span>
+            <span class="n">temperature</span><span class="o">=</span><span class="n">temperature</span><span class="p">,</span>
+            <span class="n">pressure</span><span class="o">=</span><span class="n">pressure</span><span class="p">,</span>
+            <span class="n">n_ionic_steps</span><span class="o">=</span><span class="n">n_ionic_steps</span><span class="p">,</span>
+            <span class="n">time_step</span><span class="o">=</span><span class="n">time_step</span><span class="p">,</span>
+            <span class="n">n_print</span><span class="o">=</span><span class="n">n_print</span><span class="p">,</span>
+            <span class="n">temperature_damping_timescale</span><span class="o">=</span><span class="n">temperature_damping_timescale</span><span class="p">,</span>
+            <span class="n">pressure_damping_timescale</span><span class="o">=</span><span class="n">pressure_damping_timescale</span><span class="p">,</span>
+            <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
+            <span class="n">tloop</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">initial_temperature</span><span class="o">=</span><span class="n">initial_temperature</span><span class="p">,</span>
+            <span class="n">langevin</span><span class="o">=</span><span class="n">langevin</span><span class="p">,</span>
+            <span class="n">job_name</span><span class="o">=</span><span class="n">job_name</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="p">[</span><span class="s2">&quot;units&quot;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">LAMMPS_UNIT_CONVERSIONS</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+        <span class="n">temperature_units</span> <span class="o">=</span> <span class="n">LAMMPS_UNIT_CONVERSIONS</span><span class="p">[</span><span class="bp">self</span><span class="p">[</span><span class="s2">&quot;units&quot;</span><span class="p">]][</span><span class="s2">&quot;temperature&quot;</span><span class="p">]</span>
+        <span class="n">energy_units</span> <span class="o">=</span> <span class="n">LAMMPS_UNIT_CONVERSIONS</span><span class="p">[</span><span class="bp">self</span><span class="p">[</span><span class="s2">&quot;units&quot;</span><span class="p">]][</span><span class="s2">&quot;energy&quot;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">temperature_mc</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">temperature</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;If temperature is not given, temperature_mc must be.&quot;</span><span class="p">)</span>
+            <span class="n">temperature_mc</span> <span class="o">=</span> <span class="n">temperature</span> <span class="o">*</span> <span class="n">temperature_units</span>
+
+        <span class="k">if</span> <span class="n">seed</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">seed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate_seed_from_job</span><span class="p">(</span><span class="n">job_name</span><span class="o">=</span><span class="n">job_name</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">set</span><span class="p">(</span><span class="n">mu</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">!=</span> <span class="nb">set</span><span class="p">(</span><span class="n">ordered_element_list</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Exactly one chemical potential must be given for each element treated by the potential.&quot;</span><span class="p">)</span>
+
+        <span class="n">calibrating_el</span> <span class="o">=</span> <span class="n">ordered_element_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="c1"># Apply the actual SGC string</span>
+        <span class="n">fix_vcsgc_str</span> <span class="o">=</span> <span class="s2">&quot;all sgcmc </span><span class="si">{0}</span><span class="s2"> </span><span class="si">{1}</span><span class="s2"> </span><span class="si">{2}</span><span class="s2"> </span><span class="si">{3}</span><span class="s2"> randseed </span><span class="si">{4}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">mc_step_interval</span><span class="p">),</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">swap_fraction</span><span class="p">),</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">temperature_mc</span><span class="p">),</span>
+            <span class="nb">str</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">((</span><span class="n">mu</span><span class="p">[</span><span class="n">el</span><span class="p">]</span> <span class="o">-</span> <span class="n">mu</span><span class="p">[</span><span class="n">calibrating_el</span><span class="p">])</span> <span class="o">*</span> <span class="n">energy_units</span><span class="p">)</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">ordered_element_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:])),</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">seed</span><span class="p">),</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Add VC to the SGC if target concentrations were provided</span>
+        <span class="k">if</span> <span class="n">target_concentration</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">set</span><span class="p">(</span><span class="n">target_concentration</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">!=</span> <span class="nb">set</span><span class="p">(</span><span class="n">ordered_element_list</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Exactly one target concentration must be given for each element treated by the &quot;</span>
+                                 <span class="s2">&quot;potential.&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="n">v</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">target_concentration</span><span class="o">.</span><span class="n">items</span><span class="p">()]),</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Target concentrations must sum to 1 but were </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="n">v</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">target_concentration</span><span class="o">.</span><span class="n">items</span><span class="p">()])</span>
+                <span class="p">))</span>
+
+            <span class="n">fix_vcsgc_str</span> <span class="o">+=</span> <span class="s2">&quot; variance </span><span class="si">{0}</span><span class="s2"> </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">kappa</span><span class="p">),</span>
+                <span class="nb">str</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">target_concentration</span><span class="p">[</span><span class="n">el</span><span class="p">])</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">ordered_element_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:]]))</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Set optional windowing parameters</span>
+        <span class="k">if</span> <span class="n">window_moves</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">window_moves</span><span class="p">)</span> <span class="o">!=</span> <span class="n">window_moves</span> <span class="ow">or</span> <span class="n">window_moves</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Window moves must be a non-negative integer.&quot;</span><span class="p">)</span>
+            <span class="n">fix_vcsgc_str</span> <span class="o">+=</span> <span class="s2">&quot; window_moves </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">window_moves</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">window_size</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="mf">0.5</span> <span class="o">&lt;=</span> <span class="n">window_size</span> <span class="o">&lt;=</span> <span class="mf">1.0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Window size must be a fraction between 0.5 and 1&quot;</span><span class="p">)</span>
+            <span class="n">fix_vcsgc_str</span> <span class="o">+=</span> <span class="s2">&quot; window_size </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">window_size</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">modify</span><span class="p">(</span>
+            <span class="n">fix___vcsgc</span><span class="o">=</span><span class="n">fix_vcsgc_str</span><span class="p">,</span>
+            <span class="n">append_if_not_present</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="LammpsControl.measure_mean_value"><a class="viewcode-back" href="../../../apidoc/pyiron.lammps.control.html#pyiron.lammps.control.LammpsControl.measure_mean_value">[docs]</a>    <span class="k">def</span> <span class="nf">measure_mean_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">every</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">atom</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Args:</span>
+<span class="sd">                key (str): property to take an average value of (e.g. &#39;energy_pot&#39; v.i.)</span>
+<span class="sd">                every (int): number of steps there should be between two measurements</span>
+<span class="sd">                repeat (int): number of measurements for each output (default: n_print/every)</span>
+<span class="sd">                name (str): name to give in the output string (ignored if a pyiron predefined tag is used)</span>
+
+<span class="sd">            Comments:</span>
+<span class="sd">                Currently available keys: &#39;energy_pot&#39;, &#39;energy_tot&#39;, &#39;temperature&#39;, &#39;volume&#39;,</span>
+<span class="sd">                                          &#39;pressures&#39;, &#39;positions&#39;, &#39;forces, &#39;velocities&#39;</span>
+<span class="sd">                Future keys: &#39;cells&#39;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">every</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s1">&#39;every must be a positive integer&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">repeat</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;variable___mean_repeat_times&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;equal round($</span><span class="si">{thermotime}</span><span class="s1">/&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">every</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;)&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;variable___mean_repeat_times&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;equal </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">repeat</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">key</span><span class="o">==</span><span class="s1">&#39;energy_pot&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_measure_mean_value</span><span class="p">(</span><span class="s1">&#39;energy_pot&#39;</span><span class="p">,</span> <span class="s1">&#39;pe&#39;</span><span class="p">,</span> <span class="n">every</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span><span class="o">==</span><span class="s1">&#39;energy_tot&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_measure_mean_value</span><span class="p">(</span><span class="s1">&#39;energy_tot&#39;</span><span class="p">,</span> <span class="s1">&#39;etotal&#39;</span><span class="p">,</span> <span class="n">every</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span><span class="o">==</span><span class="s1">&#39;temperature&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_measure_mean_value</span><span class="p">(</span><span class="s1">&#39;temperature&#39;</span><span class="p">,</span> <span class="s1">&#39;temp&#39;</span><span class="p">,</span> <span class="n">every</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span><span class="o">==</span><span class="s1">&#39;volume&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_measure_mean_value</span><span class="p">(</span><span class="s1">&#39;volume&#39;</span><span class="p">,</span> <span class="s1">&#39;vol&#39;</span><span class="p">,</span> <span class="n">every</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span><span class="o">==</span><span class="s1">&#39;pressures&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_measure_mean_value</span><span class="p">(</span><span class="s1">&#39;pressure&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;pxx&#39;</span><span class="p">,</span> <span class="s1">&#39;pyy&#39;</span><span class="p">,</span> <span class="s1">&#39;pzz&#39;</span><span class="p">,</span> <span class="s1">&#39;pxy&#39;</span><span class="p">,</span> <span class="s1">&#39;pxz&#39;</span><span class="p">,</span> <span class="s1">&#39;pyz&#39;</span><span class="p">],</span> <span class="n">every</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span><span class="o">==</span><span class="s1">&#39;positions&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;compute___unwrap&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;all property/atom xu yu zu&#39;</span>
+            <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;fix___mean_positions&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;all ave/atom &#39;</span>
+                                            <span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">every</span><span class="p">)</span>
+                                            <span class="o">+</span><span class="s1">&#39; $</span><span class="si">{mean_repeat_times}</span><span class="s1"> $</span><span class="si">{thermotime}</span><span class="s1"> c_unwrap[*]&#39;</span>
+                                           <span class="p">)</span>
+            <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;dump___1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;dump___1&#39;</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;f_mean_positions[</span><span class="si">{}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ii</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)])</span>
+            <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;dump_modify___1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;dump_modify___1&#39;</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;</span><span class="si">%20.15g</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;&quot;&#39;</span>
+        <span class="k">elif</span> <span class="n">key</span><span class="o">==</span><span class="s1">&#39;forces&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_measure_mean_value</span><span class="p">(</span><span class="s1">&#39;forces&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;fx&#39;</span><span class="p">,</span> <span class="s1">&#39;fy&#39;</span><span class="p">,</span> <span class="s1">&#39;fz&#39;</span><span class="p">],</span> <span class="n">every</span><span class="p">,</span> <span class="n">atom</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span><span class="o">==</span><span class="s1">&#39;velocities&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_measure_mean_value</span><span class="p">(</span><span class="s1">&#39;velocities&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;vx&#39;</span><span class="p">,</span> <span class="s1">&#39;vy&#39;</span><span class="p">,</span> <span class="s1">&#39;vz&#39;</span><span class="p">],</span> <span class="n">every</span><span class="p">,</span> <span class="n">atom</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s1">&#39;**&#39;</span> <span class="ow">in</span> <span class="n">key</span><span class="p">:</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;** is replaced by ^ (as it is understood by LAMMPS)&#39;</span><span class="p">)</span>
+                <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;**&#39;</span><span class="p">,</span> <span class="s1">&#39;^&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_measure_mean_value</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">every</span><span class="p">,</span> <span class="n">atom</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="n">key</span><span class="o">+</span><span class="s1">&#39; is not implemented&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="LammpsControl.energy_pot_per_atom"><a class="viewcode-back" href="../../../apidoc/pyiron.lammps.control.html#pyiron.lammps.control.LammpsControl.energy_pot_per_atom">[docs]</a>    <span class="k">def</span> <span class="nf">energy_pot_per_atom</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;compute___energy_pot_per_atom&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;compute___energy_pot_per_atom&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;all pe/atom&#39;</span>
+            <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;dump___1&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="s1">&#39; c_energy_pot_per_atom&#39;</span>
+            <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;dump_modify___1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;dump_modify___1&#39;</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; </span><span class="si">%20.15g</span><span class="s1">&quot;&#39;</span></div>
+
+    <span class="k">def</span> <span class="nf">_measure_mean_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key_pyiron</span><span class="p">,</span> <span class="n">key_lmp</span><span class="p">,</span> <span class="n">every</span><span class="p">,</span> <span class="n">atom</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Args:</span>
+<span class="sd">                key (str): property to take an average value of (e.g. &#39;energy_pot&#39; v.i.)</span>
+<span class="sd">                every (int): number of steps there should be between two measurements</span>
+<span class="sd">                repeat (int): number of measurements for each output (default: n_print/every)</span>
+<span class="sd">                freq (int): output frequency (default: n_print)</span>
+
+<span class="sd">            Comments:</span>
+<span class="sd">                Currently available keys: &#39;energy_pot&#39;, &#39;energy_tot&#39;, &#39;temperature&#39;, &#39;volume&#39;,</span>
+<span class="sd">                                          &#39;pressures&#39;, &#39;positions&#39;, &#39;forces, &#39;velocities&#39;</span>
+<span class="sd">                Future keys: &#39;cells&#39;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key_lmp</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;variable___</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key_pyiron</span><span class="p">)]</span> <span class="o">=</span> <span class="s1">&#39;equal </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key_lmp</span><span class="p">)</span>
+            <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;fix___mean_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key_pyiron</span><span class="p">)]</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;all ave/time &#39;</span>
+                                                        <span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">every</span><span class="p">)</span>
+                                                        <span class="o">+</span><span class="s1">&#39; $</span><span class="si">{mean_repeat_times}</span><span class="s1"> $</span><span class="si">{thermotime}</span><span class="s1"> v_&#39;</span>
+                                                        <span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">key_pyiron</span><span class="p">))</span>
+            <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;thermo_style&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;thermo_style&#39;</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39; f_mean_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key_pyiron</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">atom</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">key_lmp</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;variable___</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key_pyiron</span><span class="p">,</span> <span class="n">ii</span><span class="p">)]</span> <span class="o">=</span> <span class="s1">&#39;atom </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key_lmp</span><span class="p">[</span><span class="n">ii</span><span class="p">])</span>
+                <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;fix___mean_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key_pyiron</span><span class="p">)]</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;all ave/atom &#39;</span>
+                                                            <span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">every</span><span class="p">)</span><span class="o">+</span>
+                                                            <span class="s1">&#39; $</span><span class="si">{mean_repeat_times}</span><span class="s1"> $</span><span class="si">{thermotime}</span><span class="s1"> &#39;</span>
+                                                            <span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;v_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key_pyiron</span><span class="p">,</span> <span class="n">ii</span><span class="p">)</span> <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">key_lmp</span><span class="p">))]))</span>
+                                                           <span class="p">)</span>
+                <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;dump___1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;dump___1&#39;</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;f_mean_</span><span class="si">{}</span><span class="s1">[</span><span class="si">{}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key_pyiron</span><span class="p">,</span> <span class="n">ii</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">key_lmp</span><span class="p">))])</span>
+                <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;dump_modify___1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;dump_modify___1&#39;</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;</span><span class="si">%20.15g</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">key_lmp</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;&quot;&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">key_lmp</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;variable___</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key_pyiron</span><span class="p">,</span> <span class="n">ii</span><span class="p">)]</span> <span class="o">=</span> <span class="s1">&#39;equal </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key_lmp</span><span class="p">[</span><span class="n">ii</span><span class="p">])</span>
+                <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;fix___mean_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key_pyiron</span><span class="p">)]</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;all ave/time &#39;</span>
+                                                            <span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">every</span><span class="p">)</span>
+                                                            <span class="o">+</span><span class="s1">&#39; $</span><span class="si">{mean_repeat_times}</span><span class="s1"> $</span><span class="si">{thermotime}</span><span class="s1"> &#39;</span>
+                                                            <span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;v_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key_pyiron</span><span class="p">,</span> <span class="n">ii</span><span class="p">)</span> <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">key_lmp</span><span class="p">))]))</span>
+                                                           <span class="p">)</span>
+                <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;thermo_style&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="s1">&#39;thermo_style&#39;</span><span class="p">]</span>
+                                        <span class="o">+</span><span class="s1">&#39; &#39;</span>
+                                        <span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;f_mean_</span><span class="si">{}</span><span class="s1">[</span><span class="si">{}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key_pyiron</span><span class="p">,</span> <span class="n">ii</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">key_lmp</span><span class="p">))]))</span></div>
+
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

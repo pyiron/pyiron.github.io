@@ -1,0 +1,7 @@
+pyiron.base.generic.inputlist module
+====================================
+
+.. automodule:: pyiron.base.generic.inputlist
+   :members:
+   :undoc-members:
+   :show-inheritance:

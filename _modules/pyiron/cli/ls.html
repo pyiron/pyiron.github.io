@@ -1,0 +1,368 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.cli.ls &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../pyiron.html">pyiron</a> &raquo;</li>
+        
+          <li><a href="../cli.html">pyiron.cli</a> &raquo;</li>
+        
+      <li>pyiron.cli.ls</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.cli.ls</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Filter and prints jobs from pyiron project.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pyiron</span>
+<span class="kn">import</span> <span class="nn">pyiron.base.job.jobstatus</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Marvin Poul&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2020, Max-Planck-Institut für Eisenforschung GmbH - &quot;</span>
+    <span class="s2">&quot;Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Marvin Poul&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;poul@mpie.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;production&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;23 Jun, 2020&quot;</span>
+
+<span class="n">formatter</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">RawDescriptionHelpFormatter</span>
+<span class="n">epilog</span> <span class="o">=</span>  <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">examples:</span>
+<span class="s2">    Print the run time of all finished jobs:</span>
+<span class="s2">        pyiron ls -c job totalcputime -s finished</span>
+
+<span class="s2">    Print all jobs with iron:</span>
+<span class="s2">        pyiron ls -e Fe</span>
+
+<span class="s2">    Print all jobs that successfully finished yesterday and a bit:</span>
+<span class="s2">        pyiron ls -s finished -i 1d5h</span>
+
+<span class="s2">    Print all jobs that were aborted less than 5 hours ago and match</span>
+<span class="s2">    &quot;spx.*restart&quot;:</span>
+<span class="s2">        pyiron ls -n &quot;spx.*restart&quot; -i 5h -s aborted</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="register"><a class="viewcode-back" href="../../../apidoc/pyiron.cli.ls.html#pyiron.cli.ls.register">[docs]</a><span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="n">parser</span><span class="p">):</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+            <span class="s2">&quot;project&quot;</span><span class="p">,</span> <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">nargs</span> <span class="o">=</span> <span class="s2">&quot;?&quot;</span><span class="p">,</span>
+            <span class="n">help</span> <span class="o">=</span> <span class="s2">&quot;path to pyiron project&quot;</span>
+    <span class="p">)</span>
+
+    <span class="nb">filter</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;filter&quot;</span><span class="p">,</span>
+            <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;select which jobs to show, all filters must be true &quot;</span>
+                        <span class="s2">&quot;for a job to be listed&quot;</span>
+    <span class="p">)</span>
+    <span class="nb">filter</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+            <span class="s2">&quot;-r&quot;</span><span class="p">,</span> <span class="s2">&quot;--recursive&quot;</span><span class="p">,</span> <span class="n">action</span> <span class="o">=</span> <span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+            <span class="n">help</span> <span class="o">=</span> <span class="s2">&quot;recurse into sub projects&quot;</span>
+    <span class="p">)</span>
+    <span class="nb">filter</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+            <span class="s2">&quot;-n&quot;</span><span class="p">,</span> <span class="s2">&quot;--name&quot;</span><span class="p">,</span> <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">,</span>
+            <span class="n">help</span> <span class="o">=</span> <span class="s2">&quot;job name must contain this, regex allowed&quot;</span>
+    <span class="p">)</span>
+    <span class="nb">filter</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+            <span class="s2">&quot;-e&quot;</span><span class="p">,</span> <span class="s2">&quot;--elements&quot;</span><span class="p">,</span> <span class="n">nargs</span> <span class="o">=</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span>
+            <span class="n">help</span> <span class="o">=</span> <span class="s2">&quot;chemical elements that must be present in unit cell&quot;</span>
+    <span class="p">)</span>
+    <span class="nb">filter</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+            <span class="s2">&quot;-s&quot;</span><span class="p">,</span> <span class="s2">&quot;--status&quot;</span><span class="p">,</span> <span class="n">nargs</span> <span class="o">=</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span>
+            <span class="n">choices</span> <span class="o">=</span> <span class="n">pyiron</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">job</span><span class="o">.</span><span class="n">jobstatus</span><span class="o">.</span><span class="n">job_status_lst</span><span class="p">,</span>
+            <span class="n">metavar</span> <span class="o">=</span> <span class="s2">&quot;status&quot;</span><span class="p">,</span>
+            <span class="n">help</span> <span class="o">=</span> <span class="s2">&quot;job status must be one of the given, one of </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pyiron</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">job</span><span class="o">.</span><span class="n">jobstatus</span><span class="o">.</span><span class="n">job_status_lst</span><span class="p">))</span>
+    <span class="p">)</span>
+    <span class="nb">filter</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+            <span class="s2">&quot;-i&quot;</span><span class="p">,</span> <span class="s2">&quot;--since&quot;</span><span class="p">,</span>
+            <span class="n">help</span> <span class="o">=</span> <span class="s2">&quot;timestop must be less then the given duration before now, &quot;</span>
+                <span class="s2">&quot;must be an integer and a time unit, i.e. one of d (days), &quot;</span>
+                <span class="s2">&quot;h (hours), m (minutes) and s (seconds).  Combinations are &quot;</span>
+                <span class="s2">&quot;possible, see examples.&quot;</span>
+    <span class="p">)</span>
+
+    <span class="n">output</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;output&quot;</span><span class="p">,</span> <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;control output style&quot;</span>
+    <span class="p">)</span>
+    <span class="n">columns_choices</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;status&#39;</span><span class="p">,</span> <span class="s1">&#39;chemicalformula&#39;</span><span class="p">,</span> <span class="s1">&#39;job&#39;</span><span class="p">,</span> <span class="s1">&#39;subjob&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;project&#39;</span><span class="p">,</span> <span class="s1">&#39;projectpath&#39;</span><span class="p">,</span> <span class="s1">&#39;timestart&#39;</span><span class="p">,</span> <span class="s1">&#39;timestop&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;totalcputime&#39;</span><span class="p">,</span> <span class="s1">&#39;computer&#39;</span><span class="p">,</span> <span class="s1">&#39;hamilton&#39;</span><span class="p">,</span> <span class="s1">&#39;hamversion&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;parentid&#39;</span><span class="p">,</span> <span class="s1">&#39;masterid&#39;</span><span class="p">)</span>
+    <span class="n">output</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+            <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;--columns&quot;</span><span class="p">,</span> <span class="n">nargs</span> <span class="o">=</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span>
+            <span class="n">choices</span> <span class="o">=</span> <span class="n">columns_choices</span><span class="p">,</span> <span class="n">metavar</span> <span class="o">=</span> <span class="s2">&quot;column&quot;</span><span class="p">,</span>
+            <span class="n">default</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">,</span> <span class="s2">&quot;job&quot;</span><span class="p">,</span> <span class="s2">&quot;timestart&quot;</span><span class="p">,</span> <span class="s2">&quot;timestop&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;totalcputime&quot;</span><span class="p">],</span>
+            <span class="n">help</span> <span class="o">=</span> <span class="s2">&quot;table columns to print, pass &#39;all&#39; to print whole table, &quot;</span>
+                <span class="s2">&quot;one of </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">columns_choices</span><span class="p">))</span>
+    <span class="p">)</span>
+    <span class="n">output</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+            <span class="s2">&quot;-a&quot;</span><span class="p">,</span> <span class="s2">&quot;--all&quot;</span><span class="p">,</span> <span class="n">action</span> <span class="o">=</span> <span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+            <span class="n">help</span> <span class="o">=</span> <span class="s2">&quot;show all job attributes&quot;</span>
+    <span class="p">)</span></div>
+
+<div class="viewcode-block" id="main"><a class="viewcode-back" href="../../../apidoc/pyiron.cli.ls.html#pyiron.cli.ls.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">status</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;status&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">args</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">columns</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">since</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;timestop&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">args</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">columns</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;timestop&quot;</span><span class="p">]</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span><span class="s2">&quot;(\d+d)?\w*(\d+h)?\w*(\d+m)?\w*(\d+s)?&quot;</span><span class="p">,</span>
+                                <span class="n">args</span><span class="o">.</span><span class="n">since</span><span class="p">)</span><span class="o">.</span><span class="n">groups</span><span class="p">(</span><span class="n">default</span> <span class="o">=</span> <span class="s1">&#39;0x&#39;</span><span class="p">)</span>
+            <span class="n">since</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span>
+                    <span class="n">days</span>    <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">matches</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span>
+                    <span class="n">hours</span>   <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">matches</span><span class="p">[</span><span class="mi">1</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span>
+                    <span class="n">minutes</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">matches</span><span class="p">[</span><span class="mi">2</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span>
+                    <span class="n">seconds</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">matches</span><span class="p">[</span><span class="mi">3</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR: </span><span class="si">{}</span><span class="s2"> is not a proper time delta&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">since</span><span class="p">),</span>
+                <span class="n">file</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">table</span> <span class="o">=</span> <span class="n">pyiron</span><span class="o">.</span><span class="n">Project</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">project</span><span class="p">)</span><span class="o">.</span><span class="n">job_table</span><span class="p">(</span>
+        <span class="n">full_table</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">recursive</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">recursive</span><span class="p">,</span>
+        <span class="n">columns</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">all_columns</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">all</span><span class="p">,</span>
+        <span class="n">element_lst</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">elements</span><span class="p">,</span>
+        <span class="n">job_name_contains</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">name</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">table</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">mask</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">status</span><span class="p">:</span>
+        <span class="n">mask</span> <span class="o">&amp;=</span> <span class="n">table</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;status&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">since</span><span class="p">:</span>
+        <span class="n">mask</span> <span class="o">&amp;=</span> <span class="n">table</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;timestop&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">since</span>
+
+    <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">mask</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">option_context</span><span class="p">(</span><span class="s2">&quot;display.expand_frame_repr&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

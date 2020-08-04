@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.sphinx.potential &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.sphinx.potential</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.sphinx.potential</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.settings.generic</span> <span class="kn">import</span> <span class="n">Settings</span>
+<span class="kn">from</span> <span class="nn">pyiron.vasp.potential</span> <span class="kn">import</span> <span class="n">VaspPotentialAbstract</span><span class="p">,</span> <span class="n">find_potential_file_base</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Osamu Waseda&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - &quot;</span>
+    <span class="s2">&quot;Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Osamu Waseda&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;waseda@mpie.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;development&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;Sep 20, 2019&quot;</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">Settings</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="SphinxJTHPotentialFile"><a class="viewcode-back" href="../../../apidoc/pyiron.sphinx.potential.html#pyiron.sphinx.potential.SphinxJTHPotentialFile">[docs]</a><span class="k">class</span> <span class="nc">SphinxJTHPotentialFile</span><span class="p">(</span><span class="n">VaspPotentialAbstract</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The Potential class is derived from the PotentialAbstract class, but instead of loading the potentials from a list,</span>
+<span class="sd">    the potentials are loaded from a file.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        xc (str): Exchange correlation functional [&#39;PBE&#39;, &#39;LDA&#39;]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">selected_atoms</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">potential_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_potential_df</span><span class="p">(</span>
+            <span class="n">plugin_name</span><span class="o">=</span><span class="s2">&quot;sphinx&quot;</span><span class="p">,</span>
+            <span class="n">file_name_lst</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;potentials_sphinx.csv&quot;</span><span class="p">},</span>
+            <span class="n">backward_compatibility_name</span><span class="o">=</span><span class="s2">&quot;sphinxpotentials&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">xc</span> <span class="o">==</span> <span class="s2">&quot;PBE&quot;</span><span class="p">:</span>
+            <span class="n">default_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_potential_default_df</span><span class="p">(</span>
+                <span class="n">plugin_name</span><span class="o">=</span><span class="s2">&quot;sphinx&quot;</span><span class="p">,</span>
+                <span class="n">file_name_lst</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;potentials_sphinx_jth_default.csv&quot;</span><span class="p">},</span>
+                <span class="n">backward_compatibility_name</span><span class="o">=</span><span class="s2">&quot;defaultsphinxjth&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">potential_df</span> <span class="o">=</span> <span class="n">potential_df</span><span class="p">[(</span><span class="n">potential_df</span><span class="p">[</span><span class="s2">&quot;Model&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;jth-gga-pbe&quot;</span><span class="p">)]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s1">&#39;The exchange correlation functional has to be set and it can either be &quot;LDA&quot; or &quot;PBE&quot;&#39;</span>
+            <span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">SphinxJTHPotentialFile</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">potential_df</span><span class="o">=</span><span class="n">potential_df</span><span class="p">,</span>
+            <span class="n">default_df</span><span class="o">=</span><span class="n">default_df</span><span class="p">,</span>
+            <span class="n">selected_atoms</span><span class="o">=</span><span class="n">selected_atoms</span><span class="p">,</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="SphinxJTHPotentialFile.add_new_element"><a class="viewcode-back" href="../../../apidoc/pyiron.sphinx.potential.html#pyiron.sphinx.potential.SphinxJTHPotentialFile.add_new_element">[docs]</a>    <span class="k">def</span> <span class="nf">add_new_element</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent_element</span><span class="p">,</span> <span class="n">new_element</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adding a new user defined element with a different POTCAR file. It is assumed that the file exists</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            parent_element (str): Parent element</span>
+<span class="sd">            new_element (str): Name of the new element (the name of the folder where the new POTCAR file exists</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find_default</span><span class="p">(</span><span class="n">element</span><span class="o">=</span><span class="n">parent_element</span><span class="p">)</span>
+        <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Species&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_element</span>
+        <span class="n">path_list</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Filename&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+        <span class="n">path_list</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_element</span>
+        <span class="n">name_list</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)</span>
+        <span class="n">name_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_element</span>
+        <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">name_list</span><span class="p">)</span>
+        <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Filename&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_list</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_potential_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_potential_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="p">()</span>
+        <span class="n">ds</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">new_element</span>
+        <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">name_list</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_default_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="find_potential_file"><a class="viewcode-back" href="../../../apidoc/pyiron.sphinx.potential.html#pyiron.sphinx.potential.find_potential_file">[docs]</a><span class="k">def</span> <span class="nf">find_potential_file</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span>
+    <span class="n">resource_path_lst</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">resource_paths</span>
+    <span class="k">if</span> <span class="s2">&quot;CONDA_PREFIX&quot;</span> <span class="ow">in</span> <span class="n">env</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>  <span class="c1"># support sphinx-data package</span>
+        <span class="n">resource_path_lst</span> <span class="o">+=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;CONDA_PREFIX&quot;</span><span class="p">],</span> <span class="s2">&quot;share&quot;</span><span class="p">,</span> <span class="s2">&quot;sphinxdft&quot;</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">find_potential_file_base</span><span class="p">(</span>
+        <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span>
+        <span class="n">resource_path_lst</span><span class="o">=</span><span class="n">resource_path_lst</span><span class="p">,</span>
+        <span class="n">rel_path</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;sphinx&quot;</span><span class="p">,</span> <span class="s2">&quot;potentials&quot;</span><span class="p">)</span>
+    <span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

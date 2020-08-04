@@ -1,0 +1,7 @@
+pyiron.lammps.control module
+============================
+
+.. automodule:: pyiron.lammps.control
+   :members:
+   :undoc-members:
+   :show-inheritance:

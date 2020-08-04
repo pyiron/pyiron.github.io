@@ -1,0 +1,483 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.base.database.jobtable module &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>pyiron.base.database.jobtable module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/pyiron.base.database.jobtable.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-pyiron.base.database.jobtable">
+<span id="pyiron-base-database-jobtable-module"></span><h1>pyiron.base.database.jobtable module<a class="headerlink" href="#module-pyiron.base.database.jobtable" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="pyiron.base.database.jobtable.get_child_ids">
+<code class="sig-prename descclassname">pyiron.base.database.jobtable.</code><code class="sig-name descname">get_child_ids</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">database</span></em>, <em class="sig-param"><span class="n">sql_query</span></em>, <em class="sig-param"><span class="n">user</span></em>, <em class="sig-param"><span class="n">project_path</span></em>, <em class="sig-param"><span class="n">job_specifier</span></em>, <em class="sig-param"><span class="n">status</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/jobtable.html#get_child_ids"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.jobtable.get_child_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the childs for a specific job</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>database</strong> (<a class="reference internal" href="pyiron.base.database.generic.html#pyiron.base.database.generic.DatabaseAccess" title="pyiron.base.database.generic.DatabaseAccess"><em>DatabaseAccess</em></a>) – Database object</p></li>
+<li><p><strong>sql_query</strong> (<em>str</em>) – SQL query to enter a more specific request</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – username of the user whoes user space should be searched</p></li>
+<li><p><strong>project_path</strong> (<em>str</em>) – root_path - this is in contrast to the project_path in GenericPath</p></li>
+<li><p><strong>job_specifier</strong> (<em>str</em>) – name of the master job or the master jobs job ID</p></li>
+<li><p><strong>status</strong> (<em>str</em>) – filter childs which match a specific status - None by default</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of child IDs</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.base.database.jobtable.get_db_columns">
+<code class="sig-prename descclassname">pyiron.base.database.jobtable.</code><code class="sig-name descname">get_db_columns</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">database</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/jobtable.html#get_db_columns"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.jobtable.get_db_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get column names</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>database</strong> (<a class="reference internal" href="pyiron.base.database.generic.html#pyiron.base.database.generic.DatabaseAccess" title="pyiron.base.database.generic.DatabaseAccess"><em>DatabaseAccess</em></a>) – Database object</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>list of column names like:</dt><dd><p>[‘id’,
+‘parentid’,
+‘masterid’,
+‘projectpath’,
+‘project’,
+‘job’,
+‘subjob’,
+‘chemicalformula’,
+‘status’,
+‘hamilton’,
+‘hamversion’,
+‘username’,
+‘computer’,
+‘timestart’,
+‘timestop’,
+‘totalcputime’]</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.base.database.jobtable.get_job_id">
+<code class="sig-prename descclassname">pyiron.base.database.jobtable.</code><code class="sig-name descname">get_job_id</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">database</span></em>, <em class="sig-param"><span class="n">sql_query</span></em>, <em class="sig-param"><span class="n">user</span></em>, <em class="sig-param"><span class="n">project_path</span></em>, <em class="sig-param"><span class="n">job_specifier</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/jobtable.html#get_job_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.jobtable.get_job_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the job_id for job named job_name in the local project path from database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>database</strong> (<a class="reference internal" href="pyiron.base.database.generic.html#pyiron.base.database.generic.DatabaseAccess" title="pyiron.base.database.generic.DatabaseAccess"><em>DatabaseAccess</em></a>) – Database object</p></li>
+<li><p><strong>sql_query</strong> (<em>str</em>) – SQL query to enter a more specific request</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – username of the user whoes user space should be searched</p></li>
+<li><p><strong>project_path</strong> (<em>str</em>) – root_path - this is in contrast to the project_path in GenericPath</p></li>
+<li><p><strong>job_specifier</strong> (<em>str</em>) – name of the job or job ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>job ID of the job</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.base.database.jobtable.get_job_ids">
+<code class="sig-prename descclassname">pyiron.base.database.jobtable.</code><code class="sig-name descname">get_job_ids</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">database</span></em>, <em class="sig-param"><span class="n">sql_query</span></em>, <em class="sig-param"><span class="n">user</span></em>, <em class="sig-param"><span class="n">project_path</span></em>, <em class="sig-param"><span class="n">recursive</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/jobtable.html#get_job_ids"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.jobtable.get_job_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the job IDs matching a specific query</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>database</strong> (<a class="reference internal" href="pyiron.base.database.generic.html#pyiron.base.database.generic.DatabaseAccess" title="pyiron.base.database.generic.DatabaseAccess"><em>DatabaseAccess</em></a>) – Database object</p></li>
+<li><p><strong>sql_query</strong> (<em>str</em>) – SQL query to enter a more specific request</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – username of the user whoes user space should be searched</p></li>
+<li><p><strong>project_path</strong> (<em>str</em>) – root_path - this is in contrast to the project_path in GenericPath</p></li>
+<li><p><strong>recursive</strong> (<em>bool</em>) – search subprojects [True/False]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list of job IDs</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.base.database.jobtable.get_job_status">
+<code class="sig-prename descclassname">pyiron.base.database.jobtable.</code><code class="sig-name descname">get_job_status</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">database</span></em>, <em class="sig-param"><span class="n">sql_query</span></em>, <em class="sig-param"><span class="n">user</span></em>, <em class="sig-param"><span class="n">project_path</span></em>, <em class="sig-param"><span class="n">job_specifier</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/jobtable.html#get_job_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.jobtable.get_job_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the status of a particular job</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>database</strong> (<a class="reference internal" href="pyiron.base.database.generic.html#pyiron.base.database.generic.DatabaseAccess" title="pyiron.base.database.generic.DatabaseAccess"><em>DatabaseAccess</em></a>) – Database object</p></li>
+<li><p><strong>sql_query</strong> (<em>str</em>) – SQL query to enter a more specific request</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – username of the user whoes user space should be searched</p></li>
+<li><p><strong>project_path</strong> (<em>str</em>) – root_path - this is in contrast to the project_path in GenericPath</p></li>
+<li><p><strong>job_specifier</strong> (<em>str</em>) – name of the job or job ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>job status can be one of the following [‘initialized’, ‘appended’, ‘created’, ‘submitted’, ‘running’,</dt><dd><p>’aborted’, ‘collect’, ‘suspended’, ‘refresh’, ‘busy’, ‘finished’]</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.base.database.jobtable.get_job_working_directory">
+<code class="sig-prename descclassname">pyiron.base.database.jobtable.</code><code class="sig-name descname">get_job_working_directory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">database</span></em>, <em class="sig-param"><span class="n">sql_query</span></em>, <em class="sig-param"><span class="n">user</span></em>, <em class="sig-param"><span class="n">project_path</span></em>, <em class="sig-param"><span class="n">job_specifier</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/jobtable.html#get_job_working_directory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.jobtable.get_job_working_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the working directory of a particular job</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>database</strong> (<a class="reference internal" href="pyiron.base.database.generic.html#pyiron.base.database.generic.DatabaseAccess" title="pyiron.base.database.generic.DatabaseAccess"><em>DatabaseAccess</em></a>) – Database object</p></li>
+<li><p><strong>sql_query</strong> (<em>str</em>) – SQL query to enter a more specific request</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – username of the user whoes user space should be searched</p></li>
+<li><p><strong>project_path</strong> (<em>str</em>) – root_path - this is in contrast to the project_path in GenericPath</p></li>
+<li><p><strong>job_specifier</strong> (<em>str</em>) – name of the job or job ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>working directory as absolute path</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.base.database.jobtable.get_jobs">
+<code class="sig-prename descclassname">pyiron.base.database.jobtable.</code><code class="sig-name descname">get_jobs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">database</span></em>, <em class="sig-param"><span class="n">sql_query</span></em>, <em class="sig-param"><span class="n">user</span></em>, <em class="sig-param"><span class="n">project_path</span></em>, <em class="sig-param"><span class="n">recursive</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">columns</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/jobtable.html#get_jobs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.jobtable.get_jobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal function to return the jobs as dictionary rather than a pandas.Dataframe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>database</strong> (<a class="reference internal" href="pyiron.base.database.generic.html#pyiron.base.database.generic.DatabaseAccess" title="pyiron.base.database.generic.DatabaseAccess"><em>DatabaseAccess</em></a>) – Database object</p></li>
+<li><p><strong>sql_query</strong> (<em>str</em>) – SQL query to enter a more specific request</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – username of the user whoes user space should be searched</p></li>
+<li><p><strong>project_path</strong> (<em>str</em>) – root_path - this is in contrast to the project_path in GenericPath</p></li>
+<li><p><strong>recursive</strong> (<em>bool</em>) – search subprojects [True/False]</p></li>
+<li><p><strong>columns</strong> (<em>list</em>) – by default only the columns [‘id’, ‘project’] are selected, but the user can select a subset
+of [‘id’, ‘status’, ‘chemicalformula’, ‘job’, ‘subjob’, ‘project’, ‘projectpath’, ‘timestart’,
+‘timestop’, ‘totalcputime’, ‘computer’, ‘hamilton’, ‘hamversion’, ‘parentid’, ‘masterid’]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>columns are used as keys and point to a list of the corresponding values</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.base.database.jobtable.job_table">
+<code class="sig-prename descclassname">pyiron.base.database.jobtable.</code><code class="sig-name descname">job_table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">database</span></em>, <em class="sig-param"><span class="n">sql_query</span></em>, <em class="sig-param"><span class="n">user</span></em>, <em class="sig-param"><span class="n">project_path</span></em>, <em class="sig-param"><span class="n">recursive</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">columns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">all_columns</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">sort_by</span><span class="o">=</span><span class="default_value">'id'</span></em>, <em class="sig-param"><span class="n">max_colwidth</span><span class="o">=</span><span class="default_value">200</span></em>, <em class="sig-param"><span class="n">full_table</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">element_lst</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">job_name_contains</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/jobtable.html#job_table"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.jobtable.job_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Access the job_table</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>database</strong> (<a class="reference internal" href="pyiron.base.database.generic.html#pyiron.base.database.generic.DatabaseAccess" title="pyiron.base.database.generic.DatabaseAccess"><em>DatabaseAccess</em></a>) – Database object</p></li>
+<li><p><strong>sql_query</strong> (<em>str</em>) – SQL query to enter a more specific request</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – username of the user whoes user space should be searched</p></li>
+<li><p><strong>project_path</strong> (<em>str</em>) – root_path - this is in contrast to the project_path in GenericPath</p></li>
+<li><p><strong>recursive</strong> (<em>bool</em>) – search subprojects [True/False]</p></li>
+<li><p><strong>columns</strong> (<em>list</em>) – by default only the columns [‘job’, ‘project’, ‘chemicalformula’] are selected, but the
+user can select a subset of [‘id’, ‘status’, ‘chemicalformula’, ‘job’, ‘subjob’, ‘project’,
+‘projectpath’, ‘timestart’, ‘timestop’, ‘totalcputime’, ‘computer’, ‘hamilton’, ‘hamversion’,
+‘parentid’, ‘masterid’]</p></li>
+<li><p><strong>all_columns</strong> (<em>bool</em>) – Select all columns - this overwrites the columns option.</p></li>
+<li><p><strong>sort_by</strong> (<em>str</em>) – Sort by a specific column</p></li>
+<li><p><strong>max_colwidth</strong> (<em>int</em>) – set the column width</p></li>
+<li><p><strong>full_table</strong> (<em>bool</em>) – Whether to show the entire pandas table</p></li>
+<li><p><strong>element_lst</strong> (<em>list</em>) – list of elements required in the chemical formular - by default None</p></li>
+<li><p><strong>job_name_contains</strong> (<em>str</em>) – a string which should be contained in every job_name</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Return the result as a pandas.Dataframe object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.base.database.jobtable.set_job_status">
+<code class="sig-prename descclassname">pyiron.base.database.jobtable.</code><code class="sig-name descname">set_job_status</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">database</span></em>, <em class="sig-param"><span class="n">sql_query</span></em>, <em class="sig-param"><span class="n">user</span></em>, <em class="sig-param"><span class="n">project_path</span></em>, <em class="sig-param"><span class="n">job_specifier</span></em>, <em class="sig-param"><span class="n">status</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/jobtable.html#set_job_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.jobtable.set_job_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the status of a particular job</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>database</strong> (<a class="reference internal" href="pyiron.base.database.generic.html#pyiron.base.database.generic.DatabaseAccess" title="pyiron.base.database.generic.DatabaseAccess"><em>DatabaseAccess</em></a>) – Database object</p></li>
+<li><p><strong>sql_query</strong> (<em>str</em>) – SQL query to enter a more specific request</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – username of the user whoes user space should be searched</p></li>
+<li><p><strong>project_path</strong> (<em>str</em>) – root_path - this is in contrast to the project_path in GenericPath</p></li>
+<li><p><strong>job_specifier</strong> (<em>str</em>) – name of the job or job ID</p></li>
+<li><p><strong>status</strong> (<em>str</em>) – job status can be one of the following [‘initialized’, ‘appended’, ‘created’, ‘submitted’,
+‘running’, ‘aborted’, ‘collect’, ‘suspended’, ‘refresh’, ‘busy’, ‘finished’]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

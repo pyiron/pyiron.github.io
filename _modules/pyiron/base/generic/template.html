@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.base.generic.template &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.base.generic.template</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.base.generic.template</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Template class to list the required properties and functions for every pyiron object.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2020, Max-Planck-Institut für Eisenforschung GmbH - &quot;</span>
+    <span class="s2">&quot;Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;janssen@mpie.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;production&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;Sep 1, 2017&quot;</span>
+
+
+<div class="viewcode-block" id="PyironObject"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.generic.template.html#pyiron.base.generic.template.PyironObject">[docs]</a><span class="k">class</span> <span class="nc">PyironObject</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Template class to list the required properties and functions for every pyiron object.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Every pyiron object should have the ability to be stored in the database</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            int: object id</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;id should be implemented in the derived class&quot;</span><span class="p">)</span>
+
+    <span class="nd">@id</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Every pyiron object should have the ability to be stored in the database</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            new_id (int): object id</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;id should be implemented in the derived class&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">master_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        If the pyiron object belongs to a series of objects, series object is linked by the master id</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            int: master id</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;master_id should be implemented in the derived class&quot;</span>
+        <span class="p">)</span>
+
+    <span class="nd">@master_id</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">master_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">master_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        If the pyiron object belongs to a series of objects, series object is linked by the master id</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            master_id (int): master id</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;master_id should be implemented in the derived class&quot;</span>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">parent_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        If the pyiron object belongs to a serial series of objects, the predecessor is linked by the parent id</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            int: parent id</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;master_id should be implemented in the derived class&quot;</span>
+        <span class="p">)</span>
+
+    <span class="nd">@parent_id</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">parent_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        If the pyiron object belongs to a serial series of objects, the predecessor is linked by the parent id</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            parent_id (int): parent id</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;master_id should be implemented in the derived class&quot;</span>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">child_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        If the pyiron object is a meta object which includes a series of objects these objects ids are listed as child ids.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list: list of child ids</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;child_ids should be implemented in the derived class&quot;</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="PyironObject.save"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.generic.template.html#pyiron.base.generic.template.PyironObject.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Store the pyiron object in the HDF5 file an create a corresponding database entry.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;save() should be implemented in the derived class&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PyironObject.remove"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.generic.template.html#pyiron.base.generic.template.PyironObject.remove">[docs]</a>    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Remove the pyiron obect from the database and delete the HDF5 file</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;remove() should be implemented in the derived class&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PyironObject.load"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.generic.template.html#pyiron.base.generic.template.PyironObject.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_specifier</span><span class="p">,</span> <span class="n">convert_to_object</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load a pyiron object from the database</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            job_specifier (str, int): identifier of the pyiron object - this needs to be unique in the project.</span>
+<span class="sd">            convert_to_object (bool): [True/False] - it is faster to only load the HDF5 access but the pyiron object</span>
+<span class="sd">                                      offers a whole more functionality.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            PyironObject: the pyiron object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;load() should be implemented in the derived class&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PyironObject.inspect"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.generic.template.html#pyiron.base.generic.template.PyironObject.inspect">[docs]</a>    <span class="k">def</span> <span class="nf">inspect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_specifier</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inspect a pyiron object from the database - the same like load(self, job_specifier, convert_to_object=False).</span>
+<span class="sd">        The inspect mode provides quick access to the HDF5 file without loading the full object, which is especially</span>
+<span class="sd">        helpful if only a specific section of the output is required.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            job_specifier (str, int): identifier of the pyiron object - this needs to be unique in the project.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            PyironObject: a reduces pyiron object like JobPath</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;insect() should be implemented in the derived class&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PyironObject.copy"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.generic.template.html#pyiron.base.generic.template.PyironObject.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Copy the pyiron object - this copies only the link to the HDF5 file - not the content of the HDF5 file.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            PyironObject: a copy of the pyiron object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;copy() should be implemented in the derived class&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PyironObject.copy_to"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.generic.template.html#pyiron.base.generic.template.PyironObject.copy_to">[docs]</a>    <span class="k">def</span> <span class="nf">copy_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_project</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Copy the pyiron object including the HDF5 file to an new location</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            new_project (ProjectHDFio): new location</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            PyironObject: a copy of the pyiron object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;copy() should be implemented in the derived class&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PyironObject.move_to"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.generic.template.html#pyiron.base.generic.template.PyironObject.move_to">[docs]</a>    <span class="k">def</span> <span class="nf">move_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_project</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Move the pyiron object including the HDF5 file to an new location</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            new_project (ProjectHDFio): new location</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;move() should be implemented in the derived class&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PyironObject.to_hdf"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.generic.template.html#pyiron.base.generic.template.PyironObject.to_hdf">[docs]</a>    <span class="k">def</span> <span class="nf">to_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="s2">&quot;group&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Store the PyironObject in an HDF5 file</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            hdf (ProjectHDFio): HDF5 group object</span>
+<span class="sd">            group_name (str): HDF5 subgroup name - optional</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;to_hdf() should be implemented in the derived class&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PyironObject.from_hdf"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.generic.template.html#pyiron.base.generic.template.PyironObject.from_hdf">[docs]</a>    <span class="k">def</span> <span class="nf">from_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="s2">&quot;group&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Restore the PyironObject from an HDF5 file</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            hdf (ProjectHDFio): HDF5 group object</span>
+<span class="sd">            group_name (str): HDF5 subgroup name - optional</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;from_hdf() should be implemented in the derived class&quot;</span>
+        <span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

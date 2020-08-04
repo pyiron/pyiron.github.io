@@ -1,0 +1,603 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.vasp.interactive &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.vasp.interactive</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.vasp.interactive</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">Popen</span><span class="p">,</span> <span class="n">PIPE</span>
+
+<span class="kn">from</span> <span class="nn">pyiron.vasp.outcar</span> <span class="kn">import</span> <span class="n">Outcar</span>
+<span class="kn">from</span> <span class="nn">pyiron.vasp.base</span> <span class="kn">import</span> <span class="n">VaspBase</span>
+<span class="kn">from</span> <span class="nn">pyiron.vasp.structure</span> <span class="kn">import</span> <span class="n">vasp_sorter</span>
+<span class="kn">from</span> <span class="nn">pyiron.vasp.potential</span> <span class="kn">import</span> <span class="n">VaspPotentialSetter</span>
+<span class="kn">from</span> <span class="nn">pyiron.vasp.base</span> <span class="kn">import</span> <span class="n">GenericOutput</span> <span class="k">as</span> <span class="n">GenericOutputBase</span>
+<span class="kn">from</span> <span class="nn">pyiron.vasp.base</span> <span class="kn">import</span> <span class="n">DFTOutput</span> <span class="k">as</span> <span class="n">DFTOutputBase</span>
+<span class="kn">from</span> <span class="nn">pyiron.vasp.base</span> <span class="kn">import</span> <span class="n">Output</span> <span class="k">as</span> <span class="n">OutputBase</span>
+<span class="kn">from</span> <span class="nn">pyiron.atomistics.job.interactive</span> <span class="kn">import</span> <span class="n">GenericInteractive</span>
+
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Osamu Waseda, Jan Janssen&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2020, Max-Planck-Institut für Eisenforschung GmbH - &quot;</span>
+    <span class="s2">&quot;Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;janssen@mpie.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;production&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;Sep 1, 2018&quot;</span>
+
+
+<div class="viewcode-block" id="VaspInteractive"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.interactive.html#pyiron.vasp.interactive.VaspInteractive">[docs]</a><span class="k">class</span> <span class="nc">VaspInteractive</span><span class="p">(</span><span class="n">VaspBase</span><span class="p">,</span> <span class="n">GenericInteractive</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">job_name</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">VaspInteractive</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="n">job_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_write_input_files</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_vasprun</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">structure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">GenericInteractive</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">fget</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="nd">@structure</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">structure</span><span class="p">):</span>
+        <span class="n">GenericInteractive</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">fset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">structure</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">structure</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_potential</span> <span class="o">=</span> <span class="n">VaspPotentialSetter</span><span class="p">(</span>
+                <span class="n">element_lst</span><span class="o">=</span><span class="n">structure</span><span class="o">.</span><span class="n">get_species_symbols</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+            <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">interactive_enforce_structure_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_enforce_structure_reset</span>
+
+    <span class="nd">@interactive_enforce_structure_reset</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">interactive_enforce_structure_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reset</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;interactive_enforce_structure_reset() is not implemented!&quot;</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="VaspInteractive.get_structure"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.interactive.html#pyiron.vasp.interactive.VaspInteractive.get_structure">[docs]</a>    <span class="k">def</span> <span class="nf">get_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iteration_step</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">wrap_atoms</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the structure from a given iteration step of the simulation (MD/ionic relaxation). For static calculations</span>
+<span class="sd">        there is only one ionic iteration step</span>
+<span class="sd">        Args:</span>
+<span class="sd">            iteration_step (int): Step for which the structure is requested</span>
+<span class="sd">            wrap_atoms (bool): True if the atoms are to be wrapped back into the unit cell</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            pyiron.atomistics.structure.atoms.Atoms: The required structure</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive</span>
+            <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive_non_modal</span>
+        <span class="p">):</span>
+            <span class="n">structure</span> <span class="o">=</span> <span class="n">GenericInteractive</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iteration_step</span><span class="o">=</span><span class="n">iteration_step</span><span class="p">,</span> <span class="n">wrap_atoms</span><span class="o">=</span><span class="n">wrap_atoms</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">structure</span> <span class="o">=</span> <span class="n">VaspBase</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iteration_step</span><span class="o">=</span><span class="n">iteration_step</span><span class="p">,</span> <span class="n">wrap_atoms</span><span class="o">=</span><span class="n">wrap_atoms</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">structure</span></div>
+
+<div class="viewcode-block" id="VaspInteractive.interactive_close"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.interactive.html#pyiron.vasp.interactive.VaspInteractive.interactive_close">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_is_activated</span><span class="p">():</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="s2">&quot;STOPCAR&quot;</span><span class="p">),</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">stopcar</span><span class="p">:</span>
+                <span class="n">stopcar</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;LABORT = .TRUE.&quot;</span><span class="p">)</span>  <span class="c1"># stopcar.write(&#39;LSTOP = .TRUE.&#39;)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">run_if_interactive_non_modal</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">run_if_interactive_non_modal</span><span class="p">()</span>
+                <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_structure</span><span class="o">.</span><span class="n">get_scaled_positions</span><span class="p">():</span>
+                    <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:19.16f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">,</span> <span class="n">atom</span><span class="p">))</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_library</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">BrokenPipeError</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="s2">&quot;VASP calculation exited before interactive_close() - already converged?&quot;</span>
+                <span class="p">)</span>
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="nb">list</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">VaspInteractive</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">interactive_close</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">collect</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_output_parser</span> <span class="o">=</span> <span class="n">Output</span><span class="p">()</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="p">[</span><span class="s2">&quot;vasprun.xml&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">run</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="VaspInteractive.interactive_energy_tot_getter"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.interactive.html#pyiron.vasp.interactive.VaspInteractive.interactive_energy_tot_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_energy_tot_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_energy_pot_getter</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="VaspInteractive.interactive_energy_pot_getter"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.interactive.html#pyiron.vasp.interactive.VaspInteractive.interactive_energy_pot_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_energy_pot_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_vasprun</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="s2">&quot;OUTCAR&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_vasprun</span><span class="o">.</span><span class="n">get_energy_sigma_0</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">file_name</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="VaspInteractive.validate_ready_to_run"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.interactive.html#pyiron.vasp.interactive.VaspInteractive.validate_ready_to_run">[docs]</a>    <span class="k">def</span> <span class="nf">validate_ready_to_run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive</span>
+            <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive_non_modal</span>
+        <span class="p">)</span> <span class="ow">and</span> <span class="s2">&quot;EDIFFG&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">incar</span><span class="o">.</span><span class="n">_dataset</span><span class="p">[</span><span class="s2">&quot;Parameter&quot;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;If EDIFFG is defined VASP interrupts the interactive run_mode.&quot;</span>
+            <span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">VaspInteractive</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">validate_ready_to_run</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="VaspInteractive.interactive_forces_getter"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.interactive.html#pyiron.vasp.interactive.VaspInteractive.interactive_forces_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_forces_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_vasprun</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="s2">&quot;OUTCAR&quot;</span><span class="p">)</span>
+            <span class="n">forces</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_vasprun</span><span class="o">.</span><span class="n">get_forces</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">file_name</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">forces</span><span class="p">[</span><span class="n">vasp_sorter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="p">)]</span> <span class="o">=</span> <span class="n">forces</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">forces</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="VaspInteractive.interactive_initialize_interface"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.interactive.html#pyiron.vasp.interactive.VaspInteractive.interactive_initialize_interface">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_initialize_interface</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">executable</span><span class="o">.</span><span class="n">executable_path</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">aborted</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No executable set!&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">executable</span><span class="o">.</span><span class="n">mpi</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_library</span> <span class="o">=</span> <span class="n">Popen</span><span class="p">(</span>
+                <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">executable</span><span class="o">.</span><span class="n">executable_path</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">cores</span><span class="p">)],</span>
+                <span class="n">stdout</span><span class="o">=</span><span class="n">PIPE</span><span class="p">,</span>
+                <span class="n">stdin</span><span class="o">=</span><span class="n">PIPE</span><span class="p">,</span>
+                <span class="n">stderr</span><span class="o">=</span><span class="n">PIPE</span><span class="p">,</span>
+                <span class="n">cwd</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span>
+                <span class="n">universal_newlines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_library</span> <span class="o">=</span> <span class="n">Popen</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">executable</span><span class="o">.</span><span class="n">executable_path</span><span class="p">,</span>
+                <span class="n">stdout</span><span class="o">=</span><span class="n">PIPE</span><span class="p">,</span>
+                <span class="n">stdin</span><span class="o">=</span><span class="n">PIPE</span><span class="p">,</span>
+                <span class="n">stderr</span><span class="o">=</span><span class="n">PIPE</span><span class="p">,</span>
+                <span class="n">cwd</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span>
+                <span class="n">universal_newlines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">)</span></div>
+
+<div class="viewcode-block" id="VaspInteractive.calc_minimize"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.interactive.html#pyiron.vasp.interactive.VaspInteractive.calc_minimize">[docs]</a>    <span class="k">def</span> <span class="nf">calc_minimize</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">electronic_steps</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
+        <span class="n">ionic_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+        <span class="n">max_iter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">pressure</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">algorithm</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">retain_charge_density</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">retain_electrostatic_potential</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">ionic_energy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">ionic_forces</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">ionic_energy_tolerance</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">ionic_force_tolerance</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">volume_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Function to setup the hamiltonian to perform ionic relaxations using DFT. The ISIF tag has to be supplied</span>
+<span class="sd">        separately.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            electronic_steps (int): Maximum number of electronic steps</span>
+<span class="sd">            ionic_steps (int): Maximum number of ionic</span>
+<span class="sd">            max_iter (int): Maximum number of iterations</span>
+<span class="sd">            pressure (float): External pressure to be applied</span>
+<span class="sd">            algorithm (str): Type of VASP algorithm to be used &quot;Fast&quot;/&quot;Accurate&quot;</span>
+<span class="sd">            retain_charge_density (bool): True if the charge density should be written</span>
+<span class="sd">            retain_electrostatic_potential (boolean): True if the electrostatic potential should be written</span>
+<span class="sd">            ionic_energy_tolerance (float): Ionic energy convergence criteria (eV)</span>
+<span class="sd">            ionic_force_tolerance (float): Ionic forces convergence criteria (overwrites ionic energy) (ev/A)</span>
+<span class="sd">            ionic_energy (float): Same as ionic_energy_tolerance (deprecated)</span>
+<span class="sd">            ionic_forces (float): Same as ionic_force_tolerance (deprecated)</span>
+<span class="sd">            volume_only (bool): Option to relax only the volume (keeping the relative coordinates fixed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive</span>
+            <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive_non_modal</span>
+        <span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+                <span class="s2">&quot;calc_minimize() is not implemented for the interactive mode use calc_static()!&quot;</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">VaspInteractive</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">calc_minimize</span><span class="p">(</span>
+                <span class="n">electronic_steps</span><span class="o">=</span><span class="n">electronic_steps</span><span class="p">,</span>
+                <span class="n">ionic_steps</span><span class="o">=</span><span class="n">ionic_steps</span><span class="p">,</span>
+                <span class="n">max_iter</span><span class="o">=</span><span class="n">max_iter</span><span class="p">,</span>
+                <span class="n">pressure</span><span class="o">=</span><span class="n">pressure</span><span class="p">,</span>
+                <span class="n">algorithm</span><span class="o">=</span><span class="n">algorithm</span><span class="p">,</span>
+                <span class="n">retain_charge_density</span><span class="o">=</span><span class="n">retain_charge_density</span><span class="p">,</span>
+                <span class="n">retain_electrostatic_potential</span><span class="o">=</span><span class="n">retain_electrostatic_potential</span><span class="p">,</span>
+                <span class="n">ionic_energy</span><span class="o">=</span><span class="n">ionic_energy</span><span class="p">,</span>
+                <span class="n">ionic_forces</span><span class="o">=</span><span class="n">ionic_forces</span><span class="p">,</span>
+                <span class="n">volume_only</span><span class="o">=</span><span class="n">volume_only</span><span class="p">,</span>
+            <span class="p">)</span></div>
+
+<div class="viewcode-block" id="VaspInteractive.calc_md"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.interactive.html#pyiron.vasp.interactive.VaspInteractive.calc_md">[docs]</a>    <span class="k">def</span> <span class="nf">calc_md</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">temperature</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">n_ionic_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+        <span class="n">n_print</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">time_step</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="n">retain_charge_density</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">retain_electrostatic_potential</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets appropriate tags for molecular dynamics in VASP</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            temperature (int/float/list): Temperature/ range of temperatures in Kelvin</span>
+<span class="sd">            n_ionic_steps (int): Maximum number of ionic steps</span>
+<span class="sd">            n_print (int): Prints outputs every n_print steps</span>
+<span class="sd">            time_step (float): time step (fs)</span>
+<span class="sd">            retain_charge_density (bool): True id the charge density should be written</span>
+<span class="sd">            retain_electrostatic_potential (bool): True if the electrostatic potential should be written</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive</span>
+            <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive_non_modal</span>
+        <span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+                <span class="s2">&quot;calc_md() is not implemented for the interactive mode use calc_static()!&quot;</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">VaspInteractive</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">calc_md</span><span class="p">(</span>
+                <span class="n">temperature</span><span class="o">=</span><span class="n">temperature</span><span class="p">,</span>
+                <span class="n">n_ionic_steps</span><span class="o">=</span><span class="n">n_ionic_steps</span><span class="p">,</span>
+                <span class="n">time_step</span><span class="o">=</span><span class="n">time_step</span><span class="p">,</span>
+                <span class="n">n_print</span><span class="o">=</span><span class="n">n_print</span><span class="p">,</span>
+                <span class="n">retain_charge_density</span><span class="o">=</span><span class="n">retain_charge_density</span><span class="p">,</span>
+                <span class="n">retain_electrostatic_potential</span><span class="o">=</span><span class="n">retain_electrostatic_potential</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">kwargs</span>
+            <span class="p">)</span></div>
+
+<div class="viewcode-block" id="VaspInteractive.run_if_interactive_non_modal"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.interactive.html#pyiron.vasp.interactive.VaspInteractive.run_if_interactive_non_modal">[docs]</a>    <span class="k">def</span> <span class="nf">run_if_interactive_non_modal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">initial_run</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_is_activated</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">VaspInteractive</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">run_if_interactive</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">initial_run</span><span class="p">:</span>
+            <span class="n">atom_numbers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_structure</span><span class="o">.</span><span class="n">get_number_species_atoms</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">atom_numbers</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">indices</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_structure</span><span class="o">.</span><span class="n">select_index</span><span class="p">(</span><span class="n">species</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">indices</span><span class="p">:</span>
+                    <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                        <span class="nb">map</span><span class="p">(</span>
+                            <span class="s2">&quot;</span><span class="si">{:19.16f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">,</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">current_structure</span><span class="o">.</span><span class="n">get_scaled_positions</span><span class="p">()[</span><span class="n">i</span><span class="p">],</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Vasp library: &quot;</span> <span class="o">+</span> <span class="n">text</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_library</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_library</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_fetch_completed</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+<div class="viewcode-block" id="VaspInteractive.run_if_interactive"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.interactive.html#pyiron.vasp.interactive.VaspInteractive.run_if_interactive">[docs]</a>    <span class="k">def</span> <span class="nf">run_if_interactive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">run_if_interactive_non_modal</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_check_output</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_vasprun</span> <span class="o">=</span> <span class="n">Outcar</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactive_collect</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="VaspInteractive.interactive_fetch"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.interactive.html#pyiron.vasp.interactive.VaspInteractive.interactive_fetch">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_fetch_completed</span>
+            <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive_non_modal</span>
+        <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First run and then fetch&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_check_output</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_vasprun</span> <span class="o">=</span> <span class="n">Outcar</span><span class="p">()</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">VaspInteractive</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">interactive_collect</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;interactive run - done&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VaspInteractive.interactive_positions_setter"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.interactive.html#pyiron.vasp.interactive.VaspInteractive.interactive_positions_setter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_positions_setter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">positions</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+    <span class="k">def</span> <span class="nf">_check_incar_parameter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameter</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">parameter</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">incar</span><span class="o">.</span><span class="n">_dataset</span><span class="p">[</span><span class="s2">&quot;Parameter&quot;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">incar</span><span class="p">[</span><span class="n">parameter</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span> <span class="nf">_interactive_check_output</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_library</span><span class="o">.</span><span class="n">poll</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_library</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+            <span class="k">if</span> <span class="s2">&quot;POSITIONS: reading from stdin&quot;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+                <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">_run_if_new</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive</span>
+            <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive_non_modal</span>
+        <span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_check_incar_parameter</span><span class="p">(</span><span class="n">parameter</span><span class="o">=</span><span class="s2">&quot;INTERACTIVE&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_check_incar_parameter</span><span class="p">(</span><span class="n">parameter</span><span class="o">=</span><span class="s2">&quot;IBRION&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_check_incar_parameter</span><span class="p">(</span><span class="n">parameter</span><span class="o">=</span><span class="s2">&quot;POTIM&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_check_incar_parameter</span><span class="p">(</span><span class="n">parameter</span><span class="o">=</span><span class="s2">&quot;NSW&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_check_incar_parameter</span><span class="p">(</span><span class="n">parameter</span><span class="o">=</span><span class="s2">&quot;ISYM&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">VaspInteractive</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">_run_if_new</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="n">debug</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Output"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.interactive.html#pyiron.vasp.interactive.Output">[docs]</a><span class="k">class</span> <span class="nc">Output</span><span class="p">(</span><span class="n">OutputBase</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Handles the output from a VASP simulation.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        electronic_structure: Gives the electronic structure of the system</span>
+<span class="sd">        electrostatic_potential: Gives the electrostatic/local potential of the system</span>
+<span class="sd">        charge_density: Gives the charge density of the system</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Output</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">generic_output</span> <span class="o">=</span> <span class="n">GenericOutput</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dft_output</span> <span class="o">=</span> <span class="n">DFTOutput</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="GenericOutput"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.interactive.html#pyiron.vasp.interactive.GenericOutput">[docs]</a><span class="k">class</span> <span class="nc">GenericOutput</span><span class="p">(</span><span class="n">GenericOutputBase</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    This class stores the generic output like different structures, energies and forces from a simulation in a highly</span>
+<span class="sd">    generic format. Usually the user does not have to access this class.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        log_dict (dict): A dictionary of all tags and values of generic data (positions, forces, etc)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GenericOutput</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+<div class="viewcode-block" id="GenericOutput.to_hdf"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.interactive.html#pyiron.vasp.interactive.GenericOutput.to_hdf">[docs]</a>    <span class="k">def</span> <span class="nf">to_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Save the object in a HDF5 file</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            hdf (pyiron.base.generic.hdfio.ProjectHDFio): HDF path to which the object is to be saved</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="n">hdf</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;generic&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf_go</span><span class="p">:</span>
+            <span class="c1"># hdf_go[&quot;description&quot;] = self.description</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">hdf_go</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+            <span class="k">with</span> <span class="n">hdf_go</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;dft&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf_dft</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dft_log_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">hdf_dft</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bands</span><span class="o">.</span><span class="n">eigenvalue_matrix</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">bands</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="n">hdf_dft</span><span class="p">,</span> <span class="s2">&quot;bands&quot;</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="DFTOutput"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.interactive.html#pyiron.vasp.interactive.DFTOutput">[docs]</a><span class="k">class</span> <span class="nc">DFTOutput</span><span class="p">(</span><span class="n">DFTOutputBase</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This class stores the DFT specific output</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        log_dict (dict): A dictionary of all tags and values of DFT data</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">DFTOutput</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+<div class="viewcode-block" id="DFTOutput.to_hdf"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.interactive.html#pyiron.vasp.interactive.DFTOutput.to_hdf">[docs]</a>    <span class="k">def</span> <span class="nf">to_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Save the object in a HDF5 file</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            hdf (pyiron.base.generic.hdfio.ProjectHDFio): HDF path to which the object is to be saved</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="n">hdf</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;dft&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf_dft</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">hdf_dft</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

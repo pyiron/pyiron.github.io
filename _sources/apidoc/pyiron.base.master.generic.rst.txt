@@ -1,0 +1,7 @@
+pyiron.base.master.generic module
+=================================
+
+.. automodule:: pyiron.base.master.generic
+   :members:
+   :undoc-members:
+   :show-inheritance:

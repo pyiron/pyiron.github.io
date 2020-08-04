@@ -1,0 +1,414 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.thermodynamics.interfacemethod module &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>pyiron.thermodynamics.interfacemethod module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/pyiron.thermodynamics.interfacemethod.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-pyiron.thermodynamics.interfacemethod">
+<span id="pyiron-thermodynamics-interfacemethod-module"></span><h1>pyiron.thermodynamics.interfacemethod module<a class="headerlink" href="#module-pyiron.thermodynamics.interfacemethod" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.analyse_minimized_structure">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">analyse_minimized_structure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ham</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#analyse_minimized_structure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.analyse_minimized_structure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.calc_temp_iteration">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">calc_temp_iteration</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">basis</span></em>, <em class="sig-param"><span class="n">temperature_next</span></em>, <em class="sig-param"><span class="n">project_parameter</span></em>, <em class="sig-param"><span class="n">timestep</span></em>, <em class="sig-param"><span class="n">nve_run_time_steps</span></em>, <em class="sig-param"><span class="n">fit_range</span></em>, <em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">debug_plot</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#calc_temp_iteration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.calc_temp_iteration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.check_for_holes">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">check_for_holes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">temperature_next</span></em>, <em class="sig-param"><span class="n">strain_value_lst</span></em>, <em class="sig-param"><span class="n">nve_run_time_steps</span></em>, <em class="sig-param"><span class="n">project_parameter</span></em>, <em class="sig-param"><span class="n">debug_plot</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#check_for_holes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.check_for_holes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.create_job_template">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">create_job_template</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_name</span></em>, <em class="sig-param"><span class="n">structure</span></em>, <em class="sig-param"><span class="n">project_parameter</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#create_job_template"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.create_job_template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.fix_iso">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">fix_iso</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#fix_iso"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.fix_iso" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.fix_z_dir">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">fix_z_dir</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#fix_z_dir"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.fix_z_dir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.freeze_one_half">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">freeze_one_half</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">basis</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#freeze_one_half"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.freeze_one_half" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.generate_random_seed">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">generate_random_seed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">project_parameter</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#generate_random_seed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.generate_random_seed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.generate_structure">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">generate_structure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">project_parameter</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#generate_structure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.generate_structure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.get_center_point">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">get_center_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">strain_result_lst</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pressure_result_lst</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">center</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#get_center_point"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.get_center_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.get_initial_melting_temperature_guess">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">get_initial_melting_temperature_guess</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">project_parameter</span></em>, <em class="sig-param"><span class="n">ham_minimize_vol</span></em>, <em class="sig-param"><span class="n">temperature_next</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#get_initial_melting_temperature_guess"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.get_initial_melting_temperature_guess" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.get_nve_job_name">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">get_nve_job_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">temperature_next</span></em>, <em class="sig-param"><span class="n">strain</span></em>, <em class="sig-param"><span class="n">steps_lst</span></em>, <em class="sig-param"><span class="n">nve_run_time_steps</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#get_nve_job_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.get_nve_job_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.get_press">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">get_press</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ham</span></em>, <em class="sig-param"><span class="n">step</span><span class="o">=</span><span class="default_value">20</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#get_press"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.get_press" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.get_strain_lst">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">get_strain_lst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fit_range</span><span class="o">=</span><span class="default_value">0.02</span></em>, <em class="sig-param"><span class="n">points</span><span class="o">=</span><span class="default_value">21</span></em>, <em class="sig-param"><span class="n">strain_result_lst</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pressure_result_lst</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">center</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#get_strain_lst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.get_strain_lst" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.get_voronoi_volume">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">get_voronoi_volume</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">temperature_next</span></em>, <em class="sig-param"><span class="n">strain_lst</span></em>, <em class="sig-param"><span class="n">nve_run_time_steps</span></em>, <em class="sig-param"><span class="n">project_parameter</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#get_voronoi_volume"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.get_voronoi_volume" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.half_velocity">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">half_velocity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job</span></em>, <em class="sig-param"><span class="n">temperature</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#half_velocity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.half_velocity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.initialise_iterators">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">initialise_iterators</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">project_parameter</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#initialise_iterators"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.initialise_iterators" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.minimize_pos">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">minimize_pos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">structure</span></em>, <em class="sig-param"><span class="n">project_parameter</span></em>, <em class="sig-param"><span class="n">max_iter</span><span class="o">=</span><span class="default_value">1000</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#minimize_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.minimize_pos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.minimize_vol">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">minimize_vol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">structure</span></em>, <em class="sig-param"><span class="n">project_parameter</span></em>, <em class="sig-param"><span class="n">max_iter</span><span class="o">=</span><span class="default_value">1000</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#minimize_vol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.minimize_vol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.next_calc">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">next_calc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">structure</span></em>, <em class="sig-param"><span class="n">temperature</span></em>, <em class="sig-param"><span class="n">project_parameter</span></em>, <em class="sig-param"><span class="n">run_time_steps</span><span class="o">=</span><span class="default_value">10000</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#next_calc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.next_calc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.next_step_funct">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">next_step_funct</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">number_of_atoms</span></em>, <em class="sig-param"><span class="n">key_max</span></em>, <em class="sig-param"><span class="n">structure_left</span></em>, <em class="sig-param"><span class="n">structure_right</span></em>, <em class="sig-param"><span class="n">temperature_left</span></em>, <em class="sig-param"><span class="n">temperature_right</span></em>, <em class="sig-param"><span class="n">distribution_initial_half</span></em>, <em class="sig-param"><span class="n">structure_after_minimization</span></em>, <em class="sig-param"><span class="n">run_time_steps</span></em>, <em class="sig-param"><span class="n">project_parameter</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#next_step_funct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.next_step_funct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.npt_liquid">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">npt_liquid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">temperature_solid</span></em>, <em class="sig-param"><span class="n">temperature_liquid</span></em>, <em class="sig-param"><span class="n">basis</span></em>, <em class="sig-param"><span class="n">project_parameter</span></em>, <em class="sig-param"><span class="n">timestep</span><span class="o">=</span><span class="default_value">1.0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#npt_liquid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.npt_liquid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.npt_solid">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">npt_solid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">temperature</span></em>, <em class="sig-param"><span class="n">basis</span></em>, <em class="sig-param"><span class="n">project_parameter</span></em>, <em class="sig-param"><span class="n">timestep</span><span class="o">=</span><span class="default_value">1.0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#npt_solid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.npt_solid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.plot_equilibration">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">plot_equilibration</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">temperature_next</span></em>, <em class="sig-param"><span class="n">strain_lst</span></em>, <em class="sig-param"><span class="n">nve_run_time_steps</span></em>, <em class="sig-param"><span class="n">project_parameter</span></em>, <em class="sig-param"><span class="n">debug_plot</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#plot_equilibration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.plot_equilibration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.plot_melting_point_prediction">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">plot_melting_point_prediction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">strain_value_lst</span></em>, <em class="sig-param"><span class="n">pressure_value_lst</span></em>, <em class="sig-param"><span class="n">temperature_value_lst</span></em>, <em class="sig-param"><span class="n">boundary_value</span><span class="o">=</span><span class="default_value">0.25</span></em>, <em class="sig-param"><span class="n">debug_plot</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#plot_melting_point_prediction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.plot_melting_point_prediction" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.plot_solid_liquid_ratio">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">plot_solid_liquid_ratio</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">temperature_next</span></em>, <em class="sig-param"><span class="n">strain_lst</span></em>, <em class="sig-param"><span class="n">nve_run_time_steps</span></em>, <em class="sig-param"><span class="n">project_parameter</span></em>, <em class="sig-param"><span class="n">debug_plot</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#plot_solid_liquid_ratio"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.plot_solid_liquid_ratio" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.ratio_selection">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">ratio_selection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">strain_lst</span></em>, <em class="sig-param"><span class="n">ratio_lst</span></em>, <em class="sig-param"><span class="n">pressure_lst</span></em>, <em class="sig-param"><span class="n">temperature_lst</span></em>, <em class="sig-param"><span class="n">ratio_boundary</span></em>, <em class="sig-param"><span class="n">debug_plot</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#ratio_selection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.ratio_selection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.remove_selective_dynamics">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">remove_selective_dynamics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">basis</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#remove_selective_dynamics"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.remove_selective_dynamics" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.round_temperature_next">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">round_temperature_next</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">temperature_next</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#round_temperature_next"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.round_temperature_next" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.set_server">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">set_server</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job</span></em>, <em class="sig-param"><span class="n">project_parameter</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#set_server"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.set_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.setup_liquid_job">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">setup_liquid_job</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_name</span></em>, <em class="sig-param"><span class="n">basis</span></em>, <em class="sig-param"><span class="n">temperature</span></em>, <em class="sig-param"><span class="n">project_parameter</span></em>, <em class="sig-param"><span class="n">timestep</span><span class="o">=</span><span class="default_value">1.0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#setup_liquid_job"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.setup_liquid_job" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.strain_circle">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">strain_circle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">basis_relative</span></em>, <em class="sig-param"><span class="n">temperature_next</span></em>, <em class="sig-param"><span class="n">nve_run_time_steps</span></em>, <em class="sig-param"><span class="n">project_parameter</span></em>, <em class="sig-param"><span class="n">timestep</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">strain_result_lst</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pressure_result_lst</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">center</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">fit_range</span><span class="o">=</span><span class="default_value">0.02</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#strain_circle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.strain_circle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.thermodynamics.interfacemethod.validate_convergence">
+<code class="sig-prename descclassname">pyiron.thermodynamics.interfacemethod.</code><code class="sig-name descname">validate_convergence</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pr</span></em>, <em class="sig-param"><span class="n">temperature_left</span></em>, <em class="sig-param"><span class="n">temperature_next</span></em>, <em class="sig-param"><span class="n">temperature_right</span></em>, <em class="sig-param"><span class="n">enable_iteration</span></em>, <em class="sig-param"><span class="n">timestep_iter</span></em>, <em class="sig-param"><span class="n">timestep_lst</span></em>, <em class="sig-param"><span class="n">timestep</span></em>, <em class="sig-param"><span class="n">fit_range_iter</span></em>, <em class="sig-param"><span class="n">fit_range_lst</span></em>, <em class="sig-param"><span class="n">fit_range</span></em>, <em class="sig-param"><span class="n">nve_run_time_steps_iter</span></em>, <em class="sig-param"><span class="n">nve_run_time_steps_lst</span></em>, <em class="sig-param"><span class="n">nve_run_time_steps</span></em>, <em class="sig-param"><span class="n">strain_result_lst</span></em>, <em class="sig-param"><span class="n">pressure_result_lst</span></em>, <em class="sig-param"><span class="n">step_count</span></em>, <em class="sig-param"><span class="n">step_dict</span></em>, <em class="sig-param"><span class="n">boundary_value</span></em>, <em class="sig-param"><span class="n">ratio_boundary</span></em>, <em class="sig-param"><span class="n">convergence_goal</span></em>, <em class="sig-param"><span class="n">output_file</span><span class="o">=</span><span class="default_value">'melting.json'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/thermodynamics/interfacemethod.html#validate_convergence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.thermodynamics.interfacemethod.validate_convergence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

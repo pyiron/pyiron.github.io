@@ -1,0 +1,7 @@
+pyiron.table.datamining module
+==============================
+
+.. automodule:: pyiron.table.datamining
+   :members:
+   :undoc-members:
+   :show-inheritance:

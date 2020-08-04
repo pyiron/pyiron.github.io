@@ -1,0 +1,7 @@
+pyiron.atomistics.structure.atoms module
+========================================
+
+.. automodule:: pyiron.atomistics.structure.atoms
+   :members:
+   :undoc-members:
+   :show-inheritance:

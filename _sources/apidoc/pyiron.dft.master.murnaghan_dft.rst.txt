@@ -1,0 +1,7 @@
+pyiron.dft.master.murnaghan\_dft module
+=======================================
+
+.. automodule:: pyiron.dft.master.murnaghan_dft
+   :members:
+   :undoc-members:
+   :show-inheritance:

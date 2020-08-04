@@ -1,0 +1,531 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.dft.job.generic &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.dft.job.generic</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.dft.job.generic</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">pyiron.atomistics.job.atomistic</span> <span class="kn">import</span> <span class="n">AtomisticGenericJob</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2020, Max-Planck-Institut für Eisenforschung GmbH - &quot;</span>
+    <span class="s2">&quot;Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;janssen@mpie.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;production&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;Sep 1, 2017&quot;</span>
+
+
+<div class="viewcode-block" id="GenericDFTJob"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.job.generic.html#pyiron.dft.job.generic.GenericDFTJob">[docs]</a><span class="k">class</span> <span class="nc">GenericDFTJob</span><span class="p">(</span><span class="n">AtomisticGenericJob</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">job_name</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GenericDFTJob</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="n">job_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;fix_symmetry&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">encut</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">plane_wave_cutoff</span>
+
+    <span class="nd">@encut</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">encut</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plane_wave_cutoff</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">xc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">exchange_correlation_functional</span>
+
+    <span class="nd">@xc</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">xc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">exchange_correlation_functional</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">plane_wave_cutoff</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;The encut property is not implemented for this code.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="nd">@plane_wave_cutoff</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">plane_wave_cutoff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;The encut property is not implemented for this code.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">spin_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;The spin_constraints property is not implemented for this code.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="nd">@spin_constraints</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">spin_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;The spin_constraints property is not implemented for this code.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">exchange_correlation_functional</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;The exchange property is not implemented for this code.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="nd">@exchange_correlation_functional</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">exchange_correlation_functional</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;The exchange property is not implemented for this code.&quot;</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="GenericDFTJob.get_k_mesh_by_cell"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.job.generic.html#pyiron.dft.job.generic.GenericDFTJob.get_k_mesh_by_cell">[docs]</a>    <span class="k">def</span> <span class="nf">get_k_mesh_by_cell</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kpoints_per_reciprocal_angstrom</span><span class="p">,</span> <span class="n">cell</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            get k-mesh density according to the box size.</span>
+
+<span class="sd">            Args:</span>
+<span class="sd">                kpoints_per_reciprocal_angstrom: (float) number of k-points per reciprocal angstrom (i.e. per 2*pi*box_length)</span>
+<span class="sd">                cell: (list/ndarray) 3x3 cell. If not set, the current cell is used.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">cell</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s1">&#39;structure not set&#39;</span><span class="p">)</span>
+            <span class="n">cell</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">cell</span>
+        <span class="n">latlens</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">kmesh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rint</span><span class="p">(</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">latlens</span> <span class="o">*</span> <span class="n">kpoints_per_reciprocal_angstrom</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">kmesh</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;kpoint per angstrom too low&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kmesh</span><span class="p">]</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">fix_spin_constraint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;fix_spin_constraint&quot;</span><span class="p">]</span>
+
+    <span class="nd">@fix_spin_constraint</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">fix_spin_constraint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">boolean</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">boolean</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;fix_spin_constraint&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">boolean</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">fix_symmetry</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;fix_symmetry&quot;</span><span class="p">]</span>
+
+    <span class="nd">@fix_symmetry</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">fix_symmetry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">boolean</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">boolean</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;fix_symmetry&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">boolean</span>
+
+<div class="viewcode-block" id="GenericDFTJob.get_structure"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.job.generic.html#pyiron.dft.job.generic.GenericDFTJob.get_structure">[docs]</a>    <span class="k">def</span> <span class="nf">get_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iteration_step</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">wrap_atoms</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the structure from a given iteration step of the simulation (MD/ionic relaxation). For static calculations</span>
+<span class="sd">        there is only one ionic iteration step</span>
+<span class="sd">        Args:</span>
+<span class="sd">            iteration_step (int): Step for which the structure is requested</span>
+<span class="sd">            wrap_atoms (bool): True if the atoms are to be wrapped back into the unit cell</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            pyiron.atomistics.structure.atoms.Atoms: The required structure</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">snapshot</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">GenericDFTJob</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span>
+            <span class="n">iteration_step</span><span class="o">=</span><span class="n">iteration_step</span><span class="p">,</span> <span class="n">wrap_atoms</span><span class="o">=</span><span class="n">wrap_atoms</span>
+        <span class="p">)</span>
+        <span class="n">spins</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_magnetic_moments</span><span class="p">(</span><span class="n">iteration_step</span><span class="o">=</span><span class="n">iteration_step</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">spins</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">snapshot</span><span class="o">.</span><span class="n">set_initial_magnetic_moments</span><span class="p">(</span><span class="n">spins</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">snapshot</span></div>
+
+<div class="viewcode-block" id="GenericDFTJob.set_mixing_parameters"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.job.generic.html#pyiron.dft.job.generic.GenericDFTJob.set_mixing_parameters">[docs]</a>    <span class="k">def</span> <span class="nf">set_mixing_parameters</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">method</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">n_pulay_steps</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">density_mixing_parameter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">spin_mixing_parameter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;set_mixing_parameters is not implemented for this code.&quot;</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericDFTJob.restart_for_band_structure_calculations"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.job.generic.html#pyiron.dft.job.generic.GenericDFTJob.restart_for_band_structure_calculations">[docs]</a>    <span class="k">def</span> <span class="nf">restart_for_band_structure_calculations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Restart a new job created from an existing calculation by reading the charge density</span>
+<span class="sd">        for band structure calculations.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            job_name (str/None): Job name</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            new_ham (pyiron.dft.job.generic.GenericDFTJob): New job</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;restart_for_band_structure_calculations is not implemented for this code.&quot;</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericDFTJob.get_magnetic_moments"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.job.generic.html#pyiron.dft.job.generic.GenericDFTJob.get_magnetic_moments">[docs]</a>    <span class="k">def</span> <span class="nf">get_magnetic_moments</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iteration_step</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gives the magnetic moments of a calculation for each iteration step.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            iteration_step (int): Step for which the structure is requested</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            numpy.ndarray/None: array of final magmetic moments or None if no magnetic moment is given</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">spins</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;output/generic/dft/atom_spins&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">spins</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">spins</span><span class="p">[</span><span class="n">iteration_step</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span></div>
+
+    <span class="k">def</span> <span class="nf">_set_kpoints</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">mesh</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;MP&quot;</span><span class="p">,</span>
+        <span class="n">center_shift</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">symmetry_reduction</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">manual_kpoints</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">weights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">reciprocal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">n_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">path_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;The set_kpoints function is not implemented for this code.&quot;</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="GenericDFTJob.set_kpoints"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.job.generic.html#pyiron.dft.job.generic.GenericDFTJob.set_kpoints">[docs]</a>    <span class="k">def</span> <span class="nf">set_kpoints</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">mesh</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;MP&quot;</span><span class="p">,</span>
+        <span class="n">center_shift</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">symmetry_reduction</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">manual_kpoints</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">weights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">reciprocal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">kpoints_per_reciprocal_angstrom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">n_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">path_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Function to setup the k-points</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            mesh (list): Size of the mesh (ignored if scheme is not set to &#39;MP&#39; or kpoints_per_reciprocal_angstrom is set)</span>
+<span class="sd">            scheme (str): Type of k-point generation scheme (MP/GP(gamma point)/Manual/Line)</span>
+<span class="sd">            center_shift (list): Shifts the center of the mesh from the gamma point by the given vector in relative coordinates</span>
+<span class="sd">            symmetry_reduction (boolean): Tells if the symmetry reduction is to be applied to the k-points</span>
+<span class="sd">            manual_kpoints (list/numpy.ndarray): Manual list of k-points</span>
+<span class="sd">            weights(list/numpy.ndarray): Manually supplied weights to each k-point in case of the manual mode</span>
+<span class="sd">            reciprocal (bool): Tells if the supplied values are in reciprocal (direct) or cartesian coordinates (in</span>
+<span class="sd">            reciprocal space)</span>
+<span class="sd">            kpoints_per_reciprocal_angstrom (float): Number of kpoint per angstrom in each direction</span>
+<span class="sd">            n_path (int): Number of points per trace part for line mode</span>
+<span class="sd">            path_name (str): Name of high symmetry path used for band structure calculations.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">kpoints_per_reciprocal_angstrom</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">mesh</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;mesh value is overwritten by kpoints_per_reciprocal_angstrom&quot;</span><span class="p">)</span>
+            <span class="n">mesh</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_k_mesh_by_cell</span><span class="p">(</span><span class="n">kpoints_per_reciprocal_angstrom</span><span class="o">=</span><span class="n">kpoints_per_reciprocal_angstrom</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">mesh</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">mesh</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;mesh values must be larger than 0&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">center_shift</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">center_shift</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">center_shift</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;center_shift is given in relative coordinates&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_kpoints</span><span class="p">(</span>
+            <span class="n">mesh</span><span class="o">=</span><span class="n">mesh</span><span class="p">,</span>
+            <span class="n">scheme</span><span class="o">=</span><span class="n">scheme</span><span class="p">,</span>
+            <span class="n">center_shift</span><span class="o">=</span><span class="n">center_shift</span><span class="p">,</span>
+            <span class="n">symmetry_reduction</span><span class="o">=</span><span class="n">symmetry_reduction</span><span class="p">,</span>
+            <span class="n">manual_kpoints</span><span class="o">=</span><span class="n">manual_kpoints</span><span class="p">,</span>
+            <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span>
+            <span class="n">reciprocal</span><span class="o">=</span><span class="n">reciprocal</span><span class="p">,</span>
+            <span class="n">n_path</span><span class="o">=</span><span class="n">n_path</span><span class="p">,</span>
+            <span class="n">path_name</span><span class="o">=</span><span class="n">path_name</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericDFTJob.calc_static"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.job.generic.html#pyiron.dft.job.generic.GenericDFTJob.calc_static">[docs]</a>    <span class="k">def</span> <span class="nf">calc_static</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">electronic_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+        <span class="n">algorithm</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">retain_charge_density</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">retain_electrostatic_potential</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;fix_symmetry&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GenericDFTJob</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">calc_static</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GenericDFTJob.calc_minimize"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.job.generic.html#pyiron.dft.job.generic.GenericDFTJob.calc_minimize">[docs]</a>    <span class="k">def</span> <span class="nf">calc_minimize</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">electronic_steps</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+        <span class="n">ionic_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+        <span class="n">max_iter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">pressure</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">algorithm</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">retain_charge_density</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">retain_electrostatic_potential</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">ionic_energy_tolerance</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">ionic_force_tolerance</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">ionic_energy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">ionic_forces</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">volume_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;fix_symmetry&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GenericDFTJob</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">calc_minimize</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="n">max_iter</span><span class="p">,</span> <span class="n">pressure</span><span class="o">=</span><span class="n">pressure</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericDFTJob.calc_md"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.job.generic.html#pyiron.dft.job.generic.GenericDFTJob.calc_md">[docs]</a>    <span class="k">def</span> <span class="nf">calc_md</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">temperature</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">n_ionic_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+        <span class="n">n_print</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">time_step</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="n">retain_charge_density</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">retain_electrostatic_potential</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;fix_symmetry&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GenericDFTJob</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">calc_md</span><span class="p">(</span>
+            <span class="n">temperature</span><span class="o">=</span><span class="n">temperature</span><span class="p">,</span>
+            <span class="n">n_ionic_steps</span><span class="o">=</span><span class="n">n_ionic_steps</span><span class="p">,</span>
+            <span class="n">n_print</span><span class="o">=</span><span class="n">n_print</span><span class="p">,</span>
+            <span class="n">time_step</span><span class="o">=</span><span class="n">time_step</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+    <span class="c1"># Backward compatibility</span>
+<div class="viewcode-block" id="GenericDFTJob.get_encut"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.job.generic.html#pyiron.dft.job.generic.GenericDFTJob.get_encut">[docs]</a>    <span class="k">def</span> <span class="nf">get_encut</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">encut</span></div>
+
+<div class="viewcode-block" id="GenericDFTJob.set_encut"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.job.generic.html#pyiron.dft.job.generic.GenericDFTJob.set_encut">[docs]</a>    <span class="k">def</span> <span class="nf">set_encut</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">encut</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the plane-wave energy cutoff</span>
+<span class="sd">        Args:</span>
+<span class="sd">            encut (float): The energy cutoff in eV</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plane_wave_cutoff</span> <span class="o">=</span> <span class="n">encut</span></div>
+
+<div class="viewcode-block" id="GenericDFTJob.set_exchange_correlation_functional"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.job.generic.html#pyiron.dft.job.generic.GenericDFTJob.set_exchange_correlation_functional">[docs]</a>    <span class="k">def</span> <span class="nf">set_exchange_correlation_functional</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exchange_correlation_functional</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">exchange_correlation_functional</span> <span class="o">=</span> <span class="n">exchange_correlation_functional</span></div>
+
+<div class="viewcode-block" id="GenericDFTJob.set_empty_states"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.job.generic.html#pyiron.dft.job.generic.GenericDFTJob.set_empty_states">[docs]</a>    <span class="k">def</span> <span class="nf">set_empty_states</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_empty_states</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;The set_empty_states function is not implemented for this code.&quot;</span>
+        <span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

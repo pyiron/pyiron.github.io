@@ -1,0 +1,357 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.atomistics.structure.ovito &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.atomistics.structure.ovito</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.atomistics.structure.ovito</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.settings.generic</span> <span class="kn">import</span> <span class="n">Settings</span>
+<span class="kn">from</span> <span class="nn">ovito</span> <span class="kn">import</span> <span class="n">ObjectNode</span>
+<span class="kn">from</span> <span class="nn">ovito.data</span> <span class="kn">import</span> <span class="n">Bonds</span><span class="p">,</span> <span class="n">DataCollection</span>
+<span class="kn">from</span> <span class="nn">ovito.modifiers</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">CreateBondsModifier</span><span class="p">,</span>
+    <span class="n">CommonNeighborAnalysisModifier</span><span class="p">,</span>
+    <span class="n">CentroSymmetryModifier</span><span class="p">,</span>
+    <span class="n">VoronoiAnalysisModifier</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2020, Max-Planck-Institut für Eisenforschung GmbH - &quot;</span>
+    <span class="s2">&quot;Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;janssen@mpie.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;development&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;Sep 1, 2017&quot;</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">Settings</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="analyse_ovito_cna_adaptive"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.structure.ovito.html#pyiron.atomistics.structure.ovito.analyse_ovito_cna_adaptive">[docs]</a><span class="k">def</span> <span class="nf">analyse_ovito_cna_adaptive</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;total&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Use Ovito&#39;s common neighbor analysis binding.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        atoms (pyrion.structure.atoms.Atoms): The structure to analyze.</span>
+<span class="sd">        mode (&quot;total&quot;/&quot;numeric&quot;/&quot;str&quot;): Controls the style and level of detail of the output. (Default is &quot;total&quot;, only</span>
+<span class="sd">            return a summary of the values in the structure.)</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        (depends on `mode`)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">publication_add</span><span class="p">(</span><span class="n">publication</span><span class="p">())</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">mode</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;total&quot;</span><span class="p">,</span> <span class="s2">&quot;numeric&quot;</span><span class="p">,</span> <span class="s2">&quot;str&quot;</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unsupported mode&quot;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">DataCollection</span><span class="o">.</span><span class="n">create_from_ase_atoms</span><span class="p">(</span><span class="n">atoms</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+    <span class="n">node</span> <span class="o">=</span> <span class="n">ObjectNode</span><span class="p">()</span>
+    <span class="n">node</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">data</span>
+    <span class="n">node</span><span class="o">.</span><span class="n">modifiers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="n">CommonNeighborAnalysisModifier</span><span class="p">(</span>
+            <span class="n">mode</span><span class="o">=</span><span class="n">CommonNeighborAnalysisModifier</span><span class="o">.</span><span class="n">Mode</span><span class="o">.</span><span class="n">AdaptiveCutoff</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;total&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">output</span><span class="o">.</span><span class="n">attributes</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">atoms_output</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">to_ase_atoms</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;numeric&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">atoms_output</span><span class="o">.</span><span class="n">get_array</span><span class="p">(</span><span class="s2">&quot;Structure Type&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;str&quot;</span><span class="p">:</span>
+            <span class="n">cna_property</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">particle_properties</span><span class="o">.</span><span class="n">structure_type</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="n">cna_property</span><span class="o">.</span><span class="n">get_type_by_id</span><span class="p">(</span><span class="n">cnatype</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+                    <span class="k">for</span> <span class="n">cnatype</span> <span class="ow">in</span> <span class="n">atoms_output</span><span class="o">.</span><span class="n">get_array</span><span class="p">(</span><span class="s2">&quot;Structure Type&quot;</span><span class="p">)</span>
+                <span class="p">]</span>
+            <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="analyse_ovito_centro_symmetry"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.structure.ovito.html#pyiron.atomistics.structure.ovito.analyse_ovito_centro_symmetry">[docs]</a><span class="k">def</span> <span class="nf">analyse_ovito_centro_symmetry</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">num_neighbors</span><span class="o">=</span><span class="mi">12</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        atoms:</span>
+<span class="sd">        num_neighbors:</span>
+
+<span class="sd">    Returns:</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">publication_add</span><span class="p">(</span><span class="n">publication</span><span class="p">())</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">DataCollection</span><span class="o">.</span><span class="n">create_from_ase_atoms</span><span class="p">(</span><span class="n">atoms</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+    <span class="n">node</span> <span class="o">=</span> <span class="n">ObjectNode</span><span class="p">()</span>
+    <span class="n">node</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">data</span>
+    <span class="n">node</span><span class="o">.</span><span class="n">modifiers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">CentroSymmetryModifier</span><span class="p">(</span><span class="n">num_neighbors</span><span class="o">=</span><span class="n">num_neighbors</span><span class="p">))</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">output</span><span class="o">.</span><span class="n">particle_properties</span><span class="p">[</span><span class="s2">&quot;Centrosymmetry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">array</span></div>
+
+
+<div class="viewcode-block" id="analyse_ovito_voronoi_volume"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.structure.ovito.html#pyiron.atomistics.structure.ovito.analyse_ovito_voronoi_volume">[docs]</a><span class="k">def</span> <span class="nf">analyse_ovito_voronoi_volume</span><span class="p">(</span><span class="n">atoms</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        atoms:</span>
+
+<span class="sd">    Returns:</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">publication_add</span><span class="p">(</span><span class="n">publication</span><span class="p">())</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">DataCollection</span><span class="o">.</span><span class="n">create_from_ase_atoms</span><span class="p">(</span><span class="n">atoms</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+    <span class="n">node</span> <span class="o">=</span> <span class="n">ObjectNode</span><span class="p">()</span>
+    <span class="n">node</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">data</span>
+    <span class="n">node</span><span class="o">.</span><span class="n">modifiers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">VoronoiAnalysisModifier</span><span class="p">())</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">output</span><span class="o">.</span><span class="n">particle_properties</span><span class="p">[</span><span class="s2">&quot;Atomic Volume&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">array</span></div>
+
+
+<div class="viewcode-block" id="publication"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.structure.ovito.html#pyiron.atomistics.structure.ovito.publication">[docs]</a><span class="k">def</span> <span class="nf">publication</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;ovito&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;Stukowski_2009&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;doi&quot;</span><span class="p">:</span> <span class="s2">&quot;10.1088/0965-0393/18/1/015012&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://doi.org/10.1088</span><span class="si">%2F</span><span class="s2">0965-0393</span><span class="si">%2F</span><span class="s2">18</span><span class="si">%2F</span><span class="s2">1</span><span class="si">%2F</span><span class="s2">015012&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="s2">&quot;2009&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;month&quot;</span><span class="p">:</span> <span class="s2">&quot;dec&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;publisher&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">{IOP}</span><span class="s2"> Publishing&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;volume&quot;</span><span class="p">:</span> <span class="s2">&quot;18&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;number&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;pages&quot;</span><span class="p">:</span> <span class="s2">&quot;015012&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Alexander Stukowski&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Visualization and analysis of atomistic simulation data with &quot;</span>
+                <span class="s2">&quot;</span><span class="si">{OVITO}</span><span class="s2">{</span><span class="se">\t</span><span class="s2">extendash}the Open Visualization Tool&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;journal&quot;</span><span class="p">:</span> <span class="s2">&quot;Modelling and Simulation in Materials Science and Engineering&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;abstract&quot;</span><span class="p">:</span> <span class="s2">&quot;The Open Visualization Tool (OVITO) is a new 3D visualization &quot;</span>
+                <span class="s2">&quot;software designed for post-processing atomistic data obtained &quot;</span>
+                <span class="s2">&quot;from molecular dynamics or Monte Carlo simulations. Unique &quot;</span>
+                <span class="s2">&quot;analysis, editing and animations functions are integrated into &quot;</span>
+                <span class="s2">&quot;its easy-to-use graphical user interface. The software is &quot;</span>
+                <span class="s2">&quot;written in object-oriented C++, controllable via Python scripts &quot;</span>
+                <span class="s2">&quot;and easily extendable through a plug-in interface. It is &quot;</span>
+                <span class="s2">&quot;distributed as open-source software and can be downloaded &quot;</span>
+                <span class="s2">&quot;from the website http://ovito.sourceforge.net/.&quot;</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

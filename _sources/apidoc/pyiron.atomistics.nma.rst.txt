@@ -1,0 +1,18 @@
+pyiron.atomistics.nma package
+=============================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pyiron.atomistics.nma.nma
+
+Module contents
+---------------
+
+.. automodule:: pyiron.atomistics.nma
+   :members:
+   :undoc-members:
+   :show-inheritance:

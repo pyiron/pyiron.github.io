@@ -1,0 +1,646 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>FAQ &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Contributing to pyiron" href="developers.html" />
+    <link rel="prev" title="Citing" href="citation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citation.html">Citing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-cite-pyiron">How to cite pyiron?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-units-does-pyiron-use">What units does pyiron use?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-import-existing-calculation">How to import existing calculation?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-import-structures-from-files-or-existing-databases">How to import structures from files or existing databases?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-install-pyiron">How to install pyiron?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-use-a-custom-pseudo-potential-in-vasp">How to use a custom Pseudo potential in VASP?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-use-vasp-tags-which-are-not-supported-by-pyiron">How to use VASP tags which are not supported by pyiron?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-use-a-custom-potential-in-lammps">How to use a custom potential in LAMMPS?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-extend-the-potential-database-inside-pyiron">How to extend the potential database inside pyiron?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-link-your-own-executable">How to link your own executable?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-send-a-calculation-to-the-background">How to send a calculation to the background ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-submit-a-calculation-to-the-queuing-system">How to submit a calculation to the queuing system?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-setup-spin-constraint-calculation">How to setup spin constraint calculation?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-the-meaning-of-the-name-pyiron">What is the meaning of the name - pyiron?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#which-output-quantities-are-stored-in-pyiron">Which output quantities are stored in pyiron?</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>FAQ</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/source/faq.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="faq">
+<span id="id1"></span><h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="how-to-cite-pyiron">
+<h2>How to cite pyiron?<a class="headerlink" href="#how-to-cite-pyiron" title="Permalink to this headline">¶</a></h2>
+<p>To cite pyiron and the corresponding codes, please follow the instructions on the <a class="reference external" href="citation">publication page</a>.</p>
+</div>
+<div class="section" id="what-units-does-pyiron-use">
+<h2>What units does pyiron use?<a class="headerlink" href="#what-units-does-pyiron-use" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>mass = atomic mass units</p></li>
+<li><p>distance = Angstroms</p></li>
+<li><p>time = femtoseconds</p></li>
+<li><p>energy = eV</p></li>
+<li><p>velocity = Angstroms/femtoseconds</p></li>
+<li><p>force = eV/Angstrom</p></li>
+<li><p>temperature = Kelvin</p></li>
+<li><p>pressure = GPa</p></li>
+<li><p>charge = multiple of electron charge (1.0 is a proton)</p></li>
+</ul>
+</div>
+<div class="section" id="how-to-import-existing-calculation">
+<h2>How to import existing calculation?<a class="headerlink" href="#how-to-import-existing-calculation" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="how-to-import-structures-from-files-or-existing-databases">
+<h2>How to import structures from files or existing databases?<a class="headerlink" href="#how-to-import-structures-from-files-or-existing-databases" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="how-to-install-pyiron">
+<h2>How to install pyiron?<a class="headerlink" href="#how-to-install-pyiron" title="Permalink to this headline">¶</a></h2>
+<p>pyiron is designed to be installed as centralized service on your local computer cluster, rather than a local installation
+on each individual workstation. To test pyiron online or with a local installation, please follow the instructions on the
+<a class="reference external" href="installation">installation page</a>.</p>
+</div>
+<div class="section" id="how-to-use-a-custom-pseudo-potential-in-vasp">
+<h2>How to use a custom Pseudo potential in VASP?<a class="headerlink" href="#how-to-use-a-custom-pseudo-potential-in-vasp" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="how-to-use-vasp-tags-which-are-not-supported-by-pyiron">
+<h2>How to use VASP tags which are not supported by pyiron?<a class="headerlink" href="#how-to-use-vasp-tags-which-are-not-supported-by-pyiron" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="how-to-use-a-custom-potential-in-lammps">
+<h2>How to use a custom potential in LAMMPS?<a class="headerlink" href="#how-to-use-a-custom-potential-in-lammps" title="Permalink to this headline">¶</a></h2>
+<p>A custom empirical potential (here, a hybrid potential) can be defined in the following format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">custom_potential</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+  <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;SrTiO3_Pedone&#39;</span><span class="p">],</span>
+  <span class="s1">&#39;Filename&#39;</span><span class="p">:</span> <span class="p">[[]],</span>
+  <span class="s1">&#39;Model&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Custom&#39;</span><span class="p">],</span>
+  <span class="s1">&#39;Species&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;Sr&#39;</span><span class="p">,</span> <span class="s1">&#39;Ti&#39;</span><span class="p">]],</span>
+  <span class="s1">&#39;Config&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;atom_style full</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>  <span class="c1"># I use &#39;full&#39; here as atom_style &#39;charge&#39; gives the same result</span>
+              <span class="s1">&#39;## create groups ###</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;group O type 1</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;group Sr type 2</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;group Ti type 3</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;## set charges - beside manually ###</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;set group O charge -1.2000</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;set group Sr charge 1.2000</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;set group Ti charge 2.4000</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;pair_style hybrid/overlay morse 15.0 mie/cut 15.0 coul/long 15.0 beck 15.0</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;pair_coeff * * coul/long</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;pair_coeff 1 2 beck 3.0 0 0 0 0</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;pair_coeff 1 3 beck 1.0 0 0 0 0</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;pair_coeff 1 1 beck 22.0 0 0 0 0</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;pair_coeff 1 2 mie/cut 3.0 1.0 12.0 0</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;pair_coeff 1 3 mie/cut 1.0 1.0 12.0 0</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;pair_coeff 1 1 mie/cut 22.0 1.0 12.0 0</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;pair_coeff 1 2 morse 0.019623 1.8860 3.32833</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;pair_coeff 1 3 morse 0.024235 2.2547 2.708943</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;pair_coeff 1 1 morse 0.042395 1.3793 3.618701</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;kspace_style ewald 1.0e-8</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">]]</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p>The lines in <code class="docutils literal notranslate"><span class="pre">Config</span></code> will be written to the LAMMPS <code class="docutils literal notranslate"><span class="pre">potential.inp</span></code> file. Make sure that the arrangement of the species in <code class="docutils literal notranslate"><span class="pre">Species</span></code> is the same as the group types <code class="docutils literal notranslate"><span class="pre">create</span> <span class="pre">groups</span></code> within <code class="docutils literal notranslate"><span class="pre">Config</span></code>. Otherwise, a mixup or the species may occur in the LAMMPS <code class="docutils literal notranslate"><span class="pre">structure.inp</span></code> file.</p>
+<p>The potential can then be used by assigning <code class="docutils literal notranslate"><span class="pre">job.potential</span> <span class="pre">=</span> <span class="pre">custom_potential</span></code>.</p>
+</div>
+<div class="section" id="how-to-extend-the-potential-database-inside-pyiron">
+<h2>How to extend the potential database inside pyiron?<a class="headerlink" href="#how-to-extend-the-potential-database-inside-pyiron" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="how-to-link-your-own-executable">
+<h2>How to link your own executable?<a class="headerlink" href="#how-to-link-your-own-executable" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="how-to-send-a-calculation-to-the-background">
+<h2>How to send a calculation to the background ?<a class="headerlink" href="#how-to-send-a-calculation-to-the-background" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="how-to-submit-a-calculation-to-the-queuing-system">
+<h2>How to submit a calculation to the queuing system?<a class="headerlink" href="#how-to-submit-a-calculation-to-the-queuing-system" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="how-to-setup-spin-constraint-calculation">
+<h2>How to setup spin constraint calculation?<a class="headerlink" href="#how-to-setup-spin-constraint-calculation" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="what-is-the-meaning-of-the-name-pyiron">
+<h2>What is the meaning of the name - pyiron?<a class="headerlink" href="#what-is-the-meaning-of-the-name-pyiron" title="Permalink to this headline">¶</a></h2>
+<p>pyiron is the combination of <strong>py</strong> + <strong>iron</strong> connecting Python, the programming language with iron as pyiron was
+initially developed at the Max Planck Institut für Eisenforschung (iron research).</p>
+</div>
+<div class="section" id="which-output-quantities-are-stored-in-pyiron">
+<h2>Which output quantities are stored in pyiron?<a class="headerlink" href="#which-output-quantities-are-stored-in-pyiron" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 22%" />
+<col style="width: 47%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="6"><p>generic</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>tag</p></th>
+<th class="head"><p>dimension</p></th>
+<th class="head"><p>description</p></th>
+<th class="head"><p>VASP</p></th>
+<th class="head"><p>SPHInX</p></th>
+<th class="head"><p>LAMMPS</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>time</p></td>
+<td><p>N<sub>step</sub></p></td>
+<td><p>simulation time ( fs )</p></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-even"><td><p>steps</p></td>
+<td><p>N<sub>step</sub></p></td>
+<td><p>time steps</p></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-odd"><td><p>unwrapped_positions</p></td>
+<td><p>N<sub>step</sub> x N<sub>atom</sub> x 3</p></td>
+<td><p>unwrapped atom coordinates ( <span class="raw-html">&#8491;</span> )</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-even"><td><p>positions</p></td>
+<td><p>N<sub>step</sub> x N<sub>atom</sub> x 3</p></td>
+<td><p>wrapped atom coordinates ( <span class="raw-html">&#8491;</span> )</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-odd"><td><p>velocities</p></td>
+<td><p>N<sub>step</sub> x N<sub>atom</sub> x 3</p></td>
+<td><p>velocity of each atom ( <span class="raw-html">&#8491;</span>/fs )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>forces</p></td>
+<td><p>N<sub>step</sub> x N<sub>atom</sub> x 3</p></td>
+<td><p>force on each atom ( eV/<span class="raw-html">&#8491;</span> )</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-odd"><td><p>cells</p></td>
+<td><p>N<sub>step</sub> x 3 x 3</p></td>
+<td><p>cell dimensions (cf. VASP website) ( <span class="raw-html">&#8491;</span> )</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-even"><td><p>energy_tot</p></td>
+<td><p>N<sub>step</sub></p></td>
+<td><p>total energy of the system ( eV )</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-odd"><td><p>energy_kin</p></td>
+<td><p>N<sub>step</sub></p></td>
+<td><p>kinetic energy of the system ( eV )</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>energy_pot</p></td>
+<td><p>N<sub>step</sub></p></td>
+<td><p>potential energy of the system ( eV )</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>pressures</p></td>
+<td><p>N<sub>step</sub> x 3 x 3</p></td>
+<td><p>pressures ( GPa )</p></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-even"><td><p>temperature</p></td>
+<td><p>N<sub>step</sub></p></td>
+<td><p>temperature ( K )</p></td>
+<td><p>x</p></td>
+<td></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-odd"><td><p>volume</p></td>
+<td><p>N<sub>step</sub> ?</p></td>
+<td><p>supercell volume ( <span class="raw-html">&#8491;</span><sup>3</sup> )</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-even"><td><p>atom_voronoi</p></td>
+<td><p>N<sub>step</sub> x N<sub>atom</sub></p></td>
+<td><p>Voronoi volume of each atom ( <span class="raw-html">&#8491;</span><sup>3</sup> )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>atom_stress</p></td>
+<td><p>N<sub>step</sub> x N<sub>atom</sub> x 3 x 3</p></td>
+<td><p>stress per atom x atomic volume ( eV )</p></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-even"><td><p>atom_centro</p></td>
+<td><p>N<sub>step</sub> x N<sub>atom</sub></p></td>
+<td><p>centro-symmetry parameter ( <span class="raw-html">&#8491;</span><sup>2</sup> )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>atom_displace</p></td>
+<td><p>N<sub>step</sub> x N<sub>atom</sub> x 3</p></td>
+<td><p>displacement of each atom with respect to the initial position ( <span class="raw-html">&#8491;</span> )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>computation_time</p></td>
+<td><p>N<sub>step</sub></p></td>
+<td><p>computation time of the simulation ( s )</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 33%" />
+<col style="width: 37%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="6"><p>dft</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>tag</p></th>
+<th class="head"><p>dimension</p></th>
+<th class="head"><p>description</p></th>
+<th class="head"><p>VASP</p></th>
+<th class="head"><p>SPHInX</p></th>
+<th class="head"><p>LAMMPS</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>(scf_)energy_int</p></td>
+<td><p>N<sub>step</sub></p></td>
+<td><p>internal energy ( eV )</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>(scf_)energy_free</p></td>
+<td><p>N<sub>step</sub></p></td>
+<td><p>free energy, same as energy_tot in generic ( eV )</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>(scf_)energy_zero</p></td>
+<td><p>N<sub>step</sub></p></td>
+<td><p>extrapolated energy, sigma <span class="raw-html">&rarr;</span> 0 ( eV )</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>(scf_)energy_band</p></td>
+<td><p>N<sub>step</sub></p></td>
+<td><p>band gap energy ( eV )</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>(scf_)residue</p></td>
+<td><p>N<sub>step</sub>  ( x 2 )</p></td>
+<td><p>energy residue ( eV )</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>atoms_(scf_)spins</p></td>
+<td><p>N<sub>step</sub>  x N<sub>atom</sub></p></td>
+<td><p>spin moment of each atom ( Bohr magneton )</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>(scf_)magnetic_forces</p></td>
+<td><p>N<sub>step</sub>  x N<sub>atom</sub></p></td>
+<td><p>spin forces ? ( eV/Bohr magneton )</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>atom_spin_constraints</p></td>
+<td><p>N<sub>step</sub>  x N<sub>atom</sub></p></td>
+<td><p>spin constraints ( Bohr magneton )</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>bands_e_fermi</p></td>
+<td><p>N<sub>step</sub></p></td>
+<td><p>fermi energy ( eV )</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>bands_occ</p></td>
+<td><p>N<sub>step</sub>  ( x 2 ) x N<sub>k</sub> x N<sub>states</sub></p></td>
+<td><p>occupancy</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>bands_k_weights</p></td>
+<td><p>N<sub>k</sub></p></td>
+<td><p>weight of each k point</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>bands_eigen_values</p></td>
+<td><p>N<sub>step</sub>  ( x 2 ) x N<sub>k</sub> x N<sub>states</sub></p></td>
+<td><p>eigenspectrums ( eV )</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>scf_convergence</p></td>
+<td><p>N<sub>step</sub></p></td>
+<td><p>convergence of each ionic step</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>N<sub>step</sub> refers to ionic steps and not electronic steps</p></li>
+<li><p>properties preceded by scf_ contain the values of each electronic step except for scf_convergence</p></li>
+<li><p>( x 2 ) refers to the additional column which appears only in magnetic calculations</p></li>
+<li><p>if the crosses under VASP, SPHInX or LAMMPS are missing, the corresponding properties are not implemented</p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="developers.html" class="btn btn-neutral float-right" title="Contributing to pyiron" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="citation.html" class="btn btn-neutral float-left" title="Citing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

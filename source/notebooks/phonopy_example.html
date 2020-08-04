@@ -1,0 +1,1539 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Phonopy in pyiron &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Workfunction of hcp (0001) surfaces" href="hcp_workfunction.html" />
+    <link rel="prev" title="Data mining using pyiron tables" href="data_mining.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="first_steps.html">First steps through pyiron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="energy_volume_curve.html">Energy volume curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structures.html">Creating structures in pyiron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_mining.html">Data mining using pyiron tables</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Phonopy in pyiron</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Helper-functions">Helper functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Thermal-Expansion">Thermal Expansion</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Relax-the-unit-cell">Relax the unit cell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Relax-the-bulk-supercell">Relax the bulk supercell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Calculate-phonons">Calculate phonons</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Calculate-thermal-expansivity">Calculate thermal expansivity</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Vacancies-and-diffusion">Vacancies and diffusion</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Stable-vacancy-structures">Stable vacancy structures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#DOS">DOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Attack-frequency">Attack frequency</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hcp_workfunction.html">Workfunction of hcp (0001) surfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="water_MD.html">Molecular dynamics simulations of bulk water</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../import.html">Importing finished VASP calculations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../examples.html">Tutorials</a> &raquo;</li>
+        
+      <li>Phonopy in pyiron</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/source/notebooks/phonopy_example.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Phonopy-in-pyiron">
+<h1>Phonopy in pyiron<a class="headerlink" href="#Phonopy-in-pyiron" title="Permalink to this headline">¶</a></h1>
+<p>We will use the quasi-harmonic approximation (via PyIron’s implementation of the popular phonopy package) to evaluate look at thermal expansion and self-diffusion in Aluminium</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Generic imports</span>
+<span class="kn">from</span> <span class="nn">pyiron.project</span> <span class="kn">import</span> <span class="n">Project</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="o">%</span><span class="k">matplotlib</span>  inline
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">pr</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="s2">&quot;PhonopyExample&quot;</span><span class="p">)</span>
+<span class="n">pot</span> <span class="o">=</span>  <span class="s1">&#39;Al_Mg_Mendelev_eam&#39;</span>
+<span class="n">pr</span><span class="o">.</span><span class="n">remove_jobs</span><span class="p">(</span><span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Helper-functions">
+<h2>Helper functions<a class="headerlink" href="#Helper-functions" title="Permalink to this headline">¶</a></h2>
+<p>Because repeating code is evil.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">make_phonopy_job</span><span class="p">(</span><span class="n">template_job</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a phonopy job from a reference job.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        template_job (pyiron job): The job to copy.</span>
+<span class="sd">        name (str): What to call this new job.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A new phonopy job.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">project</span> <span class="o">=</span> <span class="n">template_job</span><span class="o">.</span><span class="n">project</span>
+
+    <span class="c1"># What I want:</span>
+    <span class="c1"># job_type =  template_job.job_type</span>
+    <span class="c1"># What I have to do instead:</span>
+    <span class="n">job_type</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">Lammps</span>
+
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">job_type</span><span class="p">,</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;_ref&quot;</span><span class="p">)</span>
+    <span class="n">ref</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">template_job</span><span class="o">.</span><span class="n">get_final_structure</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">ref</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">template_job</span><span class="o">.</span><span class="n">potential</span>
+
+    <span class="n">phono</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">pr</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">PhonopyJob</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+    <span class="n">phono</span><span class="o">.</span><span class="n">ref_job</span> <span class="o">=</span> <span class="n">ref</span>
+    <span class="k">return</span> <span class="n">phono</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">scale_structure</span><span class="p">(</span><span class="n">struct</span><span class="p">,</span> <span class="n">scale</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Rescale the atomic positions and cell of a structure simultaneously.</span>
+<span class="sd">    Accepts rescaling by an arbitrary real-valued 3x3 numpy array, but a float can be given</span>
+<span class="sd">    for isotropic rescaling.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        struct (Structure object): The structure to rescale.</span>
+<span class="sd">        scale (float or np.array(3,3)): The matrix to rescale by. (float -&gt; isotropic.)</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A rescaled copy of the structure.</span>
+
+<span class="sd">    ..TODO: Double check that the scaling matrix still spans 3-space (determinant check?)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">scale</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">scale</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="n">scale_mat</span> <span class="o">=</span> <span class="n">scale</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">assert</span><span class="p">(</span><span class="n">scale</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+        <span class="n">scale_mat</span> <span class="o">=</span> <span class="n">scale</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">new_struct</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">new_struct</span><span class="o">.</span><span class="n">cell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">cell</span><span class="p">,</span> <span class="n">scale_mat</span><span class="p">)</span>
+    <span class="n">new_struct</span><span class="o">.</span><span class="n">positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">positions</span><span class="p">,</span> <span class="n">scale_mat</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_struct</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">scale_array</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">scaler</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">new_range</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Linearly transforms an array so that values equal to the minimum and maximum of the</span>
+<span class="sd">    `scaler` array are mapped to the range (0, `new_range`). Note that rescaled values can</span>
+<span class="sd">    still lie outside this range if the orignal values of `arr` are outside the bounds of</span>
+<span class="sd">    `scaler`.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        arr (np.array): Array to rescale.</span>
+<span class="sd">        scaler (np.array): Array by which to rescale. Default is `arr`.</span>
+<span class="sd">        new_range (float): New value for data which was the size `np.amax(scaler)`.</span>
+<span class="sd">          Default is 1.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">scaler</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">scaler</span> <span class="o">=</span> <span class="n">arr</span>
+    <span class="k">return</span> <span class="n">new_range</span> <span class="o">*</span> <span class="p">(</span><span class="n">arr</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">scaler</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">ptp</span><span class="p">(</span><span class="n">scaler</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Thermal-Expansion">
+<h2>Thermal Expansion<a class="headerlink" href="#Thermal-Expansion" title="Permalink to this headline">¶</a></h2>
+<p>What does the QHA say the lattice constant is as a function of temperature?</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">pr_te</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create_group</span><span class="p">(</span><span class="s2">&quot;ThermalExpansion&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Relax-the-unit-cell">
+<h3>Relax the unit cell<a class="headerlink" href="#Relax-the-unit-cell" title="Permalink to this headline">¶</a></h3>
+<p>If we were doing VASP instead it would be important to do the least computation as possible, so here we’ll start by relaxing a simple unit cell to turn into a supercell later.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">job_unit</span> <span class="o">=</span> <span class="n">pr_te</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">pr</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">Lammps</span><span class="p">,</span> <span class="s2">&quot;UnitCell&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">basis</span> <span class="o">=</span> <span class="n">pr_te</span><span class="o">.</span><span class="n">create_structure</span><span class="p">(</span><span class="s2">&quot;Al&quot;</span><span class="p">,</span> <span class="s2">&quot;fcc&quot;</span><span class="p">,</span> <span class="mf">4.04</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">job_unit</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">basis</span>
+<span class="n">job_unit</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">pot</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">job_unit</span><span class="o">.</span><span class="n">calc_minimize</span><span class="p">(</span><span class="n">pressure</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">job_unit</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The job UnitCell was saved and received the ID: 3596380
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">basis_rel</span> <span class="o">=</span> <span class="n">job_unit</span><span class="o">.</span><span class="n">get_final_structure</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Relax-the-bulk-supercell">
+<h3>Relax the bulk supercell<a class="headerlink" href="#Relax-the-bulk-supercell" title="Permalink to this headline">¶</a></h3>
+<p>A relaxation which should take zero steps given our starting position!</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">job_bulk_1</span> <span class="o">=</span> <span class="n">pr_te</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">pr</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">Lammps</span><span class="p">,</span> <span class="s2">&quot;Bulk_1&quot;</span><span class="p">)</span>
+<span class="c1"># The _1 here refers to the fact that the volume has been rescaled by a factor of &quot;1.0&quot;</span>
+<span class="c1"># (i.e. it hasn&#39;t been rescaled)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">n_reps</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">job_bulk_1</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">basis_rel</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">rep</span><span class="o">=</span><span class="n">n_reps</span><span class="p">)</span>
+<span class="n">job_bulk_1</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">pot</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">job_bulk_1</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">plot3d</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "472ba29eeb924d7597df157a568e3c20", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">job_bulk_1</span><span class="o">.</span><span class="n">calc_minimize</span><span class="p">(</span><span class="n">pressure</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">job_bulk_1</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The job Bulk_1 was saved and received the ID: 3596381
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Calculate-phonons">
+<h3>Calculate phonons<a class="headerlink" href="#Calculate-phonons" title="Permalink to this headline">¶</a></h3>
+<p>Run phonopy on the bulk supercell</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">phono_bulk_1</span> <span class="o">=</span> <span class="n">make_phonopy_job</span><span class="p">(</span><span class="n">job_bulk_1</span><span class="p">,</span> <span class="s2">&quot;PhonoBulk_1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">phono_bulk_1</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="c1"># Run performs a whole bunch of child calculations</span>
+<span class="c1"># Each one has the positions slightly deformed in the symmetry-appropriate ways needed</span>
+<span class="c1"># to get the phonon properties</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The job PhonoBulk_1 was saved and received the ID: 3596382
+The job supercell_phonon_0 was saved and received the ID: 3596383
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Let&#39;s see what we got...</span>
+<span class="n">T_min</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">T_max</span> <span class="o">=</span> <span class="mi">800</span> <span class="c1"># a bit below melting</span>
+<span class="n">T_step</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">temperatures</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">T_min</span><span class="p">,</span> <span class="n">T_max</span><span class="p">,</span> <span class="nb">int</span><span class="p">((</span><span class="n">T_max</span> <span class="o">-</span> <span class="n">T_min</span><span class="p">)</span> <span class="o">/</span> <span class="n">T_step</span><span class="p">))</span>
+<span class="n">tp_bulk_1</span> <span class="o">=</span> <span class="n">phono_bulk_1</span><span class="o">.</span><span class="n">get_thermal_properties</span><span class="p">(</span><span class="n">temperatures</span><span class="o">=</span><span class="n">temperatures</span><span class="p">)</span>
+<span class="c1"># `get_thermal_properties` uses the displacements and forces to generate phonon information</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">U_bulk_1</span> <span class="o">=</span> <span class="n">job_bulk_1</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">energy_pot</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">Fvib_bulk_1</span> <span class="o">=</span> <span class="n">tp_bulk_1</span><span class="o">.</span><span class="n">free_energies</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temperatures</span><span class="p">,</span> <span class="n">U_bulk_1</span> <span class="o">+</span> <span class="n">Fvib_bulk_1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Temperature [K]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Free energy  ($U+F_</span><span class="si">{vib}</span><span class="s2">$)  [eV]&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Text(0, 0.5, &#39;Free energy  ($U+F_{vib}$)  [eV]&#39;)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/source_notebooks_phonopy_example_24_1.png" src="../../_images/source_notebooks_phonopy_example_24_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="Calculate-thermal-expansivity">
+<h3>Calculate thermal expansivity<a class="headerlink" href="#Calculate-thermal-expansivity" title="Permalink to this headline">¶</a></h3>
+<p>Above we have the (QHA approximation to the) free energy as a function of temperature at a fixed volume. To evaluate the thermal expansivity, we need to create the entire F(V,T) surface. To get this, we just loop over jobs like the above, but scaled to have different lattice constants.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># According to Wikipedia, the thermal expansivity is about 0.0023% / Kelvin</span>
+<span class="c1"># So at our maximum temperature, we expect around 1.8% expansion</span>
+<span class="n">scale_min</span> <span class="o">=</span> <span class="mf">0.995</span>
+<span class="n">scale_max</span> <span class="o">=</span> <span class="mf">1.02</span>
+<span class="n">scale_step</span> <span class="o">=</span> <span class="mf">0.002</span>
+<span class="n">scales</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">scale_min</span><span class="p">,</span> <span class="n">scale_max</span><span class="p">,</span> <span class="nb">int</span><span class="p">((</span><span class="n">scale_max</span> <span class="o">-</span> <span class="n">scale_min</span><span class="p">)</span> <span class="o">/</span> <span class="n">scale_step</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Let&#39;s keep things clean by making another sub-directory</span>
+<span class="n">pr_scales</span> <span class="o">=</span> <span class="n">pr_te</span><span class="o">.</span><span class="n">create_group</span><span class="p">(</span><span class="s2">&quot;ScanScales&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Loop the phonon calculation over all the volumes</span>
+<span class="n">sc_bulk_rel</span> <span class="o">=</span> <span class="n">job_bulk_1</span><span class="o">.</span><span class="n">get_final_structure</span><span class="p">()</span>
+<span class="n">bulk_free_energies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">scales</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">temperatures</span><span class="p">)))</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">scale</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">scales</span><span class="p">):</span>
+    <span class="n">name_tail</span> <span class="o">=</span> <span class="s2">&quot;_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">scale</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">))</span>
+
+    <span class="c1"># Make a bulk job with the rescaled structure</span>
+    <span class="c1"># (already relaxed, by symmetry won&#39;t change, calc static will be enough)</span>
+    <span class="n">job_bulk</span> <span class="o">=</span> <span class="n">pr_scales</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">pr</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">Lammps</span><span class="p">,</span> <span class="s2">&quot;Bulk&quot;</span> <span class="o">+</span> <span class="n">name_tail</span><span class="p">)</span>
+    <span class="n">job_bulk</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">pot</span>
+    <span class="n">job_bulk</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">scale_structure</span><span class="p">(</span><span class="n">sc_bulk_rel</span><span class="p">,</span> <span class="n">scale</span><span class="p">)</span>
+    <span class="n">job_bulk</span><span class="o">.</span><span class="n">calc_static</span><span class="p">()</span>
+    <span class="n">job_bulk</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+    <span class="n">U</span> <span class="o">=</span> <span class="n">job_bulk</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">energy_tot</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># Use that job as a reference for a phonopy job</span>
+    <span class="n">phono_bulk</span> <span class="o">=</span> <span class="n">make_phonopy_job</span><span class="p">(</span><span class="n">job_bulk</span><span class="p">,</span> <span class="s2">&quot;PhonoBulk&quot;</span> <span class="o">+</span> <span class="n">name_tail</span><span class="p">)</span>
+    <span class="n">phono_bulk</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+    <span class="n">tp_bulk</span> <span class="o">=</span> <span class="n">phono_bulk</span><span class="o">.</span><span class="n">get_thermal_properties</span><span class="p">(</span><span class="n">temperatures</span><span class="o">=</span><span class="n">temperatures</span><span class="p">)</span>
+    <span class="n">Fvib</span> <span class="o">=</span> <span class="n">tp_bulk</span><span class="o">.</span><span class="n">free_energies</span>
+
+    <span class="c1"># Fill in the row of free energies for this volume</span>
+    <span class="n">bulk_free_energies</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Fvib</span> <span class="o">+</span> <span class="n">U</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The job Bulk_0_995 was saved and received the ID: 3596385
+The job PhonoBulk_0_995 was saved and received the ID: 3596386
+The job supercell_phonon_0 was saved and received the ID: 3596387
+The job Bulk_0_9972727272727273 was saved and received the ID: 3596388
+The job PhonoBulk_0_9972727272727273 was saved and received the ID: 3596389
+The job supercell_phonon_0 was saved and received the ID: 3596390
+The job Bulk_0_9995454545454545 was saved and received the ID: 3596394
+The job PhonoBulk_0_9995454545454545 was saved and received the ID: 3596400
+The job supercell_phonon_0 was saved and received the ID: 3596405
+The job Bulk_1_0018181818181817 was saved and received the ID: 3596418
+The job PhonoBulk_1_0018181818181817 was saved and received the ID: 3596419
+The job supercell_phonon_0 was saved and received the ID: 3596420
+The job Bulk_1_0040909090909091 was saved and received the ID: 3596434
+The job PhonoBulk_1_0040909090909091 was saved and received the ID: 3596436
+The job supercell_phonon_0 was saved and received the ID: 3596439
+The job Bulk_1_0063636363636363 was saved and received the ID: 3596449
+The job PhonoBulk_1_0063636363636363 was saved and received the ID: 3596450
+The job supercell_phonon_0 was saved and received the ID: 3596451
+The job Bulk_1_0086363636363636 was saved and received the ID: 3596456
+The job PhonoBulk_1_0086363636363636 was saved and received the ID: 3596458
+The job supercell_phonon_0 was saved and received the ID: 3596461
+The job Bulk_1_010909090909091 was saved and received the ID: 3596473
+The job PhonoBulk_1_010909090909091 was saved and received the ID: 3596475
+The job supercell_phonon_0 was saved and received the ID: 3596478
+The job Bulk_1_0131818181818182 was saved and received the ID: 3596488
+The job PhonoBulk_1_0131818181818182 was saved and received the ID: 3596490
+The job supercell_phonon_0 was saved and received the ID: 3596494
+The job Bulk_1_0154545454545454 was saved and received the ID: 3596505
+The job PhonoBulk_1_0154545454545454 was saved and received the ID: 3596507
+The job supercell_phonon_0 was saved and received the ID: 3596510
+The job Bulk_1_0177272727272728 was saved and received the ID: 3596521
+The job PhonoBulk_1_0177272727272728 was saved and received the ID: 3596523
+The job supercell_phonon_0 was saved and received the ID: 3596526
+The job Bulk_1_02 was saved and received the ID: 3596537
+The job PhonoBulk_1_02 was saved and received the ID: 3596539
+The job supercell_phonon_0 was saved and received the ID: 3596542
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># The lattice constant is probably a more informative value than the 0K-relative strain</span>
+<span class="n">latts</span> <span class="o">=</span> <span class="n">basis_rel</span><span class="o">.</span><span class="n">cell</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">scales</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># At each temperature, find the optimal volume by a simple quadratic fit</span>
+<span class="c1"># ...Wait, which order fit will be good enough? Let&#39;s just spot-check</span>
+<span class="n">free_en</span> <span class="o">=</span> <span class="n">bulk_free_energies</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">latts</span><span class="p">,</span> <span class="n">free_en</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">)</span>
+
+<span class="c1"># We&#39;ll plot the fit on a much denser mesh</span>
+<span class="n">fit_deg</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">latts</span><span class="p">,</span> <span class="n">free_en</span><span class="p">,</span> <span class="n">deg</span><span class="o">=</span><span class="n">fit_deg</span><span class="p">)</span>
+<span class="n">dense_latts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">latts</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">latts</span><span class="p">),</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="c1">#dense_latts = np.linspace(0, 10, 1000)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dense_latts</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="n">p</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">dense_latts</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;fit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Lattice constant [$\mathrm{\AA}$]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Bulk free energy [eV/supercell]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="c1"># Ok, a fourth-order fit seems perfectly reasonable</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;matplotlib.legend.Legend at 0x2b61a42bf278&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/source_notebooks_phonopy_example_30_1.png" src="../../_images/source_notebooks_phonopy_example_30_1.png" />
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Now find optimal temperatures</span>
+<span class="n">best_latts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">temperatures</span><span class="p">))</span>
+<span class="n">best_latt_guess</span> <span class="o">=</span> <span class="n">basis_rel</span><span class="o">.</span><span class="n">cell</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">T</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">temperatures</span><span class="p">):</span>
+    <span class="n">free_en</span> <span class="o">=</span> <span class="n">bulk_free_energies</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">latts</span><span class="p">,</span> <span class="n">free_en</span><span class="p">,</span> <span class="n">deg</span><span class="o">=</span><span class="n">fit_deg</span><span class="p">)</span>
+    <span class="n">extrema</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roots</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">polyder</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">real</span>  <span class="c1"># Find where first-derivative is zero</span>
+    <span class="n">best_latts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">extrema</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">extrema</span> <span class="o">-</span> <span class="n">best_latt_guess</span><span class="p">))]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Check that they&#39;re resonable</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">best_latt_guess</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">best_latts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+4.045270475668763
+ [4.05946291 4.05949371 4.05987201 4.06083718 4.06226186 4.06396024
+ 4.06579637 4.06768361 4.06956868 4.0714193  4.07321635 4.07494901
+ 4.07661182 4.07820271 4.07972185 4.08117076 4.08255184 4.08386799
+ 4.08512237 4.08631821 4.08745877 4.0885472  4.08958656 4.09057975
+ 4.0915295  4.09243842 4.09330892 4.09414326 4.09494357 4.09571182
+ 4.09644984 4.09715935]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Let&#39;s look at the landscape</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">bulk_free_energies</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;coolwarm&quot;</span><span class="p">,</span>
+            <span class="n">xticklabels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">{:,.0f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="n">temperatures</span><span class="p">],</span>
+            <span class="n">yticklabels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">{:,.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">latts</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Temperature [K]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Lattice constant [$\mathrm{\AA}$]&quot;</span><span class="p">)</span>
+
+<span class="c1"># Overlaying the optimal path takes a couple changes of variables</span>
+<span class="c1"># since the heatmap is plotting integer cells</span>
+
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">scale_array</span><span class="p">(</span><span class="n">temperatures</span><span class="p">,</span> <span class="n">new_range</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">temperatures</span><span class="p">)),</span>
+        <span class="n">scale_array</span><span class="p">(</span><span class="n">best_latts</span><span class="p">,</span> <span class="n">scaler</span><span class="o">=</span><span class="n">latts</span><span class="p">,</span> <span class="n">new_range</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">latts</span><span class="p">)),</span>
+        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&lt;matplotlib.lines.Line2D at 0x2b61d9e8ee80&gt;]
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/source_notebooks_phonopy_example_33_1.png" src="../../_images/source_notebooks_phonopy_example_33_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="Vacancies-and-diffusion">
+<h2>Vacancies and diffusion<a class="headerlink" href="#Vacancies-and-diffusion" title="Permalink to this headline">¶</a></h2>
+<p>Another common use of QHA is to calculate the pre-factor for migration in a diffusion event.</p>
+<p>In particular, the diffusion jump barrier looks like <span class="math notranslate nohighlight">\(\omega_0 = \nu_0^\star \exp(-H_\mathrm{m} / k_\mathrm{B} T)\)</span>, where <span class="math notranslate nohighlight">\(\nu_0^\star = \prod_{i=1}^{3N-3} \nu_i^\mathrm{IS} / \prod_{i=1}^{3N-4} \nu_i^\mathrm{TS}\)</span>, with IS and TS indicating the initial and transition states, respectively. Note that the transition state is missing a single frequency, which is from the instability of the transition state. It’s either an imaginary mode, which I think means a negative frequency.
+Meanwhile, <span class="math notranslate nohighlight">\(H_\mathrm{m}\)</span> is the enthalpic barrier (difference between the initial and transition states) and <span class="math notranslate nohighlight">\(k_\mathrm{B} T\)</span> is the usual thermal energy term.</p>
+<p>Typically, these sorts of investigations use the nudged elastic band (NEB) to find the 0K transition state. You can do that with our new flexible jobs, but we’ll save that for later. For now we’ll just “approximate” the transition state with a simple linear interpolation.</p>
+<div class="section" id="Stable-vacancy-structures">
+<h3>Stable vacancy structures<a class="headerlink" href="#Stable-vacancy-structures" title="Permalink to this headline">¶</a></h3>
+<p>Let’s start by generating and relaxing the initial and final states</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">pr_vac</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create_group</span><span class="p">(</span><span class="s2">&quot;Vacancies&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Find two adjacent sites</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">job_bulk_1</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">job_bulk_1</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1"># Yep, 1 and 2 will do</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[0. 0. 0.]
+[2.02263524 2.02263524 0.        ]
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">job_vac_i</span> <span class="o">=</span> <span class="n">pr_vac</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">pr</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">Lammps</span><span class="p">,</span> <span class="s2">&quot;VacancyInitial&quot;</span><span class="p">)</span>
+<span class="n">job_vac_f</span> <span class="o">=</span> <span class="n">pr_vac</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">pr</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">Lammps</span><span class="p">,</span> <span class="s2">&quot;VacancyFinal&quot;</span><span class="p">)</span>
+
+<span class="n">job_vac_i</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">pot</span>
+<span class="n">job_vac_f</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">pot</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sc_vac_i</span> <span class="o">=</span> <span class="n">sc_bulk_rel</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">sc_vac_i</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">job_vac_i</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">sc_vac_i</span>
+
+<span class="n">sc_vac_f</span> <span class="o">=</span> <span class="n">sc_bulk_rel</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">sc_vac_f</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">job_vac_f</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">sc_vac_f</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Relax the new vacancy structures</span>
+<span class="n">job_vac_i</span><span class="o">.</span><span class="n">calc_minimize</span><span class="p">(</span><span class="n">pressure</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">job_vac_i</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="n">job_vac_f</span><span class="o">.</span><span class="n">calc_minimize</span><span class="p">(</span><span class="n">pressure</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">job_vac_f</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The job VacancyInitial was saved and received the ID: 3596547
+The job VacancyFinal was saved and received the ID: 3596549
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="DOS">
+<h3>DOS<a class="headerlink" href="#DOS" title="Permalink to this headline">¶</a></h3>
+<p>The PyIron implementation of phonopy makes it very easy to look at the DOS. Let’s see what the effect is of introducing a vacancy, and confirm that our two vacancies are equivalent.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">phon_vac_i</span> <span class="o">=</span> <span class="n">make_phonopy_job</span><span class="p">(</span><span class="n">job_vac_i</span><span class="p">,</span> <span class="s2">&quot;PhonoVacInitial&quot;</span><span class="p">)</span>
+<span class="n">phon_vac_f</span> <span class="o">=</span> <span class="n">make_phonopy_job</span><span class="p">(</span><span class="n">job_vac_f</span><span class="p">,</span> <span class="s2">&quot;PhonoVacFinal&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">phon_vac_i</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">tp_vac_i</span> <span class="o">=</span> <span class="n">phon_vac_i</span><span class="o">.</span><span class="n">get_thermal_properties</span><span class="p">(</span><span class="n">temperatures</span><span class="o">=</span><span class="n">temperatures</span><span class="p">)</span>
+
+<span class="n">phon_vac_f</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">tp_vac_f</span> <span class="o">=</span> <span class="n">phon_vac_i</span><span class="o">.</span><span class="n">get_thermal_properties</span><span class="p">(</span><span class="n">temperatures</span><span class="o">=</span><span class="n">temperatures</span><span class="p">)</span>
+
+<span class="c1"># Note that the vacancy structures spawn many more child processes</span>
+<span class="c1"># This is because the vacancy structure has lower symmetry</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The job PhonoVacInitial was saved and received the ID: 3596552
+The job supercell_phonon_0 was saved and received the ID: 3596554
+The job supercell_phonon_1 was saved and received the ID: 3596556
+The job supercell_phonon_2 was saved and received the ID: 3596559
+The job supercell_phonon_3 was saved and received the ID: 3596561
+The job supercell_phonon_4 was saved and received the ID: 3596564
+The job supercell_phonon_5 was saved and received the ID: 3596566
+The job supercell_phonon_6 was saved and received the ID: 3596569
+The job supercell_phonon_7 was saved and received the ID: 3596571
+The job supercell_phonon_8 was saved and received the ID: 3596573
+The job supercell_phonon_9 was saved and received the ID: 3596576
+The job supercell_phonon_10 was saved and received the ID: 3596578
+The job supercell_phonon_11 was saved and received the ID: 3596580
+The job supercell_phonon_12 was saved and received the ID: 3596582
+The job supercell_phonon_13 was saved and received the ID: 3596585
+The job supercell_phonon_14 was saved and received the ID: 3596587
+The job supercell_phonon_15 was saved and received the ID: 3596589
+The job supercell_phonon_16 was saved and received the ID: 3596592
+The job supercell_phonon_17 was saved and received the ID: 3596594
+The job supercell_phonon_18 was saved and received the ID: 3596597
+The job supercell_phonon_19 was saved and received the ID: 3596599
+The job supercell_phonon_20 was saved and received the ID: 3596601
+The job PhonoVacFinal was saved and received the ID: 3596613
+The job supercell_phonon_0 was saved and received the ID: 3596616
+The job supercell_phonon_1 was saved and received the ID: 3596618
+The job supercell_phonon_2 was saved and received the ID: 3596620
+The job supercell_phonon_3 was saved and received the ID: 3596623
+The job supercell_phonon_4 was saved and received the ID: 3596625
+The job supercell_phonon_5 was saved and received the ID: 3596628
+The job supercell_phonon_6 was saved and received the ID: 3596630
+The job supercell_phonon_7 was saved and received the ID: 3596632
+The job supercell_phonon_8 was saved and received the ID: 3596635
+The job supercell_phonon_9 was saved and received the ID: 3596637
+The job supercell_phonon_10 was saved and received the ID: 3596640
+The job supercell_phonon_11 was saved and received the ID: 3596642
+The job supercell_phonon_12 was saved and received the ID: 3596644
+The job supercell_phonon_13 was saved and received the ID: 3596646
+The job supercell_phonon_14 was saved and received the ID: 3596649
+The job supercell_phonon_15 was saved and received the ID: 3596651
+The job supercell_phonon_16 was saved and received the ID: 3596653
+The job supercell_phonon_17 was saved and received the ID: 3596655
+The job supercell_phonon_18 was saved and received the ID: 3596658
+The job supercell_phonon_19 was saved and received the ID: 3596659
+The job supercell_phonon_20 was saved and received the ID: 3596660
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">phono_bulk_1</span><span class="o">.</span><span class="n">plot_dos</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;bulk&#39;</span><span class="p">)</span>
+<span class="n">phon_vac_i</span><span class="o">.</span><span class="n">plot_dos</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;vac_i&#39;</span><span class="p">)</span>
+<span class="n">phon_vac_f</span><span class="o">.</span><span class="n">plot_dos</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;vac_f&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;matplotlib.legend.Legend at 0x2b61da20bcc0&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/source_notebooks_phonopy_example_44_1.png" src="../../_images/source_notebooks_phonopy_example_44_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="Attack-frequency">
+<h3>Attack frequency<a class="headerlink" href="#Attack-frequency" title="Permalink to this headline">¶</a></h3>
+<p>Now we get the attack frequency by comparing the individual phonon spectra of initial and transition states</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Interpolate initial and final positions to guesstimate the transition state</span>
+<span class="n">sc_vac_ts</span> <span class="o">=</span> <span class="n">sc_vac_i</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">sc_vac_ts</span><span class="o">.</span><span class="n">positions</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">sc_vac_i</span><span class="o">.</span><span class="n">positions</span> <span class="o">+</span> <span class="n">sc_vac_f</span><span class="o">.</span><span class="n">positions</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">job_vac_ts</span> <span class="o">=</span> <span class="n">pr_vac</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">pr</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">Lammps</span><span class="p">,</span> <span class="s2">&quot;VacancyTransition&quot;</span><span class="p">)</span>
+<span class="n">job_vac_ts</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">pot</span>
+<span class="n">job_vac_ts</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">sc_vac_ts</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># We _don&#39;t_ relax this job, or it would fall into the initial or final state!</span>
+<span class="n">job_vac_ts</span><span class="o">.</span><span class="n">calc_static</span><span class="p">()</span>
+<span class="n">job_vac_ts</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The job VacancyTransition was saved and received the ID: 3596670
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">phon_vac_ts</span> <span class="o">=</span> <span class="n">make_phonopy_job</span><span class="p">(</span><span class="n">job_vac_ts</span><span class="p">,</span> <span class="s2">&quot;PhonoVacTransition&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">phon_vac_ts</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">tp_vac_ts</span> <span class="o">=</span> <span class="n">phon_vac_ts</span><span class="o">.</span><span class="n">get_thermal_properties</span><span class="p">(</span><span class="n">temperatures</span><span class="o">=</span><span class="n">temperatures</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The job PhonoVacTransition was saved and received the ID: 3596673
+The job supercell_phonon_0 was saved and received the ID: 3596676
+The job supercell_phonon_1 was saved and received the ID: 3596678
+The job supercell_phonon_2 was saved and received the ID: 3596681
+The job supercell_phonon_3 was saved and received the ID: 3596683
+The job supercell_phonon_4 was saved and received the ID: 3596686
+The job supercell_phonon_5 was saved and received the ID: 3596688
+The job supercell_phonon_6 was saved and received the ID: 3596691
+The job supercell_phonon_7 was saved and received the ID: 3596693
+The job supercell_phonon_8 was saved and received the ID: 3596695
+The job supercell_phonon_9 was saved and received the ID: 3596698
+The job supercell_phonon_10 was saved and received the ID: 3596700
+The job supercell_phonon_11 was saved and received the ID: 3596703
+The job supercell_phonon_12 was saved and received the ID: 3596705
+The job supercell_phonon_13 was saved and received the ID: 3596707
+The job supercell_phonon_14 was saved and received the ID: 3596709
+The job supercell_phonon_15 was saved and received the ID: 3596712
+The job supercell_phonon_16 was saved and received the ID: 3596714
+The job supercell_phonon_17 was saved and received the ID: 3596716
+The job supercell_phonon_18 was saved and received the ID: 3596719
+The job supercell_phonon_19 was saved and received the ID: 3596721
+The job supercell_phonon_20 was saved and received the ID: 3596723
+The job supercell_phonon_21 was saved and received the ID: 3596726
+The job supercell_phonon_22 was saved and received the ID: 3596728
+The job supercell_phonon_23 was saved and received the ID: 3596731
+The job supercell_phonon_24 was saved and received the ID: 3596733
+The job supercell_phonon_25 was saved and received the ID: 3596735
+The job supercell_phonon_26 was saved and received the ID: 3596738
+The job supercell_phonon_27 was saved and received the ID: 3596740
+The job supercell_phonon_28 was saved and received the ID: 3596742
+The job supercell_phonon_29 was saved and received the ID: 3596744
+The job supercell_phonon_30 was saved and received the ID: 3596746
+The job supercell_phonon_31 was saved and received the ID: 3596749
+The job supercell_phonon_32 was saved and received the ID: 3596751
+The job supercell_phonon_33 was saved and received the ID: 3596754
+The job supercell_phonon_34 was saved and received the ID: 3596756
+The job supercell_phonon_35 was saved and received the ID: 3596758
+The job supercell_phonon_36 was saved and received the ID: 3596760
+The job supercell_phonon_37 was saved and received the ID: 3596762
+The job supercell_phonon_38 was saved and received the ID: 3596765
+The job supercell_phonon_39 was saved and received the ID: 3596767
+The job supercell_phonon_40 was saved and received the ID: 3596769
+The job supercell_phonon_41 was saved and received the ID: 3596772
+The job supercell_phonon_42 was saved and received the ID: 3596774
+The job supercell_phonon_43 was saved and received the ID: 3596776
+The job supercell_phonon_44 was saved and received the ID: 3596778
+The job supercell_phonon_45 was saved and received the ID: 3596781
+The job supercell_phonon_46 was saved and received the ID: 3596782
+The job supercell_phonon_47 was saved and received the ID: 3596783
+The job supercell_phonon_48 was saved and received the ID: 3596784
+The job supercell_phonon_49 was saved and received the ID: 3596785
+The job supercell_phonon_50 was saved and received the ID: 3596786
+The job supercell_phonon_51 was saved and received the ID: 3596788
+The job supercell_phonon_52 was saved and received the ID: 3596790
+The job supercell_phonon_53 was saved and received the ID: 3596792
+The job supercell_phonon_54 was saved and received the ID: 3596794
+The job supercell_phonon_55 was saved and received the ID: 3596796
+The job supercell_phonon_56 was saved and received the ID: 3596798
+The job supercell_phonon_57 was saved and received the ID: 3596799
+The job supercell_phonon_58 was saved and received the ID: 3596801
+The job supercell_phonon_59 was saved and received the ID: 3596803
+The job supercell_phonon_60 was saved and received the ID: 3596806
+The job supercell_phonon_61 was saved and received the ID: 3596808
+The job supercell_phonon_62 was saved and received the ID: 3596810
+The job supercell_phonon_63 was saved and received the ID: 3596813
+The job supercell_phonon_64 was saved and received the ID: 3596815
+The job supercell_phonon_65 was saved and received the ID: 3596817
+The job supercell_phonon_66 was saved and received the ID: 3596819
+The job supercell_phonon_67 was saved and received the ID: 3596822
+The job supercell_phonon_68 was saved and received the ID: 3596824
+The job supercell_phonon_69 was saved and received the ID: 3596826
+The job supercell_phonon_70 was saved and received the ID: 3596829
+The job supercell_phonon_71 was saved and received the ID: 3596831
+The job supercell_phonon_72 was saved and received the ID: 3596833
+The job supercell_phonon_73 was saved and received the ID: 3596836
+The job supercell_phonon_74 was saved and received the ID: 3596838
+The job supercell_phonon_75 was saved and received the ID: 3596842
+The job supercell_phonon_76 was saved and received the ID: 3596846
+The job supercell_phonon_77 was saved and received the ID: 3596850
+The job supercell_phonon_78 was saved and received the ID: 3596855
+The job supercell_phonon_79 was saved and received the ID: 3596858
+The job supercell_phonon_80 was saved and received the ID: 3596863
+The job supercell_phonon_81 was saved and received the ID: 3596866
+The job supercell_phonon_82 was saved and received the ID: 3596869
+The job supercell_phonon_83 was saved and received the ID: 3596874
+The job supercell_phonon_84 was saved and received the ID: 3596878
+The job supercell_phonon_85 was saved and received the ID: 3596881
+The job supercell_phonon_86 was saved and received the ID: 3596885
+The job supercell_phonon_87 was saved and received the ID: 3596890
+The job supercell_phonon_88 was saved and received the ID: 3596894
+The job supercell_phonon_89 was saved and received the ID: 3596898
+The job supercell_phonon_90 was saved and received the ID: 3596902
+The job supercell_phonon_91 was saved and received the ID: 3596907
+The job supercell_phonon_92 was saved and received the ID: 3596911
+The job supercell_phonon_93 was saved and received the ID: 3596915
+The job supercell_phonon_94 was saved and received the ID: 3596920
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># The transition state has an imaginary mode (frequency &lt; 0), let&#39;s see it</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">phon_vac_i</span><span class="o">.</span><span class="n">plot_dos</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;initial&#39;</span><span class="p">)</span>
+<span class="n">phon_vac_ts</span><span class="o">.</span><span class="n">plot_dos</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;transition&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;matplotlib.legend.Legend at 0x2b61db5474e0&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/source_notebooks_phonopy_example_51_1.png" src="../../_images/source_notebooks_phonopy_example_51_1.png" />
+</div>
+</div>
+<p>To calculate the attack frequency, we’ll ignore both the negative mode of the transition state (which we were warned about in the equation), as well as the three frequencies which correspond to rigid translation and are very near zero, and sometimes dip to be negative. Phonopy sorts the frequencies by magnitude, so we can just skip the first three and four for the initial and transition states, respectively. We take them at q=0.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">freq_i</span> <span class="o">=</span> <span class="n">phon_vac_i</span><span class="o">.</span><span class="n">phonopy</span><span class="o">.</span><span class="n">get_frequencies</span><span class="p">(</span><span class="mi">0</span><span class="p">)[</span><span class="mi">3</span><span class="p">:]</span>
+<span class="n">freq_ts</span> <span class="o">=</span> <span class="n">phon_vac_i</span><span class="o">.</span><span class="n">phonopy</span><span class="o">.</span><span class="n">get_frequencies</span><span class="p">(</span><span class="mi">0</span><span class="p">)[</span><span class="mi">4</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">freq_i</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+6.870675816849329e+236
+</pre></div></div>
+</div>
+<p>Recall: <span class="math notranslate nohighlight">\(\nu_0^\star = \prod_{i=1}^{3N-3} \nu_i^\mathrm{IS} / \prod_{i=1}^{3N-4} \nu_i^\mathrm{TS}\)</span></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Products are dangerous beasts, so we&#39;ll do a little numeric magic</span>
+<span class="n">nu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">freq_i</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">freq_ts</span><span class="p">)</span> <span class="o">*</span> <span class="n">freq_i</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Attack frequency is &quot;</span><span class="p">,</span> <span class="n">nu</span><span class="p">,</span> <span class="s2">&quot;THz (10^-12 s)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Attack frequency is  2.6826827779812032 THz (10^-12 s)
+</pre></div></div>
+</div>
+<p>Mantina <em>et al.</em> (PRL 2008) report <span class="math notranslate nohighlight">\(\nu = 19.3\)</span> THz using DFT and NEB, so our linearly-interpolated “transition state” with EAM is actually not doing so poorly.</p>
+<p>There are many more things you can do with phonopy, including looking directly at the force constants, the Hessian matrix, etc. But hopefully this is a useful starting point.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="hcp_workfunction.html" class="btn btn-neutral float-right" title="Workfunction of hcp (0001) surfaces" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="data_mining.html" class="btn btn-neutral float-left" title="Data mining using pyiron tables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

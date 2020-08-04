@@ -1,0 +1,7 @@
+pyiron.atomistics.job.atomistic module
+======================================
+
+.. automodule:: pyiron.atomistics.job.atomistic
+   :members:
+   :undoc-members:
+   :show-inheritance:

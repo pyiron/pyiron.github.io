@@ -1,0 +1,7 @@
+pyiron.lammps.structure module
+==============================
+
+.. automodule:: pyiron.lammps.structure
+   :members:
+   :undoc-members:
+   :show-inheritance:

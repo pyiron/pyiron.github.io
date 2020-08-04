@@ -1,0 +1,18 @@
+pyiron.yaff package
+===================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pyiron.yaff.yaff
+
+Module contents
+---------------
+
+.. automodule:: pyiron.yaff
+   :members:
+   :undoc-members:
+   :show-inheritance:

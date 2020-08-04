@@ -1,0 +1,22 @@
+pyiron.cli package
+==================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pyiron.cli.install
+   pyiron.cli.ls
+   pyiron.cli.reloadfile
+   pyiron.cli.rm
+   pyiron.cli.wrapper
+
+Module contents
+---------------
+
+.. automodule:: pyiron.cli
+   :members:
+   :undoc-members:
+   :show-inheritance:

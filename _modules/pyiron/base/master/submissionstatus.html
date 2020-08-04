@@ -1,0 +1,486 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.base.master.submissionstatus &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.base.master.submissionstatus</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.base.master.submissionstatus</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="kn">from</span> <span class="nn">pyiron.base.database.generic</span> <span class="kn">import</span> <span class="n">DatabaseAccess</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.database.filetable</span> <span class="kn">import</span> <span class="n">FileTable</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The SubmissionStatus class belongs to the GenericJob object. It is presently used only for the parallel master class.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Joerg Neugebauer, Jan Janssen&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2020, Max-Planck-Institut für Eisenforschung GmbH - &quot;</span>
+    <span class="s2">&quot;Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;janssen@mpie.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;production&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;Sep 1, 2017&quot;</span>
+
+
+<div class="viewcode-block" id="SubmissionStatus"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.master.submissionstatus.html#pyiron.base.master.submissionstatus.SubmissionStatus">[docs]</a><span class="k">class</span> <span class="nc">SubmissionStatus</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The SubmissionStatus object handles the different submission states a job could have. The available states are:</span>
+<span class="sd">        initialized: No jobs have been submitted.</span>
+<span class="sd">        sub_m_n: m out of n jobs have been submitted</span>
+<span class="sd">        finished: The job and all connected sub jobs are finished.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        initial_status (str): If no initial status is provided the status is set to &#39;initialized&#39;</span>
+<span class="sd">        db (DatabaseAccess): The database which is responsible for this job.</span>
+<span class="sd">        job_id: job ID</span>
+
+<span class="sd">    Attributes:</span>
+
+<span class="sd">        .. attribute:: database</span>
+
+<span class="sd">            the database which is responsible for this job.</span>
+
+<span class="sd">        .. attribute:: job_id</span>
+
+<span class="sd">            Job ID</span>
+
+<span class="sd">        .. attribute:: string</span>
+
+<span class="sd">            job status as string</span>
+
+<span class="sd">        .. attribute:: total_jobs</span>
+
+<span class="sd">            number of jobs which have to be submitted in total</span>
+
+<span class="sd">        .. attribute:: submitted_jobs</span>
+
+<span class="sd">            number of jobs which have been submitted</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">STATUS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;initialized&quot;</span><span class="p">,</span> <span class="s2">&quot;finished&quot;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">initial_status</span><span class="o">=</span><span class="s2">&quot;initialized&quot;</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">job_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_submitted_jobs</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_total_jobs</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_string</span> <span class="o">=</span> <span class="n">initial_status</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">database</span> <span class="o">=</span> <span class="n">db</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span> <span class="o">=</span> <span class="n">job_id</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">database</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the database which is responsible for this job. If no database is linked it returns None.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            DatabaseAccess: The database which is responsible for this job.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span>
+
+    <span class="nd">@database</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">database</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the database which is responsible for this job.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            db (DatabaseAccess): The database which should be responsible for this job.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">db</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="p">(</span><span class="n">DatabaseAccess</span><span class="p">,</span> <span class="n">FileTable</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The database has to be an DatabaseAccess object.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_db</span> <span class="o">=</span> <span class="n">db</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">initialized</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if the status is &#39;initialized&#39;, meaning the object for the corresponding job was just created.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: [True/False]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">string</span> <span class="o">==</span> <span class="s2">&quot;initialized&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">submitted</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if the status is &#39;submitted&#39;, meaning the job has not yet submitted all jobs.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: [True/False]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s2">&quot;submitted_&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">string</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">submitted_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the number of jobs which have been submitted.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            int: number of submitted jobs</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_submitted_jobs</span>
+
+    <span class="nd">@submitted_jobs</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">submitted_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_submitted</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the status to &#39;submitted&#39;, meaning some but not all jobs have been submitted</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            num_submitted (int): number of submitted jobs</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_submitted_jobs</span> <span class="o">=</span> <span class="n">num_submitted</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_db</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total_jobs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_submitted_jobs</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total_jobs</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Number of submitted jobs exceed number of total jobs&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">total_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get number of total jobs</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            int: number of total jobs</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total_jobs</span>
+
+    <span class="nd">@total_jobs</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">total_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_total</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set number of total jobs (optional: default = None)</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            num_total (int): number of submitted jobs</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_total_jobs</span> <span class="o">=</span> <span class="n">num_total</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_db</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">finished</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if the status is &#39;finished&#39;, meaning the job and all connected sub jobs are finished.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: [True/False]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">string</span> <span class="o">==</span> <span class="s2">&quot;finished&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">string</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the current status as string, it can be:</span>
+<span class="sd">            initialized: No jobs have been submitted.</span>
+<span class="sd">            sub_m_n: m out of n jobs have been submitted</span>
+<span class="sd">            finished: The job and all connected sub jobs are finished.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: status [initialized, finished]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">total_jobs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">total_jobs</span>
+        <span class="n">submitted_jobs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">submitted_jobs</span>
+        <span class="k">if</span> <span class="n">submitted_jobs</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;initialized&quot;</span>
+        <span class="k">elif</span> <span class="n">total_jobs</span> <span class="ow">and</span> <span class="n">submitted_jobs</span> <span class="o">==</span> <span class="n">total_jobs</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;finished&quot;</span>
+        <span class="k">elif</span> <span class="n">total_jobs</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;submitted_</span><span class="si">{}</span><span class="s2">_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">submitted_jobs</span><span class="p">,</span> <span class="n">total_jobs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;submitted_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">submitted_jobs</span><span class="p">)</span>
+
+<div class="viewcode-block" id="SubmissionStatus.submit_next"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.master.submissionstatus.html#pyiron.base.master.submissionstatus.SubmissionStatus.submit_next">[docs]</a>    <span class="k">def</span> <span class="nf">submit_next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Increasing the number of submitted jobs by one: self.submitted_jobs += 1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">submitted_jobs</span> <span class="o">+=</span> <span class="mi">1</span></div>
+
+<div class="viewcode-block" id="SubmissionStatus.refresh"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.master.submissionstatus.html#pyiron.base.master.submissionstatus.SubmissionStatus.refresh">[docs]</a>    <span class="k">def</span> <span class="nf">refresh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Refresh the submission status, if a job_id is present load the current submission status from the database.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="p">:</span>
+            <span class="n">computer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">database</span><span class="o">.</span><span class="n">get_item_by_id</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="p">)[</span><span class="s2">&quot;computer&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">computer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">submission_status_lst</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">computer</span>
+                    <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                    <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">submission_status_lst</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">submission_status_lst</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_submitted_jobs</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">submission_status_lst</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_total_jobs</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">submission_status_lst</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">submission_status_lst</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_submitted_jobs</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_total_jobs</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_submitted_jobs</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">submission_status_lst</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_total_jobs</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Human readable representation of the submission status</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: human readable string</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">string</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Machine readable representation of the submission status</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: machine readable string</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">string</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_update_db</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Internal function to update the database, with the current number of submitted jobs.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="p">:</span>
+            <span class="n">db_entry</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">database</span><span class="o">.</span><span class="n">get_item_by_id</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">db_entry</span><span class="p">[</span><span class="s2">&quot;computer&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">split_str</span> <span class="o">=</span> <span class="n">db_entry</span><span class="p">[</span><span class="s2">&quot;computer&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">split_str</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+                    <span class="n">computer</span> <span class="o">=</span> <span class="n">split_str</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">computer</span> <span class="o">=</span> <span class="n">split_str</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total_jobs</span><span class="p">:</span>
+                    <span class="n">status</span> <span class="o">=</span> <span class="p">(</span>
+                        <span class="n">computer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                        <span class="o">+</span> <span class="s2">&quot;#&quot;</span>
+                        <span class="o">+</span> <span class="n">computer</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                        <span class="o">+</span> <span class="s2">&quot;#&quot;</span>
+                        <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_submitted_jobs</span><span class="p">)</span>
+                        <span class="o">+</span> <span class="s2">&quot;/&quot;</span>
+                        <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_total_jobs</span><span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">status</span> <span class="o">=</span> <span class="p">(</span>
+                        <span class="n">computer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;#&quot;</span> <span class="o">+</span> <span class="n">computer</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;#&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_submitted_jobs</span><span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">database</span><span class="o">.</span><span class="n">item_update</span><span class="p">({</span><span class="s2">&quot;computer&quot;</span><span class="p">:</span> <span class="n">status</span><span class="p">},</span> <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

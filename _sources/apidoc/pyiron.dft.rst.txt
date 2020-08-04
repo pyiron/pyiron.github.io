@@ -1,0 +1,20 @@
+pyiron.dft package
+==================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pyiron.dft.job
+   pyiron.dft.master
+   pyiron.dft.waves
+
+Module contents
+---------------
+
+.. automodule:: pyiron.dft
+   :members:
+   :undoc-members:
+   :show-inheritance:

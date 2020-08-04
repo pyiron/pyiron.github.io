@@ -1,0 +1,512 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.quickff.quickff &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.quickff.quickff</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.quickff.quickff</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">pyiron.base.generic.parameters</span> <span class="kn">import</span> <span class="n">GenericParameters</span>
+<span class="kn">from</span> <span class="nn">pyiron.atomistics.structure.atoms</span> <span class="kn">import</span> <span class="n">Atoms</span>
+<span class="kn">from</span> <span class="nn">pyiron.atomistics.job.atomistic</span> <span class="kn">import</span> <span class="n">AtomisticGenericJob</span>
+<span class="kn">from</span> <span class="nn">yaff</span> <span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">log</span> <span class="k">as</span> <span class="n">Yafflog</span><span class="p">,</span> <span class="n">ForceField</span>
+<span class="n">Yafflog</span><span class="o">.</span><span class="n">set_level</span><span class="p">(</span><span class="n">Yafflog</span><span class="o">.</span><span class="n">silent</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">quickff</span> <span class="kn">import</span> <span class="n">read_abinitio</span>
+<span class="kn">from</span> <span class="nn">quickff.tools</span> <span class="kn">import</span> <span class="n">set_ffatypes</span>
+<span class="kn">from</span> <span class="nn">quickff.settings</span> <span class="kn">import</span> <span class="n">key_checks</span>
+<span class="kn">from</span> <span class="nn">molmod.units</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">molmod.io.chk</span> <span class="kn">import</span> <span class="n">load_chk</span><span class="p">,</span> <span class="n">dump_chk</span>
+<span class="kn">from</span> <span class="nn">molmod.periodic</span> <span class="kn">import</span> <span class="n">periodic</span> <span class="k">as</span> <span class="n">pt</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">posixpath</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<div class="viewcode-block" id="write_chk"><a class="viewcode-back" href="../../../apidoc/pyiron.quickff.quickff.html#pyiron.quickff.quickff.write_chk">[docs]</a><span class="k">def</span> <span class="nf">write_chk</span><span class="p">(</span><span class="n">input_dict</span><span class="p">,</span> <span class="n">working_directory</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+    <span class="c1"># collect data and initialize Yaff system</span>
+    <span class="k">if</span> <span class="s1">&#39;cell&#39;</span> <span class="ow">in</span> <span class="n">input_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="ow">and</span> <span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;cell&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">system</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span>
+            <span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;numbers&#39;</span><span class="p">],</span>
+            <span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;pos&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">angstrom</span><span class="p">,</span>
+            <span class="n">rvecs</span><span class="o">=</span><span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;cell&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">angstrom</span><span class="p">,</span>
+            <span class="n">ffatypes</span><span class="o">=</span><span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;ffatypes_man&#39;</span><span class="p">],</span>
+            <span class="n">ffatype_ids</span><span class="o">=</span><span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;ffatype_ids_man&#39;</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">system</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span>
+            <span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;numbers&#39;</span><span class="p">],</span>
+            <span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;pos&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">angstrom</span><span class="p">,</span>
+            <span class="n">ffatypes</span><span class="o">=</span><span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;ffatypes_man&#39;</span><span class="p">],</span>
+            <span class="n">ffatype_ids</span><span class="o">=</span><span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;ffatype_ids_man&#39;</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="c1"># determine masses, bonds and ffaypes from ffatype_rules</span>
+    <span class="n">system</span><span class="o">.</span><span class="n">detect_bonds</span><span class="p">()</span>
+    <span class="n">system</span><span class="o">.</span><span class="n">set_standard_masses</span><span class="p">()</span>
+    <span class="c1"># write dictionnairy to MolMod CHK file</span>
+    <span class="n">system</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="n">posixpath</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">working_directory</span><span class="p">,</span> <span class="s1">&#39;input.chk&#39;</span><span class="p">))</span>
+    <span class="c1"># Reload input.chk as dictionairy and add AI input data</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">load_chk</span><span class="p">(</span><span class="n">posixpath</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">working_directory</span><span class="p">,</span> <span class="s1">&#39;input.chk&#39;</span><span class="p">))</span>
+
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;aiener&#39;</span><span class="p">],</span> <span class="nb">float</span><span class="p">),</span> <span class="s2">&quot;AI energy not defined in input, use job.read_abintio(...)&quot;</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;aigrad&#39;</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">),</span> <span class="s2">&quot;AI gradient not defined in input, use job.read_abintio(...)&quot;</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;aihess&#39;</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">),</span> <span class="s2">&quot;AI hessian not defined in input, use job.read_abintio(...)&quot;</span>
+    <span class="n">d</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;aiener&#39;</span><span class="p">]</span>
+    <span class="n">d</span><span class="p">[</span><span class="s1">&#39;grad&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;aigrad&#39;</span><span class="p">]</span>
+    <span class="n">d</span><span class="p">[</span><span class="s1">&#39;hess&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;aihess&#39;</span><span class="p">]</span>
+    <span class="n">dump_chk</span><span class="p">(</span><span class="n">posixpath</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">working_directory</span><span class="p">,</span><span class="s1">&#39;input.chk&#39;</span><span class="p">),</span> <span class="n">d</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="write_pars"><a class="viewcode-back" href="../../../apidoc/pyiron.quickff.quickff.html#pyiron.quickff.quickff.write_pars">[docs]</a><span class="k">def</span> <span class="nf">write_pars</span><span class="p">(</span><span class="n">pars</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="n">working_directory</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">posixpath</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">working_directory</span><span class="p">,</span> <span class="n">fn</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">pars</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="write_config"><a class="viewcode-back" href="../../../apidoc/pyiron.quickff.quickff.html#pyiron.quickff.quickff.write_config">[docs]</a><span class="k">def</span> <span class="nf">write_config</span><span class="p">(</span><span class="n">input_dict</span><span class="p">,</span> <span class="n">working_directory</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">posixpath</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">working_directory</span><span class="p">,</span> <span class="s1">&#39;config.txt&#39;</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">key_checks</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">input_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">value_int</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">input_dict</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s1">&#39;ffatypes&#39;</span><span class="p">:</span> <span class="k">assert</span> <span class="n">value_int</span> <span class="o">==</span> <span class="s1">&#39;None&#39;</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">:   </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">key</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="mi">30</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)),</span> <span class="n">value_int</span><span class="p">),</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="collect_output"><a class="viewcode-back" href="../../../apidoc/pyiron.quickff.quickff.html#pyiron.quickff.quickff.collect_output">[docs]</a><span class="k">def</span> <span class="nf">collect_output</span><span class="p">(</span><span class="n">fn_pars</span><span class="p">,</span> <span class="n">fn_sys</span><span class="p">):</span>
+    <span class="c1"># this routine reads the output parameter file containing the covalent pars</span>
+    <span class="n">output_dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;generic/bond&#39;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s1">&#39;generic/bend&#39;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s1">&#39;generic/torsion&#39;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s1">&#39;generic/oopdist&#39;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s1">&#39;generic/cross&#39;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">}</span>
+    <span class="n">kinds</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bond&#39;</span><span class="p">,</span> <span class="s1">&#39;bend&#39;</span><span class="p">,</span> <span class="s1">&#39;torsion&#39;</span><span class="p">,</span> <span class="s1">&#39;oopdist&#39;</span><span class="p">,</span> <span class="s1">&#39;cross&#39;</span><span class="p">]</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fn_pars</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kinds</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                    <span class="n">output_dict</span><span class="p">[</span><span class="s1">&#39;generic/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="n">system</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">fn_sys</span><span class="p">)</span>
+    <span class="n">output_dict</span><span class="p">[</span><span class="s1">&#39;system/numbers&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">numbers</span>
+    <span class="n">output_dict</span><span class="p">[</span><span class="s1">&#39;system/pos&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">pos</span><span class="o">/</span><span class="n">angstrom</span>
+    <span class="k">if</span> <span class="n">system</span><span class="o">.</span><span class="n">cell</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">output_dict</span><span class="p">[</span><span class="s1">&#39;system/rvecs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">rvecs</span><span class="o">/</span><span class="n">angstrom</span>
+    <span class="n">output_dict</span><span class="p">[</span><span class="s1">&#39;system/bonds&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">bonds</span>
+    <span class="n">output_dict</span><span class="p">[</span><span class="s1">&#39;system/ffatypes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">system</span><span class="o">.</span><span class="n">ffatypes</span><span class="p">,</span><span class="s1">&#39;S22&#39;</span><span class="p">)</span>
+    <span class="n">output_dict</span><span class="p">[</span><span class="s1">&#39;system/ffatype_ids&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">ffatype_ids</span>
+    <span class="k">return</span> <span class="n">output_dict</span></div>
+
+
+<div class="viewcode-block" id="QuickFFInput"><a class="viewcode-back" href="../../../apidoc/pyiron.quickff.quickff.html#pyiron.quickff.quickff.QuickFFInput">[docs]</a><span class="k">class</span> <span class="nc">QuickFFInput</span><span class="p">(</span><span class="n">GenericParameters</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">QuickFFInput</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">input_file_name</span><span class="o">=</span><span class="n">input_file_name</span><span class="p">,</span><span class="n">table_name</span><span class="o">=</span><span class="s2">&quot;input_inp&quot;</span><span class="p">,</span><span class="n">comment_char</span><span class="o">=</span><span class="s2">&quot;#&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="QuickFFInput.load_default"><a class="viewcode-back" href="../../../apidoc/pyiron.quickff.quickff.html#pyiron.quickff.quickff.QuickFFInput.load_default">[docs]</a>    <span class="k">def</span> <span class="nf">load_default</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Loading the default settings for the input file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">input_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">fn_yaff pars_cov.txt</span>
+<span class="s2">fn_charmm22_prm None</span>
+<span class="s2">fn_charmm22_psf None</span>
+<span class="s2">fn_sys system.chk</span>
+<span class="s2">plot_traj None</span>
+<span class="s2">xyz_traj False</span>
+<span class="s2">fn_traj None</span>
+<span class="s2">log_level high</span>
+<span class="s2">log_file quickff.log</span>
+<span class="s2">program_mode DeriveFF</span>
+<span class="s2">only_traj PT_ALL</span>
+<span class="s2">ffatypes None #Define atom types using the built-in routine in QuickFF (see documentation)</span>
+<span class="s2">ei None</span>
+<span class="s2">ei_rcut None #default is 20 (periodic) or 50 (non-per) A</span>
+<span class="s2">vdw None</span>
+<span class="s2">vdw_rcut 37.79452267842504</span>
+<span class="s2">covres None</span>
+<span class="s2">excl_bonds None</span>
+<span class="s2">excl_bends None</span>
+<span class="s2">excl_dihs None</span>
+<span class="s2">excl_oopds None</span>
+<span class="s2">do_hess_mass_weighting True</span>
+<span class="s2">do_hess_negfreq_proj False</span>
+<span class="s2">do_cross_svd True</span>
+<span class="s2">pert_traj_tol 1e-3</span>
+<span class="s2">pert_traj_energy_noise None</span>
+<span class="s2">cross_svd_rcond 1e-8</span>
+<span class="s2">do_bonds True</span>
+<span class="s2">do_bends True</span>
+<span class="s2">do_dihedrals True</span>
+<span class="s2">do_oops True</span>
+<span class="s2">do_cross_ASS True</span>
+<span class="s2">do_cross_ASA True</span>
+<span class="s2">do_cross_DSS False</span>
+<span class="s2">do_cross_DSD False</span>
+<span class="s2">do_cross_DAA False</span>
+<span class="s2">do_cross_DAD False</span>
+<span class="s2">consistent_cross_rvs True</span>
+<span class="s2">remove_dysfunctional_cross True</span>
+<span class="s2">bond_term BondHarm</span>
+<span class="s2">bend_term BendAHarm</span>
+<span class="s2">do_squarebend True</span>
+<span class="s2">do_bendclin True</span>
+<span class="s2">do_sqoopdist_to_oopdist True</span>
+<span class="s2">&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">load_string</span><span class="p">(</span><span class="n">input_str</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="QuickFF"><a class="viewcode-back" href="../../../apidoc/pyiron.quickff.quickff.html#pyiron.quickff.quickff.QuickFF">[docs]</a><span class="k">class</span> <span class="nc">QuickFF</span><span class="p">(</span><span class="n">AtomisticGenericJob</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">job_name</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">QuickFF</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="n">job_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;QuickFF&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_executable_activate</span><span class="p">(</span><span class="n">enforce</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input</span> <span class="o">=</span> <span class="n">QuickFFInput</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ffatypes</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ffatype_ids</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">aiener</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">aigrad</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">aihess</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fn_ei</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fn_vdw</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="QuickFF.read_abinitio"><a class="viewcode-back" href="../../../apidoc/pyiron.quickff.quickff.html#pyiron.quickff.quickff.QuickFF.read_abinitio">[docs]</a>    <span class="k">def</span> <span class="nf">read_abinitio</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">):</span>
+        <span class="n">numbers</span><span class="p">,</span> <span class="n">coords</span><span class="p">,</span> <span class="n">energy</span><span class="p">,</span> <span class="n">grad</span><span class="p">,</span> <span class="n">hess</span><span class="p">,</span> <span class="n">masses</span><span class="p">,</span> <span class="n">rvecs</span><span class="p">,</span> <span class="n">pbc</span> <span class="o">=</span> <span class="n">read_abinitio</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+        <span class="n">coords</span> <span class="o">/=</span> <span class="n">angstrom</span>
+        <span class="k">if</span> <span class="n">rvecs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">rvecs</span> <span class="o">/=</span> <span class="n">angstrom</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">Atoms</span><span class="p">(</span><span class="n">numbers</span><span class="o">=</span><span class="n">numbers</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span> <span class="n">cell</span><span class="o">=</span><span class="n">rvecs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">aiener</span> <span class="o">=</span> <span class="n">energy</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">aigrad</span> <span class="o">=</span> <span class="n">grad</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">aihess</span> <span class="o">=</span> <span class="n">hess</span></div>
+
+<div class="viewcode-block" id="QuickFF.detect_ffatypes"><a class="viewcode-back" href="../../../apidoc/pyiron.quickff.quickff.html#pyiron.quickff.quickff.QuickFF.detect_ffatypes">[docs]</a>    <span class="k">def</span> <span class="nf">detect_ffatypes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ffatypes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ffatype_rules</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ffatype_level</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Define atom types by explicitely giving them through the</span>
+<span class="sd">        ffatypes keyword, defining atype rules using the ATSELECT</span>
+<span class="sd">        language implemented in Yaff (see the Yaff documentation at</span>
+<span class="sd">        http://molmod.github.io/yaff/ug_atselect.html) or by specifying</span>
+<span class="sd">        the ffatype_level employing the built-in routine in QuickFF.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">numbers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">pt</span><span class="p">[</span><span class="n">symbol</span><span class="p">]</span><span class="o">.</span><span class="n">number</span> <span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">get_chemical_symbols</span><span class="p">()])</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">cell</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">system</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">*</span><span class="n">angstrom</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">system</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">*</span><span class="n">angstrom</span><span class="p">,</span> <span class="n">rvecs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">cell</span><span class="o">*</span><span class="n">angstrom</span><span class="p">)</span>
+        <span class="n">system</span><span class="o">.</span><span class="n">detect_bonds</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">sum</span><span class="p">([</span><span class="n">ffatypes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">,</span> <span class="n">ffatype_rules</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">,</span> <span class="n">ffatype_level</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s1">&#39;Exactly one of ffatypes, ffatype_rules and ffatype_level should be defined&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">ffatypes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="n">ffatype_rules</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;ffatypes and ffatype_rules cannot be defined both&#39;</span>
+            <span class="n">system</span><span class="o">.</span><span class="n">ffatypes</span> <span class="o">=</span> <span class="n">ffatypes</span>
+            <span class="n">system</span><span class="o">.</span><span class="n">ffatype_ids</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">system</span><span class="o">.</span><span class="n">_init_derived_ffatypes</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">ffatype_rules</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">system</span><span class="o">.</span><span class="n">detect_ffatypes</span><span class="p">(</span><span class="n">ffatype_rules</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ffatype_level</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">set_ffatypes</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">ffatype_level</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">ffatypes</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">ffatypes</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ffatype_ids</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">ffatype_ids</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="QuickFF.set_ei"><a class="viewcode-back" href="../../../apidoc/pyiron.quickff.quickff.html#pyiron.quickff.quickff.QuickFF.set_ei">[docs]</a>    <span class="k">def</span> <span class="nf">set_ei</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s1">&#39;ei&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fn_ei</span> <span class="o">=</span> <span class="n">fn</span></div>
+
+<div class="viewcode-block" id="QuickFF.set_vdw"><a class="viewcode-back" href="../../../apidoc/pyiron.quickff.quickff.html#pyiron.quickff.quickff.QuickFF.set_vdw">[docs]</a>    <span class="k">def</span> <span class="nf">set_vdw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s1">&#39;vdw&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fn_vdw</span> <span class="o">=</span> <span class="n">fn</span></div>
+
+<div class="viewcode-block" id="QuickFF.write_input"><a class="viewcode-back" href="../../../apidoc/pyiron.quickff.quickff.html#pyiron.quickff.quickff.QuickFF.write_input">[docs]</a>    <span class="k">def</span> <span class="nf">write_input</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># load system related input</span>
+        <span class="n">input_dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;symbols&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">get_chemical_symbols</span><span class="p">(),</span>
+            <span class="s1">&#39;numbers&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">pt</span><span class="p">[</span><span class="n">symbol</span><span class="p">]</span><span class="o">.</span><span class="n">number</span> <span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">get_chemical_symbols</span><span class="p">()]),</span>
+            <span class="s1">&#39;ffatypes_man&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">ffatypes</span><span class="p">,</span>
+            <span class="s1">&#39;ffatype_ids_man&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">ffatype_ids</span><span class="p">,</span>
+            <span class="s1">&#39;pos&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">positions</span><span class="p">,</span>
+            <span class="s1">&#39;aiener&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">aiener</span><span class="p">,</span>
+            <span class="s1">&#39;aigrad&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">aigrad</span><span class="p">,</span>
+            <span class="s1">&#39;aihess&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">aihess</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">_dataset</span><span class="p">[</span><span class="s2">&quot;Parameter&quot;</span><span class="p">]:</span>
+            <span class="n">input_dict</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;cell&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">cell</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;cell&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">get_cell</span><span class="p">()</span>
+        <span class="c1"># load all input settings from self.input</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">_dataset</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">input_dict</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="c1"># write input chk file</span>
+        <span class="n">write_chk</span><span class="p">(</span><span class="n">input_dict</span><span class="p">,</span> <span class="n">working_directory</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">)</span>
+        <span class="c1"># write nonbonded pars and config input files</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fn_ei</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s1">&#39;ei&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;cp </span><span class="si">%s</span><span class="s1"> </span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fn_ei</span> <span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s1">&#39;ei&#39;</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fn_vdw</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s1">&#39;vdw&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;cp </span><span class="si">%s</span><span class="s1"> </span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fn_vdw</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s1">&#39;vdw&#39;</span><span class="p">]))</span>
+        <span class="n">write_config</span><span class="p">(</span><span class="n">input_dict</span><span class="p">,</span><span class="n">working_directory</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="QuickFF.collect_output"><a class="viewcode-back" href="../../../apidoc/pyiron.quickff.quickff.html#pyiron.quickff.quickff.QuickFF.collect_output">[docs]</a>    <span class="k">def</span> <span class="nf">collect_output</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">output_dict</span> <span class="o">=</span> <span class="n">collect_output</span><span class="p">(</span>
+            <span class="n">posixpath</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s1">&#39;fn_yaff&#39;</span><span class="p">]),</span>
+            <span class="n">posixpath</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s1">&#39;fn_sys&#39;</span><span class="p">])</span>
+        <span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;output&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf5_output</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">output_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">hdf5_output</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span></div>
+
+<div class="viewcode-block" id="QuickFF.to_hdf"><a class="viewcode-back" href="../../../apidoc/pyiron.quickff.quickff.html#pyiron.quickff.quickff.QuickFF.to_hdf">[docs]</a>    <span class="k">def</span> <span class="nf">to_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">QuickFF</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="n">hdf</span><span class="o">=</span><span class="n">hdf</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="n">group_name</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf5_input</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="n">hdf5_input</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="n">hdf5_input</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="QuickFF.from_hdf"><a class="viewcode-back" href="../../../apidoc/pyiron.quickff.quickff.html#pyiron.quickff.quickff.QuickFF.from_hdf">[docs]</a>    <span class="k">def</span> <span class="nf">from_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">QuickFF</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">from_hdf</span><span class="p">(</span><span class="n">hdf</span><span class="o">=</span><span class="n">hdf</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="n">group_name</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf5_input</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">from_hdf</span><span class="p">(</span><span class="n">hdf5_input</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">Atoms</span><span class="p">()</span><span class="o">.</span><span class="n">from_hdf</span><span class="p">(</span><span class="n">hdf5_input</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="QuickFF.get_structure"><a class="viewcode-back" href="../../../apidoc/pyiron.quickff.quickff.html#pyiron.quickff.quickff.QuickFF.get_structure">[docs]</a>    <span class="k">def</span> <span class="nf">get_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iteration_step</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">wrap_atoms</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Overwrite the get_structure routine from AtomisticGenericJob because we want to avoid</span>
+<span class="sd">        defining a unit cell when one does not exist</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="QuickFF.log"><a class="viewcode-back" href="../../../apidoc/pyiron.quickff.quickff.html#pyiron.quickff.quickff.QuickFF.log">[docs]</a>    <span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">posixpath</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="s1">&#39;quickff.log&#39;</span><span class="p">))</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="QuickFF.get_yaff_system"><a class="viewcode-back" href="../../../apidoc/pyiron.quickff.quickff.html#pyiron.quickff.quickff.QuickFF.get_yaff_system">[docs]</a>    <span class="k">def</span> <span class="nf">get_yaff_system</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">system</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">posixpath</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s1">&#39;fn_sys&#39;</span><span class="p">]))</span>
+        <span class="k">return</span> <span class="n">system</span></div>
+
+<div class="viewcode-block" id="QuickFF.get_yaff_ff"><a class="viewcode-back" href="../../../apidoc/pyiron.quickff.quickff.html#pyiron.quickff.quickff.QuickFF.get_yaff_ff">[docs]</a>    <span class="k">def</span> <span class="nf">get_yaff_ff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rcut</span><span class="o">=</span><span class="mi">15</span><span class="o">*</span><span class="n">angstrom</span><span class="p">,</span> <span class="n">alpha_scale</span><span class="o">=</span><span class="mf">3.2</span><span class="p">,</span> <span class="n">gcut_scale</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">smooth_ei</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="n">system</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_yaff_system</span><span class="p">()</span>
+        <span class="n">fn_pars</span> <span class="o">=</span> <span class="n">posixpath</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s1">&#39;fn_yaff&#39;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">fn_pars</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s1">&#39;No pars.txt file find in job working directory. Have you already run the job?&#39;</span><span class="p">)</span>
+        <span class="n">ff</span> <span class="o">=</span> <span class="n">ForceField</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span>
+            <span class="n">system</span><span class="p">,</span> <span class="n">fn_pars</span><span class="p">,</span> <span class="n">rcut</span><span class="o">=</span><span class="n">rcut</span><span class="p">,</span> <span class="n">alpha_scale</span><span class="o">=</span><span class="n">alpha_scale</span><span class="p">,</span>
+            <span class="n">gcut_scale</span><span class="o">=</span><span class="n">gcut_scale</span><span class="p">,</span> <span class="n">smooth_ei</span><span class="o">=</span><span class="n">smooth_ei</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">ff</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

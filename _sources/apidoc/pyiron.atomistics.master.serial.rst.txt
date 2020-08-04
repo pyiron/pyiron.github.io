@@ -1,0 +1,7 @@
+pyiron.atomistics.master.serial module
+======================================
+
+.. automodule:: pyiron.atomistics.master.serial
+   :members:
+   :undoc-members:
+   :show-inheritance:

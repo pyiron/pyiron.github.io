@@ -1,0 +1,492 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.atomistics.master.structure module &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>pyiron.atomistics.master.structure module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/pyiron.atomistics.master.structure.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-pyiron.atomistics.master.structure">
+<span id="pyiron-atomistics-master-structure-module"></span><h1>pyiron.atomistics.master.structure module<a class="headerlink" href="#module-pyiron.atomistics.master.structure" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pyiron.atomistics.master.structure.StructureJobGenerator">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.atomistics.master.structure.</code><code class="sig-name descname">StructureJobGenerator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job</span></em>, <em class="sig-param"><span class="n">no_job_checks</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/atomistics/master/structure.html#StructureJobGenerator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.atomistics.master.structure.StructureJobGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pyiron.base.master.parallel.html#pyiron.base.master.parallel.JobGenerator" title="pyiron.base.master.parallel.JobGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyiron.base.master.parallel.JobGenerator</span></code></a></p>
+<p>JobGenerator for the StructureListMaster - this class implements the functions to generate the parameter list,
+modify the individual jobs according to the parameter list and generate the new job names according to the
+parameter list.</p>
+<dl class="py method">
+<dt id="pyiron.atomistics.master.structure.StructureJobGenerator.job_name">
+<em class="property">static </em><code class="sig-name descname">job_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameter</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/atomistics/master/structure.html#StructureJobGenerator.job_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.atomistics.master.structure.StructureJobGenerator.job_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate job name for a give set of parameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parameter</strong> – For the StructureListMaster the structures are simply numbered - struct_0, struct_1, …</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>job name for the next job</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.atomistics.master.structure.StructureJobGenerator.modify_job">
+<code class="sig-name descname">modify_job</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job</span></em>, <em class="sig-param"><span class="n">parameter</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/atomistics/master/structure.html#StructureJobGenerator.modify_job"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.atomistics.master.structure.StructureJobGenerator.modify_job" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modify the next job by setting the structure for the specific parameter</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>job</strong> (<a class="reference internal" href="pyiron.base.job.generic.html#pyiron.base.job.generic.GenericJob" title="pyiron.base.job.generic.GenericJob"><em>GenericJob</em></a>) – next job object to be executed</p></li>
+<li><p><strong>parameter</strong> – includes the atomistic structure</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="pyiron.base.job.generic.html#pyiron.base.job.generic.GenericJob" title="pyiron.base.job.generic.GenericJob">GenericJob</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.atomistics.master.structure.StructureJobGenerator.parameter_list">
+<em class="property">property </em><code class="sig-name descname">parameter_list</code><a class="headerlink" href="#pyiron.atomistics.master.structure.StructureJobGenerator.parameter_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+(list): [[index(int), pyiron.atomistics.structure.atoms.Atoms], …]</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pyiron.atomistics.master.structure.StructureListMaster">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.atomistics.master.structure.</code><code class="sig-name descname">StructureListMaster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">project</span></em>, <em class="sig-param"><span class="n">job_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/atomistics/master/structure.html#StructureListMaster"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.atomistics.master.structure.StructureListMaster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pyiron.base.master.parallel.html#pyiron.base.master.parallel.ParallelMaster" title="pyiron.base.master.parallel.ParallelMaster"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyiron.base.master.parallel.ParallelMaster</span></code></a></p>
+<p>The GenericMaster is the template class for all meta jobs - meaning all jobs which contain multiple other jobs. It
+defines the shared functionality of the different kind of job series.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>project</strong> (<a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.ProjectHDFio" title="pyiron.base.generic.hdfio.ProjectHDFio"><em>ProjectHDFio</em></a>) – ProjectHDFio instance which points to the HDF5 file the job is stored in</p></li>
+<li><p><strong>job_name</strong> (<em>str</em>) – name of the job, which has to be unique within the project</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: job_name</code></dt>
+<dd><p>name of the job, which has to be unique within the project</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: status</code></dt>
+<dd><dl class="simple">
+<dt>execution status of the job, can be one of the following [initialized, appended, created, submitted,</dt><dd><p>running, aborted, collect, suspended, refresh,
+busy, finished]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: job_id</code></dt>
+<dd><p>unique id to identify the job in the pyiron database</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: parent_id</code></dt>
+<dd><p>job id of the predecessor job - the job which was executed before the current one in the current job series</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: master_id</code></dt>
+<dd><p>job id of the master job - a meta job which groups a series of jobs, which are executed either in parallel
+or in serial.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: child_ids</code></dt>
+<dd><p>list of child job ids - only meta jobs have child jobs - jobs which list the meta job as their master</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: project</code></dt>
+<dd><p>Project instance the jobs is located in</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: project_hdf5</code></dt>
+<dd><p>ProjectHDFio instance which points to the HDF5 file the job is stored in</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: job_info_str</code></dt>
+<dd><p>short string to describe the job by it is job_name and job ID - mainly used for logging</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: working_directory</code></dt>
+<dd><p>working directory of the job is executed in - outside the HDF5 file</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: path</code></dt>
+<dd><p>path to the job as a combination of absolute file system path and path within the HDF5 file.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: version</code></dt>
+<dd><p>Version of the hamiltonian, which is also the version of the executable unless a custom executable is used.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: executable</code></dt>
+<dd><p>Executable used to run the job - usually the path to an external executable.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: library_activated</code></dt>
+<dd><p>For job types which offer a Python library pyiron can use the python library instead of an external
+executable.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: server</code></dt>
+<dd><p>Server object to handle the execution environment for the job.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: queue_id</code></dt>
+<dd><p>the ID returned from the queuing system - it is most likely not the same as the job ID.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: logger</code></dt>
+<dd><p>logger object to monitor the external execution and internal pyiron warnings.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: restart_file_list</code></dt>
+<dd><p>list of files which are used to restart the calculation from these files.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: job_type</code></dt>
+<dd><dl class="simple">
+<dt>Job type object with all the available job types: [‘ExampleJob’, ‘SerialMaster’, ‘ParallelMaster’,</dt><dd><p>‘ScriptJob’, ‘ListMaster’]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: child_names</code></dt>
+<dd><p>Dictionary matching the child ID to the child job name.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.atomistics.master.structure.StructureListMaster.collect_output">
+<code class="sig-name descname">collect_output</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/atomistics/master/structure.html#StructureListMaster.collect_output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.atomistics.master.structure.StructureListMaster.collect_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implemented for compatibilty</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.atomistics.master.structure.StructureListMaster.from_hdf">
+<code class="sig-name descname">from_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">group_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/atomistics/master/structure.html#StructureListMaster.from_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.atomistics.master.structure.StructureListMaster.from_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restore the StructureListMaster object in the HDF5 File</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdf</strong> (<a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.ProjectHDFio" title="pyiron.base.generic.hdfio.ProjectHDFio"><em>ProjectHDFio</em></a>) – HDF5 group object - optional</p></li>
+<li><p><strong>group_name</strong> (<em>str</em>) – HDF5 subgroup name - optional</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.atomistics.master.structure.StructureListMaster.run_if_interactive_non_modal">
+<code class="sig-name descname">run_if_interactive_non_modal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/atomistics/master/structure.html#StructureListMaster.run_if_interactive_non_modal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.atomistics.master.structure.StructureListMaster.run_if_interactive_non_modal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implemented for compatibilty</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.atomistics.master.structure.StructureListMaster.structure_lst">
+<em class="property">property </em><code class="sig-name descname">structure_lst</code><a class="headerlink" href="#pyiron.atomistics.master.structure.StructureListMaster.structure_lst" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.atomistics.master.structure.StructureListMaster.to_hdf">
+<code class="sig-name descname">to_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">group_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/atomistics/master/structure.html#StructureListMaster.to_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.atomistics.master.structure.StructureListMaster.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the StructureListMaster object in the HDF5 File</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdf</strong> (<a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.ProjectHDFio" title="pyiron.base.generic.hdfio.ProjectHDFio"><em>ProjectHDFio</em></a>) – HDF5 group object - optional</p></li>
+<li><p><strong>group_name</strong> (<em>str</em>) – HDF5 subgroup name - optional</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

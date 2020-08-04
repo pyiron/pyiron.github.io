@@ -1,0 +1,1006 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.dft.waves.electronic &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.dft.waves.electronic</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.dft.waves.electronic</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">pyiron.atomistics.structure.atoms</span> <span class="kn">import</span> <span class="n">Atoms</span>
+<span class="kn">from</span> <span class="nn">pyiron.dft.waves.dos</span> <span class="kn">import</span> <span class="n">Dos</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Sudarsan Surendralal&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2020, Max-Planck-Institut für Eisenforschung GmbH &quot;</span>
+    <span class="s2">&quot;- Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Sudarsan Surendralal&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;surendralal@mpie.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;development&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;Sep 1, 2017&quot;</span>
+
+
+<div class="viewcode-block" id="ElectronicStructure"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.waves.electronic.html#pyiron.dft.waves.electronic.ElectronicStructure">[docs]</a><span class="k">class</span> <span class="nc">ElectronicStructure</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This is a generic module to store electronic structure data in a clean way. Kpoint and Band classes are used to</span>
+<span class="sd">    store information related to kpoints and bands respectively. Every spin configuration has a set of k-points and</span>
+<span class="sd">    every k-point has a set of bands associated with it. This is loosely adapted from the `pymatgen electronic_structure</span>
+<span class="sd">    modules`_. Many of the functions have been substantially modified for pyiron</span>
+
+<span class="sd">    .. _pymatgen electronic_structure modules: http://pymatgen.org/pymatgen.electronic_structure.bandstructure.html</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_eigenvalues</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_occupancies</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dos_energies</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dos_densities</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dos_idensities</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_eg</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_vbm</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cbm</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_efermi</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_eigenvalue_matrix</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_occupancy_matrix</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_grand_dos_matrix</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_resolved_densities</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_kpoint_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_kpoint_weights</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_spins</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_orbital_dict</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="ElectronicStructure.add_kpoint"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.waves.electronic.html#pyiron.dft.waves.electronic.ElectronicStructure.add_kpoint">[docs]</a>    <span class="k">def</span> <span class="nf">add_kpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Appends a Kpoint() instance to the kpoints attribute</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            value (list/numpy.ndarray): Value of the k-point in cartesian reciprocal coordinates</span>
+<span class="sd">            weight (float): The weight of the particular k-point</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kpt_obj</span> <span class="o">=</span> <span class="n">Kpoint</span><span class="p">()</span>
+        <span class="n">kpt_obj</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="n">kpt_obj</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kpt_obj</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ElectronicStructure.get_dos"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.waves.electronic.html#pyiron.dft.waves.electronic.ElectronicStructure.get_dos">[docs]</a>    <span class="k">def</span> <span class="nf">get_dos</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_bins</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gives a pyiron.objects.waves.dos.Dos instance</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            n_bins (int): Number of histogram bins for the dos</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            pyiron.objects.waves.dos.Dos: Dos instance</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">dos_obj</span> <span class="o">=</span> <span class="n">Dos</span><span class="p">(</span><span class="n">n_bins</span><span class="o">=</span><span class="n">n_bins</span><span class="p">,</span> <span class="n">es_obj</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">dos_obj</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dos_energies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        numpy.ndarray: A (1xN) vector containing the energies with N grid points</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dos_energies</span>
+
+    <span class="nd">@dos_energies</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">dos_energies</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dos_energies</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dos_densities</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        numpy.ndarray: A (SxN) vector containing the density of states for every spin configuration with S spin</span>
+<span class="sd">                       configurations and N grid points</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dos_densities</span>
+
+    <span class="nd">@dos_densities</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">dos_densities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dos_densities</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dos_idensities</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        numpy.ndarray: A (SxN) vector containing the density of states for every spin configuration with S spin</span>
+<span class="sd">                       configurations and N grid points</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dos_idensities</span>
+
+    <span class="nd">@dos_idensities</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">dos_idensities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dos_idensities</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">resolved_densities</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        numpy.ndarray: A (SxAxOxN) vector containing the density of states for every spin configuration with S spin</span>
+<span class="sd">                       configurations, A atoms, O orbitals and N grid points. The labels of the orbitals are found on</span>
+<span class="sd">                       the orbital_dict</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolved_densities</span>
+
+    <span class="nd">@resolved_densities</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">resolved_densities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_resolved_densities</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">orbital_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        dict: A dictionary of the ordering of the orbitals</span>
+
+<span class="sd">        Examples:</span>
+<span class="sd">            &gt;&gt;&gt; self.orbital_dict[0]</span>
+<span class="sd">            &#39;s&#39;</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_orbital_dict</span>
+
+    <span class="nd">@orbital_dict</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">orbital_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_orbital_dict</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">eigenvalues</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        numpy.ndarray: Eigenvalues of the bands</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">eigenvalue_matrix</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">occupancies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        numpy.ndarray: Occupancies of the bands</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">occupancy_matrix</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">eigenvalue_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        numpy.ndarray: A getter function to return the eigenvalue_matrix. The eigenvalue for a given kpoint index i and</span>
+<span class="sd">                       band index j is given by eigenvalue_matrix[i][j]</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eigenvalue_matrix</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_eigenvalue_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span>
+                <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bands</span><span class="p">))</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_eigenvalue_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">eig_occ_matrix</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eigenvalue_matrix</span>
+
+    <span class="nd">@eigenvalue_matrix</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">eigenvalue_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_eigenvalue_matrix</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">occupancy_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        numpy.ndarray: A getter function to return the occupancy_matrix. The occupancy for a given kpoint index i and</span>
+<span class="sd">                       band index j is given by occupancy_matrix[i][j]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_occupancy_matrix</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_occupancy_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span>
+                <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bands</span><span class="p">))</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_occupancy_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">eig_occ_matrix</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_occupancy_matrix</span>
+
+    <span class="nd">@occupancy_matrix</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">occupancy_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_occupancy_matrix</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">kpoint_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        list: The list of kpoints in cartesian coordinates</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_kpoint_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">kpt_lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span><span class="p">:</span>
+                <span class="n">kpt_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_kpoint_list</span> <span class="o">=</span> <span class="n">kpt_lst</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kpoint_list</span>
+
+    <span class="nd">@kpoint_list</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">kpoint_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_kpoint_list</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">kpoint_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        list: The weights of the kpoints of the electronic structure in cartesian coordinates</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_kpoint_weights</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">kpt_lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span><span class="p">:</span>
+                <span class="n">kpt_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_kpoint_weights</span> <span class="o">=</span> <span class="n">kpt_lst</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kpoint_weights</span>
+
+    <span class="nd">@kpoint_weights</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">kpoint_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_kpoint_weights</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">structure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        atomistics.structure.atoms.Atoms: The structure associated with the electronic structure object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span>
+
+    <span class="nd">@structure</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span> <span class="o">=</span> <span class="n">val</span>
+
+<div class="viewcode-block" id="ElectronicStructure.get_vbm"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.waves.electronic.html#pyiron.dft.waves.electronic.ElectronicStructure.get_vbm">[docs]</a>    <span class="k">def</span> <span class="nf">get_vbm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the valence band maximum (VBM) of the system</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            resolution (float): An occupancy below this value is considered unoccupied</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict:</span>
+<span class="sd">                &quot;value&quot; (float): Absolute energy value of the VBM (eV)</span>
+<span class="sd">                &quot;kpoint&quot;: The Kpoint instance associated with the VBM</span>
+<span class="sd">                &quot;band&quot;: The Band instance associated with the VBM</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">vbm</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">vbm_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">kpt</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">band</span> <span class="ow">in</span> <span class="n">kpt</span><span class="o">.</span><span class="n">bands</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">band</span><span class="o">.</span><span class="n">occupancy</span> <span class="o">&gt;</span> <span class="n">resolution</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">vbm</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">vbm</span> <span class="o">=</span> <span class="n">band</span><span class="o">.</span><span class="n">eigenvalue</span>
+                        <span class="n">vbm_dict</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">vbm</span>
+                        <span class="n">vbm_dict</span><span class="p">[</span><span class="s2">&quot;kpoint&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kpt</span>
+                        <span class="n">vbm_dict</span><span class="p">[</span><span class="s2">&quot;band&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">band</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">band</span><span class="o">.</span><span class="n">eigenvalue</span> <span class="o">&gt;</span> <span class="n">vbm</span><span class="p">:</span>
+                            <span class="n">vbm</span> <span class="o">=</span> <span class="n">band</span><span class="o">.</span><span class="n">eigenvalue</span>
+                            <span class="n">vbm_dict</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">vbm</span>
+                            <span class="n">vbm_dict</span><span class="p">[</span><span class="s2">&quot;kpoint&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kpt</span>
+                            <span class="n">vbm_dict</span><span class="p">[</span><span class="s2">&quot;band&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">band</span>
+        <span class="k">return</span> <span class="n">vbm_dict</span></div>
+
+<div class="viewcode-block" id="ElectronicStructure.get_cbm"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.waves.electronic.html#pyiron.dft.waves.electronic.ElectronicStructure.get_cbm">[docs]</a>    <span class="k">def</span> <span class="nf">get_cbm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the conduction band minimum (CBM) of the system</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            resolution (float): An occupancy above this value is considered occupied</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict:</span>
+<span class="sd">                &quot;value&quot; (float): Absolute energy value of the CBM (eV)</span>
+<span class="sd">                 &quot;kpoint&quot;: The Kpoint instance associated with the CBM</span>
+<span class="sd">                 &quot;band&quot;: The Band instance associated with the CBM</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cbm</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">cbm_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">kpt</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">band</span> <span class="ow">in</span> <span class="n">kpt</span><span class="o">.</span><span class="n">bands</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">band</span><span class="o">.</span><span class="n">occupancy</span> <span class="o">&lt;=</span> <span class="n">resolution</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">cbm</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">cbm</span> <span class="o">=</span> <span class="n">band</span><span class="o">.</span><span class="n">eigenvalue</span>
+                        <span class="n">cbm_dict</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cbm</span>
+                        <span class="n">cbm_dict</span><span class="p">[</span><span class="s2">&quot;kpoint&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kpt</span>
+                        <span class="n">cbm_dict</span><span class="p">[</span><span class="s2">&quot;band&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">band</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">band</span><span class="o">.</span><span class="n">eigenvalue</span> <span class="o">&lt;</span> <span class="n">cbm</span><span class="p">:</span>
+                            <span class="n">cbm</span> <span class="o">=</span> <span class="n">band</span><span class="o">.</span><span class="n">eigenvalue</span>
+                            <span class="n">cbm_dict</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cbm</span>
+                            <span class="n">cbm_dict</span><span class="p">[</span><span class="s2">&quot;kpoint&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kpt</span>
+                            <span class="n">cbm_dict</span><span class="p">[</span><span class="s2">&quot;band&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">band</span>
+        <span class="k">return</span> <span class="n">cbm_dict</span></div>
+
+<div class="viewcode-block" id="ElectronicStructure.get_band_gap"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.waves.electronic.html#pyiron.dft.waves.electronic.ElectronicStructure.get_band_gap">[docs]</a>    <span class="k">def</span> <span class="nf">get_band_gap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the band gap of the system</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            resolution (float): An occupancy above this value is considered occupied</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict:</span>
+<span class="sd">                &quot;band gap&quot; (float): The band gap (eV)</span>
+<span class="sd">                 &quot;vbm&quot;: The dictionary associated with the VBM</span>
+<span class="sd">                 &quot;cbm&quot;: The dictionary associated with the CBM</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gap_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">vbm_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_vbm</span><span class="p">(</span><span class="n">resolution</span><span class="p">)</span>
+        <span class="n">cbm_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cbm</span><span class="p">(</span><span class="n">resolution</span><span class="p">)</span>
+        <span class="n">vbm</span> <span class="o">=</span> <span class="n">vbm_dict</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span>
+        <span class="n">cbm</span> <span class="o">=</span> <span class="n">cbm_dict</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span>
+        <span class="n">gap_dict</span><span class="p">[</span><span class="s2">&quot;band_gap&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">cbm</span> <span class="o">-</span> <span class="n">vbm</span><span class="p">)</span>
+        <span class="n">gap_dict</span><span class="p">[</span><span class="s2">&quot;vbm&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">vbm_dict</span>
+        <span class="n">gap_dict</span><span class="p">[</span><span class="s2">&quot;cbm&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cbm_dict</span>
+        <span class="k">return</span> <span class="n">gap_dict</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">eg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        float: The band gap (eV)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_eg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_band_gap</span><span class="p">()[</span><span class="s2">&quot;band_gap&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eg</span>
+
+    <span class="nd">@eg</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">eg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_eg</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">vbm</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        float: The Kohn-Sham VBM (value only) (eV)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_vbm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_vbm</span><span class="p">()[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vbm</span>
+
+    <span class="nd">@vbm</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">vbm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_vbm</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">cbm</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        float: The Kohn-Sham CBM (value only) (eV)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cbm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cbm</span><span class="p">()[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cbm</span>
+
+    <span class="nd">@cbm</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">cbm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cbm</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">efermi</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        float: The Fermi-level of the system (eV). Please note that in the case of DFT this level is the Kohn-Sham Fermi</span>
+<span class="sd">               level computed by the DFT code.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_efermi</span>
+
+    <span class="nd">@efermi</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">efermi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_efermi</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">is_metal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        bool: Tells if the given system is metallic or not. The Fermi level crosses bands in the cas of metals but is</span>
+<span class="sd">              present in the band gap in the case of semi-conductors.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_efermi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;e_fermi has to be set before you can determine if the system is metallic or not&quot;</span>
+            <span class="p">)</span>
+        <span class="n">fermi_crossed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">n_bands</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">eigenvalue_matrix</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_bands</span><span class="p">):</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eigenvalue_matrix</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span>
+            <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">efermi</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">values</span><span class="p">))</span> <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">efermi</span> <span class="o">&gt;=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">values</span><span class="p">)):</span>
+                <span class="n">fermi_crossed</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="n">fermi_crossed</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">grand_dos_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Getter for the 5 dimensional grand_dos_matrix which gives the contribution of every spin, kpoint, band, atom and</span>
+<span class="sd">        orbital to the total DOS. For example the dos contribution with spin index s, kpoint k, band b, atom a and</span>
+<span class="sd">        orbital o is:</span>
+
+<span class="sd">        grand_dos_matrix[s, k, b, a, o]</span>
+
+<span class="sd">        The grand sum of this matrix would equal 1.0. The spatial, spin, and orbital resolved DOS can be computed using</span>
+<span class="sd">        this matrix</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            numpy.ndarray (5 dimensional)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_grand_dos_matrix</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_orbitals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bands</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">resolved_dos_matrix</span>
+                <span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_grand_dos_matrix</span>
+            <span class="n">dimension</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">n_spins</span><span class="p">,</span>
+                <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span><span class="p">),</span>
+                <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bands</span><span class="p">),</span>
+                <span class="n">n_atoms</span><span class="p">,</span>
+                <span class="n">n_orbitals</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_grand_dos_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">dimension</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">spin</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_spins</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">kpt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span><span class="p">):</span>
+                    <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">band</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">kpt</span><span class="o">.</span><span class="n">bands</span><span class="p">):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_grand_dos_matrix</span><span class="p">[</span>
+                            <span class="n">spin</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:</span>
+                        <span class="p">]</span> <span class="o">=</span> <span class="n">band</span><span class="o">.</span><span class="n">resolved_dos_matrix</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_grand_dos_matrix</span>
+
+    <span class="nd">@grand_dos_matrix</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">grand_dos_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for grand_dos_matrix</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_grand_dos_matrix</span> <span class="o">=</span> <span class="n">val</span>
+
+<div class="viewcode-block" id="ElectronicStructure.to_hdf"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.waves.electronic.html#pyiron.dft.waves.electronic.ElectronicStructure.to_hdf">[docs]</a>    <span class="k">def</span> <span class="nf">to_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="s2">&quot;electronic_structure&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Store the object to hdf5 file</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            hdf: Path to the hdf5 file/group in the file</span>
+<span class="sd">            group_name: Name of the group under which the attributes are o be stored</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="n">hdf</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">group_name</span><span class="p">)</span> <span class="k">as</span> <span class="n">h_es</span><span class="p">:</span>
+            <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;TYPE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="n">h_es</span><span class="p">)</span>
+            <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;k_points&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kpoint_list</span>
+            <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;k_weights&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kpoint_weights</span>
+            <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;eig_matrix&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eigenvalue_matrix</span>
+            <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;occ_matrix&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">occupancy_matrix</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">efermi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;efermi&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">efermi</span>
+            <span class="k">with</span> <span class="n">h_es</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;dos&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h_dos</span><span class="p">:</span>
+                <span class="n">h_dos</span><span class="p">[</span><span class="s2">&quot;energies&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dos_energies</span>
+                <span class="n">h_dos</span><span class="p">[</span><span class="s2">&quot;tot_densities&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dos_densities</span>
+                <span class="n">h_dos</span><span class="p">[</span><span class="s2">&quot;int_densities&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dos_idensities</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">grand_dos_matrix</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">h_dos</span><span class="p">[</span><span class="s2">&quot;grand_dos_matrix&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grand_dos_matrix</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolved_densities</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">h_dos</span><span class="p">[</span><span class="s2">&quot;resolved_densities&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolved_densities</span></div>
+
+<div class="viewcode-block" id="ElectronicStructure.from_hdf"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.waves.electronic.html#pyiron.dft.waves.electronic.ElectronicStructure.from_hdf">[docs]</a>    <span class="k">def</span> <span class="nf">from_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="s2">&quot;electronic_structure&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieve the object from the hdf5 file</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            hdf: Path to the hdf5 file/group in the file</span>
+<span class="sd">            group_name: Name of the group under which the attributes are stored</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="s2">&quot;dos&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">hdf</span><span class="p">[</span><span class="n">group_name</span><span class="p">]</span><span class="o">.</span><span class="n">list_groups</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">from_hdf_old</span><span class="p">(</span><span class="n">hdf</span><span class="o">=</span><span class="n">hdf</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="n">group_name</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">hdf</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">group_name</span><span class="p">)</span> <span class="k">as</span> <span class="n">h_es</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s2">&quot;TYPE&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">h_es</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">():</span>
+                    <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;TYPE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+                <span class="n">nodes</span> <span class="o">=</span> <span class="n">h_es</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">()</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="n">h_es</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">kpoint_list</span> <span class="o">=</span> <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;k_points&quot;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">kpoint_weights</span> <span class="o">=</span> <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;k_weights&quot;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">eigenvalue_matrix</span> <span class="o">=</span> <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;eig_matrix&quot;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">occupancy_matrix</span> <span class="o">=</span> <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;occ_matrix&quot;</span><span class="p">]</span>
+                <span class="k">if</span> <span class="s2">&quot;efermi&quot;</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">efermi</span> <span class="o">=</span> <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;efermi&quot;</span><span class="p">]</span>
+                <span class="k">with</span> <span class="n">h_es</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;dos&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h_dos</span><span class="p">:</span>
+                    <span class="n">nodes</span> <span class="o">=</span> <span class="n">h_dos</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">()</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">dos_energies</span> <span class="o">=</span> <span class="n">h_dos</span><span class="p">[</span><span class="s2">&quot;energies&quot;</span><span class="p">]</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">dos_densities</span> <span class="o">=</span> <span class="n">h_dos</span><span class="p">[</span><span class="s2">&quot;tot_densities&quot;</span><span class="p">]</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">dos_idensities</span> <span class="o">=</span> <span class="n">h_dos</span><span class="p">[</span><span class="s2">&quot;int_densities&quot;</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="s2">&quot;grand_dos_matrix&quot;</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">grand_dos_matrix</span> <span class="o">=</span> <span class="n">h_dos</span><span class="p">[</span><span class="s2">&quot;grand_dos_matrix&quot;</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="s2">&quot;resolved_densities&quot;</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">resolved_densities</span> <span class="o">=</span> <span class="n">h_dos</span><span class="p">[</span><span class="s2">&quot;resolved_densities&quot;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">generate_from_matrices</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="ElectronicStructure.to_hdf_old"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.waves.electronic.html#pyiron.dft.waves.electronic.ElectronicStructure.to_hdf_old">[docs]</a>    <span class="k">def</span> <span class="nf">to_hdf_old</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="s2">&quot;electronic_structure&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Store the object to hdf5 file</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            hdf: Path to the hdf5 file/group in the file</span>
+<span class="sd">            group_name: Name of the group under which the attributes are o be stored</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="n">hdf</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">group_name</span><span class="p">)</span> <span class="k">as</span> <span class="n">h_es</span><span class="p">:</span>
+            <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;TYPE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="n">h_es</span><span class="p">)</span>
+            <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;k_points&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kpoint_list</span>
+            <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;k_point_weights&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kpoint_weights</span>
+            <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;eigenvalue_matrix&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eigenvalue_matrix</span>
+            <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;occupancy_matrix&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">occupancy_matrix</span>
+            <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;dos_energies&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dos_energies</span>
+            <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;dos_densities&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dos_densities</span>
+            <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;dos_idensities&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dos_idensities</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">efermi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;fermi_level&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">efermi</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">grand_dos_matrix</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;grand_dos_matrix&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grand_dos_matrix</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolved_densities</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;resolved_densities&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolved_densities</span></div>
+
+<div class="viewcode-block" id="ElectronicStructure.from_hdf_old"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.waves.electronic.html#pyiron.dft.waves.electronic.ElectronicStructure.from_hdf_old">[docs]</a>    <span class="k">def</span> <span class="nf">from_hdf_old</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="s2">&quot;electronic_structure&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieve the object from the hdf5 file</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            hdf: Path to the hdf5 file/group in the file</span>
+<span class="sd">            group_name: Name of the group under which the attributes are stored</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="n">hdf</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">group_name</span><span class="p">)</span> <span class="k">as</span> <span class="n">h_es</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s2">&quot;structure&quot;</span> <span class="ow">in</span> <span class="n">h_es</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">Atoms</span><span class="p">()</span><span class="o">.</span><span class="n">from_hdf</span><span class="p">(</span><span class="n">h_es</span><span class="p">)</span>
+            <span class="n">nodes</span> <span class="o">=</span> <span class="n">h_es</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">kpoint_list</span> <span class="o">=</span> <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;k_points&quot;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">kpoint_weights</span> <span class="o">=</span> <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;k_point_weights&quot;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">eigenvalue_matrix</span> <span class="o">=</span> <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;eigenvalue_matrix&quot;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">occupancy_matrix</span> <span class="o">=</span> <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;occupancy_matrix&quot;</span><span class="p">]</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">dos_energies</span> <span class="o">=</span> <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;dos_energies&quot;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">dos_densities</span> <span class="o">=</span> <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;dos_densities&quot;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">dos_idensities</span> <span class="o">=</span> <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;dos_idensities&quot;</span><span class="p">]</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="k">pass</span>
+            <span class="k">if</span> <span class="s2">&quot;fermi_level&quot;</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">efermi</span> <span class="o">=</span> <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;fermi_level&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s2">&quot;grand_dos_matrix&quot;</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">grand_dos_matrix</span> <span class="o">=</span> <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;grand_dos_matrix&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s2">&quot;resolved_densities&quot;</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">resolved_densities</span> <span class="o">=</span> <span class="n">h_es</span><span class="p">[</span><span class="s2">&quot;resolved_densities&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">generate_from_matrices</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="ElectronicStructure.generate_from_matrices"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.waves.electronic.html#pyiron.dft.waves.electronic.ElectronicStructure.generate_from_matrices">[docs]</a>    <span class="k">def</span> <span class="nf">generate_from_matrices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate the Kpoints and Bands from the kpoint lists and sometimes grand_dos_matrix</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kpoint_list</span><span class="p">)):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_kpoint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kpoint_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">kpoint_weights</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">eigenvalue_matrix</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+                <span class="n">val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eigenvalue_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+                <span class="n">occ</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">occupancy_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">add_band</span><span class="p">(</span><span class="n">eigenvalue</span><span class="o">=</span><span class="n">val</span><span class="p">,</span> <span class="n">occupancy</span><span class="o">=</span><span class="n">occ</span><span class="p">)</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_grand_dos_matrix</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">bands</span><span class="p">[</span>
+                        <span class="o">-</span><span class="mi">1</span>
+                    <span class="p">]</span><span class="o">.</span><span class="n">resolved_dos_matrix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grand_dos_matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span></div>
+
+<div class="viewcode-block" id="ElectronicStructure.get_spin_resolved_dos"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.waves.electronic.html#pyiron.dft.waves.electronic.ElectronicStructure.get_spin_resolved_dos">[docs]</a>    <span class="k">def</span> <span class="nf">get_spin_resolved_dos</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spin_indices</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the spin resolved DOS</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            spin_indices (int): The index of the spin for which the DOS is required</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Spin resolved dos (numpy.ndarray instance)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dos_energies</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The DOS is not computed/saved for this vasp run&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dos_densities</span><span class="p">[</span><span class="n">spin_indices</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="ElectronicStructure.get_resolved_dos"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.waves.electronic.html#pyiron.dft.waves.electronic.ElectronicStructure.get_resolved_dos">[docs]</a>    <span class="k">def</span> <span class="nf">get_resolved_dos</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spin_indices</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">atom_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">orbital_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get resolved dos based on the specified spin, atom and orbital indices</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            spin_indices (int/list/numpy.ndarray): spin indices</span>
+<span class="sd">            atom_indices (int/list/numpy.ndarray): stom indices</span>
+<span class="sd">            orbital_indices (int/list/numpy.ndarray): orbital indices (based on orbital_dict)</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            rdos (numpy.ndarray): Required resolved dos</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dos_energies</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The DOS is not computed/saved for this vasp run&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolved_densities</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The resolved DOS is not available for this calculation&quot;</span><span class="p">)</span>
+        <span class="n">rdos</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">spin_indices</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
+            <span class="n">rdos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resolved_densities</span><span class="p">[</span><span class="n">spin_indices</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">spin_indices</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="n">rdos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolved_densities</span><span class="p">[</span><span class="n">spin_indices</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">atom_indices</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">atom_indices</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
+                <span class="n">rdos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">rdos</span><span class="p">[</span><span class="n">atom_indices</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">atom_indices</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+                <span class="n">rdos</span> <span class="o">=</span> <span class="n">rdos</span><span class="p">[</span><span class="n">atom_indices</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rdos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">rdos</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">orbital_indices</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">orbital_indices</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
+                <span class="n">rdos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">rdos</span><span class="p">[</span><span class="n">orbital_indices</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">orbital_indices</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+                <span class="n">rdos</span> <span class="o">=</span> <span class="n">rdos</span><span class="p">[</span><span class="n">orbital_indices</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rdos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">rdos</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">rdos</span></div>
+
+<div class="viewcode-block" id="ElectronicStructure.plot_fermi_dirac"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.waves.electronic.html#pyiron.dft.waves.electronic.ElectronicStructure.plot_fermi_dirac">[docs]</a>    <span class="k">def</span> <span class="nf">plot_fermi_dirac</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Plots the obtained eigenvalue vs occupation plot</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+        <span class="k">except</span> <span class="ne">ModuleNotFoundError</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+        <span class="n">arg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">[</span><span class="n">arg</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">occupancies</span><span class="p">[</span><span class="n">arg</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span>
+        <span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">efermi</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Energies (eV)&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Occupancy&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">plt</span></div>
+
+    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eigenvalues</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_occupancies</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eg</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vbm</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cbm</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_efermi</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eigenvalue_matrix</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_occupancy_matrix</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_grand_dos_matrix</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kpoint_list</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kpoint_weights</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_spins</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">output_string</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="n">output_string</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;ElectronicStructure Instance&quot;</span><span class="p">)</span>
+        <span class="n">output_string</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;----------------------------&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">grand_dos_matrix</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">output_string</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="s2">&quot;Spin Configurations: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grand_dos_matrix</span><span class="p">))</span>
+            <span class="p">)</span>
+        <span class="n">output_string</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Number of k-points: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span><span class="p">)))</span>
+        <span class="n">output_string</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Number of bands: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kpoints</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bands</span><span class="p">)))</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_metal</span><span class="p">:</span>
+                <span class="n">output_string</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Is a metal: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">is_metal</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_metal</span><span class="p">:</span>
+            <span class="n">output_string</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="s2">&quot;Band Gap: </span><span class="si">{}</span><span class="s2"> eV&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_band_gap</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="mf">1.0e-4</span><span class="p">)[</span><span class="s2">&quot;band_gap&quot;</span><span class="p">])</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_string</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="Kpoint"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.waves.electronic.html#pyiron.dft.waves.electronic.Kpoint">[docs]</a><span class="k">class</span> <span class="nc">Kpoint</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    All data related to a single k-point is stored in this module</span>
+
+
+<span class="sd">    Attributes:</span>
+
+<span class="sd">        bands (list): List of pyiron.objects.waves.settings.Band object</span>
+<span class="sd">        .. value (float): Value of the k-point</span>
+<span class="sd">        .. weight (float): Weight of the k-point used in integration of quantities</span>
+<span class="sd">        .. eig_occ_matrix (numpy.ndarray): A Nx2 matrix with the first column with eigenvalues and the second with</span>
+<span class="sd">                                    occupancies of every band. N being the number of bands assoiated with the k-point</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_weight</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bands</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_relative</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span>
+
+    <span class="nd">@value</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">weight</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_weight</span>
+
+    <span class="nd">@weight</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">weight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_weight</span> <span class="o">=</span> <span class="n">val</span>
+
+<div class="viewcode-block" id="Kpoint.add_band"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.waves.electronic.html#pyiron.dft.waves.electronic.Kpoint.add_band">[docs]</a>    <span class="k">def</span> <span class="nf">add_band</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">eigenvalue</span><span class="p">,</span> <span class="n">occupancy</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a pyiron.objects.waves.core.Band instance</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            eigenvalue (float): The eigenvalue associated with the Band instance</span>
+<span class="sd">            occupancy (flaot): The occupancy associated with the Band instance</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">band_obj</span> <span class="o">=</span> <span class="n">Band</span><span class="p">()</span>
+        <span class="n">band_obj</span><span class="o">.</span><span class="n">eigenvalue</span> <span class="o">=</span> <span class="n">eigenvalue</span>
+        <span class="n">band_obj</span><span class="o">.</span><span class="n">occupancy</span> <span class="o">=</span> <span class="n">occupancy</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bands</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">band_obj</span><span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">eig_occ_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">b</span><span class="o">.</span><span class="n">eigenvalue</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">occupancy</span><span class="p">]</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">bands</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="Band"><a class="viewcode-back" href="../../../../apidoc/pyiron.dft.waves.electronic.html#pyiron.dft.waves.electronic.Band">[docs]</a><span class="k">class</span> <span class="nc">Band</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    All data related to a single band for every k-point is stored in this module</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_eigenvalue</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_occupancy</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_resolved_dos_matrix</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">eigenvalue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        float: The eigenvalue of a given band at a given k-point</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eigenvalue</span>
+
+    <span class="nd">@eigenvalue</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">eigenvalue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_eigenvalue</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">occupancy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        float: The occupancy of a given band at a given k-point</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_occupancy</span>
+
+    <span class="nd">@occupancy</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">occupancy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_occupancy</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">resolved_dos_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        numpy.ndarray instance: 2D matrix with n rows and m columns; n being the unmber of</span>
+<span class="sd">                                atoms and m being the number of orbitals</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolved_dos_matrix</span>
+
+    <span class="nd">@resolved_dos_matrix</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">resolved_dos_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_resolved_dos_matrix</span> <span class="o">=</span> <span class="n">val</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+pyiron.base.generic.parameters module
+=====================================
+
+.. automodule:: pyiron.base.generic.parameters
+   :members:
+   :undoc-members:
+   :show-inheritance:

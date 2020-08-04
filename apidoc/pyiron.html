@@ -1,0 +1,510 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron package &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>pyiron package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/pyiron.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="pyiron-package">
+<h1>pyiron package<a class="headerlink" href="#pyiron-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pyiron.atomistics.html">pyiron.atomistics package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.atomistics.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.atomistics.generic.html">pyiron.atomistics.generic package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.atomistics.generic.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.atomistics.generic.html#module-pyiron.atomistics.generic">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.atomistics.job.html">pyiron.atomistics.job package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.atomistics.job.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.atomistics.job.html#module-pyiron.atomistics.job">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.atomistics.master.html">pyiron.atomistics.master package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.atomistics.master.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.atomistics.master.html#module-pyiron.atomistics.master">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.atomistics.nma.html">pyiron.atomistics.nma package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.atomistics.nma.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.atomistics.nma.html#module-pyiron.atomistics.nma">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.atomistics.structure.html">pyiron.atomistics.structure package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.atomistics.structure.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.atomistics.structure.html#module-pyiron.atomistics.structure">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.atomistics.thermodynamics.html">pyiron.atomistics.thermodynamics package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.atomistics.thermodynamics.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.atomistics.thermodynamics.html#module-pyiron.atomistics.thermodynamics">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.atomistics.volumetric.html">pyiron.atomistics.volumetric package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.atomistics.volumetric.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.atomistics.volumetric.html#module-pyiron.atomistics.volumetric">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.atomistics.html#module-pyiron.atomistics">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyiron.base.html">pyiron.base package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.base.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.base.database.html">pyiron.base.database package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.base.database.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.base.database.html#module-pyiron.base.database">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.base.generic.html">pyiron.base.generic package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.base.generic.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.base.generic.html#module-pyiron.base.generic">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.base.job.html">pyiron.base.job package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.base.job.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.base.job.html#module-pyiron.base.job">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.base.master.html">pyiron.base.master package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.base.master.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.base.master.html#module-pyiron.base.master">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.base.project.html">pyiron.base.project package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.base.project.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.base.project.html#module-pyiron.base.project">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.base.pyio.html">pyiron.base.pyio package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.base.pyio.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.base.pyio.html#module-pyiron.base.pyio">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.base.server.html">pyiron.base.server package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.base.server.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.base.server.html#module-pyiron.base.server">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.base.settings.html">pyiron.base.settings package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.base.settings.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.base.settings.html#module-pyiron.base.settings">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.base.html#module-pyiron.base">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyiron.cli.html">pyiron.cli package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.cli.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.cli.install.html">pyiron.cli.install module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.cli.ls.html">pyiron.cli.ls module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.cli.reloadfile.html">pyiron.cli.reloadfile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.cli.rm.html">pyiron.cli.rm module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.cli.wrapper.html">pyiron.cli.wrapper module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.cli.html#module-pyiron.cli">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyiron.dft.html">pyiron.dft package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.dft.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.dft.job.html">pyiron.dft.job package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.dft.job.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.dft.job.html#module-pyiron.dft.job">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.dft.master.html">pyiron.dft.master package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.dft.master.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.dft.master.html#module-pyiron.dft.master">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.dft.waves.html">pyiron.dft.waves package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.dft.waves.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyiron.dft.waves.html#module-pyiron.dft.waves">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.dft.html#module-pyiron.dft">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyiron.gaussian.html">pyiron.gaussian package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.gaussian.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.gaussian.gaussian.html">pyiron.gaussian.gaussian module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.gaussian.html#module-pyiron.gaussian">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyiron.gpaw.html">pyiron.gpaw package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.gpaw.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.gpaw.gpaw.html">pyiron.gpaw.gpaw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.gpaw.pyiron_ase.html">pyiron.gpaw.pyiron_ase module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.gpaw.html#module-pyiron.gpaw">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyiron.interactive.html">pyiron.interactive package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.interactive.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.interactive.scipy_minimizer.html">pyiron.interactive.scipy_minimizer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.interactive.sxextoptint.html">pyiron.interactive.sxextoptint module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.interactive.html#module-pyiron.interactive">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyiron.lammps.html">pyiron.lammps package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.lammps.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.lammps.base.html">pyiron.lammps.base module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.lammps.control.html">pyiron.lammps.control module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.lammps.interactive.html">pyiron.lammps.interactive module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.lammps.lammps.html">pyiron.lammps.lammps module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.lammps.potential.html">pyiron.lammps.potential module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.lammps.structure.html">pyiron.lammps.structure module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.lammps.html#module-pyiron.lammps">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyiron.quickff.html">pyiron.quickff package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.quickff.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.quickff.quickff.html">pyiron.quickff.quickff module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.quickff.html#module-pyiron.quickff">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyiron.sphinx.html">pyiron.sphinx package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.sphinx.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.sphinx.base.html">pyiron.sphinx.base module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.sphinx.interactive.html">pyiron.sphinx.interactive module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.sphinx.potential.html">pyiron.sphinx.potential module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.sphinx.sphinx.html">pyiron.sphinx.sphinx module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.sphinx.structure.html">pyiron.sphinx.structure module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.sphinx.volumetric_data.html">pyiron.sphinx.volumetric_data module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.sphinx.html#module-pyiron.sphinx">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyiron.table.html">pyiron.table package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.table.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.table.datamining.html">pyiron.table.datamining module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.table.funct.html">pyiron.table.funct module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.table.html#module-pyiron.table">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyiron.testing.html">pyiron.testing package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.testing.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.testing.executable.html">pyiron.testing.executable module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.testing.randomatomistic.html">pyiron.testing.randomatomistic module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.testing.html#module-pyiron.testing">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyiron.thermodynamics.html">pyiron.thermodynamics package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.thermodynamics.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.thermodynamics.hessian.html">pyiron.thermodynamics.hessian module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.thermodynamics.interfacemethod.html">pyiron.thermodynamics.interfacemethod module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.thermodynamics.sxphonons.html">pyiron.thermodynamics.sxphonons module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.thermodynamics.html#module-pyiron.thermodynamics">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyiron.vasp.html">pyiron.vasp package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.vasp.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.vasp.base.html">pyiron.vasp.base module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.vasp.interactive.html">pyiron.vasp.interactive module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.vasp.metadyn.html">pyiron.vasp.metadyn module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.vasp.outcar.html">pyiron.vasp.outcar module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.vasp.potential.html">pyiron.vasp.potential module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.vasp.procar.html">pyiron.vasp.procar module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.vasp.report.html">pyiron.vasp.report module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.vasp.structure.html">pyiron.vasp.structure module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.vasp.vasp.html">pyiron.vasp.vasp module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.vasp.vasprun.html">pyiron.vasp.vasprun module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.vasp.vaspsol.html">pyiron.vasp.vaspsol module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.vasp.volumetric_data.html">pyiron.vasp.volumetric_data module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.vasp.html#module-pyiron.vasp">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyiron.yaff.html">pyiron.yaff package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.yaff.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyiron.yaff.yaff.html">pyiron.yaff.yaff module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyiron.yaff.html#module-pyiron.yaff">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pyiron.project.html">pyiron.project module</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="module-pyiron">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyiron" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="pyiron.install">
+<code class="sig-prename descclassname">pyiron.</code><code class="sig-name descname">install</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron.html#install"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.install" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

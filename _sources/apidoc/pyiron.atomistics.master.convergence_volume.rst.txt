@@ -1,0 +1,7 @@
+pyiron.atomistics.master.convergence\_volume module
+===================================================
+
+.. automodule:: pyiron.atomistics.master.convergence_volume
+   :members:
+   :undoc-members:
+   :show-inheritance:

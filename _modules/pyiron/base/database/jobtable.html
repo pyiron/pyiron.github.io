@@ -1,0 +1,651 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.base.database.jobtable &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.base.database.jobtable</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.base.database.jobtable</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.settings.generic</span> <span class="kn">import</span> <span class="n">Settings</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The Jobtable module provides a set of top level functions to interact with the database.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2020, Max-Planck-Institut für Eisenforschung GmbH - &quot;</span>
+    <span class="s2">&quot;Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;janssen@mpie.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;production&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;Sep 1, 2017&quot;</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">Settings</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">_job_dict</span><span class="p">(</span>
+    <span class="n">database</span><span class="p">,</span>
+    <span class="n">sql_query</span><span class="p">,</span>
+    <span class="n">user</span><span class="p">,</span>
+    <span class="n">project_path</span><span class="p">,</span>
+    <span class="n">recursive</span><span class="p">,</span>
+    <span class="n">job</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">sub_job_name</span><span class="o">=</span><span class="s2">&quot;%&quot;</span><span class="p">,</span>
+    <span class="n">element_lst</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Internal function to access the database from the project directly.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        database (DatabaseAccess): Database object</span>
+<span class="sd">        sql_query (str): SQL query to enter a more specific request</span>
+<span class="sd">        user (str): username of the user whoes user space should be searched</span>
+<span class="sd">        project_path (str): root_path - this is in contrast to the project_path in GenericPath</span>
+<span class="sd">        recursive (bool): search subprojects [True/False]</span>
+<span class="sd">        job (str): job_name - by default None</span>
+<span class="sd">        sub_job_name (str): path inside the HDF5 file - &quot;%&quot; by default to accept any path</span>
+<span class="sd">        element_lst (list): list of elements required in the chemical formular - by default None</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: the function returns a list of dicts like get_items_sql, but it does not format datetime:</span>
+<span class="sd">             [{&#39;chemicalformula&#39;: u&#39;Ni108&#39;,</span>
+<span class="sd">              &#39;computer&#39;: u&#39;mapc157&#39;,</span>
+<span class="sd">              &#39;hamilton&#39;: u&#39;LAMMPS&#39;,</span>
+<span class="sd">              &#39;hamversion&#39;: u&#39;1.1&#39;,</span>
+<span class="sd">              &#39;id&#39;: 24,</span>
+<span class="sd">              &#39;job&#39;: u&#39;DOF_1_0&#39;,</span>
+<span class="sd">              &#39;parentid&#39;: 21L,</span>
+<span class="sd">              &#39;project&#39;: u&#39;lammps.phonons.Ni_fcc&#39;,</span>
+<span class="sd">              &#39;projectpath&#39;: u&#39;D:/PyIron/PyIron_data/projects&#39;,</span>
+<span class="sd">              &#39;status&#39;: u&#39;finished&#39;,</span>
+<span class="sd">              &#39;timestart&#39;: datetime.datetime(2016, 6, 24, 10, 17, 3, 140000),</span>
+<span class="sd">              &#39;timestop&#39;: datetime.datetime(2016, 6, 24, 10, 17, 3, 173000),</span>
+<span class="sd">              &#39;totalcputime&#39;: 0.033,</span>
+<span class="sd">              &#39;username&#39;: u&#39;test&#39;},</span>
+<span class="sd">             {&#39;chemicalformula&#39;: u&#39;Ni108&#39;,</span>
+<span class="sd">              &#39;computer&#39;: u&#39;mapc157&#39;,</span>
+<span class="sd">              &#39;hamilton&#39;: u&#39;LAMMPS&#39;,</span>
+<span class="sd">              &#39;hamversion&#39;: u&#39;1.1&#39;,</span>
+<span class="sd">              &#39;id&#39;: 21,</span>
+<span class="sd">              &#39;job&#39;: u&#39;ref&#39;,</span>
+<span class="sd">              &#39;parentid&#39;: 20L,</span>
+<span class="sd">              &#39;project&#39;: u&#39;lammps.phonons.Ni_fcc&#39;,</span>
+<span class="sd">              &#39;projectpath&#39;: u&#39;D:/PyIron/PyIron_data/projects&#39;,</span>
+<span class="sd">              &#39;status&#39;: u&#39;finished&#39;,</span>
+<span class="sd">              &#39;timestart&#39;: datetime.datetime(2016, 6, 24, 10, 17, 2, 429000),</span>
+<span class="sd">              &#39;timestop&#39;: datetime.datetime(2016, 6, 24, 10, 17, 2, 463000),</span>
+<span class="sd">              &#39;totalcputime&#39;: 0.034,</span>
+<span class="sd">              &#39;username&#39;: u&#39;test&#39;},.......]</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dict_clause</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="c1"># FOR GET_ITEMS_SQL: clause = []</span>
+    <span class="k">if</span> <span class="n">user</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">dict_clause</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+        <span class="c1"># FOR GET_ITEMS_SQL: clause.append(&quot;username = &#39;&quot; + self.user + &quot;&#39;&quot;)</span>
+    <span class="k">if</span> <span class="n">sql_query</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># FOR GET_ITEMS_SQL: clause.append(self.sql_query)</span>
+        <span class="k">if</span> <span class="s2">&quot;AND&quot;</span> <span class="ow">in</span> <span class="n">sql_query</span><span class="p">:</span>
+            <span class="n">cl_split</span> <span class="o">=</span> <span class="n">sql_query</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; AND &quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="s2">&quot;and&quot;</span> <span class="ow">in</span> <span class="n">sql_query</span><span class="p">:</span>
+            <span class="n">cl_split</span> <span class="o">=</span> <span class="n">sql_query</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; and &quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cl_split</span> <span class="o">=</span> <span class="p">[</span><span class="n">sql_query</span><span class="p">]</span>
+        <span class="n">dict_clause</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+            <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]):</span> <span class="n">element</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">cl_split</span><span class="p">}</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">job</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">dict_clause</span><span class="p">[</span><span class="s2">&quot;job&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">recursive</span><span class="p">:</span>
+        <span class="n">dict_clause</span><span class="p">[</span><span class="s2">&quot;project&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">project_path</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;%&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">dict_clause</span><span class="p">[</span><span class="s2">&quot;project&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">project_path</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">sub_job_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">dict_clause</span><span class="p">[</span><span class="s2">&quot;subjob&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">elif</span> <span class="n">sub_job_name</span> <span class="o">!=</span> <span class="s2">&quot;%&quot;</span><span class="p">:</span>
+        <span class="n">dict_clause</span><span class="p">[</span><span class="s2">&quot;subjob&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">sub_job_name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">element_lst</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">dict_clause</span><span class="p">[</span><span class="s2">&quot;element_lst&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">element_lst</span>
+
+    <span class="n">s</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;sql_query: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">dict_clause</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">database</span><span class="o">.</span><span class="n">get_items_dict</span><span class="p">(</span><span class="n">dict_clause</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="get_db_columns"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.database.jobtable.html#pyiron.base.database.jobtable.get_db_columns">[docs]</a><span class="k">def</span> <span class="nf">get_db_columns</span><span class="p">(</span><span class="n">database</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get column names</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        database (DatabaseAccess): Database object</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: list of column names like:</span>
+<span class="sd">             [&#39;id&#39;,</span>
+<span class="sd">             &#39;parentid&#39;,</span>
+<span class="sd">             &#39;masterid&#39;,</span>
+<span class="sd">             &#39;projectpath&#39;,</span>
+<span class="sd">             &#39;project&#39;,</span>
+<span class="sd">             &#39;job&#39;,</span>
+<span class="sd">             &#39;subjob&#39;,</span>
+<span class="sd">             &#39;chemicalformula&#39;,</span>
+<span class="sd">             &#39;status&#39;,</span>
+<span class="sd">             &#39;hamilton&#39;,</span>
+<span class="sd">             &#39;hamversion&#39;,</span>
+<span class="sd">             &#39;username&#39;,</span>
+<span class="sd">             &#39;computer&#39;,</span>
+<span class="sd">             &#39;timestart&#39;,</span>
+<span class="sd">             &#39;timestop&#39;,</span>
+<span class="sd">             &#39;totalcputime&#39;]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">database</span><span class="o">.</span><span class="n">get_table_headings</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="job_table"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.database.jobtable.html#pyiron.base.database.jobtable.job_table">[docs]</a><span class="k">def</span> <span class="nf">job_table</span><span class="p">(</span>
+    <span class="n">database</span><span class="p">,</span>
+    <span class="n">sql_query</span><span class="p">,</span>
+    <span class="n">user</span><span class="p">,</span>
+    <span class="n">project_path</span><span class="p">,</span>
+    <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">columns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">all_columns</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">sort_by</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">,</span>
+    <span class="n">max_colwidth</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+    <span class="n">full_table</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">element_lst</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">job_name_contains</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Access the job_table</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        database (DatabaseAccess): Database object</span>
+<span class="sd">        sql_query (str): SQL query to enter a more specific request</span>
+<span class="sd">        user (str): username of the user whoes user space should be searched</span>
+<span class="sd">        project_path (str): root_path - this is in contrast to the project_path in GenericPath</span>
+<span class="sd">        recursive (bool): search subprojects [True/False]</span>
+<span class="sd">        columns (list): by default only the columns [&#39;job&#39;, &#39;project&#39;, &#39;chemicalformula&#39;] are selected, but the</span>
+<span class="sd">                        user can select a subset of [&#39;id&#39;, &#39;status&#39;, &#39;chemicalformula&#39;, &#39;job&#39;, &#39;subjob&#39;, &#39;project&#39;,</span>
+<span class="sd">                        &#39;projectpath&#39;, &#39;timestart&#39;, &#39;timestop&#39;, &#39;totalcputime&#39;, &#39;computer&#39;, &#39;hamilton&#39;, &#39;hamversion&#39;,</span>
+<span class="sd">                        &#39;parentid&#39;, &#39;masterid&#39;]</span>
+<span class="sd">        all_columns (bool): Select all columns - this overwrites the columns option.</span>
+<span class="sd">        sort_by (str): Sort by a specific column</span>
+<span class="sd">        max_colwidth (int): set the column width</span>
+<span class="sd">        full_table (bool): Whether to show the entire pandas table</span>
+<span class="sd">        element_lst (list): list of elements required in the chemical formular - by default None</span>
+<span class="sd">        job_name_contains (str): a string which should be contained in every job_name</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pandas.Dataframe: Return the result as a pandas.Dataframe object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">columns</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;job&quot;</span><span class="p">,</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span> <span class="s2">&quot;chemicalformula&quot;</span><span class="p">]</span>
+    <span class="n">all_db</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;status&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;chemicalformula&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;job&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;subjob&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;projectpath&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;project&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;timestart&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;timestop&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;totalcputime&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;computer&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;hamilton&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;hamversion&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parentid&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;masterid&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">all_columns</span><span class="p">:</span>
+        <span class="n">columns</span> <span class="o">=</span> <span class="n">all_db</span>
+    <span class="n">job_dict</span> <span class="o">=</span> <span class="n">_job_dict</span><span class="p">(</span>
+        <span class="n">database</span><span class="o">=</span><span class="n">database</span><span class="p">,</span>
+        <span class="n">sql_query</span><span class="o">=</span><span class="n">sql_query</span><span class="p">,</span>
+        <span class="n">user</span><span class="o">=</span><span class="n">user</span><span class="p">,</span>
+        <span class="n">project_path</span><span class="o">=</span><span class="n">project_path</span><span class="p">,</span>
+        <span class="n">recursive</span><span class="o">=</span><span class="n">recursive</span><span class="p">,</span>
+        <span class="n">element_lst</span><span class="o">=</span><span class="n">element_lst</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">full_table</span><span class="p">:</span>
+        <span class="n">pandas</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">pandas</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">pandas</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;display.max_colwidth&quot;</span><span class="p">,</span> <span class="n">max_colwidth</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">job_dict</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">job_dict</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">df</span>
+    <span class="k">if</span> <span class="n">job_name_contains</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">job</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">job_name_contains</span><span class="p">)]</span>
+    <span class="k">if</span> <span class="n">sort_by</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">df</span><span class="p">[</span><span class="n">columns</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="n">sort_by</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span><span class="p">[</span><span class="n">columns</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="get_jobs"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.database.jobtable.html#pyiron.base.database.jobtable.get_jobs">[docs]</a><span class="k">def</span> <span class="nf">get_jobs</span><span class="p">(</span><span class="n">database</span><span class="p">,</span> <span class="n">sql_query</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">project_path</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Internal function to return the jobs as dictionary rather than a pandas.Dataframe</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        database (DatabaseAccess): Database object</span>
+<span class="sd">        sql_query (str): SQL query to enter a more specific request</span>
+<span class="sd">        user (str): username of the user whoes user space should be searched</span>
+<span class="sd">        project_path (str): root_path - this is in contrast to the project_path in GenericPath</span>
+<span class="sd">        recursive (bool): search subprojects [True/False]</span>
+<span class="sd">        columns (list): by default only the columns [&#39;id&#39;, &#39;project&#39;] are selected, but the user can select a subset</span>
+<span class="sd">                        of [&#39;id&#39;, &#39;status&#39;, &#39;chemicalformula&#39;, &#39;job&#39;, &#39;subjob&#39;, &#39;project&#39;, &#39;projectpath&#39;, &#39;timestart&#39;,</span>
+<span class="sd">                        &#39;timestop&#39;, &#39;totalcputime&#39;, &#39;computer&#39;, &#39;hamilton&#39;, &#39;hamversion&#39;, &#39;parentid&#39;, &#39;masterid&#39;]</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: columns are used as keys and point to a list of the corresponding values</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">columns</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;project&quot;</span><span class="p">]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">job_table</span><span class="p">(</span><span class="n">database</span><span class="p">,</span> <span class="n">sql_query</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">project_path</span><span class="p">,</span> <span class="n">recursive</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">dictionary</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+            <span class="n">dictionary</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">dictionary</span>
+        <span class="c1"># return {key: list() for key in columns}</span>
+    <span class="n">dictionary</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">dictionary</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span>
+            <span class="n">key</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>  <span class="c1"># ToDo: Check difference of tolist and to_list</span>
+    <span class="k">return</span> <span class="n">dictionary</span></div>
+    <span class="c1"># return {key: df[key].tolist() for key in df.keys()}</span>
+
+
+<div class="viewcode-block" id="get_job_ids"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.database.jobtable.html#pyiron.base.database.jobtable.get_job_ids">[docs]</a><span class="k">def</span> <span class="nf">get_job_ids</span><span class="p">(</span><span class="n">database</span><span class="p">,</span> <span class="n">sql_query</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">project_path</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the job IDs matching a specific query</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        database (DatabaseAccess): Database object</span>
+<span class="sd">        sql_query (str): SQL query to enter a more specific request</span>
+<span class="sd">        user (str): username of the user whoes user space should be searched</span>
+<span class="sd">        project_path (str): root_path - this is in contrast to the project_path in GenericPath</span>
+<span class="sd">        recursive (bool): search subprojects [True/False]</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: a list of job IDs</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">get_jobs</span><span class="p">(</span><span class="n">database</span><span class="p">,</span> <span class="n">sql_query</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">project_path</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="n">recursive</span><span class="p">)[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="get_child_ids"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.database.jobtable.html#pyiron.base.database.jobtable.get_child_ids">[docs]</a><span class="k">def</span> <span class="nf">get_child_ids</span><span class="p">(</span><span class="n">database</span><span class="p">,</span> <span class="n">sql_query</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">project_path</span><span class="p">,</span> <span class="n">job_specifier</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get the childs for a specific job</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        database (DatabaseAccess): Database object</span>
+<span class="sd">        sql_query (str): SQL query to enter a more specific request</span>
+<span class="sd">        user (str): username of the user whoes user space should be searched</span>
+<span class="sd">        project_path (str): root_path - this is in contrast to the project_path in GenericPath</span>
+<span class="sd">        job_specifier (str): name of the master job or the master jobs job ID</span>
+<span class="sd">        status (str): filter childs which match a specific status - None by default</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: list of child IDs</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">id_master</span> <span class="o">=</span> <span class="n">get_job_id</span><span class="p">(</span><span class="n">database</span><span class="p">,</span> <span class="n">sql_query</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">project_path</span><span class="p">,</span> <span class="n">job_specifier</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">id_master</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">search_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;masterid&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">id_master</span><span class="p">)}</span>
+        <span class="k">if</span> <span class="n">status</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">search_dict</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">status</span>
+        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">job</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">database</span><span class="o">.</span><span class="n">get_items_dict</span><span class="p">(</span>
+                    <span class="n">search_dict</span><span class="p">,</span> <span class="n">return_all_columns</span><span class="o">=</span><span class="kc">False</span>
+                <span class="p">)</span>
+            <span class="p">]</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_job_id"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.database.jobtable.html#pyiron.base.database.jobtable.get_job_id">[docs]</a><span class="k">def</span> <span class="nf">get_job_id</span><span class="p">(</span><span class="n">database</span><span class="p">,</span> <span class="n">sql_query</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">project_path</span><span class="p">,</span> <span class="n">job_specifier</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    get the job_id for job named job_name in the local project path from database</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        database (DatabaseAccess): Database object</span>
+<span class="sd">        sql_query (str): SQL query to enter a more specific request</span>
+<span class="sd">        user (str): username of the user whoes user space should be searched</span>
+<span class="sd">        project_path (str): root_path - this is in contrast to the project_path in GenericPath</span>
+<span class="sd">        job_specifier (str): name of the job or job ID</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        int: job ID of the job</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">job_specifier</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="n">job_specifier</span>  <span class="c1"># is id</span>
+
+    <span class="n">job_specifier</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
+    <span class="c1"># if job_specifier[0] is not &#39;/&#39;:</span>
+    <span class="c1">#     sub_job_name = &#39;/&#39; + job_specifier</span>
+    <span class="c1"># else:</span>
+    <span class="c1">#     sub_job_name = job_specifier</span>
+    <span class="c1"># job_dict = _job_dict(database, sql_query, user, project_path, recursive=False,  # job=job_specifier,</span>
+    <span class="c1">#                      sub_job_name=sub_job_name)</span>
+    <span class="c1"># if len(job_dict) == 0:</span>
+    <span class="c1">#     job_dict = _job_dict(database, sql_query, user, project_path, recursive=True,  # job=job_specifier,</span>
+    <span class="c1">#                          sub_job_name=sub_job_name)</span>
+    <span class="n">job_dict</span> <span class="o">=</span> <span class="n">_job_dict</span><span class="p">(</span>
+        <span class="n">database</span><span class="p">,</span> <span class="n">sql_query</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">project_path</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">job</span><span class="o">=</span><span class="n">job_specifier</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">job_dict</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">job_dict</span> <span class="o">=</span> <span class="n">_job_dict</span><span class="p">(</span>
+            <span class="n">database</span><span class="p">,</span> <span class="n">sql_query</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">project_path</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">job</span><span class="o">=</span><span class="n">job_specifier</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">job_dict</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">job_dict</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">job_dict</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;job name &#39;</span><span class="si">{0}</span><span class="s2">&#39; in this project &#39;</span><span class="si">{1}</span><span class="s2">&#39; is not unique &#39;</span><span class="si">{2}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">job_specifier</span><span class="p">,</span> <span class="n">project_path</span><span class="p">,</span> <span class="n">job_dict</span><span class="p">)</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="set_job_status"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.database.jobtable.html#pyiron.base.database.jobtable.set_job_status">[docs]</a><span class="k">def</span> <span class="nf">set_job_status</span><span class="p">(</span><span class="n">database</span><span class="p">,</span> <span class="n">sql_query</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">project_path</span><span class="p">,</span> <span class="n">job_specifier</span><span class="p">,</span> <span class="n">status</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Set the status of a particular job</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        database (DatabaseAccess): Database object</span>
+<span class="sd">        sql_query (str): SQL query to enter a more specific request</span>
+<span class="sd">        user (str): username of the user whoes user space should be searched</span>
+<span class="sd">        project_path (str): root_path - this is in contrast to the project_path in GenericPath</span>
+<span class="sd">        job_specifier (str): name of the job or job ID</span>
+<span class="sd">        status (str): job status can be one of the following [&#39;initialized&#39;, &#39;appended&#39;, &#39;created&#39;, &#39;submitted&#39;,</span>
+<span class="sd">                     &#39;running&#39;, &#39;aborted&#39;, &#39;collect&#39;, &#39;suspended&#39;, &#39;refresh&#39;, &#39;busy&#39;, &#39;finished&#39;]</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">database</span><span class="o">.</span><span class="n">item_update</span><span class="p">(</span>
+        <span class="p">{</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">status</span><span class="p">)},</span>
+        <span class="n">get_job_id</span><span class="p">(</span><span class="n">database</span><span class="p">,</span> <span class="n">sql_query</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">project_path</span><span class="p">,</span> <span class="n">job_specifier</span><span class="p">),</span>
+    <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_job_status"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.database.jobtable.html#pyiron.base.database.jobtable.get_job_status">[docs]</a><span class="k">def</span> <span class="nf">get_job_status</span><span class="p">(</span><span class="n">database</span><span class="p">,</span> <span class="n">sql_query</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">project_path</span><span class="p">,</span> <span class="n">job_specifier</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get the status of a particular job</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        database (DatabaseAccess): Database object</span>
+<span class="sd">        sql_query (str): SQL query to enter a more specific request</span>
+<span class="sd">        user (str): username of the user whoes user space should be searched</span>
+<span class="sd">        project_path (str): root_path - this is in contrast to the project_path in GenericPath</span>
+<span class="sd">        job_specifier (str): name of the job or job ID</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: job status can be one of the following [&#39;initialized&#39;, &#39;appended&#39;, &#39;created&#39;, &#39;submitted&#39;, &#39;running&#39;,</span>
+<span class="sd">             &#39;aborted&#39;, &#39;collect&#39;, &#39;suspended&#39;, &#39;refresh&#39;, &#39;busy&#39;, &#39;finished&#39;]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">database</span><span class="o">.</span><span class="n">get_item_by_id</span><span class="p">(</span>
+            <span class="n">get_job_id</span><span class="p">(</span><span class="n">database</span><span class="p">,</span> <span class="n">sql_query</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">project_path</span><span class="p">,</span> <span class="n">job_specifier</span><span class="p">)</span>
+        <span class="p">)[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="get_job_working_directory"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.database.jobtable.html#pyiron.base.database.jobtable.get_job_working_directory">[docs]</a><span class="k">def</span> <span class="nf">get_job_working_directory</span><span class="p">(</span><span class="n">database</span><span class="p">,</span> <span class="n">sql_query</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">project_path</span><span class="p">,</span> <span class="n">job_specifier</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get the working directory of a particular job</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        database (DatabaseAccess): Database object</span>
+<span class="sd">        sql_query (str): SQL query to enter a more specific request</span>
+<span class="sd">        user (str): username of the user whoes user space should be searched</span>
+<span class="sd">        project_path (str): root_path - this is in contrast to the project_path in GenericPath</span>
+<span class="sd">        job_specifier (str): name of the job or job ID</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: working directory as absolute path</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">db_entry</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="n">get_item_by_id</span><span class="p">(</span>
+            <span class="n">get_job_id</span><span class="p">(</span><span class="n">database</span><span class="p">,</span> <span class="n">sql_query</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">project_path</span><span class="p">,</span> <span class="n">job_specifier</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">db_entry</span><span class="p">:</span>
+            <span class="n">job_name</span> <span class="o">=</span> <span class="n">db_entry</span><span class="p">[</span><span class="s2">&quot;subjob&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="n">db_entry</span><span class="p">[</span><span class="s2">&quot;projectpath&quot;</span><span class="p">],</span>
+                <span class="n">db_entry</span><span class="p">[</span><span class="s2">&quot;project&quot;</span><span class="p">],</span>
+                <span class="n">job_name</span> <span class="o">+</span> <span class="s2">&quot;_hdf5&quot;</span><span class="p">,</span>
+                <span class="n">job_name</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

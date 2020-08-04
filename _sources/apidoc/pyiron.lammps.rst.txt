@@ -1,0 +1,23 @@
+pyiron.lammps package
+=====================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pyiron.lammps.base
+   pyiron.lammps.control
+   pyiron.lammps.interactive
+   pyiron.lammps.lammps
+   pyiron.lammps.potential
+   pyiron.lammps.structure
+
+Module contents
+---------------
+
+.. automodule:: pyiron.lammps
+   :members:
+   :undoc-members:
+   :show-inheritance:

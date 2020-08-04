@@ -1,0 +1,7 @@
+pyiron.atomistics.volumetric.generic module
+===========================================
+
+.. automodule:: pyiron.atomistics.volumetric.generic
+   :members:
+   :undoc-members:
+   :show-inheritance:

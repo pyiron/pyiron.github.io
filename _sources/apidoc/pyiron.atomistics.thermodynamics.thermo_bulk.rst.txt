@@ -1,0 +1,7 @@
+pyiron.atomistics.thermodynamics.thermo\_bulk module
+====================================================
+
+.. automodule:: pyiron.atomistics.thermodynamics.thermo_bulk
+   :members:
+   :undoc-members:
+   :show-inheritance:

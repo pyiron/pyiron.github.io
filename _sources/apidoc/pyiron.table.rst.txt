@@ -1,0 +1,19 @@
+pyiron.table package
+====================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pyiron.table.datamining
+   pyiron.table.funct
+
+Module contents
+---------------
+
+.. automodule:: pyiron.table
+   :members:
+   :undoc-members:
+   :show-inheritance:

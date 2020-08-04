@@ -1,0 +1,7 @@
+pyiron.dft.master.convergence\_encut\_serial module
+===================================================
+
+.. automodule:: pyiron.dft.master.convergence_encut_serial
+   :members:
+   :undoc-members:
+   :show-inheritance:

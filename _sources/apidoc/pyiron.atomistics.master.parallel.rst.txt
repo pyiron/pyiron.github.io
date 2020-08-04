@@ -1,0 +1,7 @@
+pyiron.atomistics.master.parallel module
+========================================
+
+.. automodule:: pyiron.atomistics.master.parallel
+   :members:
+   :undoc-members:
+   :show-inheritance:

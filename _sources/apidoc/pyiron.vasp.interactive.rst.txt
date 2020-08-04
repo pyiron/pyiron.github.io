@@ -1,0 +1,7 @@
+pyiron.vasp.interactive module
+==============================
+
+.. automodule:: pyiron.vasp.interactive
+   :members:
+   :undoc-members:
+   :show-inheritance:

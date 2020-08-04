@@ -1,0 +1,498 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.atomistics.job.interactivewrapper &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.atomistics.job.interactivewrapper</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.atomistics.job.interactivewrapper</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.generic.parameters</span> <span class="kn">import</span> <span class="n">GenericParameters</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.job.generic</span> <span class="kn">import</span> <span class="n">GenericJob</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.master.generic</span> <span class="kn">import</span> <span class="n">GenericMaster</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Osamu Waseda, Jan Janssen&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2020, Max-Planck-Institut für Eisenforschung GmbH - &quot;</span>
+    <span class="s2">&quot;Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;janssen@mpie.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;development&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;Sep 1, 2017&quot;</span>
+
+
+<div class="viewcode-block" id="InteractiveWrapper"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactivewrapper.html#pyiron.atomistics.job.interactivewrapper.InteractiveWrapper">[docs]</a><span class="k">class</span> <span class="nc">InteractiveWrapper</span><span class="p">(</span><span class="n">GenericMaster</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">job_name</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">InteractiveWrapper</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="n">job_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ref_job</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input</span> <span class="o">=</span> <span class="n">GenericParameters</span><span class="p">(</span><span class="s2">&quot;parameters&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">structure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ref_job</span><span class="o">.</span><span class="n">structure</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="nd">@structure</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basis</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ref_job</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">basis</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;A structure can only be set after a start job has been assinged.&quot;</span>
+            <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ref_job</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the reference job template from which all jobs within the ParallelMaster are generated.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            GenericJob: reference job</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ref_job</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ref_job</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">GenericJob</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_ref_job</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ref_job</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="nd">@ref_job</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">ref_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ref_job</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the reference job template from which all jobs within the ParallelMaster are generated.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ref_job (GenericJob): reference job</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">ref_job</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Run mode of the reference job not set to interactive&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ref_job</span><span class="p">)</span>
+
+<div class="viewcode-block" id="InteractiveWrapper.set_input_to_read_only"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactivewrapper.html#pyiron.atomistics.job.interactivewrapper.InteractiveWrapper.set_input_to_read_only">[docs]</a>    <span class="k">def</span> <span class="nf">set_input_to_read_only</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This function enforces read-only mode for the input classes, but it has to be implement in the individual</span>
+<span class="sd">        classes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">read_only</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="InteractiveWrapper.validate_ready_to_run"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactivewrapper.html#pyiron.atomistics.job.interactivewrapper.InteractiveWrapper.validate_ready_to_run">[docs]</a>    <span class="k">def</span> <span class="nf">validate_ready_to_run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validate that the calculation is ready to be executed. By default no generic checks are performed, but one could</span>
+<span class="sd">        check that the input information is complete or validate the consistency of the input at this point.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">validate_ready_to_run</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="InteractiveWrapper.check_setup"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactivewrapper.html#pyiron.atomistics.job.interactivewrapper.InteractiveWrapper.check_setup">[docs]</a>    <span class="k">def</span> <span class="nf">check_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Checks whether certain parameters (such as plane wave cutoff radius in DFT) are changed from the pyiron standard</span>
+<span class="sd">        values to allow for a physically meaningful results. This function is called manually or only when the job is</span>
+<span class="sd">        submitted to the queueing system.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">check_setup</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="InteractiveWrapper.ref_job_initialize"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactivewrapper.html#pyiron.atomistics.job.interactivewrapper.InteractiveWrapper.ref_job_initialize">[docs]</a>    <span class="k">def</span> <span class="nf">ref_job_initialize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_job_name_lst</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ref_job</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ref_job</span><span class="o">.</span><span class="n">_master_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_ref_job</span><span class="o">.</span><span class="n">master_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_ref_job</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">cores</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">cores</span></div>
+
+<div class="viewcode-block" id="InteractiveWrapper.get_final_structure"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactivewrapper.html#pyiron.atomistics.job.interactivewrapper.InteractiveWrapper.get_final_structure">[docs]</a>    <span class="k">def</span> <span class="nf">get_final_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+            <span class="s2">&quot;get_final_structure() is deprecated - please use get_structure() instead.&quot;</span><span class="p">,</span>
+            <span class="ne">DeprecationWarning</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ref_job</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="n">iteration_step</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="InteractiveWrapper.to_hdf"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactivewrapper.html#pyiron.atomistics.job.interactivewrapper.InteractiveWrapper.to_hdf">[docs]</a>    <span class="k">def</span> <span class="nf">to_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Store the InteractiveWrapper in an HDF5 file</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            hdf (ProjectHDFio): HDF5 group object - optional</span>
+<span class="sd">            group_name (str): HDF5 subgroup name - optional</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ref_job</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ref_job</span><span class="o">.</span><span class="n">job_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ref_job</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">InteractiveWrapper</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="n">hdf</span><span class="o">=</span><span class="n">hdf</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="n">group_name</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf5_input</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="n">hdf5_input</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="InteractiveWrapper.from_hdf"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactivewrapper.html#pyiron.atomistics.job.interactivewrapper.InteractiveWrapper.from_hdf">[docs]</a>    <span class="k">def</span> <span class="nf">from_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Restore the InteractiveWrapper from an HDF5 file</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            hdf (ProjectHDFio): HDF5 group object - optional</span>
+<span class="sd">            group_name (str): HDF5 subgroup name - optional</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">InteractiveWrapper</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">from_hdf</span><span class="p">(</span><span class="n">hdf</span><span class="o">=</span><span class="n">hdf</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="n">group_name</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf5_input</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">from_hdf</span><span class="p">(</span><span class="n">hdf5_input</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="InteractiveWrapper.collect_output"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactivewrapper.html#pyiron.atomistics.job.interactivewrapper.InteractiveWrapper.collect_output">[docs]</a>    <span class="k">def</span> <span class="nf">collect_output</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="InteractiveWrapper.collect_logfiles"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactivewrapper.html#pyiron.atomistics.job.interactivewrapper.InteractiveWrapper.collect_logfiles">[docs]</a>    <span class="k">def</span> <span class="nf">collect_logfiles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="InteractiveWrapper.db_entry"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactivewrapper.html#pyiron.atomistics.job.interactivewrapper.InteractiveWrapper.db_entry">[docs]</a>    <span class="k">def</span> <span class="nf">db_entry</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate the initial database entry</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            (dict): db_dict</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">db_dict</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">InteractiveWrapper</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">db_entry</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="p">:</span>
+            <span class="n">parent_structure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">get_parent_basis</span><span class="p">()</span>
+            <span class="n">db_dict</span><span class="p">[</span><span class="s2">&quot;ChemicalFormula&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">parent_structure</span><span class="o">.</span><span class="n">get_chemical_formula</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">db_dict</span></div>
+
+    <span class="k">def</span> <span class="nf">_db_entry_update_run_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">job_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_job_id</span><span class="p">()</span>
+        <span class="n">db_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">get_item_by_id</span><span class="p">(</span><span class="n">job_id</span><span class="p">)[</span><span class="s2">&quot;timestart&quot;</span><span class="p">]</span>
+        <span class="n">db_dict</span><span class="p">[</span><span class="s2">&quot;timestop&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="n">db_dict</span><span class="p">[</span><span class="s2">&quot;totalcputime&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">db_dict</span><span class="p">[</span><span class="s2">&quot;timestop&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span><span class="o">.</span><span class="n">seconds</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">item_update</span><span class="p">(</span><span class="n">db_dict</span><span class="p">,</span> <span class="n">job_id</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_finish_job</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">finished</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_db_entry_update_run_time</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, status: </span><span class="si">{}</span><span class="s2">, monte carlo master&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">job_info_str</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_calculate_successor</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_to_database</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_master</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get/ read data from the GenericMaster</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            item (str, slice): path to the data or key of the data object</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict, list, float, int: data or data object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">child_id_lst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">child_ids</span>
+        <span class="n">child_name_lst</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">get_item_by_id</span><span class="p">(</span><span class="n">child_id</span><span class="p">)[</span><span class="s2">&quot;job&quot;</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">child_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">child_ids</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="n">total_lst</span> <span class="o">=</span> <span class="n">child_name_lst</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job_name_lst</span>
+            <span class="n">item</span> <span class="o">=</span> <span class="n">total_lst</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_item_when_str</span><span class="p">(</span>
+            <span class="n">item</span><span class="o">=</span><span class="n">item</span><span class="p">,</span> <span class="n">child_id_lst</span><span class="o">=</span><span class="n">child_id_lst</span><span class="p">,</span> <span class="n">child_name_lst</span><span class="o">=</span><span class="n">child_name_lst</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ReferenceJobOutput"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactivewrapper.html#pyiron.atomistics.job.interactivewrapper.ReferenceJobOutput">[docs]</a><span class="k">class</span> <span class="nc">ReferenceJobOutput</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_job</span> <span class="o">=</span> <span class="n">job</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">indices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">indices</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">cells</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">cells</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">energy_pot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">energy_pot</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">energy_tot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">energy_tot</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">forces</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">forces</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">positions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">positions</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pressures</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">pressures</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">steps</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">steps</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">temperatures</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">temperatures</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">time</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">unwrapped_positions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">unwrapped_positions</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">volume</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">volume</span>
+
+    <span class="k">def</span> <span class="fm">__dir__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

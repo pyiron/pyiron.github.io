@@ -1,0 +1,731 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.base.job.path module &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>pyiron.base.job.path module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/pyiron.base.job.path.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-pyiron.base.job.path">
+<span id="pyiron-base-job-path-module"></span><h1>pyiron.base.job.path module<a class="headerlink" href="#module-pyiron.base.job.path" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pyiron.base.job.path.JobPath">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.base.job.path.</code><code class="sig-name descname">JobPath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">job_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">db_entry</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">user</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/job/path.html#JobPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.job.path.JobPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyiron.base.job.path.JobPathBase" title="pyiron.base.job.path.JobPathBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyiron.base.job.path.JobPathBase</span></code></a></p>
+<p>The JobPath class is derived from the JobCore and is used as a lean version of the GenericJob class. Instead of
+loading the full pyiron object the JobPath class only provides access to the HDF5 file, which should be enough
+for most analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="pyiron.base.database.generic.html#pyiron.base.database.generic.DatabaseAccess" title="pyiron.base.database.generic.DatabaseAccess"><em>DatabaseAccess</em></a>) – database object</p></li>
+<li><p><strong>job_id</strong> (<em>int</em>) – Job ID - optional, but either a job ID or a database entry db_entry has to be provided.</p></li>
+<li><p><strong>db_entry</strong> (<em>dict</em>) – database entry {“job”:, “subjob”:, “projectpath”:, “project”:, “hamilton”:, “hamversion”:,
+“status”:} and optional entries are {“id”:, “masterid”:, “parentid”:}</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – current unix/linux/windows user who is running pyiron</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: job_name</code></dt>
+<dd><p>name of the job, which has to be unique within the project</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: status</code></dt>
+<dd><dl class="simple">
+<dt>execution status of the job, can be one of the following [initialized, appended, created, submitted, running,</dt><dd><p>aborted, collect, suspended, refresh, busy, finished]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: job_id</code></dt>
+<dd><p>unique id to identify the job in the pyiron database</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: parent_id</code></dt>
+<dd><p>job id of the predecessor job - the job which was executed before the current one in the current job series</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: master_id</code></dt>
+<dd><p>job id of the master job - a meta job which groups a series of jobs, which are executed either in parallel or in
+serial.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: child_ids</code></dt>
+<dd><p>list of child job ids - only meta jobs have child jobs - jobs which list the meta job as their master</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: project</code></dt>
+<dd><p>Project instance the jobs is located in</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: project_hdf5</code></dt>
+<dd><p>ProjectHDFio instance which points to the HDF5 file the job is stored in</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: job_info_str</code></dt>
+<dd><p>short string to describe the job by it is job_name and job ID - mainly used for logging</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: working_directory</code></dt>
+<dd><p>working directory of the job is executed in - outside the HDF5 file</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: path</code></dt>
+<dd><p>path to the job as a combination of absolute file system path and path within the HDF5 file.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: is_root</code></dt>
+<dd><p>boolean if the HDF5 object is located at the root level of the HDF5 file</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: is_open</code></dt>
+<dd><p>boolean if the HDF5 file is currently opened - if an active file handler exists</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: is_empty</code></dt>
+<dd><p>boolean if the HDF5 file is empty</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: base_name</code></dt>
+<dd><p>name of the HDF5 file but without any file extension</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: file_path</code></dt>
+<dd><p>directory where the HDF5 file is located</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: h5_path</code></dt>
+<dd><p>path inside the HDF5 file - also stored as absolute path</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pyiron.base.job.path.JobPathBase">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.base.job.path.</code><code class="sig-name descname">JobPathBase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_path</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/job/path.html#JobPathBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.job.path.JobPathBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pyiron.base.job.core.html#pyiron.base.job.core.JobCore" title="pyiron.base.job.core.JobCore"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyiron.base.job.core.JobCore</span></code></a></p>
+<p>The JobPath class is derived from the JobCore and is used as a lean version of the GenericJob class. Instead of
+loading the full pyiron object the JobPath class only provides access to the HDF5 file, which should be enough
+for most analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="pyiron.base.database.generic.html#pyiron.base.database.generic.DatabaseAccess" title="pyiron.base.database.generic.DatabaseAccess"><em>DatabaseAccess</em></a>) – database object</p></li>
+<li><p><strong>job_id</strong> (<em>int</em>) – Job ID - optional, but either a job ID or a database entry db_entry has to be provided.</p></li>
+<li><p><strong>db_entry</strong> (<em>dict</em>) – database entry {“job”:, “subjob”:, “projectpath”:, “project”:, “hamilton”:, “hamversion”:,
+“status”:} and optional entries are {“id”:, “masterid”:, “parentid”:}</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – current unix/linux/windows user who is running pyiron</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: job_name</code></dt>
+<dd><p>name of the job, which has to be unique within the project</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: status</code></dt>
+<dd><dl class="simple">
+<dt>execution status of the job, can be one of the following [initialized, appended, created, submitted, running,</dt><dd><p>aborted, collect, suspended, refresh, busy, finished]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: job_id</code></dt>
+<dd><p>unique id to identify the job in the pyiron database</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: parent_id</code></dt>
+<dd><p>job id of the predecessor job - the job which was executed before the current one in the current job series</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: master_id</code></dt>
+<dd><p>job id of the master job - a meta job which groups a series of jobs, which are executed either in parallel or in
+serial.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: child_ids</code></dt>
+<dd><p>list of child job ids - only meta jobs have child jobs - jobs which list the meta job as their master</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: project</code></dt>
+<dd><p>Project instance the jobs is located in</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: project_hdf5</code></dt>
+<dd><p>ProjectHDFio instance which points to the HDF5 file the job is stored in</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: job_info_str</code></dt>
+<dd><p>short string to describe the job by it is job_name and job ID - mainly used for logging</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: working_directory</code></dt>
+<dd><p>working directory of the job is executed in - outside the HDF5 file</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: path</code></dt>
+<dd><p>path to the job as a combination of absolute file system path and path within the HDF5 file.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: is_root</code></dt>
+<dd><p>boolean if the HDF5 object is located at the root level of the HDF5 file</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: is_open</code></dt>
+<dd><p>boolean if the HDF5 file is currently opened - if an active file handler exists</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: is_empty</code></dt>
+<dd><p>boolean if the HDF5 file is empty</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: base_name</code></dt>
+<dd><p>name of the HDF5 file but without any file extension</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: file_path</code></dt>
+<dd><p>directory where the HDF5 file is located</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: h5_path</code></dt>
+<dd><p>path inside the HDF5 file - also stored as absolute path</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.job.path.JobPathBase.base_name">
+<em class="property">property </em><code class="sig-name descname">base_name</code><a class="headerlink" href="#pyiron.base.job.path.JobPathBase.base_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the HDF5 file - but without the file extension .h5</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>file name without the file extension</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.job.path.JobPathBase.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/job/path.html#JobPathBase.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.job.path.JobPathBase.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the current HDF5 path and return to the path before the last open</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.job.path.JobPathBase.create_group">
+<code class="sig-name descname">create_group</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/job/path.html#JobPathBase.create_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.job.path.JobPathBase.create_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an HDF5 group - similar to a folder in the filesystem - the HDF5 groups allow the users to structure their
+data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of the HDF5 group</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>FileHDFio object pointing to the new group</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.FileHDFio" title="pyiron.base.generic.hdfio.FileHDFio">FileHDFio</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.job.path.JobPathBase.file_path">
+<em class="property">property </em><code class="sig-name descname">file_path</code><a class="headerlink" href="#pyiron.base.job.path.JobPathBase.file_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path where the HDF5 file is located - posixpath.dirname()</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>HDF5 file location</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.job.path.JobPathBase.groups">
+<code class="sig-name descname">groups</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/job/path.html#JobPathBase.groups"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.job.path.JobPathBase.groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter HDF5 file by groups</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>an HDF5 file which is filtered by groups</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.FileHDFio" title="pyiron.base.generic.hdfio.FileHDFio">FileHDFio</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.job.path.JobPathBase.h5_path">
+<em class="property">property </em><code class="sig-name descname">h5_path</code><a class="headerlink" href="#pyiron.base.job.path.JobPathBase.h5_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the path in the HDF5 file starting from the root group - meaning this path starts with ‘/’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>HDF5 path</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.job.path.JobPathBase.is_empty">
+<em class="property">property </em><code class="sig-name descname">is_empty</code><a class="headerlink" href="#pyiron.base.job.path.JobPathBase.is_empty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the HDF5 file is empty</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>[True/False]</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.job.path.JobPathBase.is_root">
+<em class="property">property </em><code class="sig-name descname">is_root</code><a class="headerlink" href="#pyiron.base.job.path.JobPathBase.is_root" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the current h5_path is pointing to the HDF5 root group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>[True/False]</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.job.path.JobPathBase.items">
+<code class="sig-name descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/job/path.html#JobPathBase.items"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.job.path.JobPathBase.items" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all keys and values as items of all groups and nodes of the HDF5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of sets (key, value)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.job.path.JobPathBase.keys">
+<code class="sig-name descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/job/path.html#JobPathBase.keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.job.path.JobPathBase.keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all groups and nodes of the HDF5 file - where groups are equivalent to directories and nodes to files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>all groups and nodes</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.job.path.JobPathBase.list_dirs">
+<code class="sig-name descname">list_dirs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/job/path.html#JobPathBase.list_dirs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.job.path.JobPathBase.list_dirs" title="Permalink to this definition">¶</a></dt>
+<dd><p>equivalent to os.listdirs (consider groups as equivalent to dirs)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of groups in pytables for the path self.h5_path</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.job.path.JobPathBase.listdirs">
+<code class="sig-name descname">listdirs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/job/path.html#JobPathBase.listdirs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.job.path.JobPathBase.listdirs" title="Permalink to this definition">¶</a></dt>
+<dd><p>equivalent to os.listdirs (consider groups as equivalent to dirs)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of groups in pytables for the path self.h5_path</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.job.path.JobPathBase.nodes">
+<code class="sig-name descname">nodes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/job/path.html#JobPathBase.nodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.job.path.JobPathBase.nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter HDF5 file by nodes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>an HDF5 file which is filtered by nodes</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.FileHDFio" title="pyiron.base.generic.hdfio.FileHDFio">FileHDFio</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.job.path.JobPathBase.open">
+<code class="sig-name descname">open</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">h5_rel_path</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/job/path.html#JobPathBase.open"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.job.path.JobPathBase.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an HDF5 group and enter this specific group. If the group exists in the HDF5 path only the h5_path is
+set correspondingly otherwise the group is created first.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>h5_rel_path</strong> (<em>str</em>) – relative path from the current HDF5 path - h5_path - to the new group</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>FileHDFio object pointing to the new group</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.FileHDFio" title="pyiron.base.generic.hdfio.FileHDFio">FileHDFio</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.job.path.JobPathBase.put">
+<code class="sig-name descname">put</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/job/path.html#JobPathBase.put"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.job.path.JobPathBase.put" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store data inside the HDF5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – key to store the data</p></li>
+<li><p><strong>value</strong> (<em>pandas.DataFrame</em><em>, </em><em>pandas.Series</em><em>, </em><em>dict</em><em>, </em><em>list</em><em>, </em><em>float</em><em>, </em><em>int</em>) – basically any kind of data is supported</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.job.path.JobPathBase.remove_file">
+<code class="sig-name descname">remove_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/job/path.html#JobPathBase.remove_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.job.path.JobPathBase.remove_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the HDF5 file with all the related content</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.job.path.JobPathBase.values">
+<code class="sig-name descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/job/path.html#JobPathBase.values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.job.path.JobPathBase.values" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all values for all groups and nodes of the HDF5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of all values</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,670 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.interactive.sxextoptint &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.interactive.sxextoptint</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.interactive.sxextoptint</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">posixpath</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.settings.generic</span> <span class="kn">import</span> <span class="n">Settings</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.generic.parameters</span> <span class="kn">import</span> <span class="n">GenericParameters</span>
+<span class="kn">from</span> <span class="nn">pyiron.atomistics.job.interactivewrapper</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">InteractiveWrapper</span><span class="p">,</span>
+    <span class="n">ReferenceJobOutput</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">pyiron.atomistics.job.interactive</span> <span class="kn">import</span> <span class="n">InteractiveInterface</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.job.executable</span> <span class="kn">import</span> <span class="n">Executable</span>
+<span class="kn">from</span> <span class="nn">pyiron.sphinx.base</span> <span class="kn">import</span> <span class="n">InputWriter</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen, Osamu Waseda&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2020, Max-Planck-Institut für Eisenforschung GmbH - &quot;</span>
+    <span class="s2">&quot;Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;janssen@mpie.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;development&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;Sep 1, 2018&quot;</span>
+
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">Settings</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="SxExtOpt"><a class="viewcode-back" href="../../../apidoc/pyiron.interactive.sxextoptint.html#pyiron.interactive.sxextoptint.SxExtOpt">[docs]</a><span class="k">class</span> <span class="nc">SxExtOpt</span><span class="p">(</span><span class="n">InteractiveInterface</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">structure</span><span class="p">,</span>
+        <span class="n">working_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">maxDist</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+        <span class="n">ionic_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+        <span class="n">ionic_energy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">ionic_forces</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">ionic_energy_tolerance</span><span class="o">=</span><span class="mf">1.0e-3</span><span class="p">,</span>
+        <span class="n">ionic_force_tolerance</span><span class="o">=</span><span class="mf">1.0e-2</span><span class="p">,</span>
+        <span class="n">max_step_length</span><span class="o">=</span><span class="mf">1.0e-1</span><span class="p">,</span>
+        <span class="n">soft_mode_damping</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">executable</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">ssa</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">if</span> <span class="n">ionic_forces</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">((</span><span class="s1">&#39;ionic_forces is deprecated as of vers. 0.3.0.&#39;</span>
+                           <span class="o">+</span><span class="s1">&#39;It is not guaranteed to be in service in vers. 0.4.0.&#39;</span>
+                           <span class="o">+</span><span class="s1">&#39;Use ionic_force_tolerance instead&#39;</span><span class="p">),</span>
+                           <span class="ne">DeprecationWarning</span><span class="p">)</span>
+            <span class="n">ionic_force_tolerance</span> <span class="o">=</span> <span class="n">ionic_forces</span>
+        <span class="k">if</span> <span class="n">ionic_energy</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">((</span><span class="s1">&#39;ionic_energy is deprecated as of vers. 0.3.0.&#39;</span>
+                           <span class="o">+</span><span class="s1">&#39;It is not guaranteed to be in service in vers. 0.4.0.&#39;</span>
+                           <span class="o">+</span><span class="s1">&#39;Use ionic_energy_tolerance instead&#39;</span><span class="p">),</span>
+                           <span class="ne">DeprecationWarning</span><span class="p">)</span>
+            <span class="n">ionic_energy_tolerance</span> <span class="o">=</span> <span class="n">ionic_energy</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;SxExtOpt&quot;</span>
+        <span class="k">if</span> <span class="n">working_directory</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;WARNING: working_directory not set; current folder is used&quot;</span><span class="p">)</span>
+            <span class="n">working_directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_library</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_library_read</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span> <span class="o">=</span> <span class="n">working_directory</span>
+        <span class="k">if</span> <span class="n">executable</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">executable</span> <span class="o">=</span> <span class="n">Executable</span><span class="p">(</span>
+                <span class="n">path_binary_codes</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="n">_configuration</span><span class="p">[</span><span class="s2">&quot;resource_paths&quot;</span><span class="p">],</span>
+                <span class="n">codename</span><span class="o">=</span><span class="s2">&quot;SxExtOptInteractive&quot;</span><span class="p">,</span>
+                <span class="n">module</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="vm">__module__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span>
+                <span class="n">overwrite_nt_flag</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">executable_path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_start_process</span><span class="p">(</span>
+            <span class="n">structure</span><span class="o">=</span><span class="n">structure</span><span class="p">,</span>
+            <span class="n">executable</span><span class="o">=</span><span class="n">executable</span><span class="p">,</span>
+            <span class="n">maxDist</span><span class="o">=</span><span class="n">maxDist</span><span class="p">,</span>
+            <span class="n">ionic_steps</span><span class="o">=</span><span class="n">ionic_steps</span><span class="p">,</span>
+            <span class="n">ionic_energy_tolerance</span><span class="o">=</span><span class="n">ionic_energy_tolerance</span><span class="p">,</span>
+            <span class="n">ionic_force_tolerance</span><span class="o">=</span><span class="n">ionic_force_tolerance</span><span class="p">,</span>
+            <span class="n">max_step_length</span><span class="o">=</span><span class="n">max_step_length</span><span class="p">,</span>
+            <span class="n">soft_mode_damping</span><span class="o">=</span><span class="n">soft_mode_damping</span><span class="p">,</span>
+            <span class="n">selective_dynamics</span><span class="o">=</span><span class="s2">&quot;selective_dynamics&quot;</span> <span class="ow">in</span> <span class="n">structure</span><span class="o">.</span><span class="n">_tag_list</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span>
+            <span class="n">ssa</span><span class="o">=</span><span class="n">ssa</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cell</span> <span class="o">=</span> <span class="n">structure</span><span class="o">.</span><span class="n">cell</span>
+        <span class="k">if</span> <span class="n">ssa</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_elements</span> <span class="o">=</span> <span class="n">structure</span><span class="o">.</span><span class="n">get_parent_symbols</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">magmom</span> <span class="o">=</span> <span class="n">structure</span><span class="o">.</span><span class="n">get_initial_magnetic_moments</span><span class="p">()</span>
+            <span class="n">magmom</span><span class="p">[</span><span class="n">magmom</span><span class="o">!=</span><span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">magmom</span><span class="p">[</span><span class="n">magmom</span><span class="o">!=</span><span class="kc">None</span><span class="p">],</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">magmom</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">char</span><span class="o">.</span><span class="n">mod</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">magmom</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_elements</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">char</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">structure</span><span class="o">.</span><span class="n">get_parent_symbols</span><span class="p">(),</span> <span class="n">magmom</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_elements</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">char</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_elements</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_elements</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">char</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_elements</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_positions</span> <span class="o">=</span> <span class="n">structure</span><span class="o">.</span><span class="n">positions</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_converged</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="nf">_start_process</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">structure</span><span class="p">,</span>
+        <span class="n">executable</span><span class="p">,</span>
+        <span class="n">maxDist</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+        <span class="n">ionic_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+        <span class="n">ionic_energy_tolerance</span><span class="o">=</span><span class="mf">1.0e-3</span><span class="p">,</span>
+        <span class="n">ionic_force_tolerance</span><span class="o">=</span><span class="mf">1.0e-2</span><span class="p">,</span>
+        <span class="n">max_step_length</span><span class="o">=</span><span class="mf">1.0e-1</span><span class="p">,</span>
+        <span class="n">soft_mode_damping</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">selective_dynamics</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">ssa</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">if</span> <span class="n">selective_dynamics</span><span class="p">:</span>
+            <span class="n">input_writer_obj</span> <span class="o">=</span> <span class="n">InputWriter</span><span class="p">()</span>
+            <span class="n">input_writer_obj</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">structure</span>
+            <span class="k">if</span> <span class="n">ssa</span><span class="p">:</span>
+                <span class="n">input_writer_obj</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">set_initial_magnetic_moments</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">structure</span><span class="p">)</span><span class="o">*</span><span class="p">[</span><span class="kc">None</span><span class="p">])</span>
+            <span class="n">input_writer_obj</span><span class="o">.</span><span class="n">write_structure</span><span class="p">(</span>
+                <span class="n">file_name</span><span class="o">=</span><span class="s2">&quot;structure.sx&quot;</span><span class="p">,</span>
+                <span class="n">cwd</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span>
+                <span class="n">structure_str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                <span class="n">symmetry_enabled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">keep_angstrom</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_input</span><span class="p">(</span>
+            <span class="n">working_directory</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span>
+            <span class="n">maxDist</span><span class="o">=</span><span class="n">maxDist</span><span class="p">,</span>
+            <span class="n">ionic_steps</span><span class="o">=</span><span class="n">ionic_steps</span><span class="p">,</span>
+            <span class="n">ionic_energy_tolerance</span><span class="o">=</span><span class="n">ionic_energy_tolerance</span><span class="p">,</span>
+            <span class="n">ionic_force_tolerance</span><span class="o">=</span><span class="n">ionic_force_tolerance</span><span class="p">,</span>
+            <span class="n">max_step_length</span><span class="o">=</span><span class="n">max_step_length</span><span class="p">,</span>
+            <span class="n">soft_mode_damping</span><span class="o">=</span><span class="n">soft_mode_damping</span><span class="p">,</span>
+            <span class="n">selective_dynamics</span><span class="o">=</span><span class="n">selective_dynamics</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">shell</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;nt&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
+                <span class="n">posixpath</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="s2">&quot;out.txt&quot;</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span>
+            <span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
+                    <span class="n">posixpath</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="s2">&quot;error.txt&quot;</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span>
+                <span class="p">)</span> <span class="k">as</span> <span class="n">f_err</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span>
+                        <span class="p">[</span><span class="n">executable</span><span class="p">],</span>
+                        <span class="n">cwd</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span>
+                        <span class="n">shell</span><span class="o">=</span><span class="n">shell</span><span class="p">,</span>
+                        <span class="n">stdout</span><span class="o">=</span><span class="n">f_out</span><span class="p">,</span>
+                        <span class="n">stderr</span><span class="o">=</span><span class="n">f_err</span><span class="p">,</span>
+                        <span class="n">universal_newlines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="p">)</span>
+        <span class="k">except</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">CalledProcessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;run_job.py crashed&quot;</span><span class="p">)</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_pipes_initialized</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">):</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_initialize_interface</span><span class="p">()</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_write_input</span><span class="p">(</span>
+        <span class="n">working_directory</span><span class="p">,</span>
+        <span class="n">maxDist</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+        <span class="n">ionic_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+        <span class="n">ionic_energy_tolerance</span><span class="o">=</span><span class="mf">1.0e-3</span><span class="p">,</span>
+        <span class="n">ionic_force_tolerance</span><span class="o">=</span><span class="mf">1.0e-2</span><span class="p">,</span>
+        <span class="n">max_step_length</span><span class="o">=</span><span class="mf">1.0e-1</span><span class="p">,</span>
+        <span class="n">soft_mode_damping</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">selective_dynamics</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">working_directory</span><span class="p">,</span> <span class="s2">&quot;optim.sx&quot;</span><span class="p">),</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="s2">&quot;main { ricQN { ric { maxDist = </span><span class="si">%f</span><span class="s2">; withAngles; } maxSteps = </span><span class="si">%i</span><span class="s2">; dEnergy = </span><span class="si">%f</span><span class="s2">; dF = </span><span class="si">%f</span><span class="s2">; maxStepLength = </span><span class="si">%f</span><span class="s2">; softModeDamping = </span><span class="si">%f</span><span class="s2">;}}&quot;</span>
+                <span class="o">%</span> <span class="p">(</span>
+                    <span class="n">maxDist</span><span class="p">,</span>
+                    <span class="n">ionic_steps</span><span class="p">,</span>
+                    <span class="n">ionic_energy_tolerance</span><span class="p">,</span>
+                    <span class="n">ionic_force_tolerance</span><span class="p">,</span>
+                    <span class="n">max_step_length</span><span class="p">,</span>
+                    <span class="n">soft_mode_damping</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">selective_dynamics</span><span class="p">:</span>
+                <span class="n">content</span> <span class="o">+=</span> <span class="s2">&quot;structure { include &lt;structure.sx&gt;; }&quot;</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_interactive_pipes_initialized</span><span class="p">(</span><span class="n">working_directory</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">working_directory</span><span class="p">,</span> <span class="s2">&quot;control&quot;</span><span class="p">)</span>
+        <span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">working_directory</span><span class="p">,</span> <span class="s2">&quot;response&quot;</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">_interactive_write_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_library</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">line</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_library</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_interactive_initialize_interface</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_library_read</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="s2">&quot;control&quot;</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_library</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="s2">&quot;response&quot;</span><span class="p">),</span> <span class="s2">&quot;w&quot;</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="SxExtOpt.interactive_close"><a class="viewcode-back" href="../../../apidoc/pyiron.interactive.sxextoptint.html#pyiron.interactive.sxextoptint.SxExtOpt.interactive_close">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_is_activated</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_library</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_library_read</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_delete_named_pipes</span><span class="p">(</span><span class="n">working_directory</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span> 
+    <span class="k">def</span> <span class="nf">_delete_named_pipes</span><span class="p">(</span><span class="n">working_directory</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;control&quot;</span><span class="p">,</span> <span class="s2">&quot;response&quot;</span><span class="p">]:</span>
+            <span class="n">file_path</span> <span class="o">=</span> <span class="n">posixpath</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">working_directory</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+<div class="viewcode-block" id="SxExtOpt.interactive_is_activated"><a class="viewcode-back" href="../../../apidoc/pyiron.interactive.sxextoptint.html#pyiron.interactive.sxextoptint.SxExtOpt.interactive_is_activated">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_is_activated</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_library</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span></div>
+
+    <span class="k">def</span> <span class="nf">_write_cell</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cell</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cell</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_write_line</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.16f</span><span class="s2"> </span><span class="si">%.16f</span><span class="s2"> </span><span class="si">%.16f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+
+    <span class="k">def</span> <span class="nf">_write_number_of_atoms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_write_line</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">count</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">_write_positions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">positions</span><span class="p">,</span> <span class="n">elements</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">pos</span><span class="p">,</span> <span class="n">el</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">elements</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_write_line</span><span class="p">(</span>
+                <span class="s2">&quot;</span><span class="si">%.16f</span><span class="s2"> </span><span class="si">%.16f</span><span class="s2"> </span><span class="si">%.16f</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">pos</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nb">str</span><span class="p">(</span><span class="n">el</span><span class="p">))</span>
+            <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_write_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_write_line</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_write_forces</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">forces</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">forces</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_write_line</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.16f</span><span class="s2"> </span><span class="si">%.16f</span><span class="s2"> </span><span class="si">%.16f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">f</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+
+    <span class="k">def</span> <span class="nf">_read_positions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_library_read</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+        <span class="p">]</span>
+
+<div class="viewcode-block" id="SxExtOpt.set_forces"><a class="viewcode-back" href="../../../apidoc/pyiron.interactive.sxextoptint.html#pyiron.interactive.sxextoptint.SxExtOpt.set_forces">[docs]</a>    <span class="k">def</span> <span class="nf">set_forces</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">forces</span><span class="p">):</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_library_read</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;end&quot;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ending calculation&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_converged</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">elif</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;get&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;cell&quot;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_write_cell</span><span class="p">(</span><span class="n">cell</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cell</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;natoms&quot;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_write_number_of_atoms</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_positions</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;positions&quot;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_write_positions</span><span class="p">(</span>
+                    <span class="n">positions</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_positions</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_elements</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;energy&quot;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_write_energy</span><span class="p">()</span>
+            <span class="k">elif</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;forces&quot;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_write_forces</span><span class="p">(</span><span class="n">forces</span><span class="o">=</span><span class="n">forces</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unknown command:&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_forces</span><span class="p">(</span><span class="n">forces</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;run&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_forces</span><span class="p">(</span><span class="n">forces</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;set&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;positions&quot;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_read_positions</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">forces</span><span class="p">)))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unknown command:&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unknown command:&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SxExtOpt.get_positions"><a class="viewcode-back" href="../../../apidoc/pyiron.interactive.sxextoptint.html#pyiron.interactive.sxextoptint.SxExtOpt.get_positions">[docs]</a>    <span class="k">def</span> <span class="nf">get_positions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_positions</span></div>
+
+<div class="viewcode-block" id="SxExtOpt.end"><a class="viewcode-back" href="../../../apidoc/pyiron.interactive.sxextoptint.html#pyiron.interactive.sxextoptint.SxExtOpt.end">[docs]</a>    <span class="k">def</span> <span class="nf">end</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">converged</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_forces</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_positions</span><span class="p">))</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">converged</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_converged</span>
+
+    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_is_activated</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_close</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_delete_named_pipes</span><span class="p">(</span><span class="n">working_directory</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SxExtOptInteractive"><a class="viewcode-back" href="../../../apidoc/pyiron.interactive.sxextoptint.html#pyiron.interactive.sxextoptint.SxExtOptInteractive">[docs]</a><span class="k">class</span> <span class="nc">SxExtOptInteractive</span><span class="p">(</span><span class="n">InteractiveWrapper</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">job_name</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">SxExtOptInteractive</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="n">job_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;SxExtOptInteractive&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__version__</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="kc">None</span>
+        <span class="p">)</span>  <span class="c1"># Reset the version number to the executable is set automatically</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_executable_activate</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input</span> <span class="o">=</span> <span class="n">Input</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="n">SxExtOptOutput</span><span class="p">(</span><span class="n">job</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_interface</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_number_of_steps</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_coarse_run</span> <span class="o">=</span> <span class="kc">False</span>
+
+<div class="viewcode-block" id="SxExtOptInteractive.set_input_to_read_only"><a class="viewcode-back" href="../../../apidoc/pyiron.interactive.sxextoptint.html#pyiron.interactive.sxextoptint.SxExtOptInteractive.set_input_to_read_only">[docs]</a>    <span class="k">def</span> <span class="nf">set_input_to_read_only</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This function enforces read-only mode for the input classes, but it has to be implement in the individual</span>
+<span class="sd">        classes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">SxExtOptInteractive</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">set_input_to_read_only</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">read_only</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="SxExtOptInteractive.write_input"><a class="viewcode-back" href="../../../apidoc/pyiron.interactive.sxextoptint.html#pyiron.interactive.sxextoptint.SxExtOptInteractive.write_input">[docs]</a>    <span class="k">def</span> <span class="nf">write_input</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="SxExtOptInteractive.run_static"><a class="viewcode-back" href="../../../apidoc/pyiron.interactive.sxextoptint.html#pyiron.interactive.sxextoptint.SxExtOptInteractive.run_static">[docs]</a>    <span class="k">def</span> <span class="nf">run_static</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The run if modal function is called by run to execute the simulation, while waiting for the output. For this we</span>
+<span class="sd">        use subprocess.check_output()</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_create_working_directory</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_interface</span> <span class="o">=</span> <span class="n">SxExtOpt</span><span class="p">(</span>
+            <span class="n">structure</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">structure</span><span class="p">,</span>
+            <span class="n">working_directory</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span>
+            <span class="n">maxDist</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;maxDist&quot;</span><span class="p">]),</span>
+            <span class="n">ionic_steps</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;ionic_steps&quot;</span><span class="p">]),</span>
+            <span class="n">ionic_energy_tolerance</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;ionic_energy_tolerance&quot;</span><span class="p">]),</span>
+            <span class="n">ionic_force_tolerance</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;ionic_force_tolerance&quot;</span><span class="p">]),</span>
+            <span class="n">max_step_length</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;max_step_length&quot;</span><span class="p">]),</span>
+            <span class="n">soft_mode_damping</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;soft_mode_damping&quot;</span><span class="p">]),</span>
+            <span class="n">executable</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">executable</span><span class="o">.</span><span class="n">executable_path</span><span class="p">,</span>
+            <span class="n">ssa</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s1">&#39;ssa&#39;</span><span class="p">],</span>
+        <span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_coarse_run</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">coarse_run</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;job status: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
+        <span class="n">new_positions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">positions</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ref_job_initialize</span><span class="p">()</span>
+        <span class="k">while</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_number_of_steps</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;ionic_steps&quot;</span><span class="p">]</span>
+            <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_interface</span><span class="o">.</span><span class="n">converged</span>
+        <span class="p">):</span>
+            <span class="n">str_temp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">structure</span>
+            <span class="n">str_temp</span><span class="o">.</span><span class="n">positions</span> <span class="o">=</span> <span class="n">new_positions</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">str_temp</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;SxExtOpt: step start!&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+                <span class="k">if</span> <span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_coarse_run</span>
+                    <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_forces</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+                    <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;ionic_force_tolerance&quot;</span><span class="p">]</span>
+                <span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_coarse_run</span> <span class="o">=</span> <span class="kc">False</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">coarse_run</span> <span class="o">=</span> <span class="kc">False</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;SxExtOpt: step finished!&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">delete_existing_job</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="k">if</span> <span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_coarse_run</span>
+                    <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_forces</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+                    <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;ionic_force_tolerance&quot;</span><span class="p">]</span>
+                <span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_coarse_run</span> <span class="o">=</span> <span class="kc">False</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">coarse_run</span> <span class="o">=</span> <span class="kc">False</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">delete_existing_job</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_interface</span><span class="o">.</span><span class="n">set_forces</span><span class="p">(</span><span class="n">forces</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_forces</span><span class="p">())</span>
+            <span class="n">new_positions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_interface</span><span class="o">.</span><span class="n">get_positions</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_number_of_steps</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">collect</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">interactive_close</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_interface</span><span class="o">.</span><span class="n">interactive_close</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">run</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="SxExtOptInteractive.get_forces"><a class="viewcode-back" href="../../../apidoc/pyiron.interactive.sxextoptint.html#pyiron.interactive.sxextoptint.SxExtOptInteractive.get_forces">[docs]</a>    <span class="k">def</span> <span class="nf">get_forces</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">ff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">forces</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">structure</span><span class="p">,</span> <span class="s2">&quot;selective_dynamics&quot;</span><span class="p">):</span>
+            <span class="n">ff</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ref_job</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">selective_dynamics</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">return</span> <span class="n">ff</span>
+        <span class="k">return</span> <span class="n">ff</span></div>
+
+<div class="viewcode-block" id="SxExtOptInteractive.convergence_check"><a class="viewcode-back" href="../../../apidoc/pyiron.interactive.sxextoptint.html#pyiron.interactive.sxextoptint.SxExtOptInteractive.convergence_check">[docs]</a>    <span class="k">def</span> <span class="nf">convergence_check</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validate the convergence of the calculation.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">             (bool): If the calculation is converged</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_number_of_steps</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;ionic_steps&quot;</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span></div></div>
+
+
+<div class="viewcode-block" id="Input"><a class="viewcode-back" href="../../../apidoc/pyiron.interactive.sxextoptint.html#pyiron.interactive.sxextoptint.Input">[docs]</a><span class="k">class</span> <span class="nc">Input</span><span class="p">(</span><span class="n">GenericParameters</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    class to control the generic input for a Sphinx calculation.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        input_file_name (str): name of the input file</span>
+<span class="sd">        table_name (str): name of the GenericParameters table</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="s2">&quot;input&quot;</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Input</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">input_file_name</span><span class="o">=</span><span class="n">input_file_name</span><span class="p">,</span>
+            <span class="n">table_name</span><span class="o">=</span><span class="n">table_name</span><span class="p">,</span>
+            <span class="n">comment_char</span><span class="o">=</span><span class="s2">&quot;//&quot;</span><span class="p">,</span>
+            <span class="n">separator_char</span><span class="o">=</span><span class="s2">&quot;=&quot;</span><span class="p">,</span>
+            <span class="n">end_value_char</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="Input.load_default"><a class="viewcode-back" href="../../../apidoc/pyiron.interactive.sxextoptint.html#pyiron.interactive.sxextoptint.Input.load_default">[docs]</a>    <span class="k">def</span> <span class="nf">load_default</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Loads the default file content</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">file_content</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;ionic_steps = 1000 // maximum number of ionic steps</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;ionic_energy_tolerance = 1.0e-3</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;ionic_force_tolerance = 1.0e-2</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;maxDist = 5 // maximum possible distance for considering neighbors</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;max_step_length = 1.0e-1 // maximum displacement at each step</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;ssa = False // ignore different magnetic moment values when internal symmetries are considered</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;soft_mode_damping = 1.0 // Tikhonov damper</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">load_string</span><span class="p">(</span><span class="n">file_content</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="SxExtOptOutput"><a class="viewcode-back" href="../../../apidoc/pyiron.interactive.sxextoptint.html#pyiron.interactive.sxextoptint.SxExtOptOutput">[docs]</a><span class="k">class</span> <span class="nc">SxExtOptOutput</span><span class="p">(</span><span class="n">ReferenceJobOutput</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">SxExtOptOutput</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">job</span><span class="o">=</span><span class="n">job</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,718 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.project module &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>pyiron.project module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/pyiron.project.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-pyiron.project">
+<span id="pyiron-project-module"></span><h1>pyiron.project module<a class="headerlink" href="#module-pyiron.project" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pyiron.project.Project">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.project.</code><code class="sig-name descname">Project</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">user</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sql_query</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">default_working_directory</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/project.html#Project"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.project.Project" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pyiron.base.project.generic.html#pyiron.base.project.generic.Project" title="pyiron.base.project.generic.Project"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyiron.base.project.generic.Project</span></code></a></p>
+<p>The project is the central class in pyiron, all other objects can be created from the project object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<a class="reference internal" href="pyiron.base.project.path.html#pyiron.base.project.path.GenericPath" title="pyiron.base.project.path.GenericPath"><em>GenericPath</em></a><em>, </em><em>str</em>) – path of the project defined by GenericPath, absolute or relative (with respect to
+current working directory) path</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – current pyiron user</p></li>
+<li><p><strong>sql_query</strong> (<em>str</em>) – SQL query to only select a subset of the existing jobs within the current project</p></li>
+<li><p><strong>default_working_directory</strong> (<em>bool</em>) – Access default working directory, for ScriptJobs this equals the project
+directory of the ScriptJob for regular projects it falls back to the current
+directory.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: root_path</code></dt>
+<dd><p>the pyiron user directory, defined in the .pyiron configuration</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: project_path</code></dt>
+<dd><p>the relative path of the current project / folder starting from the root path
+of the pyiron user directory</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: path</code></dt>
+<dd><p>the absolute path of the current project / folder</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: base_name</code></dt>
+<dd><p>the name of the current project / folder</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: history</code></dt>
+<dd><p>previously opened projects / folders</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: parent_group</code></dt>
+<dd><p>parent project - one level above the current project</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: user</code></dt>
+<dd><p>current unix/linux/windows user who is running pyiron</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: sql_query</code></dt>
+<dd><p>an SQL query to limit the jobs within the project to a subset which matches the SQL query.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: db</code></dt>
+<dd><p>connection to the SQL database</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: job_type</code></dt>
+<dd><dl class="simple">
+<dt>Job Type object with all the available job types: [‘StructureContainer’, ‘StructurePipeline’, ‘AtomisticExampleJob’,</dt><dd><p>‘ExampleJob’, ‘Lammps’, ‘KMC’, ‘Sphinx’, ‘Vasp’, ‘GenericMaster’,
+‘SerialMaster’, ‘AtomisticSerialMaster’, ‘ParallelMaster’, ‘KmcMaster’,
+‘ThermoLambdaMaster’, ‘RandomSeedMaster’, ‘MeamFit’, ‘Murnaghan’,
+‘MinimizeMurnaghan’, ‘ElasticMatrix’, ‘ConvergenceVolume’,
+‘ConvergenceEncutParallel’, ‘ConvergenceKpointParallel’, ’PhonopyMaster’,
+‘DefectFormationEnergy’, ‘LammpsASE’, ‘PipelineMaster’,
+’TransformationPath’, ‘ThermoIntEamQh’, ‘ThermoIntDftEam’, ‘ScriptJob’,
+‘ListMaster’]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.project.Project.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/project.html#Project.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.project.Project.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy the project object - copying just the Python object but maintaining the same pyiron path</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>copy of the project object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="pyiron.base.project.generic.html#pyiron.base.project.generic.Project" title="pyiron.base.project.generic.Project">Project</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.project.Project.create_ase_bulk">
+<em class="property">static </em><code class="sig-name descname">create_ase_bulk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">crystalstructure</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">a</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">c</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">covera</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">u</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">orthorhombic</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">cubic</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/project.html#Project.create_ase_bulk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.project.Project.create_ase_bulk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creating bulk systems using ASE bulk module. Crystal structure and lattice constant(s) will be guessed if not
+provided.</p>
+<p>name (str): Chemical symbol or symbols as in ‘MgO’ or ‘NaCl’.
+crystalstructure (str): Must be one of sc, fcc, bcc, hcp, diamond, zincblende,</p>
+<blockquote>
+<div><p>rocksalt, cesiumchloride, fluorite or wurtzite.</p>
+</div></blockquote>
+<p>a (float): Lattice constant.
+c (float): Lattice constant.
+c_over_a (float): c/a ratio used for hcp.  Default is ideal ratio: sqrt(8/3).
+u (float): Internal coordinate for Wurtzite structure.
+orthorhombic (bool): Construct orthorhombic unit cell instead of primitive cell which is the default.
+cubic (bool): Construct cubic unit cell if possible.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Required bulk structure</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="pyiron.atomistics.structure.atoms.html#pyiron.atomistics.structure.atoms.Atoms" title="pyiron.atomistics.structure.atoms.Atoms">pyiron.atomistics.structure.atoms.Atoms</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.project.Project.create_atoms">
+<em class="property">static </em><code class="sig-name descname">create_atoms</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">symbols</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">positions</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">numbers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tags</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">momenta</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">masses</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">magmoms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">charges</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">scaled_positions</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cell</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pbc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">celldisp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">constraint</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">calculator</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">info</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">indices</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">elements</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dimension</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">species</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">qwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/project.html#Project.create_atoms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.project.Project.create_atoms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a atomistics.structure.atoms.Atoms instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>elements</strong> (<em>list/numpy.ndarray</em>) – List of strings containing the elements or a list of
+atomistics.structure.periodic_table.ChemicalElement instances</p></li>
+<li><p><strong>numbers</strong> (<em>list/numpy.ndarray</em>) – List of atomic numbers of elements</p></li>
+<li><p><strong>symbols</strong> (<em>list/numpy.ndarray</em>) – List of chemical symbols</p></li>
+<li><p><strong>positions</strong> (<em>list/numpy.ndarray</em>) – List of positions</p></li>
+<li><p><strong>scaled_positions</strong> (<em>list/numpy.ndarray</em>) – List of scaled positions (relative coordinates)</p></li>
+<li><p><strong>pbc</strong> (<em>boolean</em>) – Tells if periodic boundary conditions should be applied</p></li>
+<li><p><strong>cell</strong> (<em>list/numpy.ndarray</em>) – A 3x3 array representing the lattice vectors of the structure</p></li>
+<li><p><strong>momenta</strong> (<em>list/numpy.ndarray</em>) – List of momentum values</p></li>
+<li><p><strong>tags</strong> (<em>list/numpy.ndarray</em>) – A list of tags</p></li>
+<li><p><strong>masses</strong> (<em>list/numpy.ndarray</em>) – A list of masses</p></li>
+<li><p><strong>magmoms</strong> (<em>list/numpy.ndarray</em>) – A list of magnetic moments</p></li>
+<li><p><strong>charges</strong> (<em>list/numpy.ndarray</em>) – A list of point charges</p></li>
+<li><p><strong>celldisp</strong> – </p></li>
+<li><p><strong>constraint</strong> (<em>list/numpy.ndarray</em>) – A list of constraints</p></li>
+<li><p><strong>calculator</strong> – ASE calculator</p></li>
+<li><p><strong>info</strong> (<em>list/str</em>) – ASE compatibility</p></li>
+<li><p><strong>indices</strong> (<em>list/numpy.ndarray</em>) – The list of species indices</p></li>
+<li><p><strong>dimension</strong> (<em>int</em>) – Dimension of the structure</p></li>
+<li><p><strong>species</strong> (<em>list</em>) – List of species</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The required structure instance</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="pyiron.atomistics.structure.atoms.html#pyiron.atomistics.structure.atoms.Atoms" title="pyiron.atomistics.structure.atoms.Atoms">pyiron.atomistics.structure.atoms.Atoms</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.project.Project.create_element">
+<em class="property">static </em><code class="sig-name descname">create_element</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parent_element</span></em>, <em class="sig-param"><span class="n">new_element_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spin</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">potential_file</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/project.html#Project.create_element"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.project.Project.create_element" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parent_element</strong> (<em>str</em><em>, </em><em>int</em>) – The parent element eq. “N”, “O”, “Mg” etc.</p></li>
+<li><p><strong>new_element_name</strong> (<em>str</em>) – The name of the new parent element (can be arbitrary)</p></li>
+<li><p><strong>spin</strong> (<em>float</em>) – Value of the magnetic moment (with sign)</p></li>
+<li><p><strong>potential_file</strong> (<em>str</em>) – Location of the new potential file if necessary</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>atomistics.structure.periodic_table.ChemicalElement instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.project.Project.create_job">
+<code class="sig-name descname">create_job</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_type</span></em>, <em class="sig-param"><span class="n">job_name</span></em>, <em class="sig-param"><span class="n">delete_existing_job</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/project.html#Project.create_job"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.project.Project.create_job" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create one of the following jobs:
+- ‘StructureContainer’:
+- ‘StructurePipeline’:
+- ‘AtomisticExampleJob’: example job just generating random number
+- ‘ExampleJob’: example job just generating random number
+- ‘Lammps’:
+- ‘KMC’:
+- ‘Sphinx’:
+- ‘Vasp’:
+- ‘GenericMaster’:
+- ‘SerialMaster’: series of jobs run in serial
+- ‘AtomisticSerialMaster’:
+- ‘ParallelMaster’: series of jobs run in parallel
+- ‘KmcMaster’:
+- ‘ThermoLambdaMaster’:
+- ‘RandomSeedMaster’:
+- ‘MeamFit’:
+- ‘Murnaghan’:
+- ‘MinimizeMurnaghan’:
+- ‘ElasticMatrix’:
+- ‘ConvergenceVolume’:
+- ‘ConvergenceEncutParallel’:
+- ‘ConvergenceKpointParallel’:
+- ’PhonopyMaster’:
+- ‘DefectFormationEnergy’:
+- ‘LammpsASE’:
+- ‘PipelineMaster’:
+- ’TransformationPath’:
+- ‘ThermoIntEamQh’:
+- ‘ThermoIntDftEam’:
+- ‘ScriptJob’: Python script or jupyter notebook job container
+- ‘ListMaster’: list of jobs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>job_type</strong> (<em>str</em>) – job type can be [‘StructureContainer’, ‘StructurePipeline’, ‘AtomisticExampleJob’,
+‘ExampleJob’, ‘Lammps’, ‘KMC’, ‘Sphinx’, ‘Vasp’, ‘GenericMaster’,
+‘SerialMaster’, ‘AtomisticSerialMaster’, ‘ParallelMaster’, ‘KmcMaster’,
+‘ThermoLambdaMaster’, ‘RandomSeedMaster’, ‘MeamFit’, ‘Murnaghan’,
+‘MinimizeMurnaghan’, ‘ElasticMatrix’, ‘ConvergenceVolume’,
+‘ConvergenceEncutParallel’, ‘ConvergenceKpointParallel’, ’PhonopyMaster’,
+‘DefectFormationEnergy’, ‘LammpsASE’, ‘PipelineMaster’,
+’TransformationPath’, ‘ThermoIntEamQh’, ‘ThermoIntDftEam’, ‘ScriptJob’,
+‘ListMaster’]</p></li>
+<li><p><strong>job_name</strong> (<em>str</em>) – name of the job</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>job object depending on the job_type selected</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="pyiron.base.job.generic.html#pyiron.base.job.generic.GenericJob" title="pyiron.base.job.generic.GenericJob">GenericJob</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.project.Project.create_object">
+<em class="property">static </em><code class="sig-name descname">create_object</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">object_type</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/project.html#Project.create_object"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.project.Project.create_object" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>object_type</strong> – </p>
+</dd>
+</dl>
+<p>Returns:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.project.Project.create_pipeline">
+<code class="sig-name descname">create_pipeline</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job</span></em>, <em class="sig-param"><span class="n">step_lst</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/project.html#Project.create_pipeline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.project.Project.create_pipeline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a job pipeline</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>job</strong> (<a class="reference internal" href="pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob" title="pyiron.atomistics.job.atomistic.AtomisticGenericJob"><em>AtomisticGenericJob</em></a>) – Template for the calculation</p></li>
+<li><p><strong>step_lst</strong> (<em>list</em>) – List of functions which create calculations</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="pyiron.base.master.flexible.html#pyiron.base.master.flexible.FlexibleMaster" title="pyiron.base.master.flexible.FlexibleMaster">FlexibleMaster</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.project.Project.create_structure">
+<em class="property">static </em><code class="sig-name descname">create_structure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">element</span></em>, <em class="sig-param"><span class="n">bravais_basis</span></em>, <em class="sig-param"><span class="n">lattice_constant</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/project.html#Project.create_structure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.project.Project.create_structure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a crystal structure using pyiron’s native crystal structure generator</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>element</strong> (<em>str</em>) – Element name</p></li>
+<li><p><strong>bravais_basis</strong> (<em>str</em>) – Basis type</p></li>
+<li><p><strong>lattice_constant</strong> (<em>float/list</em>) – Lattice constants</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The required crystal structure</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="pyiron.atomistics.structure.atoms.html#pyiron.atomistics.structure.atoms.Atoms" title="pyiron.atomistics.structure.atoms.Atoms">pyiron.atomistics.structure.atoms.Atoms</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.project.Project.create_surface">
+<em class="property">static </em><code class="sig-name descname">create_surface</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">element</span></em>, <em class="sig-param"><span class="n">surface_type</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">1, 1, 1</span></em>, <em class="sig-param"><span class="n">vacuum</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">center</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">pbc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/project.html#Project.create_surface"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.project.Project.create_surface" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a surface based on the ase.build.surface module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>element</strong> (<em>str</em>) – Element name</p></li>
+<li><p><strong>surface_type</strong> (<em>str</em>) – The string specifying the surface type generators available through ase (fcc111,</p></li>
+<li><p><strong>etc.</strong><strong>)</strong> (<em>hcp0001</em>) – </p></li>
+<li><p><strong>size</strong> (<em>tuple</em>) – Size of the surface</p></li>
+<li><p><strong>vacuum</strong> (<em>float</em>) – Length of vacuum layer added to the surface along the z direction</p></li>
+<li><p><strong>center</strong> (<em>bool</em>) – Tells if the surface layers have to be at the center or at one end along the z-direction</p></li>
+<li><p><strong>pbc</strong> (<em>list/numpy.ndarray</em>) – List of booleans specifying the periodic boundary conditions along all three
+directions. If None, it is set to [True, True, True]</p></li>
+<li><p><strong>**kwargs</strong> – Additional, arguments you would normally pass to the structure generator like ‘a’, ‘b’,</p></li>
+<li><p><strong>etc.</strong> (<em>'orthogonal'</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Required surface</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pyiron.atomistics.structure.atoms.Atoms instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.project.Project.create_table">
+<code class="sig-name descname">create_table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_name</span><span class="o">=</span><span class="default_value">'table'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/project.html#Project.create_table"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.project.Project.create_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create pyiron table</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>job_name</strong> (<em>str</em>) – job name of the pyiron table job</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>pyiron.table.datamining.TableJob</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.project.Project.get_structure">
+<code class="sig-name descname">get_structure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_specifier</span></em>, <em class="sig-param"><span class="n">iteration_step</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">wrap_atoms</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/project.html#Project.get_structure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.project.Project.get_structure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the structure from a given iteration step of the simulation (MD/ionic relaxation). For static calculations
+there is only one ionic iteration step
+:param job_specifier: name of the job or job ID
+:type job_specifier: str, int
+:param iteration_step: Step for which the structure is requested
+:type iteration_step: int
+:param wrap_atoms: True if the atoms are to be wrapped back into the unit cell
+:type wrap_atoms: bool</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>atomistics.structure.atoms.Atoms object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.project.Project.gui">
+<code class="sig-name descname">gui</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/project.html#Project.gui"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.project.Project.gui" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.project.Project.import_from_path">
+<code class="sig-name descname">import_from_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">recursive</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/project.html#Project.import_from_path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.project.Project.import_from_path" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – </p></li>
+<li><p><strong>recursive</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.project.Project.import_single_calculation">
+<code class="sig-name descname">import_single_calculation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">project_to_import_from</span></em>, <em class="sig-param"><span class="n">rel_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">job_type</span><span class="o">=</span><span class="default_value">'Vasp'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/project.html#Project.import_single_calculation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.project.Project.import_single_calculation" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rel_path</strong> – </p></li>
+<li><p><strong>project_to_import_from</strong> – </p></li>
+<li><p><strong>job_type</strong> (<em>str</em>) – Type of the calculation which is going to be imported</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.project.Project.inspect_emperical_potentials">
+<em class="property">static </em><code class="sig-name descname">inspect_emperical_potentials</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/project.html#Project.inspect_emperical_potentials"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.project.Project.inspect_emperical_potentials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.project.Project.inspect_periodic_table">
+<em class="property">static </em><code class="sig-name descname">inspect_periodic_table</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/project.html#Project.inspect_periodic_table"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.project.Project.inspect_periodic_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.project.Project.inspect_pseudo_potentials">
+<em class="property">static </em><code class="sig-name descname">inspect_pseudo_potentials</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/project.html#Project.inspect_pseudo_potentials"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.project.Project.inspect_pseudo_potentials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.project.Project.list_publications">
+<em class="property">static </em><code class="sig-name descname">list_publications</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bib_format</span><span class="o">=</span><span class="default_value">'dict'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/project.html#Project.list_publications"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.project.Project.list_publications" title="Permalink to this definition">¶</a></dt>
+<dd><p>List the publications used in this project.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bib_format</strong> (<em>str</em>) – [‘dict’, ‘bibtex’, ‘apa’]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of publications in Bibtex format.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.project.Project.load_from_jobpath">
+<code class="sig-name descname">load_from_jobpath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">db_entry</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">convert_to_object</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/project.html#Project.load_from_jobpath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.project.Project.load_from_jobpath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal function to load an existing job either based on the job ID or based on the database entry dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>job_id</strong> (<em>int</em>) – Job ID - optional, but either the job_id or the db_entry is required.</p></li>
+<li><p><strong>db_entry</strong> (<em>dict</em>) – database entry dictionary - optional, but either the job_id or the db_entry is required.</p></li>
+<li><p><strong>convert_to_object</strong> (<em>bool</em>) – convert the object to an pyiron object or only access the HDF5 file - default=True
+accessing only the HDF5 file is about an order of magnitude faster, but only
+provides limited functionality. Compare the GenericJob object to JobCore object.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Either the full GenericJob object or just a reduced JobCore object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="pyiron.base.job.generic.html#pyiron.base.job.generic.GenericJob" title="pyiron.base.job.generic.GenericJob">GenericJob</a>, <a class="reference internal" href="pyiron.base.job.core.html#pyiron.base.job.core.JobCore" title="pyiron.base.job.core.JobCore">JobCore</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.project.Project.load_from_jobpath_string">
+<code class="sig-name descname">load_from_jobpath_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_path</span></em>, <em class="sig-param"><span class="n">convert_to_object</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/project.html#Project.load_from_jobpath_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.project.Project.load_from_jobpath_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal function to load an existing job either based on the job ID or based on the database entry dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>job_path</strong> (<em>str</em>) – string to reload the job from an HDF5 file - ‘/root_path/project_path/filename.h5/h5_path’</p></li>
+<li><p><strong>convert_to_object</strong> (<em>bool</em>) – convert the object to an pyiron object or only access the HDF5 file - default=True
+accessing only the HDF5 file is about an order of magnitude faster, but only
+provides limited functionality. Compare the GenericJob object to JobCore object.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Either the full GenericJob object or just a reduced JobCore object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="pyiron.base.job.generic.html#pyiron.base.job.generic.GenericJob" title="pyiron.base.job.generic.GenericJob">GenericJob</a>, <a class="reference internal" href="pyiron.base.job.core.html#pyiron.base.job.core.JobCore" title="pyiron.base.job.core.JobCore">JobCore</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

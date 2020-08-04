@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.base.settings.install &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.base.settings.install</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.base.settings.install</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">zipfile</span> <span class="kn">import</span> <span class="n">ZipFile</span>
+<span class="kn">from</span> <span class="nn">shutil</span> <span class="kn">import</span> <span class="n">copytree</span><span class="p">,</span> <span class="n">rmtree</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">import</span> <span class="nn">stat</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span> <span class="k">as</span> <span class="nn">urllib2</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2020, Max-Planck-Institut für Eisenforschung GmbH - &quot;</span>
+    <span class="s2">&quot;Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;janssen@mpie.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;production&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;Sep 1, 2017&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">_download_resources</span><span class="p">(</span>
+    <span class="n">zip_file</span><span class="o">=</span><span class="s2">&quot;resources.zip&quot;</span><span class="p">,</span>
+    <span class="n">resource_directory</span><span class="o">=</span><span class="s2">&quot;~/pyiron/resources&quot;</span><span class="p">,</span>
+    <span class="n">giturl_for_zip_file</span><span class="o">=</span><span class="s2">&quot;https://github.com/pyiron/pyiron-resources/archive/master.zip&quot;</span><span class="p">,</span>
+    <span class="n">git_folder_name</span><span class="o">=</span><span class="s2">&quot;pyiron-resources-master&quot;</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Download pyiron resources from Github</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        zip_file (str): name of the compressed file</span>
+<span class="sd">        resource_directory (str): directory where to extract the resources - the users resource directory</span>
+<span class="sd">        giturl_for_zip_file (str): url for the zipped resources file on github</span>
+<span class="sd">        git_folder_name (str): name of the extracted folder</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">user_directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">resource_directory</span><span class="p">))</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">user_directory</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">user_directory</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="n">user_directory</span><span class="p">)</span>
+    <span class="n">temp_directory</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">()</span>
+    <span class="n">temp_zip_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">temp_directory</span><span class="p">,</span> <span class="n">zip_file</span><span class="p">)</span>
+    <span class="n">temp_extract_folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">temp_directory</span><span class="p">,</span> <span class="n">git_folder_name</span><span class="p">)</span>
+    <span class="n">urllib2</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">giturl_for_zip_file</span><span class="p">,</span> <span class="n">temp_zip_file</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">user_directory</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;The resource directory exists already, therefore it can not be created: &quot;</span><span class="p">,</span>
+            <span class="n">user_directory</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">with</span> <span class="n">ZipFile</span><span class="p">(</span><span class="n">temp_zip_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">zip_file_object</span><span class="p">:</span>
+        <span class="n">zip_file_object</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">temp_directory</span><span class="p">)</span>
+    <span class="n">copytree</span><span class="p">(</span><span class="n">temp_extract_folder</span><span class="p">,</span> <span class="n">user_directory</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="s2">&quot;nt&quot;</span><span class="p">:</span>  <span class="c1">#</span>
+        <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">user_directory</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s2">&quot;.sh&quot;</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+                    <span class="n">st</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">chmod</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">),</span> <span class="n">st</span><span class="o">.</span><span class="n">st_mode</span> <span class="o">|</span> <span class="n">stat</span><span class="o">.</span><span class="n">S_IEXEC</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">temp_zip_file</span><span class="p">)</span>
+    <span class="n">rmtree</span><span class="p">(</span><span class="n">temp_extract_folder</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_write_config_file</span><span class="p">(</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s2">&quot;~/.pyiron&quot;</span><span class="p">,</span>
+    <span class="n">project_path</span><span class="o">=</span><span class="s2">&quot;~/pyiron/projects&quot;</span><span class="p">,</span>
+    <span class="n">resource_path</span><span class="o">=</span><span class="s2">&quot;~/pyiron/resources&quot;</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Write configuration file and create the corresponding project path.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        file_name (str): configuration file name - usually ~/.pyiron</span>
+<span class="sd">        project_path (str): the location where pyiron is going to store the pyiron projects</span>
+<span class="sd">        resource_path (str): the location where the resouces (executables, potentials, ...) for pyiron are stored.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">config_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">file_name</span><span class="p">)))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">config_file</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">config_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">cf</span><span class="p">:</span>
+            <span class="n">cf</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="s2">&quot;[DEFAULT]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;PROJECT_PATHS = &quot;</span> <span class="o">+</span> <span class="n">project_path</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;RESOURCE_PATHS = &quot;</span> <span class="o">+</span> <span class="n">resource_path</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+        <span class="n">project_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">project_path</span><span class="p">))</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">project_path</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">project_path</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="install_dialog"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.settings.install.html#pyiron.base.settings.install.install_dialog">[docs]</a><span class="k">def</span> <span class="nf">install_dialog</span><span class="p">():</span>
+    <span class="n">user_input</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="s2">&quot;PYIRONCONFIG&quot;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">config_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PYIRONCONFIG&quot;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">config_file</span> <span class="o">=</span> <span class="s2">&quot;~/.pyiron&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">config_file</span><span class="p">)):</span>
+        <span class="k">while</span> <span class="n">user_input</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;yes&quot;</span><span class="p">,</span> <span class="s2">&quot;no&quot;</span><span class="p">]:</span>
+            <span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span>
+                <span class="s2">&quot;It appears that pyiron is not yet configured, do you want to create a default start configuration (recommended: yes). [yes/no]:&quot;</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">user_input</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;yes&quot;</span> <span class="ow">or</span> <span class="n">user_input</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span>
+            <span class="n">install_pyiron</span><span class="p">(</span>
+                <span class="n">config_file_name</span><span class="o">=</span><span class="s2">&quot;~/.pyiron&quot;</span><span class="p">,</span>
+                <span class="n">zip_file</span><span class="o">=</span><span class="s2">&quot;resources.zip&quot;</span><span class="p">,</span>
+                <span class="n">resource_directory</span><span class="o">=</span><span class="s2">&quot;~/pyiron/resources&quot;</span><span class="p">,</span>
+                <span class="n">giturl_for_zip_file</span><span class="o">=</span><span class="s2">&quot;https://github.com/pyiron/pyiron-resources/archive/master.zip&quot;</span><span class="p">,</span>
+                <span class="n">git_folder_name</span><span class="o">=</span><span class="s2">&quot;pyiron-resources-master&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;pyiron was not installed!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pyiron is already installed.&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="install_pyiron"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.settings.install.html#pyiron.base.settings.install.install_pyiron">[docs]</a><span class="k">def</span> <span class="nf">install_pyiron</span><span class="p">(</span>
+    <span class="n">config_file_name</span><span class="o">=</span><span class="s2">&quot;~/.pyiron&quot;</span><span class="p">,</span>
+    <span class="n">zip_file</span><span class="o">=</span><span class="s2">&quot;resources.zip&quot;</span><span class="p">,</span>
+    <span class="n">project_path</span><span class="o">=</span><span class="s2">&quot;~/pyiron/projects&quot;</span><span class="p">,</span>
+    <span class="n">resource_directory</span><span class="o">=</span><span class="s2">&quot;~/pyiron/resources&quot;</span><span class="p">,</span>
+    <span class="n">giturl_for_zip_file</span><span class="o">=</span><span class="s2">&quot;https://github.com/pyiron/pyiron-resources/archive/master.zip&quot;</span><span class="p">,</span>
+    <span class="n">git_folder_name</span><span class="o">=</span><span class="s2">&quot;pyiron-resources-master&quot;</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Function to configure the pyiron installation.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        config_file_name (str): configuration file name - usually ~/.pyiron</span>
+<span class="sd">        zip_file (str): name of the compressed file</span>
+<span class="sd">        project_path (str): the location where pyiron is going to store the pyiron projects</span>
+<span class="sd">        resource_directory (str): the location where the resouces (executables, potentials, ...) for pyiron are stored.</span>
+<span class="sd">        giturl_for_zip_file (str): url for the zipped resources file on github</span>
+<span class="sd">        git_folder_name (str): name of the extracted folder</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_write_config_file</span><span class="p">(</span>
+        <span class="n">file_name</span><span class="o">=</span><span class="n">config_file_name</span><span class="p">,</span>
+        <span class="n">project_path</span><span class="o">=</span><span class="n">project_path</span><span class="p">,</span>
+        <span class="n">resource_path</span><span class="o">=</span><span class="n">resource_directory</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">_download_resources</span><span class="p">(</span>
+        <span class="n">zip_file</span><span class="o">=</span><span class="n">zip_file</span><span class="p">,</span>
+        <span class="n">resource_directory</span><span class="o">=</span><span class="n">resource_directory</span><span class="p">,</span>
+        <span class="n">giturl_for_zip_file</span><span class="o">=</span><span class="n">giturl_for_zip_file</span><span class="p">,</span>
+        <span class="n">git_folder_name</span><span class="o">=</span><span class="n">git_folder_name</span><span class="p">,</span>
+    <span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

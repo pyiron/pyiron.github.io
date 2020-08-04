@@ -1,0 +1,845 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.atomistics.job.interactive &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.atomistics.job.interactive</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.atomistics.job.interactive</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.settings.generic</span> <span class="kn">import</span> <span class="n">Settings</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.job.interactive</span> <span class="kn">import</span> <span class="n">InteractiveBase</span>
+<span class="kn">from</span> <span class="nn">pyiron.atomistics.structure.atoms</span> <span class="kn">import</span> <span class="n">Atoms</span>
+<span class="kn">from</span> <span class="nn">pyiron.atomistics.structure.periodic_table</span> <span class="kn">import</span> <span class="n">PeriodicTable</span>
+<span class="kn">from</span> <span class="nn">pyiron.atomistics.job.atomistic</span> <span class="kn">import</span> <span class="n">AtomisticGenericJob</span><span class="p">,</span> <span class="n">GenericOutput</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Osamu Waseda, Jan Janssen&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2020, Max-Planck-Institut für Eisenforschung GmbH - &quot;</span>
+    <span class="s2">&quot;Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;janssen@mpie.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;development&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;Sep 1, 2017&quot;</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">Settings</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="GenericInteractive"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive">[docs]</a><span class="k">class</span> <span class="nc">GenericInteractive</span><span class="p">(</span><span class="n">AtomisticGenericJob</span><span class="p">,</span> <span class="n">InteractiveBase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">job_name</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GenericInteractive</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="n">job_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="n">GenericInteractiveOutput</span><span class="p">(</span><span class="n">job</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_structure_previous</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_structure_current</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_enforce_structure_reset</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_grand_canonical</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_fetch_completed</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_species_lst</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_periodic_table</span> <span class="o">=</span> <span class="n">PeriodicTable</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactive_input_functions</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;index&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_index_organizer</span><span class="p">,</span>
+                                            <span class="s1">&#39;cell&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cell_organizer</span><span class="p">,</span>
+                                            <span class="s1">&#39;positions&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_positions_organizer</span><span class="p">,</span>
+                                            <span class="s1">&#39;magnetic_moments&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_magmom_organizer</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactive_output_functions</span> <span class="o">=</span>  <span class="p">{</span><span class="s1">&#39;cells&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cells_getter</span><span class="p">,</span>
+                                              <span class="s1">&#39;energy_pot&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_energy_pot_getter</span><span class="p">,</span>
+                                              <span class="s1">&#39;energy_tot&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_energy_tot_getter</span><span class="p">,</span>
+                                              <span class="s1">&#39;forces&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_forces_getter</span><span class="p">,</span>
+                                              <span class="s1">&#39;positions&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_positions_getter</span><span class="p">,</span>
+                                              <span class="s1">&#39;pressures&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_pressures_getter</span><span class="p">,</span>
+                                              <span class="s1">&#39;stress&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_stress_getter</span><span class="p">,</span>
+                                              <span class="s1">&#39;steps&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_steps_getter</span><span class="p">,</span>
+                                              <span class="s1">&#39;temperature&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_temperatures_getter</span><span class="p">,</span>
+                                              <span class="s1">&#39;indices&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_indices_getter</span><span class="p">,</span>
+                                              <span class="s1">&#39;computation_time&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_computation_time_getter</span><span class="p">,</span>
+                                              <span class="s1">&#39;unwrapped_positions&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_unwrapped_positions_getter</span><span class="p">,</span>
+                                              <span class="s1">&#39;atom_spin_constraints&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_atom_spin_constraints_getter</span><span class="p">,</span>
+                                              <span class="s1">&#39;atom_spins&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_atom_spins_getter</span><span class="p">,</span>
+                                              <span class="s1">&#39;magnetic_forces&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_magnetic_forces_getter</span><span class="p">,</span>
+                                              <span class="s1">&#39;volume&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_volume_getter</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">interactive_enforce_structure_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_enforce_structure_reset</span>
+
+    <span class="nd">@interactive_enforce_structure_reset</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">interactive_enforce_structure_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reset</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reset</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_enforce_structure_reset</span> <span class="o">=</span> <span class="n">reset</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">initial_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">AtomisticGenericJob</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">fget</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">current_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span>
+
+    <span class="nd">@current_structure</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">current_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">structure</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">structure</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">structure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure_current</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure_current</span>
+        <span class="k">elif</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive</span>
+            <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive_non_modal</span>
+        <span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_structure_current</span> <span class="o">=</span> <span class="n">AtomisticGenericJob</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">fget</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure_current</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">AtomisticGenericJob</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">fget</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="nd">@structure</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">structure</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive</span>
+            <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive_non_modal</span>
+        <span class="p">):</span>
+            <span class="c1"># only overwrite the initial structure if it is not set already.</span>
+            <span class="k">if</span> <span class="n">AtomisticGenericJob</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">fget</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">AtomisticGenericJob</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">fset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_structure_current</span> <span class="o">=</span> <span class="n">structure</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">AtomisticGenericJob</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">fset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">structure</span><span class="p">)</span>
+
+<div class="viewcode-block" id="GenericInteractive.species_from_hdf"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.species_from_hdf">[docs]</a>    <span class="k">def</span> <span class="nf">species_from_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="s2">&quot;output&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">list_groups</span><span class="p">()</span>
+            <span class="ow">and</span> <span class="s2">&quot;interactive&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="p">[</span><span class="s2">&quot;output&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">list_groups</span><span class="p">()</span>
+            <span class="ow">and</span> <span class="s2">&quot;species&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="p">[</span><span class="s2">&quot;output/interactive&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">()</span>
+        <span class="p">):</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;output/interactive&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_species_lst</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">hdf</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.run_if_interactive"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.run_if_interactive">[docs]</a>    <span class="k">def</span> <span class="nf">run_if_interactive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Input structure not set. Use method set_structure()&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_is_activated</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_initialize_interface</span><span class="p">()</span>
+        <span class="n">pre_struct</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">pre_struct</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_structure_previous</span> <span class="o">=</span> <span class="n">pre_struct</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_structure_previous</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure_current</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_structure_current</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_structure_previous</span><span class="p">)</span>
+                <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_grand_canonical</span>
+            <span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;The number of atoms changed, this is currently not supported!&quot;</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_enforce_structure_reset</span><span class="p">:</span>
+                <span class="n">functions_to_execute</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_input_functions</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+                <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">functions_to_execute</span><span class="p">:</span>
+                    <span class="n">v</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Generic library: structure changed!&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">interactive_structure_setter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_structure_current</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_index_organizer"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_index_organizer">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_index_organizer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">index_merge_lst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_species_lst</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_structure_current</span><span class="o">.</span><span class="n">get_species_symbols</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">el_lst</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">index_merge_lst</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="n">index_merge_lst</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+        <span class="n">current_structure_index</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">el_lst</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">el</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure_current</span><span class="o">.</span><span class="n">get_chemical_symbols</span><span class="p">()</span>
+        <span class="p">]</span>
+        <span class="n">previous_structure_index</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">el_lst</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">el</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure_previous</span><span class="o">.</span><span class="n">get_chemical_symbols</span><span class="p">()</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">current_structure_index</span><span class="p">),</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">previous_structure_index</span><span class="p">),</span>
+        <span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Generic library: indices changed!&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_indices_setter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_structure_current</span><span class="o">.</span><span class="n">indices</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_cell_organizer"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_cell_organizer">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_cell_organizer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_structure_current</span><span class="o">.</span><span class="n">cell</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_structure_previous</span><span class="o">.</span><span class="n">cell</span><span class="p">,</span>
+            <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-15</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-15</span><span class="p">,</span>
+        <span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Generic library: cell changed!&quot;</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cells_setter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_structure_current</span><span class="o">.</span><span class="n">cell</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">NotImplementedError</span><span class="p">:</span>
+                <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_input_functions</span><span class="p">[</span><span class="s1">&#39;cell&#39;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_positions_organizer"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_positions_organizer">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_positions_organizer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_structure_current</span><span class="o">.</span><span class="n">get_scaled_positions</span><span class="p">(),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_structure_previous</span><span class="o">.</span><span class="n">get_scaled_positions</span><span class="p">(),</span>
+            <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-15</span><span class="p">,</span>
+            <span class="n">atol</span><span class="o">=</span><span class="mf">1e-15</span><span class="p">,</span>
+        <span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Generic library: positions changed!&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_positions_setter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_structure_current</span><span class="o">.</span><span class="n">positions</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_magmom_organizer"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_magmom_organizer">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_magmom_organizer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">mm</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">mm</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure_current</span><span class="o">.</span><span class="n">get_initial_magnetic_moments</span><span class="p">()):</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_input_functions</span><span class="p">[</span><span class="s1">&#39;magnetic_moments&#39;</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="kc">None</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure_previous</span><span class="o">.</span><span class="n">get_initial_magnetic_moments</span><span class="p">()</span>
+            <span class="ow">or</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_structure_current</span><span class="o">.</span><span class="n">get_initial_magnetic_moments</span><span class="p">(),</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_structure_previous</span><span class="o">.</span><span class="n">get_initial_magnetic_moments</span><span class="p">(),</span>
+            <span class="p">)</span>
+        <span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Generic library: magnetic moments changed!&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_spin_constraints_setter</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_structure_current</span><span class="o">.</span><span class="n">get_initial_magnetic_moments</span><span class="p">()</span>
+            <span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_cells_getter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_cells_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_cells_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">initial_structure</span><span class="o">.</span><span class="n">cell</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_collect"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_collect">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_collect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">del_key_lst</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_output_functions</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">v</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">del_key_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">NotImplementedError</span><span class="p">:</span>
+                <span class="n">del_key_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">del_key_lst</span><span class="p">:</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_output_functions</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span> <span class="o">&gt;</span> <span class="mi">0</span>
+            <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">]])</span>
+            <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_flush_frequency</span>
+            <span class="o">==</span> <span class="mi">0</span>
+        <span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interactive_flush</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s2">&quot;interactive&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive_non_modal</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_fetch_completed</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_flush"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_flush">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_flush</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">&quot;interactive&quot;</span><span class="p">,</span> <span class="n">include_last_step</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            path:</span>
+<span class="sd">            include_last_step:</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;output&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf_output</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">hdf_output</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf</span><span class="p">:</span>
+                <span class="n">hdf</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_species_lst</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GenericInteractive</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">interactive_flush</span><span class="p">(</span>
+            <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span> <span class="n">include_last_step</span><span class="o">=</span><span class="n">include_last_step</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_indices_getter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_indices_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_indices_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">species_symbols</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">Abbreviation</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_structure</span><span class="o">.</span><span class="n">species</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_species_lst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extend_species_elements</span><span class="p">(</span>
+            <span class="n">struct_species</span><span class="o">=</span><span class="n">species_symbols</span><span class="p">,</span> <span class="n">species_array</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_interactive_species_lst</span>
+        <span class="p">)</span>
+        <span class="n">index_merge_lst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_species_lst</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_structure_current</span><span class="o">.</span><span class="n">get_species_symbols</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">el_lst</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">index_merge_lst</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="n">index_merge_lst</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+        <span class="n">current_structure_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">el_lst</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">el</span><span class="p">)</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure_current</span><span class="o">.</span><span class="n">get_chemical_symbols</span><span class="p">()]</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">current_structure_index</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_positions_getter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_positions_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_positions_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_structure</span><span class="o">.</span><span class="n">positions</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_steps_getter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_steps_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_steps_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">]])</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_time_getter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_time_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_time_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">interactive_steps_getter</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_volume_getter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_volume_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_volume_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">initial_structure</span><span class="o">.</span><span class="n">get_volume</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.get_structure"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.get_structure">[docs]</a>    <span class="k">def</span> <span class="nf">get_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iteration_step</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">wrap_atoms</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the structure from a given iteration step of the simulation (MD/ionic relaxation). For static calculations</span>
+<span class="sd">        there is only one ionic iteration step</span>
+<span class="sd">        Args:</span>
+<span class="sd">            iteration_step (int): Step for which the structure is requested</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            atomistics.structure.atoms.Atoms object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive</span>
+            <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">run_mode</span><span class="o">.</span><span class="n">interactive_non_modal</span>
+        <span class="p">):</span>
+            <span class="c1"># Warning: We only copy symbols, positions and cell information - no tags.</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">indices</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">indices</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">indices</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">indices</span><span class="p">[</span><span class="n">iteration_step</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_interactive_species_lst</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">el_lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">el</span><span class="o">.</span><span class="n">Abbreviation</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">species</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">el_lst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_species_lst</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">indices</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">wrap_atoms</span><span class="p">:</span>
+                    <span class="n">positions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="n">iteration_step</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">unwrapped_positions</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">max</span><span class="p">([</span><span class="n">iteration_step</span><span class="p">,</span> <span class="mi">0</span><span class="p">]):</span>
+                        <span class="n">positions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">unwrapped_positions</span><span class="p">[</span><span class="n">iteration_step</span><span class="p">]</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">positions</span> <span class="o">=</span> <span class="p">(</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="n">iteration_step</span><span class="p">]</span>
+                            <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">total_displacements</span><span class="p">[</span><span class="n">iteration_step</span><span class="p">]</span>
+                        <span class="p">)</span>
+                <span class="n">atoms</span> <span class="o">=</span> <span class="n">Atoms</span><span class="p">(</span>
+                    <span class="n">symbols</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">el_lst</span><span class="p">[</span><span class="n">el</span><span class="p">]</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">indices</span><span class="p">]),</span>
+                    <span class="n">positions</span><span class="o">=</span><span class="n">positions</span><span class="p">,</span>
+                    <span class="n">cell</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">cells</span><span class="p">[</span><span class="n">iteration_step</span><span class="p">],</span>
+                <span class="p">)</span>
+                <span class="c1"># Update indicies to match the indicies in the cache.</span>
+                <span class="n">atoms</span><span class="o">.</span><span class="n">set_species</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">_periodic_table</span><span class="o">.</span><span class="n">element</span><span class="p">(</span><span class="n">el</span><span class="p">)</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">el_lst</span><span class="p">])</span>
+                <span class="n">atoms</span><span class="o">.</span><span class="n">indices</span> <span class="o">=</span> <span class="n">indices</span>
+                <span class="k">if</span> <span class="n">wrap_atoms</span><span class="p">:</span>
+                    <span class="n">atoms</span> <span class="o">=</span> <span class="n">atoms</span><span class="o">.</span><span class="n">center_coordinates_in_unit_cell</span><span class="p">()</span>
+                <span class="k">return</span> <span class="n">atoms</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;output/generic/cells&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+                <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;output/generic/cells&quot;</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">0</span>
+            <span class="p">):</span>
+                <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">GenericInteractive</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span>
+                    <span class="n">iteration_step</span><span class="o">=</span><span class="n">iteration_step</span><span class="p">,</span> <span class="n">wrap_atoms</span><span class="o">=</span><span class="n">wrap_atoms</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">None</span></div>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_extend_species_elements</span><span class="p">(</span><span class="n">struct_species</span><span class="p">,</span> <span class="n">species_array</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">struct_species</span><span class="p">,</span> <span class="n">species_array</span><span class="p">)):</span>
+            <span class="n">new_elements_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">invert</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">struct_species</span><span class="p">,</span> <span class="n">species_array</span><span class="p">))</span>
+            <span class="n">species_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">species_array</span><span class="p">,</span> <span class="n">struct_species</span><span class="p">[</span><span class="n">new_elements_index</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">species_array</span>
+
+    <span class="c1"># Functions which have to be implemented by the fin</span>
+<div class="viewcode-block" id="GenericInteractive.interactive_cells_setter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_cells_setter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_cells_setter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cell</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;interactive_cells_getter() is not implemented!&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_energy_pot_getter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_energy_pot_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_energy_pot_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;interactive_energy_pot_getter() is not implemented!&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_energy_tot_getter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_energy_tot_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_energy_tot_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;interactive_energy_tot_getter() is not implemented!&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_forces_getter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_forces_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_forces_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;interactive_forces_getter() is not implemented!&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_indices_setter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_indices_setter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_indices_setter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indices</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;interactive_indices_setter() is not implemented!&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_spins_getter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_spins_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_spins_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;interactive_spins_getter() is not implemented!&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_spin_constraints_getter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_spin_constraints_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_spin_constraints_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;interactive_spin_constraints_getter() is not implemented!&quot;</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_atom_spin_constraints_getter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_atom_spin_constraints_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_atom_spin_constraints_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;interactive_atom_spin_constraints_getter() is not implemented!&quot;</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_atom_spins_getter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_atom_spins_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_atom_spins_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;interactive_atom_spins_getter() is not implemented!&quot;</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_magnetic_forces_getter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_magnetic_forces_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_magnetic_forces_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;interactive_magnetic_forces_getter() is not implemented!&quot;</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_spin_constraints_setter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_spin_constraints_setter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_spin_constraints_setter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spins</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;iinteractive_spin_constraints_setter() is not implemented!&quot;</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_initialize_interface"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_initialize_interface">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_initialize_interface</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;interactive_initialize_interface() is not implemented!&quot;</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_positions_setter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_positions_setter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_positions_setter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">positions</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;interactive_positions_setter() is not implemented!&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_pressures_getter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_pressures_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_pressures_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;interactive_pressures_getter() is not implemented!&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_stress_getter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_stress_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_stress_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;interactive_stress_getter() is not implemented!&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_structure_setter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_structure_setter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_structure_setter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">structure</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;interactive_structure_setter() is not implemented!&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_computation_time_getter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_computation_time_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_computation_time_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;interactive_computation_time_getter() is not implemented!&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_temperatures_getter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_temperatures_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_temperatures_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;interactive_temperatures_getter() is not implemented!&quot;</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="GenericInteractive.interactive_unwrapped_positions_getter"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractive.interactive_unwrapped_positions_getter">[docs]</a>    <span class="k">def</span> <span class="nf">interactive_unwrapped_positions_getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;interactive_unwrapped_positions_getter() is not implemented!&quot;</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="GenericInteractiveOutput"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.GenericInteractiveOutput">[docs]</a><span class="k">class</span> <span class="nc">GenericInteractiveOutput</span><span class="p">(</span><span class="n">GenericOutput</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GenericInteractiveOutput</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">job</span><span class="o">=</span><span class="n">job</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_key_from_cache</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get all entries from the interactive cache for a specific key.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            key (str): name of the key</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list: list of values stored in the interactive cache</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+            <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">interactive_is_activated</span><span class="p">()</span>
+            <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="n">key</span><span class="p">])</span> <span class="o">!=</span> <span class="mi">0</span>
+        <span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">interactive_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">_lst_from_cache</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            key (str): name of the key</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">lst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_key_from_cache</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="k">for</span> <span class="n">out</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">lst</span>
+
+    <span class="k">def</span> <span class="nf">_key_from_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get all entries from the HDF5 file for a specific key - stored under &#39;output/interactive/&lt;key&gt;&#39;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            key (str): name of the key</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="p">[</span><span class="s2">&quot;output/interactive/&quot;</span> <span class="o">+</span> <span class="n">key</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_key_from_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            key (str): name of the key</span>
+<span class="sd">            prop (function):</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">return_lst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_key_from_cache</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="n">hdf5_output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_key_from_hdf</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">hdf5_output</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">return_lst</span> <span class="o">=</span> <span class="n">hdf5_output</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">+</span> <span class="n">return_lst</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">prop_result</span> <span class="o">=</span> <span class="n">prop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">prop_result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">return_lst</span> <span class="o">=</span> <span class="n">prop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">+</span> <span class="n">return_lst</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">return_lst</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_lst_from_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            key (str):</span>
+<span class="sd">            prop (function):</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">return_lst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lst_from_cache</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="n">hdf5_output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_key_from_hdf</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">hdf5_output</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">hdf5_output</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">hdf5_output</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="n">return_lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="k">for</span> <span class="n">out</span> <span class="ow">in</span> <span class="n">hdf5_output</span><span class="p">]</span> <span class="o">+</span> <span class="n">return_lst</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">return_lst</span> <span class="o">=</span> <span class="n">hdf5_output</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">+</span> <span class="n">return_lst</span>
+        <span class="k">elif</span> <span class="n">prop</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">prop_result</span> <span class="o">=</span> <span class="n">prop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">prop_result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">return_lst</span> <span class="o">=</span> <span class="n">prop_result</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">+</span> <span class="n">return_lst</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">return_lst</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">indices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lst_from_property</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;indices&quot;</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="n">GenericOutput</span><span class="o">.</span><span class="n">indices</span><span class="o">.</span><span class="n">fget</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">cells</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_key_from_property</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;cells&quot;</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="n">GenericOutput</span><span class="o">.</span><span class="n">cells</span><span class="o">.</span><span class="n">fget</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">energy_pot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_key_from_property</span><span class="p">(</span>
+            <span class="n">key</span><span class="o">=</span><span class="s2">&quot;energy_pot&quot;</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="n">GenericOutput</span><span class="o">.</span><span class="n">energy_pot</span><span class="o">.</span><span class="n">fget</span>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">energy_tot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_key_from_property</span><span class="p">(</span>
+            <span class="n">key</span><span class="o">=</span><span class="s2">&quot;energy_tot&quot;</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="n">GenericOutput</span><span class="o">.</span><span class="n">energy_tot</span><span class="o">.</span><span class="n">fget</span>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">forces</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lst_from_property</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;forces&quot;</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="n">GenericOutput</span><span class="o">.</span><span class="n">forces</span><span class="o">.</span><span class="n">fget</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">positions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lst_from_property</span><span class="p">(</span>
+            <span class="n">key</span><span class="o">=</span><span class="s2">&quot;positions&quot;</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="n">GenericOutput</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">fget</span>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pressures</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_key_from_property</span><span class="p">(</span>
+            <span class="n">key</span><span class="o">=</span><span class="s2">&quot;pressures&quot;</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="n">GenericOutput</span><span class="o">.</span><span class="n">pressures</span><span class="o">.</span><span class="n">fget</span>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">steps</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_key_from_property</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;steps&quot;</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="n">GenericOutput</span><span class="o">.</span><span class="n">steps</span><span class="o">.</span><span class="n">fget</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">temperature</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_key_from_property</span><span class="p">(</span>
+            <span class="n">key</span><span class="o">=</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="n">GenericOutput</span><span class="o">.</span><span class="n">temperature</span><span class="o">.</span><span class="n">fget</span>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_key_from_property</span><span class="p">(</span>
+            <span class="n">key</span><span class="o">=</span><span class="s2">&quot;computation_time&quot;</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="n">GenericOutput</span><span class="o">.</span><span class="n">computation_time</span><span class="o">.</span><span class="n">fget</span>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">unwrapped_positions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lst_from_property</span><span class="p">(</span>
+            <span class="n">key</span><span class="o">=</span><span class="s2">&quot;unwrapped_positions&quot;</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="n">GenericOutput</span><span class="o">.</span><span class="n">unwrapped_positions</span><span class="o">.</span><span class="n">fget</span>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">volume</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_key_from_property</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;volume&quot;</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="n">GenericOutput</span><span class="o">.</span><span class="n">volume</span><span class="o">.</span><span class="n">fget</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__dir__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span>
+            <span class="nb">set</span><span class="p">(</span>
+                <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">interactive_cache</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+                <span class="o">+</span> <span class="nb">super</span><span class="p">(</span><span class="n">GenericOutput</span><span class="p">)</span><span class="o">.</span><span class="fm">__dir__</span><span class="p">()</span>
+            <span class="p">)</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="InteractiveInterface"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.InteractiveInterface">[docs]</a><span class="k">class</span> <span class="nc">InteractiveInterface</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">logger</span>
+
+<div class="viewcode-block" id="InteractiveInterface.get_cell"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.InteractiveInterface.get_cell">[docs]</a>    <span class="k">def</span> <span class="nf">get_cell</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="InteractiveInterface.set_cell"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.InteractiveInterface.set_cell">[docs]</a>    <span class="k">def</span> <span class="nf">set_cell</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cell</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="InteractiveInterface.get_temperature"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.InteractiveInterface.get_temperature">[docs]</a>    <span class="k">def</span> <span class="nf">get_temperature</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="InteractiveInterface.set_temperature"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.InteractiveInterface.set_temperature">[docs]</a>    <span class="k">def</span> <span class="nf">set_temperature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">temperature</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="InteractiveInterface.get_positions"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.InteractiveInterface.get_positions">[docs]</a>    <span class="k">def</span> <span class="nf">get_positions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="InteractiveInterface.set_positions"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.InteractiveInterface.set_positions">[docs]</a>    <span class="k">def</span> <span class="nf">set_positions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">positions</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="InteractiveInterface.get_forces"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.InteractiveInterface.get_forces">[docs]</a>    <span class="k">def</span> <span class="nf">get_forces</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="InteractiveInterface.set_forces"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.InteractiveInterface.set_forces">[docs]</a>    <span class="k">def</span> <span class="nf">set_forces</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">forces</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="InteractiveInterface.get_energy_tot"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.InteractiveInterface.get_energy_tot">[docs]</a>    <span class="k">def</span> <span class="nf">get_energy_tot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="InteractiveInterface.set_energy_tot"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.InteractiveInterface.set_energy_tot">[docs]</a>    <span class="k">def</span> <span class="nf">set_energy_tot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">energy_tot</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="InteractiveInterface.get_energy_pot"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.InteractiveInterface.get_energy_pot">[docs]</a>    <span class="k">def</span> <span class="nf">get_energy_pot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="InteractiveInterface.set_energy_pot"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.InteractiveInterface.set_energy_pot">[docs]</a>    <span class="k">def</span> <span class="nf">set_energy_pot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">energy_pot</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="InteractiveInterface.get_pressure"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.InteractiveInterface.get_pressure">[docs]</a>    <span class="k">def</span> <span class="nf">get_pressure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="InteractiveInterface.set_pressure"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.InteractiveInterface.set_pressure">[docs]</a>    <span class="k">def</span> <span class="nf">set_pressure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pressure</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="InteractiveInterface.run_interactive"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.interactive.html#pyiron.atomistics.job.interactive.InteractiveInterface.run_interactive">[docs]</a>    <span class="k">def</span> <span class="nf">run_interactive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

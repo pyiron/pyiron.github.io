@@ -1,0 +1,447 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.base.server.queuestatus &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.base.server.queuestatus</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.base.server.queuestatus</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.settings.generic</span> <span class="kn">import</span> <span class="n">Settings</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.job.jobtype</span> <span class="kn">import</span> <span class="n">static_isinstance</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Set of functions to interact with the queuing system directly from within pyiron - optimized for the Sun grid engine.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2020, Max-Planck-Institut für Eisenforschung GmbH - &quot;</span>
+    <span class="s2">&quot;Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;janssen@mpie.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;production&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;Sep 1, 2017&quot;</span>
+
+<span class="n">QUEUE_SCRIPT_PREFIX</span> <span class="o">=</span> <span class="s2">&quot;pi_&quot;</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">Settings</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="queue_table"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.server.queuestatus.html#pyiron.base.server.queuestatus.queue_table">[docs]</a><span class="k">def</span> <span class="nf">queue_table</span><span class="p">(</span><span class="n">job_ids</span><span class="o">=</span><span class="p">[],</span> <span class="n">project_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">full_table</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Display the queuing system table as pandas.Dataframe</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        job_ids (list): check for a specific list of job IDs - empty list by default</span>
+<span class="sd">        project_only (bool): Query only for jobs within the current project - True by default</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pandas.DataFrame: Output from the queuing system - optimized for the Sun grid engine</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">project_only</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">job_ids</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">queue_adapter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">full_table</span><span class="p">:</span>
+            <span class="n">pandas</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="n">pandas</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">queue_adapter</span><span class="o">.</span><span class="n">get_status_of_my_jobs</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">project_only</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">df</span><span class="p">[</span>
+                <span class="p">[</span>
+                    <span class="kc">True</span> <span class="k">if</span> <span class="n">QUEUE_SCRIPT_PREFIX</span> <span class="ow">in</span> <span class="n">job_name</span> <span class="k">else</span> <span class="kc">False</span>
+                    <span class="k">for</span> <span class="n">job_name</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">jobname</span><span class="p">)</span>
+                <span class="p">]</span>
+            <span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">job_name_lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">QUEUE_SCRIPT_PREFIX</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">job_id</span><span class="p">)</span> <span class="k">for</span> <span class="n">job_id</span> <span class="ow">in</span> <span class="n">job_ids</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">df</span><span class="p">[</span>
+                <span class="p">[</span>
+                    <span class="kc">True</span> <span class="k">if</span> <span class="n">job_name</span> <span class="ow">in</span> <span class="n">job_name_lst</span> <span class="k">else</span> <span class="kc">False</span>
+                    <span class="k">for</span> <span class="n">job_name</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">jobname</span><span class="p">)</span>
+                <span class="p">]</span>
+            <span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="queue_check_job_is_waiting_or_running"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.server.queuestatus.html#pyiron.base.server.queuestatus.queue_check_job_is_waiting_or_running">[docs]</a><span class="k">def</span> <span class="nf">queue_check_job_is_waiting_or_running</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if a job is still listed in the queue system as either waiting or running.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        item (int, GenericJob): Provide either the job_ID or the full hamiltonian</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: [True/False]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">que_id</span> <span class="o">=</span> <span class="n">_validate_que_request</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">queue_adapter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">queue_adapter</span><span class="o">.</span><span class="n">get_status_of_job</span><span class="p">(</span><span class="n">process_id</span><span class="o">=</span><span class="n">que_id</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span>
+            <span class="s2">&quot;pending&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;running&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="queue_info_by_job_id"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.server.queuestatus.html#pyiron.base.server.queuestatus.queue_info_by_job_id">[docs]</a><span class="k">def</span> <span class="nf">queue_info_by_job_id</span><span class="p">(</span><span class="n">job_id</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Display the queuing system info of job by qstat | grep  shell command</span>
+<span class="sd">    as dictionary</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        requested_id (int): query for a specific job_id</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: Dictionary with the output from the queuing system - optimized for the Sun grid engine</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">queue_adapter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">queue_adapter</span><span class="o">.</span><span class="n">get_status_of_job</span><span class="p">(</span><span class="n">process_id</span><span class="o">=</span><span class="n">job_id</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="queue_is_empty"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.server.queuestatus.html#pyiron.base.server.queuestatus.queue_is_empty">[docs]</a><span class="k">def</span> <span class="nf">queue_is_empty</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if the queue table is currently empty - no more jobs to wait for.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: True if the table is empty, else False - optimized for the Sun grid engine</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">queue_adapter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">queue_adapter</span><span class="o">.</span><span class="n">get_status_of_my_jobs</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="queue_delete_job"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.server.queuestatus.html#pyiron.base.server.queuestatus.queue_delete_job">[docs]</a><span class="k">def</span> <span class="nf">queue_delete_job</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Delete a job from the queuing system</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        item (int, pyiron.base.job.generic.GenericJob): Provide either the job_ID or the full hamiltonian</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: Output from the queuing system as string - optimized for the Sun grid engine</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">que_id</span> <span class="o">=</span> <span class="n">_validate_que_request</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">queue_adapter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">queue_adapter</span><span class="o">.</span><span class="n">delete_job</span><span class="p">(</span><span class="n">process_id</span><span class="o">=</span><span class="n">que_id</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="queue_enable_reservation"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.server.queuestatus.html#pyiron.base.server.queuestatus.queue_enable_reservation">[docs]</a><span class="k">def</span> <span class="nf">queue_enable_reservation</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Enable a reservation for a particular job within the queuing system</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        item (int, pyiron.base.job.generic.GenericJob): Provide either the job_ID or the full hamiltonian</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: Output from the queuing system as string - optimized for the Sun grid engine</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">que_id</span> <span class="o">=</span> <span class="n">_validate_que_request</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">queue_adapter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">que_id</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">queue_adapter</span><span class="o">.</span><span class="n">enable_reservation</span><span class="p">(</span><span class="n">process_id</span><span class="o">=</span><span class="n">q</span><span class="p">)</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">que_id</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">queue_adapter</span><span class="o">.</span><span class="n">enable_reservation</span><span class="p">(</span><span class="n">process_id</span><span class="o">=</span><span class="n">que_id</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="wait_for_job"><a class="viewcode-back" href="../../../../apidoc/pyiron.base.server.queuestatus.html#pyiron.base.server.queuestatus.wait_for_job">[docs]</a><span class="k">def</span> <span class="nf">wait_for_job</span><span class="p">(</span><span class="n">job</span><span class="p">,</span> <span class="n">interval_in_s</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">max_iterations</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Sleep until the job is finished but maximum interval_in_s * max_iterations seconds.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        job (pyiron.base.job.generic.GenericJob): Job to wait for</span>
+<span class="sd">        interval_in_s (int): interval when the job status is queried from the database - default 5 sec.</span>
+<span class="sd">        max_iterations (int): maximum number of iterations - default 100</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">queue_adapter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">s</span><span class="o">.</span><span class="n">queue_adapter</span><span class="o">.</span><span class="n">remote_flag</span> <span class="ow">and</span> <span class="n">job</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">queue</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">finished</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iterations</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">job</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">queue_check_job_is_waiting_or_running</span><span class="p">(</span><span class="n">job</span><span class="p">):</span>
+                <span class="n">job</span><span class="o">.</span><span class="n">transfer_from_remote</span><span class="p">()</span>
+                <span class="n">finished</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">break</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">interval_in_s</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">finished</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Maximum iterations reached, but the job was not finished.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">finished</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iterations</span><span class="p">):</span>
+            <span class="n">job</span><span class="o">.</span><span class="n">refresh_job_status</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">job</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">finished</span> <span class="ow">or</span> <span class="n">job</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">aborted</span> <span class="ow">or</span> <span class="n">job</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">not_converged</span><span class="p">:</span>
+                <span class="n">finished</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">break</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">interval_in_s</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">finished</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Maximum iterations reached, but the job was not finished.&quot;</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_validate_que_request</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Internal function to convert the job_ID or hamiltonian to the queuing system ID.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        item (int, pyiron.base.job.generic.GenericJob): Provide either the job_ID or the full hamiltonian</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        int: queuing system ID</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="n">que_id</span> <span class="o">=</span> <span class="n">item</span>
+    <span class="k">elif</span> <span class="n">static_isinstance</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="s2">&quot;pyiron.base.master.generic.GenericMaster&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">queue_id</span><span class="p">:</span>
+            <span class="n">que_id</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">queue_id</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">queue_id_lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">child_id</span><span class="p">)</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">queue_id</span> <span class="k">for</span> <span class="n">child_id</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">child_ids</span><span class="p">]</span>
+            <span class="n">que_id</span> <span class="o">=</span> <span class="p">[</span><span class="n">queue_id</span> <span class="k">for</span> <span class="n">queue_id</span> <span class="ow">in</span> <span class="n">queue_id_lst</span> <span class="k">if</span> <span class="n">queue_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">que_id</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;This job does not have a queue ID.&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">static_isinstance</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="s2">&quot;pyiron.base.job.generic.GenericJob&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">queue_id</span><span class="p">:</span>
+            <span class="n">que_id</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">queue_id</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;This job does not have a queue ID.&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">static_isinstance</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="s2">&quot;pyiron.base.job.core.JobCore&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s2">&quot;server&quot;</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">():</span>
+            <span class="n">server_hdf_dict</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">project_hdf5</span><span class="p">[</span><span class="s2">&quot;server&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s2">&quot;qid&quot;</span> <span class="ow">in</span> <span class="n">server_hdf_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">que_id</span> <span class="o">=</span> <span class="n">server_hdf_dict</span><span class="p">[</span><span class="s2">&quot;qid&quot;</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;This job does not have a queue ID.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;This job does not have a queue ID.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+            <span class="s2">&quot;The queue can either query for IDs or for pyiron GenericJobObjects.&quot;</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">que_id</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

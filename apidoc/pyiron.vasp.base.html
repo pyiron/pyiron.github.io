@@ -1,0 +1,1379 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.vasp.base module &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>pyiron.vasp.base module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/pyiron.vasp.base.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-pyiron.vasp.base">
+<span id="pyiron-vasp-base-module"></span><h1>pyiron.vasp.base module<a class="headerlink" href="#module-pyiron.vasp.base" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pyiron.vasp.base.DFTOutput">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.vasp.base.</code><code class="sig-name descname">DFTOutput</code><a class="reference internal" href="../_modules/pyiron/vasp/base.html#DFTOutput"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.DFTOutput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class stores the DFT specific output</p>
+<dl class="py attribute">
+<dt id="pyiron.vasp.base.DFTOutput.log_dict">
+<code class="sig-name descname">log_dict</code><a class="headerlink" href="#pyiron.vasp.base.DFTOutput.log_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>A dictionary of all tags and values of DFT data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.DFTOutput.from_hdf">
+<code class="sig-name descname">from_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#DFTOutput.from_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.DFTOutput.from_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the attributes and reconstructs the object from a hdf file
+:param hdf: The hdf5 instance</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.DFTOutput.to_hdf">
+<code class="sig-name descname">to_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#DFTOutput.to_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.DFTOutput.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the object in a HDF5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>hdf</strong> (<a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.ProjectHDFio" title="pyiron.base.generic.hdfio.ProjectHDFio"><em>pyiron.base.generic.hdfio.ProjectHDFio</em></a>) – HDF path to which the object is to be saved</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pyiron.vasp.base.GenericOutput">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.vasp.base.</code><code class="sig-name descname">GenericOutput</code><a class="reference internal" href="../_modules/pyiron/vasp/base.html#GenericOutput"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.GenericOutput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class stores the generic output like different structures, energies and forces from a simulation in a highly
+generic format. Usually the user does not have to access this class.</p>
+<dl class="py attribute">
+<dt id="pyiron.vasp.base.GenericOutput.log_dict">
+<code class="sig-name descname">log_dict</code><a class="headerlink" href="#pyiron.vasp.base.GenericOutput.log_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>A dictionary of all tags and values of generic data (positions, forces, etc)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.GenericOutput.bands">
+<em class="property">property </em><code class="sig-name descname">bands</code><a class="headerlink" href="#pyiron.vasp.base.GenericOutput.bands" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.GenericOutput.from_hdf">
+<code class="sig-name descname">from_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#GenericOutput.from_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.GenericOutput.from_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the attributes and reconstructs the object from a hdf file
+:param hdf: The hdf5 instance</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.GenericOutput.to_hdf">
+<code class="sig-name descname">to_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#GenericOutput.to_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.GenericOutput.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the object in a HDF5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>hdf</strong> (<a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.ProjectHDFio" title="pyiron.base.generic.hdfio.ProjectHDFio"><em>pyiron.base.generic.hdfio.ProjectHDFio</em></a>) – HDF path to which the object is to be saved</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pyiron.vasp.base.Incar">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.vasp.base.</code><code class="sig-name descname">Incar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_file_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">table_name</span><span class="o">=</span><span class="default_value">'incar'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#Incar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.Incar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pyiron.base.generic.parameters.html#pyiron.base.generic.parameters.GenericParameters" title="pyiron.base.generic.parameters.GenericParameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyiron.base.generic.parameters.GenericParameters</span></code></a></p>
+<p>Class to control the INCAR file of a vasp simulation</p>
+<dl class="py method">
+<dt id="pyiron.vasp.base.Incar.load_default">
+<code class="sig-name descname">load_default</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#Incar.load_default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.Incar.load_default" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads the default file content</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pyiron.vasp.base.Input">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.vasp.base.</code><code class="sig-name descname">Input</code><a class="reference internal" href="../_modules/pyiron/vasp/base.html#Input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.Input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Handles setting the input parameters for a VASP job.</p>
+<dl class="py attribute">
+<dt id="pyiron.vasp.base.Input.incar">
+<code class="sig-name descname">incar</code><a class="headerlink" href="#pyiron.vasp.base.Input.incar" title="Permalink to this definition">¶</a></dt>
+<dd><p>.vasp.vasp.Incar instance to handle the INCAR file inputs in VASP</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pyiron.vasp.base.Input.kpoints">
+<code class="sig-name descname">kpoints</code><a class="headerlink" href="#pyiron.vasp.base.Input.kpoints" title="Permalink to this definition">¶</a></dt>
+<dd><p>vasp.vasp.Kpoints instance to handle the KPOINTS file inputs in VASP</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pyiron.vasp.base.Input.potcar">
+<code class="sig-name descname">potcar</code><a class="headerlink" href="#pyiron.vasp.base.Input.potcar" title="Permalink to this definition">¶</a></dt>
+<dd><p>vasp.vasp.Potcar instance to set the appropriate POTCAR files for the simulation</p>
+</dd></dl>
+
+<p>Ideally, the user would not have to access the Input instance unless the user wants to set an extremely specific
+VASP tag which can’t se set using functions in Vasp().</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">atoms</span> <span class="o">=</span>  <span class="n">CrystalStructure</span><span class="p">(</span><span class="s2">&quot;Pt&quot;</span><span class="p">,</span> <span class="n">BravaisBasis</span><span class="o">=</span><span class="s2">&quot;fcc&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">3.98</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ham</span> <span class="o">=</span> <span class="n">VaspBase</span><span class="p">(</span><span class="s2">&quot;trial&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ham</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">atoms</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ham</span><span class="o">.</span><span class="n">calc_static</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span><span class="p">(</span><span class="n">atoms</span><span class="o">==</span><span class="n">ham</span><span class="o">.</span><span class="n">structure</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span><span class="p">(</span><span class="n">ham</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">incar</span><span class="p">[</span><span class="s2">&quot;ISIF&quot;</span><span class="p">]</span><span class="o">==-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="pyiron.vasp.base.Input.from_hdf">
+<code class="sig-name descname">from_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#Input.from_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.Input.from_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the attributes and reconstructs the object from a hdf file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>hdf</strong> – The hdf5 instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.Input.to_hdf">
+<code class="sig-name descname">to_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#Input.to_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.Input.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the object in a HDF5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>hdf</strong> (<a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.ProjectHDFio" title="pyiron.base.generic.hdfio.ProjectHDFio"><em>pyiron.base.generic.hdfio.ProjectHDFio</em></a>) – HDF path to which the object is to be saved</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.Input.write">
+<code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">structure</span></em>, <em class="sig-param"><span class="n">modified_elements</span></em>, <em class="sig-param"><span class="n">directory</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#Input.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.Input.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes all the input files to a specified directory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>structure</strong> (<em>atomistics.structure.atoms.Atoms instance</em>) – Structure to be written</p></li>
+<li><p><strong>directory</strong> (<em>str</em>) – The working directory for the VASP run</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pyiron.vasp.base.Kpoints">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.vasp.base.</code><code class="sig-name descname">Kpoints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_file_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">table_name</span><span class="o">=</span><span class="default_value">'kpoints'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#Kpoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.Kpoints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pyiron.base.generic.parameters.html#pyiron.base.generic.parameters.GenericParameters" title="pyiron.base.generic.parameters.GenericParameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyiron.base.generic.parameters.GenericParameters</span></code></a></p>
+<p>Class to control the KPOINTS file of a vasp simulation</p>
+<dl class="py method">
+<dt id="pyiron.vasp.base.Kpoints.from_hdf">
+<code class="sig-name descname">from_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span></em>, <em class="sig-param"><span class="n">group_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#Kpoints.from_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.Kpoints.from_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restore the GenericParameters from an HDF5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdf</strong> (<a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.ProjectHDFio" title="pyiron.base.generic.hdfio.ProjectHDFio"><em>ProjectHDFio</em></a>) – HDF5 group object</p></li>
+<li><p><strong>group_name</strong> (<em>str</em>) – HDF5 subgroup name - optional</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.Kpoints.load_default">
+<code class="sig-name descname">load_default</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#Kpoints.load_default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.Kpoints.load_default" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads the default file content</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.Kpoints.set_kmesh_by_density">
+<code class="sig-name descname">set_kmesh_by_density</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">structure</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#Kpoints.set_kmesh_by_density"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.Kpoints.set_kmesh_by_density" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.Kpoints.set_kpoints_file">
+<code class="sig-name descname">set_kpoints_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">size_of_mesh</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">shift</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">n_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#Kpoints.set_kpoints_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.Kpoints.set_kpoints_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets appropriate tags and values in the KPOINTS file
+:param method: Type of meshing scheme (Gamma, MP, Manual or Line)
+:type method: str
+:param size_of_mesh: List of size 1x3 specifying the required mesh size
+:type size_of_mesh: list/numpy.ndarray
+:param shift: List of size 1x3 specifying the user defined shift from the Gamma point
+:type shift: list
+:param n_path: Number of points per trace for line mode
+:type n_path: int
+:param path: List of tuples including path coorinate and name.
+:type path: list</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.Kpoints.to_hdf">
+<code class="sig-name descname">to_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span></em>, <em class="sig-param"><span class="n">group_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#Kpoints.to_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.Kpoints.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the GenericParameters in an HDF5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdf</strong> (<a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.ProjectHDFio" title="pyiron.base.generic.hdfio.ProjectHDFio"><em>ProjectHDFio</em></a>) – HDF5 group object</p></li>
+<li><p><strong>group_name</strong> (<em>str</em>) – HDF5 subgroup name - optional</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pyiron.vasp.base.Output">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.vasp.base.</code><code class="sig-name descname">Output</code><a class="reference internal" href="../_modules/pyiron/vasp/base.html#Output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.Output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Handles the output from a VASP simulation.</p>
+<dl class="py attribute">
+<dt id="pyiron.vasp.base.Output.electronic_structure">
+<code class="sig-name descname">electronic_structure</code><a class="headerlink" href="#pyiron.vasp.base.Output.electronic_structure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gives the electronic structure of the system</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pyiron.vasp.base.Output.electrostatic_potential">
+<code class="sig-name descname">electrostatic_potential</code><a class="headerlink" href="#pyiron.vasp.base.Output.electrostatic_potential" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gives the electrostatic/local potential of the system</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pyiron.vasp.base.Output.charge_density">
+<code class="sig-name descname">charge_density</code><a class="headerlink" href="#pyiron.vasp.base.Output.charge_density" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gives the charge density of the system</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.Output.collect">
+<code class="sig-name descname">collect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">directory</span><span class="o">=</span><span class="default_value">'/home/travis/build/pyiron/pyiron/docs'</span></em>, <em class="sig-param"><span class="n">sorted_indices</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#Output.collect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.Output.collect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collects output from the working directory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>directory</strong> (<em>str</em>) – Path to the directory</p></li>
+<li><p><strong>sorted_indices</strong> (<em>np.array/None</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.Output.from_hdf">
+<code class="sig-name descname">from_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#Output.from_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.Output.from_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the attributes and reconstructs the object from a hdf file
+:param hdf: The hdf5 instance</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.Output.structure">
+<em class="property">property </em><code class="sig-name descname">structure</code><a class="headerlink" href="#pyiron.vasp.base.Output.structure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Getter for the output structure</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.Output.to_hdf">
+<code class="sig-name descname">to_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#Output.to_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.Output.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the object in a HDF5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>hdf</strong> (<a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.ProjectHDFio" title="pyiron.base.generic.hdfio.ProjectHDFio"><em>pyiron.base.generic.hdfio.ProjectHDFio</em></a>) – HDF path to which the object is to be saved</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pyiron.vasp.base.VaspBase">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.vasp.base.</code><code class="sig-name descname">VaspBase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">project</span></em>, <em class="sig-param"><span class="n">job_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pyiron.dft.job.generic.html#pyiron.dft.job.generic.GenericDFTJob" title="pyiron.dft.job.generic.GenericDFTJob"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyiron.dft.job.generic.GenericDFTJob</span></code></a></p>
+<p>Class to setup and run and analyze VASP simulations which is a derivative of pyiron.objects.job.generic.GenericJob.
+The functions in these modules are written in such the function names and attributes are very generic
+(get_structure(), molecular_dynamics(), version) but the functions are written to handle VASP specific input/output.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>project</strong> (<em>pyiron.project.Project instance</em>) – Specifies the project path among other attributes</p></li>
+<li><p><strong>job_name</strong> (<em>str</em>) – Name of the job</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="pyiron.vasp.base.VaspBase.input">
+<code class="sig-name descname">input</code><a class="headerlink" href="#pyiron.vasp.base.VaspBase.input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instance which handles the input</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>pyiron.vasp.vasp.Input</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Examples</p>
+<p>Let’s say you need to run a vasp simulation where you would like to control the input parameters manually. To
+set up a static dft run with Gaussian smearing and a k-point MP mesh of [6, 6, 6]. You would have to set it up
+as shown below:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ham</span> <span class="o">=</span> <span class="n">VaspBase</span><span class="p">(</span><span class="n">job_name</span><span class="o">=</span><span class="s2">&quot;trial_job&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ham</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">incar</span><span class="p">[</span><span class="n">IBRION</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ham</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">incar</span><span class="p">[</span><span class="n">ISMEAR</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ham</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">kpoints</span><span class="o">.</span><span class="n">set_kpoints_file</span><span class="p">(</span><span class="n">size_of_mesh</span><span class="o">=</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>However, the according to pyiron’s philosophy, it is recommended to avoid using code specific tags like IBRION,
+ISMEAR etc. Therefore the recommended way to set this calculation is as follows:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ham</span> <span class="o">=</span> <span class="n">VaspBase</span><span class="p">(</span><span class="n">job_name</span><span class="o">=</span><span class="s2">&quot;trial_job&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ham</span><span class="o">.</span><span class="n">calc_static</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ham</span><span class="o">.</span><span class="n">set_occupancy_smearing</span><span class="p">(</span><span class="n">smearing</span><span class="o">=</span><span class="s2">&quot;gaussian&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ham</span><span class="o">.</span><span class="n">set_kpoints</span><span class="p">(</span><span class="n">mesh</span><span class="o">=</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="go">The exact same tags as in the first examples are set automatically.</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.append_charge_density">
+<code class="sig-name descname">append_charge_density</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_specifier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.append_charge_density"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.append_charge_density" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append charge density file (CHGCAR)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>job_specifier</strong> (<em>str/int</em>) – name of the job or job ID</p></li>
+<li><p><strong>path</strong> (<em>str</em>) – path to CHGCAR file</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.append_wave_function">
+<code class="sig-name descname">append_wave_function</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_specifier</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.append_wave_function"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.append_wave_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append wave function file (WAVECAR)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>job_specifier</strong> (<em>str/int</em>) – name of the job or job ID</p></li>
+<li><p><strong>path</strong> (<em>str</em>) – path to WAVECAR file</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.calc_md">
+<code class="sig-name descname">calc_md</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">temperature</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">n_ionic_steps</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">n_print</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">time_step</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">retain_charge_density</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">retain_electrostatic_potential</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.calc_md"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.calc_md" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets appropriate tags for molecular dynamics in VASP</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>temperature</strong> (<em>int/float/list</em>) – Temperature/ range of temperatures in Kelvin</p></li>
+<li><p><strong>n_ionic_steps</strong> (<em>int</em>) – Maximum number of ionic steps</p></li>
+<li><p><strong>n_print</strong> (<em>int</em>) – Prints outputs every n_print steps</p></li>
+<li><p><strong>time_step</strong> (<em>float</em>) – time step (fs)</p></li>
+<li><p><strong>retain_charge_density</strong> (<em>bool</em>) – True id the charge density should be written</p></li>
+<li><p><strong>retain_electrostatic_potential</strong> (<em>bool</em>) – True if the electrostatic potential should be written</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.calc_minimize">
+<code class="sig-name descname">calc_minimize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">electronic_steps</span><span class="o">=</span><span class="default_value">60</span></em>, <em class="sig-param"><span class="n">ionic_steps</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">max_iter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pressure</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">algorithm</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">retain_charge_density</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">retain_electrostatic_potential</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ionic_energy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ionic_forces</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ionic_energy_tolerance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ionic_force_tolerance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">volume_only</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.calc_minimize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.calc_minimize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to setup the hamiltonian to perform ionic relaxations using DFT. The ISIF tag has to be supplied
+separately.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>electronic_steps</strong> (<em>int</em>) – Maximum number of electronic steps</p></li>
+<li><p><strong>ionic_steps</strong> (<em>int</em>) – Maximum number of ionic</p></li>
+<li><p><strong>max_iter</strong> (<em>int</em>) – Maximum number of iterations</p></li>
+<li><p><strong>pressure</strong> (<em>float</em>) – External pressure to be applied</p></li>
+<li><p><strong>algorithm</strong> (<em>str</em>) – Type of VASP algorithm to be used “Fast”/”Accurate”</p></li>
+<li><p><strong>retain_charge_density</strong> (<em>bool</em>) – True if the charge density should be written</p></li>
+<li><p><strong>retain_electrostatic_potential</strong> (<em>boolean</em>) – True if the electrostatic potential should be written</p></li>
+<li><p><strong>ionic_energy_tolerance</strong> (<em>float</em>) – Ionic energy convergence criteria (eV)</p></li>
+<li><p><strong>ionic_force_tolerance</strong> (<em>float</em>) – Ionic forces convergence criteria (overwrites ionic energy) (ev/A)</p></li>
+<li><p><strong>ionic_energy</strong> (<em>float</em>) – Same as ionic_energy_tolerance (deprecated)</p></li>
+<li><p><strong>ionic_forces</strong> (<em>float</em>) – Same as ionic_force_tolerance (deprecated)</p></li>
+<li><p><strong>volume_only</strong> (<em>bool</em>) – Option to relax only the volume (keeping the relative coordinates fixed</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.calc_static">
+<code class="sig-name descname">calc_static</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">electronic_steps</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">algorithm</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">retain_charge_density</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">retain_electrostatic_potential</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.calc_static"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.calc_static" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to setup the hamiltonian to perform static SCF DFT runs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>electronic_steps</strong> (<em>int</em>) – Maximum number of electronic steps</p></li>
+<li><p><strong>algorithm</strong> (<em>str</em>) – Type of VASP algorithm to be used “Fast”/”Accurate”</p></li>
+<li><p><strong>retain_charge_density</strong> (<em>bool</em>) – True if</p></li>
+<li><p><strong>retain_electrostatic_potential</strong> (<em>bool</em>) – True/False</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.cleanup">
+<code class="sig-name descname">cleanup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">files_to_remove</span><span class="o">=</span><span class="default_value">'WAVECAR', 'CHGCAR', 'CHG', 'vasprun.xml'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.cleanup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.cleanup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes excess files (by default: WAVECAR, CHGCAR, CHG)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.collect_errors">
+<code class="sig-name descname">collect_errors</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.collect_errors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.collect_errors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collects errors from the VASP run</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.collect_logfiles">
+<code class="sig-name descname">collect_logfiles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.collect_logfiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.collect_logfiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect errors and warnings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.collect_output">
+<code class="sig-name descname">collect_output</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.collect_output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.collect_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collects the outputs and stores them to the hdf file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.collect_warnings">
+<code class="sig-name descname">collect_warnings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.collect_warnings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.collect_warnings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collects warnings from the VASP run</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.compress">
+<code class="sig-name descname">compress</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">files_to_compress</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.compress"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.compress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compress the output files of a job object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>files_to_compress</strong> (<em>list</em>) – A list of files to compress (optional)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.convergence_check">
+<code class="sig-name descname">convergence_check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.convergence_check"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.convergence_check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validate the convergence of the calculation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>If the calculation is converged</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.copy_hamiltonian">
+<code class="sig-name descname">copy_hamiltonian</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.copy_hamiltonian"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.copy_hamiltonian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copies a job to new one with a different name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>job_name</strong> (<em>str</em>) – Job name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>New job</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="pyiron.vasp.vasp.html#pyiron.vasp.vasp.Vasp" title="pyiron.vasp.vasp.Vasp">pyiron.vasp.vasp.Vasp</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.exchange_correlation_functional">
+<em class="property">property </em><code class="sig-name descname">exchange_correlation_functional</code><a class="headerlink" href="#pyiron.vasp.base.VaspBase.exchange_correlation_functional" title="Permalink to this definition">¶</a></dt>
+<dd><p>The exchange correlation functional used (LDA or GGA)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.fix_spin_constraint">
+<em class="property">property </em><code class="sig-name descname">fix_spin_constraint</code><a class="headerlink" href="#pyiron.vasp.base.VaspBase.fix_spin_constraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tells if the type of constraints the spins have for this calculation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.fix_symmetry">
+<em class="property">property </em><code class="sig-name descname">fix_symmetry</code><a class="headerlink" href="#pyiron.vasp.base.VaspBase.fix_symmetry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.from_directory">
+<code class="sig-name descname">from_directory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">directory</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.from_directory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.from_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Vasp instance is created by parsing the input and output from the specified directory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>directory</strong> (<em>str</em>) – Path to the directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.from_hdf">
+<code class="sig-name descname">from_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">group_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.from_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.from_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recreates instance from the hdf5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdf</strong> (<a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.ProjectHDFio" title="pyiron.base.generic.hdfio.ProjectHDFio"><em>pyiron.base.generic.hdfio.ProjectHDFio</em></a>) – The HDF file/path to read the data from</p></li>
+<li><p><strong>group_name</strong> (<em>str</em>) – The name of the group under which the data must be stored as</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.get_charge_density">
+<code class="sig-name descname">get_charge_density</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.get_charge_density"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.get_charge_density" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the charge density from the hdf5 file. This value is normalized by the volume</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>atomistics.volumetric.generic.VolumetricData instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.get_eddrmm_handling">
+<code class="sig-name descname">get_eddrmm_handling</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.get_eddrmm_handling"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.get_eddrmm_handling" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>status of EDDRMM handling</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.get_electronic_structure">
+<code class="sig-name descname">get_electronic_structure</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.get_electronic_structure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.get_electronic_structure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the electronic structure instance from the hdf5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>pyiron.atomistics.waves.electronic.ElectronicStructure instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.get_electrostatic_potential">
+<code class="sig-name descname">get_electrostatic_potential</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.get_electrostatic_potential"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.get_electrostatic_potential" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the electrostatic potential from the hdf5 file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>atomistics.volumetric.generic.VolumetricData instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.get_final_structure_from_file">
+<code class="sig-name descname">get_final_structure_from_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">'CONTCAR'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.get_final_structure_from_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.get_final_structure_from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the final structure of the simulation usually from the CONTCAR file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – Path to the CONTCAR file in VASP</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The final structure</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="pyiron.atomistics.structure.atoms.html#pyiron.atomistics.structure.atoms.Atoms" title="pyiron.atomistics.structure.atoms.Atoms">pyiron.atomistics.structure.atoms.Atoms</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.get_icharg_value">
+<code class="sig-name descname">get_icharg_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">icharg</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">self_consistent_calc</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.get_icharg_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.get_icharg_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gives the correct ICHARG value for the restart calculation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>icharg</strong> (<em>int/None</em>) – If given, this value will be checked for validity and returned.</p></li>
+<li><p><strong>self_consistent_calc</strong> (<em>bool/None</em>) – If ‘True’ returns 1, if ‘False’ returns 11,
+if ‘None’ returns based on the job either 1 or 11.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the icharg tag</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.get_magnetic_moments">
+<code class="sig-name descname">get_magnetic_moments</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iteration_step</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.get_magnetic_moments"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.get_magnetic_moments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gives the magnetic moments of a calculation for each iteration step.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>iteration_step</strong> (<em>int</em>) – Step for which the structure is requested</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>array of final magmetic moments or None if no magnetic moment is given</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray/None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.get_nelect">
+<code class="sig-name descname">get_nelect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.get_nelect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.get_nelect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of electrons in the systems</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Number of electrons in the system</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.get_rwigs">
+<code class="sig-name descname">get_rwigs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.get_rwigs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.get_rwigs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the radii of Wigner-Seitz cell. (RWIGS tag)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary of radii</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.list_potentials">
+<code class="sig-name descname">list_potentials</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.list_potentials"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.list_potentials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists all the possible POTCAR files for the elements in the structure depending on the XC functional</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a list of available potentials</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.plane_wave_cutoff">
+<em class="property">property </em><code class="sig-name descname">plane_wave_cutoff</code><a class="headerlink" href="#pyiron.vasp.base.VaspBase.plane_wave_cutoff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plane wave energy cutoff in eV</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.potential">
+<em class="property">property </em><code class="sig-name descname">potential</code><a class="headerlink" href="#pyiron.vasp.base.VaspBase.potential" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.potential_available">
+<em class="property">property </em><code class="sig-name descname">potential_available</code><a class="headerlink" href="#pyiron.vasp.base.VaspBase.potential_available" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.potential_list">
+<em class="property">property </em><code class="sig-name descname">potential_list</code><a class="headerlink" href="#pyiron.vasp.base.VaspBase.potential_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.potential_view">
+<em class="property">property </em><code class="sig-name descname">potential_view</code><a class="headerlink" href="#pyiron.vasp.base.VaspBase.potential_view" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.publication">
+<em class="property">property </em><code class="sig-name descname">publication</code><a class="headerlink" href="#pyiron.vasp.base.VaspBase.publication" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.reset_output">
+<code class="sig-name descname">reset_output</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.reset_output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.reset_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets the output instance</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.restart">
+<code class="sig-name descname">restart</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">job_type</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.restart"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.restart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restart a new job created from an existing Vasp calculation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>job_name</strong> (<em>str</em>) – Job name</p></li>
+<li><p><strong>job_type</strong> (<em>str</em>) – Job type. If not specified a Vasp job type is assumed</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>New job</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>new_ham (vasp.vasp.Vasp instance)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.restart_for_band_structure_calculations">
+<code class="sig-name descname">restart_for_band_structure_calculations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.restart_for_band_structure_calculations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.restart_for_band_structure_calculations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restart a new job created from an existing Vasp calculation by reading the charge density
+for band structure calculations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>job_name</strong> (<em>str/None</em>) – Job name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>New job</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>new_ham (vasp.vasp.Vasp instance)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.restart_from_charge_density">
+<code class="sig-name descname">restart_from_charge_density</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">job_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">icharg</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">self_consistent_calc</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.restart_from_charge_density"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.restart_from_charge_density" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restart a new job created from an existing Vasp calculation by reading the charge density.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>job_name</strong> (<em>str/None</em>) – Job name</p></li>
+<li><p><strong>job_type</strong> (<em>str/None</em>) – Job type. If not specified a Vasp job type is assumed</p></li>
+<li><p><strong>icharg</strong> (<em>int/None</em>) – If given, this value will be checked for validity and returned.</p></li>
+<li><p><strong>self_consistent_calc</strong> (<em>bool/None</em>) – If ‘True’ returns 1, if ‘False’ returns 11,
+if ‘None’ returns based on the job either 1 or 11.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>New job</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>new_ham (vasp.vasp.Vasp instance)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.restart_from_wave_and_charge">
+<code class="sig-name descname">restart_from_wave_and_charge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">job_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">icharg</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">self_consistent_calc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">istart</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.restart_from_wave_and_charge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.restart_from_wave_and_charge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restart a new job created from an existing Vasp calculation by reading the charge density and the wave
+function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>job_name</strong> (<em>str/None</em>) – Job name</p></li>
+<li><p><strong>job_type</strong> (<em>str/None</em>) – Job type. If not specified a Vasp job type is assumed</p></li>
+<li><p><strong>icharg</strong> (<em>int/None</em>) – If given, this value will be checked for validity and returned.</p></li>
+<li><p><strong>self_consistent_calc</strong> (<em>bool/None</em>) – If ‘True’ returns 1, if ‘False’ returns 11,
+if ‘None’ returns based on the job either 1 or 11.</p></li>
+<li><p><strong>istart</strong> (<em>int</em>) – Vasp ISTART tag</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>New job</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>new_ham (vasp.vasp.Vasp instance)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.restart_from_wave_functions">
+<code class="sig-name descname">restart_from_wave_functions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">job_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">istart</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.restart_from_wave_functions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.restart_from_wave_functions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restart a new job created from an existing Vasp calculation by reading the wave functions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>job_name</strong> (<em>str/None</em>) – Job name</p></li>
+<li><p><strong>job_type</strong> (<em>str/None</em>) – Job type. If not specified a Vasp job type is assumed</p></li>
+<li><p><strong>istart</strong> (<em>int</em>) – Vasp ISTART tag</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>New job</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>new_ham (vasp.vasp.Vasp instance)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.set_algorithm">
+<code class="sig-name descname">set_algorithm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">algorithm</span><span class="o">=</span><span class="default_value">'Fast'</span></em>, <em class="sig-param"><span class="n">ialgo</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.set_algorithm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.set_algorithm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the type of electronic minimization algorithm</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>algorithm</strong> (<em>str</em>) – Algorithm defined by VASP (Fast, Normal etc.)</p></li>
+<li><p><strong>ialgo</strong> (<em>int</em>) – Sets the IALGO tag in VASP. If not none, this overwrites algorithm</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.set_convergence_precision">
+<code class="sig-name descname">set_convergence_precision</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ionic_energy_tolerance</span><span class="o">=</span><span class="default_value">0.001</span></em>, <em class="sig-param"><span class="n">electronic_energy</span><span class="o">=</span><span class="default_value">1e-07</span></em>, <em class="sig-param"><span class="n">ionic_force_tolerance</span><span class="o">=</span><span class="default_value">0.01</span></em>, <em class="sig-param"><span class="n">ionic_energy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ionic_forces</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.set_convergence_precision"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.set_convergence_precision" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the electronic and ionic convergence precision. For ionic convergence either the energy or the force
+precision is required</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ionic_energy_tolerance</strong> (<em>float</em>) – Ionic energy convergence precision (eV)</p></li>
+<li><p><strong>electronic_energy</strong> (<em>float</em>) – Electronic energy convergence precision (eV)</p></li>
+<li><p><strong>ionic_force_tolerance</strong> (<em>float</em>) – Ionic force convergence precision (eV/A)</p></li>
+<li><p><strong>ionic_energy</strong> (<em>float</em>) – Same as ionic_energy_tolerance (deprecated)</p></li>
+<li><p><strong>ionic_forces</strong> (<em>float</em>) – Same as ionic_force_tolerance (deprecated)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.set_coulomb_interactions">
+<code class="sig-name descname">set_coulomb_interactions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interaction_type</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">ldau_print</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.set_coulomb_interactions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.set_coulomb_interactions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the on-site Coulomb interactions in the INCAR file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>interaction_type</strong> (<em>int</em>) – Type of Coulombic interaction
+1 - Asimov method
+2 - Dudarev method</p></li>
+<li><p><strong>ldau_print</strong> (<em>boolean</em>) – True/False</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.set_dipole_correction">
+<code class="sig-name descname">set_dipole_correction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">direction</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">dipole_center</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.set_dipole_correction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.set_dipole_correction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply a dipole correction using the dipole layer method proposed by <a class="reference external" href="https://doi.org/10.1103/PhysRevB.46.16067">Neugebauer &amp; Scheffler</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>direction</strong> (<em>int</em>) – Direction along which the field has to be applied (0, 1, or 2)</p></li>
+<li><p><strong>dipole_center</strong> (<em>list/numpy.ndarray</em>) – Position of the center of the dipole (not the center of the vacuum) in
+relative coordinates</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.set_eddrmm_handling">
+<code class="sig-name descname">set_eddrmm_handling</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">status</span><span class="o">=</span><span class="default_value">'warn'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.set_eddrmm_handling"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.set_eddrmm_handling" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the way, how EDDRMM warning is handled.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>status</strong> (<em>str</em>) – new status of EDDRMM handling (can be ‘warn’, ‘ignore’, or ‘restart’)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.set_electric_field">
+<code class="sig-name descname">set_electric_field</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">e_field</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">direction</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">dipole_center</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.set_electric_field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.set_electric_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set an external electric field using the dipole layer method proposed by <a class="reference external" href="https://doi.org/10.1103/PhysRevB.46.16067">Neugebauer &amp; Scheffler</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>e_field</strong> (<em>float</em>) – Magnitude of the external electric field (eV/A)</p></li>
+<li><p><strong>direction</strong> (<em>int</em>) – Direction along which the field has to be applied (0, 1, or 2)</p></li>
+<li><p><strong>dipole_center</strong> (<em>list/numpy.ndarray</em>) – Position of the center of the dipole (not the center of the vacuum) in
+relative coordinates</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.set_empty_states">
+<code class="sig-name descname">set_empty_states</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n_empty_states</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.set_empty_states"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.set_empty_states" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the number of empty states in the calculation
+:param n_empty_states: Required number of empty states
+:type n_empty_states: int</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.set_fft_mesh">
+<code class="sig-name descname">set_fft_mesh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nx</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ny</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nz</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.set_fft_mesh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.set_fft_mesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the number of points in the respective directions for the 3D FFT mesh used for computing the charge density
+or electrostatic potentials. In VASP, using PAW potentials, this refers to the “finer fft mesh”. If no values
+are set, the default settings from Vasp are used to set the number of grid points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nx</strong> (<em>int</em>) – Number of points on the x-grid</p></li>
+<li><p><strong>ny</strong> (<em>int</em>) – Number of points on the y-grid</p></li>
+<li><p><strong>nz</strong> (<em>int</em>) – Number of points on the z-grid</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.set_for_band_structure_calc">
+<code class="sig-name descname">set_for_band_structure_calc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num_points</span></em>, <em class="sig-param"><span class="n">structure</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">read_charge_density</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.set_for_band_structure_calc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.set_for_band_structure_calc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets up the input for a non self-consistent bandstructure calculation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_points</strong> (<em>int</em>) – Number of k-points along the total BZ path</p></li>
+<li><p><strong>structure</strong> (<em>atomistics.structure.atoms.Atoms instance</em>) – Structure for which the bandstructure is to be
+generated. (default is the input structure)</p></li>
+<li><p><strong>read_charge_density</strong> (<em>boolean</em>) – If True, a charge density from a previous SCF run is used (recommended)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.set_input_to_read_only">
+<code class="sig-name descname">set_input_to_read_only</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.set_input_to_read_only"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.set_input_to_read_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function enforces read-only mode for the input classes, but it has to be implement in the individual
+classes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.set_mixing_parameters">
+<code class="sig-name descname">set_mixing_parameters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">n_pulay_steps</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">density_mixing_parameter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spin_mixing_parameter</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.set_mixing_parameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.set_mixing_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>method</strong> (<em>str</em>) – </p></li>
+<li><p><strong>n_pulay_steps</strong> (<em>int</em>) – </p></li>
+<li><p><strong>density_mixing_parameter</strong> (<em>float</em>) – </p></li>
+<li><p><strong>spin_mixing_parameter</strong> (<em>float</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.set_occupancy_smearing">
+<code class="sig-name descname">set_occupancy_smearing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">smearing</span><span class="o">=</span><span class="default_value">'fermi'</span></em>, <em class="sig-param"><span class="n">width</span><span class="o">=</span><span class="default_value">0.2</span></em>, <em class="sig-param"><span class="n">ismear</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.set_occupancy_smearing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.set_occupancy_smearing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set how the finite temperature smearing is applied in determining partial occupancies</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>smearing</strong> (<em>str</em>) – Type of smearing (fermi/gaussian etc.)</p></li>
+<li><p><strong>width</strong> (<em>float</em>) – Smearing width (eV)</p></li>
+<li><p><strong>ismear</strong> (<em>int</em>) – Directly sets the ISMEAR tag. Overwrites the smearing tag</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.set_rwigs">
+<code class="sig-name descname">set_rwigs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rwigs_dict</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.set_rwigs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.set_rwigs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the radii of Wigner-Seitz cell. (RWIGS tag)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>rwigs_dict</strong> (<em>dict</em>) – Dictionary of species and corresponding radii.
+(structure has to be defined before)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.set_spin_constraint">
+<code class="sig-name descname">set_spin_constraint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lamb</span></em>, <em class="sig-param"><span class="n">rwigs_dict</span></em>, <em class="sig-param"><span class="n">direction</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">norm</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.set_spin_constraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.set_spin_constraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets spin constrains including ‘LAMBDA’ and ‘RWIGS’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lamb</strong> (<em>float</em>) – LAMBDA tag</p></li>
+<li><p><strong>rwigs_dict</strong> (<em>dict</em>) – Dictionary of species and corresponding radii.
+(structure has to be defined before)</p></li>
+<li><p><strong>direction</strong> (<em>bool</em>) – (True/False) constrain spin direction.</p></li>
+<li><p><strong>norm</strong> (<em>bool</em>) – (True/False) constrain spin norm (magnitude).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.sorted_indices">
+<em class="property">property </em><code class="sig-name descname">sorted_indices</code><a class="headerlink" href="#pyiron.vasp.base.VaspBase.sorted_indices" title="Permalink to this definition">¶</a></dt>
+<dd><p>How the original atom indices are ordered in the vasp format (species by species)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.spin_constraints">
+<em class="property">property </em><code class="sig-name descname">spin_constraints</code><a class="headerlink" href="#pyiron.vasp.base.VaspBase.spin_constraints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the calculation is spin polarized</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.stop_calculation">
+<code class="sig-name descname">stop_calculation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">next_electronic_step</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.stop_calculation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.stop_calculation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call to stop the VASP calculation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>next_electronic_step</strong> (<em>bool</em>) – True if the next electronic step should be calculated</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.structure">
+<em class="property">property </em><code class="sig-name descname">structure</code><a class="headerlink" href="#pyiron.vasp.base.VaspBase.structure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.to_hdf">
+<code class="sig-name descname">to_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">group_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.to_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores the instance attributes into the hdf5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdf</strong> (<a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.ProjectHDFio" title="pyiron.base.generic.hdfio.ProjectHDFio"><em>pyiron.base.generic.hdfio.ProjectHDFio</em></a>) – The HDF file/path to write the data to</p></li>
+<li><p><strong>group_name</strong> (<em>str</em>) – The name of the group under which the data must be stored as</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.validate_ready_to_run">
+<code class="sig-name descname">validate_ready_to_run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.validate_ready_to_run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.validate_ready_to_run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.write_charge_density">
+<em class="property">property </em><code class="sig-name descname">write_charge_density</code><a class="headerlink" href="#pyiron.vasp.base.VaspBase.write_charge_density" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if the charge density file CHGCAR file is/should be written</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.write_electrostatic_potential">
+<em class="property">property </em><code class="sig-name descname">write_electrostatic_potential</code><a class="headerlink" href="#pyiron.vasp.base.VaspBase.write_electrostatic_potential" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if the local potential or electrostatic potential LOCPOT file is/should be written</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.write_input">
+<code class="sig-name descname">write_input</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.write_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.write_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call routines that generate the INCAR, POTCAR, KPOINTS and POSCAR input files</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.write_magmoms">
+<code class="sig-name descname">write_magmoms</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspBase.write_magmoms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspBase.write_magmoms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the magnetic moments in INCAR from that assigned to the species</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.write_resolved_dos">
+<em class="property">property </em><code class="sig-name descname">write_resolved_dos</code><a class="headerlink" href="#pyiron.vasp.base.VaspBase.write_resolved_dos" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if the resolved DOS should be written (in the vasprun.xml file)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.base.VaspBase.write_wave_funct">
+<em class="property">property </em><code class="sig-name descname">write_wave_funct</code><a class="headerlink" href="#pyiron.vasp.base.VaspBase.write_wave_funct" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if the wave function file WAVECAR file is/should be written</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pyiron.vasp.base.VaspCollectError">
+<em class="property">exception </em><code class="sig-prename descclassname">pyiron.vasp.base.</code><code class="sig-name descname">VaspCollectError</code><a class="reference internal" href="../_modules/pyiron/vasp/base.html#VaspCollectError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.VaspCollectError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.vasp.base.get_k_mesh_by_cell">
+<code class="sig-prename descclassname">pyiron.vasp.base.</code><code class="sig-name descname">get_k_mesh_by_cell</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cell</span></em>, <em class="sig-param"><span class="n">kspace_per_in_ang</span><span class="o">=</span><span class="default_value">0.1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/base.html#get_k_mesh_by_cell"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.base.get_k_mesh_by_cell" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cell</strong> – </p></li>
+<li><p><strong>kspace_per_in_ang</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns:</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

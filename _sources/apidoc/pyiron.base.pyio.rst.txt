@@ -1,0 +1,18 @@
+pyiron.base.pyio package
+========================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pyiron.base.pyio.parser
+
+Module contents
+---------------
+
+.. automodule:: pyiron.base.pyio
+   :members:
+   :undoc-members:
+   :show-inheritance:

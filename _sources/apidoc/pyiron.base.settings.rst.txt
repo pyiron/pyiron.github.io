@@ -1,0 +1,21 @@
+pyiron.base.settings package
+============================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pyiron.base.settings.generic
+   pyiron.base.settings.install
+   pyiron.base.settings.logger
+   pyiron.base.settings.update
+
+Module contents
+---------------
+
+.. automodule:: pyiron.base.settings
+   :members:
+   :undoc-members:
+   :show-inheritance:

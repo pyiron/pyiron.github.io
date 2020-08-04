@@ -1,0 +1,19 @@
+pyiron.interactive package
+==========================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pyiron.interactive.scipy_minimizer
+   pyiron.interactive.sxextoptint
+
+Module contents
+---------------
+
+.. automodule:: pyiron.interactive
+   :members:
+   :undoc-members:
+   :show-inheritance:

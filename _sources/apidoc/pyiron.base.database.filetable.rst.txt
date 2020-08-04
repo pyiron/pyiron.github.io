@@ -1,0 +1,7 @@
+pyiron.base.database.filetable module
+=====================================
+
+.. automodule:: pyiron.base.database.filetable
+   :members:
+   :undoc-members:
+   :show-inheritance:

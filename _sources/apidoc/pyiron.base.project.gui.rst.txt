@@ -1,0 +1,7 @@
+pyiron.base.project.gui module
+==============================
+
+.. automodule:: pyiron.base.project.gui
+   :members:
+   :undoc-members:
+   :show-inheritance:

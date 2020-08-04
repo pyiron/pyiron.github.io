@@ -1,0 +1,389 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.atomistics.structure.pyscal &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.atomistics.structure.pyscal</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.atomistics.structure.pyscal</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">cluster</span>
+<span class="kn">from</span> <span class="nn">pyiron.lammps.structure</span> <span class="kn">import</span> <span class="n">UnfoldingPrism</span>
+<span class="kn">from</span> <span class="nn">pyiron.atomistics.structure.atoms</span> <span class="kn">import</span> <span class="n">pyiron_to_ase</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pyscal.core</span> <span class="k">as</span> <span class="nn">pc</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Sarath Menon, Jan Janssen&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2020, Max-Planck-Institut für Eisenforschung GmbH - &quot;</span>
+    <span class="s2">&quot;Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Sarath Menon&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;sarath.menon@rub.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;development&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;Nov 6, 2019&quot;</span>
+
+
+<div class="viewcode-block" id="get_steinhardt_parameter_job"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.structure.pyscal.html#pyiron.atomistics.structure.pyscal.get_steinhardt_parameter_job">[docs]</a><span class="k">def</span> <span class="nf">get_steinhardt_parameter_job</span><span class="p">(</span><span class="n">job</span><span class="p">,</span> <span class="n">neighbor_method</span><span class="o">=</span><span class="s2">&quot;cutoff&quot;</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_clusters</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                                 <span class="n">q</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">averaged</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">clustering</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">iteration_step</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate Steinhardts parameters</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        job (job): pyiron job</span>
+<span class="sd">        neighbor_method (str) : can be [&#39;cutoff&#39;, &#39;voronoi&#39;]</span>
+<span class="sd">        cutoff (float) : can be 0 for adaptive cutoff or any other value</span>
+<span class="sd">        n_clusters (int) : number of clusters for K means clustering</span>
+<span class="sd">        q (list) : can be from 2-12, the required q values to be calculated</span>
+<span class="sd">        averaged (bool) : If True, calculates the averaged versions of the parameter</span>
+<span class="sd">        clustering (bool) : If True, cluster based on the q values</span>
+<span class="sd">        iteration_step (int) : The step at which the configuration is to be used</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        q (list) : calculated q parameters</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">get_steinhardt_parameter_structure</span><span class="p">(</span>
+        <span class="n">structure</span><span class="o">=</span><span class="n">job</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="n">iteration_step</span><span class="o">=</span><span class="n">iteration_step</span><span class="p">),</span>
+        <span class="n">neighbor_method</span><span class="o">=</span><span class="n">neighbor_method</span><span class="p">,</span>
+        <span class="n">cutoff</span><span class="o">=</span><span class="n">cutoff</span><span class="p">,</span>
+        <span class="n">n_clusters</span><span class="o">=</span><span class="n">n_clusters</span><span class="p">,</span>
+        <span class="n">q</span><span class="o">=</span><span class="n">q</span><span class="p">,</span>
+        <span class="n">averaged</span><span class="o">=</span><span class="n">averaged</span><span class="p">,</span>
+        <span class="n">clustering</span><span class="o">=</span><span class="n">cluster</span>
+    <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_steinhardt_parameter_structure"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.structure.pyscal.html#pyiron.atomistics.structure.pyscal.get_steinhardt_parameter_structure">[docs]</a><span class="k">def</span> <span class="nf">get_steinhardt_parameter_structure</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="n">neighbor_method</span><span class="o">=</span><span class="s2">&quot;cutoff&quot;</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_clusters</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                                       <span class="n">q</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">averaged</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">clustering</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate Steinhardts parameters</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        job (job): pyiron job</span>
+<span class="sd">        neighbor_method (str) : can be [&#39;cutoff&#39;, &#39;voronoi&#39;]</span>
+<span class="sd">        cutoff (float) : can be 0 for adaptive cutoff or any other value</span>
+<span class="sd">        n_clusters (int) : number of clusters for K means clustering</span>
+<span class="sd">        q (list) : can be from 2-12, the required q values to be calculated</span>
+<span class="sd">        averaged (bool) : If True, calculates the averaged versions of the parameter</span>
+<span class="sd">        clustering (bool) : If True, cluster based on the q values</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        q (list) : calculated q parameters</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sys</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">System</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">read_inputfile</span><span class="p">(</span>
+        <span class="n">pyiron_to_ase</span><span class="p">(</span><span class="n">structure</span><span class="p">),</span>
+        <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;ase&#39;</span><span class="p">,</span>
+        <span class="n">is_triclinic</span><span class="o">=</span><span class="ow">not</span> <span class="n">UnfoldingPrism</span><span class="p">(</span><span class="n">structure</span><span class="o">.</span><span class="n">cell</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span><span class="o">.</span><span class="n">is_skewed</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="n">sys</span><span class="o">.</span><span class="n">find_neighbors</span><span class="p">(</span>
+        <span class="n">method</span><span class="o">=</span><span class="n">neighbor_method</span><span class="p">,</span>
+        <span class="n">cutoff</span><span class="o">=</span><span class="n">cutoff</span>
+    <span class="p">)</span>
+
+    <span class="n">sys</span><span class="o">.</span><span class="n">calculate_q</span><span class="p">(</span>
+        <span class="n">q</span><span class="p">,</span>
+        <span class="n">averaged</span><span class="o">=</span><span class="n">averaged</span>
+    <span class="p">)</span>
+
+    <span class="n">sysq</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">get_qvals</span><span class="p">(</span>
+        <span class="n">q</span><span class="p">,</span>
+        <span class="n">averaged</span><span class="o">=</span><span class="n">averaged</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">clustering</span><span class="p">:</span>
+        <span class="n">cl</span> <span class="o">=</span> <span class="n">cluster</span><span class="o">.</span><span class="n">KMeans</span><span class="p">(</span>
+            <span class="n">n_clusters</span><span class="o">=</span><span class="n">n_clusters</span>
+        <span class="p">)</span>
+
+        <span class="n">ind</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">sysq</span><span class="p">)))</span><span class="o">.</span><span class="n">labels_</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="n">sysq</span><span class="p">,</span> <span class="n">ind</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">sysq</span></div>
+
+<div class="viewcode-block" id="analyse_centro_symmetry"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.structure.pyscal.html#pyiron.atomistics.structure.pyscal.analyse_centro_symmetry">[docs]</a><span class="k">def</span> <span class="nf">analyse_centro_symmetry</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">num_neighbors</span><span class="o">=</span><span class="mi">12</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Analyse centrosymmetry parameter</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        atoms: Atoms object</span>
+<span class="sd">        num_neighbors (int) : number of neighbors</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        csm (list) : list of centrosymmetry parameter</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sys</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">System</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">read_inputfile</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;ase&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">calculate_centrosymmetry</span><span class="p">(</span><span class="n">nmax</span><span class="o">=</span><span class="n">num_neighbors</span><span class="p">)</span>
+    <span class="n">atoms</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">atoms</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">atom</span><span class="o">.</span><span class="n">centrosymmetry</span> <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">atoms</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="analyse_cna_adaptive"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.structure.pyscal.html#pyiron.atomistics.structure.pyscal.analyse_cna_adaptive">[docs]</a><span class="k">def</span> <span class="nf">analyse_cna_adaptive</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;total&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Use common neighbor analysis</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        atoms (pyiron.structure.atoms.Atoms): The structure to analyze.</span>
+<span class="sd">        mode (&quot;total&quot;/&quot;numeric&quot;/&quot;str&quot;): Controls the style and level</span>
+<span class="sd">        of detail of the output.</span>
+<span class="sd">        total : return number of atoms belonging to each structure</span>
+<span class="sd">        numeric : return a per atom list of numbers- 0 for unknown,</span>
+<span class="sd">            1 fcc, 2 hcp, 3 bcc and 4 icosa</span>
+<span class="sd">        str : return a per atom string of sructures</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        (depends on `mode`)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">mode</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;total&quot;</span><span class="p">,</span> <span class="s2">&quot;numeric&quot;</span><span class="p">,</span> <span class="s2">&quot;str&quot;</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unsupported mode&quot;</span><span class="p">)</span>
+
+    <span class="n">sys</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">System</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">read_inputfile</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;ase&quot;</span><span class="p">)</span>
+    <span class="n">cna</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">calculate_cna</span><span class="p">(</span><span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;total&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">cna</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">atoms</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">atoms</span>
+        <span class="n">cnalist</span> <span class="o">=</span> <span class="p">([</span><span class="n">atom</span><span class="o">.</span><span class="n">structure</span> <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">atoms</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;numeric&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cnalist</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dd</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span> <span class="s2">&quot;fcc&quot;</span><span class="p">,</span> <span class="s2">&quot;hcp&quot;</span><span class="p">,</span> <span class="s2">&quot;bcc&quot;</span><span class="p">,</span> <span class="s2">&quot;ico&quot;</span><span class="p">]</span>
+            <span class="n">cnalist</span> <span class="o">=</span> <span class="p">[</span><span class="n">dd</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cnalist</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">cnalist</span></div>
+
+<div class="viewcode-block" id="analyse_voronoi_volume"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.structure.pyscal.html#pyiron.atomistics.structure.pyscal.analyse_voronoi_volume">[docs]</a><span class="k">def</span> <span class="nf">analyse_voronoi_volume</span><span class="p">(</span><span class="n">atoms</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the Voronoi volume of atoms</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        atoms : (pyiron.structure.atoms.Atoms): The structure to analyze.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sys</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">System</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">read_inputfile</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;ase&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">find_neighbors</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;voronoi&quot;</span><span class="p">)</span>
+    <span class="n">atoms</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">atoms</span>
+    <span class="n">vols</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">atom</span><span class="o">.</span><span class="n">volume</span> <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">atoms</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">vols</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,920 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.project &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.project</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.project</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">posixpath</span>
+<span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">punctuation</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.project.generic</span> <span class="kn">import</span> <span class="n">Project</span> <span class="k">as</span> <span class="n">ProjectCore</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">pyiron.base.project.gui</span> <span class="kn">import</span> <span class="n">ProjectGUI</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">ImportError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">):</span>
+    <span class="k">pass</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.settings.generic</span> <span class="kn">import</span> <span class="n">Settings</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.generic.hdfio</span> <span class="kn">import</span> <span class="n">ProjectHDFio</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.job.jobtype</span> <span class="kn">import</span> <span class="n">JobType</span><span class="p">,</span> <span class="n">JobTypeChoice</span>
+<span class="kn">from</span> <span class="nn">pyiron.atomistics.generic.object_type</span> <span class="kn">import</span> <span class="n">ObjectType</span><span class="p">,</span> <span class="n">ObjectTypeChoice</span>
+<span class="kn">from</span> <span class="nn">pyiron.atomistics.structure.periodic_table</span> <span class="kn">import</span> <span class="n">PeriodicTable</span>
+<span class="kn">from</span> <span class="nn">pyiron.lammps.potential</span> <span class="kn">import</span> <span class="n">LammpsPotentialFile</span>
+<span class="kn">from</span> <span class="nn">pyiron.vasp.potential</span> <span class="kn">import</span> <span class="n">VaspPotential</span>
+<span class="kn">import</span> <span class="nn">pyiron.atomistics.structure.pyironase</span> <span class="k">as</span> <span class="nn">ase</span>
+<span class="kn">from</span> <span class="nn">pyiron.atomistics.structure.atoms</span> <span class="kn">import</span> <span class="n">Atoms</span>
+<span class="kn">from</span> <span class="nn">pyiron.atomistics.structure.generator</span> <span class="kn">import</span> <span class="n">create_surface</span><span class="p">,</span> <span class="n">create_ase_bulk</span><span class="p">,</span> <span class="n">create_structure</span>
+<span class="kn">from</span> <span class="nn">pyiron.atomistics.master.parallel</span> <span class="kn">import</span> <span class="n">pipe</span>
+
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Joerg Neugebauer, Jan Janssen&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2020, Max-Planck-Institut für Eisenforschung GmbH - &quot;</span>
+    <span class="s2">&quot;Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;janssen@mpie.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;production&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;Sep 1, 2017&quot;</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">ase</span><span class="o">.</span><span class="vm">__file__</span><span class="p">,</span> <span class="nb">str</span><span class="p">)):</span>
+    <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">()</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">Settings</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="Project"><a class="viewcode-back" href="../../apidoc/pyiron.project.html#pyiron.project.Project">[docs]</a><span class="k">class</span> <span class="nc">Project</span><span class="p">(</span><span class="n">ProjectCore</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The project is the central class in pyiron, all other objects can be created from the project object.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path (GenericPath, str): path of the project defined by GenericPath, absolute or relative (with respect to</span>
+<span class="sd">                                     current working directory) path</span>
+<span class="sd">        user (str): current pyiron user</span>
+<span class="sd">        sql_query (str): SQL query to only select a subset of the existing jobs within the current project</span>
+<span class="sd">        default_working_directory (bool): Access default working directory, for ScriptJobs this equals the project</span>
+<span class="sd">                                     directory of the ScriptJob for regular projects it falls back to the current</span>
+<span class="sd">                                     directory.</span>
+
+<span class="sd">    Attributes:</span>
+
+<span class="sd">        .. attribute:: root_path</span>
+
+<span class="sd">            the pyiron user directory, defined in the .pyiron configuration</span>
+
+<span class="sd">        .. attribute:: project_path</span>
+
+<span class="sd">            the relative path of the current project / folder starting from the root path</span>
+<span class="sd">            of the pyiron user directory</span>
+
+<span class="sd">        .. attribute:: path</span>
+
+<span class="sd">            the absolute path of the current project / folder</span>
+
+<span class="sd">        .. attribute:: base_name</span>
+
+<span class="sd">            the name of the current project / folder</span>
+
+<span class="sd">        .. attribute:: history</span>
+
+<span class="sd">            previously opened projects / folders</span>
+
+<span class="sd">        .. attribute:: parent_group</span>
+
+<span class="sd">            parent project - one level above the current project</span>
+
+<span class="sd">        .. attribute:: user</span>
+
+<span class="sd">            current unix/linux/windows user who is running pyiron</span>
+
+<span class="sd">        .. attribute:: sql_query</span>
+
+<span class="sd">            an SQL query to limit the jobs within the project to a subset which matches the SQL query.</span>
+
+<span class="sd">        .. attribute:: db</span>
+
+<span class="sd">            connection to the SQL database</span>
+
+<span class="sd">        .. attribute:: job_type</span>
+
+<span class="sd">            Job Type object with all the available job types: [&#39;StructureContainer’, ‘StructurePipeline’, ‘AtomisticExampleJob’,</span>
+<span class="sd">                                             ‘ExampleJob’, ‘Lammps’, ‘KMC’, ‘Sphinx’, ‘Vasp’, ‘GenericMaster’,</span>
+<span class="sd">                                             ‘SerialMaster’, ‘AtomisticSerialMaster’, ‘ParallelMaster’, ‘KmcMaster’,</span>
+<span class="sd">                                             ‘ThermoLambdaMaster’, ‘RandomSeedMaster’, ‘MeamFit’, ‘Murnaghan’,</span>
+<span class="sd">                                             ‘MinimizeMurnaghan’, ‘ElasticMatrix’, ‘ConvergenceVolume’,</span>
+<span class="sd">                                             ‘ConvergenceEncutParallel’, ‘ConvergenceKpointParallel’, ’PhonopyMaster’,</span>
+<span class="sd">                                             ‘DefectFormationEnergy’, ‘LammpsASE’, ‘PipelineMaster’,</span>
+<span class="sd">                                             ’TransformationPath’, ‘ThermoIntEamQh’, ‘ThermoIntDftEam’, ‘ScriptJob’,</span>
+<span class="sd">                                             ‘ListMaster&#39;]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sql_query</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">default_working_directory</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Project</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span> 
+            <span class="n">user</span><span class="o">=</span><span class="n">user</span><span class="p">,</span> 
+            <span class="n">sql_query</span><span class="o">=</span><span class="n">sql_query</span><span class="p">,</span> 
+            <span class="n">default_working_directory</span><span class="o">=</span><span class="n">default_working_directory</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">job_type</span> <span class="o">=</span> <span class="n">JobTypeChoice</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">object_type</span> <span class="o">=</span> <span class="n">ObjectTypeChoice</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Project.create_job"><a class="viewcode-back" href="../../apidoc/pyiron.project.html#pyiron.project.Project.create_job">[docs]</a>    <span class="k">def</span> <span class="nf">create_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_type</span><span class="p">,</span> <span class="n">job_name</span><span class="p">,</span> <span class="n">delete_existing_job</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create one of the following jobs:</span>
+<span class="sd">        - &#39;StructureContainer’:</span>
+<span class="sd">        - ‘StructurePipeline’:</span>
+<span class="sd">        - ‘AtomisticExampleJob’: example job just generating random number</span>
+<span class="sd">        - ‘ExampleJob’: example job just generating random number</span>
+<span class="sd">        - ‘Lammps’:</span>
+<span class="sd">        - ‘KMC’:</span>
+<span class="sd">        - ‘Sphinx’:</span>
+<span class="sd">        - ‘Vasp’:</span>
+<span class="sd">        - ‘GenericMaster’:</span>
+<span class="sd">        - ‘SerialMaster’: series of jobs run in serial</span>
+<span class="sd">        - ‘AtomisticSerialMaster’:</span>
+<span class="sd">        - ‘ParallelMaster’: series of jobs run in parallel</span>
+<span class="sd">        - ‘KmcMaster’:</span>
+<span class="sd">        - ‘ThermoLambdaMaster’:</span>
+<span class="sd">        - ‘RandomSeedMaster’:</span>
+<span class="sd">        - ‘MeamFit’:</span>
+<span class="sd">        - ‘Murnaghan’:</span>
+<span class="sd">        - ‘MinimizeMurnaghan’:</span>
+<span class="sd">        - ‘ElasticMatrix’:</span>
+<span class="sd">        - ‘ConvergenceVolume’:</span>
+<span class="sd">        - ‘ConvergenceEncutParallel’:</span>
+<span class="sd">        - ‘ConvergenceKpointParallel’:</span>
+<span class="sd">        - ’PhonopyMaster’:</span>
+<span class="sd">        - ‘DefectFormationEnergy’:</span>
+<span class="sd">        - ‘LammpsASE’:</span>
+<span class="sd">        - ‘PipelineMaster’:</span>
+<span class="sd">        - ’TransformationPath’:</span>
+<span class="sd">        - ‘ThermoIntEamQh’:</span>
+<span class="sd">        - ‘ThermoIntDftEam’:</span>
+<span class="sd">        - ‘ScriptJob’: Python script or jupyter notebook job container</span>
+<span class="sd">        - ‘ListMaster&#39;: list of jobs</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            job_type (str): job type can be [&#39;StructureContainer’, ‘StructurePipeline’, ‘AtomisticExampleJob’,</span>
+<span class="sd">                                             ‘ExampleJob’, ‘Lammps’, ‘KMC’, ‘Sphinx’, ‘Vasp’, ‘GenericMaster’,</span>
+<span class="sd">                                             ‘SerialMaster’, ‘AtomisticSerialMaster’, ‘ParallelMaster’, ‘KmcMaster’,</span>
+<span class="sd">                                             ‘ThermoLambdaMaster’, ‘RandomSeedMaster’, ‘MeamFit’, ‘Murnaghan’,</span>
+<span class="sd">                                             ‘MinimizeMurnaghan’, ‘ElasticMatrix’, ‘ConvergenceVolume’,</span>
+<span class="sd">                                             ‘ConvergenceEncutParallel’, ‘ConvergenceKpointParallel’, ’PhonopyMaster’,</span>
+<span class="sd">                                             ‘DefectFormationEnergy’, ‘LammpsASE’, ‘PipelineMaster’,</span>
+<span class="sd">                                             ’TransformationPath’, ‘ThermoIntEamQh’, ‘ThermoIntDftEam’, ‘ScriptJob’,</span>
+<span class="sd">                                             ‘ListMaster&#39;]</span>
+<span class="sd">            job_name (str): name of the job</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            GenericJob: job object depending on the job_type selected</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">job</span> <span class="o">=</span> <span class="n">JobType</span><span class="p">(</span>
+            <span class="n">job_type</span><span class="p">,</span>
+            <span class="n">project</span><span class="o">=</span><span class="n">ProjectHDFio</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">file_name</span><span class="o">=</span><span class="n">job_name</span><span class="p">),</span>
+            <span class="n">job_name</span><span class="o">=</span><span class="n">job_name</span><span class="p">,</span>
+            <span class="n">job_class_dict</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">job_class_dict</span><span class="p">,</span>
+            <span class="n">delete_existing_job</span><span class="o">=</span><span class="n">delete_existing_job</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">job</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span>
+        <span class="k">return</span> <span class="n">job</span></div>
+
+<div class="viewcode-block" id="Project.create_object"><a class="viewcode-back" href="../../apidoc/pyiron.project.html#pyiron.project.Project.create_object">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">create_object</span><span class="p">(</span><span class="n">object_type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            object_type:</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ObjectType</span><span class="p">(</span><span class="n">object_type</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">job_name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span></div>
+
+<div class="viewcode-block" id="Project.create_table"><a class="viewcode-back" href="../../apidoc/pyiron.project.html#pyiron.project.Project.create_table">[docs]</a>    <span class="k">def</span> <span class="nf">create_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_name</span><span class="o">=</span><span class="s2">&quot;table&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create pyiron table</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            job_name (str): job name of the pyiron table job</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            pyiron.table.datamining.TableJob</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">job_type</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">TableJob</span><span class="p">,</span> <span class="n">job_name</span><span class="o">=</span><span class="n">job_name</span><span class="p">)</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">analysis_project</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="k">return</span> <span class="n">table</span></div>
+
+<div class="viewcode-block" id="Project.copy"><a class="viewcode-back" href="../../apidoc/pyiron.project.html#pyiron.project.Project.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Copy the project object - copying just the Python object but maintaining the same pyiron path</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Project: copy of the project object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">new</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="n">sql_query</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">sql_query</span><span class="p">)</span>
+        <span class="n">new</span><span class="o">.</span><span class="n">_filter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter</span>
+        <span class="n">new</span><span class="o">.</span><span class="n">_inspect_mode</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inspect_mode</span>
+        <span class="k">return</span> <span class="n">new</span></div>
+
+<div class="viewcode-block" id="Project.load_from_jobpath"><a class="viewcode-back" href="../../apidoc/pyiron.project.html#pyiron.project.Project.load_from_jobpath">[docs]</a>    <span class="k">def</span> <span class="nf">load_from_jobpath</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">db_entry</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">convert_to_object</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Internal function to load an existing job either based on the job ID or based on the database entry dictionary.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            job_id (int): Job ID - optional, but either the job_id or the db_entry is required.</span>
+<span class="sd">            db_entry (dict): database entry dictionary - optional, but either the job_id or the db_entry is required.</span>
+<span class="sd">            convert_to_object (bool): convert the object to an pyiron object or only access the HDF5 file - default=True</span>
+<span class="sd">                                      accessing only the HDF5 file is about an order of magnitude faster, but only</span>
+<span class="sd">                                      provides limited functionality. Compare the GenericJob object to JobCore object.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            GenericJob, JobCore: Either the full GenericJob object or just a reduced JobCore object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">job</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">Project</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">load_from_jobpath</span><span class="p">(</span>
+            <span class="n">job_id</span><span class="o">=</span><span class="n">job_id</span><span class="p">,</span> <span class="n">db_entry</span><span class="o">=</span><span class="n">db_entry</span><span class="p">,</span> <span class="n">convert_to_object</span><span class="o">=</span><span class="n">convert_to_object</span>
+        <span class="p">)</span>
+        <span class="n">job</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">_project</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">job</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">file_path</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">job</span></div>
+
+<div class="viewcode-block" id="Project.load_from_jobpath_string"><a class="viewcode-back" href="../../apidoc/pyiron.project.html#pyiron.project.Project.load_from_jobpath_string">[docs]</a>    <span class="k">def</span> <span class="nf">load_from_jobpath_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_path</span><span class="p">,</span> <span class="n">convert_to_object</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Internal function to load an existing job either based on the job ID or based on the database entry dictionary.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            job_path (str): string to reload the job from an HDF5 file - &#39;/root_path/project_path/filename.h5/h5_path&#39;</span>
+<span class="sd">            convert_to_object (bool): convert the object to an pyiron object or only access the HDF5 file - default=True</span>
+<span class="sd">                                      accessing only the HDF5 file is about an order of magnitude faster, but only</span>
+<span class="sd">                                      provides limited functionality. Compare the GenericJob object to JobCore object.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            GenericJob, JobCore: Either the full GenericJob object or just a reduced JobCore object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">job</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">Project</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">load_from_jobpath_string</span><span class="p">(</span>
+            <span class="n">job_path</span><span class="o">=</span><span class="n">job_path</span><span class="p">,</span> <span class="n">convert_to_object</span><span class="o">=</span><span class="n">convert_to_object</span>
+        <span class="p">)</span>
+        <span class="n">job</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">_project</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">job</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">file_path</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">job</span></div>
+
+<div class="viewcode-block" id="Project.import_single_calculation"><a class="viewcode-back" href="../../apidoc/pyiron.project.html#pyiron.project.Project.import_single_calculation">[docs]</a>    <span class="k">def</span> <span class="nf">import_single_calculation</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">project_to_import_from</span><span class="p">,</span> <span class="n">rel_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">job_type</span><span class="o">=</span><span class="s2">&quot;Vasp&quot;</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            rel_path:</span>
+<span class="sd">            project_to_import_from:</span>
+<span class="sd">            job_type (str): Type of the calculation which is going to be imported</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">job_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Vasp&quot;</span><span class="p">,</span> <span class="s2">&quot;KMC&quot;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The job_type is not supported.&quot;</span><span class="p">)</span>
+        <span class="n">job_name</span> <span class="o">=</span> <span class="n">project_to_import_from</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">job_name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+            <span class="n">pyiron_job_name</span> <span class="o">=</span> <span class="s2">&quot;job_&quot;</span> <span class="o">+</span> <span class="n">job_name</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">pyiron_job_name</span> <span class="o">=</span> <span class="n">job_name</span>
+        <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">punctuation</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">pyiron_job_name</span><span class="p">:</span>
+                <span class="n">pyiron_job_name</span> <span class="o">=</span> <span class="n">pyiron_job_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">ch</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">job_name</span><span class="p">,</span> <span class="n">pyiron_job_name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">rel_path</span><span class="p">:</span>
+            <span class="n">rel_path_lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">pe</span> <span class="k">for</span> <span class="n">pe</span> <span class="ow">in</span> <span class="n">rel_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">pe</span> <span class="o">!=</span> <span class="s2">&quot;..&quot;</span><span class="p">]</span>
+            <span class="n">pr_import</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rel_path_lst</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">pr_import</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">project_to_import_from</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">get_items_dict</span><span class="p">(</span>
+            <span class="p">{</span><span class="s2">&quot;job&quot;</span><span class="p">:</span> <span class="n">pyiron_job_name</span><span class="p">,</span> <span class="s2">&quot;project&quot;</span><span class="p">:</span> <span class="n">pr_import</span><span class="o">.</span><span class="n">project_path</span><span class="p">}</span>
+        <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The job exists already - skipped!&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ham</span> <span class="o">=</span> <span class="n">pr_import</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">job_type</span><span class="o">=</span><span class="n">job_type</span><span class="p">,</span> <span class="n">job_name</span><span class="o">=</span><span class="n">pyiron_job_name</span><span class="p">)</span>
+            <span class="n">ham</span><span class="o">.</span><span class="n">_job_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">add_item_dict</span><span class="p">(</span><span class="n">ham</span><span class="o">.</span><span class="n">db_entry</span><span class="p">())</span>
+            <span class="n">ham</span><span class="o">.</span><span class="n">refresh_job_status</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;job was stored with the job ID &quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">ham</span><span class="o">.</span><span class="n">_job_id</span><span class="p">))</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">project_to_import_from</span><span class="p">):</span>
+                    <span class="n">ham</span><span class="o">.</span><span class="n">from_directory</span><span class="p">(</span><span class="n">project_to_import_from</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">ham</span><span class="o">.</span><span class="n">from_directory</span><span class="p">(</span>
+                        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="n">project_to_import_from</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+                            <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="n">ham</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">aborted</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="Project.import_from_path"><a class="viewcode-back" href="../../apidoc/pyiron.project.html#pyiron.project.Project.import_from_path">[docs]</a>    <span class="k">def</span> <span class="nf">import_from_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            path:</span>
+<span class="sd">            recursive:</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+            <span class="n">search_path</span> <span class="o">=</span> <span class="n">posixpath</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;//&quot;</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">search_path</span> <span class="o">=</span> <span class="n">posixpath</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span>
+                <span class="n">posixpath</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;//&quot;</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">))</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">recursive</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">search_path</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_calculation_validation</span><span class="p">(</span>
+                    <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">rel_path</span><span class="o">=</span><span class="n">posixpath</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">search_path</span><span class="p">)</span>
+                <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">abs_path</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">search_path</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">rel_path</span> <span class="o">=</span> <span class="n">posixpath</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">abs_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_calculation_validation</span><span class="p">(</span>
+                <span class="n">search_path</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">search_path</span><span class="p">),</span> <span class="n">rel_path</span><span class="o">=</span><span class="n">rel_path</span>
+            <span class="p">)</span></div>
+
+<div class="viewcode-block" id="Project.get_structure"><a class="viewcode-back" href="../../apidoc/pyiron.project.html#pyiron.project.Project.get_structure">[docs]</a>    <span class="k">def</span> <span class="nf">get_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_specifier</span><span class="p">,</span> <span class="n">iteration_step</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">wrap_atoms</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the structure from a given iteration step of the simulation (MD/ionic relaxation). For static calculations</span>
+<span class="sd">        there is only one ionic iteration step</span>
+<span class="sd">        Args:</span>
+<span class="sd">            job_specifier (str, int): name of the job or job ID</span>
+<span class="sd">            iteration_step (int): Step for which the structure is requested</span>
+<span class="sd">            wrap_atoms (bool): True if the atoms are to be wrapped back into the unit cell</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            atomistics.structure.atoms.Atoms object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">job</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">job_specifier</span><span class="p">)</span>
+        <span class="n">snapshot</span> <span class="o">=</span> <span class="n">Atoms</span><span class="p">()</span><span class="o">.</span><span class="n">from_hdf</span><span class="p">(</span><span class="n">job</span><span class="p">[</span><span class="s2">&quot;input&quot;</span><span class="p">],</span> <span class="s2">&quot;structure&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;output&quot;</span> <span class="ow">in</span> <span class="n">job</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">list_groups</span><span class="p">()</span> <span class="ow">and</span> <span class="n">iteration_step</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">snapshot</span><span class="o">.</span><span class="n">cell</span> <span class="o">=</span> <span class="n">job</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;output/generic/cells&quot;</span><span class="p">)[</span><span class="n">iteration_step</span><span class="p">]</span>
+            <span class="n">snapshot</span><span class="o">.</span><span class="n">positions</span> <span class="o">=</span> <span class="n">job</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;output/generic/positions&quot;</span><span class="p">)[</span><span class="n">iteration_step</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s2">&quot;indices&quot;</span> <span class="ow">in</span> <span class="n">job</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;output/generic&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">():</span>
+                <span class="n">snapshot</span><span class="o">.</span><span class="n">indices</span> <span class="o">=</span> <span class="n">job</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;output/generic/indices&quot;</span><span class="p">)[</span><span class="n">iteration_step</span><span class="p">]</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="s2">&quot;dft&quot;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s2">&quot;output/generic&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">list_groups</span><span class="p">()</span>
+                <span class="ow">and</span> <span class="s2">&quot;atom_spins&quot;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s2">&quot;output/generic/dft&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">()</span>
+            <span class="p">):</span>
+                <span class="n">snapshot</span><span class="o">.</span><span class="n">set_initial_magnetic_moments</span><span class="p">(</span>
+                    <span class="n">job</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;output/generic/dft/atom_spins&quot;</span><span class="p">)[</span><span class="n">iteration_step</span><span class="p">]</span>
+                <span class="p">)</span>
+        <span class="k">if</span> <span class="n">wrap_atoms</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">center_coordinates_in_unit_cell</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">snapshot</span></div>
+
+    <span class="k">def</span> <span class="nf">_calculation_validation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">files_available</span><span class="p">,</span> <span class="n">rel_path</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            path:</span>
+<span class="sd">            files_available:</span>
+<span class="sd">            rel_path:</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="s2">&quot;OUTCAR&quot;</span> <span class="ow">in</span> <span class="n">files_available</span>
+            <span class="ow">or</span> <span class="s2">&quot;vasprun.xml&quot;</span> <span class="ow">in</span> <span class="n">files_available</span>
+            <span class="ow">or</span> <span class="s2">&quot;OUTCAR.gz&quot;</span> <span class="ow">in</span> <span class="n">files_available</span>
+            <span class="ow">or</span> <span class="s2">&quot;vasprun.xml.bz2&quot;</span> <span class="ow">in</span> <span class="n">files_available</span>
+            <span class="ow">or</span> <span class="s2">&quot;vasprun.xml.gz&quot;</span> <span class="ow">in</span> <span class="n">files_available</span>
+        <span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">import_single_calculation</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">rel_path</span><span class="o">=</span><span class="n">rel_path</span><span class="p">,</span> <span class="n">job_type</span><span class="o">=</span><span class="s2">&quot;Vasp&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="s2">&quot;incontrol.dat&quot;</span> <span class="ow">in</span> <span class="n">files_available</span>
+            <span class="ow">and</span> <span class="s2">&quot;lattice.out&quot;</span> <span class="ow">in</span> <span class="n">files_available</span>
+            <span class="ow">and</span> <span class="s2">&quot;lattice.inp&quot;</span> <span class="ow">in</span> <span class="n">files_available</span>
+        <span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">import_single_calculation</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">rel_path</span><span class="o">=</span><span class="n">rel_path</span><span class="p">,</span> <span class="n">job_type</span><span class="o">=</span><span class="s2">&quot;KMC&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Project.list_publications"><a class="viewcode-back" href="../../apidoc/pyiron.project.html#pyiron.project.Project.list_publications">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">list_publications</span><span class="p">(</span><span class="n">bib_format</span><span class="o">=</span><span class="s2">&quot;dict&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        List the publications used in this project.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            bib_format (str): [&#39;dict&#39;, &#39;bibtex&#39;, &#39;apa&#39;]</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list: list of publications in Bibtex format.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">def</span> <span class="nf">get_bibtex</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+            <span class="n">total_keys</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="s2">&quot;title&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;journal&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;volume&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;issue&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;number&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;pages&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;numpages&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;year&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;month&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;publisher&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;url&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;doi&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;issn&quot;</span><span class="p">,</span>
+            <span class="p">]</span>
+            <span class="n">bibtex_str</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="s2">&quot;@article{&quot;</span>
+                <span class="o">+</span> <span class="n">key</span>
+                <span class="o">+</span> <span class="s2">&quot;,</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="o">+</span> <span class="s2">&quot;    author={&quot;</span>
+                <span class="o">+</span> <span class="s2">&quot; and &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s2">&quot;author&quot;</span><span class="p">])</span>
+                <span class="o">+</span> <span class="s2">&quot;},</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">total_keys</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                    <span class="n">bibtex_str</span> <span class="o">+=</span> <span class="s2">&quot;    &quot;</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s2">&quot;={&quot;</span> <span class="o">+</span> <span class="n">value</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;},</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="n">bibtex_str</span> <span class="o">+=</span> <span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="k">return</span> <span class="n">bibtex_str</span>
+
+        <span class="k">def</span> <span class="nf">get_apa</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+            <span class="n">apa_str</span> <span class="o">=</span> <span class="s2">&quot; &amp; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s2">&quot;author&quot;</span><span class="p">])</span>
+            <span class="k">if</span> <span class="s2">&quot;year&quot;</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">apa_str</span> <span class="o">+=</span> <span class="s2">&quot; (&quot;</span> <span class="o">+</span> <span class="n">value</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;). &quot;</span>
+            <span class="k">if</span> <span class="s2">&quot;title&quot;</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">apa_str</span> <span class="o">+=</span> <span class="n">value</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;. &quot;</span>
+            <span class="k">if</span> <span class="s2">&quot;journal&quot;</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">apa_str</span> <span class="o">+=</span> <span class="n">value</span><span class="p">[</span><span class="s2">&quot;journal&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span>
+            <span class="k">if</span> <span class="s2">&quot;volume&quot;</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">apa_str</span> <span class="o">+=</span> <span class="n">value</span><span class="p">[</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span>
+            <span class="k">if</span> <span class="s2">&quot;pages&quot;</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">apa_str</span> <span class="o">+=</span> <span class="n">value</span><span class="p">[</span><span class="s2">&quot;pages&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;. &quot;</span>
+            <span class="k">if</span> <span class="s2">&quot;doi&quot;</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">apa_str</span> <span class="o">+=</span> <span class="s2">&quot;doi: &quot;</span> <span class="o">+</span> <span class="n">value</span><span class="p">[</span><span class="s2">&quot;doi&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="k">return</span> <span class="n">apa_str</span>
+
+        <span class="n">publication_dict</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">publication_lst</span>
+        <span class="k">if</span> <span class="n">bib_format</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;dict&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">publication_dict</span>
+        <span class="k">elif</span> <span class="n">bib_format</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;bibtex&quot;</span><span class="p">:</span>
+            <span class="n">total_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+            <span class="k">for</span> <span class="n">pub</span> <span class="ow">in</span> <span class="n">publication_dict</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">pub</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">total_str</span> <span class="o">+=</span> <span class="n">get_bibtex</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">total_str</span>
+        <span class="k">elif</span> <span class="n">bib_format</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;apa&quot;</span><span class="p">:</span>
+            <span class="n">total_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+            <span class="k">for</span> <span class="n">pub</span> <span class="ow">in</span> <span class="n">publication_dict</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">pub</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">total_str</span> <span class="o">+=</span> <span class="n">get_apa</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">total_str</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Supported Bibformats are [&#39;dict&#39;, &#39;bibtex&#39;, &#39;apa&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Project.create_structure"><a class="viewcode-back" href="../../apidoc/pyiron.project.html#pyiron.project.Project.create_structure">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">create_structure</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">bravais_basis</span><span class="p">,</span> <span class="n">lattice_constant</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a crystal structure using pyiron&#39;s native crystal structure generator</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            element (str): Element name</span>
+<span class="sd">            bravais_basis (str): Basis type</span>
+<span class="sd">            lattice_constant (float/list): Lattice constants</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            pyiron.atomistics.structure.atoms.Atoms: The required crystal structure</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">create_structure</span><span class="p">(</span><span class="n">element</span><span class="o">=</span><span class="n">element</span><span class="p">,</span> <span class="n">bravais_basis</span><span class="o">=</span><span class="n">bravais_basis</span><span class="p">,</span> <span class="n">lattice_constant</span><span class="o">=</span><span class="n">lattice_constant</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Project.create_ase_bulk"><a class="viewcode-back" href="../../apidoc/pyiron.project.html#pyiron.project.Project.create_ase_bulk">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">create_ase_bulk</span><span class="p">(</span>
+        <span class="n">name</span><span class="p">,</span>
+        <span class="n">crystalstructure</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">a</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">c</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">covera</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">u</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">orthorhombic</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">cubic</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creating bulk systems using ASE bulk module. Crystal structure and lattice constant(s) will be guessed if not</span>
+<span class="sd">        provided.</span>
+
+<span class="sd">        name (str): Chemical symbol or symbols as in &#39;MgO&#39; or &#39;NaCl&#39;.</span>
+<span class="sd">        crystalstructure (str): Must be one of sc, fcc, bcc, hcp, diamond, zincblende,</span>
+<span class="sd">                                rocksalt, cesiumchloride, fluorite or wurtzite.</span>
+<span class="sd">        a (float): Lattice constant.</span>
+<span class="sd">        c (float): Lattice constant.</span>
+<span class="sd">        c_over_a (float): c/a ratio used for hcp.  Default is ideal ratio: sqrt(8/3).</span>
+<span class="sd">        u (float): Internal coordinate for Wurtzite structure.</span>
+<span class="sd">        orthorhombic (bool): Construct orthorhombic unit cell instead of primitive cell which is the default.</span>
+<span class="sd">        cubic (bool): Construct cubic unit cell if possible.</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">            pyiron.atomistics.structure.atoms.Atoms: Required bulk structure</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">create_ase_bulk</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">crystalstructure</span><span class="o">=</span><span class="n">crystalstructure</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">covera</span><span class="o">=</span><span class="n">covera</span><span class="p">,</span> <span class="n">u</span><span class="o">=</span><span class="n">u</span><span class="p">,</span>
+                               <span class="n">orthorhombic</span><span class="o">=</span><span class="n">orthorhombic</span><span class="p">,</span> <span class="n">cubic</span><span class="o">=</span><span class="n">cubic</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Project.create_atoms"><a class="viewcode-back" href="../../apidoc/pyiron.project.html#pyiron.project.Project.create_atoms">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">create_atoms</span><span class="p">(</span>
+        <span class="n">symbols</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">positions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">numbers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">momenta</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">masses</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">magmoms</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">charges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">scaled_positions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">cell</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">pbc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">celldisp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">constraint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">calculator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">info</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">elements</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">dimension</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">species</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">qwargs</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates a atomistics.structure.atoms.Atoms instance.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            elements (list/numpy.ndarray): List of strings containing the elements or a list of</span>
+<span class="sd">                                atomistics.structure.periodic_table.ChemicalElement instances</span>
+<span class="sd">            numbers (list/numpy.ndarray): List of atomic numbers of elements</span>
+<span class="sd">            symbols (list/numpy.ndarray): List of chemical symbols</span>
+<span class="sd">            positions (list/numpy.ndarray): List of positions</span>
+<span class="sd">            scaled_positions (list/numpy.ndarray): List of scaled positions (relative coordinates)</span>
+<span class="sd">            pbc (boolean): Tells if periodic boundary conditions should be applied</span>
+<span class="sd">            cell (list/numpy.ndarray): A 3x3 array representing the lattice vectors of the structure</span>
+<span class="sd">            momenta (list/numpy.ndarray): List of momentum values</span>
+<span class="sd">            tags (list/numpy.ndarray): A list of tags</span>
+<span class="sd">            masses (list/numpy.ndarray): A list of masses</span>
+<span class="sd">            magmoms (list/numpy.ndarray): A list of magnetic moments</span>
+<span class="sd">            charges (list/numpy.ndarray): A list of point charges</span>
+<span class="sd">            celldisp:</span>
+<span class="sd">            constraint (list/numpy.ndarray): A list of constraints</span>
+<span class="sd">            calculator: ASE calculator</span>
+<span class="sd">            info (list/str): ASE compatibility</span>
+<span class="sd">            indices (list/numpy.ndarray): The list of species indices</span>
+<span class="sd">            dimension (int): Dimension of the structure</span>
+<span class="sd">            species (list): List of species</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            pyiron.atomistics.structure.atoms.Atoms: The required structure instance</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Atoms</span><span class="p">(</span>
+            <span class="n">symbols</span><span class="o">=</span><span class="n">symbols</span><span class="p">,</span>
+            <span class="n">positions</span><span class="o">=</span><span class="n">positions</span><span class="p">,</span>
+            <span class="n">numbers</span><span class="o">=</span><span class="n">numbers</span><span class="p">,</span>
+            <span class="n">tags</span><span class="o">=</span><span class="n">tags</span><span class="p">,</span>
+            <span class="n">momenta</span><span class="o">=</span><span class="n">momenta</span><span class="p">,</span>
+            <span class="n">masses</span><span class="o">=</span><span class="n">masses</span><span class="p">,</span>
+            <span class="n">magmoms</span><span class="o">=</span><span class="n">magmoms</span><span class="p">,</span>
+            <span class="n">charges</span><span class="o">=</span><span class="n">charges</span><span class="p">,</span>
+            <span class="n">scaled_positions</span><span class="o">=</span><span class="n">scaled_positions</span><span class="p">,</span>
+            <span class="n">cell</span><span class="o">=</span><span class="n">cell</span><span class="p">,</span>
+            <span class="n">pbc</span><span class="o">=</span><span class="n">pbc</span><span class="p">,</span>
+            <span class="n">celldisp</span><span class="o">=</span><span class="n">celldisp</span><span class="p">,</span>
+            <span class="n">constraint</span><span class="o">=</span><span class="n">constraint</span><span class="p">,</span>
+            <span class="n">calculator</span><span class="o">=</span><span class="n">calculator</span><span class="p">,</span>
+            <span class="n">info</span><span class="o">=</span><span class="n">info</span><span class="p">,</span>
+            <span class="n">indices</span><span class="o">=</span><span class="n">indices</span><span class="p">,</span>
+            <span class="n">elements</span><span class="o">=</span><span class="n">elements</span><span class="p">,</span>
+            <span class="n">dimension</span><span class="o">=</span><span class="n">dimension</span><span class="p">,</span>
+            <span class="n">species</span><span class="o">=</span><span class="n">species</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">qwargs</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="Project.create_surface"><a class="viewcode-back" href="../../apidoc/pyiron.project.html#pyiron.project.Project.create_surface">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">create_surface</span><span class="p">(</span>
+        <span class="n">element</span><span class="p">,</span> <span class="n">surface_type</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">vacuum</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pbc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a surface based on the ase.build.surface module.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            element (str): Element name</span>
+<span class="sd">            surface_type (str): The string specifying the surface type generators available through ase (fcc111,</span>
+<span class="sd">            hcp0001 etc.)</span>
+<span class="sd">            size (tuple): Size of the surface</span>
+<span class="sd">            vacuum (float): Length of vacuum layer added to the surface along the z direction</span>
+<span class="sd">            center (bool): Tells if the surface layers have to be at the center or at one end along the z-direction</span>
+<span class="sd">            pbc (list/numpy.ndarray): List of booleans specifying the periodic boundary conditions along all three</span>
+<span class="sd">                                      directions. If None, it is set to [True, True, True]</span>
+<span class="sd">            **kwargs: Additional, arguments you would normally pass to the structure generator like &#39;a&#39;, &#39;b&#39;,</span>
+<span class="sd">            &#39;orthogonal&#39; etc.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            pyiron.atomistics.structure.atoms.Atoms instance: Required surface</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">create_surface</span><span class="p">(</span><span class="n">element</span><span class="o">=</span><span class="n">element</span><span class="p">,</span> <span class="n">surface_type</span><span class="o">=</span><span class="n">surface_type</span><span class="p">,</span>
+                              <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">vacuum</span><span class="o">=</span><span class="n">vacuum</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="n">center</span><span class="p">,</span> <span class="n">pbc</span><span class="o">=</span><span class="n">pbc</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Project.inspect_periodic_table"><a class="viewcode-back" href="../../apidoc/pyiron.project.html#pyiron.project.Project.inspect_periodic_table">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">inspect_periodic_table</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">PeriodicTable</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Project.inspect_emperical_potentials"><a class="viewcode-back" href="../../apidoc/pyiron.project.html#pyiron.project.Project.inspect_emperical_potentials">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">inspect_emperical_potentials</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">LammpsPotentialFile</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Project.inspect_pseudo_potentials"><a class="viewcode-back" href="../../apidoc/pyiron.project.html#pyiron.project.Project.inspect_pseudo_potentials">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">inspect_pseudo_potentials</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">VaspPotential</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Project.create_element"><a class="viewcode-back" href="../../apidoc/pyiron.project.html#pyiron.project.Project.create_element">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">create_element</span><span class="p">(</span>
+        <span class="n">parent_element</span><span class="p">,</span> <span class="n">new_element_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">spin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">potential_file</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            parent_element (str, int): The parent element eq. &quot;N&quot;, &quot;O&quot;, &quot;Mg&quot; etc.</span>
+<span class="sd">            new_element_name (str): The name of the new parent element (can be arbitrary)</span>
+<span class="sd">            spin (float): Value of the magnetic moment (with sign)</span>
+<span class="sd">            potential_file (str): Location of the new potential file if necessary</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            atomistics.structure.periodic_table.ChemicalElement instance</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">periodic_table</span> <span class="o">=</span> <span class="n">PeriodicTable</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">new_element_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">spin</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">new_element_name</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">parent_element</span> <span class="o">+</span> <span class="s2">&quot;_spin_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">spin</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">new_element_name</span> <span class="o">=</span> <span class="n">parent_element</span> <span class="o">+</span> <span class="s2">&quot;_1&quot;</span>
+        <span class="k">if</span> <span class="n">potential_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">spin</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">periodic_table</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span>
+                    <span class="n">parent_element</span><span class="o">=</span><span class="n">parent_element</span><span class="p">,</span>
+                    <span class="n">new_element</span><span class="o">=</span><span class="n">new_element_name</span><span class="p">,</span>
+                    <span class="n">spin</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">spin</span><span class="p">),</span>
+                    <span class="n">pseudo_potcar_file</span><span class="o">=</span><span class="n">potential_file</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">periodic_table</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span>
+                    <span class="n">parent_element</span><span class="o">=</span><span class="n">parent_element</span><span class="p">,</span>
+                    <span class="n">new_element</span><span class="o">=</span><span class="n">new_element_name</span><span class="p">,</span>
+                    <span class="n">pseudo_potcar_file</span><span class="o">=</span><span class="n">potential_file</span><span class="p">,</span>
+                <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">spin</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">periodic_table</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span>
+                <span class="n">parent_element</span><span class="o">=</span><span class="n">parent_element</span><span class="p">,</span>
+                <span class="n">new_element</span><span class="o">=</span><span class="n">new_element_name</span><span class="p">,</span>
+                <span class="n">spin</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">spin</span><span class="p">),</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">periodic_table</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span>
+                <span class="n">parent_element</span><span class="o">=</span><span class="n">parent_element</span><span class="p">,</span> <span class="n">new_element</span><span class="o">=</span><span class="n">new_element_name</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">periodic_table</span><span class="o">.</span><span class="n">element</span><span class="p">(</span><span class="n">new_element_name</span><span class="p">)</span></div>
+
+    <span class="c1"># Graphical user interfaces</span>
+<div class="viewcode-block" id="Project.gui"><a class="viewcode-back" href="../../apidoc/pyiron.project.html#pyiron.project.Project.gui">[docs]</a>    <span class="k">def</span> <span class="nf">gui</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ProjectGUI</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Project.create_pipeline"><a class="viewcode-back" href="../../apidoc/pyiron.project.html#pyiron.project.Project.create_pipeline">[docs]</a>    <span class="k">def</span> <span class="nf">create_pipeline</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job</span><span class="p">,</span> <span class="n">step_lst</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a job pipeline</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            job (AtomisticGenericJob): Template for the calculation</span>
+<span class="sd">            step_lst (list): List of functions which create calculations</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            FlexibleMaster:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">pipe</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">job</span><span class="o">=</span><span class="n">job</span><span class="p">,</span> <span class="n">step_lst</span><span class="o">=</span><span class="n">step_lst</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,575 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.base.generic.inputlist module &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>pyiron.base.generic.inputlist module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/pyiron.base.generic.inputlist.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-pyiron.base.generic.inputlist">
+<span id="pyiron-base-generic-inputlist-module"></span><h1>pyiron.base.generic.inputlist module<a class="headerlink" href="#module-pyiron.base.generic.inputlist" title="Permalink to this headline">¶</a></h1>
+<p>Lists structure for versatile input handling.</p>
+<dl class="py class">
+<dt id="pyiron.base.generic.inputlist.InputList">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.base.generic.inputlist.</code><code class="sig-name descname">InputList</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/inputlist.html#InputList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.inputlist.InputList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.MutableMapping</span></code></p>
+<p>Mutable sequence with optional keys.</p>
+<p>If no argument is given, the constructor creates a new empty InputList.  If
+specified init maybe a Sequence, Set or Mapping and all recursive
+occurrences of these are also wrapped by InputList.
+&gt;&gt;&gt; pl = InputList([3, 2, 1, 0])
+&gt;&gt;&gt; pm = InputList({“foo”: 24, “bar”: 42})</p>
+<p>Access can be like a normal list with integers or optionally with strings
+as keys.
+&gt;&gt;&gt; pl[0]
+3
+&gt;&gt;&gt; pl[2]
+1
+&gt;&gt;&gt; pm[“foo”]
+24</p>
+<p>Keys do not have to be present for all elements.
+&gt;&gt;&gt; pl2 = InputList([1,2])
+&gt;&gt;&gt; pl2[“end”] = 3
+&gt;&gt;&gt; pl2
+InputList({0: 1, 1: 2, “end”: 3})</p>
+<p>It is also allowed to set an item one past the length of the InputList,
+this is then equivalent to appending that element.  This allows to use the
+update method also with other InputLists
+&gt;&gt;&gt; pl[len(pl)] = -1
+&gt;&gt;&gt; pl
+InputList([3, 2, 1, 0, -1])
+&gt;&gt;&gt; pl.pop(-1)
+-1</p>
+<p>Where strings are used they may also be used as attributes.  Getting keys
+which clash with methods of InputList must be done with item access, but
+setting them works without overwriting the instance methods, but is not
+recommended for readability.
+&gt;&gt;&gt; pm.foo
+24
+&gt;&gt;&gt; pm.append = 23
+&gt;&gt;&gt; pm
+InputList({“foo”: 24, “bar”: 42, “append”: 23})</p>
+<p>Keys and indices can be tuples to traverse nested InputLists.
+&gt;&gt;&gt; pn = InputList({“foo”: {“bar”: [4, 2]}})
+&gt;&gt;&gt; pn[“foo”, “bar”]
+InputList([4, 2])
+&gt;&gt;&gt; pn[“foo”, “bar”, 0]
+4</p>
+<p>Using keys with “/” in them is equivalent to the above after splitting the
+key.
+&gt;&gt;&gt; pn[“foo/bar”] == pn[“foo”, “bar”]
+True
+&gt;&gt;&gt; pn[“foo/bar/0”] == pn[“foo”, “bar”, 0]
+True</p>
+<p>To make that work strings that are only decimal digits are automatically
+converted to integers before accessing the list and keys are restricted to
+not only contain digits on initialization.
+&gt;&gt;&gt; pl[“0”] == pl[0]
+True
+&gt;&gt;&gt; InputList({1: 42})
+Traceback (most recent call last):</p>
+<blockquote>
+<div><p>File “&lt;stdin&gt;”, line 1, in &lt;module&gt;
+File “proplist.py”, line 126, in __init__</p>
+<blockquote>
+<div><p>raise ValueError(</p>
+</div></blockquote>
+</div></blockquote>
+<p>ValueError: keys in initializer must not be int or str of decimal digits or in correct order, is 1</p>
+<p>When initializing from a dict, it may not have integers or decimal strings
+as keys unless they match their position in the insertion order.  This is
+to avoid ambiguities in the final order of the InputList.
+&gt;&gt;&gt; InputList({0: “foo”, 1: “bar”, 2: 42})
+InputList([“foo”, “bar”, 42])
+&gt;&gt;&gt; InputList({0: “foo”, 2: 42, 1: “bar”})
+Traceback (most recent call last):</p>
+<blockquote>
+<div><p>File “&lt;stdin&gt;”, line 1, in &lt;module&gt;
+File “proplist.py”, line 132, in __init__</p>
+<blockquote>
+<div><p>raise ValueError(</p>
+</div></blockquote>
+</div></blockquote>
+<p>ValueError: keys in initializer must not be int or str of decimal digits or in correct order, is 2</p>
+<p>Using keys is completely optional, InputList can always be treated as a
+list, with the exception that <cite>iter()</cite> iterates of the keys and indices.
+This is to correctly implement the MutableMapping protocol, to convert to a
+normal list and discard the keys use <cite>values()</cite>.
+&gt;&gt;&gt; pm[0]
+24
+&gt;&gt;&gt; pn[“0/0/1”]
+2
+&gt;&gt;&gt; list(pl)
+[0, 1, 2, 3]
+&gt;&gt;&gt; list(pl.values())
+[3, 2, 1, 0]
+&gt;&gt;&gt; list(pl.keys())
+[0, 1, 2, 3]</p>
+<dl class="py method">
+<dt id="pyiron.base.generic.inputlist.InputList.append">
+<code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/inputlist.html#InputList.append"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.inputlist.InputList.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add new value to the list without a key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>val</strong> – new element</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.inputlist.InputList.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/inputlist.html#InputList.clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.inputlist.InputList.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove all items from InputList.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.inputlist.InputList.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/inputlist.html#InputList.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.inputlist.InputList.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns deep copy of it self.  A shallow copy can be obtained via the
+copy module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>deep copy of itself</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#pyiron.base.generic.inputlist.InputList" title="pyiron.base.generic.inputlist.InputList">InputList</a></p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pl</span> <span class="o">=</span> <span class="n">InputList</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pl</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="o">==</span> <span class="n">pl</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pl</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="ow">is</span> <span class="n">pl</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">all</span><span class="p">(</span><span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">b</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">pl</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">pl</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.inputlist.InputList.create_group">
+<code class="sig-name descname">create_group</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/inputlist.html#InputList.create_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.inputlist.InputList.create_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a new empty sublist under the given key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – key under which to store the new sublist in this list</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the newly created sublist</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pyiron.base.generic.inputlist.InputList" title="pyiron.base.generic.inputlist.InputList">InputList</a></p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pl</span> <span class="o">=</span> <span class="n">InputList</span><span class="p">({})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pl</span><span class="o">.</span><span class="n">create_group</span><span class="p">(</span><span class="s2">&quot;group_name&quot;</span><span class="p">)</span>
+<span class="go">InputList([])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">pl</span><span class="o">.</span><span class="n">group_name</span><span class="p">)</span>
+<span class="go">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.inputlist.InputList.extend">
+<code class="sig-name descname">extend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vals</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/inputlist.html#InputList.extend"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.inputlist.InputList.extend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append vals to the end of this InputList.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vals</strong> (<em>Sequence</em>) – any python sequence to draw new elements from</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.inputlist.InputList.from_hdf">
+<code class="sig-name descname">from_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span></em>, <em class="sig-param"><span class="n">group_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/inputlist.html#InputList.from_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.inputlist.InputList.from_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restore the InputList from an HDF5 file.  If group_name or
+self.table_name are not None, open a sub group in hdf prior to reading
+if not read directly from hdf.  group_name overrides self.table_name if
+both are not None.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdf</strong> (<a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.ProjectHDFio" title="pyiron.base.generic.hdfio.ProjectHDFio"><em>ProjectHDFio</em></a>) – HDF5 group object</p></li>
+<li><p><strong>group_name</strong> (<em>str</em><em>, </em><em>optional</em>) – HDF5 subgroup name, overrides
+self.table_name</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.inputlist.InputList.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">default</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">create</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/inputlist.html#InputList.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.inputlist.InputList.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>If <code class="docutils literal notranslate"><span class="pre">key</span></code> exists, behave as generic, if not call create_group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – key to search</p></li>
+<li><p><strong>default</strong> (<em>optional</em>) – return this instead if nothing found</p></li>
+<li><p><strong>create</strong> (<em>bool</em><em>, </em><em>optional</em>) – create empty list at key if nothing found</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Raise:</dt><dd><p>IndexError: if key is not in the list and neither <code class="docutils literal notranslate"><span class="pre">default</span></code> not
+<code class="docutils literal notranslate"><span class="pre">create</span></code> are given</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>element at <code class="docutils literal notranslate"><span class="pre">key</span></code> or new empty sublist</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.inputlist.InputList.has_keys">
+<code class="sig-name descname">has_keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/inputlist.html#InputList.has_keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.inputlist.InputList.has_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the list has keys set or not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if there is at least one key set</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.inputlist.InputList.insert">
+<code class="sig-name descname">insert</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">val</span></em>, <em class="sig-param"><span class="n">key</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/inputlist.html#InputList.insert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.inputlist.InputList.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a new element to the list at the specified position, with an optional
+key.  If the key is already in the list it will be updated to point to
+the new element at the new index.  If index is larger than list, append
+instead.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em>) – place val after this element</p></li>
+<li><p><strong>val</strong> – new element to add</p></li>
+<li><p><strong>key</strong> (<em>str</em><em>, </em><em>optional</em>) – optional key to mark the new element</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.inputlist.InputList.mark">
+<code class="sig-name descname">mark</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/inputlist.html#InputList.mark"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.inputlist.InputList.mark" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a key to an existing item at index.  If key already exists, it is
+overwritten.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em>) – index of the existing element to mark</p></li>
+<li><p><strong>key</strong> (<em>str</em>) – key for the existing element</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>IndexError</strong> – if index &gt; len(self)</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pl</span> <span class="o">=</span> <span class="n">InputList</span><span class="p">([</span><span class="mi">42</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pl</span><span class="o">.</span><span class="n">mark</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;head&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pl</span><span class="o">.</span><span class="n">head</span> <span class="o">==</span> <span class="mi">42</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.inputlist.InputList.to_builtin">
+<code class="sig-name descname">to_builtin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stringify</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/inputlist.html#InputList.to_builtin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.inputlist.InputList.to_builtin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the list back to builtin dict”s and list”s recursively.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>stringify</strong> (<em>bool</em><em>, </em><em>optinal</em>) – convert all non-recursive elements to</p></li>
+<li><p><strong>str</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.inputlist.InputList.to_hdf">
+<code class="sig-name descname">to_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span></em>, <em class="sig-param"><span class="n">group_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/inputlist.html#InputList.to_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.inputlist.InputList.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the InputList in an HDF5 file.  If <code class="docutils literal notranslate"><span class="pre">group_name</span></code> or
+<em>self.table_name</em> are not <cite>None</cite>, create a sub group in hdf prior to
+writing if not save directly to hdf.  group_name overrides
+self.table_name if both are not None.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdf</strong> (<a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.ProjectHDFio" title="pyiron.base.generic.hdfio.ProjectHDFio"><em>ProjectHDFio</em></a>) – HDF5 group object</p></li>
+<li><p><strong>group_name</strong> (<em>str</em><em>, </em><em>optional</em>) – HDF5 subgroup name, overrides
+self.table_name</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.inputlist.InputList.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">init</span></em>, <em class="sig-param"><span class="n">wrap</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/inputlist.html#InputList.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.inputlist.InputList.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add all elements or key-value pairs from init to this list.  If wrap is
+not given, behaves as the generic method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>init</strong> (<em>Sequence</em><em>, </em><em>Set</em><em>, </em><em>Mapping</em>) – container to draw new elements from</p></li>
+<li><p><strong>wrap</strong> (<em>bool</em>) – if True wrap all encountered Sequences and Mappings in
+InputLists recursively</p></li>
+<li><p><strong>**kwargs</strong> – update from this mapping as well</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

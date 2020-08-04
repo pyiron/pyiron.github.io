@@ -1,0 +1,7 @@
+pyiron.cli.rm module
+====================
+
+.. automodule:: pyiron.cli.rm
+   :members:
+   :undoc-members:
+   :show-inheritance:

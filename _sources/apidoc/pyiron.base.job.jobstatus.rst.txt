@@ -1,0 +1,7 @@
+pyiron.base.job.jobstatus module
+================================
+
+.. automodule:: pyiron.base.job.jobstatus
+   :members:
+   :undoc-members:
+   :show-inheritance:

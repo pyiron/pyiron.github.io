@@ -1,0 +1,1183 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.atomistics.job.atomistic &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.atomistics.job.atomistic</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.atomistics.job.atomistic</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">write</span> <span class="k">as</span> <span class="n">ase_write</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="kn">from</span> <span class="nn">pyiron.atomistics.structure.atoms</span> <span class="kn">import</span> <span class="n">Atoms</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.generic.parameters</span> <span class="kn">import</span> <span class="n">GenericParameters</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.job.generic</span> <span class="kn">import</span> <span class="n">GenericJob</span> <span class="k">as</span> <span class="n">GenericJobCore</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.master.generic</span> <span class="kn">import</span> <span class="n">GenericMaster</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">pyiron.base.project</span> <span class="kn">import</span> <span class="n">ProjectGUI</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">ImportError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2020, Max-Planck-Institut für Eisenforschung GmbH - &quot;</span>
+    <span class="s2">&quot;Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;janssen@mpie.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;production&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;Sep 1, 2017&quot;</span>
+
+
+<div class="viewcode-block" id="AtomisticGenericJob"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob">[docs]</a><span class="k">class</span> <span class="nc">AtomisticGenericJob</span><span class="p">(</span><span class="n">GenericJobCore</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Atomistic Generic Job class extends the Generic Job class with all the functionality to run jobs containing</span>
+<span class="sd">    atomistic structures. From this class all specific atomistic Hamiltonians are derived. Therefore it should contain</span>
+<span class="sd">    the properties/routines common to all atomistic jobs. The functions in this module should be as generic as possible.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        project (ProjectHDFio): ProjectHDFio instance which points to the HDF5 file the job is stored in</span>
+<span class="sd">        job_name (str): name of the job, which has to be unique within the project</span>
+
+<span class="sd">    Attributes:</span>
+
+<span class="sd">        .. attribute:: job_name</span>
+
+<span class="sd">            name of the job, which has to be unique within the project</span>
+
+<span class="sd">        .. attribute:: status</span>
+
+<span class="sd">            execution status of the job, can be one of the following [initialized, appended, created, submitted, running,</span>
+<span class="sd">                                                                      aborted, collect, suspended, refresh, busy, finished]</span>
+
+<span class="sd">        .. attribute:: job_id</span>
+
+<span class="sd">            unique id to identify the job in the pyiron database</span>
+
+<span class="sd">        .. attribute:: parent_id</span>
+
+<span class="sd">            job id of the predecessor job - the job which was executed before the current one in the current job series</span>
+
+<span class="sd">        .. attribute:: master_id</span>
+
+<span class="sd">            job id of the master job - a meta job which groups a series of jobs, which are executed either in parallel or in</span>
+<span class="sd">            serial.</span>
+
+<span class="sd">        .. attribute:: child_ids</span>
+
+<span class="sd">            list of child job ids - only meta jobs have child jobs - jobs which list the meta job as their master</span>
+
+<span class="sd">        .. attribute:: project</span>
+
+<span class="sd">            Project instance the jobs is located in</span>
+
+<span class="sd">        .. attribute:: project_hdf5</span>
+
+<span class="sd">            ProjectHDFio instance which points to the HDF5 file the job is stored in</span>
+
+<span class="sd">        .. attribute:: job_info_str</span>
+
+<span class="sd">            short string to describe the job by it is job_name and job ID - mainly used for logging</span>
+
+<span class="sd">        .. attribute:: working_directory</span>
+
+<span class="sd">            working directory of the job is executed in - outside the HDF5 file</span>
+
+<span class="sd">        .. attribute:: path</span>
+
+<span class="sd">            path to the job as a combination of absolute file system path and path within the HDF5 file.</span>
+
+<span class="sd">        .. attribute:: version</span>
+
+<span class="sd">            Version of the hamiltonian, which is also the version of the executable unless a custom executable is used.</span>
+
+<span class="sd">        .. attribute:: executable</span>
+
+<span class="sd">            Executable used to run the job - usually the path to an external executable.</span>
+
+<span class="sd">        .. attribute:: library_activated</span>
+
+<span class="sd">            For job types which offer a Python library pyiron can use the python library instead of an external executable.</span>
+
+<span class="sd">        .. attribute:: server</span>
+
+<span class="sd">            Server object to handle the execution environment for the job.</span>
+
+<span class="sd">        .. attribute:: queue_id</span>
+
+<span class="sd">            the ID returned from the queuing system - it is most likely not the same as the job ID.</span>
+
+<span class="sd">        .. attribute:: logger</span>
+
+<span class="sd">            logger object to monitor the external execution and internal pyiron warnings.</span>
+
+<span class="sd">        .. attribute:: restart_file_list</span>
+
+<span class="sd">            list of files which are used to restart the calculation from these files.</span>
+
+<span class="sd">        .. attribute:: job_type</span>
+
+<span class="sd">            Job type object with all the available job types: [&#39;ExampleJob&#39;, &#39;SerialMaster&#39;, &#39;ParallelMaster&#39;, &#39;ScriptJob&#39;,</span>
+<span class="sd">                                                               &#39;ListMaster&#39;]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">job_name</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">AtomisticGenericJob</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="n">job_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;AtomisticGenericJob&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.1&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span> <span class="o">=</span> <span class="n">GenericInput</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="n">GenericOutput</span><span class="p">(</span><span class="n">job</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">map_functions</span> <span class="o">=</span> <span class="n">MapFunctions</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">structure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span>
+
+    <span class="nd">@structure</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basis</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            basis:</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;structure&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;atoms&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span> <span class="o">=</span> <span class="n">basis</span>
+
+<div class="viewcode-block" id="AtomisticGenericJob.set_input_to_read_only"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.set_input_to_read_only">[docs]</a>    <span class="k">def</span> <span class="nf">set_input_to_read_only</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This function enforces read-only mode for the input classes, but it has to be implement in the individual</span>
+<span class="sd">        classes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="o">.</span><span class="n">read_only</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="AtomisticGenericJob.copy_to"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.copy_to">[docs]</a>    <span class="k">def</span> <span class="nf">copy_to</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">new_job_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">input_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">new_database_entry</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            destination:</span>
+<span class="sd">            new_job_name:</span>
+<span class="sd">            input_only:</span>
+<span class="sd">            new_database_entry:</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">new_generic_job</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">AtomisticGenericJob</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">copy_to</span><span class="p">(</span>
+            <span class="n">project</span><span class="o">=</span><span class="n">project</span><span class="p">,</span>
+            <span class="n">new_job_name</span><span class="o">=</span><span class="n">new_job_name</span><span class="p">,</span>
+            <span class="n">input_only</span><span class="o">=</span><span class="n">input_only</span><span class="p">,</span>
+            <span class="n">new_database_entry</span><span class="o">=</span><span class="n">new_database_entry</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">new_generic_job</span><span class="o">.</span><span class="n">_structure</span><span class="p">:</span>
+            <span class="n">new_generic_job</span><span class="o">.</span><span class="n">_structure</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">new_generic_job</span></div>
+
+<div class="viewcode-block" id="AtomisticGenericJob.calc_minimize"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.calc_minimize">[docs]</a>    <span class="k">def</span> <span class="nf">calc_minimize</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">ionic_energy_tolerance</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ionic_force_tolerance</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">e_tol</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">f_tol</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">pressure</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">n_print</span><span class="o">=</span><span class="mi">1</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ionic_energy_tolerance (float): Maximum energy difference between 2 steps</span>
+<span class="sd">            ionic_force_tolerance (float): Maximum force magnitude that each of atoms is allowed to have</span>
+<span class="sd">            e_tol (float): same as ionic_energy_tolerance (deprecated)</span>
+<span class="sd">            f_tol (float): same as ionic_force_tolerance (deprecated)</span>
+<span class="sd">            max_iter (int): Maximum number of force evluations</span>
+<span class="sd">            pressure (float/list): Targetpressure values</span>
+<span class="sd">            n_print (int): Print period</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">e_tol</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                <span class="s2">&quot;e_tol is deprecated as of vers. 0.3.0. It is not guaranteed to be in service in vers. 0.4.0&quot;</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">f_tol</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                <span class="s2">&quot;f_tol is deprecated as of vers. 0.3.0. It is not guaranteed to be in service in vers. 0.4.0&quot;</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;calc_mode&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;minimize&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;max_iter&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">max_iter</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;pressure&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pressure</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="o">.</span><span class="n">remove_keys</span><span class="p">(</span>
+            <span class="p">[</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;n_ionic_steps&quot;</span><span class="p">,</span> <span class="s2">&quot;n_print&quot;</span><span class="p">,</span> <span class="s2">&quot;velocity&quot;</span><span class="p">]</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="AtomisticGenericJob.calc_static"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.calc_static">[docs]</a>    <span class="k">def</span> <span class="nf">calc_static</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;calc_mode&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;static&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="o">.</span><span class="n">remove_keys</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;max_iter&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;pressure&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;temperature&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;n_ionic_steps&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;n_print&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;velocity&quot;</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="AtomisticGenericJob.calc_md"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.calc_md">[docs]</a>    <span class="k">def</span> <span class="nf">calc_md</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">temperature</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">pressure</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">n_ionic_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+        <span class="n">time_step</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">n_print</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+        <span class="n">temperature_damping_timescale</span><span class="o">=</span><span class="mf">100.0</span><span class="p">,</span>
+        <span class="n">pressure_damping_timescale</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">tloop</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">initial_temperature</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">langevin</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;calc_mode&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;md&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;temperature&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">temperature</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;n_ionic_steps&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">n_ionic_steps</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;n_print&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">n_print</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="o">.</span><span class="n">remove_keys</span><span class="p">([</span><span class="s2">&quot;max_iter&quot;</span><span class="p">,</span> <span class="s2">&quot;pressure&quot;</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="AtomisticGenericJob.from_hdf"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.from_hdf">[docs]</a>    <span class="k">def</span> <span class="nf">from_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Recreates instance from the hdf5 file</span>
+<span class="sd">        Args:</span>
+<span class="sd">            hdf (str): Path to the hdf5 file</span>
+<span class="sd">            group_name (str): Name of the group which contains the object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">AtomisticGenericJob</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">from_hdf</span><span class="p">(</span><span class="n">hdf</span><span class="o">=</span><span class="n">hdf</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="n">group_name</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf5_input</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="o">.</span><span class="n">from_hdf</span><span class="p">(</span><span class="n">hdf5_input</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="AtomisticGenericJob.to_hdf"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.to_hdf">[docs]</a>    <span class="k">def</span> <span class="nf">to_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Store the GenericJob in an HDF5 file</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            hdf (ProjectHDFio): HDF5 group object - optional</span>
+<span class="sd">            group_name (str): HDF5 subgroup name - optional</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">AtomisticGenericJob</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="n">hdf</span><span class="o">=</span><span class="n">hdf</span><span class="p">,</span> <span class="n">group_name</span><span class="o">=</span><span class="n">group_name</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf5_input</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="n">hdf5_input</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AtomisticGenericJob.store_structure"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.store_structure">[docs]</a>    <span class="k">def</span> <span class="nf">store_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">structure_container</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span>
+                <span class="n">job_type</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">StructureContainer</span><span class="p">,</span>
+                <span class="n">job_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">job_name</span> <span class="o">+</span> <span class="s2">&quot;_structure&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">structure_container</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">parent_id</span> <span class="o">=</span> <span class="n">structure_container</span><span class="o">.</span><span class="n">job_id</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;There is no structure attached to the current Job.&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AtomisticGenericJob.animate_structure"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.animate_structure">[docs]</a>    <span class="k">def</span> <span class="nf">animate_structure</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">spacefill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">show_cell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">center_of_mass</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">particle_size</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Animates the job if a trajectory is present</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            spacefill (bool):</span>
+<span class="sd">            show_cell (bool):</span>
+<span class="sd">            stride (int): show animation every stride [::stride]</span>
+<span class="sd">                          use value &gt;1 to make animation faster</span>
+<span class="sd">                           default=1</span>
+<span class="sd">            center_of_mass (bool):</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            animation: nglview IPython widget</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">nglview</span>
+        <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+                <span class="s2">&quot;The animate() function requires the package nglview to be installed&quot;</span>
+            <span class="p">)</span>
+
+        <span class="n">animation</span> <span class="o">=</span> <span class="n">nglview</span><span class="o">.</span><span class="n">show_asetraj</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">trajectory</span><span class="p">(</span><span class="n">stride</span><span class="o">=</span><span class="n">stride</span><span class="p">,</span> <span class="n">center_of_mass</span><span class="o">=</span><span class="n">center_of_mass</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">spacefill</span><span class="p">:</span>
+            <span class="n">animation</span><span class="o">.</span><span class="n">add_spacefill</span><span class="p">(</span><span class="n">radius_type</span><span class="o">=</span><span class="s2">&quot;vdw&quot;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">particle_size</span><span class="p">)</span>
+            <span class="n">animation</span><span class="o">.</span><span class="n">remove_ball_and_stick</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">animation</span><span class="o">.</span><span class="n">add_ball_and_stick</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">show_cell</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">cell</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">animation</span><span class="o">.</span><span class="n">add_unitcell</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">animation</span></div>
+
+<div class="viewcode-block" id="AtomisticGenericJob.view_structure"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.view_structure">[docs]</a>    <span class="k">def</span> <span class="nf">view_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">snapshot</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">spacefill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_cell</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            snapshot (int): Snapshot of the trajectory one wants</span>
+<span class="sd">            spacefill (bool):</span>
+<span class="sd">            show_cell (bool):</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            view: nglview IPython widget</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">import</span> <span class="nn">nglview</span>
+
+        <span class="n">atoms</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="n">snapshot</span><span class="p">)</span>
+        <span class="n">picture</span> <span class="o">=</span> <span class="n">nglview</span><span class="o">.</span><span class="n">show_ase</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">spacefill</span><span class="p">:</span>
+            <span class="n">picture</span><span class="o">.</span><span class="n">add_spacefill</span><span class="p">(</span><span class="n">radius_type</span><span class="o">=</span><span class="s2">&quot;vdw&quot;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="n">picture</span><span class="o">.</span><span class="n">remove_ball_and_stick</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">picture</span><span class="o">.</span><span class="n">add_ball_and_stick</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">show_cell</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">atoms</span><span class="o">.</span><span class="n">cell</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">picture</span><span class="o">.</span><span class="n">add_unitcell</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">picture</span></div>
+
+<div class="viewcode-block" id="AtomisticGenericJob.validate_ready_to_run"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.validate_ready_to_run">[docs]</a>    <span class="k">def</span> <span class="nf">validate_ready_to_run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;structure&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;atoms&quot;</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;This job does not contain a valid structure: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">job_name</span><span class="p">)</span>
+            <span class="p">)</span></div>
+
+<div class="viewcode-block" id="AtomisticGenericJob.db_entry"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.db_entry">[docs]</a>    <span class="k">def</span> <span class="nf">db_entry</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate the initial database entry</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            (dict): db_dict</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">db_dict</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">AtomisticGenericJob</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">db_entry</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="p">,</span> <span class="n">Atoms</span><span class="p">):</span>
+                <span class="n">parent_structure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">get_parent_basis</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">parent_structure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="n">db_dict</span><span class="p">[</span><span class="s2">&quot;ChemicalFormula&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">parent_structure</span><span class="o">.</span><span class="n">get_chemical_formula</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">db_dict</span></div>
+
+<div class="viewcode-block" id="AtomisticGenericJob.restart"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.restart">[docs]</a>    <span class="k">def</span> <span class="nf">restart</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">job_type</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Restart a new job created from an existing calculation.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            project (pyiron.project.Project instance): Project instance at which the new job should be created</span>
+<span class="sd">            job_name (str): Job name</span>
+<span class="sd">            job_type (str): Job type</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            new_ham: New job</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">new_ham</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">AtomisticGenericJob</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">restart</span><span class="p">(</span>
+            <span class="n">job_name</span><span class="o">=</span><span class="n">job_name</span><span class="p">,</span> <span class="n">job_type</span><span class="o">=</span><span class="n">job_type</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">new_ham</span><span class="p">,</span> <span class="n">GenericMaster</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">GenericMaster</span><span class="p">):</span>
+            <span class="n">new_child</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">restart</span><span class="p">(</span><span class="n">job_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">job_type</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+            <span class="n">new_ham</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_child</span><span class="p">)</span>
+        <span class="n">new_ham</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="n">iteration_step</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">new_ham</span><span class="o">.</span><span class="n">structure</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">new_ham</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">new_ham</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s1">&#39;structure&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;atoms&#39;</span>
+        <span class="k">return</span> <span class="n">new_ham</span></div>
+
+    <span class="c1"># Required functions</span>
+<div class="viewcode-block" id="AtomisticGenericJob.continue_with_restart_files"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.continue_with_restart_files">[docs]</a>    <span class="k">def</span> <span class="nf">continue_with_restart_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">job_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            job_type:</span>
+<span class="sd">            job_name:</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">job_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">job_name</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">_continue&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">job_name</span><span class="p">)</span>
+        <span class="n">new_ham</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">restart</span><span class="p">(</span><span class="n">job_type</span><span class="o">=</span><span class="n">job_type</span><span class="p">,</span> <span class="n">job_name</span><span class="o">=</span><span class="n">job_name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">initialized</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_job_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="n">new_ham</span><span class="o">.</span><span class="n">parent_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span>
+        <span class="n">new_ham</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;structure&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;continue_final&quot;</span>
+        <span class="k">return</span> <span class="n">new_ham</span></div>
+
+<div class="viewcode-block" id="AtomisticGenericJob.continue_with_final_structure"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.continue_with_final_structure">[docs]</a>    <span class="k">def</span> <span class="nf">continue_with_final_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">job_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            job_type:</span>
+<span class="sd">            job_name:</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">job_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">job_name</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">_continue&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">job_name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">job_type</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">job_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__name__</span>
+        <span class="n">new_ham</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">job_type</span><span class="p">,</span> <span class="n">job_name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">initialized</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_job_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="n">new_ham</span><span class="o">.</span><span class="n">parent_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">finished</span><span class="p">:</span>
+            <span class="n">new_ham</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="n">iteration_step</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">new_ham</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;structure&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;atoms&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">new_ham</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;structure&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;continue_final&quot;</span>
+        <span class="k">return</span> <span class="n">new_ham</span></div>
+
+<div class="viewcode-block" id="AtomisticGenericJob.trajectory"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.trajectory">[docs]</a>    <span class="k">def</span> <span class="nf">trajectory</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">center_of_mass</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">atom_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">snapshot_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite_positions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite_cells</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            stride (int): The trajectories are generated with every &#39;stride&#39; steps</span>
+<span class="sd">            center_of_mass (list/numpy.ndarray): The center of mass</span>
+<span class="sd">            atom_indices (list/numpy.ndarray): The atom indices for which the trajectory should be generated</span>
+<span class="sd">            snapshot_indices (list/numpy.ndarray): The snapshots for which the trajectory should be generated</span>
+<span class="sd">            overwrite_positions (list/numpy.ndarray): List of positions that are meant to overwrite the existing</span>
+<span class="sd">                                                      trajectory. Useful to wrap coordinates for example</span>
+<span class="sd">            overwrite_cells(list/numpy.ndarray): List of cells that are meant to overwrite the existing</span>
+<span class="sd">                                                 trajectory. Only used when `overwrite_positions` is defined. This must</span>
+<span class="sd">                                                 have the same length of `overwrite_positions`</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            pyiron.atomistics.job.atomistic.Trajectory: Trajectory instance</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cells</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">cells</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">indices</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">indices</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">indices</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">indices</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">indices</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">cells</span><span class="p">)</span>  <span class="c1"># Use the same indices throughout</span>
+        <span class="k">if</span> <span class="n">overwrite_positions</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">overwrite_positions</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">overwrite_cells</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">overwrite_cells</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">positions</span><span class="p">),</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+                    <span class="n">cells</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">overwrite_cells</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;overwrite_cells must be compatible with the positions!&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">positions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">conditions</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cells</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">conditions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">conditions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cells</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">conditions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cells</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">conditions</span><span class="p">):</span>
+            <span class="n">max_pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">max_pos</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">max_pos</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+            <span class="n">cell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">max_pos</span>
+            <span class="n">cells</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">cell</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">positions</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">cells</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The positions must have the same length as the cells!&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">snapshot_indices</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">positions</span> <span class="o">=</span> <span class="n">positions</span><span class="p">[</span><span class="n">snapshot_indices</span><span class="p">]</span>
+            <span class="n">cells</span> <span class="o">=</span> <span class="n">cells</span><span class="p">[</span><span class="n">snapshot_indices</span><span class="p">]</span>
+            <span class="n">indices</span> <span class="o">=</span> <span class="n">indices</span><span class="p">[</span><span class="n">snapshot_indices</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">atom_indices</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Trajectory</span><span class="p">(</span>
+                <span class="n">positions</span><span class="p">[::</span><span class="n">stride</span><span class="p">],</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">get_parent_basis</span><span class="p">(),</span>
+                <span class="n">center_of_mass</span><span class="o">=</span><span class="n">center_of_mass</span><span class="p">,</span>
+                <span class="n">cells</span><span class="o">=</span><span class="n">cells</span><span class="p">[::</span><span class="n">stride</span><span class="p">],</span>
+                <span class="n">indices</span><span class="o">=</span><span class="n">indices</span><span class="p">[::</span><span class="n">stride</span><span class="p">]</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sub_struct</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">get_parent_basis</span><span class="p">()[</span><span class="n">atom_indices</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sub_struct</span><span class="o">.</span><span class="n">species</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">species</span><span class="p">):</span>
+                <span class="c1"># Then `sub_struct` has had its indices remapped so they run from 0 to the number of species - 1</span>
+                <span class="c1"># But the `indices` array is unaware of this and needs to be remapped to this new space</span>
+                <span class="n">original_symbols</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">el</span><span class="o">.</span><span class="n">Abbreviation</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">species</span><span class="p">])</span>
+                <span class="n">sub_symbols</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">el</span><span class="o">.</span><span class="n">Abbreviation</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">sub_struct</span><span class="o">.</span><span class="n">species</span><span class="p">])</span>
+
+                <span class="n">map_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">original_symbols</span> <span class="o">==</span> <span class="n">symbol</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="n">sub_symbols</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+
+                <span class="n">remapped_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">i_sub</span><span class="p">,</span> <span class="n">i_original</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">map_</span><span class="p">):</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">remapped_indices</span><span class="p">,</span> <span class="n">indices</span> <span class="o">==</span> <span class="n">i_original</span><span class="p">,</span> <span class="n">i_sub</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">remapped_indices</span> <span class="o">=</span> <span class="n">indices</span>
+
+            <span class="k">return</span> <span class="n">Trajectory</span><span class="p">(</span>
+                <span class="n">positions</span><span class="p">[::</span><span class="n">stride</span><span class="p">,</span> <span class="n">atom_indices</span><span class="p">,</span> <span class="p">:],</span>
+                <span class="n">sub_struct</span><span class="p">,</span>
+                <span class="n">center_of_mass</span><span class="o">=</span><span class="n">center_of_mass</span><span class="p">,</span>
+                <span class="n">cells</span><span class="o">=</span><span class="n">cells</span><span class="p">[::</span><span class="n">stride</span><span class="p">],</span>
+                <span class="n">indices</span><span class="o">=</span><span class="n">remapped_indices</span><span class="p">[::</span><span class="n">stride</span><span class="p">,</span> <span class="n">atom_indices</span><span class="p">]</span>
+            <span class="p">)</span></div>
+
+<div class="viewcode-block" id="AtomisticGenericJob.write_traj"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.write_traj">[docs]</a>    <span class="k">def</span> <span class="nf">write_traj</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">filename</span><span class="p">,</span>
+        <span class="n">file_format</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">parallel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">center_of_mass</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">atom_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">snapshot_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">overwrite_positions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">overwrite_cells</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Writes the trajectory in a given file file_format based on the `ase.io.write`_ function.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            filename (str): Filename of the output</span>
+<span class="sd">            file_format (str): The specific file_format of the output</span>
+<span class="sd">            parallel (bool): ase parameter</span>
+<span class="sd">            append (bool): ase parameter</span>
+<span class="sd">            stride (int): Writes trajectory every `stride` steps</span>
+<span class="sd">            center_of_mass (bool): True if the positions are centered on the COM</span>
+<span class="sd">            atom_indices (list/numpy.ndarray): The atom indices for which the trajectory should be generated</span>
+<span class="sd">            snapshot_indices (list/numpy.ndarray): The snapshots for which the trajectory should be generated</span>
+<span class="sd">            overwrite_positions (list/numpy.ndarray): List of positions that are meant to overwrite the existing</span>
+<span class="sd">                                                      trajectory. Useful to wrap coordinates for example</span>
+<span class="sd">            overwrite_cells(list/numpy.ndarray): List of cells that are meant to overwrite the existing</span>
+<span class="sd">                                                 trajectory. Only used when `overwrite_positions` is defined. This must</span>
+<span class="sd">                                                 have the same length of `overwrite_positions`</span>
+<span class="sd">            **kwargs: Additional ase arguments</span>
+
+<span class="sd">        .. _ase.io.write: https://wiki.fysik.dtu.dk/ase/_modules/ase/io/formats.html#write</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">traj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trajectory</span><span class="p">(</span>
+            <span class="n">stride</span><span class="o">=</span><span class="n">stride</span><span class="p">,</span>
+            <span class="n">center_of_mass</span><span class="o">=</span><span class="n">center_of_mass</span><span class="p">,</span>
+            <span class="n">atom_indices</span><span class="o">=</span><span class="n">atom_indices</span><span class="p">,</span>
+            <span class="n">snapshot_indices</span><span class="o">=</span><span class="n">snapshot_indices</span><span class="p">,</span>
+            <span class="n">overwrite_positions</span><span class="o">=</span><span class="n">overwrite_positions</span><span class="p">,</span>
+            <span class="n">overwrite_cells</span><span class="o">=</span><span class="n">overwrite_cells</span>
+        <span class="p">)</span>
+        <span class="c1"># Using thr ASE output writer</span>
+        <span class="n">ase_write</span><span class="p">(</span>
+            <span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span>
+            <span class="n">images</span><span class="o">=</span><span class="n">traj</span><span class="p">,</span>
+            <span class="nb">format</span><span class="o">=</span><span class="n">file_format</span><span class="p">,</span>
+            <span class="n">parallel</span><span class="o">=</span><span class="n">parallel</span><span class="p">,</span>
+            <span class="n">append</span><span class="o">=</span><span class="n">append</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+    <span class="c1"># Compatibility functions</span>
+<div class="viewcode-block" id="AtomisticGenericJob.get_final_structure"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.get_final_structure">[docs]</a>    <span class="k">def</span> <span class="nf">get_final_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+            <span class="s2">&quot;get_final_structure() is deprecated - please use get_structure() instead.&quot;</span><span class="p">,</span>
+            <span class="ne">DeprecationWarning</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="n">iteration_step</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AtomisticGenericJob.set_kpoints"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.set_kpoints">[docs]</a>    <span class="k">def</span> <span class="nf">set_kpoints</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">mesh</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;MP&quot;</span><span class="p">,</span>
+        <span class="n">center_shift</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">symmetry_reduction</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">manual_kpoints</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">weights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">reciprocal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            mesh:</span>
+<span class="sd">            scheme:</span>
+<span class="sd">            center_shift:</span>
+<span class="sd">            symmetry_reduction:</span>
+<span class="sd">            manual_kpoints:</span>
+<span class="sd">            weights:</span>
+<span class="sd">            reciprocal:</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;The set_kpoints function is not implemented for this code.&quot;</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="AtomisticGenericJob.set_encut"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.set_encut">[docs]</a>    <span class="k">def</span> <span class="nf">set_encut</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">encut</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            encut:</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;The set_encut function is not implemented for this code.&quot;</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="AtomisticGenericJob.get_encut"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.get_encut">[docs]</a>    <span class="k">def</span> <span class="nf">get_encut</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;The set_encut function is not implemented for this code.&quot;</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="AtomisticGenericJob.get_structure"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.get_structure">[docs]</a>    <span class="k">def</span> <span class="nf">get_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iteration_step</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">wrap_atoms</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the structure from a given iteration step of the simulation (MD/ionic relaxation). For static calculations</span>
+<span class="sd">        there is only one ionic iteration step</span>
+<span class="sd">        Args:</span>
+<span class="sd">            iteration_step (int): Step for which the structure is requested</span>
+<span class="sd">            wrap_atoms (bool): True if the atoms are to be wrapped back into the unit cell</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            pyiron.atomistics.structure.atoms.Atoms: The required structure</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">structure</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">()</span>
+        <span class="n">snapshot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">conditions</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">cells</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">cells</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">conditions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">conditions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">cells</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">positions</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">cells</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">conditions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">cells</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">conditions</span><span class="p">):</span>
+            <span class="n">snapshot</span><span class="o">.</span><span class="n">cell</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">cells</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">snapshot</span><span class="o">.</span><span class="n">cell</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">cells</span><span class="p">[</span><span class="n">iteration_step</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">positions</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">snapshot</span><span class="o">.</span><span class="n">positions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="n">iteration_step</span><span class="p">]</span>
+        <span class="n">indices</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">indices</span>
+        <span class="k">if</span> <span class="n">indices</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">max</span><span class="p">([</span><span class="n">iteration_step</span><span class="p">,</span> <span class="mi">0</span><span class="p">]):</span>
+            <span class="n">snapshot</span><span class="o">.</span><span class="n">indices</span> <span class="o">=</span> <span class="n">indices</span><span class="p">[</span><span class="n">iteration_step</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">wrap_atoms</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">center_coordinates_in_unit_cell</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">unwrapped_positions</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">max</span><span class="p">([</span><span class="n">iteration_step</span><span class="p">,</span> <span class="mi">0</span><span class="p">]):</span>
+                <span class="n">snapshot</span><span class="o">.</span><span class="n">positions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">unwrapped_positions</span><span class="p">[</span><span class="n">iteration_step</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">snapshot</span><span class="o">.</span><span class="n">positions</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">total_displacements</span><span class="p">[</span><span class="n">iteration_step</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">snapshot</span></div>
+
+<div class="viewcode-block" id="AtomisticGenericJob.map"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.map">[docs]</a>    <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">function</span><span class="p">,</span> <span class="n">parameter_lst</span><span class="p">):</span>
+        <span class="n">master</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span>
+            <span class="n">job_type</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">MapMaster</span><span class="p">,</span> <span class="n">job_name</span><span class="o">=</span><span class="s2">&quot;map_&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">job_name</span>
+        <span class="p">)</span>
+        <span class="n">master</span><span class="o">.</span><span class="n">modify_function</span> <span class="o">=</span> <span class="n">function</span>
+        <span class="n">master</span><span class="o">.</span><span class="n">parameter_list</span> <span class="o">=</span> <span class="n">parameter_lst</span>
+        <span class="k">return</span> <span class="n">master</span></div>
+
+<div class="viewcode-block" id="AtomisticGenericJob.gui"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.AtomisticGenericJob.gui">[docs]</a>    <span class="k">def</span> <span class="nf">gui</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ProjectGUI</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_structure_to_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;structure&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;atoms&quot;</span><span class="p">:</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf5_input</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="n">hdf5_input</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_structure_from_hdf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="s2">&quot;structure&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="p">[</span><span class="s2">&quot;input&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">list_groups</span><span class="p">()</span>
+            <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;structure&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;atoms&quot;</span>
+        <span class="p">):</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_hdf5</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdf5_input</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">Atoms</span><span class="p">()</span><span class="o">.</span><span class="n">from_hdf</span><span class="p">(</span><span class="n">hdf5_input</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_write_chemical_formular_to_database</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="p">:</span>
+            <span class="n">parent_structure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">get_parent_basis</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">item_update</span><span class="p">(</span>
+                <span class="p">{</span><span class="s2">&quot;ChemicalFormula&quot;</span><span class="p">:</span> <span class="n">parent_structure</span><span class="o">.</span><span class="n">get_chemical_formula</span><span class="p">()},</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_job_id</span><span class="p">,</span>
+            <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_before_successor_calc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ham</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">ham</span><span class="o">.</span><span class="n">_generic_input</span><span class="p">[</span><span class="s2">&quot;structure&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;continue_final&quot;</span><span class="p">:</span>
+            <span class="n">ham</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="n">iteration_step</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">ham</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="set_encut"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.set_encut">[docs]</a><span class="k">def</span> <span class="nf">set_encut</span><span class="p">(</span><span class="n">job</span><span class="p">,</span> <span class="n">parameter</span><span class="p">):</span>
+    <span class="n">job</span><span class="o">.</span><span class="n">set_encut</span><span class="p">(</span><span class="n">parameter</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">job</span></div>
+
+
+<div class="viewcode-block" id="set_kpoints"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.set_kpoints">[docs]</a><span class="k">def</span> <span class="nf">set_kpoints</span><span class="p">(</span><span class="n">job</span><span class="p">,</span> <span class="n">parameter</span><span class="p">):</span>
+    <span class="n">job</span><span class="o">.</span><span class="n">set_kpoints</span><span class="p">(</span><span class="n">parameter</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">job</span></div>
+
+
+<div class="viewcode-block" id="set_structure"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.set_structure">[docs]</a><span class="k">def</span> <span class="nf">set_structure</span><span class="p">(</span><span class="n">job</span><span class="p">,</span> <span class="n">parameter</span><span class="p">):</span>
+    <span class="n">job</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">parameter</span>
+    <span class="k">return</span> <span class="n">job</span></div>
+
+
+<div class="viewcode-block" id="MapFunctions"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.MapFunctions">[docs]</a><span class="k">class</span> <span class="nc">MapFunctions</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_structure</span> <span class="o">=</span> <span class="n">set_structure</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_encut</span> <span class="o">=</span> <span class="n">set_encut</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_kpoints</span> <span class="o">=</span> <span class="n">set_kpoints</span></div>
+
+
+<div class="viewcode-block" id="Trajectory"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.Trajectory">[docs]</a><span class="k">class</span> <span class="nc">Trajectory</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A trajectory instance compatible with the ase.io class</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        positions (numpy.ndarray): The array of the trajectory in cartesian coordinates</span>
+<span class="sd">        structure (pyiron.atomistics.structure.atoms.Atoms): The initial structure instance from which the species info</span>
+<span class="sd">                                                             is derived</span>
+<span class="sd">        center_of_mass (bool): False (default) if the specified positions are w.r.t. the origin</span>
+<span class="sd">        cells (numpy.ndarray): Optional argument of the cell shape at every time step (Nx3x3 array) when the volume</span>
+<span class="sd">                                varies</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">positions</span><span class="p">,</span> <span class="n">structure</span><span class="p">,</span> <span class="n">center_of_mass</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cells</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">center_of_mass</span><span class="p">:</span>
+            <span class="n">pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span>
+            <span class="n">pos</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">pos</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">T</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">pos</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+            <span class="n">pos</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">pos</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">T</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">pos</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+            <span class="n">pos</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">pos</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">T</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">pos</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_positions</span> <span class="o">=</span> <span class="n">pos</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_positions</span> <span class="o">=</span> <span class="n">positions</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span> <span class="o">=</span> <span class="n">structure</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cells</span> <span class="o">=</span> <span class="n">cells</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_indices</span> <span class="o">=</span> <span class="n">indices</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="n">new_structure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cells</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">new_structure</span><span class="o">.</span><span class="n">cell</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cells</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_indices</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">new_structure</span><span class="o">.</span><span class="n">indices</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_indices</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
+        <span class="n">new_structure</span><span class="o">.</span><span class="n">positions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_positions</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
+        <span class="c1"># This step is necessary for using ase.io.write for trajectories</span>
+        <span class="n">new_structure</span><span class="o">.</span><span class="n">arrays</span><span class="p">[</span><span class="s2">&quot;positions&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_structure</span><span class="o">.</span><span class="n">positions</span>
+        <span class="c1"># new_structure.arrays[&#39;cells&#39;] = new_structure.cell</span>
+        <span class="k">return</span> <span class="n">new_structure</span>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_positions</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="GenericInput"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.GenericInput">[docs]</a><span class="k">class</span> <span class="nc">GenericInput</span><span class="p">(</span><span class="n">GenericParameters</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="s2">&quot;generic&quot;</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GenericInput</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">input_file_name</span><span class="o">=</span><span class="n">input_file_name</span><span class="p">,</span>
+            <span class="n">table_name</span><span class="o">=</span><span class="n">table_name</span><span class="p">,</span>
+            <span class="n">comment_char</span><span class="o">=</span><span class="s2">&quot;#&quot;</span><span class="p">,</span>
+            <span class="n">separator_char</span><span class="o">=</span><span class="s2">&quot;=&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="GenericInput.load_default"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.GenericInput.load_default">[docs]</a>    <span class="k">def</span> <span class="nf">load_default</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Loads the default file content</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">file_content</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">calc_mode=static # static, minimize, md</span>
+<span class="s2">structure=atoms # atoms, continue_final</span>
+<span class="s2">&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">load_string</span><span class="p">(</span><span class="n">file_content</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="GenericOutput"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.GenericOutput">[docs]</a><span class="k">class</span> <span class="nc">GenericOutput</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_job</span> <span class="o">=</span> <span class="n">job</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">cells</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="p">[</span><span class="s2">&quot;output/generic/cells&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">energy_pot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="p">[</span><span class="s2">&quot;output/generic/energy_pot&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">energy_tot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="p">[</span><span class="s2">&quot;output/generic/energy_tot&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">forces</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="p">[</span><span class="s2">&quot;output/generic/forces&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">force_max</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            maximum force magnitude of each step which is used for</span>
+<span class="sd">            convergence criterion of structure optimizations</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">forces</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">positions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="p">[</span><span class="s2">&quot;output/generic/positions&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pressures</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="p">[</span><span class="s2">&quot;output/generic/pressures&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">steps</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="p">[</span><span class="s2">&quot;output/generic/steps&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">temperature</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="p">[</span><span class="s2">&quot;output/generic/temperature&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">computation_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="p">[</span><span class="s2">&quot;output/generic/computation_time&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">unwrapped_positions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">unwrapped_positions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="p">[</span><span class="s2">&quot;output/generic/unwrapped_positions&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">unwrapped_positions</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">unwrapped_positions</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">positions</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">total_displacements</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">volume</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="p">[</span><span class="s2">&quot;output/generic/volume&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">indices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="p">[</span><span class="s2">&quot;output/generic/indices&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">displacements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Output for 3-d displacements between successive snapshots, with minimum image convention.</span>
+<span class="sd">        For the total displacements from the initial configuration, use total_displacements</span>
+<span class="sd">        This algorithm collapses if:</span>
+<span class="sd">        - the ID&#39;s are not consistent (i.e. you can also not change the number of atoms)</span>
+<span class="sd">        - there are atoms which move by more than half a box length in any direction within two snapshots (due to</span>
+<span class="sd">        periodic boundary conditions)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Check if the volume changes in any snapshot</span>
+        <span class="n">vol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cells</span><span class="p">)</span>
+        <span class="n">varying_cell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">((</span><span class="n">vol</span> <span class="o">-</span> <span class="n">vol</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mf">1e-5</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_displacements</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="o">.</span><span class="n">structure</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cells</span><span class="p">,</span> <span class="n">varying_cell</span><span class="o">=</span><span class="n">varying_cell</span><span class="p">)</span>
+
+<div class="viewcode-block" id="GenericOutput.get_displacements"><a class="viewcode-back" href="../../../../apidoc/pyiron.atomistics.job.atomistic.html#pyiron.atomistics.job.atomistic.GenericOutput.get_displacements">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_displacements</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="n">positions</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">varying_cell</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Output for 3-d displacements between successive snapshots, with minimum image convention.</span>
+<span class="sd">        For the total displacements from the initial configuration, use total_displacements</span>
+<span class="sd">        This algorithm collapses if:</span>
+<span class="sd">        - the ID&#39;s are not consistent (i.e. you can also not change the number of atoms)</span>
+<span class="sd">        - there are atoms which move by more than half a box length in any direction within two snapshots (due to</span>
+<span class="sd">        periodic boundary conditions)</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            structure (pyiron.atomistics.structure.atoms.Atoms): The initial structure</span>
+<span class="sd">            positions (numpy.ndarray/list): List of positions in cartesian coordinates (N_steps x N_atoms x 3)</span>
+<span class="sd">            cells (numpy.ndarray/list): List of cells (N_steps x 3 x 3)</span>
+<span class="sd">            varying_cell (bool): True if the cell shape varies during the trajectory (raises a warning)</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            numpy.ndarray: Displacements (N_steps x N_atoms x 3)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">varying_cell</span><span class="p">:</span>
+            <span class="n">displacement</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tensordot</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">cells</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="n">axes</span><span class="o">=</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+            <span class="n">displacement</span> <span class="o">-=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">structure</span><span class="o">.</span><span class="n">get_scaled_positions</span><span class="p">(),</span>
+                                      <span class="n">displacement</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">structure</span><span class="p">),</span> <span class="mi">3</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">displacement</span> <span class="o">-=</span> <span class="n">np</span><span class="o">.</span><span class="n">rint</span><span class="p">(</span><span class="n">displacement</span><span class="p">)</span>
+            <span class="n">displacement</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tensordot</span><span class="p">(</span><span class="n">displacement</span><span class="p">,</span> <span class="n">cells</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">axes</span><span class="o">=</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;You are computing displacements in a simulation with periodic boundary conditions </span><span class="se">\n</span><span class="s2">&quot;</span>
+                          <span class="s2">&quot;and a varying cell shape.&quot;</span><span class="p">)</span>
+            <span class="n">displacement</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">tensordot</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">cell</span><span class="p">),</span> <span class="n">axes</span><span class="o">=</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span> <span class="k">for</span> <span class="n">pos</span><span class="p">,</span> <span class="n">cell</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">cells</span><span class="p">)])</span>
+            <span class="n">displacement</span> <span class="o">-=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">structure</span><span class="o">.</span><span class="n">get_scaled_positions</span><span class="p">(),</span>
+                                      <span class="n">displacement</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">structure</span><span class="p">),</span> <span class="mi">3</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">displacement</span> <span class="o">-=</span> <span class="n">np</span><span class="o">.</span><span class="n">rint</span><span class="p">(</span><span class="n">displacement</span><span class="p">)</span>
+            <span class="n">displacement</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;nki,nji-&gt;nkj&#39;</span><span class="p">,</span> <span class="n">displacement</span><span class="p">,</span> <span class="n">cells</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">displacement</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">total_displacements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Output for 3-d total displacements from the initial configuration, with minimum image convention.</span>
+<span class="sd">        For the diplacements for the successive snapshots, use displacements</span>
+<span class="sd">        This algorithm collapses if:</span>
+<span class="sd">        - the ID&#39;s are not consistent (i.e. you can also not change the number of atoms)</span>
+<span class="sd">        - there are atoms which move by more than half a box length in any direction within two snapshots (due to periodic boundary conditions)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">displacements</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__dir__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">hdf5_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="p">[</span><span class="s2">&quot;output/generic&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">hdf5_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">hdf5_path</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

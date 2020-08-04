@@ -1,0 +1,19 @@
+pyiron.gpaw package
+===================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pyiron.gpaw.gpaw
+   pyiron.gpaw.pyiron_ase
+
+Module contents
+---------------
+
+.. automodule:: pyiron.gpaw
+   :members:
+   :undoc-members:
+   :show-inheritance:

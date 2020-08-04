@@ -1,0 +1,7 @@
+pyiron.base.job.interactive module
+==================================
+
+.. automodule:: pyiron.base.job.interactive
+   :members:
+   :undoc-members:
+   :show-inheritance:

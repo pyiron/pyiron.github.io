@@ -1,0 +1,7 @@
+pyiron.cli.install module
+=========================
+
+.. automodule:: pyiron.cli.install
+   :members:
+   :undoc-members:
+   :show-inheritance:

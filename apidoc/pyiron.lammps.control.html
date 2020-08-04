@@ -1,0 +1,482 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.lammps.control module &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>pyiron.lammps.control module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/pyiron.lammps.control.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-pyiron.lammps.control">
+<span id="pyiron-lammps-control-module"></span><h1>pyiron.lammps.control module<a class="headerlink" href="#module-pyiron.lammps.control" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pyiron.lammps.control.LammpsControl">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.lammps.control.</code><code class="sig-name descname">LammpsControl</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_file_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">qwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/lammps/control.html#LammpsControl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.lammps.control.LammpsControl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pyiron.base.generic.parameters.html#pyiron.base.generic.parameters.GenericParameters" title="pyiron.base.generic.parameters.GenericParameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyiron.base.generic.parameters.GenericParameters</span></code></a></p>
+<dl class="py method">
+<dt id="pyiron.lammps.control.LammpsControl.calc_md">
+<code class="sig-name descname">calc_md</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">temperature</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pressure</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">n_ionic_steps</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">time_step</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">n_print</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">temperature_damping_timescale</span><span class="o">=</span><span class="default_value">100.0</span></em>, <em class="sig-param"><span class="n">pressure_damping_timescale</span><span class="o">=</span><span class="default_value">1000.0</span></em>, <em class="sig-param"><span class="n">seed</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tloop</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initial_temperature</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">langevin</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">delta_temp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">delta_press</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">job_name</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">rotation_matrix</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/lammps/control.html#LammpsControl.calc_md"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.lammps.control.LammpsControl.calc_md" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set an MD calculation within LAMMPS. Nosé Hoover is used by default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>temperature</strong> (<em>None/float/list</em>) – Target temperature value(-s). If set to None, an NVE calculation is performed.
+It is required when the pressure is set or langevin is set
+It can be a list of temperature values, containing the initial target
+temperature and the final target temperature (in between the target value
+is varied linearly).</p></li>
+<li><p><strong>pressure</strong> (<em>None/float/numpy.ndarray/list</em>) – Target pressure. If set to None, an NVE or an NVT calculation is
+performed. A list of up to length 6 can be given to specify xx, yy, zz, xy, xz, and yz components of
+the pressure tensor, respectively. These values can mix floats and <cite>None</cite> to allow only certain degrees
+of cell freedom to change. (Default is None, run isochorically.)</p></li>
+<li><p><strong>n_ionic_steps</strong> (<em>int</em>) – Number of ionic steps</p></li>
+<li><p><strong>time_step</strong> (<em>float</em>) – Step size in fs between two steps.</p></li>
+<li><p><strong>n_print</strong> (<em>int</em>) – Print frequency</p></li>
+<li><p><strong>temperature_damping_timescale</strong> (<em>float</em>) – The time associated with the thermostat adjusting the temperature.
+(In fs. After rescaling to appropriate time units, is equivalent to
+Lammps’ <cite>Tdamp</cite>.)</p></li>
+<li><p><strong>pressure_damping_timescale</strong> (<em>float</em>) – The time associated with the barostat adjusting the temperature.
+(In fs. After rescaling to appropriate time units, is equivalent to
+Lammps’ <cite>Pdamp</cite>.)</p></li>
+<li><p><strong>seed</strong> (<em>int</em>) – Seed for the random number generation (required for the velocity creation)</p></li>
+<li><p><strong>tloop</strong> – </p></li>
+<li><p><strong>initial_temperature</strong> (<em>None/float</em>) – Initial temperature according to which the initial velocity field
+is created. If None, the initial temperature will be twice the target
+temperature (which would go immediately down to the target temperature
+as described in equipartition theorem). If 0, the velocity field is not
+initialized (in which case  the initial velocity given in structure will
+be used). If any other number is given, this value is going to be used
+for the initial temperature.</p></li>
+<li><p><strong>langevin</strong> (<em>bool</em>) – (True or False) Activate Langevin dynamics</p></li>
+<li><p><strong>delta_temp</strong> (<em>float</em>) – Thermostat timescale, but in your Lammps time units, whatever those are. (DEPRECATED.)</p></li>
+<li><p><strong>delta_press</strong> (<em>float</em>) – Barostat timescale, but in your Lammps time units, whatever those are. (DEPRECATED.)</p></li>
+<li><p><strong>job_name</strong> (<em>str</em>) – Job name of the job to generate a unique random seed.</p></li>
+<li><p><strong>rotation_matrix</strong> (<em>numpy.ndarray</em>) – The rotation matrix from the pyiron to Lammps coordinate frame.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.lammps.control.LammpsControl.calc_minimize">
+<code class="sig-name descname">calc_minimize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ionic_energy_tolerance</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">ionic_force_tolerance</span><span class="o">=</span><span class="default_value">0.0001</span></em>, <em class="sig-param"><span class="n">max_iter</span><span class="o">=</span><span class="default_value">100000</span></em>, <em class="sig-param"><span class="n">pressure</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">n_print</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">style</span><span class="o">=</span><span class="default_value">'cg'</span></em>, <em class="sig-param"><span class="n">rotation_matrix</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/lammps/control.html#LammpsControl.calc_minimize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.lammps.control.LammpsControl.calc_minimize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets parameters required for minimization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ionic_energy_tolerance</strong> (<em>float</em>) – If the magnitude of difference between energies of two consecutive steps is lower than or
+equal to <cite>ionic_energy_tolerance</cite>, the minimisation terminates. (Default is 0.0 eV.)</p></li>
+<li><p><strong>ionic_force_tolerance</strong> (<em>float</em>) – If the magnitude of the global force vector at a step is lower than or equal to <cite>ionic_force_tolerance</cite>, the
+minimisation terminates. (Default is 1e-4 eV/angstrom.)</p></li>
+<li><p><strong>e_tol</strong> (<em>float</em>) – Sam as ionic_energy_tolerance (deprecated)</p></li>
+<li><p><strong>f_tol</strong> (<em>float</em>) – Sam as ionic_force_tolerance (deprecated)</p></li>
+<li><p><strong>max_iter</strong> (<em>int</em>) – Maximum number of minimisation steps to carry out. If the minimisation converges before
+<cite>max_iter</cite> steps, terminate at the converged step. If the minimisation does not converge up to
+<cite>max_iter</cite> steps, terminate at the <cite>max_iter</cite> step. (Default is 100000.)</p></li>
+<li><p><strong>pressure</strong> (<em>None/float/numpy.ndarray/list</em>) – Target pressure. If set to None, an NVE or an NVT calculation is
+performed. A list of up to length 6 can be given to specify xx, yy, zz, xy, xz, and yz components of
+the pressure tensor, respectively. These values can mix floats and <cite>None</cite> to allow only certain degrees
+of cell freedom to change. (Default is None, run isochorically.)</p></li>
+<li><p><strong>n_print</strong> (<em>int</em>) – Write (dump or print) to the output file every n steps (Default: 100)</p></li>
+<li><p><strong>style</strong> (<em>'cg'/'sd'/other values from Lammps docs</em>) – The style of the numeric minimization, either conjugate
+gradient, steepest descent, or other keys permissible from the Lammps docs on ‘min_style’. (Default
+is ‘cg’ – conjugate gradient.)</p></li>
+<li><p><strong>rotation_matrix</strong> (<em>numpy.ndarray</em>) – The rotation matrix from the pyiron to Lammps coordinate frame.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.lammps.control.LammpsControl.calc_static">
+<code class="sig-name descname">calc_static</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/lammps/control.html#LammpsControl.calc_static"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.lammps.control.LammpsControl.calc_static" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.lammps.control.LammpsControl.calc_vcsgc">
+<code class="sig-name descname">calc_vcsgc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mu</span></em>, <em class="sig-param"><span class="n">ordered_element_list</span></em>, <em class="sig-param"><span class="n">target_concentration</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">kappa</span><span class="o">=</span><span class="default_value">1000.0</span></em>, <em class="sig-param"><span class="n">mc_step_interval</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">swap_fraction</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">temperature_mc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">window_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">window_moves</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">temperature</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pressure</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">n_ionic_steps</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">time_step</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">n_print</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">temperature_damping_timescale</span><span class="o">=</span><span class="default_value">100.0</span></em>, <em class="sig-param"><span class="n">pressure_damping_timescale</span><span class="o">=</span><span class="default_value">1000.0</span></em>, <em class="sig-param"><span class="n">seed</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initial_temperature</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">langevin</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">job_name</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/lammps/control.html#LammpsControl.calc_vcsgc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.lammps.control.LammpsControl.calc_vcsgc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run variance-constrained semi-grand-canonical MD/MC for a binary system. In addition to VC-SGC arguments, all
+arguments for a regular MD calculation are also accepted.</p>
+<p><a class="reference external" href="https://vcsgc-lammps.materialsmodeling.org">https://vcsgc-lammps.materialsmodeling.org</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For easy visualization later (with <cite>get_structure</cite>), it is highly recommended that the initial structure
+contain at least one atom of each species.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Assumes the units are metal, otherwise units for the constraints may be off.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mu</strong> (<em>dict</em>) – A dictionary of chemical potentials, one for each element the potential treats, where the
+dictionary keys are just the chemical symbol. Note that only the <em>relative</em> chemical potentials are used
+here, such that the swap acceptance probability is influenced by the chemical potential difference
+between the two species (a more negative value increases the odds of swapping <em>to</em> that element.)</p></li>
+<li><p><strong>ordered_element_list</strong> (<em>list</em>) – A list of the chemical species symbols in the order they appear in the
+definition of the potential in the Lammps’ input file.</p></li>
+<li><p><strong>target_concentration</strong> – A dictionary of target simulation domain concentrations for each species <em>in the
+potential</em>. Dictionary keys should be the chemical symbol of the corresponding species, and the sum of
+all concentrations must be 1. (Default is None, which runs regular semi-grand-canonical MD/MC without
+any variance constraint.)</p></li>
+<li><p><strong>kappa</strong> – Variance constraint for the MC. Larger value means a tighter adherence to the target concentrations.
+(Default is 1000.)</p></li>
+<li><p><strong>mc_step_interval</strong> (<em>int</em>) – How many steps of MD between each set of MC moves. (Default is 100.) Must divide the
+number of ionic steps evenly.</p></li>
+<li><p><strong>swap_fraction</strong> (<em>float</em>) – The fraction of atoms whose species is swapped at each MC phase. (Default is 0.1.)</p></li>
+<li><p><strong>temperature_mc</strong> (<em>float</em>) – The temperature for accepting MC steps. (Default is None, which uses the MD
+temperature.)</p></li>
+<li><p><strong>window_size</strong> (<em>float</em>) – The size of the sampling window for parallel calculations as a fraction of something
+unspecified in the VC-SGC docs, but it must lie between 0.5 and 1. (Default is None, window is
+determined automatically.)</p></li>
+<li><p><strong>window_moves</strong> (<em>int</em>) – The number of times the sampling window is moved during one MC cycle. (Default is None,
+number of moves is determined automatically.)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.lammps.control.LammpsControl.dataset">
+<em class="property">property </em><code class="sig-name descname">dataset</code><a class="headerlink" href="#pyiron.lammps.control.LammpsControl.dataset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.lammps.control.LammpsControl.energy_pot_per_atom">
+<code class="sig-name descname">energy_pot_per_atom</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/lammps/control.html#LammpsControl.energy_pot_per_atom"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.lammps.control.LammpsControl.energy_pot_per_atom" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.lammps.control.LammpsControl.generate_seed_from_job">
+<em class="property">static </em><code class="sig-name descname">generate_seed_from_job</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_name</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">seed</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/lammps/control.html#LammpsControl.generate_seed_from_job"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.lammps.control.LammpsControl.generate_seed_from_job" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a unique seed from the job name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>job_name</strong> (<em>str</em>) – job_name of the current job to generate the seed</p></li>
+<li><p><strong>seed</strong> (<em>int</em>) – integer to access part of the seed</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>random seed generated based on the hash</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.lammps.control.LammpsControl.load_default">
+<code class="sig-name descname">load_default</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_content</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/lammps/control.html#LammpsControl.load_default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.lammps.control.LammpsControl.load_default" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load defaults resets the dataset in the background to be empty</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.lammps.control.LammpsControl.measure_mean_value">
+<code class="sig-name descname">measure_mean_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">every</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">repeat</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">atom</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/lammps/control.html#LammpsControl.measure_mean_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.lammps.control.LammpsControl.measure_mean_value" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – property to take an average value of (e.g. ‘energy_pot’ v.i.)</p></li>
+<li><p><strong>every</strong> (<em>int</em>) – number of steps there should be between two measurements</p></li>
+<li><p><strong>repeat</strong> (<em>int</em>) – number of measurements for each output (default: n_print/every)</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – name to give in the output string (ignored if a pyiron predefined tag is used)</p></li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Comments:</dt><dd><dl class="simple">
+<dt>Currently available keys: ‘energy_pot’, ‘energy_tot’, ‘temperature’, ‘volume’,</dt><dd><p>‘pressures’, ‘positions’, ‘forces, ‘velocities’</p>
+</dd>
+</dl>
+<p>Future keys: ‘cells’</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.lammps.control.LammpsControl.pressure_to_lammps">
+<code class="sig-name descname">pressure_to_lammps</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pressure</span></em>, <em class="sig-param"><span class="n">rotation_matrix</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/lammps/control.html#LammpsControl.pressure_to_lammps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.lammps.control.LammpsControl.pressure_to_lammps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a singular value, list of values, or combination of values to the appropriate six elements for Lammps
+pxx, pyy, pzz, pxy, pxz, and pyz pressure tensor representation.</p>
+<p>Lammps handles complex cells in a particular way, namely by using an upper triangular cell. This means we may
+need to convert our pressure tensor to a new coordinate frame. We also handle that transformation here.</p>
+<p>Finally, we also ensure that the units are converted from pyiron’s GPa to whatever Lammps needs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pressure</strong> (<em>float/list/tuple/numpy.ndarray</em>) – The pressure(s) to convert.</p></li>
+<li><p><strong>rotation_matrix</strong> (<em>numpy.ndarray</em>) – The 3x3 matrix rotating from the pyiron to Lammps coordinate frame.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>pxx, pyy, pzz, pxy, pxz, and pyz to be passed to Lammps.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(numpy.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.lammps.control.LammpsControl.set_initial_velocity">
+<code class="sig-name descname">set_initial_velocity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">temperature</span></em>, <em class="sig-param"><span class="n">seed</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gaussian</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">append_value</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">zero_lin_momentum</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">zero_rot_momentum</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">job_name</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/lammps/control.html#LammpsControl.set_initial_velocity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.lammps.control.LammpsControl.set_initial_velocity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create initial velocities via velocity all create. More information can be found on LAMMPS website:
+<a class="reference external" href="https://lammps.sandia.gov/doc/velocity.html">https://lammps.sandia.gov/doc/velocity.html</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>temperature</strong> – (int or float)</p></li>
+<li><p><strong>seed</strong> – (int) Seed for the initial random number generator</p></li>
+<li><p><strong>gaussian</strong> – (True/False) Create velocity according to the Gaussian distribution (otherwise uniform)</p></li>
+<li><p><strong>append_value</strong> – (True/False) Add the velocity values to the current velocities (probably not functional now)</p></li>
+<li><p><strong>zero_lin_momentum</strong> – (True/False) Cancel the total linear momentum</p></li>
+<li><p><strong>zero_rot_momentum</strong> – (True/False) Cancel the total angular momentum</p></li>
+<li><p><strong>job_name</strong> – (str) job name to generate seed</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

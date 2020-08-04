@@ -1,0 +1,671 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.vasp.potential &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../../../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../pyiron.html">pyiron</a> &raquo;</li>
+        
+      <li>pyiron.vasp.potential</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyiron.vasp.potential</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="c1"># Copyright (c) Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department</span>
+<span class="c1"># Distributed under the terms of &quot;New BSD License&quot;, see the LICENSE file.</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">posixpath</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span>
+<span class="kn">import</span> <span class="nn">tables</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.generic.parameters</span> <span class="kn">import</span> <span class="n">GenericParameters</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.settings.generic</span> <span class="kn">import</span> <span class="n">Settings</span>
+<span class="kn">from</span> <span class="nn">pyiron.atomistics.job.potentials</span> <span class="kn">import</span> <span class="n">PotentialAbstract</span><span class="p">,</span> <span class="n">find_potential_file_base</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Copyright 2020, Max-Planck-Institut für Eisenforschung GmbH - &quot;</span>
+    <span class="s2">&quot;Computational Materials Design (CM) Department&quot;</span>
+<span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Jan Janssen&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;janssen@mpie.de&quot;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;development&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;Sep 1, 2017&quot;</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">Settings</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="VaspPotentialAbstract"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.potential.html#pyiron.vasp.potential.VaspPotentialAbstract">[docs]</a><span class="k">class</span> <span class="nc">VaspPotentialAbstract</span><span class="p">(</span><span class="n">PotentialAbstract</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        potential_df:</span>
+<span class="sd">        default_df:</span>
+<span class="sd">        selected_atoms:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">potential_df</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">default_df</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">selected_atoms</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">potential_df</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">potential_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_potential_df</span><span class="p">(</span>
+                <span class="n">plugin_name</span><span class="o">=</span><span class="s2">&quot;vasp&quot;</span><span class="p">,</span>
+                <span class="n">file_name_lst</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;potentials_vasp.csv&quot;</span><span class="p">},</span>
+                <span class="n">backward_compatibility_name</span><span class="o">=</span><span class="s2">&quot;vasppotentials&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">VaspPotentialAbstract</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">potential_df</span><span class="o">=</span><span class="n">potential_df</span><span class="p">,</span>
+            <span class="n">default_df</span><span class="o">=</span><span class="n">default_df</span><span class="p">,</span>
+            <span class="n">selected_atoms</span><span class="o">=</span><span class="n">selected_atoms</span><span class="p">,</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="VaspPotentialAbstract.default"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.potential.html#pyiron.vasp.potential.VaspPotentialAbstract.default">[docs]</a>    <span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_df</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">pandas</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_potential_df</span><span class="p">[</span>
+                        <span class="p">(</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_potential_df</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span>
+                            <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">atom</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                        <span class="p">)</span>
+                    <span class="p">]</span>
+                    <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_atoms</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="VaspPotentialAbstract.find_default"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.potential.html#pyiron.vasp.potential.VaspPotentialAbstract.find_default">[docs]</a>    <span class="k">def</span> <span class="nf">find_default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="nb">set</span><span class="p">):</span>
+            <span class="n">element</span> <span class="o">=</span> <span class="n">element</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">element</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">element</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">element</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Only, str, list and set supported!&quot;</span><span class="p">)</span>
+        <span class="n">element_lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_df</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">merged_lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_selected_atoms</span> <span class="o">+</span> <span class="n">element_lst</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">pandas</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_potential_df</span><span class="p">[</span>
+                        <span class="p">(</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_potential_df</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span>
+                            <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">atom</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                        <span class="p">)</span>
+                    <span class="p">]</span>
+                    <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">merged_lst</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="VaspPotentialAbstract.find"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.potential.html#pyiron.vasp.potential.VaspPotentialAbstract.find">[docs]</a>    <span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="nb">set</span><span class="p">):</span>
+            <span class="n">element</span> <span class="o">=</span> <span class="n">element</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">element</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">element</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">element</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Only, str, list and set supported!&quot;</span><span class="p">)</span>
+        <span class="n">element_lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+        <span class="n">merged_lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_selected_atoms</span> <span class="o">+</span> <span class="n">element_lst</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">pandas</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+            <span class="p">[</span><span class="nb">super</span><span class="p">(</span><span class="n">VaspPotentialAbstract</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="n">atom</span><span class="p">})</span> <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">merged_lst</span><span class="p">]</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="VaspPotentialAbstract.list"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.potential.html#pyiron.vasp.potential.VaspPotentialAbstract.list">[docs]</a>    <span class="k">def</span> <span class="nf">list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_selected_atoms</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">pandas</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="nb">super</span><span class="p">(</span><span class="n">VaspPotentialAbstract</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="n">atom</span><span class="p">})</span>
+                    <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_atoms</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({})</span></div>
+
+<div class="viewcode-block" id="VaspPotentialAbstract.list_potential_names"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.potential.html#pyiron.vasp.potential.VaspPotentialAbstract.list_potential_names">[docs]</a>    <span class="k">def</span> <span class="nf">list_potential_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list</span><span class="p">()[</span><span class="s2">&quot;Name&quot;</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span></div>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_return_potential_file</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">resource_path</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">resource_paths</span><span class="p">:</span>
+            <span class="n">resource_path_potcar</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="n">resource_path</span><span class="p">,</span> <span class="s2">&quot;vasp&quot;</span><span class="p">,</span> <span class="s2">&quot;potentials&quot;</span><span class="p">,</span> <span class="n">file_name</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">resource_path_potcar</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">resource_path_potcar</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="fm">__dir__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">val</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_potential_names</span><span class="p">()]</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="n">item_replace</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_gga_pbe&quot;</span><span class="p">,</span> <span class="s2">&quot;-gga-pbe&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_lda&quot;</span><span class="p">,</span> <span class="s2">&quot;-lda&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">item_replace</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_potential_names</span><span class="p">():</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_return_potential_file</span><span class="p">(</span>
+                <span class="n">file_name</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">item_replace</span><span class="p">][</span><span class="s2">&quot;Filename&quot;</span><span class="p">])[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="p">)</span>
+        <span class="n">selected_atoms</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_atoms</span> <span class="o">+</span> <span class="p">[</span><span class="n">item</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">VaspPotentialAbstract</span><span class="p">(</span>
+            <span class="n">potential_df</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_potential_df</span><span class="p">,</span>
+            <span class="n">default_df</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_default_df</span><span class="p">,</span>
+            <span class="n">selected_atoms</span><span class="o">=</span><span class="n">selected_atoms</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="VaspPotentialFile"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.potential.html#pyiron.vasp.potential.VaspPotentialFile">[docs]</a><span class="k">class</span> <span class="nc">VaspPotentialFile</span><span class="p">(</span><span class="n">VaspPotentialAbstract</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The Potential class is derived from the PotentialAbstract class, but instead of loading the potentials from a list,</span>
+<span class="sd">    the potentials are loaded from a file.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        xc (str): Exchange correlation functional [&#39;PBE&#39;, &#39;LDA&#39;]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">selected_atoms</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">potential_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_potential_df</span><span class="p">(</span>
+            <span class="n">plugin_name</span><span class="o">=</span><span class="s2">&quot;vasp&quot;</span><span class="p">,</span>
+            <span class="n">file_name_lst</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;potentials_vasp.csv&quot;</span><span class="p">},</span>
+            <span class="n">backward_compatibility_name</span><span class="o">=</span><span class="s2">&quot;vasppotentials&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">xc</span> <span class="o">==</span> <span class="s2">&quot;PBE&quot;</span><span class="p">:</span>
+            <span class="n">default_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_potential_default_df</span><span class="p">(</span>
+                <span class="n">plugin_name</span><span class="o">=</span><span class="s2">&quot;vasp&quot;</span><span class="p">,</span>
+                <span class="n">file_name_lst</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;potentials_vasp_pbe_default.csv&quot;</span><span class="p">},</span>
+                <span class="n">backward_compatibility_name</span><span class="o">=</span><span class="s2">&quot;defaultvasppbe&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">potential_df</span> <span class="o">=</span> <span class="n">potential_df</span><span class="p">[(</span><span class="n">potential_df</span><span class="p">[</span><span class="s2">&quot;Model&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;gga-pbe&quot;</span><span class="p">)]</span>
+        <span class="k">elif</span> <span class="n">xc</span> <span class="o">==</span> <span class="s2">&quot;GGA&quot;</span><span class="p">:</span>
+            <span class="n">default_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_potential_default_df</span><span class="p">(</span>
+                <span class="n">plugin_name</span><span class="o">=</span><span class="s2">&quot;vasp&quot;</span><span class="p">,</span>
+                <span class="n">file_name_lst</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;potentials_vasp_pbe_default.csv&quot;</span><span class="p">},</span>
+                <span class="n">backward_compatibility_name</span><span class="o">=</span><span class="s2">&quot;defaultvasppbe&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">potential_df</span> <span class="o">=</span> <span class="n">potential_df</span><span class="p">[(</span><span class="n">potential_df</span><span class="p">[</span><span class="s2">&quot;Model&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;gga-pbe&quot;</span><span class="p">)]</span>
+        <span class="k">elif</span> <span class="n">xc</span> <span class="o">==</span> <span class="s2">&quot;LDA&quot;</span><span class="p">:</span>
+            <span class="n">default_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_potential_default_df</span><span class="p">(</span>
+                <span class="n">plugin_name</span><span class="o">=</span><span class="s2">&quot;vasp&quot;</span><span class="p">,</span>
+                <span class="n">file_name_lst</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;potentials_vasp_lda_default.csv&quot;</span><span class="p">},</span>
+                <span class="n">backward_compatibility_name</span><span class="o">=</span><span class="s2">&quot;defaultvasplda&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">potential_df</span> <span class="o">=</span> <span class="n">potential_df</span><span class="p">[(</span><span class="n">potential_df</span><span class="p">[</span><span class="s2">&quot;Model&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;lda&quot;</span><span class="p">)]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s1">&#39;The exchange correlation functional has to be set and it can either be &quot;LDA&quot; or &quot;PBE&quot;&#39;</span>
+            <span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">VaspPotentialFile</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">potential_df</span><span class="o">=</span><span class="n">potential_df</span><span class="p">,</span>
+            <span class="n">default_df</span><span class="o">=</span><span class="n">default_df</span><span class="p">,</span>
+            <span class="n">selected_atoms</span><span class="o">=</span><span class="n">selected_atoms</span><span class="p">,</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="VaspPotentialFile.add_new_element"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.potential.html#pyiron.vasp.potential.VaspPotentialFile.add_new_element">[docs]</a>    <span class="k">def</span> <span class="nf">add_new_element</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent_element</span><span class="p">,</span> <span class="n">new_element</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adding a new user defined element with a different POTCAR file. It is assumed that the file exists</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            parent_element (str): Parent element</span>
+<span class="sd">            new_element (str): Name of the new element (the name of the folder where the new POTCAR file exists</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find_default</span><span class="p">(</span><span class="n">element</span><span class="o">=</span><span class="n">parent_element</span><span class="p">)</span>
+        <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Species&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_element</span>
+        <span class="n">path_list</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Filename&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+        <span class="n">path_list</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_element</span>
+        <span class="n">name_list</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)</span>
+        <span class="n">name_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_element</span>
+        <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">name_list</span><span class="p">)</span>
+        <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Filename&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_list</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_potential_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_potential_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="p">()</span>
+        <span class="n">ds</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">new_element</span>
+        <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">name_list</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_default_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="VaspPotential"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.potential.html#pyiron.vasp.potential.VaspPotential">[docs]</a><span class="k">class</span> <span class="nc">VaspPotential</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The Potential class is derived from the PotentialAbstract class, but instead of loading the potentials from a list,</span>
+<span class="sd">    the potentials are loaded from a file.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path (str): path to the potential list</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">selected_atoms</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pbe</span> <span class="o">=</span> <span class="n">VaspPotentialFile</span><span class="p">(</span><span class="n">xc</span><span class="o">=</span><span class="s2">&quot;PBE&quot;</span><span class="p">,</span> <span class="n">selected_atoms</span><span class="o">=</span><span class="n">selected_atoms</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lda</span> <span class="o">=</span> <span class="n">VaspPotentialFile</span><span class="p">(</span><span class="n">xc</span><span class="o">=</span><span class="s2">&quot;LDA&quot;</span><span class="p">,</span> <span class="n">selected_atoms</span><span class="o">=</span><span class="n">selected_atoms</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="VaspPotentialSetter"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.potential.html#pyiron.vasp.potential.VaspPotentialSetter">[docs]</a><span class="k">class</span> <span class="nc">VaspPotentialSetter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element_lst</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">VaspPotentialSetter</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="s2">&quot;_element_lst&quot;</span><span class="p">,</span> <span class="n">element_lst</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">VaspPotentialSetter</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span>
+            <span class="s2">&quot;_potential_dict&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">el</span><span class="p">:</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">element_lst</span><span class="p">}</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_element_lst</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">item</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span>
+
+    <span class="k">def</span> <span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_element_lst</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_potential_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span>
+
+<div class="viewcode-block" id="VaspPotentialSetter.to_dict"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.potential.html#pyiron.vasp.potential.VaspPotentialSetter.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_potential_dict</span></div>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_potential_dict</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="find_potential_file"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.potential.html#pyiron.vasp.potential.find_potential_file">[docs]</a><span class="k">def</span> <span class="nf">find_potential_file</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">find_potential_file_base</span><span class="p">(</span>
+        <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span>
+        <span class="n">resource_path_lst</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="n">resource_paths</span><span class="p">,</span>
+        <span class="n">rel_path</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;vasp&quot;</span><span class="p">,</span> <span class="s2">&quot;potentials&quot;</span><span class="p">)</span>
+    <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_enmax_among_species"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.potential.html#pyiron.vasp.potential.get_enmax_among_species">[docs]</a><span class="k">def</span> <span class="nf">get_enmax_among_species</span><span class="p">(</span><span class="n">symbol_lst</span><span class="p">,</span> <span class="n">return_list</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">xc</span><span class="o">=</span><span class="s2">&quot;PBE&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Given a list of species symbols, finds the largest applicable encut.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        symbol_lst (list): The list of species symbols.</span>
+<span class="sd">        return_list (bool): Whether to return the list of all ENMAX values (in the same order as `species_lst` along with</span>
+<span class="sd">            the largest value). (Default is False.)</span>
+<span class="sd">        xc (&quot;GGA&quot;/&quot;PBE&quot;/&quot;LDA&quot;): The exchange correlation functional for which the POTCARs were generated. (Default is &quot;PBE&quot;.)</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        (float): The largest ENMAX among the POTCAR files for all the species.</span>
+<span class="sd">        [optional](list): The ENMAX value corresponding to each species.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pot_path_dict</span> <span class="o">=</span> <span class="n">Potcar</span><span class="o">.</span><span class="n">pot_path_dict</span>
+
+    <span class="n">enmax_lst</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">vpf</span> <span class="o">=</span> <span class="n">VaspPotentialFile</span><span class="p">(</span><span class="n">xc</span><span class="o">=</span><span class="n">xc</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="n">symbol_lst</span><span class="p">:</span>
+        <span class="n">potcar_file</span> <span class="o">=</span> <span class="n">find_potential_file</span><span class="p">(</span>
+            <span class="n">path</span><span class="o">=</span><span class="n">vpf</span><span class="o">.</span><span class="n">find_default</span><span class="p">(</span><span class="n">symbol</span><span class="p">)[</span><span class="s1">&#39;Filename&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">potcar_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">pf</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pf</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">14</span><span class="p">:</span>
+                    <span class="n">encut_str</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">2</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                    <span class="n">enmax_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">encut_str</span><span class="p">))</span>
+                    <span class="k">break</span>
+
+    <span class="k">if</span> <span class="n">return_list</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">enmax_lst</span><span class="p">),</span> <span class="n">enmax_lst</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">enmax_lst</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Potcar"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.potential.html#pyiron.vasp.potential.Potcar">[docs]</a><span class="k">class</span> <span class="nc">Potcar</span><span class="p">(</span><span class="n">GenericParameters</span><span class="p">):</span>
+    <span class="n">pot_path_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;GGA&quot;</span><span class="p">:</span> <span class="s2">&quot;paw-gga-pbe&quot;</span><span class="p">,</span> <span class="s2">&quot;PBE&quot;</span><span class="p">:</span> <span class="s2">&quot;paw-gga-pbe&quot;</span><span class="p">,</span> <span class="s2">&quot;LDA&quot;</span><span class="p">:</span> <span class="s2">&quot;paw-lda&quot;</span><span class="p">}</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="s2">&quot;potcar&quot;</span><span class="p">):</span>
+        <span class="n">GenericParameters</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">input_file_name</span><span class="o">=</span><span class="n">input_file_name</span><span class="p">,</span>
+            <span class="n">table_name</span><span class="o">=</span><span class="n">table_name</span><span class="p">,</span>
+            <span class="n">val_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">comment_char</span><span class="o">=</span><span class="s2">&quot;#&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">electrons_per_atom_lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_cutoff_lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">el_path_lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">el_path_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modified_elements</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Potcar.potcar_set_structure"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.potential.html#pyiron.vasp.potential.Potcar.potcar_set_structure">[docs]</a>    <span class="k">def</span> <span class="nf">potcar_set_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">structure</span><span class="p">,</span> <span class="n">modified_elements</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span> <span class="o">=</span> <span class="n">structure</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_default_path_dict</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_potential_paths</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modified_elements</span> <span class="o">=</span> <span class="n">modified_elements</span></div>
+
+<div class="viewcode-block" id="Potcar.modify"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.potential.html#pyiron.vasp.potential.Potcar.modify">[docs]</a>    <span class="k">def</span> <span class="nf">modify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">modify</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s2">&quot;xc&quot;</span> <span class="ow">in</span> <span class="n">modify</span><span class="p">:</span>
+            <span class="n">xc_type</span> <span class="o">=</span> <span class="n">modify</span><span class="p">[</span><span class="s2">&quot;xc&quot;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_set_default_path_dict</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">xc_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">pot_path_dict</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;xc type not implemented: &quot;</span> <span class="o">+</span> <span class="n">xc_type</span><span class="p">)</span>
+        <span class="n">GenericParameters</span><span class="o">.</span><span class="n">modify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">modify</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_set_potential_paths</span><span class="p">()</span></div>
+
+    <span class="k">def</span> <span class="nf">_set_default_path_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">vasp_potentials</span> <span class="o">=</span> <span class="n">VaspPotentialFile</span><span class="p">(</span><span class="n">xc</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;xc&quot;</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">el_obj</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">get_species_objects</span><span class="p">()):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">el_obj</span><span class="o">.</span><span class="n">Parent</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">el</span> <span class="o">=</span> <span class="n">el_obj</span><span class="o">.</span><span class="n">Parent</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">el</span> <span class="o">=</span> <span class="n">el_obj</span><span class="o">.</span><span class="n">Abbreviation</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">el_obj</span><span class="o">.</span><span class="n">tags</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="k">if</span> <span class="s2">&quot;pseudo_potcar_file&quot;</span> <span class="ow">in</span> <span class="n">el_obj</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                    <span class="n">new_element</span> <span class="o">=</span> <span class="n">el_obj</span><span class="o">.</span><span class="n">tags</span><span class="p">[</span><span class="s2">&quot;pseudo_potcar_file&quot;</span><span class="p">]</span>
+                    <span class="n">vasp_potentials</span><span class="o">.</span><span class="n">add_new_element</span><span class="p">(</span>
+                        <span class="n">parent_element</span><span class="o">=</span><span class="n">el</span><span class="p">,</span> <span class="n">new_element</span><span class="o">=</span><span class="n">new_element</span>
+                    <span class="p">)</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="n">vasp_potentials</span><span class="o">.</span><span class="n">find_default</span><span class="p">(</span><span class="n">el</span><span class="p">)</span><span class="o">.</span><span class="n">Species</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">vasp_potentials</span><span class="o">.</span><span class="n">find_default</span><span class="p">(</span><span class="n">el</span><span class="p">)</span><span class="o">.</span><span class="n">Name</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="bp">self</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="k">def</span> <span class="nf">_set_potential_paths</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">element_list</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">get_species_symbols</span><span class="p">()</span>
+        <span class="p">)</span>  <span class="c1"># .ElementList.getSpecies()</span>
+        <span class="n">object_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">get_species_objects</span><span class="p">()</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;element list: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">element_list</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">el_path_lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">xc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;xc&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">tables</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">NoSuchNodeError</span><span class="p">:</span>
+            <span class="n">xc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;xc&quot;</span><span class="p">)</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;XC: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">xc</span><span class="p">))</span>
+        <span class="n">vasp_potentials</span> <span class="o">=</span> <span class="n">VaspPotentialFile</span><span class="p">(</span><span class="n">xc</span><span class="o">=</span><span class="n">xc</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">el_obj</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">object_list</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">el_obj</span><span class="o">.</span><span class="n">Parent</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">el</span> <span class="o">=</span> <span class="n">el_obj</span><span class="o">.</span><span class="n">Parent</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">el</span> <span class="o">=</span> <span class="n">el_obj</span><span class="o">.</span><span class="n">Abbreviation</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="nb">isinstance</span><span class="p">(</span><span class="n">el_obj</span><span class="o">.</span><span class="n">tags</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span>
+                <span class="ow">and</span> <span class="s2">&quot;pseudo_potcar_file&quot;</span> <span class="ow">in</span> <span class="n">el_obj</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+            <span class="p">):</span>
+                <span class="n">new_element</span> <span class="o">=</span> <span class="n">el_obj</span><span class="o">.</span><span class="n">tags</span><span class="p">[</span><span class="s2">&quot;pseudo_potcar_file&quot;</span><span class="p">]</span>
+                <span class="n">vasp_potentials</span><span class="o">.</span><span class="n">add_new_element</span><span class="p">(</span>
+                    <span class="n">parent_element</span><span class="o">=</span><span class="n">el</span><span class="p">,</span> <span class="n">new_element</span><span class="o">=</span><span class="n">new_element</span>
+                <span class="p">)</span>
+                <span class="n">el_path</span> <span class="o">=</span> <span class="n">find_potential_file</span><span class="p">(</span>
+                    <span class="n">path</span><span class="o">=</span><span class="n">vasp_potentials</span><span class="o">.</span><span class="n">find_default</span><span class="p">(</span><span class="n">new_element</span><span class="p">)[</span><span class="s2">&quot;Filename&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span>
+                        <span class="mi">0</span>
+                    <span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+                <span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">el_path</span><span class="p">)):</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;such a file does not exist in the pp directory&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">el_path</span> <span class="o">=</span> <span class="n">find_potential_file</span><span class="p">(</span>
+                    <span class="n">path</span><span class="o">=</span><span class="n">vasp_potentials</span><span class="o">.</span><span class="n">find_default</span><span class="p">(</span><span class="n">el</span><span class="p">)[</span><span class="s2">&quot;Filename&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+                <span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">el_path</span><span class="p">)):</span>
+                <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">()</span>
+            <span class="n">pot_name</span> <span class="o">=</span> <span class="s2">&quot;pot_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">pot_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset</span><span class="p">[</span><span class="s2">&quot;Parameter&quot;</span><span class="p">]:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">ind</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset</span><span class="p">[</span><span class="s2">&quot;Parameter&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">pot_name</span><span class="p">)</span>
+                <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">IndexError</span><span class="p">):</span>
+                    <span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">defchararray</span><span class="o">.</span><span class="n">find</span><span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_dataset</span><span class="p">[</span><span class="s2">&quot;Parameter&quot;</span><span class="p">],</span> <span class="n">pot_name</span>
+                    <span class="p">)</span>
+                    <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">indices</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_dataset</span><span class="p">[</span><span class="s2">&quot;Value&quot;</span><span class="p">][</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="n">el_path</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_dataset</span><span class="p">[</span><span class="s2">&quot;Comment&quot;</span><span class="p">][</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_dataset</span><span class="p">[</span><span class="s2">&quot;Parameter&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;pot_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_dataset</span><span class="p">[</span><span class="s2">&quot;Value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">el_path</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_dataset</span><span class="p">[</span><span class="s2">&quot;Comment&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">el_obj</span><span class="o">.</span><span class="n">Abbreviation</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">modified_elements</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">el_path_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">modified_elements</span><span class="p">[</span><span class="n">el_obj</span><span class="o">.</span><span class="n">Abbreviation</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">el_path_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">el_path</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Potcar.write_file"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.potential.html#pyiron.vasp.potential.Potcar.write_file">[docs]</a>    <span class="k">def</span> <span class="nf">write_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Args:</span>
+<span class="sd">            file_name:</span>
+<span class="sd">            cwd:</span>
+<span class="sd">        Returns:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">electrons_per_atom_lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_cutoff_lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_potential_paths</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">cwd</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">file_name</span> <span class="o">=</span> <span class="n">posixpath</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cwd</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">el_file</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">el_path_lst</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">el_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">pot_file</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pot_file</span><span class="p">):</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">electrons_per_atom_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">line</span><span class="p">)))</span>
+                    <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">14</span><span class="p">:</span>
+                        <span class="n">mystr</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">2</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">max_cutoff_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">mystr</span><span class="p">))</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Potcar.load_default"><a class="viewcode-back" href="../../../apidoc/pyiron.vasp.potential.html#pyiron.vasp.potential.Potcar.load_default">[docs]</a>    <span class="k">def</span> <span class="nf">load_default</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">file_content</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">xc  GGA  # LDA, GGA</span>
+<span class="s2">&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">load_string</span><span class="p">(</span><span class="n">file_content</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

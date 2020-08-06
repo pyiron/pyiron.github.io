@@ -1,0 +1,388 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.base.project.store module &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>pyiron.base.project.store module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/pyiron.base.project.store.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-pyiron.base.project.store">
+<span id="pyiron-base-project-store-module"></span><h1>pyiron.base.project.store module<a class="headerlink" href="#module-pyiron.base.project.store" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pyiron.base.project.store.ProjectStore">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.base.project.store.</code><code class="sig-name descname">ProjectStore</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">project</span></em>, <em class="sig-param"><span class="n">job_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/project/store.html#ProjectStore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.project.store.ProjectStore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pyiron.base.job.generic.html#pyiron.base.job.generic.GenericJob" title="pyiron.base.job.generic.GenericJob"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyiron.base.job.generic.GenericJob</span></code></a></p>
+<p>The ProjectStore object, is derived from the GenericJob class and allows the user to store
+aggregated information in an HDF5 file associated with the corresponding project. To the user
+the ProjectStore object behaves like a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>project</strong> – Project object (defines path where job will be created and stored)</p></li>
+<li><p><strong>job_name</strong> – name of the job (must be unique within this project path)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: key</code></dt>
+<dd><p>keys of the ProjectStore object (like a dictionary)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: items</code></dt>
+<dd><p>items of the ProjectStore object (like a dictionary)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: values</code></dt>
+<dd><p>values of the ProjectStore object (like a dictionary)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: time_created</code></dt>
+<dd><p>date when the ProjecStore object was created</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: time_modified</code></dt>
+<dd><p>date when the ProjecStore object was modified</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.project.store.ProjectStore.collect_logfiles">
+<code class="sig-name descname">collect_logfiles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/project/store.html#ProjectStore.collect_logfiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.project.store.ProjectStore.collect_logfiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement required function template - even though it is not required for this job type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.project.store.ProjectStore.collect_output">
+<code class="sig-name descname">collect_output</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/project/store.html#ProjectStore.collect_output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.project.store.ProjectStore.collect_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement required function template - even though it is not required for this job type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.project.store.ProjectStore.from_hdf">
+<code class="sig-name descname">from_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">group_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/project/store.html#ProjectStore.from_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.project.store.ProjectStore.from_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restore object from hdf5 format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdf</strong> – Optional hdf5 file, otherwise self is used.</p></li>
+<li><p><strong>group_name</strong> (<em>str</em>) – Optional hdf5 group in the hdf5 file.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.project.store.ProjectStore.items">
+<em class="property">property </em><code class="sig-name descname">items</code><a class="headerlink" href="#pyiron.base.project.store.ProjectStore.items" title="Permalink to this definition">¶</a></dt>
+<dd><p>a set-like object providing a view on ProjectStore’s dictionary items</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.project.store.ProjectStore.keys">
+<em class="property">property </em><code class="sig-name descname">keys</code><a class="headerlink" href="#pyiron.base.project.store.ProjectStore.keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>a set-like object providing a view on ProjectStore’s dictionary keys</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.project.store.ProjectStore.run_if_lib">
+<code class="sig-name descname">run_if_lib</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/project/store.html#ProjectStore.run_if_lib"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.project.store.ProjectStore.run_if_lib" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal function to handle jobs with Python based executables</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Database ID of the ProjectStore object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.project.store.ProjectStore.time_created">
+<em class="property">property </em><code class="sig-name descname">time_created</code><a class="headerlink" href="#pyiron.base.project.store.ProjectStore.time_created" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the date when the ProjectStore object was created</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the date when the ProjectStore object was created</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>DateTime</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.project.store.ProjectStore.time_modified">
+<em class="property">property </em><code class="sig-name descname">time_modified</code><a class="headerlink" href="#pyiron.base.project.store.ProjectStore.time_modified" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the date when the ProjectStore object was modified</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the date when the ProjectStore object was modified</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>DateTime</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.project.store.ProjectStore.values">
+<em class="property">property </em><code class="sig-name descname">values</code><a class="headerlink" href="#pyiron.base.project.store.ProjectStore.values" title="Permalink to this definition">¶</a></dt>
+<dd><p>an object providing a view on ProjectStore’s dictionary values</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.project.store.ProjectStore.write_input">
+<code class="sig-name descname">write_input</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/project/store.html#ProjectStore.write_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.project.store.ProjectStore.write_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement required function template - even though it is not required for this job type.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

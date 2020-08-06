@@ -1,0 +1,650 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.base.generic.parameters module &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>pyiron.base.generic.parameters module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/pyiron.base.generic.parameters.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-pyiron.base.generic.parameters">
+<span id="pyiron-base-generic-parameters-module"></span><h1>pyiron.base.generic.parameters module<a class="headerlink" href="#module-pyiron.base.generic.parameters" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pyiron.base.generic.parameters.GenericParameters">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.base.generic.parameters.</code><code class="sig-name descname">GenericParameters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">input_file_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">val_only</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">comment_char</span><span class="o">=</span><span class="default_value">'#'</span></em>, <em class="sig-param"><span class="n">separator_char</span><span class="o">=</span><span class="default_value">' '</span></em>, <em class="sig-param"><span class="n">end_value_char</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/parameters.html#GenericParameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pyiron.base.generic.template.html#pyiron.base.generic.template.PyironObject" title="pyiron.base.generic.template.PyironObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyiron.base.generic.template.PyironObject</span></code></a></p>
+<p>GenericParameters class defines the typical input file with a key value structure plus an additional column for comments.
+Convenience class to easily create, read, and modify input files</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table_name</strong> (<em>str</em>) – name of the input file inside the HDF5 file - optional</p></li>
+<li><p><strong>input_file_name</strong> (<em>str/Nonetype</em>) – name of the input file (if None default parameters are used)</p></li>
+<li><p><strong>val_only</strong> (<em>bool</em>) – input format consists of value (comments) only</p></li>
+<li><p><strong>comment_char</strong> (<em>str</em>) – separator that characterizes comment (e.g. “#” for python)</p></li>
+<li><p><strong>separator_char</strong> (<em>str</em>) – separator that characterizes the split between key and value - default=’ ‘</p></li>
+<li><p><strong>end_value_char</strong> (<em>str</em>) – special character at the end of every line - default=’’</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: file_name</code></dt>
+<dd><p>file name of the input file</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: table_name</code></dt>
+<dd><p>name of the input table inside the HDF5 file</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: val_only</code></dt>
+<dd><p>boolean option to switch from a key value list to an value only input file</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: comment_char</code></dt>
+<dd><p>separator that characterizes comment</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: separator_char</code></dt>
+<dd><p>separator that characterizes the split between key and value</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: multi_word_separator</code></dt>
+<dd><p>multi word separator to have multi word keys</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: end_value_char</code></dt>
+<dd><p>special character at the end of every line</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: replace_char_dict</code></dt>
+<dd><p>dictionary to replace certain character combinations</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.clear_all">
+<code class="sig-name descname">clear_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/parameters.html#GenericParameters.clear_all"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.clear_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears all fields in the object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.comment_char">
+<em class="property">property </em><code class="sig-name descname">comment_char</code><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.comment_char" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the separator that characterizes comment</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>comment character</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.define_blocks">
+<code class="sig-name descname">define_blocks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">block_dict</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/parameters.html#GenericParameters.define_blocks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.define_blocks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define a block section within the GenericParameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>block_dict</strong> (<em>dict</em>) – dictionary to define the block</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.end_value_char">
+<em class="property">property </em><code class="sig-name descname">end_value_char</code><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.end_value_char" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the special character at the end of every line</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>end of line character</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.file_name">
+<em class="property">property </em><code class="sig-name descname">file_name</code><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the file name of the input file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>file name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.from_hdf">
+<code class="sig-name descname">from_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span></em>, <em class="sig-param"><span class="n">group_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/parameters.html#GenericParameters.from_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.from_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restore the GenericParameters from an HDF5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdf</strong> (<a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.ProjectHDFio" title="pyiron.base.generic.hdfio.ProjectHDFio"><em>ProjectHDFio</em></a>) – HDF5 group object</p></li>
+<li><p><strong>group_name</strong> (<em>str</em>) – HDF5 subgroup name - optional</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameter_name</span></em>, <em class="sig-param"><span class="n">default_value</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/parameters.html#GenericParameters.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value of a specific parameter from GenericParameters - if the parameter is not available return
+default_value if that is set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter_name</strong> (<em>str</em>) – parameter key</p></li>
+<li><p><strong>default_value</strong> (<em>str</em>) – default value to return is the parameter is not set</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>value of the parameter</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.get_attribute">
+<code class="sig-name descname">get_attribute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attribute_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/parameters.html#GenericParameters.get_attribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.get_attribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value of a specific parameter from GenericParameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>attribute_name</strong> (<em>str</em>) – parameter key</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>value of the parameter</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.get_pandas">
+<code class="sig-name descname">get_pandas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/parameters.html#GenericParameters.get_pandas"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.get_pandas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output the GenericParameters object as Pandas Dataframe for human readability.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Pandas Dataframe of the GenericParameters object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.get_string_lst">
+<code class="sig-name descname">get_string_lst</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/parameters.html#GenericParameters.get_string_lst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.get_string_lst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get list of strings from GenericParameters to write to input file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.keys">
+<code class="sig-name descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/parameters.html#GenericParameters.keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return keys of GenericParameters object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.load_default">
+<code class="sig-name descname">load_default</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/parameters.html#GenericParameters.load_default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.load_default" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load defaults resets the dataset in the background to be empty</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.load_string">
+<code class="sig-name descname">load_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_str</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/parameters.html#GenericParameters.load_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.load_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a multi line string to overwrite the current parameter settings</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_str</strong> (<em>str</em>) – multi line string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.modify">
+<code class="sig-name descname">modify</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">separator</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">append_if_not_present</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">modify_dict</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/parameters.html#GenericParameters.modify"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.modify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modify values for existing parameters. The command is called as modify(param1=val1, param2=val2, …)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>separator</strong> (<em>str</em>) – needed if the parameter name contains special characters such as par:
+use then as input: modify(separator=”:”, par=val) - optional</p></li>
+<li><p><strong>append_if_not_present</strong> (<em>bool</em>) – do not raise an exception but append the parameter in practice use set(par=val)
+- default=False</p></li>
+<li><p><strong>**modify_dict</strong> (<em>dict</em>) – dictionary of parameter names and values</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.multi_word_separator">
+<em class="property">property </em><code class="sig-name descname">multi_word_separator</code><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.multi_word_separator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the multi word separator to have multi word keys</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>multi word separator</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.read_input">
+<code class="sig-name descname">read_input</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_name</span></em>, <em class="sig-param"><span class="n">ignore_trigger</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/parameters.html#GenericParameters.read_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.read_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read input file and store the data in GenericParameters - this overwrites the current parameter settings</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> (<em>str</em>) – absolute path to the input file</p></li>
+<li><p><strong>ignore_trigger</strong> (<em>str</em>) – trigger for lines to be ignored</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.remove_keys">
+<code class="sig-name descname">remove_keys</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key_list</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/parameters.html#GenericParameters.remove_keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.remove_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a list of keys from the GenericParameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key_list</strong> (<em>list</em>) – list of keys to be removed</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.replace_char_dict">
+<em class="property">property </em><code class="sig-name descname">replace_char_dict</code><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.replace_char_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the dictionary to replace certain character combinations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>character replace dictionary</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.separator_char">
+<em class="property">property </em><code class="sig-name descname">separator_char</code><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.separator_char" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the separator that characterizes the split between key and value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>separator character</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.set">
+<code class="sig-name descname">set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">separator</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">set_dict</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/parameters.html#GenericParameters.set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the value of multiple parameters or create new parameter key, if they do not exist already.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>separator</strong> (<em>float/int/str</em>) – separator string - optional</p></li>
+<li><p><strong>**set_dict</strong> (<em>dict</em>) – dictionary containing the parameter keys and their corresponding values to be set</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.set_dict">
+<code class="sig-name descname">set_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dictionary</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/parameters.html#GenericParameters.set_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.set_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a dictionary of key value pairs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dictionary</strong> (<em>dict</em>) – dictionary of key value pairs</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.set_value">
+<code class="sig-name descname">set_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">line</span></em>, <em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/parameters.html#GenericParameters.set_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.set_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the value of a parameter in a specific line</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>line</strong> (<em>float/int/str</em>) – line number - starting with 0</p></li>
+<li><p><strong>val</strong> (<em>str/bytes</em>) – value to be set</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.table_name">
+<em class="property">property </em><code class="sig-name descname">table_name</code><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.table_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the name of the input table inside the HDF5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>table name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.to_hdf">
+<code class="sig-name descname">to_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span></em>, <em class="sig-param"><span class="n">group_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/parameters.html#GenericParameters.to_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the GenericParameters in an HDF5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdf</strong> (<a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.ProjectHDFio" title="pyiron.base.generic.hdfio.ProjectHDFio"><em>ProjectHDFio</em></a>) – HDF5 group object</p></li>
+<li><p><strong>group_name</strong> (<em>str</em>) – HDF5 subgroup name - optional</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.val_only">
+<em class="property">property </em><code class="sig-name descname">val_only</code><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.val_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the boolean option to switch from a key value list to an value only input file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>[True/False]</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.generic.parameters.GenericParameters.write_file">
+<code class="sig-name descname">write_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_name</span></em>, <em class="sig-param"><span class="n">cwd</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/generic/parameters.html#GenericParameters.write_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.generic.parameters.GenericParameters.write_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write GenericParameters to input file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> (<em>str</em>) – name of the file, either absolute (then cwd must be None) or relative</p></li>
+<li><p><strong>cwd</strong> (<em>str</em>) – path name (default: None)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

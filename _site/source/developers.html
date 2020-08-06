@@ -1,0 +1,644 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Contributing to pyiron &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="FAQ" href="faq.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing to pyiron</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#wait-i-don-t-want-to-read-this-i-just-have-a-quick-question-bugfix">Wait I don’t want to read this; I just have a quick question/bugfix!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#license">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-should-i-know-before-i-get-started">What should I know before I get started?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pyiron-developer-meetings">pyiron developer meetings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#how-can-i-contribute">How can I contribute?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#reporting-bugs">Reporting bugs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#suggesting-enhancements">Suggesting Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#your-first-code-contribution">Your first code contribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pull-requests">Pull requests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#styleguides">Styleguides</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#git-commit-messages">Git commit messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#python-styleguide">Python styleguide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deprecation-warning-template">Deprecation warning template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documentation-styleguide">Documentation styleguide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-notes">Additional notes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#issue-and-pull-request-labels">Issue and pull request labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-status">Build status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyiron-releases">pyiron releases</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging">Debugging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#my-job-does-not-run-on-the-queue">My job does not run on the queue</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Contributing to pyiron</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/source/developers.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="contributing-to-pyiron">
+<span id="developers"></span><h1>Contributing to pyiron<a class="headerlink" href="#contributing-to-pyiron" title="Permalink to this headline">¶</a></h1>
+<p>The following is a set of guidelines for contributing to pyiron, which is
+hosted and maintained by the <a class="reference external" href="https://mpie.de">Max Planck Institut für Eisenforschung</a>
+on GitHub. These are mostly guidelines to facilitate an efficient
+development workflow, and not necessarily rules. Use your best judgment,
+and feel free to propose changes even to this document in a pull request.</p>
+<p>You can find all the pyiron packages at our <a class="reference external" href="https://github.com/pyiron">github page</a> .
+To create pull requests, you will need to become part of the
+pyiron organization. Please email us if you would like to join.</p>
+<div class="section" id="wait-i-don-t-want-to-read-this-i-just-have-a-quick-question-bugfix">
+<h2>Wait I don’t want to read this; I just have a quick question/bugfix!<a class="headerlink" href="#wait-i-don-t-want-to-read-this-i-just-have-a-quick-question-bugfix" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Check out our <a class="reference external" href="https://github.com/pyiron/pyiron/docs/source/faq.html">FAQ page</a>; your question might already be answered there.</p></li>
+<li><p>If your question relates to a bug in pyiron, please briefly search the <a class="reference external" href="https://github.com/pyiron/pyiron/issues">issues page</a> and open a new labeled issue if you don’t see anything related to your question there.</p></li>
+<li><p>Please feel free just to send one of us a brief, descriptive email with your question, and we’ll do our best to get back to you as ASAP as possible.</p></li>
+</ol>
+</div>
+<div class="section" id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#license">License</a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="#what-should-i-know-before-i-get-started">What should I know before I get started?</a></dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#pyiron-developer-meetings">pyiron developer meetings</a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt><a class="reference internal" href="#how-can-i-contribute">How can I contribute?</a></dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#reporting-bugs">Reporting bugs</a></p></li>
+<li><p><a class="reference internal" href="#suggesting-enhancements">Suggesting enhancements</a></p></li>
+<li><p><a class="reference internal" href="#your-first-code-contribution">Your first code contribution</a></p></li>
+<li><p><a class="reference internal" href="#pull-requests">Pull requests</a></p></li>
+</ul>
+</dd>
+<dt><a class="reference internal" href="#styleguides">Styleguides</a></dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#git-commit-messages">Git commit messages</a></p></li>
+<li><p><a class="reference internal" href="#python-styleguide">Python styleguide</a></p></li>
+<li><p><a class="reference internal" href="#documentation-styleguide">Documentation styleguide</a></p></li>
+</ul>
+</dd>
+<dt><a class="reference internal" href="#additional-notes">Additional Notes</a></dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#issue-and-pull-request-labels">Issue and pull request labels</a></p></li>
+<li><p><a class="reference internal" href="#build-status">Build status</a></p></li>
+<li><p><a class="reference internal" href="#pyiron-releases">pyiron releases</a></p></li>
+</ul>
+</dd>
+<dt><a class="reference internal" href="#debugging">Debugging</a></dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#my-job-does-not-run-on-the-queue">My job does not run on the queue</a></p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>pyiron is released as an open-source project under the BSD 3-Clause License.
+Code contributions should also be considered open-source.</p>
+</div>
+<div class="section" id="what-should-i-know-before-i-get-started">
+<h2>What should I know before I get started?<a class="headerlink" href="#what-should-i-know-before-i-get-started" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pyiron-developer-meetings">
+<h3>pyiron developer meetings<a class="headerlink" href="#pyiron-developer-meetings" title="Permalink to this headline">¶</a></h3>
+<p>If you are interested in discussing pyiron’s development, we encourage you to virtually
+participate in the weekly pyiron developer meeting at 14:00 german time (GMT+2).
+Check the discussion page for details.</p>
+</div>
+</div>
+<div class="section" id="how-can-i-contribute">
+<h2>How can I contribute?<a class="headerlink" href="#how-can-i-contribute" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="reporting-bugs">
+<h3>Reporting bugs<a class="headerlink" href="#reporting-bugs" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Note: If you find a closed issue that seems like it is the same
+thing that you’re experiencing, open a new issue and include a
+link to the original issue in the body of your new one.</p>
+</div></blockquote>
+<p><strong>Before Submitting A Bug Report</strong></p>
+<p>Check if you can reproduce the problem in the latest version of pyiron.
+Check the <a class="reference external" href="https://github.com/pyiron/pyiron/docs/source/faq.html">FAQ page</a> for a list of common questions and problems.
+Briefly search the issues page for <a class="reference external" href="https://github.com/pyiron/pyiron/issues?q=is%3Aopen+is%3Aissue+label%3A%22bug%22">bugs</a>  to see if the problem has already
+been reported. If it has and the issue is still open, add a comment
+to the existing issue instead of opening a new one.</p>
+<p><strong>How Do I Submit A (Good) Bug Report?</strong></p>
+<p>Bugs are tracked as GitHub issues. You can create an issue on
+the pyiron repository by including the following information:</p>
+<ul class="simple">
+<li><p>Use a clear and descriptive title for the issue to identify the problem.</p></li>
+<li><p>Describe the exact steps you took so we can reproduce the problem as closely as possible.</p></li>
+<li><p>Provide sample code that causes the problem. Include code snippets as markdown code blocks.</p></li>
+<li><p>Include information about the environment (OS, python version, how packages were installed) in which you were running pyiron.</p></li>
+<li><p>Explain what you expected to happen, and what happened instead.</p></li>
+</ul>
+</div>
+<div class="section" id="suggesting-enhancements">
+<h3>Suggesting Enhancements<a class="headerlink" href="#suggesting-enhancements" title="Permalink to this headline">¶</a></h3>
+<p><strong>How Do I Submit A (Good) Enhancement Suggestion?</strong></p>
+<p>Enhancement suggestions are tracked as GitHub issues. You can create an issue on
+the pyiron repository by including the following information:</p>
+<ul class="simple">
+<li><p>Use a clear and descriptive title for the issue to identify the suggestion.</p></li>
+<li><p>Describe the exact behavior you would expect the suggested feature to produce.</p></li>
+<li><p>Provide sample code that you would use to access the feature. If possible, include code for how you think the feature could be built into pyiron’s codebase. Include code snippets as markdown code blocks.</p></li>
+</ul>
+</div>
+<div class="section" id="your-first-code-contribution">
+<h3>Your first code contribution<a class="headerlink" href="#your-first-code-contribution" title="Permalink to this headline">¶</a></h3>
+<p>Unsure where to begin contributing to pyiron? You can start by looking
+through these good-first-issue and help-wanted issues:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/pyiron/pyiron/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22">Good first issues</a> - issues which should only require a few lines of code, and a test or two.</p></li>
+<li><p><a class="reference external" href="https://github.com/pyiron/pyiron/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22">Help wanted issues</a> - issues which should be a bit more involved than beginner issues.</p></li>
+</ul>
+<p><strong>Local development</strong></p>
+<p>pyiron can be developed and tested locally. If you are using pyiron to run an
+external software package, e.g. VASP or LAMMPS, you might also need to install
+those packages locally to run certain integration tests in pyiron.</p>
+<p>To get the developmental (git) version of pyiron,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pyiron</span><span class="o">/</span><span class="n">pyiron</span><span class="o">.</span><span class="n">git</span>
+<span class="n">conda</span> <span class="n">env</span> <span class="n">update</span> <span class="o">--</span><span class="n">name</span> <span class="n">pyiron_dev</span> <span class="o">--</span><span class="n">file</span> <span class="n">pyiron</span><span class="o">/.</span><span class="n">ci_support</span><span class="o">/</span><span class="n">environment</span><span class="o">.</span><span class="n">yml</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">pyiron_dev</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="n">conda</span><span class="o">-</span><span class="n">build</span>
+<span class="n">conda</span> <span class="n">develop</span> <span class="n">pyiron</span>
+</pre></div>
+</div>
+<p><strong>Local Testing</strong></p>
+<p>The full test suite is always run automatically when you open a new pull request.  Still it
+sometimes nice to run all or only specific tests on your machine.  To do that run from the repo root, e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span> <span class="n">discover</span> <span class="n">tests</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span> <span class="n">discover</span> <span class="n">tests</span><span class="o">/</span><span class="n">sphinx</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span> <span class="n">tests</span><span class="o">/</span><span class="n">sphinx</span><span class="o">/</span><span class="n">test_base</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Where the first line runs all tests, the second all the sphinx tests and the final line only the tests in that file.
+Keep in mind that to run the tests your repository needs to be inside your pyiron project folder and you need to have
+at least the basic resources installed from <code class="docutils literal notranslate"><span class="pre">tests/static</span></code>.  A neat trick when testing/debugging is to combine the
+pdb and unittest modules like this</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pdb</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>This allows you to re-use the sometimes complicated setups for your interactive debugging that might be otherwise
+difficult to replicate in a REPL.</p>
+</div>
+<div class="section" id="pull-requests">
+<h3>Pull requests<a class="headerlink" href="#pull-requests" title="Permalink to this headline">¶</a></h3>
+<p>The process described here has several goals:</p>
+<ul class="simple">
+<li><p>Maintain pyiron’s quality</p></li>
+<li><p>Fix problems that are important to users</p></li>
+<li><p>Engage the community in working toward the best possible tools</p></li>
+<li><p>Enable a sustainable system for pyiron’s maintainers to review contributions</p></li>
+</ul>
+<p>Please follow these steps to have your contribution considered by the maintainers:</p>
+<ul class="simple">
+<li><p>Keep the changes in your pull request as focused as possible- only address one issue per pull request wherever possible.</p></li>
+<li><p>Follow the <a class="reference internal" href="#styleguides">Styleguides</a></p></li>
+<li><p>Assign the appropriate label (see <a class="reference internal" href="#issue-and-pull-request-labels">Issue and pull request labels</a>) to your pull request. If you are fixing a specific Github issue, reference the issue directly in the pull request comments.</p></li>
+<li><p>If you are aware which maintainer is most closely related to the code you’ve edited, feel free to request their review.</p></li>
+<li><p>After you submit your pull request, verify that all status checks are passing.</p></li>
+<li><p>If a status check fails and it seems to be unrelated to your changes, explain why the failure is unrelated as a comment in your pull request.</p></li>
+</ul>
+<p>While the prerequisites above must be satisfied prior to having your
+pull request reviewed, the reviewer(s) may ask you to complete
+additional design work, tests, or other changes before your pull
+request can be ultimately accepted.</p>
+</div>
+</div>
+<div class="section" id="styleguides">
+<h2>Styleguides<a class="headerlink" href="#styleguides" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="git-commit-messages">
+<h3>Git commit messages<a class="headerlink" href="#git-commit-messages" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Use the present tense (“Add feature” not “Added feature”)</p></li>
+<li><p>Use the imperative mood (“Move cursor to…” not “Moves cursor to…”)</p></li>
+<li><p>Limit the first line to 72 characters or less</p></li>
+<li><p>Reference issues and pull requests liberally after the first line</p></li>
+<li><p>When only changing documentation, include [ci skip] in the commit title</p></li>
+<li><p>Consider starting the commit message with an applicable emoji:</p></li>
+</ul>
+<p>:art: (<code class="docutils literal notranslate"><span class="pre">:art:</span></code>) improves the format/structure of the code</p>
+<p>:zap: (<code class="docutils literal notranslate"><span class="pre">:zap:</span></code>) improves performance</p>
+<p>:memo: (<code class="docutils literal notranslate"><span class="pre">:memo:</span></code>) adds documentation</p>
+<p>:bug: (<code class="docutils literal notranslate"><span class="pre">:bug:</span></code>) fixes a bug</p>
+<p>:fire: (<code class="docutils literal notranslate"><span class="pre">:fire:</span></code>) removes code or files</p>
+<p>:green_heart: (<code class="docutils literal notranslate"><span class="pre">:green_heart:</span></code>) fixes the CI build</p>
+<p>:white_check_mark: (<code class="docutils literal notranslate"><span class="pre">:white_check_mark:</span></code>) adds tests</p>
+<p>Managing git commits is much easier using an IDE (we recommend PyCharm).</p>
+</div>
+<div class="section" id="python-styleguide">
+<h3>Python styleguide<a class="headerlink" href="#python-styleguide" title="Permalink to this headline">¶</a></h3>
+<p>Please follow <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8 conventions</a> for all python code added to pyiron. Pull
+requests will be checked for PEP8 plus a few other security issues with
+<a class="reference external" href="https://www.codacy.com/">Codacy</a>, and will be rejected if they do not meet the specified
+formatting criteria.</p>
+<p>Any new features should include coverage with a unit test, such that
+your pull request does not decrease pyiron’s overall coverage. This
+will be automatically tested within the ci test suite and <a class="reference external" href="https://coveralls.io/">Coveralls</a>.</p>
+</div>
+<div class="section" id="deprecation-warning-template">
+<h3>Deprecation warning template<a class="headerlink" href="#deprecation-warning-template" title="Permalink to this headline">¶</a></h3>
+<p><em>XXX is deprecated as of vers. A.B.C. It is not guaranteed to be in service in vers. D.E.F. Use YYY instead.</em></p>
+</div>
+<div class="section" id="documentation-styleguide">
+<h3>Documentation styleguide<a class="headerlink" href="#documentation-styleguide" title="Permalink to this headline">¶</a></h3>
+<p>All new/modified functions should include a docstring that follows
+the <a class="reference external" href="http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html">Google Python Docstring format</a>.</p>
+<p>Documentation is built automatically with <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a>; any manually created
+documentation should be added as a restructured text (.rst) file
+under pyiron/docs/source.</p>
+<p>Notebooks created to exemplify features in pyiron are very useful, and
+can even be used as integration tests. If you have added a major feature,
+consider creating a notebook to show its usage under pyiron/notebooks/.
+See the other examples that are already there.</p>
+</div>
+</div>
+<div class="section" id="additional-notes">
+<h2>Additional notes<a class="headerlink" href="#additional-notes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="issue-and-pull-request-labels">
+<h3>Issue and pull request labels<a class="headerlink" href="#issue-and-pull-request-labels" title="Permalink to this headline">¶</a></h3>
+<p>We use the following tags to organize pyiron Github issues
+and pull requests:</p>
+<ul class="simple">
+<li><p>bug: something isn’t working</p></li>
+<li><p>duplicate: this issue/pull request already existed</p></li>
+<li><p>enhancement: new feature or request</p></li>
+<li><p>good first issue: easy fix for beginners</p></li>
+<li><p>help wanted: extra attention is needed</p></li>
+<li><p>invalid: this doesn’t seem right</p></li>
+<li><p>question: further information is requested</p></li>
+<li><p>wontfix: this will not be worked on</p></li>
+<li><p>stale: inactive after 2 weeks</p></li>
+</ul>
+</div>
+<div class="section" id="build-status">
+<h3>Build status<a class="headerlink" href="#build-status" title="Permalink to this headline">¶</a></h3>
+<p>The build status for pyiron and all sub packages are given below</p>
+<a class="reference external image-reference" href="https://coveralls.io/github/pyiron/pyiron?branch=master"><img alt="Coverage Status" src="https://coveralls.io/repos/github/pyiron/pyiron/badge.svg?branch=master" /></a>
+<a class="reference external image-reference" href="https://app.codacy.com/app/pyiron-runner/pyiron?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pyiron/pyiron&amp;utm_campaign=Badge_Grade_Settings"><img alt="Codacy Badge" src="https://api.codacy.com/project/badge/Grade/c513254f10004df5a1f5c76425c6584b" /></a>
+<a class="reference external image-reference" href="https://anaconda.org/conda-forge/pyiron/"><img alt="Release_Date" src="https://anaconda.org/conda-forge/pyiron/badges/latest_release_date.svg" /></a>
+<a class="reference external image-reference" href="https://travis-ci.org/pyiron/pyiron"><img alt="Build Status" src="https://travis-ci.org/pyiron/pyiron.svg?branch=master" /></a>
+<a class="reference external image-reference" href="https://ci.appveyor.com/project/pyiron-runner/pyiron/branch/master"><img alt="Build status" src="https://ci.appveyor.com/api/projects/status/wfdgqkxca1i19xcq/branch/master?svg=true" /></a>
+</div>
+<div class="section" id="pyiron-releases">
+<h3>pyiron releases<a class="headerlink" href="#pyiron-releases" title="Permalink to this headline">¶</a></h3>
+<a class="reference external image-reference" href="https://anaconda.org/conda-forge/pyiron/"><img alt="Downloads" src="https://anaconda.org/conda-forge/pyiron/badges/downloads.svg" /></a>
+<p>For the pyiron release management we use git tags:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">git</span><span class="o">-</span><span class="n">scm</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">book</span><span class="o">/</span><span class="n">en</span><span class="o">/</span><span class="n">v2</span><span class="o">/</span><span class="n">Git</span><span class="o">-</span><span class="n">Basics</span><span class="o">-</span><span class="n">Tagging</span>
+</pre></div>
+</div>
+<p>The tag format consists of a tag_prefix (&lt;package name&gt;-) and the release version, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pyiron</span><span class="o">-</span><span class="mf">0.2</span><span class="o">.</span><span class="mi">0</span>
+</pre></div>
+</div>
+<p>For the automated versioning we use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">warner</span><span class="o">/</span><span class="n">python</span><span class="o">-</span><span class="n">versioneer</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>So the configuration of the release is included in setup.cfg:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pyiron</span><span class="o">/</span><span class="n">pyiron_base</span><span class="o">/</span><span class="n">blob</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">setup</span><span class="o">.</span><span class="n">cfg</span>
+</pre></div>
+</div>
+<p>As the pyiron packages are pure python packages – we use only the Linux Python 3.7 job to build the packages, as defined in the .travis.yml file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pyiron</span><span class="o">/</span><span class="n">pyiron_base</span><span class="o">/</span><span class="n">blob</span><span class="o">/</span><span class="n">master</span><span class="o">/.</span><span class="n">travis</span><span class="o">.</span><span class="n">yml</span>
+</pre></div>
+</div>
+<p>The python 3.7 linux tests therefore takes more time, compared to the other tests on travis.</p>
+<p>Just like each other commit to the master branch the tagged releases are pushed to pypi.org and anaconda.org:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pypi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">project</span><span class="o">/</span><span class="n">pyiron</span><span class="o">-</span><span class="n">base</span><span class="o">/</span><span class="c1">#history</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">anaconda</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">pyiron</span><span class="o">/</span><span class="n">pyiron_base</span>
+</pre></div>
+</div>
+<p>The major difference for pypi (pip) is that tagged releases are the default for pip while installing prerelease versions using pip requires the <cite>–pre</cite> flag.
+<cite>pip install –pre pyiron</cite></p>
+<p>Those pre-release versions are named <cite>&lt;version_number&gt;.post0.dev&lt;release number&gt;</cite></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.2</span><span class="o">.</span><span class="mf">0.</span><span class="n">post0</span><span class="o">.</span><span class="n">dev1</span>
+</pre></div>
+</div>
+<p>For anaconda the prereleases are pushed to the pyiron channel and can be installed using:
+conda install -c pyiron pyiron</p>
+<p>On the other hand the tagged releases are available through conda-forge, as soon as the corresponding packages are merged:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">conda</span><span class="o">-</span><span class="n">forge</span><span class="o">/</span><span class="n">pyiron</span><span class="o">-</span><span class="n">feedstock</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">pyiron</span>
+</pre></div>
+</div>
+<p>So for both conda and pip both the prereleases as well as the official releases are available.</p>
+</div>
+</div>
+<div class="section" id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="my-job-does-not-run-on-the-queue">
+<h3>My job does not run on the queue<a class="headerlink" href="#my-job-does-not-run-on-the-queue" title="Permalink to this headline">¶</a></h3>
+<p>In case a job runs properly while executing it locally (or on the head node), but not when you submit it to a queue,</p>
+<p><strong>1. Check if the job class is available in the project:</strong></p>
+<p>In this example, we want a custom job class <code class="docutils literal notranslate"><span class="pre">ProtoMD</span></code> from the module <code class="docutils literal notranslate"><span class="pre">pyiron_contrib</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyiron</span> <span class="kn">import</span> <span class="n">Project</span>
+<span class="kn">import</span> <span class="nn">pyiron_contrib</span>  <span class="c1"># only if importing a custom job class</span>
+
+<span class="n">pr</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="s2">&quot;debug&quot;</span><span class="p">)</span>
+<span class="nb">dir</span><span class="p">(</span><span class="n">pr</span><span class="o">.</span><span class="n">job_type</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This should output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="s1">&#39;AtomisticExampleJob&#39;</span><span class="p">,</span>
+<span class="go"> &#39;Atoms&#39;,</span>
+<span class="go"> &#39;ConvEncutParallel&#39;,</span>
+<span class="go"> ...</span>
+<span class="go"> ...</span>
+<span class="go"> &#39;ProtoMD&#39;]</span>
+</pre></div>
+</div>
+<p>If you see your job class in the list, proceed to step 3. If not,</p>
+<p><strong>2. Check if the job class in initialized in ``__init__.py`` of the module</strong></p>
+<p>Make sure that the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> of your module (here, <code class="docutils literal notranslate"><span class="pre">pyiron_contrib</span></code>) initializes the job class in the following format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyiron</span> <span class="kn">import</span> <span class="n">Project</span>
+<span class="kn">from</span> <span class="nn">pyiron.base.job.jobtype</span> <span class="kn">import</span> <span class="n">JOB_CLASS_DICT</span>
+
+<span class="c1"># Make classes available for new pyiron version</span>
+<span class="n">JOB_CLASS_DICT</span><span class="p">[</span><span class="s1">&#39;ProtoMD&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;pyiron_contrib.protocol.compound.md&#39;</span>  <span class="c1"># the path of your job class</span>
+</pre></div>
+</div>
+<p><strong>3. Confirm that the job class can be instantiatied</strong></p>
+<p>Create a new job, but instead of running it, save it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">job_type</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">ProtoMD</span><span class="p">,</span> <span class="n">job_name</span> <span class="o">=</span> <span class="s1">&#39;job&#39;</span><span class="p">)</span>
+<span class="o">...</span>  <span class="c1"># input parameters that the job requires</span>
+<span class="o">...</span>
+<span class="n">job</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">98</span>  <span class="c1"># this is the job id of the saved job</span>
+</pre></div>
+</div>
+<p>Note down the job id, then run the following line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">job</span><span class="p">[</span><span class="s2">&quot;TYPE&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This should output an instance of the job class:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;&lt;class &#39;pyiron_contrib.protocol.compound.md.ProtoMD&#39;&gt;&quot;</span>
+</pre></div>
+</div>
+<p>Now we know that the job class is indeed available in the project and can be instantiated.</p>
+<p><strong>4. Debug using a second notebook</strong></p>
+<p>Submitting and running a job on the queue, is essentially the same as saving a job in one notebook, but loading and executing it in another notebook.</p>
+<p>In <strong>a new notebook</strong> , load the job that you just saved, using its job id. You may or may not import the module (here, <code class="docutils literal notranslate"><span class="pre">pyiron_conntirb</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyiron</span> <span class="kn">import</span> <span class="n">Project</span>
+<span class="c1"># we do not import pyiron_contrib here, becasue it should not be necessary</span>
+
+<span class="n">pr</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="s2">&quot;second_notebook&quot;</span><span class="p">)</span>
+<span class="n">reloaded_job</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="mi">98</span><span class="p">)</span>  <span class="c1"># 98 is the job id of the previously saved job</span>
+<span class="n">reloaded_job</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">run_again</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If the job loads and runs properly, the job should also run properly on the queue. This also means that there may be a bug in your custom job class. Debug the job class, and repeat steps 3 and 4 till you no longer get an error in step 4.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="faq.html" class="btn btn-neutral float-left" title="FAQ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

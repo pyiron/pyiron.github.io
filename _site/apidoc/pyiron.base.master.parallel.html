@@ -1,0 +1,705 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.base.master.parallel module &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>pyiron.base.master.parallel module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/pyiron.base.master.parallel.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-pyiron.base.master.parallel">
+<span id="pyiron-base-master-parallel-module"></span><h1>pyiron.base.master.parallel module<a class="headerlink" href="#module-pyiron.base.master.parallel" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pyiron.base.master.parallel.GenericOutput">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.base.master.parallel.</code><code class="sig-name descname">GenericOutput</code><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#GenericOutput"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.GenericOutput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">collections.OrderedDict</span></code></p>
+<p>Generic Output just a place holder to store the output of the last child directly in the ParallelMaster.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="pyiron.base.master.parallel.JobGenerator">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.base.master.parallel.</code><code class="sig-name descname">JobGenerator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job</span></em>, <em class="sig-param"><span class="n">no_job_checks</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#JobGenerator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.JobGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>JobGenerator - this class implements the functions to generate the parameter list, modify the individual jobs
+according to the parameter list and generate the new job names according to the parameter list.</p>
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.JobGenerator.modify_job">
+<em class="property">static </em><code class="sig-name descname">modify_job</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job</span></em>, <em class="sig-param"><span class="n">parameter</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#JobGenerator.modify_job"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.JobGenerator.modify_job" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.JobGenerator.next">
+<code class="sig-name descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#JobGenerator.next"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.JobGenerator.next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterate over the child jobs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>new job object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="pyiron.base.job.generic.html#pyiron.base.job.generic.GenericJob" title="pyiron.base.job.generic.GenericJob">GenericJob</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.JobGenerator.parameter_list">
+<em class="property">property </em><code class="sig-name descname">parameter_list</code><a class="headerlink" href="#pyiron.base.master.parallel.JobGenerator.parameter_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.JobGenerator.parameter_list_cached">
+<em class="property">property </em><code class="sig-name descname">parameter_list_cached</code><a class="headerlink" href="#pyiron.base.master.parallel.JobGenerator.parameter_list_cached" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pyiron.base.master.parallel.ParallelMaster">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.base.master.parallel.</code><code class="sig-name descname">ParallelMaster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">project</span></em>, <em class="sig-param"><span class="n">job_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#ParallelMaster"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pyiron.base.master.generic.html#pyiron.base.master.generic.GenericMaster" title="pyiron.base.master.generic.GenericMaster"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyiron.base.master.generic.GenericMaster</span></code></a></p>
+<p>MasterJob that handles the creation and analysis of several parallel jobs (including master and
+continuation jobs), Examples are Murnaghan or Phonon calculations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>project</strong> (<a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.ProjectHDFio" title="pyiron.base.generic.hdfio.ProjectHDFio"><em>ProjectHDFio</em></a>) – ProjectHDFio instance which points to the HDF5 file the job is stored in</p></li>
+<li><p><strong>job_name</strong> (<em>str</em>) – name of the job, which has to be unique within the project</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: job_name</code></dt>
+<dd><p>name of the job, which has to be unique within the project</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: status</code></dt>
+<dd><dl class="simple">
+<dt>execution status of the job, can be one of the following [initialized, appended, created, submitted,</dt><dd><p>running, aborted, collect, suspended, refresh,
+busy, finished]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: job_id</code></dt>
+<dd><p>unique id to identify the job in the pyiron database</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: parent_id</code></dt>
+<dd><p>job id of the predecessor job - the job which was executed before the current one in the current job series</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: master_id</code></dt>
+<dd><p>job id of the master job - a meta job which groups a series of jobs, which are executed either in parallel
+or in serial.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: child_ids</code></dt>
+<dd><p>list of child job ids - only meta jobs have child jobs - jobs which list the meta job as their master</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: project</code></dt>
+<dd><p>Project instance the jobs is located in</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: project_hdf5</code></dt>
+<dd><p>ProjectHDFio instance which points to the HDF5 file the job is stored in</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: job_info_str</code></dt>
+<dd><p>short string to describe the job by it is job_name and job ID - mainly used for logging</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: working_directory</code></dt>
+<dd><p>working directory of the job is executed in - outside the HDF5 file</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: path</code></dt>
+<dd><p>path to the job as a combination of absolute file system path and path within the HDF5 file.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: version</code></dt>
+<dd><p>Version of the hamiltonian, which is also the version of the executable unless a custom executable is used.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: executable</code></dt>
+<dd><p>Executable used to run the job - usually the path to an external executable.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: library_activated</code></dt>
+<dd><p>For job types which offer a Python library pyiron can use the python library instead of an external
+executable.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: server</code></dt>
+<dd><p>Server object to handle the execution environment for the job.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: queue_id</code></dt>
+<dd><p>the ID returned from the queuing system - it is most likely not the same as the job ID.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: logger</code></dt>
+<dd><p>logger object to monitor the external execution and internal pyiron warnings.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: restart_file_list</code></dt>
+<dd><p>list of files which are used to restart the calculation from these files.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: job_type</code></dt>
+<dd><dl class="simple">
+<dt>Job type object with all the available job types: [‘ExampleJob’, ‘SerialMaster’, ‘ParallelMaster’,</dt><dd><p>‘ScriptJob’, ‘ListMaster’]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: child_names</code></dt>
+<dd><p>Dictionary matching the child ID to the child job name.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: ref_job</code></dt>
+<dd><p>Reference job template from which all jobs within the ParallelMaster are generated.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: number_jobs_total</code></dt>
+<dd><p>Total number of jobs</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.ParallelMaster.collect_logfiles">
+<code class="sig-name descname">collect_logfiles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#ParallelMaster.collect_logfiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster.collect_logfiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect the log files of the external executable and store the information in the HDF5 file. This method is
+currently not implemented for the ParallelMaster.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.ParallelMaster.collect_output">
+<code class="sig-name descname">collect_output</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#ParallelMaster.collect_output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster.collect_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect the output files of the external executable and store the information in the HDF5 file. This method has
+to be implemented in the individual meta jobs derived from the ParallelMaster.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.ParallelMaster.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#ParallelMaster.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy the GenericJob object which links to the job and its HDF5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>New GenericJob object pointing to the same job</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="pyiron.base.job.generic.html#pyiron.base.job.generic.GenericJob" title="pyiron.base.job.generic.GenericJob">GenericJob</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.ParallelMaster.copy_to">
+<code class="sig-name descname">copy_to</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">project</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">new_job_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">input_only</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">new_database_entry</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#ParallelMaster.copy_to"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster.copy_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy the content of the job including the HDF5 file to a new location</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>project</strong> (<a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.ProjectHDFio" title="pyiron.base.generic.hdfio.ProjectHDFio"><em>ProjectHDFio</em></a>) – project to copy the job to</p></li>
+<li><p><strong>new_job_name</strong> (<em>str</em>) – to duplicate the job within the same porject it is necessary to modify the job name
+- optional</p></li>
+<li><p><strong>input_only</strong> (<em>bool</em>) – [True/False] to copy only the input - default False</p></li>
+<li><p><strong>new_database_entry</strong> (<em>bool</em>) – [True/False] to create a new database entry - default True</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>GenericJob object pointing to the new location.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="pyiron.base.job.generic.html#pyiron.base.job.generic.GenericJob" title="pyiron.base.job.generic.GenericJob">GenericJob</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.ParallelMaster.create_child_job">
+<code class="sig-name descname">create_child_job</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#ParallelMaster.create_child_job"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster.create_child_job" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal helper function to create the next child job from the reference job template - usually this is called
+as part of the create_jobs() function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>job_name</strong> (<em>str</em>) – name of the next job</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>next job</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="pyiron.base.job.generic.html#pyiron.base.job.generic.GenericJob" title="pyiron.base.job.generic.GenericJob">GenericJob</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.ParallelMaster.from_hdf">
+<code class="sig-name descname">from_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">group_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#ParallelMaster.from_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster.from_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restore the ParallelMaster from an HDF5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdf</strong> (<a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.ProjectHDFio" title="pyiron.base.generic.hdfio.ProjectHDFio"><em>ProjectHDFio</em></a>) – HDF5 group object - optional</p></li>
+<li><p><strong>group_name</strong> (<em>str</em>) – HDF5 subgroup name - optional</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.ParallelMaster.interactive_ref_job_initialize">
+<code class="sig-name descname">interactive_ref_job_initialize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#ParallelMaster.interactive_ref_job_initialize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster.interactive_ref_job_initialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>To execute the reference job in interactive mode it is necessary to initialize it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.ParallelMaster.is_finished">
+<code class="sig-name descname">is_finished</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#ParallelMaster.is_finished"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster.is_finished" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the ParallelMaster job is finished - by checking the job status and the submission status.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>[True/False]</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.ParallelMaster.iter_jobs">
+<code class="sig-name descname">iter_jobs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">convert_to_object</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#ParallelMaster.iter_jobs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster.iter_jobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterate over the jobs within the ListMaster</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>convert_to_object</strong> (<em>bool</em>) – load the full GenericJob object (default) or just the HDF5 / JobCore object</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Yield of GenericJob or JobCore</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>yield</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.ParallelMaster.number_jobs_total">
+<em class="property">property </em><code class="sig-name descname">number_jobs_total</code><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster.number_jobs_total" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get number of total jobs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>number of total jobs</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.ParallelMaster.output_to_pandas">
+<code class="sig-name descname">output_to_pandas</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sort_by</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">h5_path</span><span class="o">=</span><span class="default_value">'output'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#ParallelMaster.output_to_pandas"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster.output_to_pandas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert output of all child jobs to a pandas Dataframe object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sort_by</strong> (<em>str</em>) – sort the output using pandas.DataFrame.sort_values(by=sort_by)</p></li>
+<li><p><strong>h5_path</strong> (<em>str</em>) – select child output to include - default=’output’</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>output as dataframe</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.ParallelMaster.ref_job">
+<em class="property">property </em><code class="sig-name descname">ref_job</code><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster.ref_job" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the reference job template from which all jobs within the ParallelMaster are generated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>reference job</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="pyiron.base.job.generic.html#pyiron.base.job.generic.GenericJob" title="pyiron.base.job.generic.GenericJob">GenericJob</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.ParallelMaster.refresh_submission_status">
+<code class="sig-name descname">refresh_submission_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#ParallelMaster.refresh_submission_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster.refresh_submission_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refresh the submission status - if a job ID job_id is set then the submission status is loaded from the
+database.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.ParallelMaster.reset_job_id">
+<code class="sig-name descname">reset_job_id</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_id</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#ParallelMaster.reset_job_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster.reset_job_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the job id sets the job_id to None as well as all connected modules like JobStatus and SubmissionStatus.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.ParallelMaster.run_if_interactive">
+<code class="sig-name descname">run_if_interactive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#ParallelMaster.run_if_interactive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster.run_if_interactive" title="Permalink to this definition">¶</a></dt>
+<dd><p>For jobs which executables are available as Python library, those can also be executed with a library call
+instead of calling an external executable. This is usually faster than a single core python job.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.ParallelMaster.run_if_refresh">
+<code class="sig-name descname">run_if_refresh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#ParallelMaster.run_if_refresh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster.run_if_refresh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal helper function the run if refresh function is called when the job status is ‘refresh’. If the job was
+suspended previously, the job is going to be started again, to be continued.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.ParallelMaster.run_static">
+<code class="sig-name descname">run_static</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#ParallelMaster.run_static"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster.run_static" title="Permalink to this definition">¶</a></dt>
+<dd><p>The run_static function is executed within the GenericJob class and depending on the run_mode of the
+Parallelmaster and its child jobs a more specific run function is selected.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.ParallelMaster.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#ParallelMaster.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the object, by writing the content to the HDF5 file and storing an entry in the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Job ID stored in the database</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.ParallelMaster.set_input_to_read_only">
+<code class="sig-name descname">set_input_to_read_only</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#ParallelMaster.set_input_to_read_only"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster.set_input_to_read_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function enforces read-only mode for the input classes, but it has to be implement in the individual
+classes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.ParallelMaster.show_hdf">
+<code class="sig-name descname">show_hdf</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#ParallelMaster.show_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster.show_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display the output of the child jobs in a human readable print out</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.ParallelMaster.to_hdf">
+<code class="sig-name descname">to_hdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">group_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#ParallelMaster.to_hdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the ParallelMaster in an HDF5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdf</strong> (<a class="reference internal" href="pyiron.base.generic.hdfio.html#pyiron.base.generic.hdfio.ProjectHDFio" title="pyiron.base.generic.hdfio.ProjectHDFio"><em>ProjectHDFio</em></a>) – HDF5 group object - optional</p></li>
+<li><p><strong>group_name</strong> (<em>str</em>) – HDF5 subgroup name - optional</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.master.parallel.ParallelMaster.write_input">
+<code class="sig-name descname">write_input</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#ParallelMaster.write_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.ParallelMaster.write_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the input files - this contains the GenericInput of the ParallelMaster as well as reseting the submission
+status.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.base.master.parallel.job_wrap_function">
+<code class="sig-prename descclassname">pyiron.base.master.parallel.</code><code class="sig-name descname">job_wrap_function</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameters</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/master/parallel.html#job_wrap_function"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.master.parallel.job_wrap_function" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

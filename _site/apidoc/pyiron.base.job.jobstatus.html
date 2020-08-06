@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.base.job.jobstatus module &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>pyiron.base.job.jobstatus module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/pyiron.base.job.jobstatus.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-pyiron.base.job.jobstatus">
+<span id="pyiron-base-job-jobstatus-module"></span><h1>pyiron.base.job.jobstatus module<a class="headerlink" href="#module-pyiron.base.job.jobstatus" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pyiron.base.job.jobstatus.JobStatus">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.base.job.jobstatus.</code><code class="sig-name descname">JobStatus</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">initial_status</span><span class="o">=</span><span class="default_value">'initialized'</span></em>, <em class="sig-param"><span class="n">db</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">job_id</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/job/jobstatus.html#JobStatus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.job.jobstatus.JobStatus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="simple">
+<dt>The JobStatus object handles the different states a job could have. The available states are:</dt><dd><p>initialized: The object for the corresponding job was just created.
+appended: The job was appended to an master job.
+created: The files required for the simulation were written to the harddisk.
+submitted: The job was submitted to the jobscheduler and is waiting to be executed.
+running: The job is currently executed.
+aborted: The job failed to execute.
+collect: The job finished successfully and the written files are being collected.
+suspended: The job was set to sleep, waiting until other related jobs are finished, before it continous.
+refresh: The job was suspended before and it is currently checking if there are new tasks it can execute.
+busy: The job is refreshing, but during the refresh more related jobs finished so another refresh is necessary.
+finished: The job and all connected sub jobs are finished.
+warning: The job finished but encountered warnings in its output.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>initial_status</strong> (<em>str</em>) – If no initial status is provided the status is set to ‘initialized’</p></li>
+<li><p><strong>db</strong> (<a class="reference internal" href="pyiron.base.database.generic.html#pyiron.base.database.generic.DatabaseAccess" title="pyiron.base.database.generic.DatabaseAccess"><em>DatabaseAccess</em></a>) – The database which is responsible for this job.</p></li>
+<li><p><strong>job_id</strong> (<em>int</em>) – job ID</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: database</code></dt>
+<dd><p>the database which is responsible for this job.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: job_id</code></dt>
+<dd><p>Job ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">.. attribute:: string</code></dt>
+<dd><p>job status as string</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.job.jobstatus.JobStatus.database">
+<em class="property">property </em><code class="sig-name descname">database</code><a class="headerlink" href="#pyiron.base.job.jobstatus.JobStatus.database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the database which is responsible for this job. If no database is linked it returns None.
+:returns: The database which is responsible for this job.
+:rtype: DatabaseAccess</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.job.jobstatus.JobStatus.job_id">
+<em class="property">property </em><code class="sig-name descname">job_id</code><a class="headerlink" href="#pyiron.base.job.jobstatus.JobStatus.job_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the job id of the job this jobstatus is associated to.
+:returns: job id
+:rtype: int</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.job.jobstatus.JobStatus.refresh_status">
+<code class="sig-name descname">refresh_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/job/jobstatus.html#JobStatus.refresh_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.job.jobstatus.JobStatus.refresh_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refresh the job status - check if the database and job_id are set and if this is the case load the job status
+from the database.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.job.jobstatus.JobStatus.string">
+<em class="property">property </em><code class="sig-name descname">string</code><a class="headerlink" href="#pyiron.base.job.jobstatus.JobStatus.string" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Get the current status as string, it can be:</dt><dd><p>initialized: The object for the corresponding job was just created.
+appended: The job was appended to an master job.
+created: The files required for the simulation were written to the harddisk.
+submitted: The job was submitted to the jobscheduler and is waiting to be executed.
+running: The job is currently executed.
+aborted: The job failed to execute.
+collect: The job finished successfully and the written files are being collected.
+suspended: The job was set to sleep, waiting until other related jobs are finished, before it continous.
+refresh: The job was suspended before and it is currently checking if there are new tasks it can execute.
+busy: The job is refreshing, but during the refresh more related jobs finished so another refresh is necessary.
+finished: The job and all connected sub jobs are finished.
+warning: The job finished but encountered warnings in its output.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>status [initialized, appended, created, submitted, running, aborted, collect, suspended, refresh,</dt><dd><p>busy, finished, warning]</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.base.job.jobstatus.format_docstring_with_statuses">
+<code class="sig-prename descclassname">pyiron.base.job.jobstatus.</code><code class="sig-name descname">format_docstring_with_statuses</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n_tabs</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/job/jobstatus.html#format_docstring_with_statuses"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.job.jobstatus.format_docstring_with_statuses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replaces a ‘{}’ in the decorated object’s docstring with the documentation for all possible job status.</p>
+<p>The intent here is to have a <em>single place</em> where all status-value documentation can be maintained.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>n_tabs</strong> (<em>int</em>) – The number of tabs preceding each status type. (Default is one)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

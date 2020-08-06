@@ -1,0 +1,451 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.base.database.filetable module &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>pyiron.base.database.filetable module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/pyiron.base.database.filetable.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-pyiron.base.database.filetable">
+<span id="pyiron-base-database-filetable-module"></span><h1>pyiron.base.database.filetable module<a class="headerlink" href="#module-pyiron.base.database.filetable" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pyiron.base.database.filetable.FileTable">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.base.database.filetable.</code><code class="sig-name descname">FileTable</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#FileTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.FileTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="pyiron.base.database.filetable.FileTable.add_item_dict">
+<code class="sig-name descname">add_item_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">par_dict</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#FileTable.add_item_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.FileTable.add_item_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.filetable.FileTable.delete_item">
+<code class="sig-name descname">delete_item</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#FileTable.delete_item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.FileTable.delete_item" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.filetable.FileTable.force_reset">
+<code class="sig-name descname">force_reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#FileTable.force_reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.FileTable.force_reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.filetable.FileTable.get_child_ids">
+<code class="sig-name descname">get_child_ids</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_specifier</span></em>, <em class="sig-param"><span class="n">project</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">status</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#FileTable.get_child_ids"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.FileTable.get_child_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the childs for a specific job</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>database</strong> (<a class="reference internal" href="pyiron.base.database.generic.html#pyiron.base.database.generic.DatabaseAccess" title="pyiron.base.database.generic.DatabaseAccess"><em>DatabaseAccess</em></a>) – Database object</p></li>
+<li><p><strong>sql_query</strong> (<em>str</em>) – SQL query to enter a more specific request</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – username of the user whoes user space should be searched</p></li>
+<li><p><strong>project_path</strong> (<em>str</em>) – root_path - this is in contrast to the project_path in GenericPath</p></li>
+<li><p><strong>job_specifier</strong> (<em>str</em>) – name of the master job or the master jobs job ID</p></li>
+<li><p><strong>status</strong> (<em>str</em>) – filter childs which match a specific status - None by default</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of child IDs</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.filetable.FileTable.get_db_columns">
+<code class="sig-name descname">get_db_columns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#FileTable.get_db_columns"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.FileTable.get_db_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.filetable.FileTable.get_extract">
+<em class="property">static </em><code class="sig-name descname">get_extract</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">mtime</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#FileTable.get_extract"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.FileTable.get_extract" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.filetable.FileTable.get_item_by_id">
+<code class="sig-name descname">get_item_by_id</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#FileTable.get_item_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.FileTable.get_item_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.filetable.FileTable.get_items_dict">
+<code class="sig-name descname">get_items_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item_dict</span></em>, <em class="sig-param"><span class="n">return_all_columns</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#FileTable.get_items_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.FileTable.get_items_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.filetable.FileTable.get_job_id">
+<code class="sig-name descname">get_job_id</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_specifier</span></em>, <em class="sig-param"><span class="n">project</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#FileTable.get_job_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.FileTable.get_job_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.filetable.FileTable.get_job_ids">
+<code class="sig-name descname">get_job_ids</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">project</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">recursive</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#FileTable.get_job_ids"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.FileTable.get_job_ids" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.filetable.FileTable.get_job_status">
+<code class="sig-name descname">get_job_status</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_specifier</span></em>, <em class="sig-param"><span class="n">project</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#FileTable.get_job_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.FileTable.get_job_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the status of a particular job</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>database</strong> (<a class="reference internal" href="pyiron.base.database.generic.html#pyiron.base.database.generic.DatabaseAccess" title="pyiron.base.database.generic.DatabaseAccess"><em>DatabaseAccess</em></a>) – Database object</p></li>
+<li><p><strong>sql_query</strong> (<em>str</em>) – SQL query to enter a more specific request</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – username of the user whoes user space should be searched</p></li>
+<li><p><strong>project_path</strong> (<em>str</em>) – root_path - this is in contrast to the project_path in GenericPath</p></li>
+<li><p><strong>job_specifier</strong> (<em>str</em>) – name of the job or job ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>job status can be one of the following [‘initialized’, ‘appended’, ‘created’, ‘submitted’, ‘running’,</dt><dd><p>’aborted’, ‘collect’, ‘suspended’, ‘refresh’, ‘busy’, ‘finished’]</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.filetable.FileTable.get_job_working_directory">
+<code class="sig-name descname">get_job_working_directory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_specifier</span></em>, <em class="sig-param"><span class="n">project</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#FileTable.get_job_working_directory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.FileTable.get_job_working_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the working directory of a particular job</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>database</strong> (<a class="reference internal" href="pyiron.base.database.generic.html#pyiron.base.database.generic.DatabaseAccess" title="pyiron.base.database.generic.DatabaseAccess"><em>DatabaseAccess</em></a>) – Database object</p></li>
+<li><p><strong>sql_query</strong> (<em>str</em>) – SQL query to enter a more specific request</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – username of the user whoes user space should be searched</p></li>
+<li><p><strong>project_path</strong> (<em>str</em>) – root_path - this is in contrast to the project_path in GenericPath</p></li>
+<li><p><strong>job_specifier</strong> (<em>str</em>) – name of the job or job ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>working directory as absolute path</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.filetable.FileTable.get_jobs">
+<code class="sig-name descname">get_jobs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">project</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">recursive</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">columns</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#FileTable.get_jobs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.FileTable.get_jobs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.filetable.FileTable.get_table_headings">
+<code class="sig-name descname">get_table_headings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#FileTable.get_table_headings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.FileTable.get_table_headings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.filetable.FileTable.init_table">
+<code class="sig-name descname">init_table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fileindex</span></em>, <em class="sig-param"><span class="n">working_dir_lst</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#FileTable.init_table"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.FileTable.init_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.filetable.FileTable.item_update">
+<code class="sig-name descname">item_update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">par_dict</span></em>, <em class="sig-param"><span class="n">item_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#FileTable.item_update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.FileTable.item_update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.filetable.FileTable.job_table">
+<code class="sig-name descname">job_table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">project</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">recursive</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">columns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">all_columns</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">sort_by</span><span class="o">=</span><span class="default_value">'id'</span></em>, <em class="sig-param"><span class="n">max_colwidth</span><span class="o">=</span><span class="default_value">200</span></em>, <em class="sig-param"><span class="n">full_table</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">job_name_contains</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#FileTable.job_table"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.FileTable.job_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.filetable.FileTable.set_job_status">
+<code class="sig-name descname">set_job_status</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_specifier</span></em>, <em class="sig-param"><span class="n">status</span></em>, <em class="sig-param"><span class="n">project</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#FileTable.set_job_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.FileTable.set_job_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the status of a particular job</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>database</strong> (<a class="reference internal" href="pyiron.base.database.generic.html#pyiron.base.database.generic.DatabaseAccess" title="pyiron.base.database.generic.DatabaseAccess"><em>DatabaseAccess</em></a>) – Database object</p></li>
+<li><p><strong>sql_query</strong> (<em>str</em>) – SQL query to enter a more specific request</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – username of the user whoes user space should be searched</p></li>
+<li><p><strong>project_path</strong> (<em>str</em>) – root_path - this is in contrast to the project_path in GenericPath</p></li>
+<li><p><strong>job_specifier</strong> (<em>str</em>) – name of the job or job ID</p></li>
+<li><p><strong>status</strong> (<em>str</em>) – job status can be one of the following [‘initialized’, ‘appended’, ‘created’, ‘submitted’,
+‘running’, ‘aborted’, ‘collect’, ‘suspended’, ‘refresh’, ‘busy’, ‘finished’]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.base.database.filetable.FileTable.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#FileTable.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.FileTable.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pyiron.base.database.filetable.Singleton">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.base.database.filetable.</code><code class="sig-name descname">Singleton</code><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#Singleton"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.Singleton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></p>
+<p>Implemented with suggestions from</p>
+<p><a class="reference external" href="http://stackoverflow.com/questions/6760685/creating-a-singleton-in-python">http://stackoverflow.com/questions/6760685/creating-a-singleton-in-python</a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.base.database.filetable.filter_function">
+<code class="sig-prename descclassname">pyiron.base.database.filetable.</code><code class="sig-name descname">filter_function</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#filter_function"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.filter_function" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.base.database.filetable.get_hamilton_from_file">
+<code class="sig-prename descclassname">pyiron.base.database.filetable.</code><code class="sig-name descname">get_hamilton_from_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf5_file</span></em>, <em class="sig-param"><span class="n">job_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#get_hamilton_from_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.get_hamilton_from_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.base.database.filetable.get_hamilton_version_from_file">
+<code class="sig-prename descclassname">pyiron.base.database.filetable.</code><code class="sig-name descname">get_hamilton_version_from_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf5_file</span></em>, <em class="sig-param"><span class="n">job_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#get_hamilton_version_from_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.get_hamilton_version_from_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.base.database.filetable.get_job_status_from_file">
+<code class="sig-prename descclassname">pyiron.base.database.filetable.</code><code class="sig-name descname">get_job_status_from_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hdf5_file</span></em>, <em class="sig-param"><span class="n">job_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/base/database/filetable.html#get_job_status_from_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.base.database.filetable.get_job_status_from_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

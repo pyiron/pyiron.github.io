@@ -1,0 +1,568 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyiron.vasp.vasprun module &mdash; pyiron 0.2.17.post.dev166 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/pyiron_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pyiron
+          
+
+          
+            
+            <img src="../_static/pyiron-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/examples.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/software.html">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/commandline.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/citation.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/developers.html">Contributing to pyiron</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pyiron/pyiron/blob/master/LICENSE">License (BSD)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pyiron.readthedocs.io/en/latest/py-modindex.html">Module index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/impressum">Imprint</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.mpie.de/3392182/data-protection">Data protection</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyiron</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>pyiron.vasp.vasprun module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/pyiron.vasp.vasprun.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-pyiron.vasp.vasprun">
+<span id="pyiron-vasp-vasprun-module"></span><h1>pyiron.vasp.vasprun module<a class="headerlink" href="#module-pyiron.vasp.vasprun" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pyiron.vasp.vasprun.Vasprun">
+<em class="property">class </em><code class="sig-prename descclassname">pyiron.vasp.vasprun.</code><code class="sig-name descname">Vasprun</code><a class="reference internal" href="../_modules/pyiron/vasp/vasprun.html#Vasprun"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.vasprun.Vasprun" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This module is used to parse vasprun.xml files and store the data consistent with the pyiron input/output storage
+formats.</p>
+<dl class="py attribute">
+<dt id="pyiron.vasp.vasprun.Vasprun.vasprun_dict">
+<code class="sig-name descname">vasprun_dict</code><a class="headerlink" href="#pyiron.vasp.vasprun.Vasprun.vasprun_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Dictionary containing all information from the calculation parsed from the vasprun.xml</dt><dd><p>file. If you consider a simulation with N atoms and M ionic steps</p>
+</dd>
+</dl>
+<p>‘positions’ (numpy.ndarray): MxNx3 array containing all the relative positions
+‘cell’ (numpy.ndarray): Mx3x3 array containing all the size and shape of cells at every iteration point
+‘forces’ (numpy.ndarray): MxNx3 array containing all the forces in eV/A
+‘total_energies’ (numpy.ndarray): 1xM array containing all the total energies in eV</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.vasprun.Vasprun.from_file">
+<code class="sig-name descname">from_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">'vasprun.xml'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/vasprun.html#Vasprun.from_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.vasprun.Vasprun.from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parsing vasprun.xml from the working directory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – Path to the vasprun file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.vasprun.Vasprun.get_electronic_structure">
+<code class="sig-name descname">get_electronic_structure</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/vasprun.html#Vasprun.get_electronic_structure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.vasprun.Vasprun.get_electronic_structure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get’s the electronic structure from the VASP calculation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The electronic structure object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>pyiron.atomistics.waves.electronic.ElectronicStructure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.vasprun.Vasprun.get_final_structure">
+<code class="sig-name descname">get_final_structure</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/vasprun.html#Vasprun.get_final_structure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.vasprun.Vasprun.get_final_structure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the final structure from the simulation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The final structure</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="pyiron.atomistics.structure.atoms.html#pyiron.atomistics.structure.atoms.Atoms" title="pyiron.atomistics.structure.atoms.Atoms">pyiron.atomistics.structure.atoms.Atoms</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.vasprun.Vasprun.get_initial_structure">
+<code class="sig-name descname">get_initial_structure</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/vasprun.html#Vasprun.get_initial_structure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.vasprun.Vasprun.get_initial_structure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the initial structure from the simulation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The initial structure</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="pyiron.atomistics.structure.atoms.html#pyiron.atomistics.structure.atoms.Atoms" title="pyiron.atomistics.structure.atoms.Atoms">pyiron.atomistics.structure.atoms.Atoms</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.vasprun.Vasprun.parse_atom_information_to_dict">
+<code class="sig-name descname">parse_atom_information_to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em>, <em class="sig-param"><span class="n">d</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/vasprun.html#Vasprun.parse_atom_information_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.vasprun.Vasprun.parse_atom_information_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses atom information from a node to a dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<em>xml.etree.Element instance</em>) – The node to parse</p></li>
+<li><p><strong>d</strong> (<em>dict</em>) – The dictionary to which data is to be parsed</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.vasprun.Vasprun.parse_calc_to_dict">
+<code class="sig-name descname">parse_calc_to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em>, <em class="sig-param"><span class="n">d</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/vasprun.html#Vasprun.parse_calc_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.vasprun.Vasprun.parse_calc_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses ionic step data from a node to a dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<em>xml.etree.Element instance</em>) – The node to parse</p></li>
+<li><p><strong>d</strong> (<em>dict</em>) – The dictionary to which data is to be parsed</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.vasprun.Vasprun.parse_eigenvalues_to_dict">
+<code class="sig-name descname">parse_eigenvalues_to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em>, <em class="sig-param"><span class="n">d</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/vasprun.html#Vasprun.parse_eigenvalues_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.vasprun.Vasprun.parse_eigenvalues_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses eigenvalue and occupancy data from a node to a dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<em>xml.etree.Element instance</em>) – The node to parse</p></li>
+<li><p><strong>d</strong> (<em>dict</em>) – The dictionary to which data is to be parsed</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.vasprun.Vasprun.parse_fermi_level_to_dict">
+<code class="sig-name descname">parse_fermi_level_to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em>, <em class="sig-param"><span class="n">d</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/vasprun.html#Vasprun.parse_fermi_level_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.vasprun.Vasprun.parse_fermi_level_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses fermi level from a node to a dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<em>xml.etree.Element instance</em>) – The node to parse</p></li>
+<li><p><strong>d</strong> (<em>dict</em>) – The dictionary to which data is to be parsed</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.vasprun.Vasprun.parse_item_to_dict">
+<em class="property">static </em><code class="sig-name descname">parse_item_to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em>, <em class="sig-param"><span class="n">d</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/vasprun.html#Vasprun.parse_item_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.vasprun.Vasprun.parse_item_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses values from an item to a dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<em>etree.Element instance</em>) – Node to be parsed</p></li>
+<li><p><strong>d</strong> (<em>dict</em>) – The dictionary to which data is to be parsed</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>d (dictionary)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.vasprun.Vasprun.parse_kpoints_to_dict">
+<code class="sig-name descname">parse_kpoints_to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em>, <em class="sig-param"><span class="n">d</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/vasprun.html#Vasprun.parse_kpoints_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.vasprun.Vasprun.parse_kpoints_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses k-points data from a node to a dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<em>xml.etree.Element instance</em>) – The node to parse</p></li>
+<li><p><strong>d</strong> (<em>dict</em>) – The dictionary to which data is to be parsed</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.vasprun.Vasprun.parse_parameters">
+<code class="sig-name descname">parse_parameters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em>, <em class="sig-param"><span class="n">d</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/vasprun.html#Vasprun.parse_parameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.vasprun.Vasprun.parse_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses parameter data from a node to a dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<em>xml.etree.Element instance</em>) – The node to parse</p></li>
+<li><p><strong>d</strong> (<em>dict</em>) – The dictionary to which data is to be parsed</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.vasprun.Vasprun.parse_partial_dos_to_dict">
+<code class="sig-name descname">parse_partial_dos_to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em>, <em class="sig-param"><span class="n">d</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/vasprun.html#Vasprun.parse_partial_dos_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.vasprun.Vasprun.parse_partial_dos_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses partial dos data from a node to a dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<em>xml.etree.Element instance</em>) – The node to parse</p></li>
+<li><p><strong>d</strong> (<em>dict</em>) – The dictionary to which data is to be parsed</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.vasprun.Vasprun.parse_projected_dos_to_dict">
+<code class="sig-name descname">parse_projected_dos_to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em>, <em class="sig-param"><span class="n">d</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/vasprun.html#Vasprun.parse_projected_dos_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.vasprun.Vasprun.parse_projected_dos_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses partial dos data from a node to a dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<em>xml.etree.Element instance</em>) – The node to parse</p></li>
+<li><p><strong>d</strong> (<em>dict</em>) – The dictionary to which data is to be parsed</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.vasprun.Vasprun.parse_recursively">
+<code class="sig-name descname">parse_recursively</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em>, <em class="sig-param"><span class="n">d</span></em>, <em class="sig-param"><span class="n">key_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/vasprun.html#Vasprun.parse_recursively"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.vasprun.Vasprun.parse_recursively" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses recursively from a node to a dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<em>xml.etree.Element instance</em>) – The node to parse</p></li>
+<li><p><strong>d</strong> (<em>dict</em>) – The dictionary to which data is to be parsed</p></li>
+<li><p><strong>key_name</strong> (<em>str</em>) – Forcefully assign a key name in case it is not present in the xml file</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.vasprun.Vasprun.parse_root_to_dict">
+<code class="sig-name descname">parse_root_to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/vasprun.html#Vasprun.parse_root_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.vasprun.Vasprun.parse_root_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses from the main xml root.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.vasprun.Vasprun.parse_scf">
+<code class="sig-name descname">parse_scf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/vasprun.html#Vasprun.parse_scf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.vasprun.Vasprun.parse_scf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses the total energy and dipole moments for a VASP calculation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>node</strong> – (xml.etree.Element instance): The node to parse</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dictionary to containing parsed data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>d (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.vasprun.Vasprun.parse_structure_to_dict">
+<code class="sig-name descname">parse_structure_to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em>, <em class="sig-param"><span class="n">d</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/vasprun.html#Vasprun.parse_structure_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.vasprun.Vasprun.parse_structure_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses structure from a node to a dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<em>xml.etree.Element instance</em>) – The node to parse</p></li>
+<li><p><strong>d</strong> (<em>dict</em>) – The dictionary to which data is to be parsed</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyiron.vasp.vasprun.Vasprun.parse_total_dos_to_dict">
+<code class="sig-name descname">parse_total_dos_to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em>, <em class="sig-param"><span class="n">d</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/vasprun.html#Vasprun.parse_total_dos_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.vasprun.Vasprun.parse_total_dos_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses total dos data from a node to a dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<em>xml.etree.Element instance</em>) – The node to parse</p></li>
+<li><p><strong>d</strong> (<em>dict</em>) – The dictionary to which data is to be parsed</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pyiron.vasp.vasprun.VasprunError">
+<em class="property">exception </em><code class="sig-prename descclassname">pyiron.vasp.vasprun.</code><code class="sig-name descname">VasprunError</code><a class="reference internal" href="../_modules/pyiron/vasp/vasprun.html#VasprunError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.vasprun.VasprunError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.vasp.vasprun.clean_character">
+<code class="sig-prename descclassname">pyiron.vasp.vasprun.</code><code class="sig-name descname">clean_character</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">remove_char</span><span class="o">=</span><span class="default_value">' '</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/vasprun.html#clean_character"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.vasprun.clean_character" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>str</em>) – String to be cleaned</p></li>
+<li><p><strong>remove_char</strong> (<em>str</em>) – Character to be replaced</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The clean string</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyiron.vasp.vasprun.clean_key">
+<code class="sig-prename descclassname">pyiron.vasp.vasprun.</code><code class="sig-name descname">clean_key</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">remove_char</span><span class="o">=</span><span class="default_value">' '</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyiron/vasp/vasprun.html#clean_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyiron.vasp.vasprun.clean_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replaces blanck spaces from a string for a dictionary key with “_”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>str</em>) – String to be cleaned</p></li>
+<li><p><strong>remove_char</strong> (<em>str</em>) – Character to be replaced</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The clean string</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department All rights reserved
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,6 +1,4 @@
-# Pyiron
-
-![Pyiron logo](images/logo.png "Pyiron logo")
+<img src="images/logo.png" alt="Pyiron logo" width="150px;"/>
 
 This is where we host the landing page for [Pyiron](https://pyiron.org).
 

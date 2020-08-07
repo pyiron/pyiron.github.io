@@ -1,7 +1,7 @@
 # ----
 # Site
 
-title: Hydra Template
+title: Pyiron
 url: "https://proud-alligator.cloudvent.net"
 baseurl:
 google_analytics_key:
@@ -10,15 +10,14 @@ disqus_shortname:
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo: /siteicon.png
-description: Product marketing template for Jekyll.
+description: An interactive development environment (IDE) for computational materials science.
 author:
   name:
   email:
   twitter: # twitter username without the @ symbol
 social:
-  name: Hydra Template
+  name:
   links:
-    - https://github.com/CloudCannon/hydra-jekyll-template
 
 # -----
 # Build

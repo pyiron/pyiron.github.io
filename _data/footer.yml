@@ -5,8 +5,13 @@
     link: /contact/
   - name: Documentation
     link: https://pyiron.readthedocs.io/en/latest/
+- links:
   - name: License
     link: /license
+  - name: Imprint
+    link: https://www.mpie.de/impressum
+  - name: Privacy Policy
+    link: /privacy/
 
 # - links:
 #   - name: Facebook

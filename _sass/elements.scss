@@ -11,6 +11,16 @@ body {
 	font-family: "San Francisco", "Helvetica Neue", "Helvetica", "Arial";
 }
 
+#condaBox {
+	display: none;
+}
+
+@media screen and (min-width: 450px) {
+    #condaBox {
+        display: block;
+    }
+}
+
 code {
 	font-size: 18px;
 	background: rgba(255, 255, 255, 0.8);;

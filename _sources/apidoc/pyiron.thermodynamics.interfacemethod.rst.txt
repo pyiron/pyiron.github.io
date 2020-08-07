@@ -1,7 +1,0 @@
-pyiron.thermodynamics.interfacemethod module
-============================================
-
-.. automodule:: pyiron.thermodynamics.interfacemethod
-   :members:
-   :undoc-members:
-   :show-inheritance:

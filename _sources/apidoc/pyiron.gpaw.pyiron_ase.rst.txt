@@ -1,7 +1,0 @@
-pyiron.gpaw.pyiron\_ase module
-==============================
-
-.. automodule:: pyiron.gpaw.pyiron_ase
-   :members:
-   :undoc-members:
-   :show-inheritance:

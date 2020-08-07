@@ -1,7 +1,0 @@
-pyiron.quickff.quickff module
-=============================
-
-.. automodule:: pyiron.quickff.quickff
-   :members:
-   :undoc-members:
-   :show-inheritance:

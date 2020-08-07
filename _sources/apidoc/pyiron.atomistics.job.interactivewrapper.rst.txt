@@ -1,7 +1,0 @@
-pyiron.atomistics.job.interactivewrapper module
-===============================================
-
-.. automodule:: pyiron.atomistics.job.interactivewrapper
-   :members:
-   :undoc-members:
-   :show-inheritance:

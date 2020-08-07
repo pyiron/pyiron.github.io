@@ -25,7 +25,7 @@ h3 { margin: 20px 0 10px 0; }
 
 p, address { font-size: 1.38em; color: #2b2b40; margin-bottom: 20px; font-weight: 300; line-height: 1.4em; }
 
-.bottom-cta { background: #3776AA; color: #fff; text-align: center; margin: 0; padding: 100px 0; }
+.bottom-cta { background: #37B8FF; color: #fff; text-align: center; margin: 0; padding: 100px 0; }
 
 .bottom-cta h2 { margin-bottom: 50px; }
 
@@ -268,7 +268,7 @@ nav a.active { color: #fff; }
 
 @media (min-width: 450px) { .footer-links li { max-width: 150px; } }
 
-.footer-links li a:hover { text-decoration: none; color: #3776AA; }
+.footer-links li a:hover { text-decoration: none; color: #37B8FF; }
 
 .footer-links li a svg { fill: #999; margin-right: 10px; transition: fill 0.2s ease; vertical-align: middle; position: relative; top: -2px; width: 22px; height: 22px; }
 

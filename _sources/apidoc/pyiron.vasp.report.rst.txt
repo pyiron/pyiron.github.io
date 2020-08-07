@@ -1,7 +1,0 @@
-pyiron.vasp.report module
-=========================
-
-.. automodule:: pyiron.vasp.report
-   :members:
-   :undoc-members:
-   :show-inheritance:

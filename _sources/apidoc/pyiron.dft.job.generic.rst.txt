@@ -1,7 +1,0 @@
-pyiron.dft.job.generic module
-=============================
-
-.. automodule:: pyiron.dft.job.generic
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -1,7 +1,0 @@
-pyiron.sphinx.potential module
-==============================
-
-.. automodule:: pyiron.sphinx.potential
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -1,7 +1,0 @@
-pyiron.thermodynamics.sxphonons module
-======================================
-
-.. automodule:: pyiron.thermodynamics.sxphonons
-   :members:
-   :undoc-members:
-   :show-inheritance:

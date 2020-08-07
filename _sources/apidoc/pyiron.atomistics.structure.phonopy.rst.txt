@@ -1,7 +1,0 @@
-pyiron.atomistics.structure.phonopy module
-==========================================
-
-.. automodule:: pyiron.atomistics.structure.phonopy
-   :members:
-   :undoc-members:
-   :show-inheritance:

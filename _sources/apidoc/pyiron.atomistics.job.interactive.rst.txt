@@ -1,7 +1,0 @@
-pyiron.atomistics.job.interactive module
-========================================
-
-.. automodule:: pyiron.atomistics.job.interactive
-   :members:
-   :undoc-members:
-   :show-inheritance:

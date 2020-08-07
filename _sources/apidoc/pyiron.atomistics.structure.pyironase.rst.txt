@@ -1,7 +1,0 @@
-pyiron.atomistics.structure.pyironase module
-============================================
-
-.. automodule:: pyiron.atomistics.structure.pyironase
-   :members:
-   :undoc-members:
-   :show-inheritance:

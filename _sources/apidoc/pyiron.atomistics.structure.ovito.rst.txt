@@ -1,7 +1,0 @@
-pyiron.atomistics.structure.ovito module
-========================================
-
-.. automodule:: pyiron.atomistics.structure.ovito
-   :members:
-   :undoc-members:
-   :show-inheritance:

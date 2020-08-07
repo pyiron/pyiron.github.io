@@ -1,7 +1,0 @@
-pyiron.testing.executable module
-================================
-
-.. automodule:: pyiron.testing.executable
-   :members:
-   :undoc-members:
-   :show-inheritance:

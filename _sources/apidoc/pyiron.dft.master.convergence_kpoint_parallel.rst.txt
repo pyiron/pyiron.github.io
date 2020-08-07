@@ -1,7 +1,0 @@
-pyiron.dft.master.convergence\_kpoint\_parallel module
-======================================================
-
-.. automodule:: pyiron.dft.master.convergence_kpoint_parallel
-   :members:
-   :undoc-members:
-   :show-inheritance:

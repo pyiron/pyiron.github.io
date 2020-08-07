@@ -1,7 +1,0 @@
-pyiron.atomistics.structure.periodic\_table module
-==================================================
-
-.. automodule:: pyiron.atomistics.structure.periodic_table
-   :members:
-   :undoc-members:
-   :show-inheritance:

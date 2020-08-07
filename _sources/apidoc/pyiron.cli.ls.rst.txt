@@ -1,7 +1,0 @@
-pyiron.cli.ls module
-====================
-
-.. automodule:: pyiron.cli.ls
-   :members:
-   :undoc-members:
-   :show-inheritance:

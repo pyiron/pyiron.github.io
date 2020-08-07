@@ -1,7 +1,0 @@
-pyiron.base.generic.template module
-===================================
-
-.. automodule:: pyiron.base.generic.template
-   :members:
-   :undoc-members:
-   :show-inheritance:

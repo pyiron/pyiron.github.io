@@ -1,7 +1,0 @@
-pyiron.interactive.scipy\_minimizer module
-==========================================
-
-.. automodule:: pyiron.interactive.scipy_minimizer
-   :members:
-   :undoc-members:
-   :show-inheritance:

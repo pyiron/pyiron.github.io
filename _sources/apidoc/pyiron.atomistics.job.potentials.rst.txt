@@ -1,7 +1,0 @@
-pyiron.atomistics.job.potentials module
-=======================================
-
-.. automodule:: pyiron.atomistics.job.potentials
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -4,7 +4,7 @@
   - name: Contact
     link: /contact/
   - name: Documentation
-    link: /docs
+    link: https://pyiron.readthedocs.io/en/latest/
   - name: License
     link: /license
 

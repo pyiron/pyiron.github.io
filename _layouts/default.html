@@ -11,6 +11,16 @@
 		<link rel="stylesheet" href="{{ site.baseurl }}/css/screen.css">
 		<link rel="icon" type="image/png" href="{{ site.baseurl }}/favicon.png">
 
+		<script>
+			function hover(element) {
+				element.setAttribute('src', "{{ site.baseurl }}/images/alt_logo.png");
+				}
+
+			function unhover(element) {
+				element.setAttribute('src', "{{ site.baseurl }}/images/logo.png");
+			}
+		</script>
+
 		{% if jekyll.environment == 'production' and site.google_analytics_key != '' %}
 			<script>
 				window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
@@ -23,7 +33,7 @@
 	<body>
 		<header>
 			<div class="container">
-				<div class="company-name"><a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/images/logo.png" alt="Pyiron Logo" width="190" height="66" /></a></div>
+				<div class="company-name"><a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/images/logo.png" alt="Pyiron Logo" width="190" height="66" onmouseover="hover(this);" onmouseout="unhover(this);"/></a></div>
 				{% include navigation.html %}
 			</div>
 		</header>

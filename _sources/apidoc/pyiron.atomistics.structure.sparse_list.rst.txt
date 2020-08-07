@@ -1,7 +1,0 @@
-pyiron.atomistics.structure.sparse\_list module
-===============================================
-
-.. automodule:: pyiron.atomistics.structure.sparse_list
-   :members:
-   :undoc-members:
-   :show-inheritance:

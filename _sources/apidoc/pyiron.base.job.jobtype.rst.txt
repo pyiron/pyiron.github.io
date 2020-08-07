@@ -1,7 +1,0 @@
-pyiron.base.job.jobtype module
-==============================
-
-.. automodule:: pyiron.base.job.jobtype
-   :members:
-   :undoc-members:
-   :show-inheritance:

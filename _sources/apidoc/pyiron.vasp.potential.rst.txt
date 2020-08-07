@@ -1,7 +1,0 @@
-pyiron.vasp.potential module
-============================
-
-.. automodule:: pyiron.vasp.potential
-   :members:
-   :undoc-members:
-   :show-inheritance:

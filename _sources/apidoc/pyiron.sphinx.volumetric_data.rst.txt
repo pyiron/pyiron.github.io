@@ -1,7 +1,0 @@
-pyiron.sphinx.volumetric\_data module
-=====================================
-
-.. automodule:: pyiron.sphinx.volumetric_data
-   :members:
-   :undoc-members:
-   :show-inheritance:

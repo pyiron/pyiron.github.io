@@ -1,7 +1,0 @@
-pyiron.vasp.metadyn module
-==========================
-
-.. automodule:: pyiron.vasp.metadyn
-   :members:
-   :undoc-members:
-   :show-inheritance:

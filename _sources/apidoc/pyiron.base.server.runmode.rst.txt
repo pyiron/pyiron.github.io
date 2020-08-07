@@ -1,7 +1,0 @@
-pyiron.base.server.runmode module
-=================================
-
-.. automodule:: pyiron.base.server.runmode
-   :members:
-   :undoc-members:
-   :show-inheritance:

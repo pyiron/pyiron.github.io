@@ -1,7 +1,0 @@
-pyiron.yaff.yaff module
-=======================
-
-.. automodule:: pyiron.yaff.yaff
-   :members:
-   :undoc-members:
-   :show-inheritance:

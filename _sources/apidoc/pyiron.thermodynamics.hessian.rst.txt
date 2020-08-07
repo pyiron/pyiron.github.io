@@ -1,7 +1,0 @@
-pyiron.thermodynamics.hessian module
-====================================
-
-.. automodule:: pyiron.thermodynamics.hessian
-   :members:
-   :undoc-members:
-   :show-inheritance:

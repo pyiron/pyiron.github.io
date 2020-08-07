@@ -1,7 +1,0 @@
-pyiron.project module
-=====================
-
-.. automodule:: pyiron.project
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -1,7 +1,0 @@
-pyiron.base.master.serial module
-================================
-
-.. automodule:: pyiron.base.master.serial
-   :members:
-   :undoc-members:
-   :show-inheritance:

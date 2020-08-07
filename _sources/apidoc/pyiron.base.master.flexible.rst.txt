@@ -1,7 +1,0 @@
-pyiron.base.master.flexible module
-==================================
-
-.. automodule:: pyiron.base.master.flexible
-   :members:
-   :undoc-members:
-   :show-inheritance:

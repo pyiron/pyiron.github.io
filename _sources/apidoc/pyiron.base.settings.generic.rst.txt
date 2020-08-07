@@ -1,7 +1,0 @@
-pyiron.base.settings.generic module
-===================================
-
-.. automodule:: pyiron.base.settings.generic
-   :members:
-   :undoc-members:
-   :show-inheritance:

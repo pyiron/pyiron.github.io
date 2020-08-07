@@ -1,7 +1,0 @@
-pyiron.gaussian.gaussian module
-===============================
-
-.. automodule:: pyiron.gaussian.gaussian
-   :members:
-   :undoc-members:
-   :show-inheritance:

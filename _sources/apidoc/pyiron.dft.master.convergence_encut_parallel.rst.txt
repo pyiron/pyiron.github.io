@@ -1,7 +1,0 @@
-pyiron.dft.master.convergence\_encut\_parallel module
-=====================================================
-
-.. automodule:: pyiron.dft.master.convergence_encut_parallel
-   :members:
-   :undoc-members:
-   :show-inheritance:

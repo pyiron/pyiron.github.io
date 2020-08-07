@@ -1,7 +1,0 @@
-pyiron.vasp.vaspsol module
-==========================
-
-.. automodule:: pyiron.vasp.vaspsol
-   :members:
-   :undoc-members:
-   :show-inheritance:

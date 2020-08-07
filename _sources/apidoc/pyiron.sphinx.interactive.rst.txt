@@ -1,7 +1,0 @@
-pyiron.sphinx.interactive module
-================================
-
-.. automodule:: pyiron.sphinx.interactive
-   :members:
-   :undoc-members:
-   :show-inheritance:

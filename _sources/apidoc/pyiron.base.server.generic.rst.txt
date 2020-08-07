@@ -1,7 +1,0 @@
-pyiron.base.server.generic module
-=================================
-
-.. automodule:: pyiron.base.server.generic
-   :members:
-   :undoc-members:
-   :show-inheritance:

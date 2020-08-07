@@ -1,7 +1,0 @@
-pyiron.base.pyio.parser module
-==============================
-
-.. automodule:: pyiron.base.pyio.parser
-   :members:
-   :undoc-members:
-   :show-inheritance:

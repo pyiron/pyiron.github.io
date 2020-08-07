@@ -1,7 +1,0 @@
-pyiron.dft.waves.dos module
-===========================
-
-.. automodule:: pyiron.dft.waves.dos
-   :members:
-   :undoc-members:
-   :show-inheritance:

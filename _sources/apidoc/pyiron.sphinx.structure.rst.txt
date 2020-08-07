@@ -1,7 +1,0 @@
-pyiron.sphinx.structure module
-==============================
-
-.. automodule:: pyiron.sphinx.structure
-   :members:
-   :undoc-members:
-   :show-inheritance:

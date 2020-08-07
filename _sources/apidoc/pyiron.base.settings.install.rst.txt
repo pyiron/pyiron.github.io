@@ -1,7 +1,0 @@
-pyiron.base.settings.install module
-===================================
-
-.. automodule:: pyiron.base.settings.install
-   :members:
-   :undoc-members:
-   :show-inheritance:

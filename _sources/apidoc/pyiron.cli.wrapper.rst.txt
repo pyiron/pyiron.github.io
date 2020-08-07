@@ -1,7 +1,0 @@
-pyiron.cli.wrapper module
-=========================
-
-.. automodule:: pyiron.cli.wrapper
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -1,7 +1,0 @@
-pyiron.atomistics.structure.pyscal module
-=========================================
-
-.. automodule:: pyiron.atomistics.structure.pyscal
-   :members:
-   :undoc-members:
-   :show-inheritance:

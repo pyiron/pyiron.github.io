@@ -1,7 +1,0 @@
-pyiron.gpaw.gpaw module
-=======================
-
-.. automodule:: pyiron.gpaw.gpaw
-   :members:
-   :undoc-members:
-   :show-inheritance:

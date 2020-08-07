@@ -1,7 +1,0 @@
-pyiron.base.generic.util module
-===============================
-
-.. automodule:: pyiron.base.generic.util
-   :members:
-   :undoc-members:
-   :show-inheritance:

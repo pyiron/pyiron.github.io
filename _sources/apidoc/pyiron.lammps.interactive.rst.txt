@@ -1,7 +1,0 @@
-pyiron.lammps.interactive module
-================================
-
-.. automodule:: pyiron.lammps.interactive
-   :members:
-   :undoc-members:
-   :show-inheritance:

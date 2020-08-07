@@ -1,7 +1,0 @@
-pyiron.base.generic.jedi module
-===============================
-
-.. automodule:: pyiron.base.generic.jedi
-   :members:
-   :undoc-members:
-   :show-inheritance:

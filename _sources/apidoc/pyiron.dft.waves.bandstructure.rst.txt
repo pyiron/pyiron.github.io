@@ -1,7 +1,0 @@
-pyiron.dft.waves.bandstructure module
-=====================================
-
-.. automodule:: pyiron.dft.waves.bandstructure
-   :members:
-   :undoc-members:
-   :show-inheritance:

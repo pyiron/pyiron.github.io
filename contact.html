@@ -37,7 +37,7 @@ map:
 		<address><a target="_blank" href="https://www.google.com/maps/place/{{ page.map.address | url_encode }}">{{ page.map.address | replace: ", ", ", <br>" }}</a></address>
 
 		<h3 class="editable">Email</h3>
-		<p><a href="mailto:pyiron@mpie.de">pyiron@mpie.de</a></p>
+		<p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
 	</div>
 </div>
 

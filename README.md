@@ -56,6 +56,12 @@ Right now there are only two files to download directly from the site:
 - `LICENSE`: The BSD License for pyiron
 - `images/qr-code.png`: a QR code that sends you to the homepage.
 
-### Google analytics (not set up)
+## Future features (not set up)
+### Google analytics
 If we ever want to set up google analytics, just add the key to the `_config.yml` file. That's all you should have to do, and it will be added
 to each page individually. However, we would also have to include some notice of this cookie usage in our privacy statement.
+
+### Blog posts
+To add a blog post, just create a .md file under `_posts/` based on the examples that are already in there. I think the filename is
+important because that's how jekyll orders the posts, so it should have the format "YYYY-MM-DD-name-of-post.md". Then just make sure we
+link to the blog somewhere on the site (the posts are listed chronologically at the url "/blog").

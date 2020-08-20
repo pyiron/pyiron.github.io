@@ -12,7 +12,10 @@ As with most jekyll sites, very general changes can be made directly in the `_co
 customize very much in this file, and only the site.title, site.email, and site.description have been customized in this file for pyiron.
 
 ## Running the test (local) server
+Make sure you have Ruby and Bundler installed.
 ```bash
+git clone https://github.com/pyiron/pyiron.github.io.git
+cd pyiron.github.io
 bundle install  # you only ever have to do this once
 bundle exec jekyll serve
 ```

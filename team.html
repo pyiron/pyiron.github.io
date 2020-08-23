@@ -1,20 +1,57 @@
 ---
 title: Team
-description: Meet Pyiron's ever-growing team of amazing developers and collaborators.
+description: Meet Pyiron's always-growing team of amazing developers and collaborators.
 ---
 <p class="editor-link" style="text-align: center;"><a href="cloudcannon:collections/_staff_members/" class="btn"><strong>&#9998;</strong> Manage Staff members</a></p>
 <p style="text-align: center;">
 	Interested in contributing to Pyiron? <a href="/contact">Contact us</a>
-	or open an <a href="https://github.com/pyiron/pyiron/issues">issue</a>
-	/<a href="https://github.com/pyiron/pyiron/pulls">pull request</a> on
+	or open an <a href="https://github.com/pyiron/pyiron/issues">issue</a>/
+	<a href="https://github.com/pyiron/pyiron/pulls">pull request</a> on
 	the Github page.
 </p>
 <ul class="staff">
 	{% for person in site.staff_members %}
-		<li>
-			<div class="square-image"><img src="{% include relative-src.html src=person.image_path %}" alt="{{ person.name }}"/></div>
-			<div class="name"><a target="_blank" href="{{ person.link }}">{{ person.name }}</a></div>
-			<div class="position">{{ person.position }}</div>
-		</li>
+		<script>console.log({{person.position}})</script>
+		{% if person.position == "Lead Developer"
+		or person.position == "Project Lead"
+		or person.position == "Core Developer" %}
+			<li>
+				<div class="square-image"><img src="{% include relative-src.html src=person.image_path %}" alt="{{ person.name }}"/></div>
+				<div class="name">{{ person.name }}</div>
+				<div class="info">{{ person.position }}</div>
+				<div class="links">
+					{% if person.links.professional %}
+						<a target="_blank" href="{{ person.links.professional }}"><i class="fa fa-user"></i></a>
+					{% endif %}
+					{% if person.links.github %}
+						{% if person.links.professional %}
+							<i> | </i>
+						{% endif %}
+						<a target="_blank" href="https://github.com/{{ person.links.github }}"><i class="fab fa-github-alt"></i></a>
+					{% endif %}
+				</div>
+			</li>
+		{% endif %}
+	{% endfor %}
+</ul>
+<ul class="staff">
+	{% for person in site.staff_members %}
+		{% if person.position == "Developer" %}
+			<li>
+				<div class="name">{{ person.name }}</div>
+				<div class="info">{{ person.position }}</div>
+				<div class="links">
+					{% if person.links.professional %}
+						<a target="_blank" href="{{ person.links.professional }}"><i class="fa fa-user"></i></a>
+					{% endif %}
+					{% if person.links.github %}
+						{% if person.links.professional %}
+							<i> | </i>
+						{% endif %}
+						<a target="_blank" href="https://github.com/{{ person.links.github }}"><i class="fab fa-github-alt"></i></a>
+					{% endif %}
+				</div>
+			</li>
+		{% endif %}
 	{% endfor %}
 </ul>

@@ -84,7 +84,9 @@
 			
 				<p class="subtext">Meet Pyiron's always-growing team of amazing developers and collaborators.</p>
 			
-			<p class="editor-link" style="text-align: center;"><a href="cloudcannon:collections/_staff_members/" class="btn"><strong>&#9998;</strong> Manage Staff members</a></p>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<p class="editor-link" style="text-align: center;"><a href="cloudcannon:collections/_staff_members/" class="btn"><strong>&#9998;</strong> Manage Staff members</a></p>
 <p style="text-align: center;">
 	Interested in contributing to Pyiron? <a href="/contact">Contact us</a>
 	or open an <a href="https://github.com/pyiron/pyiron/issues">issue</a>/
@@ -100,6 +102,9 @@
 		
 	
 		<script>console.log(Developer)</script>
+		
+	
+		<script>console.log()</script>
 		
 	
 		<script>console.log(Lead Developer)</script>
@@ -226,153 +231,32 @@
 		
 	
 </ul>
-<ul class="staff">
-	
-		
-			<li>
-				<div class="name">Ahmed Aslam</div>
-				<div class="info">Developer</div>
-				<div class="links">
-					
-					
-						
-						<a target="_blank" href="https://github.com/Ahmed-Aslam"><i class="fab fa-github-alt"></i></a>
-					
-				</div>
-			</li>
-		
-	
-		
-			<li>
-				<div class="name">Alaukik Saxena</div>
-				<div class="info">Developer</div>
-				<div class="links">
-					
-					
-						
-						<a target="_blank" href="https://github.com/Alaukiksaxena"><i class="fab fa-github-alt"></i></a>
-					
-				</div>
-			</li>
-		
-	
-		
-			<li>
-				<div class="name">Felix Lochner</div>
-				<div class="info">Developer</div>
-				<div class="links">
-					
-						<a target="_blank" href="https://www.mpie.de/person/51758"><i class="fa fa-user"></i></a>
-					
-					
-						
-							<i> | </i>
-						
-						<a target="_blank" href="https://github.com/FeLoch"><i class="fab fa-github-alt"></i></a>
-					
-				</div>
-			</li>
-		
-	
-		
-	
-		
-	
-		
-	
-		
-			<li>
-				<div class="name">Marvin Poul</div>
-				<div class="info">Developer</div>
-				<div class="links">
-					
-					
-						
-						<a target="_blank" href="https://github.com/pmrv"><i class="fab fa-github-alt"></i></a>
-					
-				</div>
-			</li>
-		
-	
-		
-			<li>
-				<div class="name">Michael Ashton</div>
-				<div class="info">Developer</div>
-				<div class="links">
-					
-						<a target="_blank" href="https://www.mpie.de/person/59395"><i class="fa fa-user"></i></a>
-					
-					
-						
-							<i> | </i>
-						
-						<a target="_blank" href="https://github.com/ashtonmv"><i class="fab fa-github-alt"></i></a>
-					
-				</div>
-			</li>
-		
-	
-		
-	
-		
-			<li>
-				<div class="name">Raynol Dsouza</div>
-				<div class="info">Developer</div>
-				<div class="links">
-					
-					
-						
-						<a target="_blank" href="https://github.com/raynol-dsouza"><i class="fab fa-github-alt"></i></a>
-					
-				</div>
-			</li>
-		
-	
-		
-			<li>
-				<div class="name">Sander Borgmans</div>
-				<div class="info">Developer</div>
-				<div class="links">
-					
-					
-						
-						<a target="_blank" href="https://github.com/SanderBorgmans"><i class="fab fa-github-alt"></i></a>
-					
-				</div>
-			</li>
-		
-	
-		
-			<li>
-				<div class="name">Sarath Menon</div>
-				<div class="info">Developer</div>
-				<div class="links">
-					
-					
-						
-						<a target="_blank" href="https://github.com/srmnitc"><i class="fab fa-github-alt"></i></a>
-					
-				</div>
-			</li>
-		
-	
-		
-	
-		
-			<li>
-				<div class="name">Uday Gajera</div>
-				<div class="info">Developer</div>
-				<div class="links">
-					
-					
-						
-						<a target="_blank" href="https://github.com/uday-gajera"><i class="fab fa-github-alt"></i></a>
-					
-				</div>
-			</li>
-		
-	
-</ul>
+<hr>
+<h2 style="padding-top: 40px;"><i class="fa fa-github-alt"></i></h2>
+<ul class="staff" id="githubContributors"></ul>
+
+<script>
+	var query = {
+		"url": "https://api.github.com/repos/pyiron/pyiron/contributors",
+		"method": "GET",
+		"timeout": 0,
+	};
+
+	$.ajax(query).done(function (response) {
+		for (var i=0; i < response.length; i++) {
+			var username = response[i].login;
+			var bots = ['pyironlandingpage', 'codacy-badger', 'IceflowRE'];
+			if (!(jQuery.inArray(username, bots) > -1)) {
+				var image_url = response[i].avatar_url;
+				$("#githubContributors").append($('<li>', {id: username}));
+				$("#"+username).append($('<a>', {id: username+'Link', href:'https://github.com/pyiron/pyiron'}));
+				$("#"+username+"Link").append($('<div>', {class:'name', html: username}));
+				$("#"+username+"Link").append($('<img>', {id: username+"Img", class:'small-image', src: image_url}));
+				$("#"+username).append($('<div>', {class:'info', html: response[i].contributions+" commits"}));
+			};
+		};
+	});
+</script>
 		</div>
 	</section>
 </div>

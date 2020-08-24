@@ -2,6 +2,8 @@
 title: Team
 description: Meet Pyiron's always-growing team of amazing developers and collaborators.
 ---
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 <p class="editor-link" style="text-align: center;"><a href="cloudcannon:collections/_staff_members/" class="btn"><strong>&#9998;</strong> Manage Staff members</a></p>
 <p style="text-align: center;">
 	Interested in contributing to Pyiron? <a href="/contact">Contact us</a>
@@ -34,24 +36,29 @@ description: Meet Pyiron's always-growing team of amazing developers and collabo
 		{% endif %}
 	{% endfor %}
 </ul>
-<ul class="staff">
-	{% for person in site.staff_members %}
-		{% if person.position == "Developer" %}
-			<li>
-				<div class="name">{{ person.name }}</div>
-				<div class="info">{{ person.position }}</div>
-				<div class="links">
-					{% if person.links.professional %}
-						<a target="_blank" href="{{ person.links.professional }}"><i class="fa fa-user"></i></a>
-					{% endif %}
-					{% if person.links.github %}
-						{% if person.links.professional %}
-							<i> | </i>
-						{% endif %}
-						<a target="_blank" href="https://github.com/{{ person.links.github }}"><i class="fab fa-github-alt"></i></a>
-					{% endif %}
-				</div>
-			</li>
-		{% endif %}
-	{% endfor %}
-</ul>
+<hr>
+<h2 style="padding-top: 40px;"><i class="fa fa-github-alt"></i></h2>
+<ul class="staff" id="githubContributors"></ul>
+
+<script>
+	var query = {
+		"url": "https://api.github.com/repos/pyiron/pyiron/contributors",
+		"method": "GET",
+		"timeout": 0,
+	};
+
+	$.ajax(query).done(function (response) {
+		for (var i=0; i < response.length; i++) {
+			var username = response[i].login;
+			var bots = ['pyironlandingpage', 'codacy-badger', 'IceflowRE'];
+			if (!(jQuery.inArray(username, bots) > -1)) {
+				var image_url = response[i].avatar_url;
+				$("#githubContributors").append($('<li>', {id: username}));
+				$("#"+username).append($('<a>', {id: username+'Link', href:'https://github.com/pyiron/pyiron'}));
+				$("#"+username+"Link").append($('<div>', {class:'name', html: username}));
+				$("#"+username+"Link").append($('<img>', {id: username+"Img", class:'small-image', src: image_url}));
+				$("#"+username).append($('<div>', {class:'info', html: response[i].contributions+" commits"}));
+			};
+		};
+	});
+</script>

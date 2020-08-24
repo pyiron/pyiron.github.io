@@ -15,7 +15,7 @@ code { font-size: 18px; background: rgba(255, 255, 255, 0.8); color: #2b2b40; pa
 
 a { color: #37B8FF; text-decoration: none; }
 
-a:hover { text-decoration: underline; }
+a:hover { text-decoration: none; }
 
 img { width: 100%; }
 
@@ -96,6 +96,10 @@ blockquote:before { color: #ccc; content: open-quote; font-size: 4em; line-heigh
 
 .square-image img { position: absolute; left: -1000%; right: -1000%; top: -1000%; bottom: -1000%; margin: auto; width: 300px; }
 
+.small-image { width: 80px; height: 80px; overflow: hidden; margin: 25px auto 0 auto; position: relative; border-radius: 200px; }
+
+.small-image img { position: absolute; left: -1000%; right: -1000%; top: -1000%; bottom: -1000%; margin: auto; width: 80px; }
+
 .page { margin-bottom: 0; padding-bottom: 80px; }
 
 .center-text { text-align: center; }
@@ -143,6 +147,10 @@ blockquote:before { color: #ccc; content: open-quote; font-size: 4em; line-heigh
 .staff .square-image { width: 200px; height: 200px; }
 
 .staff .square-image img { border-radius: 200px; }
+
+.staff .small-image { width: 80px; height: 80px; }
+
+.staff .small-image img { border-radius: 80px; }
 
 .staff .name { font-size: 1.3em; margin-top: 20px; }
 

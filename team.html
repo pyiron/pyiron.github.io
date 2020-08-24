@@ -53,7 +53,7 @@ description: Meet Pyiron's always-growing team of amazing developers and collabo
 			var bots = ['pyironlandingpage', 'codacy-badger', 'IceflowRE'];
 			if (!(jQuery.inArray(username, bots) > -1)) {
 				$("#githubContributors").append($('<li>', {id: username}));
-				$("#"+username).append($('<a>', {id: username+'Link', href:response[i].url}));
+				$("#"+username).append($('<a>', {id: username+'Link', href:response[i].html_url}));
 				$("#"+username+"Link").append($('<div>', {class:'name', html: username}));
 				$("#"+username+"Link").append($('<img>', {id: username+"Img", class:'small-image', src: response[i].avatar_url}));
 				$("#"+username).append($('<div>', {class:'info', html: response[i].contributions+" commits"}));

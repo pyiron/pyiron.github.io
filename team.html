@@ -47,18 +47,18 @@ description: Meet Pyiron's always-growing team of amazing developers and collabo
 		"timeout": 0,
 	};
 
-	$.ajax(query).done(function (response) {
+	$.ajax(query).success(function (response) {
 		for (var i=0; i < response.length; i++) {
 			var username = response[i].login;
 			var bots = ['pyironlandingpage', 'codacy-badger', 'IceflowRE'];
 			if (!(jQuery.inArray(username, bots) > -1)) {
-				var image_url = response[i].avatar_url;
 				$("#githubContributors").append($('<li>', {id: username}));
-				$("#"+username).append($('<a>', {id: username+'Link', href:'https://github.com/pyiron/pyiron'}));
+				$("#"+username).append($('<a>', {id: username+'Link', href:response[i].url}));
 				$("#"+username+"Link").append($('<div>', {class:'name', html: username}));
-				$("#"+username+"Link").append($('<img>', {id: username+"Img", class:'small-image', src: image_url}));
+				$("#"+username+"Link").append($('<img>', {id: username+"Img", class:'small-image', src: response[i].avatar_url}));
 				$("#"+username).append($('<div>', {class:'info', html: response[i].contributions+" commits"}));
 			};
 		};
 	});
+
 </script>

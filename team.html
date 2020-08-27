@@ -13,7 +13,6 @@ description: Meet Pyiron's always-growing team of amazing developers and collabo
 </p>
 <ul class="staff">
 	{% for person in site.staff_members %}
-		<script>console.log({{person.position}})</script>
 		{% if person.position == "Lead Developer"
 		or person.position == "Project Lead"
 		or person.position == "Core Developer" %}
@@ -50,8 +49,12 @@ description: Meet Pyiron's always-growing team of amazing developers and collabo
 	$.ajax(query).success(function (response) {
 		for (var i=0; i < response.length; i++) {
 			var username = response[i].login;
-			var bots = ['pyironlandingpage', 'codacy-badger', 'IceflowRE'];
-			if (!(jQuery.inArray(username, bots) > -1)) {
+			var excluded = [
+				'pyironlandingpage', 'codacy-badger', 'IceflowRE',
+				'jan-janssen', 'sudarsan-surendralal', 'samwaseda',
+				'liamhuber', 'JNmpi'
+				];
+			if (!(jQuery.inArray(username, excluded) > -1)) {
 				$("#githubContributors").append($('<li>', {id: username}));
 				$("#"+username).append($('<a>', {id: username+'Link', href:response[i].html_url}));
 				$("#"+username+"Link").append($('<div>', {class:'name', html: username}));

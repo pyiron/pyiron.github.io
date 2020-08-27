@@ -70,17 +70,21 @@ description: Optimized protocols and data management for high-powered research
 		</div>
 	</section>
 
-	<!-- <section class="testimonial">
-		<div class="container flex">
-			<div class="testimonial-block">
-				<div class="square-image"><img src="https://source.unsplash.com/6anudmpILw4/600x400" alt="Jim James" class="editable"></div>
-				<blockquote>
-					<p class="editable">Hydra has shaped the business we have today. We have a repeatable sales process and a strategy to scale our team. I recommend Hydra to any business looking to improve their sales.</p>
-					<p class="editable author">Jim James - CEO of Global Corp.</p>
-				</blockquote>
-			</div>
+	<section class="testimonial">
+		<h2>Affiliated Projects</h2>
+		<div class="projects">
+			{% for collaborator in site.affiliated_projects %}
+				<div class="collaborator-block">
+					<a href="{{ collaborator.link }}">
+						<div class="square-image" style="background-color: {{ collaborator.background-color }};">
+							<img src="{{ collaborator.image_path }}" alt="{{ collaborator.name }}" class="editable">
+						<h2>{{ collaborator.name }}</h2>
+						</div>
+					</a>
+				</div>
+			{% endfor %}
 		</div>
-	</section> -->
+	</section>
 
 	<section class="bottom-cta">
 		<h2 class="editable">Supercharge your research with <strong>reproducibility</strong>.</h2>

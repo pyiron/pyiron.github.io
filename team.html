@@ -13,7 +13,7 @@ description: Meet Pyiron's always-growing team of amazing developers and collabo
 </p>
 <ul class="developers">
 	{% for person in site.core_developers %}
-		<li id="{{ person.links.github }}Core">
+		<li id="{{ person.links.github }}">
 			<div class="square-image"><img src="{% include relative-src.html src=person.image_path %}" alt="{{ person.name }}"/></div>
 			<div class="name">{{ person.name }}</div>
 			<div class="info">{{ person.position }}</div>
@@ -32,7 +32,9 @@ description: Meet Pyiron's always-growing team of amazing developers and collabo
 	{% endfor %}
 </ul>
 <hr>
-
+{% for bot in site.github_bots %}
+	<i class="bot" id="{{ bot }}"></i>
+{% endfor %}
 <h2 style="padding-top: 40px;"><i class="fa fa-github-alt"></i></h2>
 <ul class="developers" id="githubContributors"></ul>
 
@@ -46,8 +48,7 @@ description: Meet Pyiron's always-growing team of amazing developers and collabo
 	$.ajax(query).success(function (response) {
 		for (var i=0; i < response.length; i++) {
 			var username = response[i].login;
-			var bots = ['pyironlandingpage', 'codacy-badger', 'IceflowRE'];
-			if (!(jQuery.inArray(username, bots) > -1) && ($("#"+username+"Core").length == 0)) {
+			if ($("#"+username).length == 0) {
 				$("#githubContributors").append($('<li>', {id: username}));
 				$("#"+username).append($('<a>', {id: username+'Link', href:response[i].html_url}));
 				$("#"+username+"Link").append($('<div>', {class:'name', html: username}));

@@ -11,33 +11,30 @@ description: Meet Pyiron's always-growing team of amazing developers and collabo
 	<a href="https://github.com/pyiron/pyiron/pulls">pull request</a> on
 	the Github page.
 </p>
-<ul class="staff">
-	{% for person in site.staff_members %}
-		{% if person.position == "Lead Developer"
-		or person.position == "Project Lead"
-		or person.position == "Core Developer" %}
-			<li>
-				<div class="square-image"><img src="{% include relative-src.html src=person.image_path %}" alt="{{ person.name }}"/></div>
-				<div class="name">{{ person.name }}</div>
-				<div class="info">{{ person.position }}</div>
-				<div class="links">
+<ul class="developers">
+	{% for person in site.core_developers %}
+		<li id="{{ person.links.github }}Core">
+			<div class="square-image"><img src="{% include relative-src.html src=person.image_path %}" alt="{{ person.name }}"/></div>
+			<div class="name">{{ person.name }}</div>
+			<div class="info">{{ person.position }}</div>
+			<div class="links">
+				{% if person.links.professional %}
+					<a target="_blank" href="{{ person.links.professional }}"><i class="fa fa-user"></i></a>
+				{% endif %}
+				{% if person.links.github %}
 					{% if person.links.professional %}
-						<a target="_blank" href="{{ person.links.professional }}"><i class="fa fa-user"></i></a>
+						<i> | </i>
 					{% endif %}
-					{% if person.links.github %}
-						{% if person.links.professional %}
-							<i> | </i>
-						{% endif %}
-						<a target="_blank" href="https://github.com/{{ person.links.github }}"><i class="fab fa-github-alt"></i></a>
-					{% endif %}
-				</div>
-			</li>
-		{% endif %}
+					<a target="_blank" href="https://github.com/{{ person.links.github }}"><i class="fab fa-github-alt"></i></a>
+				{% endif %}
+			</div>
+		</li>
 	{% endfor %}
 </ul>
 <hr>
+
 <h2 style="padding-top: 40px;"><i class="fa fa-github-alt"></i></h2>
-<ul class="staff" id="githubContributors"></ul>
+<ul class="developers" id="githubContributors"></ul>
 
 <script>
 	var query = {
@@ -49,12 +46,8 @@ description: Meet Pyiron's always-growing team of amazing developers and collabo
 	$.ajax(query).success(function (response) {
 		for (var i=0; i < response.length; i++) {
 			var username = response[i].login;
-			var excluded = [
-				'pyironlandingpage', 'codacy-badger', 'IceflowRE',
-				'jan-janssen', 'sudarsan-surendralal', 'samwaseda',
-				'liamhuber', 'JNmpi'
-				];
-			if (!(jQuery.inArray(username, excluded) > -1)) {
+			var bots = ['pyironlandingpage', 'codacy-badger', 'IceflowRE'];
+			if (!(jQuery.inArray(username, bots) > -1) && ($("#"+username+"Core").length == 0)) {
 				$("#githubContributors").append($('<li>', {id: username}));
 				$("#"+username).append($('<a>', {id: username+'Link', href:response[i].html_url}));
 				$("#"+username+"Link").append($('<div>', {class:'name', html: username}));

@@ -25,7 +25,7 @@ social:
 timezone: Etc/UTC
 
 collections:
-  staff_members:
+  core_developers:
     _hide_content: true
 
 paginate: 10
@@ -46,7 +46,7 @@ defaults:
   -
     scope:
       path: ""
-      type: "staff_members"
+      type: "core_developers"
     values:
       _options:
         image_path:

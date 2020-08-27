@@ -28,6 +28,8 @@ collections:
   core_developers:
     _hide_content: true
 
+# Github usernames that will be excluded
+# from the Team page (see team.html)
 github_bots:
   - "pyironlandingpage"
   - "codacy-badger"

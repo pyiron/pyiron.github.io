@@ -32,9 +32,12 @@ description: Meet Pyiron's always-growing team of amazing developers and collabo
 	{% endfor %}
 </ul>
 <hr>
+
+<!-- Add (invisible) bot accounts to the page so jquery can find them (below) -->
 {% for bot in site.github_bots %}
 	<i class="bot" id="{{ bot }}"></i>
 {% endfor %}
+
 <h2 style="padding-top: 40px;"><i class="fa fa-github-alt"></i></h2>
 <ul class="developers" id="githubContributors"></ul>
 
@@ -48,6 +51,10 @@ description: Meet Pyiron's always-growing team of amazing developers and collabo
 	$.ajax(query).success(function (response) {
 		for (var i=0; i < response.length; i++) {
 			var username = response[i].login;
+			// We don't want to list core developers or bots here,
+			// which we already have on the page.
+			// So we exclude both of those account types with this
+			// if statement.
 			if ($("#"+username).length == 0) {
 				$("#githubContributors").append($('<li>', {id: username}));
 				$("#"+username).append($('<a>', {id: username+'Link', href:response[i].html_url}));

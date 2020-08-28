@@ -6,6 +6,10 @@
   link: /team/
   new_window: false
   highlight: false
+- name: Collaborators
+  link: /partners/
+  new_window: false
+  highlight: false
 - name: Contact
   link: /contact/
   new_window: false

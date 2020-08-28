@@ -1,0 +1,19 @@
+---
+title: Collaborators
+description: Meet the continously growing group of pyiron users.
+---
+<p class="editor-link" style="text-align: center;"><a href="cloudcannon:collections/_collaborators/" class="btn"><strong>&#9998;</strong> Manage Collaborators</a></p>
+<p style="text-align: center;">
+	Interested to test pyiron yourself? <a href="/trial">Try it on Mybinder</a>
+	or install it via <a href="https://anaconda.org/conda-forge/pyiron">conda</a>
+	/<a href="https://github.com/pyiron/pyiron">Github</a>.
+</p>
+<ul class="staff">
+	{% for institute in site.collaborators %}
+		<li>
+			<div class="square-image"><img src="{% include relative-src.html src=institute.image_path %}" alt="{{ institute.name }}"/></div>
+			<div class="name"><a target="_blank" href="{{ institute.link }}">{{ institute.name }}</a></div>
+			<div class="location">{{ institute.location }}</div>
+		</li>
+	{% endfor %}
+</ul>

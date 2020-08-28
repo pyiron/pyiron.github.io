@@ -122,6 +122,26 @@ blockquote:before {
 	vertical-align: -0.4em;
 }
 
+.collaborator-image {
+	width: 200px;
+	height: 200px;
+	margin: 25px auto 0 auto;
+	position: relative;
+	border-radius: 0px;
+	padding-bottom: 75px;
+
+	img {
+		position: absolute;
+		left: -1000%;
+		right: -1000%;
+		top: -1000%;
+		bottom: -1000%;
+		margin: auto;
+		max-height: 300px;
+		width: 200px;
+	}
+}
+
 .square-image {
 	width: 150px;
 	height: 150px;

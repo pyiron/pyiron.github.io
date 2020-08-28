@@ -7,7 +7,7 @@
   new_window: false
   highlight: false
 - name: Collaborators
-  link: /partners/
+  link: /collaborators/
   new_window: false
   highlight: false
 - name: Contact
@@ -19,6 +19,6 @@
   new_window: false
   highlight: false
 - name: Try Pyiron
-  link: /trial
+  link: /try-pyiron
   new_window: false
   highlight: false

@@ -1,6 +1,6 @@
 ---
 title: Team
-description: Meet pyiron's always-growing team of amazing developers and collaborators.
+description: Meet pyiron's growing team of amazing developers and collaborators.
 ---
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
@@ -31,14 +31,25 @@ description: Meet pyiron's always-growing team of amazing developers and collabo
 		</li>
 	{% endfor %}
 </ul>
-<hr>
+
+<h2>Steering Committee</h2>
+<ul class="developers">
+	{% for member in site.steering_committee %}
+		<li>
+			<div class="name">{{ member.name }} ({{ member.institution }})</div>
+		</li>
+	{% endfor %}
+</ul>
 
 <!-- Add (invisible) bot accounts to the page so jquery can find them (below) -->
 {% for bot in site.github_bots %}
 	<i class="bot" id="{{ bot }}"></i>
 {% endfor %}
 
+<hr>
 <h2 style="padding-top: 40px;"><i class="fa fa-github-alt"></i></h2>
+<h2 style="position: relative; top: -20px;">Github Contributors</h2>
+
 <ul class="developers" id="githubContributors"></ul>
 
 <script>
@@ -66,3 +77,17 @@ description: Meet pyiron's always-growing team of amazing developers and collabo
 	});
 
 </script>
+
+<hr>
+<h2 style="padding-top: 40px;"><i class="fa fa-graduation-cap"></i></h2>
+<h2 style="position: relative; top: -20px;">Alumni</h2>
+
+<ul class="developers" id="alumni">
+	{% for alumnus in site.alumni %}
+		<li>
+			<div class="name">{{ alumnus.name }}</div>
+			<div class="info">{{ alumnus.contribution }}</div>
+			<div class="info">({{ alumnus.dates }})</div>
+		</li>
+	{% endfor %}
+</ul>

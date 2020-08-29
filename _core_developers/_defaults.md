@@ -2,6 +2,8 @@
 name:
 position:
 image_path:
-link:
+links:
+    professional:
+    github:
 blurb:
 ---

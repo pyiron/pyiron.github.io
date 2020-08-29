@@ -1,4 +1,4 @@
-.staff {
+.developers {
 	padding: 0;
 	list-style: none;
 	@extend %flexbox;
@@ -27,12 +27,29 @@
 			}
 		}
 
+
+	.small-image {
+		width: 80px;
+		height: 80px;
+			img {
+				border-radius: 80px;
+			}
+		}
+
 	.name {
 		font-size: 1.3em;
 		margin-top: 20px;
 	}
 
-	.position {
+	.info {
 		color: #666;
 	}
+
+	.links {
+		padding-top: 5px;
+		font-size: 18px;
+	}
+}
+.bot {
+	visibility: hidden;
 }

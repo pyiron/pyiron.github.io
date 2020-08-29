@@ -11,12 +11,47 @@ you need to know about the site in the documentation for hydra and jekyll.
 As with most jekyll sites, very general changes can be made directly in the `_config.yml` file. However, the hydra theme doesn't
 customize very much in this file, and only the site.title, site.email, and site.description have been customized in this file for pyiron.
 
-## Running the test (local) server
-Make sure you have Ruby and Bundler installed.
+## Running the server locally
+### Install Ruby and Bundler
+Bundler is a package manager for Ruby, similar to how Conda works for python.
+
+To install on Mac OS X (ruby is already installed but can still be updated/managed using homebrew if you have it installed):
+```
+brew install ruby
+gem install bundler
+```
+
+**(Using Conda)**
+Alternatively, for those who want to use conda to configure the ruby environment on Mac OS X:
+```
+conda install clangxx_osx-64 ruby make rb-jekyll
+```
+on Linux:
+```
+conda install gxx_impl_linux-64 ruby make rb-jekyll
+```
+
+There is some trouble with installing ruby packages via conda: 
+```
+Ignoring eventmachine-1.2.7 because its extensions are not built. Try: gem pristine eventmachine --version 1.2.7
+Ignoring ffi-1.11.1 because its extensions are not built. Try: gem pristine ffi --version 1.11.1
+Ignoring http_parser.rb-0.6.0 because its extensions are not built. Try: gem pristine http_parser.rb --version 0.6.0
+Ignoring sassc-2.3.0 because its extensions are not built. Try: gem pristine sassc --version 2.3.0
+```
+This is probably related to the pinning of the ruby version https://github.com/conda-forge/rb-eventmachine-feedstock/issues/3
+but compiling locally seems to work fine. 
+
+And for Mac Users you might have to activate Xcode first:
+```
+xcode-select --install
+xcodebuild -license
+```
+
+### Install the website and serve it
 ```bash
 git clone https://github.com/pyiron/pyiron.github.io.git
 cd pyiron.github.io
-bundle install  # you only ever have to do this once
+bundle install  # you only have to repeat this if/when you change the underlying site layout.
 bundle exec jekyll serve
 ```
 Then go to the website at localhost (127.0.0.1:4000)

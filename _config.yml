@@ -62,8 +62,8 @@ alumni:
     dates: 2011-2015
   - 
     name: Ankit Gupta
-    contribution: Developer of pyCMW (pyiron predecessor)
-    dates: 2011-2015
+    contribution: Kinetic Monte Carlo implementation
+    dates: 2014-2015
   -
     name: Murat Celik
     contribution: Sqlalchemy-based database adapter

@@ -1,0 +1,41 @@
+---
+title: Collaborators
+description: pyiron benefits greatly from its broad, diverse network of collaborators and users.
+---
+<p class="editor-link" style="text-align: center;"><a href="cloudcannon:collections/_collaborators/" class="btn"><strong>&#9998;</strong> Manage Collaborators</a></p>
+<p style="text-align: center;">
+	Interested in testing pyiron yourself? <a href="/try-pyiron">Try it on Mybinder</a>
+	or install it via <a href="https://anaconda.org/conda-forge/pyiron">conda</a>
+	/<a href="https://github.com/pyiron/pyiron">Github</a>.
+</p>
+<ul class="developers">
+	{% for institute in site.collaborators %}
+		<li>
+			<a target="_blank" href="{{ institute.link }}">
+			<div class="collaborator-image"><img src="{% include relative-src.html src=institute.image_path %}" alt="{{ institute.name }}"/></div>
+			<div class="name">{{ institute.name }}</div>
+			<div class="location">{{ institute.location }}</div>
+			</a>
+		</li>
+	{% endfor %}
+</ul>
+
+<div class="testimonial">
+	<h2>Affiliated Projects</h2>
+	<p>pyiron has lots of friends. These are just a few of the
+		teams we've worked with to seamlessly integrate their
+		state-of-the-art tools into Pyiron, or vice-versa.
+	</p>
+	<div class="projects">
+		{% for collaborator in site.affiliated_projects %}
+			<div class="collaborator-block">
+				<a href="{{ collaborator.link }}">
+					<div class="square-image" style="background-color: {{ collaborator.background-color }};">
+						<img src="{{ collaborator.image_path }}" alt="{{ collaborator.name }}" class="editable">
+					<h2>{{ collaborator.name }}</h2>
+					</div>
+				</a>
+			</div>
+		{% endfor %}
+	</div>
+</div>

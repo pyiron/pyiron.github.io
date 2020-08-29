@@ -28,6 +28,10 @@ timezone: Etc/UTC
 collections:
   core_developers:
     _hide_content: true
+  collaborators:
+    _hide_content: true
+  affiliated_projects:
+    _hide_content: true
 
 # Members of pyiron's steering committee
 steering_committee:
@@ -58,8 +62,8 @@ alumni:
     dates: 2011-2015
   - 
     name: Ankit Gupta
-    contribution: Developer of pyCMW (pyiron predecessor)
-    dates: 2011-2015
+    contribution: Kinetic Monte Carlo implementation
+    dates: 2014-2015
   -
     name: Murat Celik
     contribution: Sqlalchemy-based database adapter
@@ -107,6 +111,24 @@ defaults:
     scope:
       path: ""
       type: "core_developers"
+    values:
+      _options:
+        image_path:
+          width: 600
+          height: 600
+  -
+    scope:
+      path: ""
+      type: "collaborators"
+    values:
+      _options:
+        image_path:
+          width: 600
+          height: 600
+  -
+    scope:
+      path: ""
+      type: "affiliated_projects"
     values:
       _options:
         image_path:

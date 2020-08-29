@@ -70,7 +70,7 @@ the entire site. The other layouts are important for rendering blog-based pages,
 - **contact.html**: Sends messages to the address listed in `_config.yaml` using CloudCannon.
 - **contact-success.html**: Static page we send people to after they use the contact form.
 - **team.html**: Pulls developer names and information from `_staff_members/`. Each dev gets their own .md file, and their images are pulled from the MPIE site.
-- **trial.html**: Basic instructions for starting and using the MyBinder instance.
+- **try-pyiron.html**: Basic instructions for starting and using the MyBinder instance.
 - **privacy.html**: A very basic GDPR page about how we use visitors' data (we don't use visitors' data).
 - **404.html**: Renders when a searched page cannot be found.
 

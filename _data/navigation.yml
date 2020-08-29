@@ -6,6 +6,10 @@
   link: /team/
   new_window: false
   highlight: false
+- name: Collaborators
+  link: /collaborators/
+  new_window: false
+  highlight: false
 - name: Contact
   link: /contact/
   new_window: false
@@ -14,7 +18,7 @@
   link: https://pyiron.readthedocs.io/en/latest/
   new_window: false
   highlight: false
-- name: Try pyiron
-  link: /trial
+- name: Try Pyiron
+  link: /try-pyiron
   new_window: false
   highlight: false

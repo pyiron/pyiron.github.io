@@ -1,20 +1,93 @@
 ---
 title: Team
-description: Meet Pyiron's ever-growing team of amazing developers and collaborators.
+description: Meet pyiron's growing team of amazing developers and collaborators.
 ---
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 <p class="editor-link" style="text-align: center;"><a href="cloudcannon:collections/_staff_members/" class="btn"><strong>&#9998;</strong> Manage Staff members</a></p>
 <p style="text-align: center;">
-	Interested in contributing to Pyiron? <a href="/contact">Contact us</a>
-	or open an <a href="https://github.com/pyiron/pyiron/issues">issue</a>
-	/<a href="https://github.com/pyiron/pyiron/pulls">pull request</a> on
+	Interested in contributing to pyiron? <a href="/contact">Contact us</a>
+	or open an <a href="https://github.com/pyiron/pyiron/issues">issue</a>/
+	<a href="https://github.com/pyiron/pyiron/pulls">pull request</a> on
 	the Github page.
 </p>
-<ul class="staff">
-	{% for person in site.staff_members %}
-		<li>
+<ul class="developers">
+	{% for person in site.core_developers %}
+		<li id="{{ person.links.github }}">
 			<div class="square-image"><img src="{% include relative-src.html src=person.image_path %}" alt="{{ person.name }}"/></div>
-			<div class="name"><a target="_blank" href="{{ person.link }}">{{ person.name }}</a></div>
-			<div class="position">{{ person.position }}</div>
+			<div class="name">{{ person.name }}</div>
+			<div class="info">{{ person.position }}</div>
+			<div class="links">
+				{% if person.links.professional %}
+					<a target="_blank" href="{{ person.links.professional }}"><i class="fa fa-user"></i></a>
+				{% endif %}
+				{% if person.links.github %}
+					{% if person.links.professional %}
+						<i> | </i>
+					{% endif %}
+					<a target="_blank" href="https://github.com/{{ person.links.github }}"><i class="fab fa-github-alt"></i></a>
+				{% endif %}
+			</div>
+		</li>
+	{% endfor %}
+</ul>
+
+<h2>Steering Committee</h2>
+<ul class="developers">
+	{% for member in site.steering_committee %}
+		<li>
+			<div class="name">{{ member.name }} ({{ member.institution }})</div>
+		</li>
+	{% endfor %}
+</ul>
+
+<!-- Add (invisible) bot accounts to the page so jquery can find them (below) -->
+{% for bot in site.github_bots %}
+	<i class="bot" id="{{ bot }}"></i>
+{% endfor %}
+
+<hr>
+<h2 style="padding-top: 40px;"><i class="fa fa-github-alt"></i></h2>
+<h2 style="position: relative; top: -20px;">Github Contributors</h2>
+
+<ul class="developers" id="githubContributors"></ul>
+
+<script>
+	var query = {
+		"url": "https://api.github.com/repos/pyiron/pyiron/contributors",
+		"method": "GET",
+		"timeout": 0,
+	};
+
+	$.ajax(query).success(function (response) {
+		for (var i=0; i < response.length; i++) {
+			var username = response[i].login;
+			// We don't want to list core developers or bots here,
+			// which we already have on the page.
+			// So we exclude both of those account types with this
+			// if statement.
+			if ($("#"+username).length == 0) {
+				$("#githubContributors").append($('<li>', {id: username}));
+				$("#"+username).append($('<a>', {id: username+'Link', href:response[i].html_url}));
+				$("#"+username+"Link").append($('<div>', {class:'name', html: username}));
+				$("#"+username+"Link").append($('<img>', {id: username+"Img", class:'small-image', src: response[i].avatar_url}));
+				$("#"+username).append($('<div>', {class:'info', html: response[i].contributions+" commits"}));
+			};
+		};
+	});
+
+</script>
+
+<hr>
+<h2 style="padding-top: 40px;"><i class="fa fa-graduation-cap"></i></h2>
+<h2 style="position: relative; top: -20px;">Alumni</h2>
+
+<ul class="developers" id="alumni">
+	{% for alumnus in site.alumni %}
+		<li>
+			<div class="name">{{ alumnus.name }}</div>
+			<div class="info">{{ alumnus.contribution }}</div>
+			<div class="info">({{ alumnus.dates }})</div>
 		</li>
 	{% endfor %}
 </ul>

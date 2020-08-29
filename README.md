@@ -1,6 +1,6 @@
-<p align="center"><img src="images/logo_dark.png" alt="Pyiron logo" width="250px;"/></p>
+<p align="center"><img src="images/logo_dark.png" alt="pyiron logo" width="250px;"/></p>
 
-This is where we host the landing page for [Pyiron](https://pyiron.org).
+This is where we host the landing page for [pyiron](https://pyiron.org).
 
 # Notes for developers + maintainers
 ## In general
@@ -65,7 +65,7 @@ _A quick note about `_layouts/`:_
 All active pages on the site inherit their layout from `_layouts/default.html`, so changes made to this file will reflect throughout
 the entire site. The other layouts are important for rendering blog-based pages, which we currently do not use.
 
-- **index.html**: Pyiron's home page. Customized quite a bit.
+- **index.html**: pyiron's home page. Customized quite a bit.
 - **about.html**: A brief description of pyiron's features.
 - **contact.html**: Sends messages to the address listed in `_config.yaml` using CloudCannon.
 - **contact-success.html**: Static page we send people to after they use the contact form.

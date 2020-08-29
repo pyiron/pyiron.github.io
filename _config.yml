@@ -17,8 +17,15 @@ author:
   email:
   twitter: # twitter username without the @ symbol
 social:
-  name:
-  links:
+  -
+    name: Github
+    link: https://github.com/pyiron
+  -
+    name: Youtube
+    link: https://www.youtube.com/channel/UC9B_3nunpB-u-1gybsw5DHw
+  -
+    name: Stack Overflow
+    link: https://stackoverflow.com/questions/tagged/pyiron
 
 # -----
 # Build

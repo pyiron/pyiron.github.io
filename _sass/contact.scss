@@ -9,6 +9,7 @@
 	@include flex-flow(wrap);
 	max-width: 750px;
 	margin: 0 auto;
+	text-align: center;
 
 	form {
 		width: 100%
@@ -24,6 +25,14 @@
 			flex: 1;
 		}
 		margin: 0 30px;
+
+		label, input {
+			display: block;
+		}
+		
+		label {
+			margin-bottom: 20px;
+		}
 	}
 
 	.contact-details {

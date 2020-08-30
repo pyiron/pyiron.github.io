@@ -67,11 +67,11 @@
 			title: "Let's Connect!",
 			description: "Send us a comment or question and we'll be in touch soon.",
 			buttonImg: "<i class='fas fa-comment-alt' style='font-size: 24px;'/>",
-			action: "https://formspree.io/mvowjbgy",
+			action: "{{ site.formspree }}",
 			theme: "classic",
 			onResponse: function(ok, setStatus) {
 				if (ok) {
-				setStatus("Thanks for your message! We'll reply via the provided email soon.");
+				setStatus("Thanks for your message! We'll reply to the email you provided soon.");
 				} else {
 				setStatus("<span style='color:red'>Oops! There was a problem. Please check that you've entered a valid email address.</span>");
 				}

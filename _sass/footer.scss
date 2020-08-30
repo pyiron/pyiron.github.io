@@ -19,10 +19,13 @@
 		a {
 			margin: 0 3px;
 			padding: 6px 10px;
+			border-bottom: 1px solid rgba(255,255,255,0);
+
 			&:hover {
 				text-decoration: None;
 				border-bottom: 1px solid rgba(255,255,255,.3);
 				color: #fff;
+				transition: .2s ease-in-out;
 			}
 		}
 	}
@@ -32,7 +35,6 @@ footer {
 	padding: 50px 0 50px 0;
 	font-size: 1.1em;
 	position: relative;
-	// background: $tertiary_brand_color;
 	background: url("../images/background.svg");
 	background-size: cover;
 	color: #fff;
@@ -43,14 +45,15 @@ footer {
 
 	.social-link {
 		font-size: 24px;
-		padding: 0px 10px 10px 10px;
+		padding: 0px 10px 6px 10px;
 		margin: 0 auto;
 		border-bottom: 1px solid rgba(255,255,255,0);
 
 		&:hover {
 			text-decoration: None;
 			border-bottom: 1px solid rgba(255,255,255,.3);
-			color: #fff;			
+			color: #fff;
+			transition: .2s ease-in-out;		
 		}
 	}
 

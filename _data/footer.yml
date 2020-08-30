@@ -1,32 +1,29 @@
-- links:
-  - name: About
-    link: /about/
-  - name: Contact
-    link: /contact/
-  - name: Documentation
-    link: https://pyiron.readthedocs.io/en/latest/
-- links:
-  - name: License
-    link: /license
-  - name: Imprint
-    link: https://www.mpie.de/impressum
-  - name: Privacy Policy
-    link: /privacy/
+links:
+  -
+    - name: About
+      link: /about/
+    - name: Contact
+      link: /contact/
+    - name: Documentation
+      link: https://pyiron.readthedocs.io/en/latest/
+  -
+    - name: License
+      link: /license
+    - name: Imprint
+      link: https://www.mpie.de/impressum
+    - name: Privacy Policy
+      link: /privacy/
 
-# - links:
-#   - name: Facebook
-#     link: https://facebook.com/cloudcannon/
-#     new_window: true
-#     social_icon: Facebook
-#   - name: Twitter
-#     link: https://twitter.com/cloudcannon/
-#     social_icon: Twitter
-#     new_window: true
-#   - name: YouTube
-#     link: https://youtube.com/cloudcannon/
-#     social_icon: YouTube
-#     new_window: true
-#   - name: RSS
-#     link: /feed.xml
-#     social_icon: RSS
-#     new_window: false
+social:
+  -
+    name: Github
+    icon: github-alt
+    link: https://github.com/pyiron
+  -
+    name: Youtube
+    icon: youtube
+    link: https://www.youtube.com/channel/UC9B_3nunpB-u-1gybsw5DHw
+  -
+    name: Stack Overflow
+    icon: stack-overflow
+    link: https://stackoverflow.com/questions/tagged/pyiron

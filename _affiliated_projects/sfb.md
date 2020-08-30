@@ -1,6 +1,6 @@
 ---
 name: SFB
-image_path: https://www.sfb-transregio103.de/template/trans//grafik/SFB-Logo.png
+image_path: http://stahl-abinitio.iehk.rwth-aachen.de/sites/default/files/inline-images/1b05659bb0.png
 background-color: white
-link: https://www.sfb-transregio103.de/
+link: http://stahl-abinitio.iehk.rwth-aachen.de
 ---

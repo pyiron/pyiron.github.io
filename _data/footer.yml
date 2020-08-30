@@ -2,8 +2,8 @@ links:
   -
     - name: About
       link: /about/
-    - name: Contact
-      link: /contact/
+    - name: Team
+      link: /team/
     - name: Documentation
       link: https://pyiron.readthedocs.io/en/latest/
   -

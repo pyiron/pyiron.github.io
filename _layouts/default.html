@@ -10,6 +10,7 @@
 
 		<link rel="stylesheet" href="{{ site.baseurl }}/css/screen.css">
 		<link rel="icon" type="image/png" href="{{ site.baseurl }}/favicon.png">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="https://kit.fontawesome.com/1d40be1112.js" crossorigin="anonymous"></script>
 		<script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
 
@@ -70,7 +71,7 @@
 			theme: "classic",
 			onResponse: function(ok, setStatus) {
 				if (ok) {
-				setStatus("Thanks for your message! We'll be in touch shortly.");
+				setStatus("Thanks for your message! We'll reply via the provided email soon.");
 				} else {
 				setStatus("<span style='color:red'>Oops! There was a problem. Please check that you've entered a valid email address.</span>");
 				}

@@ -1,10 +1,24 @@
 {% for post in include.posts %}
 	<li class="blog-post">
-		<h3><a href="{% include relative-src.html src=post.url %}">{{ post.title }}</a></h3>
+		<h2>{{ post.title }}</h2>
+		<h3>
+			{% assign first = true %}
+			{% for author in post.authors %}
+				{% if first != true %}
+					 | 
+				{% endif %}
+				{{ author }}
+				{% assign first = false %}
+			{% endfor %}
+		</h3>
+		<i class="info">{{ post.journal }}</i>
 		{% include post-title.html post=post %}
 		<div class="post-content">
-			{{ post.excerpt }}
-			<div class="button"><a href="{% include relative-src.html src=post.url %}">Read More</a></div>
+			{{ post.abstract }}
+			<div class="button"><a href="{{ post.full-text }}">Read the paper</a></div>
+			<a href="{{ post.mybinder }}">
+				<img class="mybinder" src="https://mybinder.org/badge_logo.svg"/>
+			</a>
 		</div>
 	</li>
 {% endfor %}

@@ -14,6 +14,10 @@
   link: /contact/
   new_window: false
   highlight: false
+- name: Publications
+  link: /publications/
+  new_window: false
+  highlight: false
 - name: Documentation
   link: https://pyiron.readthedocs.io/en/latest/
   new_window: false

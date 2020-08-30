@@ -24,49 +24,6 @@
 				border-bottom: 1px solid rgba(255,255,255,.3);
 				color: #fff;
 			}
-
-			svg {
-				fill: #999;
-				margin-right: 10px;
-				transition: fill 0.2s ease;
-				vertical-align: middle;
-				position: relative;
-				top: -2px;
-				width: 22px;
-				height: 22px;
-			}
-
-			&:hover svg {
-				fill: #fff;
-			}
-
-			&.twitter-icon:hover svg {
-				fill: #55acee;
-			}
-
-			&.google-plus-icon:hover svg {
-				fill: #db4437;
-			}
-
-			&.youtube-icon:hover svg {
-				fill: #cd201f;
-			}
-
-			&.instagram-icon:hover svg {
-				fill: #f167f5;
-			}
-
-			&.linkedin-icon:hover svg {
-				fill: #0077b5;
-			}
-
-			&.pinterest-icon:hover svg {
-				fill: #bd081c;
-			}
-
-			&.rss-icon:hover svg {
-				fill: #f26522;
-			}
 		}
 	}
 }
@@ -86,13 +43,22 @@ footer {
 
 	.social-link {
 		font-size: 24px;
-		padding: 0px 20px 20px 0px;
+		padding: 0px 10px 10px 10px;
+		margin: 0 auto;
+		border-bottom: 1px solid rgba(255,255,255,0);
+
+		&:hover {
+			text-decoration: None;
+			border-bottom: 1px solid rgba(255,255,255,.3);
+			color: #fff;			
+		}
 	}
 
 	.copyright {
 		font-size: .8em;
 		margin: 0 auto;
 		color: #fff !important;
+		padding-top: 10px;
 		
 		@media #{$tablet} {
 			text-align: center;

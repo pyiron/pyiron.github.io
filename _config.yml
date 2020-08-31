@@ -108,33 +108,6 @@ defaults:
   -
     scope:
       path: ""
-      type: "core_developers"
-    values:
-      _options:
-        image_path:
-          width: 600
-          height: 600
-  -
-    scope:
-      path: ""
-      type: "collaborators"
-    values:
-      _options:
-        image_path:
-          width: 600
-          height: 600
-  -
-    scope:
-      path: ""
-      type: "affiliated_projects"
-    values:
-      _options:
-        image_path:
-          width: 600
-          height: 600
-  -
-    scope:
-      path: ""
     values:
       layout: "page"
   -

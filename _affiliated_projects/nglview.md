@@ -1,6 +1,5 @@
 ---
 name: NGLview
-image_path: https://github.com/nglviewer/nglview/raw/master/examples/images/membrane.gif
-background-color: white
+image_path: /images/nglview.png
 link: https://github.com/nglviewer/nglview
 ---

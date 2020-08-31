@@ -12,15 +12,15 @@
   link: https://www.materialdigital.de/
 -
   name: NGLview
-  image_path: https://github.com/nglviewer/nglview/raw/master/examples/images/membrane.gif
+  image_path: /images/nglview.png
   link: https://github.com/nglviewer/nglview
 -
   name: OpenKIM
-  image_path: https://i.vimeocdn.com/portrait/6997082_640x640
+  image_path: https://gitlab.com/uploads/-/system/group/avatar/3169985/kim_logo_bw.png
   link: https://openkim.org
 -
   name: OVITO
-  image_path: https://www.ovito.org/wp-content/uploads/2019/04/logo-header-2.png
+  image_path: https://www.ovito.org/wp-content/uploads/2019/03/logo_3spheres-768x768.png
   link: https://ovito.org
 -
   name: pyscal

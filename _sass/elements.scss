@@ -77,3 +77,18 @@ p, address {
 	font-weight: 300;
 	line-height: 1.4em;
 }
+
+.news-item {
+	text-align: center;
+	margin: 0;
+	min-height: 50px;
+	padding: 40px;
+
+	.news-date {
+		color: white;
+		border-radius: 15px;
+		background: $tertiary-brand-color;
+		max-width: 220px;
+		margin: 0 auto;
+	}
+}

@@ -13,7 +13,7 @@ full_width: true
 		the Github page.
 	</p>
 	<ul class="developers">
-		{% for person in site.core_developers %}
+		{% for person in site.data.core-developers %}
 			<li id="{{ person.links.github }}">
 				<div class="square-image"><img src="{% include relative-src.html src=person.image_path %}" alt="{{ person.name }}"/></div>
 				<div class="name">{{ person.name }}</div>
@@ -37,7 +37,7 @@ full_width: true
 	<div class="container no-padding">
 		<h2>Steering Committee</h2>
 		<ul class="developers">
-			{% for member in site.steering_committee %}
+			{% for member in site.data.steering-committee %}
 				<li>
 					<div class="name">{{ member.name }} ({{ member.institution }})</div>
 				</li>
@@ -46,7 +46,7 @@ full_width: true
 	</div>
 </section>
 	<!-- Add (invisible) bot accounts to the page so jquery can find them (below) -->
-	{% for bot in site.github_bots %}
+	{% for bot in site.data.github-bots %}
 		<i class="bot" id="{{ bot }}"></i>
 	{% endfor %}
 
@@ -86,7 +86,7 @@ full_width: true
 		<h2><i class="fa fa-graduation-cap"></i></h2>
 		<h2 style="position: relative; top: -20px;">Alumni</h2>
 		<ul class="developers" id="alumni">
-			{% for alumnus in site.alumni %}
+			{% for alumnus in site.data.alumni %}
 				<li>
 					<div class="name">{{ alumnus.name }}</div>
 					<div class="info" style="color: white;">{{ alumnus.contribution }}</div>

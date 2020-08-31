@@ -1,0 +1,40 @@
+-
+  name: ASE
+  image_path: https://gitlab.com/uploads/-/system/project/avatar/470007/ase256.png
+  link: https://wiki.fysik.dtu.dk/ase/
+-
+  name: LAMMPS
+  image_path: https://lammps.sandia.gov/movies/logo.gif
+  link: https://lammps.sandia.gov/
+-
+  name: Material D1g1tal
+  image_path: https://www.materialdigital.de/img/Logo_MaterialDigital.svg
+  link: https://www.materialdigital.de/
+-
+  name: NGLview
+  image_path: https://github.com/nglviewer/nglview/raw/master/examples/images/membrane.gif
+  link: https://github.com/nglviewer/nglview
+-
+  name: OpenKIM
+  image_path: https://i.vimeocdn.com/portrait/6997082_640x640
+  link: https://openkim.org
+-
+  name: OVITO
+  image_path: https://www.ovito.org/wp-content/uploads/2019/04/logo-header-2.png
+  link: https://ovito.org
+-
+  name: pyscal
+  image_path: http://pyscal.com/en/latest/_static/pyscal_logo1.png
+  link: http://pyscal.com
+-
+  name: SFB
+  image_path: https://pbs.twimg.com/profile_images/1229479188022865920/NTT0sArw_400x400.jpg
+  link: https://twitter.com/sfb1394
+-
+  name: SPHInX
+  image_path: https://sxrepo.mpie.de/attachments/download/33/SPHInX.png
+  link: https://sxrepo.mpie.de
+-
+  name: VASP
+  image_path: https://www.vasp.at/images/logo.png
+  link: https://vasp.at

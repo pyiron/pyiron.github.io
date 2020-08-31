@@ -1,4 +1,4 @@
-<p align="center"><img src="images/logo_dark.png" alt="pyiron logo" width="250px;"/></p>
+<p align="center"><img src="images/logo_dark.png" alt="pyiron logo" width="150px;"/></p>
 
 This is where we host the landing page for [pyiron](https://pyiron.org).
 
@@ -7,9 +7,6 @@ This is where we host the landing page for [pyiron](https://pyiron.org).
 The site is rendered using [jekyll](https://jekyllrb.com/), with [hydra](https://jekyll-themes.com/hydra/) as its base theme.
 Mostly only superficial changes have been made to the hydra theme to create pyiron.org, so you will likely find everything
 you need to know about the site in the documentation for hydra and jekyll.
-
-As with most jekyll sites, very general changes can be made directly in the `_config.yml` file. However, the hydra theme doesn't
-customize very much in this file, and only the site.title, site.email, and site.description have been customized in this file for pyiron.
 
 ## Running the server locally
 ### Install Ruby and Bundler
@@ -60,6 +57,40 @@ _N.B._ When you make changes to any file other than `_config.yml`, the local ser
 changes made to `_config.yml` you will have to restart the server.
 
 ## Site layout
+
+### `_config.yml`
+
+As with most jekyll sites, a number of general settings can be controlled directly by editing the `_config.yml` file.
+This is where we control e.g. the contact email address, the names of alumni contributors + steering committee, etc.
+Variables stored in this file can be accessed in HTML pages using [liquid syntax](https://shopify.github.io/liquid/basics/introduction/),
+beginning with the prefix "site." For example,
+
+```html
+<!-- Create a link to write an email to our contact address -->
+<p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+
+<!-- Create an HTML elemenmt for all the github bots listed for our site -->
+{% for bot in site.github_bots %}
+	<i class="bot" id="{{ bot }}"></i>
+{% endfor %}
+```
+
+If you add a collection of .md files as a folder to the site, begin its name with an underscore,
+like the example collections we currently have in place (`_affiliated_projects`, `_collaborators`,
+and `core_developers`). Then you will need to add it to the `_config.yml` under collections so that
+jekyll knows what to do with the folder.
+```yaml
+collections:
+  core_developers:
+    _hide_content: true
+  collaborators:
+    _hide_content: true
+  affiliated_projects:
+    _hide_content: true
+  my_new_collection:
+    _hide_content: true
+```
+
 ### HTML pages
 _A quick note about `_layouts/`:_
 All active pages on the site inherit their layout from `_layouts/default.html`, so changes made to this file will reflect throughout
@@ -69,7 +100,7 @@ the entire site. The other layouts are important for rendering blog-based pages,
 - **about.html**: A brief description of pyiron's features.
 - **contact.html**: Sends messages to the address listed in `_config.yaml` using CloudCannon.
 - **contact-success.html**: Static page we send people to after they use the contact form.
-- **team.html**: Pulls developer names and information from `_staff_members/`. Each dev gets their own .md file, and their images are pulled from the MPIE site.
+- **team.html**: Pulls developer names and information from `_core_developers/`. Each core developer has their own .md file, which they are of course free to edit.
 - **try-pyiron.html**: Basic instructions for starting and using the MyBinder instance.
 - **privacy.html**: A very basic GDPR page about how we use visitors' data (we don't use visitors' data).
 - **404.html**: Renders when a searched page cannot be found.

@@ -51,6 +51,9 @@ steering_committee:
   -
     name: Thomas Hammerschmidt
     institution: ICAMS
+  -
+    name: Yury Lysogorskiy
+    institution: ICAMS
 
 # Previous pyiron developers who are not on Github
 alumni:
@@ -82,6 +85,10 @@ alumni:
     name: Markus Tautschning
     contribution: Structure optimization with VASP
     dates: 2018-2019
+  - 
+    name: Uday Gajera
+    contribution: Automated analysis of existing DFT data sets
+    dates: 2017-2019
 
 # Github usernames that will be excluded
 # from the Team page (see team.html)
@@ -89,6 +96,7 @@ github_bots:
   - "pyironlandingpage"
   - "codacy-badger"
   - "IceflowRE"
+  - "uday-gajera"
 
 paginate: 10
 paginate_path: "/blog/:num/"

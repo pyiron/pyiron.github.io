@@ -10,10 +10,13 @@
 
 .container {
 	max-width: 1140px;
-
+	padding-bottom: 80px;
 	&.max-container {
 		max-width: 100%;
 		padding: 0;
+	}
+	&.no-padding {
+		padding-bottom: 0px;
 	}
 }
 
@@ -56,6 +59,8 @@ header {
 	background-repeat: no-repeat;
 	padding: 1px 0 0 0;
 	position: relative;
+	height: auto;
+	overflow: hidden;
 }
 
 .screenshot{
@@ -266,7 +271,7 @@ blockquote:before {
 
 .page {
 	margin-bottom: 0;
-	padding-bottom: 80px;
+	padding-bottom: 0px;
 }
 
 .center-text {

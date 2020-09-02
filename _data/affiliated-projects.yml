@@ -38,3 +38,15 @@
   name: VASP
   image_path: https://www.vasp.at/images/logo.png
   link: https://vasp.at
+-
+  name: Interatomic Potentials Repository
+  image_path: https://www.nist.gov/sites/default/files/images/2020/06/03/IPR%20Logo.png
+  link: https://www.ctcms.nist.gov/potentials/
+-
+  name: European Galaxy server
+  image_path: https://galaxyproject.org/images/galaxy-logos/galaxy_project_logo_square.png
+  link: https://live.usegalaxy.eu
+-
+  name: Phonopy
+  image_path: /images/phonopy.png
+  link: https://phonopy.github.io/phonopy/

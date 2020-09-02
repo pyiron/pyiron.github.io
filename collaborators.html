@@ -9,7 +9,7 @@ description: pyiron benefits greatly from its broad, diverse network of collabor
 	/<a href="https://github.com/pyiron/pyiron">Github</a>.
 </p>
 <ul class="developers">
-	{% for institute in site.collaborators %}
+	{% for institute in site.data.collaborators %}
 		<li>
 			<a target="_blank" href="{{ institute.link }}">
 			<div class="collaborator-image"><img src="{% include relative-src.html src=institute.image_path %}" alt="{{ institute.name }}"/></div>
@@ -27,7 +27,7 @@ description: pyiron benefits greatly from its broad, diverse network of collabor
 		state-of-the-art tools into pyiron, or vice-versa.
 	</p>
 	<div class="projects">
-		{% for collaborator in site.affiliated_projects %}
+		{% for collaborator in site.data.affiliated-projects %}
 			<div class="collaborator-block">
 				<a href="{{ collaborator.link }}">
 					<div class="square-image">

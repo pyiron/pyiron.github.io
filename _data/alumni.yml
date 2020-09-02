@@ -1,0 +1,33 @@
+# Previous pyiron developers who are not on Github
+-
+  name: Ugur Aydin
+  contribution: Developer of pyCMW (pyiron predecessor)
+  dates: 2011-2015
+- 
+  name: Ankit Gupta
+  contribution: Kinetic Monte Carlo implementation
+  dates: 2014-2015
+-
+  name: Murat Celik
+  contribution: Sqlalchemy-based database adapter
+  dates: 2016-2017
+-
+  name: Navid Shayanfar
+  contribution: Parser for SPHInX
+  dates: 2017
+-
+  name: Martin Boeckmann
+  contribution: Metropolis Monte Carlo implementation
+  dates: 2017-2018
+-
+  name: Murali Uddagiri
+  contribution: Generation of special quasirandom structures
+  dates: 2017-2018
+-
+  name: Markus Tautschning
+  contribution: Structure optimization with VASP
+  dates: 2018-2019
+- 
+  name: Uday Gajera
+  contribution: Automated analysis of existing DFT data sets
+  dates: 2017-2019

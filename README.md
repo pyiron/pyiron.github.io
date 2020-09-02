@@ -63,32 +63,21 @@ changes made to `_config.yml` you will have to restart the server.
 As with most jekyll sites, a number of general settings can be controlled directly by editing the `_config.yml` file.
 This is where we control e.g. the contact email address, the names of alumni contributors + steering committee, etc.
 Variables stored in this file can be accessed in HTML pages using [liquid syntax](https://shopify.github.io/liquid/basics/introduction/),
-beginning with the prefix "site." For example,
+beginning with the prefix "site" For example,
 
 ```html
 <!-- Create a link to write an email to our contact address -->
 <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-
-<!-- Create an HTML elemenmt for all the github bots listed for our site -->
-{% for bot in site.github_bots %}
-	<i class="bot" id="{{ bot }}"></i>
-{% endfor %}
 ```
 
-If you add a collection of .md files as a folder to the site, begin its name with an underscore,
-like the example collections we currently have in place (`_affiliated_projects`, `_collaborators`,
-and `core_developers`). Then you will need to add it to the `_config.yml` under collections so that
-jekyll knows what to do with the folder.
-```yaml
-collections:
-  core_developers:
-    _hide_content: true
-  collaborators:
-    _hide_content: true
-  affiliated_projects:
-    _hide_content: true
-  my_new_collection:
-    _hide_content: true
+To add a collection of data the site, create a .yml file under `_data/`,
+like the example collections we currently have in place (`affiliated_projects.yml`, `collaborators.yml`, etc.). Then access them with the liquid prefix "site.data":
+
+```html
+<!-- Create an HTML elemenmt for all the github bots listed for our site -->
+{% for bot in site.data.github_bots %}
+	<i class="bot" id="{{ bot }}"></i>
+{% endfor %}
 ```
 
 ### HTML pages
@@ -100,8 +89,9 @@ the entire site. The other layouts are important for rendering blog-based pages,
 - **about.html**: A brief description of pyiron's features.
 - **contact.html**: Sends messages to the address listed in `_config.yaml` using CloudCannon.
 - **contact-success.html**: Static page we send people to after they use the contact form.
-- **team.html**: Pulls developer names and information from `_core_developers/`. Each core developer has their own .md file, which they are of course free to edit.
+- **team.html**: Pulls developer names and information from `_data/core-developers.yml` and `_data/steering-committee.yml`, and pulls other github contributors from the Github API.
 - **try-pyiron.html**: Basic instructions for starting and using the MyBinder instance.
+- **news.html**: New updates for pyiron. Pulls from `_data/news.yml`.
 - **privacy.html**: A very basic GDPR page about how we use visitors' data (we don't use visitors' data).
 - **404.html**: Renders when a searched page cannot be found.
 

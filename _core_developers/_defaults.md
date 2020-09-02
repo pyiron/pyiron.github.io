@@ -1,9 +1,0 @@
----
-name:
-position:
-image_path:
-links:
-    professional:
-    github:
-blurb:
----

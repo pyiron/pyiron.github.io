@@ -50,3 +50,11 @@
   name: Phonopy
   image_path: /images/phonopy.png
   link: https://phonopy.github.io/phonopy/
+- 
+  name: QuickFF
+  image_path: /images/quickff.png
+  link: http://molmod.github.io/QuickFF/
+-
+  name: TAMkin
+  image_path: /images/tamkin.png
+  link: https://molmod.ugent.be/software/tamkin

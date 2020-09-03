@@ -24,7 +24,7 @@
 	</head>
 	<body>
 		<header>
-			<div class="container">
+			<div class="container no-padding">
 				{% if page.url != "/" %}
 					<div class="company-name"><a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/images/logo.png" alt="pyiron Logo" width="100" height="100"/></a></div>
 				{% endif %}
@@ -33,7 +33,7 @@
 		</header>
 		{{ content }}
 		<footer>
-			<div class="container">
+			<div class="container no-padding">
 				<p class="editor-link"><a href="cloudcannon:collections/_data/footer.yml" class="btn"><strong>&#9998;</strong> Edit footer</a></p>
 				<div class="footer-columns">
 					{% for column in site.data.footer.links %}

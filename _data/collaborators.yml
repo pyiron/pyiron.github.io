@@ -26,10 +26,15 @@
 -
   name: University of British Columbia
   location: Vancouver, Canada
-  image_path: https://agriperfiles.agri-d.net/file/n20376/UBC_logo_b2.jpg
+  image_path: https://brand3.sites.olt.ubc.ca/files/2018/09/5NarrowLogo_ex_768.png
   link: http://mtrl.ubc.ca
 -
   name: GHENT University - Center for Molecular Modeling
   location: Ghent, Belgium
   image_path: https://molmod.ugent.be/sites/default/files/CMM-logo-2018.png
   link: https://molmod.ugent.be
+-
+  name: Skolkovo Institute of Science and Technology
+  location: Moscow, Russia
+  image_path: https://old.sk.ru/resized-image.ashx/__size/550x0/__key/telligent-evolution-components-attachments/13-50-00-00-00-02-16-56/skoltech-rastr-ENG.png
+  link: https://crei.skoltech.ru/cest/

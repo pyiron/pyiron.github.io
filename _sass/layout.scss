@@ -173,12 +173,16 @@ blockquote:before {
 		@media screen and (min-width: 450px) {
 
 			.collaborator-block {
-				max-width: 200px;
+				max-width: 300px;
 
 				.square-image {
-					width: 200px;
-					height: 200px;
-					border-radius: 100px;
+					width: 300px;
+					height: 300px;
+					border-radius: 150px;
+					line-height: 300px;
+					-webkit-box-shadow:inset 0px 0px 0px 4px $brand-color;
+					-moz-box-shadow:inset 0px 0px 0px 4px $brand-color;
+					box-shadow:inset 0px 0px 0px 4px $brand-color;
 
 					h2 {
 						display: none;
@@ -186,28 +190,25 @@ blockquote:before {
 					}
 
 					img {
-						width: 140px;
+						width: 185px;
 					}
 				}
 
 				.square-image:hover {
 					h2 {
-						font-size: 24px;
-						display: inline-block;
+						font-size: 22px;
+						display: inline;
 						position: relative;
-						top: 85px;
 						opacity: 100% !important;
+						color: $brand-color;
 					}
 					img {
-						-webkit-filter: opacity(10%);
-						width: 300px;
+						-webkit-filter: opacity(5%);
+						width: 400px;
 						overflow: hidden;
 					}
-					background-color: $tertiary-brand-color !important;
-					-webkit-box-shadow:inset 0px 0px 0px 4px $brand-color;
-					-moz-box-shadow:inset 0px 0px 0px 4px $brand-color;
-					box-shadow:inset 0px 0px 0px 4px $brand-color;
-					transition: box-shadow 0.5s ease;
+					background-color: white !important;
+					transition: background-color 0.5s ease;
 				}
 			}
 		}
@@ -222,6 +223,7 @@ blockquote:before {
 	margin: 0em auto;
 	position: relative;
 	border-radius: 0px;
+	line-height: 150px;
 
 	img {
 		max-height: 150px;

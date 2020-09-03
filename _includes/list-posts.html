@@ -16,9 +16,11 @@
 		<div class="post-content">
 			{{ post.abstract }}
 			<div class="button"><a href="{{ post.full-text }}">Read the paper</a></div>
-			<a href="{{ post.mybinder }}">
-				<img class="mybinder" src="https://mybinder.org/badge_logo.svg"/>
-			</a>
+			{% if post.mybinder %}
+				<a href="{{ post.mybinder }}">
+					<img class="mybinder" src="https://mybinder.org/badge_logo.svg"/>
+				</a>
+			{% endif %}
 		</div>
 	</li>
 {% endfor %}

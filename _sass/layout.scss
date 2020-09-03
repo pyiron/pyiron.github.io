@@ -154,7 +154,8 @@ blockquote:before {
 				border-radius: 50px;
 
 				h2 {
-					display: none;
+					display: table-cell; 
+					vertical-align: middle; 
 					color: white;
 				}
 
@@ -173,13 +174,14 @@ blockquote:before {
 		@media screen and (min-width: 450px) {
 
 			.collaborator-block {
-				max-width: 300px;
+				max-width: 200px;
+				position: relative;
 
 				.square-image {
-					width: 300px;
-					height: 300px;
-					border-radius: 150px;
-					line-height: 300px;
+					display: table;
+					width: 200px;
+					height: 200px;
+					border-radius: 100px;
 					-webkit-box-shadow:inset 0px 0px 0px 4px $brand-color;
 					-moz-box-shadow:inset 0px 0px 0px 4px $brand-color;
 					box-shadow:inset 0px 0px 0px 4px $brand-color;
@@ -187,24 +189,27 @@ blockquote:before {
 					h2 {
 						display: none;
 						color: white;
+						text-align: center;
+						// font-size: 28px;
+						padding: 10px;
 					}
 
 					img {
-						width: 185px;
+						width: 125px;
 					}
 				}
 
 				.square-image:hover {
 					h2 {
-						font-size: 22px;
-						display: inline;
+						display: table-cell; 
+						vertical-align: middle;
 						position: relative;
 						opacity: 100% !important;
 						color: $brand-color;
 					}
 					img {
 						-webkit-filter: opacity(5%);
-						width: 400px;
+						width: 200px;
 						overflow: hidden;
 					}
 					background-color: white !important;

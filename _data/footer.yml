@@ -2,22 +2,28 @@ links:
   -
     - name: About
       link: /about/
+      new_window: false
       download: false
     - name: Contact
       link: /contact/
+      new_window: false
       download: false
     - name: Documentation
       link: https://pyiron.readthedocs.io/en/latest/
+      new_window: true
       download: false
   -
     - name: License
       link: /LICENSE
+      new_window: false
       download: true
     - name: Imprint
       link: https://www.mpie.de/impressum
+      new_window: true
       download: false
     - name: Privacy Policy
       link: /privacy/
+      new_window: false
       download: false
 
 social:

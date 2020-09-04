@@ -2,7 +2,7 @@
 	color: #fff;
 	text-decoration: none;
 	padding: 10px 30px;
-	background: $brand-color;
+	background: $main-color;
 	border-radius: 3px;
 	border: 1px solid rgba(255,255,255,.5);
 	transition: .2s ease-in-out;
@@ -10,7 +10,7 @@
 
 .button a:hover, input[type=submit]:hover {
 	border: 1px solid #fff;
-	background: $secondary-brand-color;
+	background: $main-color;
 	cursor: pointer;
 }
 
@@ -23,7 +23,7 @@
 
 .button.alt a:hover {
 	background: #fff;
-	color: $brand-color;
+	color: $main-color;
 }
 
 textarea, input, button, select { font-family: inherit; font-size: inherit; }

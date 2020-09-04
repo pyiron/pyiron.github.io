@@ -14,6 +14,10 @@ email: pyiron@mpie.de
 formspree: https://formspree.io/xrgywnvn
 copyright: Max Planck Institut für Eisenforschung, GmbH - Computational Materials Design (CM) Department. All rights reserved.
 
+colors:
+  main: "#2b2b40"  # purple
+  secondary: "#37B8FF"  # blue
+
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo: /siteicon.png
 description: An interactive development environment (IDE) for computational materials science.

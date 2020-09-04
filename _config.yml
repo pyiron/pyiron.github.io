@@ -2,6 +2,9 @@
 # Site
 
 title: pyiron
+alert: null
+# To add an alert/action message to the top of the home page:
+# alert: 'Registration is now open for the 100th annual pyiron workshop. <a href="https://pyiron.org">Register now!</a>'
 url:
 baseurl:
 google_analytics_key:
@@ -24,13 +27,12 @@ author:
 
 timezone: Etc/UTC
 
-# collections:
-#   staff_members:
-#     _hide_content: true
+collections:
+  news:
+    _hide_content: true
 
-paginate: 10
-paginate_path: "/publications/:num/"
-permalink: pretty
+# max number of news or publication posts to list on a single page
+posts-per-page: 10
 
 defaults:
   -
@@ -48,6 +50,12 @@ defaults:
       path: ""
     values:
       layout: "page"
+  -
+    scope:
+      path: "category"
+    values:
+      layout: "default"
+      tall_bg: true        
   -
     scope:
       path: "index.html"

@@ -5,6 +5,10 @@
 	li {
 		margin: 100px 0;
 	}
+
+	li.release-bullet {
+		margin: 5px 0;
+	}
 }
 
 .blog-post {
@@ -22,6 +26,10 @@
 		.blurb {
 			text-align: center;
 		}
+	}
+
+	.abstract {
+		text-align: justify;
 	}
 
 	h3 {
@@ -97,6 +105,14 @@
 
 .pagination {
 	text-align: center;
+}
+
+#newer {
+	float: right;
+}
+
+#older {
+	float: left;
 }
 
 .blog-filter {

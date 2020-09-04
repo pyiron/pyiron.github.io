@@ -3,17 +3,14 @@ title: The materials science IDE
 description: Optimized protocols and data management for high-powered research
 ---
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
-<script>
-
-	const CC = window.CookieConsent
-	const cc = new CC({
-		type   : "categories"
-	})
-
-</script>
 
 <section class="hero">
+	{% if site.alert %}
+		<div class="alert">
+			<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+			{{ site.alert }}
+		</div>
+	{% endif %}
 	<img class="main-logo" src="images/logo.png"></img>
 	<div class="text-container">
 		<h1 class="editable"><strong>The materials science IDE</strong></h1>
@@ -26,7 +23,7 @@ description: Optimized protocols and data management for high-powered research
 	</div>
 </section>
 
-<div class="content">
+<div class="content no-padding">
 	<section>
 		<div class="container flex">
 			<div class="text editable">
@@ -63,7 +60,7 @@ description: Optimized protocols and data management for high-powered research
 	</section>
 
 	<section>
-		<div class="container flex">
+		<div class="container flex no-padding">
 			<div class="text editable">
 				<h2>Out-of-the-box compatibility with your favorite tools</h2>
 				<p>pyiron bundles a number of popular free-to-use software packages,
@@ -80,6 +77,31 @@ description: Optimized protocols and data management for high-powered research
 		</div>
 	</section>
 
+	<div class="text-container" style="text-align: center; padding-bottom:20px;">
+		<h1>Latest News</h1>
+	</div>
+	<div class="container flex">
+	{% for post in site.categories.news limit:4 %}
+		<div class="news-card">
+		<h3>{{ post.date | date: "%B %d, %Y"  }}</h3>
+		<p>
+			{{ post.title }}
+			<div class="post-details">
+				{% for category in post.categories %}
+					{% if category != "news" %}
+						<span class="blog-filter">
+							<a href="{{ site.baseurl }}/category/{{ category | slugify }}/">
+								{{ category }}
+							</a>
+						</span>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</p>
+		<a href="{{ post.url }}">Read more</a>
+		</div>
+	{% endfor %}
+	</div>
 	<section class="bottom-cta">
 		<h2 class="editable">Supercharge your research with <strong>reproducibility</strong>.</h2>
 		<p>

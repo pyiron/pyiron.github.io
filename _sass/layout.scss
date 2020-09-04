@@ -54,13 +54,20 @@ header {
 
 .content {
 	background: #fff;
-	background-image: url("../images/page_background.svg");
+	@media screen and #{$mid-point} {
+		background-image: url("../images/page_background.svg");
+	}
 	background-size: cover;
+	overflow-y: hidden;
 	background-repeat: no-repeat;
 	padding: 1px 0 0 0;
 	position: relative;
-	height: auto;
+	min-height: 400px;
 	overflow: hidden;
+}
+
+.tall {
+	background-image: url("../images/page_background_tall.svg");
 }
 
 .screenshot{
@@ -171,7 +178,7 @@ blockquote:before {
 			}
 		}
 
-		@media screen and (min-width: 450px) {
+		@media screen and #{$tablet} {
 
 			.collaborator-block {
 				max-width: 200px;

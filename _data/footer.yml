@@ -3,7 +3,7 @@ links:
     - name: About
       link: /about/
       download: false
-  - name: Team
+    - name: Team
       link: /team/
       download: false
     - name: Documentation

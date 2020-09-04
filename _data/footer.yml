@@ -9,6 +9,7 @@ links:
   -
     - name: License
       link: /license
+      download: true
     - name: Imprint
       link: https://www.mpie.de/impressum
     - name: Privacy Policy

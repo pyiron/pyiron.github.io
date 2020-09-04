@@ -4,8 +4,8 @@ links:
       link: /about/
       new_window: false
       download: false
-    - name: Team
-      link: /team/
+    - name: Getting started
+      link: /try-pyiron/
       new_window: false
       download: false
     - name: Documentation

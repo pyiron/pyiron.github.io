@@ -8,6 +8,7 @@ google_analytics_key:
 google_maps_javascript_api_key:
 disqus_shortname:
 email: pyiron@mpie.de
+formspree: https://formspree.io/xrgywnvn
 copyright: Max Planck Institut für Eisenforschung, GmbH - Computational Materials Design (CM) Department. All rights reserved.
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
@@ -52,11 +53,6 @@ defaults:
       path: "index.html"
     values:
       layout: "default"
-  -
-    scope:
-      path: "contact.html"
-    values:
-      full_width: true
 
 jekyll-archives:
   enabled:

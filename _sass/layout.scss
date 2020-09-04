@@ -10,10 +10,13 @@
 
 .container {
 	max-width: 1140px;
-
+	padding-bottom: 80px;
 	&.max-container {
 		max-width: 100%;
 		padding: 0;
+	}
+	&.no-padding {
+		padding-bottom: 0px;
 	}
 }
 
@@ -56,6 +59,8 @@ header {
 	background-repeat: no-repeat;
 	padding: 1px 0 0 0;
 	position: relative;
+	height: auto;
+	overflow: hidden;
 }
 
 .screenshot{
@@ -149,7 +154,8 @@ blockquote:before {
 				border-radius: 50px;
 
 				h2 {
-					display: none;
+					display: table-cell; 
+					vertical-align: middle; 
 					color: white;
 				}
 
@@ -169,38 +175,45 @@ blockquote:before {
 
 			.collaborator-block {
 				max-width: 200px;
+				position: relative;
 
 				.square-image {
+					display: table;
 					width: 200px;
 					height: 200px;
 					border-radius: 100px;
+					-webkit-box-shadow:inset 0px 0px 0px 4px $brand-color;
+					-moz-box-shadow:inset 0px 0px 0px 4px $brand-color;
+					box-shadow:inset 0px 0px 0px 4px $brand-color;
 
 					h2 {
 						display: none;
 						color: white;
+						text-align: center;
+						// font-size: 28px;
+						padding: 10px;
 					}
 
 					img {
-						width: 150px;
+						width: 125px;
 					}
 				}
 
 				.square-image:hover {
 					h2 {
-						font-size: 24px;
-						display: inline-block;
+						display: table-cell; 
+						vertical-align: middle;
 						position: relative;
-						top: 85px;
 						opacity: 100% !important;
+						color: $brand-color;
 					}
 					img {
-						-webkit-filter: opacity(10%);
+						-webkit-filter: opacity(5%);
+						width: 200px;
+						overflow: hidden;
 					}
-					background-color: $tertiary-brand-color !important;
-					-webkit-box-shadow:inset 0px 0px 0px 4px $brand-color;
-					-moz-box-shadow:inset 0px 0px 0px 4px $brand-color;
-					box-shadow:inset 0px 0px 0px 4px $brand-color;
-					transition: box-shadow 0.5s ease;
+					background-color: white !important;
+					transition: background-color 0.5s ease;
 				}
 			}
 		}
@@ -215,6 +228,7 @@ blockquote:before {
 	margin: 0em auto;
 	position: relative;
 	border-radius: 0px;
+	line-height: 150px;
 
 	img {
 		max-height: 150px;
@@ -266,7 +280,7 @@ blockquote:before {
 
 .page {
 	margin-bottom: 0;
-	padding-bottom: 80px;
+	padding-bottom: 0px;
 }
 
 .center-text {

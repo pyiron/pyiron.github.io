@@ -8,6 +8,7 @@ google_analytics_key:
 google_maps_javascript_api_key:
 disqus_shortname:
 email: pyiron@mpie.de
+formspree: https://formspree.io/xrgywnvn
 copyright: Max Planck Institut für Eisenforschung, GmbH - Computational Materials Design (CM) Department. All rights reserved.
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
@@ -23,72 +24,9 @@ author:
 
 timezone: Etc/UTC
 
-collections:
-  core_developers:
-    _hide_content: true
-  collaborators:
-    _hide_content: true
-  affiliated_projects:
-    _hide_content: true
-
-# Members of pyiron's steering committee
-steering_committee:
-  -
-    name: Mira Todorova
-    institution: MPIE
-  -
-    name: Christoph Freysoldt
-    institution: MPIE
-  -
-    name: Tilmann Hickel
-    institution: MPIE
-  -
-    name: Blazej Grabowski
-    institution: Uni-Stuttgart
-  -
-    name: Ralf Drautz
-    institution: ICAMS
-  -
-    name: Thomas Hammerschmidt
-    institution: ICAMS
-
-# Previous pyiron developers who are not on Github
-alumni:
-  -
-    name: Ugur Aydin
-    contribution: Developer of pyCMW (pyiron predecessor)
-    dates: 2011-2015
-  - 
-    name: Ankit Gupta
-    contribution: Kinetic Monte Carlo implementation
-    dates: 2014-2015
-  -
-    name: Murat Celik
-    contribution: Sqlalchemy-based database adapter
-    dates: 2016-2017
-  -
-    name: Navid Shayanfar
-    contribution: Parser for SPHInX
-    dates: 2017
-  -
-    name: Martin Boeckmann
-    contribution: Metropolis Monte Carlo implementation
-    dates: 2017-2018
-  -
-    name: Murali Uddagiri
-    contribution: Generation of special quasirandom structures
-    dates: 2017-2018
-  -
-    name: Markus Tautschning
-    contribution: Structure optimization with VASP
-    dates: 2018-2019
-
-# Github usernames that will be excluded
-# from the Team page (see team.html)
-github_bots:
-  - "pyironlandingpage"
-  - "codacy-badger"
-  - "IceflowRE"
+# collections:
+#   staff_members:
+#     _hide_content: true
 
 paginate: 10
 paginate_path: "/publications/:num/"
@@ -115,11 +53,6 @@ defaults:
       path: "index.html"
     values:
       layout: "default"
-  -
-    scope:
-      path: "contact.html"
-    values:
-      full_width: true
 
 jekyll-archives:
   enabled:

@@ -10,19 +10,19 @@
   link: /collaborators/
   new_window: false
   highlight: false
-- name: Contact
-  link: /contact/
-  new_window: false
-  highlight: false
 - name: Publications
   link: /publications/
   new_window: false
   highlight: false
 - name: Documentation
   link: https://pyiron.readthedocs.io/en/latest/
-  new_window: false
+  new_window: true
   highlight: false
 - name: Try Pyiron
   link: /try-pyiron
+  new_window: false
+  highlight: false
+- name: News
+  link: /news
   new_window: false
   highlight: false

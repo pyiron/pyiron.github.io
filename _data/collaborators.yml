@@ -1,0 +1,40 @@
+-
+  name: Max-Planck-Institut für Eisenforschung
+  location: Düsseldorf, Germany
+  image_path: http://potentials.rub.de/images/LogoMPIE100Years.jpeg
+  link: https://www.mpie.de
+-
+  name: Interdisciplinary Centre for Advanced Materials Simulation (ICAMS)
+  location: Bochum, Germany
+  image_path: http://www.icams.de/content/wp-content/themes/icams/images/logo.png
+  link: http://www.icams.de
+-
+  name: Technische Universität Darmstadt
+  location: Darmstadt, Germany
+  image_path: https://www.mawi.tu-darmstadt.de/media/mm/bilderundlogos/mm_logo_182x0.jpg
+  link: https://www.mawi.tu-darmstadt.de/mm/mm_mm_sw/index.en.jsp
+-
+  name: Los Alamos National Laboratory
+  location: Los Alamos, NM, USA
+  image_path: https://www.lanl.gov/_assets/images/lanl-logo-footer.png
+  link: https://www.lanl.gov/org/ddste/aldsc/theoretical/physics-chemistry-materials/index.php
+-
+  name: Montan Universität Leoben
+  location: Leoben, Austria 
+  image_path: https://presse.unileoben.ac.at/fileadmin/shares/presseaussendungen/2018/MUL_Logo_neu.jpg
+  link: https://materials.unileoben.ac.at/en/1457/
+-
+  name: University of British Columbia
+  location: Vancouver, Canada
+  image_path: https://brand3.sites.olt.ubc.ca/files/2018/09/5NarrowLogo_ex_768.png
+  link: http://mtrl.ubc.ca
+-
+  name: GHENT University - Center for Molecular Modeling
+  location: Ghent, Belgium
+  image_path: https://molmod.ugent.be/sites/default/files/CMM-logo-2018.png
+  link: https://molmod.ugent.be
+-
+  name: Skolkovo Institute of Science and Technology
+  location: Moscow, Russia
+  image_path: https://old.sk.ru/resized-image.ashx/__size/550x0/__key/telligent-evolution-components-attachments/13-50-00-00-00-02-16-56/skoltech-rastr-ENG.png
+  link: https://crei.skoltech.ru/cest/

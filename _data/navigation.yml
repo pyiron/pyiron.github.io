@@ -18,8 +18,8 @@
   link: https://pyiron.readthedocs.io/en/latest/
   new_window: false
   highlight: false
-- name: Try Pyiron
-  link: /try-pyiron
+- name: Getting Started
+  link: /getting-started
   new_window: false
   highlight: false
 - name: News

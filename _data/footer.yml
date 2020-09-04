@@ -14,9 +14,9 @@ links:
       download: false
   -
     - name: License
-      link: /LICENSE
+      link: /license
       new_window: false
-      download: true
+      download: false
     - name: Imprint
       link: https://www.mpie.de/impressum
       new_window: true

@@ -109,7 +109,7 @@ here we just point to MPIE's Imprint page).
 
 ### Downloads
 Right now there are only two files to download directly from the site:
-- `LICENSE`: The BSD License for pyiron
+- `BSD_LICENSE`: The BSD License for pyiron
 - `images/qr-code.png`: a QR code that sends you to the homepage.
 
 ## Future features (not set up)

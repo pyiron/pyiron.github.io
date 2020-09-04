@@ -39,8 +39,8 @@
 					{% for column in site.data.footer.links %}
 					<ul class="footer-links">
 						{% for link in column %}
-							<li><a {% if link.new_window %}target="_blank"{% endif %} href="{% include relative-src.html src=link.link %}">
-								{{ link.name }}</a></li>
+						<li><a {% if link.new_window %}target="_blank"{% endif %} href="{% include relative-src.html src=link.link %}" {% if link.download %}download{% endif %}>
+							{{ link.name }}</a></li>
 						{% endfor %}
 					</ul>
 					{% endfor %}

@@ -8,7 +8,7 @@ links:
       link: https://pyiron.readthedocs.io/en/latest/
   -
     - name: License
-      link: /license
+      link: /LICENSE
       download: true
     - name: Imprint
       link: https://www.mpie.de/impressum

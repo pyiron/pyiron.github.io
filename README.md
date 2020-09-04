@@ -86,7 +86,6 @@ All active pages on the site inherit their layout from `_layouts/default.html`, 
 the entire site. The other layouts are important for rendering blog-based pages, which we currently do not use.
 
 - **index.html**: pyiron's home page. Customized quite a bit.
-- **about.html**: A brief description of pyiron's features.
 - **contact.html**: Sends messages to the address listed in `_config.yaml` using CloudCannon.
 - **contact-success.html**: Static page we send people to after they use the contact form.
 - **team.html**: Pulls developer names and information from `_data/core-developers.yml` and `_data/steering-committee.yml`, and pulls other github contributors from the Github API.

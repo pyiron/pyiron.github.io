@@ -38,3 +38,13 @@
   location: Moscow, Russia
   image_path: https://old.sk.ru/resized-image.ashx/__size/550x0/__key/telligent-evolution-components-attachments/13-50-00-00-00-02-16-56/skoltech-rastr-ENG.png
   link: https://crei.skoltech.ru/cest/
+-
+  name: RWTH Aachen
+  location: Aachen, Germany
+  image_path: https://www.rwth-aachen.de/global/show_picture.asp?id=aaaaaaaaaaagazb
+  link: https://www.rwth-aachen.de
+-
+  name: "SFB 1394: Strukturelle und Chemische Atomare Komplexität"
+  location: Aachen, Germany
+  image_path: /images/rwth_sfb1394_de_cmyk.jpg
+  link: https://gepris.dfg.de/gepris/projekt/409476157?context=projekt&task=showDetail&id=409476157&

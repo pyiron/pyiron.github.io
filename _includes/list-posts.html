@@ -16,10 +16,6 @@
 		<i class="info">{{ post.journal }}</i>
 		{% include post-title.html post=post %}
 		<div class="post-content">
-			{{ post.content }}
-			{% if post.abstract %}
-				<p class="abstract">{{ post.abstract }}</p>
-			{% endif %}
 			{% if post.full-text %}
 				<div class="button"><a href="{{ post.full-text }}">Read the paper</a></div>
 			{% endif %}

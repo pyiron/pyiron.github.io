@@ -79,13 +79,23 @@ description: Optimized protocols and data management for high-powered research
 
 	<div class="text-container" style="text-align: center; padding-bottom:20px;">
 		<h1>Latest News</h1>
+		<hr>
 	</div>
 	<div class="container flex">
-	{% for post in site.categories.news limit:4 %}
-		<div class="news-card">
-		<h3>{{ post.date | date: "%B %d, %Y"  }}</h3>
+	{% assign news_icons = "releases, workshops, documentation, milestones" | split: ', ' %}
+	{% for post in site.categories.news limit:3 %}
+		<div class="news-card"
+		{% if news_icons contains post.categories[1] %}
+			style="background-image: url(/images/news-icon-{{ post.categories[1] }}.png)"
+		{% else %}
+			style="background-image: url(/images/news-icon-default.png)"
+		{% endif %}
+			>
+		<h3 style="color: {{ site.colors.main }}">{{ post.date | date: "%b %d, %Y"  }}</h3>
 		<p>
+		<a href="{{ post.url }}">
 			{{ post.title }}
+		</a>
 			<div class="post-details">
 				{% for category in post.categories %}
 					{% if category != "news" %}
@@ -98,7 +108,6 @@ description: Optimized protocols and data management for high-powered research
 				{% endfor %}
 			</div>
 		</p>
-		<a href="{{ post.url }}">Read more</a>
 		</div>
 	{% endfor %}
 	</div>

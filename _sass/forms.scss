@@ -26,6 +26,10 @@
 	color: $main-color;
 }
 
+.button.alt.small a{
+	padding: 8px 25px;
+}
+
 textarea, input, button, select { font-family: inherit; font-size: inherit; }
 
 input[type=submit] {

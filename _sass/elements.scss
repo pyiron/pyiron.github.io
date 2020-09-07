@@ -36,6 +36,13 @@ code {
 	overflow: scroll;
 }
 
+.inline {
+	background: $main-color;
+	color: white;
+	line-height: 30px;
+	padding: 1px 4px 1px 4px;
+}
+
 a {
 	color: $secondary-color;
 	text-decoration: none;

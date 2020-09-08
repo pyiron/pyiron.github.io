@@ -1,9 +1,5 @@
 links:
   -
-    - name: About
-      link: /about/
-      new_window: false
-      download: false
     - name: Getting started
       link: /try-pyiron/
       new_window: false
@@ -12,17 +8,21 @@ links:
       link: https://pyiron.readthedocs.io/en/latest/
       new_window: true
       download: false
-  -
-    - name: License
-      link: /license
+    - name: News
+      link: /news/
       new_window: false
       download: false
+  -
     - name: Imprint
       link: https://www.mpie.de/impressum
       new_window: true
       download: false
     - name: Privacy Policy
       link: /privacy/
+      new_window: false
+      download: false
+    - name: License
+      link: /license
       new_window: false
       download: false
 

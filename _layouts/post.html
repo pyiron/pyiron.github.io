@@ -11,10 +11,10 @@ layout: page
 			<p class="abstract">{{ page.abstract }}</p>
 		{% endif %}
 		{% if page.full-text %}
-			<div class="button"><a href="{{ page.full-text }}">Read the paper</a></div>
+			<div class="button"><a href="{{ page.full-text }}" target="_blank">Read the paper</a></div>
 		{% endif %}
 		{% if page.mybinder %}
-			<a href="{{ page.mybinder }}">
+			<a href="{{ page.mybinder }}" target="_blank">
 				<img class="mybinder" src="https://mybinder.org/badge_logo.svg"/>
 			</a>
 		{% endif %}

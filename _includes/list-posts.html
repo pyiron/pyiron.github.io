@@ -17,10 +17,10 @@
 		{% include post-title.html post=post %}
 		<div class="post-content">
 			{% if post.full-text %}
-				<div class="button"><a href="{{ post.full-text }}">Read the paper</a></div>
+				<div class="button"><a href="{{ post.full-text }}" target="_blank">Read the paper</a></div>
 			{% endif %}
 			{% if post.mybinder %}
-				<a href="{{ post.mybinder }}">
+				<a href="{{ post.mybinder }}" target="_blank">
 					<img class="mybinder" src="https://mybinder.org/badge_logo.svg"/>
 				</a>
 			{% endif %}

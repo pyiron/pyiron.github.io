@@ -1,9 +1,9 @@
 - name: Team
-  link: /team/
+  link: /team
   new_window: false
   highlight: false
 - name: Collaborators
-  link: /collaborators/
+  link: /collaborators
   new_window: false
   highlight: false
 - name: Publications

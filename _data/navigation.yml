@@ -19,6 +19,6 @@
   new_window: false
   highlight: false
 - name: News
-  link: /news
+  link: /news/
   new_window: false
   highlight: false

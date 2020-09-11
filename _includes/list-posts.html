@@ -1,6 +1,8 @@
+{% assign n_posts=0 %}
 {% for post in include.posts %}
-	<li class="blog-post">
-		<h2>{{ post.title }}</h2>
+	{% assign n_posts = n_posts | plus: 1 %}
+	<li class="blog-post" id="post{{n_posts}}">
+		<a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
 		<h3>
 			{% assign first = true %}
 			{% for author in post.authors %}
@@ -14,13 +16,60 @@
 		<i class="info">{{ post.journal }}</i>
 		{% include post-title.html post=post %}
 		<div class="post-content">
-			{{ post.abstract }}
-			<div class="button"><a href="{{ post.full-text }}">Read the paper</a></div>
+			{% if post.full-text %}
+				<div class="button"><a href="{{ post.full-text }}" target="_blank">Read the paper</a></div>
+			{% endif %}
 			{% if post.mybinder %}
-				<a href="{{ post.mybinder }}">
+				<a href="{{ post.mybinder }}" target="_blank">
 					<img class="mybinder" src="https://mybinder.org/badge_logo.svg"/>
 				</a>
 			{% endif %}
 		</div>
 	</li>
 {% endfor %}
+
+<a class="post-loader" id="newer" onclick="n.decrease(); loadPosts(n.value);">Newer <i class="fa fa-arrow-right"></i></i></a>
+<a class="post-loader" id="older" onclick="n.increase(); loadPosts(n.value);"><i class="fa fa-arrow-left"></i> Older</a>
+
+<script>
+	var n_posts = {{ n_posts }};
+	var n_allowed = {{ site.posts-per-page }};
+
+	var n = {
+		value: 0,
+		decrease: function () {
+			if (this.value < n_allowed) {
+				this.value = 0;
+			} else {
+				this.value -= n_allowed;
+			}
+		},
+		increase: function() {
+			if (this.value < n_posts - n_allowed) {
+				this.value += n_allowed;
+			}
+		}
+	};
+
+	function loadPosts(i) {
+		if (i == 0) {
+			$("#newer").hide();
+		} else {
+			$("#newer").show();
+		}
+		if (i >= n_posts - n_allowed) {
+			$("#older").hide();
+		} else {
+			$("#older").show();
+		}
+		for (j=0; j<=n_posts; j++) {
+			if (j <= i || j > i+n_allowed) {
+				$("#post"+j).hide();
+			} else {
+				$("#post"+j).show();
+			}
+		};
+	};
+
+	loadPosts(0);
+</script>

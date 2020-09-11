@@ -36,6 +36,13 @@ code {
 	overflow: scroll;
 }
 
+.inline {
+	background: $brand_color;
+	color: white;
+	line-height: 30px;
+	padding: 1px 4px 1px 4px;
+}
+
 a {
 	color: #37B8FF;
 	text-decoration: none;

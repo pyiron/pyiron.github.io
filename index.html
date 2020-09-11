@@ -30,15 +30,18 @@ description: Optimized protocols and data management for high-powered research
 	<section>
 		<div class="container flex">
 			<div class="text editable">
-				<h2>Nimble data management</h2>
+				<h2>Pyiron Objects</h2>
 				<p>
-					Using intelligent output parsing, HDF5 i/o, and integrated SQL databases, pyiron
-					stores and navigates your bulky research data as if it were much lighter.
+					The pyiron IDE is based on an abstract class of objects - called pyiron objects.
+					The pyiron objects combine the Jupyter based user interface, with the hierarchical
+					HDF5 based data storage and an interface to the computing resources.
+
 				</p>
 				<p>
-					pyiron can also import your experimental data and legacy calculations, and
-					leverage machine learning methods to extract every last drop of scientific
-					insight from your research.
+					These objects allow the pyiron users to focus on the scientific complexity rather
+					than the technical implementation by combining atomistic structures, simulation
+					codes and simulation protocols like building blocks. The details of the pyiron
+					object model are explained in the pyiron paper.
 				</p>
 			</div>
 			<div class="image">
@@ -50,15 +53,20 @@ description: Optimized protocols and data management for high-powered research
 	<section>
 		<div class="container flex">
 			<div class="text editable">
-				<h2>Powerful simulation protocols</h2>
+				<h2>Infrastructure</h2>
 				<p>
-					pyiron comes with several built-in simulation workflows
-					used in published research.
+					By separating the technical implementation and the scientific content of the pyiron
+					simulation protocols, they are both reproducible and transferable. To simplify the
+					administration all computing system specific settings are stored in a central resource
+					directory separated from the individual simulation protocols, using shell script based
+					templates to manage executables and queue submission.
 				</p>
 				<p>
-					And thanks to its modular infrastructure and tight integration with Jupyter,
-					you'll have no trouble building and sharing your own homemade protocols as
-					interactive Python notebooks.
+					In addition the pyiron developers collaborate with the conda-forge community to
+					provide materials science simulation codes and utilities via the conda package
+					manager. By combining the simulation protocol and the corresponding conda
+					environment the whole software stack can be archived. Learn more about the
+					pyiron infrastructure in the documentation.
 				</p>
 			</div>
 			<div class="image">
@@ -70,15 +78,19 @@ description: Optimized protocols and data management for high-powered research
 	<section>
 		<div class="container flex">
 			<div class="text editable">
-				<h2>Out-of-the-box compatibility with your favorite tools</h2>
+				<h2>Extendability</h2>
 				<p>
-					pyiron bundles a number of popular free-to-use software packages,
-					and plays nicely with those that are less free.
+					While pyiron was originally developed for ab initio thermodynamics, the pyiron
+					concepts are not restricted to the atomistic simulation or simulation in general.
+					Moreover the pyiron object model with the pyiron infrastructure and pyiron IDE
+					are released as a standalone software package without the atomistic module.
 				</p>
 				<p>
-					Use pyiron's smart job management to launch and analyze jobs
-					of all sizes, from interactive, single core calculations to
-					bulky HPC queue requests.
+					Integrating your own code is as simple as defining a write_input and a
+					<code class="inline">collect_output</code> function and the interface can be extended step by step to support
+					more features later on. With the map-reduce based pyiron tables module,
+					high-throughput parameter studies can be up-scaled to run on HPC clusters with
+					minimal modifications. <a href="">Learn more about the pyiron base class</a>.
 				</p>
 			</div>
 			<div class="image">

@@ -53,7 +53,7 @@ bundle exec jekyll serve
 ```
 Then go to the website at localhost (127.0.0.1:4000)
 
-_N.B._ When you make changes to any file other than `_config.yml`, the local server will auto-refresh and immediately reflect the changes. For
+_N.B._ When you make changes to most files other than `_config.yml`, the local server will auto-refresh and immediately reflect the changes. For
 changes made to `_config.yml` you will have to restart the server.
 
 ## Site layout
@@ -61,17 +61,18 @@ changes made to `_config.yml` you will have to restart the server.
 ### `_config.yml`
 
 As with most jekyll sites, a number of general settings can be controlled directly by editing the `_config.yml` file.
-This is where we control e.g. the contact email address, the names of alumni contributors + steering committee, etc.
+This is where we control e.g. the contact email address, the website colors, names of alumni contributors + steering committee, etc.
 Variables stored in this file can be accessed in HTML pages using [liquid syntax](https://shopify.github.io/liquid/basics/introduction/),
-beginning with the prefix "site" For example,
+beginning with the prefix `site.` For example,
 
 ```html
 <!-- Create a link to write an email to our contact address -->
 <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
 ```
 
-To add a collection of data the site, create a .yml file under `_data/`,
-like the example collections we currently have in place (`affiliated_projects.yml`, `collaborators.yml`, etc.). Then access them with the liquid prefix "site.data":
+To add a collection of data the site, create a .yml file under `_data/`, like the example collections we currently have in place (`affiliated_projects.yml`, `collaborators.yml`, etc.). Then access them with the liquid prefix `site.data.`:
+
+To create a banner message on the home page (for important messages to share with visitors like workshop registration or site maintenance, etc.), simply set the `alert` variable in `_config.yml` similarly to the example provided in there.
 
 ```html
 <!-- Create an HTML elemenmt for all the github bots listed for our site -->
@@ -82,42 +83,41 @@ like the example collections we currently have in place (`affiliated_projects.ym
 
 ### HTML pages
 _A quick note about `_layouts/`:_
-All active pages on the site inherit their layout from `_layouts/default.html`, so changes made to this file will reflect throughout
-the entire site. The other layouts are important for rendering blog-based pages, which we currently do not use.
+All active pages on the site inherit their layout from `_layouts/default.html`, so changes made to this file will reflect throughout the entire site.
 
 - **index.html**: pyiron's home page. Customized quite a bit.
-- **about.html**: A brief description of pyiron's features.
-- **contact.html**: Sends messages to the address listed in `_config.yaml` using CloudCannon.
-- **contact-success.html**: Static page we send people to after they use the contact form.
-- **team.html**: Pulls developer names and information from `_data/core-developers.yml` and `_data/steering-committee.yml`, and pulls other github contributors from the Github API.
-- **try-pyiron.html**: Basic instructions for starting and using the MyBinder instance.
+- **team.html**: Pulls developer names and information from 
+- **getting-started.html**: Basic instructions for starting and using the MyBinder instance.
 - **news.html**: New updates for pyiron. Pulls from `_data/news.yml`.
+>>>>>>> master
 - **privacy.html**: A very basic GDPR page about how we use visitors' data (we don't use visitors' data).
+- **license.html**: Information about the license/credits for pyiron and this website.
 - **404.html**: Renders when a searched page cannot be found.
 
-### Stylesheets
-The stylesheets for the site are written in Scss (sassy css), under `_sass`. The main colors of the site are stored in `_sass/variables.scss`.
-Other than that, there is more or less one Scss file for each "main" HTML file, although technically all stylesheets are imported for each
-page that's based on `default.html`. This is because `default.html` includes `css/screen.scss`, which in turn imports all the Scss files under `_sass`.
+### Blogs
+the pyiron site technically hosts two blogs: `news` and `publications`. New posts are easy to add to either blog; just create a .md file under e.g. `news/_posts/` based on the examples that are already in there. The filename convention `YYYY-MM-DD-name-of-post.md` is unfortunately quite strict because that's how jekyll orders the posts. If you use a different date format your post will probably not show up.
 
-However, I have mostly used `_sass/elements.scss` as a kind of "overarching" stylesheet.
+The 4 most recent posts in `news` items are also added automatically to the home page.
+
+You can control the number of blog posts shown per page under pyiron.org/news/ and pyiron.org/publications/ by the variable `posts-per-page` in `_config.yml`.
+
+### Stylesheets
+The stylesheets for the site are written in Scss (sassy css), under `_sass`. The main colors of the site are stored in `_sass/variables.scss` (they are also stored in `_config.yml`, since these two files apparently cannot transfer variables to each other). Other than that, there is more or less one Scss file for each "main" HTML file, although technically all stylesheets are imported for each page that's based on `default.html`. This is because `default.html` includes `css/screen.scss`, which in turn imports all the Scss files under `_sass`.
+
+However, I have used `_sass/elements.scss` in some places as a kind of "overarching" stylesheet.
 
 ### External links
-We use external links for the documentation ([readthedocs](https://pyiron.readthedocs.io/en/latest/)), the
-[MyBinder instance](https://mybinder.org/v2/gh/pyiron/pyiron/master), and the "Imprint" (another GDPR thing;
-here we just point to MPIE's Imprint page).
+We use external links for the documentation ([readthedocs](https://pyiron.readthedocs.io/en/latest/)), the [MyBinder instance](https://mybinder.org/v2/gh/pyiron/pyiron/master), and the "Imprint" (another GDPR thing; here we just point to MPIE's Imprint page).
+
+### Images
+All the main images like our logos are stored in `images/`, except the file `favicon.png` in the root folder, which sets the image shown in browser tabs.
+
+The news cards on the front page are automatically decorated with images based on their category. If a new category is created for a post, a corresponding image (with the name news-icon-category_name.png) should be added to `images/`. Otherwise the default news icon will be used for that post.
 
 ### Downloads
-Right now there are only two files to download directly from the site:
+Right now there is only one file to download directly from the site:
 - `BSD_LICENSE`: The BSD License for pyiron
-- `images/qr-code.png`: a QR code that sends you to the homepage.
 
 ## Future features (not set up)
 ### Google analytics
-If we ever want to set up google analytics, just add the key to the `_config.yml` file. That's all you should have to do, and it will be added
-to each page individually. However, we would also have to include some notice of this cookie usage in our privacy statement.
-
-### Blog posts
-To add a blog post, just create a .md file under `_posts/` based on the examples that are already in there. I think the filename is
-important because that's how jekyll orders the posts, so it should have the format "YYYY-MM-DD-name-of-post.md". Then just make sure we
-link to the blog somewhere on the site (the posts are listed chronologically at the url "/blog").
+If we ever want to set up google analytics, just add the key to the `_config.yml` file. That's all you should have to do, and it will be added to each page individually. However, we would also have to include some notice of this cookie usage in our privacy statement.

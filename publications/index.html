@@ -1,30 +1,15 @@
 ---
 title: Publications
 description: Read papers and run published notebooks built on pyiron
+tall_bg: true
 ---
 
 <div class="text-container">
 	<p>
 		If you have published a paper and/or notebook using pyiron and would like
-		to host it here, please <a href="/contact">let us know!</a>
+		to host it here, please <a onclick="$('#formbutton-button')[0].click();">let us know!</a>
 	</p>
-	<p class="editor-link"><a href="cloudcannon:collections/_posts" class="btn"><strong>&#9998;</strong> Add Post</a></p>
 	<ul class="blog-posts">
-		{% include list-posts.html posts=paginator.posts %}
+		{% include list-posts.html posts=site.categories.publications %}
 	</ul>
-
-	{% if paginator.total_pages > 1 %}
-		<!-- Pagination links -->
-		<div class="pagination">
-			{% if paginator.previous_page %}
-				<a href="{% include relative-src.html src=paginator.previous_page_path %}" class="previous btn">&larr; Newer posts</a>
-			{% endif %}
-
-			<span class="page_number ">{{ paginator.page }} of {{ paginator.total_pages }}</span>
-
-			{% if paginator.next_page %}
-				<a href="{% include relative-src.html src=paginator.next_page_path %}" class="next btn">Older posts &rarr;</a>
-			{% endif %}
-		</div>
-	{% endif %}
 </div>

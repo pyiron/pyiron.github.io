@@ -53,20 +53,13 @@ header {
 
 .content {
 	background: #fff;
-	@media screen and #{$mid-point} {
-		background-image: url("../images/page_background.svg");
-	}
-	background-size: cover;
-	overflow-y: hidden;
-	background-repeat: no-repeat;
+	// background-image: url("../images/page_background.svg");
+	// background-size: cover;
+	// background-repeat: no-repeat;
 	padding: 1px 0 0 0;
 	position: relative;
 	min-height: 400px;
 	overflow: hidden;
-}
-
-.tall {
-	background-image: url("../images/page_background_tall.svg");
 }
 
 .screenshot{
@@ -84,7 +77,7 @@ header {
 }
 
 section {
-	padding: 100px 0;
+	padding-top: 100px;
 }
 
 section + section {

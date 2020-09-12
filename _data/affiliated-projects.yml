@@ -36,12 +36,12 @@
   link: https://phonopy.github.io/phonopy/
 -
   name: pyscal
-  image_path: http://pyscal.com/en/latest/_static/pyscal_logo1.png
+  image_path: https://pyscal.com/en/latest/_static/pyscal_logo1.png
   link: http://pyscal.com
 - 
   name: QuickFF
   image_path: /images/quickff.png
-  link: http://molmod.github.io/QuickFF/
+  link: https://molmod.github.io/QuickFF/
 -
   name: SFB
   image_path: https://www.sfb1394.rwth-aachen.de/fileadmin/IMM-Web/Resources/Public/Images/Logos/SFB1394_Logo_217x80_DE.png

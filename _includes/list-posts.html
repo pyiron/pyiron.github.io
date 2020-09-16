@@ -53,7 +53,8 @@
 
 	function loadPosts(i) {
 
-		//  filter posts by category
+		//  filter posts by category specified in url hash
+		// e.g. pyiron.org/news/#category=releases
 		var category = "";
 		var posts_in_category = [];
 		if (window.location.hash) {

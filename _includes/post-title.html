@@ -2,7 +2,8 @@
 	{% for category in include.post.categories %}
 		{% if category != "news" and category != "publications" %}
 			<span class="blog-filter">
-				<a href="{{ site.baseurl }}/category/{{ category | slugify }}/">{{ category | capitalize }}</a>
+				<a href="{{ site.baseurl }}/{{ include.post.categories[0] }}/#category={{ category | slugify }}"
+				   onclick="loadPosts(0);">{{ category | capitalize }}</a>
 			</span>
 		{% endif %}
 	{% endfor %}

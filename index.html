@@ -2,7 +2,6 @@
 title: The materials science IDE
 description: Optimized protocols and data management for high-powered research
 ---
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
 <section class="hero">
 	{% if site.alert %}
@@ -18,14 +17,14 @@ description: Optimized protocols and data management for high-powered research
 		<div class="cta button alt"><a href="https://github.com/pyiron/pyiron" target="_blank">Browse on Github</a></div>
 		<div id="condaBox"><code class="prettyprint lang-bash" style="width: auto;">conda install -c conda-forge pyiron</code></div>
 		<div>
-			<img src="{{ site.baseurl }}/images/dashboard.png" alt="Screenshot" class="screenshot editable" />
+			<img src="{{ site.baseurl }}/images/dashboard.png" alt="Screenshot" class="screenshot editable" data-aos="fade-up" data-aos-offset="-500"/>
 		</div>
 	</div>
 </section>
 
-<div class="content no-padding">
+<div class="content">
 	<section>
-		<div class="container flex">
+		<div class="container flex homepage-feature" data-aos="fade-left">
 			<div class="text editable">
 				<h2>Generic Interface</h2>
 				<p>
@@ -41,7 +40,7 @@ description: Optimized protocols and data management for high-powered research
 	</section>
 
 	<section>
-		<div class="container flex">
+		<div class="container flex homepage-feature" data-aos="fade-right">
 			<div class="text editable">
 				<h2>Infrastructure</h2>
 				<p>
@@ -56,7 +55,7 @@ description: Optimized protocols and data management for high-powered research
 	</section>
 
 	<section>
-		<div class="container flex no-padding">
+		<div class="container flex homepage-feature" data-aos="fade-left">
 			<div class="text editable">
 				<h2>Extendability</h2>
 				<p>
@@ -70,14 +69,14 @@ description: Optimized protocols and data management for high-powered research
 		</div>
 	</section>
 
-	<div class="text-container" style="text-align: center; padding-bottom:20px;">
+	<div id="news" class="text-container" style="text-align: center;" data-aos="fade-up">
 		<h1>Latest News</h1>
 		<hr>
 	</div>
 	<div class="container flex">
 	{% assign news_icons = "releases, workshops, documentation, milestones" | split: ', ' %}
 	{% for post in site.categories.news limit:3 %}
-		<div class="news-card"
+		<div class="news-card" data-aos="zoom-in"
 		{% if news_icons contains post.categories[1] %}
 			style="background-image: url(/images/news-icon-{{ post.categories[1] }}.png)"
 		{% else %}

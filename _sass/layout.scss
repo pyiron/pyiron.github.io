@@ -20,6 +20,10 @@
 	}
 }
 
+.container + .container {
+	padding: 40px 0px 40px 0px;
+}
+
 header {
 	color: #fff;
 	padding: 20px 0;

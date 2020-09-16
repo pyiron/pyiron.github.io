@@ -13,6 +13,8 @@
 		<link rel="icon" type="image/png" href="{{ site.baseurl }}/favicon.png">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="https://kit.fontawesome.com/1d40be1112.js" crossorigin="anonymous"></script>
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 
 		{% if jekyll.environment == 'production' and site.google_analytics_key != '' %}
 			<script>
@@ -61,5 +63,6 @@
 			};
 		</script>
 		{% include formbutton.html %}
+		{% include animate_on_scroll.html %}
 	</body>
 </html>

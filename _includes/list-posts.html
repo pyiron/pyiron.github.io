@@ -1,31 +1,49 @@
 {% assign n_posts=0 %}
+{% assign news_icons = "releases, workshops, documentation, milestones" | split: ', ' %}
+
 {% for post in include.posts %}
 	{% assign n_posts = n_posts | plus: 1 %}
-	<li class="blog-post" id="post{{n_posts}}">
-		<a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
-		<h3>
-			{% assign first = true %}
-			{% for author in post.authors %}
-				{% if first != true %}
-					 | 
-				{% endif %}
-				{{ author }}
-				{% assign first = false %}
-			{% endfor %}
-		</h3>
-		<i class="info">{{ post.journal }}</i>
-		{% include post-title.html post=post %}
+	<div id="post{{n_posts}}" class="news-card wide"
+	{% if post.categories contains "news" and news_icons contains post.categories[1] %}
+		style="background-image: url(/images/news-icon-{{ post.categories[1] }}.png)"
+	{% else if post.categories contains "publications" %}
+		style="background-image: url(/images/news-icon-documentation.png)"
+	{% else %}
+		style="background-image: url(/images/news-icon-default.png)"
+	{% endif %}
+		>
+		<h3 style="color: {{ site.colors.main }}">{{ post.date | date: "%b %d, %Y"  }}</h3>
+		<p>
+		<a href="{{ post.url }}">
+			{{ post.title }}
+		</a>
+			<div class="post-details">
+				{% for category in post.categories %}
+					{% if category != "news" and category != "publications" %}
+						<span class="blog-filter">
+							<a href="{{ site.baseurl }}/category/{{ category | slugify }}/">
+								{{ category }}
+							</a>
+						</span>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</p>
+		{% if post.categories contains "publications" %}
 		<div class="post-content">
 			{% if post.full-text %}
 				<div class="button"><a href="{{ post.full-text }}" target="_blank">Read the paper</a></div>
 			{% endif %}
 			{% if post.mybinder %}
-				<a href="{{ post.mybinder }}" target="_blank">
-					<img class="mybinder" src="https://mybinder.org/badge_logo.svg"/>
-				</a>
+				<div class="button">
+					<a href="{{ post.mybinder }}" target="_blank">
+						<img class="mybinder" src="https://mybinder.org/badge_logo.svg"/>
+					</a>
+				</div>
 			{% endif %}
 		</div>
-	</li>
+	{% endif %}
+	</div>
 {% endfor %}
 
 <a class="post-loader" id="newer" onclick="n.decrease(); loadPosts(n.value);">Newer <i class="fa fa-arrow-right"></i></i></a>

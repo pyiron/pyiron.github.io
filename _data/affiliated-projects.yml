@@ -3,6 +3,10 @@
   image_path: https://gitlab.com/uploads/-/system/project/avatar/470007/ase256.png
   link: https://wiki.fysik.dtu.dk/ase/
 -
+  name: conda-forge
+  image_path: https://avatars0.githubusercontent.com/u/11897326
+  link: https://conda-forge.org
+-
   name: European Galaxy server
   image_path: https://galaxyproject.org/images/galaxy-logos/galaxy_project_logo_square.png
   link: https://live.usegalaxy.eu

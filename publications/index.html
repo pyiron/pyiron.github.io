@@ -10,6 +10,14 @@ tall_bg: true
 		to host it here, please <a onclick="$('#formbutton-button')[0].click();">let us know!</a>
 	</p>
 	<ul class="blog-posts">
-		{% include list-posts.html posts=site.categories.publications %}
+		<!-- Our simple category filter, since gh-pages doesn't support jekyll-archives -->
+		{% if page.url contains "#category=" %}
+			{% assign category = page.url | split: "#category=" | last %}
+		{% else %}
+			<!-- will include all news posts -->
+			{% assign category = "publications" %}
+		{% endif %}
+
+		{% include list-posts.html posts=site.categories.publications category=category %}
 	</ul>
 </div>

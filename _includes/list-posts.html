@@ -1,13 +1,13 @@
 {% assign n_posts=0 %}
 {% for post in include.posts %}
 	{% assign n_posts = n_posts | plus: 1 %}
-	<li class="blog-post" id="post{{n_posts}}">
+	<li class="blog-post" id="post-{{n_posts}}" data-categories="{{ post.categories }}">
 		<a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
 		<h3>
 			{% assign first = true %}
 			{% for author in post.authors %}
 				{% if first != true %}
-					 | 
+					| 
 				{% endif %}
 				{{ author }}
 				{% assign first = false %}
@@ -52,24 +52,56 @@
 	};
 
 	function loadPosts(i) {
-		if (i == 0) {
+
+		//  filter posts by category specified in url hash
+		// e.g. pyiron.org/news/#category=releases
+		var category = "";
+		var posts_in_category = [];
+		if (window.location.hash) {
+			var hash = window.location.hash.substring(1);
+			var category = hash.replace("category=", "");
+		}
+		for (j=1; j<=n_posts; j++) {
+			if (category.length && !$("#post-"+j).attr("data-categories").includes(category)) {
+				$("#post-"+j).hide();
+			} else {
+				posts_in_category.push(j);
+			}
+		}
+
+		var n_newer_hidden = 0;
+		var n_older_hidden = 0;
+
+		for (j=0; j<posts_in_category.length; j++) {
+			var postId = "#post-" + posts_in_category[j];
+			if (j < i) {
+				$(postId).hide();
+				n_newer_hidden += 1;
+			} else if (j > i+n_allowed-1) {
+				$(postId).hide();
+				n_older_hidden += 1;
+			} else {
+				$(postId).show();
+			}
+		};
+
+		if (n_newer_hidden == 0) {
 			$("#newer").hide();
 		} else {
 			$("#newer").show();
 		}
-		if (i >= n_posts - n_allowed) {
+		if (n_older_hidden == 0) {
 			$("#older").hide();
 		} else {
 			$("#older").show();
 		}
-		for (j=0; j<=n_posts; j++) {
-			if (j <= i || j > i+n_allowed) {
-				$("#post"+j).hide();
-			} else {
-				$("#post"+j).show();
-			}
-		};
+
 	};
 
-	loadPosts(0);
+	window.onload = function () {
+		loadPosts(0);
+	}
+	window.onhashchange = function() {
+		loadPosts(0);
+	};
 </script>

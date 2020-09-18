@@ -12,12 +12,14 @@ description: Optimized protocols and data management for high-powered research
 	{% endif %}
 	<img class="main-logo" src="images/logo.png"></img>
 	<div class="text-container">
-		<h1 class="editable" data-aos="fade-up" data-aos-offset="-500"><strong>Complex workflows made easy</strong></h1>
-		<p class="subtext editable" data-aos="fade-up" data-aos-offset="-500">From rapid prototyping to high performance computing in material science</p>
+		<h1 class="editable"><strong>Complex workflows made easy</strong></h1>
+		<p class="subtext editable">From rapid prototyping to high performance computing in material science</p>
 		<div class="cta button alt"><a href="https://github.com/pyiron/pyiron" target="_blank">Browse on Github</a></div>
-		{% include conda_install.md %}
+		<div class="snippet language-sh">
+			{% include conda_install.md %}
+		</div>
 		<div>
-			<img src="{{ site.baseurl }}/images/dashboard.png" alt="Screenshot" class="screenshot editable"/>
+			<img src="{{ site.baseurl }}/images/dashboard.png" alt="Screenshot" class="screenshot editable" data-aos="fade-up" data-aos-offset="300"/>
 		</div>
 	</div>
 </section>
@@ -27,18 +29,22 @@ description: Optimized protocols and data management for high-powered research
 	{% for feature in site.data.features %}
 		{% if text-left %}
 			{% assign text-aos = "fade-right" %}
-			{% assign code-aos = "fade-left" %}
+			{% assign image-aos = "fade-left" %}
 		{% else %}
 			{% assign text-aos = "fade-left" %}
-			{% assign code-aos = "fade-right" %}
+			{% assign image-aos = "fade-right" %}
 		{% endif %}
 		<section>
-			<div class="container flex" {% unless text-left %}style="flex-direction: row-reverse;"{% endunless %}>
+
+			<div class="container flex no-padding" {% unless text-left %}style="flex-direction: row-reverse;"{% endunless %}>
 				<div class="text editable" data-aos="{{ text-aos }}" data-aos-offset="300">
 					<h2>{{ feature.header }}</h2>
 					{{ feature.content }}
 				</div>
-				<div class="feature" style="width: 500px !important;" data-aos="{{ code-aos }}" data-aos-offset="300">
+				<img class="feature-icon" src="{{ feature.icon | relative_url }}" data-aos="{{ image-aos }}" data-aos-offset="300"/>
+			</div>
+			<div class="container flex" style="justify-content: center;">
+				<div class="feature" data-aos="fade-up" data-aos-offset="100">
 					{% include {{ feature.snippet }} %}
 				</div>
 			</div>
@@ -122,7 +128,15 @@ description: Optimized protocols and data management for high-powered research
 	new Juniper({
 		repo: 'pyiron/pyiron',
 		theme: 'pyiron',
+		isolateCells: false,
 	})
+</script>
+
+<script>
+	for (var i=0; i<$(".juniper-button").length; i++) {
+		var button = $(".juniper-button")[i];
+		$(button).text("</> run");
+	}
 </script>
 
 {% include animate_on_scroll.html %}

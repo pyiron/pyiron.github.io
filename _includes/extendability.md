@@ -1,7 +1,7 @@
 {% highlight python %}
-class DummyJob():
-    def write_input():
-        # not sure how this works
-    def collect_output():
-        # this either
+# Edit me!
+if lammps.status.finished:
+    lammps.collect_output()
+else:
+    print(lammps.status)
 {% endhighlight %}

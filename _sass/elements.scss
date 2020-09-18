@@ -108,16 +108,46 @@ p, address {
 code {
 	font-family: $mono-font;
 	font-size: $code-font-size;
-	text-align: left;
 	margin-right: 0px !important;
 }
 
 .feature {
-	min-width: 600px;
+	width: 100%;
+	height: 100%;
+}
+
+.feature-icon {
+	width: 250px;
+	height: 250px;
+	position: relative;
+	padding: 0px 20px;
+}
+
+.overlay {
+	background: rgba(255, 255, 255, 0.7);
 }
 
 .juniper-button {
-	display: none;
+	background: $secondary-color;
+	color: white;
+	border-radius: 10px 10px 0px 0px;
+	padding: 8px 16px;
+	border: none;
+	position: absolute;
+	top: -48px;
+	right: 0px;
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		cursor: pointer;
+		background: lighten($secondary-color, 10%);
+		top: -53px;
+		transition: all 0.3s ease-in-out;
+	}
+
+	&:focus {
+		border: none;
+	}
 }
 
 .juniper-cell {
@@ -129,11 +159,11 @@ code {
 }
 
 .juniper-output {
-	background: rgba(255, 255, 255, 0.9);
-	color: $main-color;
-	border: 2px solid $main-color;
-	border-radius: 0px 0px 5px 5px;
-	max-height: 50px;
+	background: $secondary-color;
+	color: white;
+	border-top: 3px solid white;
+	border-radius: 0px 0px 10px 10px;
+	height: 30px;
 	overflow: scroll;
 }
 
@@ -219,8 +249,9 @@ pre {
 pre.highlight {
 	background: $main-color;
 	border: 2px solid white;
-	border-radius: 5px;
+	border-radius: 10px 0px 12px 12px;
 	color: $text;
+	width: auto;
 }
 
 .highlight {
@@ -230,7 +261,6 @@ pre.highlight {
 
 	pre {
 		background: transparent;
-		text-align: left;
 		margin-right: 0px !important;
 	}
 
@@ -298,36 +328,32 @@ pre.highlight {
 	.gi { color: $green; }
 }
 
-// .highlight::before {
-// 	color: white;
-// 	font-family: "San Francisco", "Helvetica Neue", "Helvetica", "Arial";
-// 	content: "</>";
-// 	border: 2px solid white;
-// 	background: $secondary-color;
-// 	border-radius: 10px 10px 0px 0px;
-// 	padding: 6px 18px;
-// 	display: inline-block;
-// 	position: absolute;
-// 	float: right;
-// 	overflow: show;
-// 	top: -34px;
-// 	right: -2px;
-// 	text-align: right;
-// }
+.snippet::before {
+	color: white;
+	font-family: "San Francisco", "Helvetica Neue", "Helvetica", "Arial";
+	content: "</>";
+	border: 2px solid white;
+	background: $secondary-color;
+	border-radius: 10px 10px 0px 0px;
+	padding: 6px 18px;
+	display: inline-block;
+	position: relative;
+	float: right;
+	overflow: show;
+	top: -33px;
+	right: 40px;
+	text-align: right;
+}
 
 
-// .highlight.language-sh::before {
-// 	content: ".sh";
-// }
+.snippet.language-sh::before {
+	content: ".sh";
+}
 
-// .highlight.language-yaml::before {
-// 	content: ".yml";
-// }
+.snippet.language-yaml::before {
+	content: ".yml";
+}
 
-// .highlight.language-javascript::before {
-// 	content: ".js";
-// }
-
-// .highlight.language-python::before {
-// 	content: "Edit/run me!";
-// }
+.snippet.language-javascript::before {
+	content: ".js";
+}

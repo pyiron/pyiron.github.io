@@ -4,6 +4,7 @@
         which can be combined like building blocks.</p>
         <p>So switching from density functional theory (VASP, SPHInX) to interatomic
         potentials (LAMMPS) is as easy as changing a variable.</p>"
+    icon: images/object.png
     snippet: generic_interface.md
 
 -
@@ -13,6 +14,7 @@
         <p>This enables studying trends in the periodic table following the map-reduce
         pattern using the pyironTable object to aggregate the results in a single
         pandas Dataframe.</p>"
+    icon: images/infrastructure.png
     snippet: infrastructure.md
 
 -
@@ -22,4 +24,5 @@
     <p>New simulation codes can be added to the pyiron IDE by defining a write_input
     and a collect_output function for file-based communication or a single run_static
     function for simulation codes with python bindings.</p>"
+    icon: images/app.png
     snippet: extendability.md

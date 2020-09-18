@@ -12,71 +12,57 @@ description: Optimized protocols and data management for high-powered research
 	{% endif %}
 	<img class="main-logo" src="images/logo.png"></img>
 	<div class="text-container">
-		<h1 class="editable"><strong>Complex workflows made easy</strong></h1>
-		<p class="subtext editable">From rapid prototyping to high performance computing in material science</p>
+		<h1 class="editable" data-aos="fade-up" data-aos-offset="-500"><strong>Complex workflows made easy</strong></h1>
+		<p class="subtext editable" data-aos="fade-up" data-aos-offset="-500">From rapid prototyping to high performance computing in material science</p>
 		<div class="cta button alt"><a href="https://github.com/pyiron/pyiron" target="_blank">Browse on Github</a></div>
-		<div id="condaBox"><code class="prettyprint lang-bash" style="width: auto;">conda install -c conda-forge pyiron</code></div>
+		{% include conda_install.md %}
 		<div>
-			<img src="{{ site.baseurl }}/images/dashboard.png" alt="Screenshot" class="screenshot editable" data-aos="fade-up" data-aos-offset="-500"/>
+			<img src="{{ site.baseurl }}/images/dashboard.png" alt="Screenshot" class="screenshot editable"/>
 		</div>
 	</div>
 </section>
 
 <div class="content">
-	<section>
-		<div class="container flex homepage-feature" data-aos="fade-left">
-			<div class="text editable">
-				<h2>Generic Interface</h2>
-				<p>
-					The pyiron IDE is build on top of an abstract class of Python objects, which can be combined like building blocks.
-					So switching from density functional theory (VASP, SPHInX) to interatomic potentials (LAMMPS) is as easy as changing one variable, see an example.
+	{% assign text-left = true %}
+	{% for feature in site.data.features %}
+		{% if text-left %}
+			{% assign text-aos = "fade-right" %}
+			{% assign code-aos = "fade-left" %}
+		{% else %}
+			{% assign text-aos = "fade-left" %}
+			{% assign code-aos = "fade-right" %}
+		{% endif %}
+		<section>
+			<div class="container flex" {% unless text-left %}style="flex-direction: row-reverse;"{% endunless %}>
+				<div class="text editable" data-aos="{{ text-aos }}" data-aos-offset="300">
+					<h2>{{ feature.header }}</h2>
+					{{ feature.content }}
+				</div>
+				<div class="feature" style="width: 500px !important;" data-aos="{{ code-aos }}" data-aos-offset="300">
+					{% include {{ feature.snippet }} %}
+				</div>
+			</div>
+		</section>
+		{% if text-left %}
+			{% assign text-left = false %}
+		{% else %}
+			{% assign text-left = true %}
+		{% endif %}
+	{% endfor %}
 
-				</p>
-			</div>
-			<div class="image">
-				<img src="{{ site.baseurl }}/images/object.png" alt="Object" class="editable" />
-			</div>
-		</div>
-	</section>
-
-	<section>
-		<div class="container flex homepage-feature" data-aos="fade-right">
-			<div class="text editable">
-				<h2>Infrastructure</h2>
-				<p>
-					Inside the pyiron IDE simulation protocols are developed in Jupyter notebooks, which can be submitted to an remote HPC cluster as ScriptJobs.
-					This enables studying trends in the periodic table following the map-reduce pattern using the pyironTable object to aggregate the results in a single pandas Dataframe, see an example.
-				</p>
-			</div>
-			<div class="image">
-				<img src="{{ site.baseurl }}/images/infrastructure.png" alt="Infrastructure" class="editable" />
-			</div>
-		</div>
-	</section>
-
-	<section>
-		<div class="container flex homepage-feature" data-aos="fade-left">
-			<div class="text editable">
-				<h2>Extendability</h2>
-				<p>
-					The pyiron IDE is developed with advanced users in mind, therefore both the input and the output of the underlying simulation codes are accessible.
-					Finally new simulation codes can be added to the pyiron IDE by defining a write_input and a collect_output function for file based communication or a single run_static function for simulation codes with python bindings, see an example.
-				</p>
-			</div>
-			<div class="image">
-				<img src="{{ site.baseurl }}/images/app.png" alt="App" class="editable" />
-			</div>
-		</div>
-	</section>
-
-	<div id="news" class="text-container" style="text-align: center;" data-aos="fade-up">
+	<div id="news" class="text-container" style="text-align: center;">
 		<h1>Latest News</h1>
 		<hr>
 	</div>
 	<div class="container flex">
 	{% assign news_icons = "releases, workshops, documentation, milestones" | split: ', ' %}
+	{% assign i = 1 %}
 	{% for post in site.categories.news limit:3 %}
-		<div class="news-card" data-aos="zoom-in"
+		<div class="news-card"
+		{% if i == 1 %} data-aos="fade-right"
+		{% elsif i == 2 %} data-aos="zoom-in"
+		{% elsif i == 3 %} data-aos="fade-left"
+		{% endif %} data-aos-offset="300"
 		{% if news_icons contains post.categories[1] %}
 			style="background-image: url(/images/news-icon-{{ post.categories[1] }}.png)"
 		{% else %}
@@ -101,6 +87,7 @@ description: Optimized protocols and data management for high-powered research
 			</div>
 		</p>
 		</div>
+		{% assign i = i | plus: 1 %}
 	{% endfor %}
 	</div>
 	<section class="bottom-cta">
@@ -113,3 +100,29 @@ description: Optimized protocols and data management for high-powered research
 		</p>
 	</section>
 </div>
+<script>
+	// Create those little tabs on the upper right corners of
+	// code snippets
+	for (var i=0; i<$(".highlight").length; i++) {
+		var codeBlock = $(".highlight")[i];
+		var pre = $(codeBlock).find("pre").first();
+		var code = $(pre).find("code").first();
+		var syntax = $(code).attr("class");
+		$(codeBlock).addClass(syntax);
+
+		if (syntax == "language-python") {
+			$(pre).attr({"data-executable": true});
+		}
+
+	}
+</script>
+
+<script src="{{ 'js/juniper.min.js' | relative_url }}"></script>
+<script>
+	new Juniper({
+		repo: 'pyiron/pyiron',
+		theme: 'pyiron',
+	})
+</script>
+
+{% include animate_on_scroll.html %}

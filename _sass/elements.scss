@@ -27,14 +27,14 @@ body {
     }
 }
 
-code {
-	font-size: 18px;
-	background: rgba(255, 255, 255, 0.8);;
-	color: $main-color;
-	padding: 10px 15px;
-	border-radius: 3px;
-	overflow: scroll;
-}
+// code {
+// 	font-size: 18px;
+// 	background: rgba(255, 255, 255, 0.8);;
+// 	color: $main-color;
+// 	padding: 10px 15px;
+// 	border-radius: 3px;
+// 	overflow: scroll;
+// }
 
 .inline {
 	background: $main-color;
@@ -99,3 +99,235 @@ p, address {
 		margin: 0 auto;
 	}
 }
+
+
+/**
+* Syntax highlighting styles
+*/
+
+code {
+	font-family: $mono-font;
+	font-size: $code-font-size;
+	text-align: left;
+	margin-right: 0px !important;
+}
+
+.feature {
+	min-width: 600px;
+}
+
+.juniper-button {
+	display: none;
+}
+
+.juniper-cell {
+	border: $main-color;
+}
+
+.juniper-input {
+	margin: 10px 20px;
+}
+
+.juniper-output {
+	background: rgba(255, 255, 255, 0.9);
+	color: $main-color;
+	border: 2px solid $main-color;
+	border-radius: 0px 0px 5px 5px;
+	max-height: 50px;
+	overflow: scroll;
+}
+
+.CodeMirror {
+	padding: 0px !important;
+}
+
+.cm-s-pyiron {
+	font-size: 1em;
+	line-height: 1.5em;
+	font-family: $mono-font;
+	letter-spacing: 0.3px;
+	word-spacing: 1px;
+	background: $main-color;
+	color: white;
+
+	.CodeMirror-lines {
+		padding: 8px 0;
+	}
+
+	.CodeMirror-line {
+		overflow: show;
+	}
+
+	.CodeMirror-gutters {
+		box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.5);
+		-webkit-box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.5);
+		background-color: $main-color;
+		padding-right: 10px;
+		z-index: 3;
+		border: none;
+	}
+	div.CodeMirror-cursor {
+		border-left: 3px solid $purple;
+	}
+	.CodeMirror-activeline-background {
+		background: lighten($main-color, 20%);
+	}
+	.CodeMirror-selected {
+		background: $blue;
+	}
+	.cm-comment {
+		color: $green;
+	}
+	.cm-string {
+		color: $yellow;
+	}
+	.cm-number {
+		color: $blue;
+	}
+	.cm-atom {
+		color: $blue;
+	}
+	.cm-keyword {
+		color: white;
+	}
+	.cm-variable {
+		color: $pink;
+	}
+	.cm-def {
+		font-style: italic;
+		color: $yellow;
+	}
+	.cm-variable-2 {
+		color: $pink;
+	}
+	.cm-property {
+		color: $blue;
+	}
+	.cm-operator {
+		color: $pink;
+	}
+	.CodeMirror-linenumber {
+		color: $purple;
+	}
+}
+
+pre {
+	overflow-x: scroll;
+}
+
+.highlight,
+pre.highlight {
+	background: $main-color;
+	border: 2px solid white;
+	border-radius: 5px;
+	color: $text;
+}
+
+.highlight {
+	.highlighter-rouge & {
+		background: transparent;
+	}
+
+	pre {
+		background: transparent;
+		text-align: left;
+		margin-right: 0px !important;
+	}
+
+	.hll { background: $base; }
+	.c  { color: $subtle; font-style: italic; }
+	.err { color: $err; }
+	.k  { color: $pink; }
+	.l  { color: $yellow; }
+	.n  { color: $text; }
+	.o  { color: $pink; }
+	.p  { color: $text; }
+	.cm { color: $subtle; font-style: italic; }
+	.cp { color: $subtle; font-style: italic; }
+	.c1 { color: $subtle; font-style: italic; }
+	.cs { color: $subtle; font-style: italic; }
+	.ge { font-style: italic; }
+	.gs { font-weight: 700; }
+	.kc { color: $purple; }
+	.kd { color: $blue; }
+	.kn { color: $blue; }
+	.kp { color: $blue; }
+	.kr { color: $blue; }
+	.kt { color: $blue; }
+	.ld { color: $yellow; }
+	.m  { color: $orange; }
+	.s  { color: $yellow; }
+	.na { color: $text; }
+	.nb { color: $yellow; }
+	.nc { color: $yellow; }
+	.no { color: $yellow; }
+	.nd { color: $yellow; }
+	.ni { color: $yellow; }
+	.ne { color: $yellow; }
+	.nf { color: $text; }
+	.nl { color: $yellow; }
+	.nn { color: $text; }
+	.nx { color: $text; }
+	.py { color: $yellow; }
+	.nt { color: $red; }
+	.nv { color: $yellow; }
+	.ow { font-weight: 700; }
+	.w  { color: $highlight; }
+	.mf { color: $orange; }
+	.mh { color: $orange; }
+	.mi { color: $orange; }
+	.mo { color: $orange; }
+	.sb { color: $yellow; }
+	.sc { color: $yellow; }
+	.sd { color: $yellow; }
+	.s2 { color: $yellow; }
+	.se { color: $purple; }
+	.sh { color: $yellow; }
+	.si { color: $yellow; }
+	.sx { color: $yellow; }
+	.sr { color: $pink; }
+	.s1 { color: $yellow; }
+	.ss { color: $blue; }
+	.bp { color: $yellow; }
+	.vc { color: $yellow; }
+	.vg { color: $yellow; }
+	.vi { color: $red; }
+	.il { color: $orange; }
+	.gu { color: $subtle; }
+	.gd { color: $pink; }
+	.gi { color: $green; }
+}
+
+// .highlight::before {
+// 	color: white;
+// 	font-family: "San Francisco", "Helvetica Neue", "Helvetica", "Arial";
+// 	content: "</>";
+// 	border: 2px solid white;
+// 	background: $secondary-color;
+// 	border-radius: 10px 10px 0px 0px;
+// 	padding: 6px 18px;
+// 	display: inline-block;
+// 	position: absolute;
+// 	float: right;
+// 	overflow: show;
+// 	top: -34px;
+// 	right: -2px;
+// 	text-align: right;
+// }
+
+
+// .highlight.language-sh::before {
+// 	content: ".sh";
+// }
+
+// .highlight.language-yaml::before {
+// 	content: ".yml";
+// }
+
+// .highlight.language-javascript::before {
+// 	content: ".js";
+// }
+
+// .highlight.language-python::before {
+// 	content: "Edit/run me!";
+// }

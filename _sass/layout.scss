@@ -14,11 +14,20 @@
 	&.max-container {
 		max-width: 100%;
 		padding: 0;
+
+		.company-name {
+			padding-left: 50px;
+		}
 	}
 	&.no-padding {
 		padding-bottom: 0px;
 	}
+
+	&.navigation {
+		text-align: right;
+	}
 }
+
 
 .container + .container {
 	padding: 40px 0px 40px 0px;

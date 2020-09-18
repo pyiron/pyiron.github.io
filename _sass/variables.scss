@@ -6,3 +6,35 @@ $middle-gradient-color: mix($main-color, $secondary-color, 95%);
 $tablet: "(min-width: 450px)";
 $mid-point: "(min-width: 900px)";
 $desktop: "(min-width: 1000px)";
+
+$red:        hsl(0, 83%, 51%);
+$orange:     hsl(21, 100%, 50%);
+$yellow:     hsl(49, 100%, 61%);
+$green:      hsl(98, 64%, 68%);
+$blue:       hsl(199, 100%, 74%);
+$purple:     hsl(243, 60%, 60%);
+$pink:       hsl(335, 100%, 72%);
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+$header-color: $purple;
+
+$body-color: darken($purple, 40%);
+$link-color: darken($blue, 10%);
+$mono-font: "Space Mono";
+
+// Breakpoints
+$tablet: "(min-width: 450px)";
+$mid-point: "(min-width: 900px)";
+$desktop: "(min-width: 1000px)";
+
+$code-font-size: 18px;
+
+$syntax-hue: 350;
+$syntax-saturation: 100%;
+$syntax-brightness: 95%;
+
+$base: darken($purple, 5%);
+$text: hsl($syntax-hue, $syntax-saturation, $syntax-brightness);
+$subtle: hsl($syntax-hue, $syntax-saturation, 80%);
+$highlight: hsl($syntax-hue, $syntax-saturation, 100%);
+$err: $red;

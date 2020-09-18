@@ -1,0 +1,25 @@
+-
+    header: Generic Interface
+    content: "<p>The pyiron IDE is built on top of an abstract class of Python objects,
+        which can be combined like building blocks.</p>
+        <p>So switching from density functional theory (VASP, SPHInX) to interatomic
+        potentials (LAMMPS) is as easy as changing a variable.</p>"
+    snippet: generic_interface.md
+
+-
+    header: Infrastructure
+    content: "<p>Inside the pyiron IDE, simulation protocols are developed in Jupyter
+        notebooks, which can be submitted to a remote HPC cluster as ScriptJobs.</p>
+        <p>This enables studying trends in the periodic table following the map-reduce
+        pattern using the pyironTable object to aggregate the results in a single
+        pandas Dataframe.</p>"
+    snippet: infrastructure.md
+
+-
+    header: Extendability
+    content: "<p>The pyiron IDE is developed with advanced users in mind, exposing
+    direct access to all the inputs and outputs of the underlying simulation codes.</p>
+    <p>New simulation codes can be added to the pyiron IDE by defining a write_input
+    and a collect_output function for file-based communication or a single run_static
+    function for simulation codes with python bindings.</p>"
+    snippet: extendability.md

@@ -3,7 +3,7 @@
 
 {% for post in include.posts %}
 	{% assign n_posts = n_posts | plus: 1 %}
-	<div id="post{{n_posts}}" class="news-card wide"
+	<div id="post{{n_posts}}" class="news-card blog-post"
 	{% if post.categories contains "news" and news_icons contains post.categories[1] %}
 		style="background-image: url(/images/news-icon-{{ post.categories[1] }}.png)"
 	{% else if post.categories contains "publications" %}
@@ -30,19 +30,28 @@
 			</div>
 		</p>
 		{% if post.categories contains "publications" %}
+		<h3>
+			{% assign first = true %}
+			{% for author in post.authors %}
+				{% if first != true %}
+					 | 
+				{% endif %}
+				{{ author }}
+				{% assign first = false %}
+			{% endfor %}
+		</h3>
+		<i class="info">{{ post.journal }}</i>
 		<div class="post-content">
 			{% if post.full-text %}
-				<div class="button"><a href="{{ post.full-text }}" target="_blank">Read the paper</a></div>
+				<div class="button"><a href="{{ post.full-text }}" target="_blank">Full text</a></div>
 			{% endif %}
 			{% if post.mybinder %}
-				<div class="button">
-					<a href="{{ post.mybinder }}" target="_blank">
-						<img class="mybinder" src="https://mybinder.org/badge_logo.svg"/>
-					</a>
-				</div>
+				<a href="{{ post.mybinder }}" target="_blank">
+					<img class="mybinder" src="https://mybinder.org/badge_logo.svg"/>
+				</a>
 			{% endif %}
 		</div>
-	{% endif %}
+		{% endif %}
 	</div>
 {% endfor %}
 

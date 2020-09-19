@@ -68,7 +68,7 @@ description: Optimized protocols and data management for high-powered research
 		{% if i == 1 %} data-aos="fade-right"
 		{% elsif i == 2 %} data-aos="zoom-in"
 		{% elsif i == 3 %} data-aos="fade-left"
-		{% endif %} data-aos-offset="300"
+		{% endif %} data-aos-offset="100"
 		{% if news_icons contains post.categories[1] %}
 			style="background-image: url(/images/news-icon-{{ post.categories[1] }}.png)"
 		{% else %}
@@ -123,7 +123,6 @@ description: Optimized protocols and data management for high-powered research
 	}
 </script>
 
-<script src="{{ 'js/juniper.min.js' | relative_url }}"></script>
 <script>
 	new Juniper({
 		repo: 'pyiron/pyiron',
@@ -135,7 +134,7 @@ description: Optimized protocols and data management for high-powered research
 <script>
 	for (var i=0; i<$(".juniper-button").length; i++) {
 		var button = $(".juniper-button")[i];
-		$(button).text("</> run");
+		// $(button).text("</> run");
 	}
 </script>
 

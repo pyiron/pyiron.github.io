@@ -27,15 +27,6 @@ body {
     }
 }
 
-// code {
-// 	font-size: 18px;
-// 	background: rgba(255, 255, 255, 0.8);;
-// 	color: $main-color;
-// 	padding: 10px 15px;
-// 	border-radius: 3px;
-// 	overflow: scroll;
-// }
-
 .inline {
 	background: $main-color;
 	color: white;
@@ -156,15 +147,36 @@ code {
 
 .juniper-input {
 	margin: 10px 20px;
+	overflow-x: scroll;
 }
 
 .juniper-output {
-	background: $secondary-color;
-	color: white;
-	border-top: 3px solid white;
+	background: white;
+	color: $main-color;
+	border: 2px solid $main-color;
+	border-top: none;
 	border-radius: 0px 0px 10px 10px;
-	height: 30px;
+	height: auto;
+	min-height: 30px;
+	max-height: 500px;
 	overflow: scroll;
+
+	&.running {
+		background: lighten($yellow, 20%);
+	}
+
+	&.finished {
+		background: lighten($green, 20%);
+	}
+
+	&.errored {
+		border: 2px solid $pink;
+		border-top: none;
+	}
+
+	&.collapsed {
+		padding: 0px;
+	}
 }
 
 .CodeMirror {
@@ -191,7 +203,7 @@ code {
 	.CodeMirror-gutters {
 		box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.5);
 		-webkit-box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.5);
-		background-color: $main-color;
+		background-color: none;
 		padding-right: 10px;
 		z-index: 3;
 		border: none;
@@ -203,10 +215,10 @@ code {
 		background: lighten($main-color, 20%);
 	}
 	.CodeMirror-selected {
-		background: $blue;
+		background: lighten($main-color, 10%);
 	}
 	.cm-comment {
-		color: $green;
+		color: white;
 	}
 	.cm-string {
 		color: $yellow;
@@ -218,7 +230,7 @@ code {
 		color: $blue;
 	}
 	.cm-keyword {
-		color: white;
+		color: $green;
 	}
 	.cm-variable {
 		color: $pink;
@@ -234,7 +246,7 @@ code {
 		color: $blue;
 	}
 	.cm-operator {
-		color: $pink;
+		color: $purple;
 	}
 	.CodeMirror-linenumber {
 		color: $purple;
@@ -243,6 +255,10 @@ code {
 
 pre {
 	overflow-x: scroll;
+}
+
+.highlight + .highlight {
+	margin-top: 40px;
 }
 
 .highlight,
@@ -261,7 +277,7 @@ pre.highlight {
 
 	pre {
 		background: transparent;
-		margin-right: 0px !important;
+		// margin-right: 0px !important;
 	}
 
 	.hll { background: $base; }

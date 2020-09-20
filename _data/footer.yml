@@ -1,7 +1,7 @@
 links:
   -
     - name: Getting started
-      link: /getting-started/
+      link: /getting-started
       new_window: false
       download: false
     - name: Documentation
@@ -18,7 +18,7 @@ links:
       new_window: true
       download: false
     - name: Privacy Policy
-      link: /privacy/
+      link: /privacy
       new_window: false
       download: false
     - name: License

@@ -86,12 +86,12 @@ _A quick note about `_layouts/`:_
 All active pages on the site inherit their layout from `_layouts/default.html`, so changes made to this file will reflect throughout the entire site.
 
 - **index.html**: pyiron's home page. Customized quite a bit.
-- **team.html**: Pulls developer names and information from 
-- **getting-started.html**: Basic instructions for starting and using the MyBinder instance.
-- **news.html**: New updates for pyiron. Pulls from `_data/news.yml`.
->>>>>>> master
-- **privacy.html**: A very basic GDPR page about how we use visitors' data (we don't use visitors' data).
-- **license.html**: Information about the license/credits for pyiron and this website.
+- **team/index.html**: Pulls developer names and information from 
+- **getting-started/index.html**: Basic instructions for starting and using the MyBinder instance.
+- **news/index.html**: New updates for pyiron. Pulls from `news/_posts/`.
+- **publications/index.html**: Papers published with pyiron, usually with MyBinder links. Pulls from `publications/_posts/`
+- **privacy/index.html**: A very basic GDPR page about how we use visitors' data (we don't use visitors' data).
+- **license/index.html**: Information about the license/credits for pyiron and this website.
 - **404.html**: Renders when a searched page cannot be found.
 
 ### Code
@@ -187,7 +187,7 @@ For more information about how each event is listened for and handled, see the E
 ### Blogs
 the pyiron site technically hosts two blogs: `news` and `publications`. New posts are easy to add to either blog; just create a .md file under e.g. `news/_posts/` based on the examples that are already in there. The filename convention `YYYY-MM-DD-name-of-post.md` is unfortunately quite strict because that's how jekyll orders the posts. If you use a different date format your post will probably not show up.
 
-The 4 most recent posts in `news` items are also added automatically to the home page.
+The 3 most recent posts in `news/` items are also added automatically to the home page.
 
 You can control the number of blog posts shown per page under pyiron.org/news/ and pyiron.org/publications/ by the variable `posts-per-page` in `_config.yml`.
 

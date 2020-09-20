@@ -3,6 +3,10 @@
   image_path: https://gitlab.com/uploads/-/system/project/avatar/470007/ase256.png
   link: https://wiki.fysik.dtu.dk/ase/
 -
+  name: conda-forge
+  image_path: https://avatars0.githubusercontent.com/u/11897326
+  link: https://conda-forge.org
+-
   name: European Galaxy server
   image_path: https://galaxyproject.org/images/galaxy-logos/galaxy_project_logo_square.png
   link: https://live.usegalaxy.eu
@@ -36,12 +40,12 @@
   link: https://phonopy.github.io/phonopy/
 -
   name: pyscal
-  image_path: http://pyscal.com/en/latest/_static/pyscal_logo1.png
+  image_path: https://pyscal.com/en/latest/_static/pyscal_logo1.png
   link: http://pyscal.com
 - 
   name: QuickFF
   image_path: /images/quickff.png
-  link: http://molmod.github.io/QuickFF/
+  link: https://molmod.github.io/QuickFF/
 -
   name: SFB
   image_path: https://www.sfb1394.rwth-aachen.de/fileadmin/IMM-Web/Resources/Public/Images/Logos/SFB1394_Logo_217x80_DE.png

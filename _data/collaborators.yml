@@ -1,12 +1,12 @@
 -
   name: Max-Planck-Institut für Eisenforschung
   location: Düsseldorf, Germany
-  image_path: http://potentials.rub.de/images/LogoMPIE100Years.jpeg
+  image_path: https://www.mpie.de/3689839/teaser-1506335104.jpg
   link: https://www.mpie.de
 -
   name: Interdisciplinary Centre for Advanced Materials Simulation (ICAMS)
   location: Bochum, Germany
-  image_path: http://www.icams.de/content/wp-content/themes/icams/images/logo.png
+  image_path: https://upload.wikimedia.org/wikipedia/commons/6/67/ICAMS.logo_400x173.png
   link: http://www.icams.de
 -
   name: Technische Universität Darmstadt
@@ -22,12 +22,12 @@
   name: Montanuniversität Leoben
   location: Leoben, Austria 
   image_path: https://presse.unileoben.ac.at/fileadmin/shares/presseaussendungen/2018/MUL_Logo_neu.jpg
-  link: http://cms.unileoben.ac.at
+  link: https://cms.unileoben.ac.at
 -
   name: University of British Columbia
   location: Vancouver, Canada
   image_path: https://brand3.sites.olt.ubc.ca/files/2018/09/5NarrowLogo_ex_768.png
-  link: http://mtrl.ubc.ca
+  link: https://mtrl.ubc.ca
 -
   name: GHENT University - Center for Molecular Modeling
   location: Ghent, Belgium

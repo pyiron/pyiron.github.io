@@ -28,9 +28,35 @@
 	}
 }
 
-
 .container + .container {
 	padding: 40px 0px 40px 0px;
+}
+
+.notebook {
+	padding-bottom: 0px;
+	h1 {
+		text-align: center;
+		border-bottom: 2px solid $main-color;
+		padding: 40px;
+	}
+
+	h2 {
+		text-align: center;
+		padding: 20px;
+	}
+
+	img {
+		max-width: 80%;
+	}
+
+}
+
+.notebook > * {
+	margin: 10px 60px;
+}
+
+.notebook > figure {
+	margin: 60px;
 }
 
 header {

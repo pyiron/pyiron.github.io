@@ -108,10 +108,18 @@ code {
 }
 
 .feature-icon {
-	width: 250px;
-	height: 250px;
-	position: relative;
-	padding: 0px 20px;
+	display: none;
+}
+
+@media (min-width: 750px) {
+	.feature-icon {
+		display: inline-block;
+		top: -30px;
+		width: 250px;
+		height: 250px;
+		position: relative;
+		padding: 0px 20px;
+	}
 }
 
 .overlay {
@@ -125,20 +133,31 @@ code {
 	padding: 8px 16px;
 	border: none;
 	position: absolute;
-	top: -48px;
+	top: -47px;
 	right: 0px;
-	transition: all 0.3s ease-in-out;
+	transition: all 0.1s ease-in-out;
 
 	&:hover {
 		cursor: pointer;
-		background: lighten($secondary-color, 10%);
-		top: -53px;
-		transition: all 0.3s ease-in-out;
+		top: -50px;
+		transition: all 0.1s ease-in-out;
 	}
 
-	&:focus {
-		border: none;
+	&.running {
+		background: $yellow;
+		color: $main-color;
 	}
+
+	&.finished {
+		background: $green;
+		color: $main-color;
+	}
+
+	&.errored {
+		background: $red;
+		color: white;
+	}
+
 }
 
 .juniper-cell {
@@ -160,96 +179,74 @@ code {
 	min-height: 30px;
 	max-height: 500px;
 	overflow: scroll;
-
-	&.running {
-		background: lighten($yellow, 20%);
-	}
-
-	&.finished {
-		background: lighten($green, 20%);
-	}
-
-	&.errored {
-		border: 2px solid $pink;
-		border-top: none;
-	}
-
-	&.collapsed {
-		padding: 0px;
-	}
 }
 
 .CodeMirror {
 	padding: 0px !important;
 }
 
-.cm-s-pyiron {
+.cm-s-monokai {
 	font-size: 1em;
 	line-height: 1.5em;
 	font-family: $mono-font;
 	letter-spacing: 0.3px;
 	word-spacing: 1px;
 	background: $main-color;
-	color: white;
+	color: #F8F8F2;
 
 	.CodeMirror-lines {
 		padding: 8px 0;
 	}
-
-	.CodeMirror-line {
-		overflow: show;
-	}
-
 	.CodeMirror-gutters {
 		box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.5);
 		-webkit-box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.5);
-		background-color: none;
+		background-color: $main-color;
 		padding-right: 10px;
 		z-index: 3;
 		border: none;
 	}
 	div.CodeMirror-cursor {
-		border-left: 3px solid $purple;
+		border-left: 3px solid #F8F8F2;
 	}
 	.CodeMirror-activeline-background {
-		background: lighten($main-color, 20%);
+		background: #49483E;
 	}
 	.CodeMirror-selected {
-		background: lighten($main-color, 10%);
+		background: #49483E;
 	}
 	.cm-comment {
 		color: white;
 	}
 	.cm-string {
-		color: $yellow;
+		color: #E6DB74;
 	}
 	.cm-number {
-		color: $blue;
+		color: #66D9EF;
 	}
 	.cm-atom {
-		color: $blue;
+		color: #66D9EF;
 	}
 	.cm-keyword {
-		color: $green;
+		color: #F92672;
 	}
 	.cm-variable {
-		color: $pink;
+		color: #A6E22E;
 	}
 	.cm-def {
 		font-style: italic;
-		color: $yellow;
+		color: #FD971F;
 	}
 	.cm-variable-2 {
-		color: $pink;
+		color: #F92672;
 	}
 	.cm-property {
-		color: $blue;
+		color: #66D9EF;
 	}
 	.cm-operator {
-		color: $purple;
+		color: #F92672;
 	}
 	.CodeMirror-linenumber {
-		color: $purple;
+		color: #75715E;
 	}
 }
 
@@ -261,23 +258,16 @@ pre {
 	margin-top: 40px;
 }
 
-.highlight,
-pre.highlight {
-	background: $main-color;
+div.highlight, figure.highlight {
 	border: 2px solid white;
-	border-radius: 10px 0px 12px 12px;
 	color: $text;
 	width: auto;
 }
 
 .highlight {
-	.highlighter-rouge & {
-		background: transparent;
-	}
 
 	pre {
 		background: transparent;
-		// margin-right: 0px !important;
 	}
 
 	.hll { background: $base; }
@@ -344,32 +334,54 @@ pre.highlight {
 	.gi { color: $green; }
 }
 
-.snippet::before {
+figure.highlight {
+	border-radius: 10px 0px 12px 12px;
+	background: $main-color;
+}
+
+div.highlight {
+	border-radius: 0px 10px 12px 12px;
+	background: $main-color;
+
+	pre {
+		padding: 0px 25px;
+		font-size: 1em;
+		line-height: 1.5em;
+		font-family: $mono-font;
+		letter-spacing: 0.3px;
+		word-spacing: 1px;
+	}
+}
+
+div.highlight::before {
 	color: white;
 	font-family: "San Francisco", "Helvetica Neue", "Helvetica", "Arial";
 	content: "</>";
+	background: lighten($main-color, 10%);
 	border: 2px solid white;
-	background: $secondary-color;
 	border-radius: 10px 10px 0px 0px;
-	padding: 6px 18px;
+	padding: 6px 10px;
 	display: inline-block;
 	position: relative;
-	float: right;
+	float: left;
+	top: -34px;
+	left: -2px;
 	overflow: show;
-	top: -33px;
-	right: 40px;
 	text-align: right;
 }
 
+div.highlight.language-python::before {
+	content: ".py";
+}
 
-.snippet.language-sh::before {
+div.highlight.language-sh::before {
 	content: ".sh";
 }
 
-.snippet.language-yaml::before {
+div.highlight.language-yaml::before {
 	content: ".yml";
 }
 
-.snippet.language-javascript::before {
+div.highlight.language-javascript::before {
 	content: ".js";
 }

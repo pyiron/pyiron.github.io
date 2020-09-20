@@ -32,47 +32,12 @@ layout: page
 </div>
 
 {% if page.code %}
-  {% include {{ page.code }} %}
+
+	<div class="container notebook">
+		{% capture my_include %}{% include {{ page.code }} %}{% endcapture %}
+		{{ my_include | markdownify }}
+	</div>
+
+	{% assign server = page.mybinder | split: "/" | slice: 5, 2 | join: "/" %}
+	{% include juniper.html server=server %}
 {% endif %}
-
-<script>
-	// Create those little tabs on the upper right corners of
-	// code snippets
-	for (var i=0; i<$(".highlight").length; i++) {
-		var codeBlock = $(".highlight")[i];
-		var pre = $(codeBlock).find("pre").first();
-		var code = $(pre).find("code").first();
-		var syntax = $(code).attr("class");
-		$(codeBlock).addClass(syntax);
-
-		if (syntax == "language-python") {
-			$(pre).attr({"data-executable": true});
-		}
-	}
-</script>
-
-<script>
-	new Juniper({
-		repo: "{{ page.mybinder }}".split("/").slice(5, 7).join("/"),
-		theme: 'pyiron',
-		isolateCells: false,
-	})
-</script>
-
-<script>
-	document.addEventListener('juniper', event => {
-    if (event.detail.status == 'finished') {
-		var div1 = $(event.target.activeElement).parent();
-		var codeMirror = $(div1).parent();
-		var juniperInput = $(codeMirror).parent();
-		var juniperCell = $(juniperInput).parent();
-		var juniperOutput = $(juniperCell).find(".juniper-output").first();
-		$(juniperOutput).addClass("finished");
-
-		var outputArea = $(juniperOutput).find(".jp-OutputArea").first();
-		if (!$(outputArea).html()) {
-			$(juniperOutput).addClass("collapsed");
-		}
-    }
-})
-</script>

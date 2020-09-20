@@ -29,6 +29,12 @@ author:
 # -----
 # Build
 
+markdown: kramdown
+
+kramdown:  
+  input: GFM
+  parse_block_html: true
+
 timezone: Etc/UTC
 
 collections:

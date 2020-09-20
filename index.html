@@ -15,9 +15,8 @@ description: Optimized protocols and data management for high-powered research
 		<h1 class="editable"><strong>Complex workflows made easy</strong></h1>
 		<p class="subtext editable">From rapid prototyping to high performance computing in material science</p>
 		<div class="cta button alt"><a href="https://github.com/pyiron/pyiron" target="_blank">Browse on Github</a></div>
-		<div class="snippet language-sh">
-			{% include conda_install.md %}
-		</div>
+		{% capture my_include %}{% include conda_install.md %}{% endcapture %}
+		{{ my_include | markdownify }}
 		<div>
 			<img src="{{ site.baseurl }}/images/dashboard.png" alt="Screenshot" class="screenshot editable" data-aos="fade-up" data-aos-offset="300"/>
 		</div>
@@ -106,36 +105,6 @@ description: Optimized protocols and data management for high-powered research
 		</p>
 	</section>
 </div>
-<script>
-	// Create those little tabs on the upper right corners of
-	// code snippets
-	for (var i=0; i<$(".highlight").length; i++) {
-		var codeBlock = $(".highlight")[i];
-		var pre = $(codeBlock).find("pre").first();
-		var code = $(pre).find("code").first();
-		var syntax = $(code).attr("class");
-		$(codeBlock).addClass(syntax);
-
-		if (syntax == "language-python") {
-			$(pre).attr({"data-executable": true});
-		}
-
-	}
-</script>
-
-<script>
-	new Juniper({
-		repo: 'pyiron/pyiron',
-		theme: 'pyiron',
-		isolateCells: false,
-	})
-</script>
-
-<script>
-	for (var i=0; i<$(".juniper-button").length; i++) {
-		var button = $(".juniper-button")[i];
-		// $(button).text("</> run");
-	}
-</script>
 
 {% include animate_on_scroll.html %}
+{% include juniper.html server="pyiron/pyiron" %}

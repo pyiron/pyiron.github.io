@@ -1,3 +1,3 @@
-{% highlight sh %}
+```sh
 conda install -c conda-forge pyiron
-{% endhighlight %}
+```

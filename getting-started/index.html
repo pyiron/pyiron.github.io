@@ -1,104 +1,17 @@
 ---
-title: Getting Started With pyiron
+title:
 description:
 ---
-<h3>Video Tour</h3>
-<p>
-    If you are new to the pyiron framework, please check out this
-    <a href="https://www.youtube.com/watch?v=jQGYUgJK3Ug" target="_blank">video tour</a>
-    of its features and usage.
-</p>
-<h3>MyBinder</h3>
-<p>
-    The notebook below is powered by MyBinder, a free remote Jupyter server
-    where pyiron is already installed. Feel free to modify and add your own
-    code to what's already there!
-    
-    If you are having connection issues for any of the cells on this page,
-    please try launching the actual MyBinder server and running the code
-    there under `notebooks/first_steps.ipynb`
-</p>
+<div class="container notebook">
+    <h3>Video Tour</h3>
+    <p>
+        If you are new to the pyiron framework, please check out this
+        <a href="https://www.youtube.com/watch?v=jQGYUgJK3Ug" target="_blank">video tour</a>
+        of its features and usage.
+    </p>
 
-<div class="container">
-    {% include getting_started_notebook.html %}
+    {% capture my_include %}{% include getting_started_notebook.md %}{% endcapture %}
+    {{ my_include | markdownify }}
 </div>
 
-<script>
-	// Create those little tabs on the upper right corners of
-	// code snippets
-	for (var i=0; i<$(".highlight").length; i++) {
-		var codeBlock = $(".highlight")[i];
-		var pre = $(codeBlock).find("pre").first();
-		var code = $(pre).find("code").first();
-		var syntax = $(code).attr("class");
-		$(codeBlock).addClass(syntax);
-
-		if (syntax == "language-python") {
-			$(pre).attr({"data-executable": true});
-		}
-	}
-</script>
-
-<script>
-	new Juniper({
-		repo: "pyiron/pyiron",
-		theme: 'pyiron',
-        isolateCells: false,
-        msgLoading: " ",
-	})
-</script>
-
-<script>
-// document.addEventListener('juniper', event => {
-//     if (event.detail.status == 'pyiron_really_done') {
-//         var n = 1;
-
-// 		var div1 = $(event.target.activeElement).parent();
-// 		var codeMirror = $(div1).parent();
-// 		var juniperInput = $(codeMirror).parent();
-// 		var juniperCell = $(juniperInput).parent();
-// 		var juniperButton = $(juniperCell).find(".juniper-button").first();
-// 		$(juniperButton).html("In ["+n+"]");
-
-// 		var outputArea = $(juniperOutput).find(".jp-OutputArea").first();
-// 		if (!$(outputArea).html()) {
-// 			$(juniperOutput).addClass("collapsed");
-// 		}
-//     }
-// })
-
-var activeCell = $(".juniper-cell").first();
-
-document.addEventListener("pyiron_done", event => {
-    if (event.detail.content.execution_count){
-        var activeCell = $(".juniper-cell.active").first();
-        $(activeCell).removeClass("active");
-        var n = event.detail.content.execution_count;
-        var status = event.detail.content.status;
-        var activeOutput = $(activeCell).find(".juniper-output").first();
-        $(activeOutput).removeClass("running");
-        if (status == "ok") {
-            $(activeOutput).addClass("finished");
-        } else if (status == "error") {
-            $(activeOutput).addClass("errored");
-        }
-
-        var activeButton = $(activeCell).find(".juniper-button").first();
-        $(activeButton).html("In [" + n + "]");
-    };
-});
-
-document.addEventListener('juniper', event => {
-    if (event.detail.status == 'executing') {
-		var div1 = $(event.target.activeElement).parent();
-		var codeMirror = $(div1).parent();
-		var juniperInput = $(codeMirror).parent();
-        var activeCell = $(juniperInput).parent();
-        var activeOutput = $(activeCell).find(".juniper-output").first();
-        $(activeCell).addClass("active");
-        $(activeOutput).removeClass("finished");
-        $(activeOutput).removeClass("errored");
-        $(activeOutput).addClass("running");
-    }
-})
-</script>
+{% include juniper.html server="pyiron/pyiron" %}

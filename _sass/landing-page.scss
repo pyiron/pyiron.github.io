@@ -106,31 +106,30 @@
 	background-size: 80px;
 }
 
+.flex {
+	@include flexbox;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	.text, .image {
+		-webkit-flex: 1;
+		flex: 1;
+		padding: 0 20px;
+	}
+}
+
+.content section:nth-child(even) .flex {
+	flex-direction: row-reverse;
+}
+
 @media #{$desktop} {
-	.flex {
-		@include flexbox;
-		align-items: center;
-		flex-direction: row;
-		flex-wrap: wrap;
 
-		.text, .image {
-			-webkit-flex: 1;
-			flex: 1;
-			padding: 0 20px;
-		}
-	}
-
-	.feature-icon {
-		top: -30px;
-	}
 	.news-card {
 		width: 200px;
 		height: 200px;
 	}
 
-	.content section:nth-child(even) .flex {
-		flex-direction: row-reverse;
-	}
 }
 
 .image {

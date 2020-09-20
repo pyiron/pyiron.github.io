@@ -85,8 +85,8 @@ To create a banner message on the home page (for important messages to share wit
 _A quick note about `_layouts/`:_
 All active pages on the site inherit their layout from `_layouts/default.html`, so changes made to this file will reflect throughout the entire site.
 
-- **index.html**: pyiron's home page. Customized quite a bit.
-- **team/index.html**: Pulls developer names and information from 
+- **index.html**: pyiron's home page. Customized quite a bit. The featured text/images/code are pulled from `_data/features.yml`
+- **team/index.html**: Pulls developer names and information from `_data/core-developers.yml`, `_data/github-bots.yml`, and Github's API for the main pyiron repository.
 - **getting-started/index.html**: Basic instructions for starting and using the MyBinder instance.
 - **news/index.html**: New updates for pyiron. Pulls from `news/_posts/`.
 - **publications/index.html**: Papers published with pyiron, usually with MyBinder links. Pulls from `publications/_posts/`
@@ -181,8 +181,6 @@ document.dispatchEvent(event); // MA
 ```
 
 For more information about how each event is listened for and handled, see the EventListeners in `_includes/juniper.html`. For more information about how cells are styled, etc. see the various classes in `_sass/elements.css`.
-
-**Important note:** 
 
 ### Blogs
 the pyiron site technically hosts two blogs: `news` and `publications`. New posts are easy to add to either blog; just create a .md file under e.g. `news/_posts/` based on the examples that are already in there. The filename convention `YYYY-MM-DD-name-of-post.md` is unfortunately quite strict because that's how jekyll orders the posts. If you use a different date format your post will probably not show up.

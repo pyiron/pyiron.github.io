@@ -94,6 +94,96 @@ All active pages on the site inherit their layout from `_layouts/default.html`, 
 - **license.html**: Information about the license/credits for pyiron and this website.
 - **404.html**: Renders when a searched page cannot be found.
 
+### Code
+
+There are two main types of code rendered on pyiron.org- snippets and cells.
+Snippets are used to display non-interactive code that can be copy-pasted, like the
+`conda install -c conda forge pyiron` on the homepage. A new snippet is created everywhere that
+a normal code block is included in a markdown file:
+
+\`\`\`sh
+conda install -c conda forge
+\`\`\`
+
+The little tabs on the top left of the snippet are automatically created based on the syntax inside.
+To add tab styles for new syntaxes, simply create a new class under `_sass/elements.scss`:
+
+```sass
+div.highlight.language-javascript::before {
+	content: ".js";
+}```
+
+Cells can also be added in markdown files, but instead of a markdown code block, each cell
+should be wrapped in a `{% highlight python %} {% endhighlight %}` statement. Right now python is the
+only supported language, because that's what the Jupyter server is set up for.
+
+{% highlight python %}
+print("Hello world.")
+{% endhighlight %}
+
+When the above markdown is included in an HTML file, it will first create a non-interactive snippet similar
+to those described above. The magic only happens when `_includes/juniper.html` is included at the foot of the
+HTML file. `juniper.html` converts all elements that have been added via `{% highlight python %}` statements
+into "juniper cells", which are editable jupyter cells that can actually be run on the MyBinder server linked
+to the page. More on Juniper below.
+
+To nicely format a markdown file containing plain text and code highlights, enclose the whole markdown file
+in a `<div class="container notebook>`, like this example from the post.html layout:
+
+```html
+<div class="container notebook">
+	<!-- this capture + markdownify nonsense is required to render
+	markdown files within HTML files in jekyll/liquid. -->
+	{% capture my_include %}{% include {{ page.code }} %}{% endcapture %}
+	{{ my_include | markdownify }}
+</div>
+```
+
+When in doubt, copy/paste the existing examples and modify just what you need.
+
+#### Juniper <--> MyBinder connection
+
+A few notes on how pyiron uses Juniper + MyBinder to run code cells embedded throughout the site:
+
+[MyBinder](https://mybinder.org/) is the free Jupyter server on which we host many of our tutorial-style notebooks. Whenever a user visits the url of one of our MyBinder servers, MyBinder builds and launches a Docker instance where pyiron and all the extra packages are remotely installed.
+
+[Juniper](https://github.com/ines/juniper) is a javascript library that lets us make remote calls to send input and receive output from one of these MyBinder instances. We set up the Juniper client in `_includes/juniper.html`:
+
+```HTML
+<!-- include the juniper minified source code.
+We have customized this file, so please don't change it unless you
+know what you are doing! -->
+<script src="{{ 'js/juniper.min.js' | relative_url }}"></script>
+```
+
+```javascript
+// Initialize the link to MyBinder via Juniper
+new Juniper({
+    repo: "{{ include.server }}",  // include.server usually set to pyiron/pyiron
+    theme: 'monokai',  // syntax highlighting
+    isolateCells: false,  // share variables among cells on page
+    msgLoading: " ",  // don't show a loading message
+})
+```
+
+Loosely speaking, the Juniper object has four statuses that pyiron.org listens for as events:
+
+- **startup**: Booting up the MyBinder server. The actual events passed are named 'requesting-kernel' -> 'building' -> 'built' -> 'server-ready' -> 'launching' -> 'ready'
+- **failed**: Indicates that some step in the startup event progression didn't work. Turns cell tab red.
+- **executing**: A cell is running. Turns cell tab yellow.
+- **cellExecuted**: An event that we manually added to `js/juniper.min.js` to indicate a cell has finished running. Turns cell tab green (success) or red (errored).
+
+To create the `cellExecuted` event, I added these lines to the jupyterlab kernel's `_handleDone()` function inside of juniper.min.js:
+
+```javascript
+var event = new CustomEvent('cellExecuted', { detail: this._replyMsg }); // MA 
+document.dispatchEvent(event); // MA
+```
+
+For more information about how each event is listened for and handled, see the EventListeners in `_includes/juniper.html`. For more information about how cells are styled, etc. see the various classes in `_sass/elements.css`.
+
+**Important note:** 
+
 ### Blogs
 the pyiron site technically hosts two blogs: `news` and `publications`. New posts are easy to add to either blog; just create a .md file under e.g. `news/_posts/` based on the examples that are already in there. The filename convention `YYYY-MM-DD-name-of-post.md` is unfortunately quite strict because that's how jekyll orders the posts. If you use a different date format your post will probably not show up.
 

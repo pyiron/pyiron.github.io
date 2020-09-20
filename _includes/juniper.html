@@ -1,7 +1,9 @@
-<script>
-    // Convert highlighted python snippets to runnable
-    // juniper cells
+<script src="{{ 'js/juniper.min.js' | relative_url }}"></script>
 
+<script>
+
+    // Add syntax tab label to non-interactive snippets,
+    // like the .sh tab on the homepage's conda install snippet
     for (var i=0; i<$("div.highlight").length; i++) {
         var snippet = $("div.highlight")[i];
         var rouge = $(snippet).parent();
@@ -9,6 +11,8 @@
         $(snippet).addClass(syntax);
     }
 
+    // Convert highlighted python snippets to runnable
+    // juniper cells
 	for (var i=0; i<$(".highlight").length; i++) {
 		var codeBlock = $(".highlight")[i];
 		var pre = $(codeBlock).find("pre").first();

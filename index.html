@@ -83,7 +83,7 @@ description: Optimized protocols and data management for high-powered research
 				{% for category in post.categories %}
 					{% if category != "news" %}
 						<span class="blog-filter">
-							<a href="{{ site.baseurl }}/category/{{ category | slugify }}/">
+							<a href="{{ site.baseurl }}/news#category={{ category | slugify }}">
 								{{ category }}
 							</a>
 						</span>

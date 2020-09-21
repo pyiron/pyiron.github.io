@@ -18,7 +18,7 @@ description: Optimized protocols and data management for high-powered research
 		{% capture my_include %}{% include conda_install.md %}{% endcapture %}
 		{{ my_include | markdownify }}
 		<div>
-			<img src="{{ site.baseurl }}/images/dashboard.png" alt="Screenshot" class="screenshot editable" data-aos="fade-up" data-aos-offset="300"/>
+			<img src="{{ site.baseurl }}/images/dashboard.png" alt="Screenshot" class="screenshot editable"/>
 		</div>
 	</div>
 </section>
@@ -26,24 +26,17 @@ description: Optimized protocols and data management for high-powered research
 <div class="content">
 	{% assign text-left = true %}
 	{% for feature in site.data.features %}
-		{% if text-left %}
-			{% assign text-aos = "fade-right" %}
-			{% assign image-aos = "fade-left" %}
-		{% else %}
-			{% assign text-aos = "fade-left" %}
-			{% assign image-aos = "fade-right" %}
-		{% endif %}
 		<section>
 
 			<div class="container flex no-padding" {% unless text-left %}style="flex-direction: row-reverse;"{% endunless %}>
-				<div class="text editable" data-aos="{{ text-aos }}" data-aos-offset="300">
+				<div class="text editable">
 					<h2>{{ feature.header }}</h2>
 					{{ feature.content }}
 				</div>
-				<img class="feature-icon" src="{{ feature.icon | relative_url }}" data-aos="{{ image-aos }}" data-aos-offset="300"/>
+				<img class="feature-icon" src="{{ feature.icon | relative_url }}"/>
 			</div>
 			<div class="container flex" style="justify-content: center;">
-				<div class="feature" data-aos="fade-up" data-aos-offset="100">
+				<div class="feature">
 					{% include {{ feature.snippet }} %}
 				</div>
 			</div>
@@ -64,10 +57,6 @@ description: Optimized protocols and data management for high-powered research
 	{% assign i = 1 %}
 	{% for post in site.categories.news limit:3 %}
 		<div class="news-card"
-		{% if i == 1 %} data-aos="fade-right"
-		{% elsif i == 2 %} data-aos="zoom-in"
-		{% elsif i == 3 %} data-aos="fade-left"
-		{% endif %} data-aos-offset="100"
 		{% if news_icons contains post.categories[1] %}
 			style="background-image: url(/images/news-icon-{{ post.categories[1] }}.png)"
 		{% else %}
@@ -106,5 +95,4 @@ description: Optimized protocols and data management for high-powered research
 	</section>
 </div>
 
-{% include animate_on_scroll.html %}
 {% include juniper.html server="pyiron/pyiron" %}

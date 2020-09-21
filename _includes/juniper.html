@@ -33,7 +33,8 @@ new Juniper({
     repo: "{{ include.server }}",
     theme: 'monokai',
     isolateCells: false,
-    msgLoading: " ",  // 
+    msgLoading: " ",  //
+    msgError: "Connecting failed. Please try running this cell once more, or contact us if the problem persists.",
 })
 
 // Listen for events sent back by the jupyterlab KernelFutureHandler

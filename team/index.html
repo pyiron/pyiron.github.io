@@ -5,7 +5,6 @@ full_width: true
 ---
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <div class="container">
-	<p class="editor-link" style="text-align: center;"><a href="cloudcannon:collections/_staff_members/" class="btn"><strong>&#9998;</strong> Manage Staff members</a></p>
 	<p style="text-align: center;">
 		Interested in contributing to pyiron? <a onclick="$('#formbutton-button')[0].click();">Contact us</a>
 		or open an <a href="https://github.com/pyiron/pyiron/issues">issue</a>/
@@ -15,7 +14,7 @@ full_width: true
 	<ul class="developers">
 		{% for person in site.data.core-developers %}
 			<li id="{{ person.links.github }}">
-				<div class="square-image"><img src="{% include relative-src.html src=person.image_path %}" alt="{{ person.name }}"/></div>
+				<div class="square-image"><img src="{{ person.image_path | relative_url }}" alt="{{ person.name }}"/></div>
 				<div class="name">{{ person.name }}</div>
 				<div class="info">{{ person.position }}</div>
 				<div class="links">

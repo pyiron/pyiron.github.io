@@ -8,9 +8,9 @@
 		{% seo %}
 		{% feed_meta %}
 
-		<link rel="stylesheet" href="{{ site.baseurl }}/css/screen.css">
+		<link rel="stylesheet" href="{{ 'css/screen.css' | relative_url }}">
 		
-		<link rel="icon" type="image/png" href="{{ site.baseurl }}/favicon.png">
+		<link rel="icon" type="image/png" href="{{ 'favicon.png' | relative_url }}">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="https://kit.fontawesome.com/1d40be1112.js" crossorigin="anonymous"></script>
 
@@ -27,7 +27,7 @@
 		<header>
 			<div class="container no-padding">
 				{% if page.url != "/" %}
-					<div class="company-name"><a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/images/logo.png" alt="pyiron Logo" width="100" height="100"/></a></div>
+					<div class="company-name"><a href="{{ site.baseurl }}/"><img src="{{ 'images/logo.png' | relative_url }}" alt="pyiron Logo" width="100" height="100"/></a></div>
 				{% endif %}
 				{% include navigation.html %}
 			</div>
@@ -35,12 +35,11 @@
 		{{ content }}
 		<footer>
 			<div class="container no-padding">
-				<p class="editor-link"><a href="cloudcannon:collections/_data/footer.yml" class="btn"><strong>&#9998;</strong> Edit footer</a></p>
 				<div class="footer-columns">
 					{% for column in site.data.footer.links %}
 					<ul class="footer-links">
 						{% for link in column %}
-						<li><a {% if link.new_window %}target="_blank"{% endif %} href="{% include relative-src.html src=link.link %}" {% if link.download %}download{% endif %}>
+						<li><a {% if link.new_window %}target="_blank"{% endif %} href="{{ link.link | relative_url }}" {% if link.download %}download{% endif %}>
 							{{ link.name }}</a></li>
 						{% endfor %}
 					</ul>
@@ -48,7 +47,7 @@
 				</div>
 				<div class="social">
 					{% for link in site.data.footer.social %}
-						<a href="{{ link.link }}" class="social-link fa fa-{{ link.icon }}"></a>
+						<a href="{{ link.link }}" target="_blank" class="social-link fa fa-{{ link.icon }}"></a>
 					{% endfor %}
 				</div>
 				<p class="copyright">&copy; {{ site.time | date: '%Y' }} {{ site.copyright }}</p>

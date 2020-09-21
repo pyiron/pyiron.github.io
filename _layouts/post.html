@@ -21,10 +21,10 @@ layout: page
 
 		<div class="blog-navigation">
 			{% if page.next_in_category.url %}
-				<a class="prev" href="{% include relative-src.html src=page.next_in_category.url %}"><i class="fa fa-arrow-left"></i> {{ page.next_in_category.title }}</a>
+				<a class="prev" href="{{ page.next_in_category.url | relative_url }}"><i class="fa fa-arrow-left"></i> {{ page.next_in_category.title }}</a>
 			{% endif %}
 			{% if page.previous_in_category.url %}
-				<a class="next" href="{% include relative-src.html src=page.previous_in_category.url %}">{{ page.previous_in_category.title }} <i class="fa fa-arrow-right"></i></a>
+				<a class="next" href="{{ page.previous_in_category.url | relative_url }}">{{ page.previous_in_category.title }} <i class="fa fa-arrow-right"></i></a>
 			{% endif %}
 		</div>
 

@@ -2,9 +2,9 @@
 title: Collaborators
 description: pyiron benefits greatly from its broad, diverse network of collaborators and users.
 ---
-<p class="editor-link" style="text-align: center;"><a href="cloudcannon:collections/_collaborators/" class="btn"><strong>&#9998;</strong> Manage Collaborators</a></p>
+
 <p style="text-align: center;">
-	Interested in testing pyiron yourself? <a href="/getting-started">Try it on Mybinder</a>
+	Interested in testing pyiron yourself? <a href="{{ 'getting-started' | relative_url }}">Try it on Mybinder</a>
 	or install it via <a href="https://anaconda.org/conda-forge/pyiron">conda</a>
 	/<a href="https://github.com/pyiron/pyiron">Github</a>.
 </p>
@@ -12,7 +12,7 @@ description: pyiron benefits greatly from its broad, diverse network of collabor
 	{% for institute in site.data.collaborators %}
 		<li>
 			<a href="{{ institute.link }}" target="_blank">
-			<div class="collaborator-image"><img src="{% include relative-src.html src=institute.image_path %}" alt="{{ institute.name }}"/></div>
+			<div class="collaborator-image"><img src="{{ institute.image_path | relative_url }}" alt="{{ institute.name }}"/></div>
 			<div class="name">{{ institute.name }}</div>
 			<div class="location">{{ institute.location }}</div>
 			</a>
@@ -31,7 +31,7 @@ description: pyiron benefits greatly from its broad, diverse network of collabor
 			<div class="collaborator-block">
 				<a href="{{ collaborator.link }}" target="_blank">
 					<div class="square-image">
-						<img src="{{ collaborator.image_path }}" alt="{{ collaborator.name }}" class="editable">
+						<img src="{{ collaborator.image_path | relative_url }}" alt="{{ collaborator.name }}" class="editable">
 						<h2>{{ collaborator.name }}</h2>
 					</div>
 				</a>

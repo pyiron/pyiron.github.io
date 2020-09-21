@@ -109,9 +109,10 @@ The little tabs on the top left of the snippet are automatically created based o
 To add tab styles for new syntaxes, simply create a new class under `_sass/elements.scss`:
 
 ```sass
-div.highlight.language-javascript::before {
-	content: ".js";
-}```
+div.highlight.language-ruby::before {
+	content: ".rb";
+}
+```
 
 Cells can also be added in markdown files, but instead of a markdown code block, each cell
 should be wrapped in a `{% highlight python %} {% endhighlight %}` statement. Right now python is the

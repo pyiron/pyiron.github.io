@@ -2,7 +2,6 @@
 title: The materials science IDE
 description: Optimized protocols and data management for high-powered research
 ---
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
 <section class="hero">
 	{% if site.alert %}
@@ -11,14 +10,14 @@ description: Optimized protocols and data management for high-powered research
 			{{ site.alert }}
 		</div>
 	{% endif %}
-	<img class="main-logo" src="images/logo.png"></img>
+	<img class="main-logo" src="{{ 'images/logo.png' | relative_url }}"></img>
 	<div class="text-container">
 		<h1 class="editable"><strong>The materials science IDE</strong></h1>
 		<p class="subtext editable">Open-source protocols and data management for high-powered research</p>
 		<div class="cta button alt"><a href="https://github.com/pyiron/pyiron" target="_blank">Browse on Github</a></div>
 		<div id="condaBox"><code class="prettyprint lang-bash" style="width: auto;">conda install -c conda-forge pyiron</code></div>
 		<div>
-			<img src="{{ site.baseurl }}/images/dashboard.png" alt="Screenshot" class="screenshot editable" />
+			<img src="{{ 'images/dashboard.png' | relative_url }}" alt="Screenshot" class="screenshot editable" />
 		</div>
 	</div>
 </section>
@@ -38,7 +37,7 @@ description: Optimized protocols and data management for high-powered research
 				</p>
 			</div>
 			<div class="image">
-				<img src="{{ site.baseurl }}/images/database.png" alt="Server" class="editable" />
+				<img src="{{ 'images/database.png' | relative_url }}" alt="Server" class="editable" />
 			</div>
 		</div>
 	</section>
@@ -54,7 +53,7 @@ description: Optimized protocols and data management for high-powered research
 					interactive Python notebooks.</p>
 			</div>
 			<div class="image">
-				<img src="{{ site.baseurl }}/images/workflow.png" alt="Workflow" class="editable" />
+				<img src="{{ 'images/workflow.png' | relative_url }}" alt="Workflow" class="editable" />
 			</div>
 		</div>
 	</section>
@@ -72,7 +71,7 @@ description: Optimized protocols and data management for high-powered research
 				</p>
 			</div>
 			<div class="image">
-				<img src="{{ site.baseurl }}/images/tools.png" alt="Tools" class="editable" />
+				<img src="{{ 'images/tools.png' | relative_url }}" alt="Tools" class="editable" />
 			</div>
 		</div>
 	</section>
@@ -86,14 +85,14 @@ description: Optimized protocols and data management for high-powered research
 	{% for post in site.categories.news limit:3 %}
 		<div class="news-card"
 		{% if news_icons contains post.categories[1] %}
-			style="background-image: url(/images/news-icon-{{ post.categories[1] }}.png)"
+			style="background-image: url({{ site.baseurl }}/images/news-icon-{{ post.categories[1] }}.png)"
 		{% else %}
-			style="background-image: url(/images/news-icon-default.png)"
+			style="background-image: url({{ site.baseurl }}/images/news-icon-default.png)"
 		{% endif %}
 			>
 		<h3 style="color: {{ site.colors.main }}">{{ post.date | date: "%b %d, %Y"  }}</h3>
 		<p>
-		<a href="{{ post.url }}">
+		<a href="{{ post.url | relative_url }}">
 			{{ post.title }}
 		</a>
 			<div class="post-details">

@@ -2,7 +2,7 @@
 {% for post in include.posts %}
 	{% assign n_posts = n_posts | plus: 1 %}
 	<li class="blog-post" id="post-{{n_posts}}" data-categories="{{ post.categories }}">
-		<a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
+		<a href="{{ post.url | relative_url }}"><h2>{{ post.title }}</h2></a>
 		<h3>
 			{% assign first = true %}
 			{% for author in post.authors %}

@@ -21,8 +21,8 @@ links:
       link: /privacy
       new_window: false
       download: false
-    - name: License
-      link: /license
+    - name: Licenses
+      link: /licenses
       new_window: false
       download: false
 

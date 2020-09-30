@@ -116,7 +116,7 @@ The news cards on the front page are automatically decorated with images based o
 
 ### Downloads
 Right now there is only one file to download directly from the site:
-- `BSD_LICENSE`: The BSD License for pyiron
+- `LICENSE`: The BSD License for pyiron
 
 ## Future features (not set up)
 ### Google analytics

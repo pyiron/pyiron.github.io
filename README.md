@@ -91,7 +91,7 @@ All active pages on the site inherit their layout from `_layouts/default.html`, 
 - **news/index.html**: New updates for pyiron. Pulls from `news/_posts/`.
 - **publications/index.html**: Papers published with pyiron, usually with MyBinder links. Pulls from `publications/_posts/`
 - **privacy/index.html**: A very basic GDPR page about how we use visitors' data (we don't use visitors' data).
-- **license/index.html**: Information about the license/credits for pyiron and this website.
+- **licenses/index.html**: Information about the licenses/credits for pyiron and this website.
 - **404.html**: Renders when a searched page cannot be found.
 
 ### Blogs

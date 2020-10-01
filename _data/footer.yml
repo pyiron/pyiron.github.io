@@ -21,8 +21,8 @@ links:
       link: /privacy
       new_window: false
       download: false
-    - name: License
-      link: /license
+    - name: Licenses
+      link: /licenses
       new_window: false
       download: false
 
@@ -39,3 +39,7 @@ social:
     name: Stack Overflow
     icon: stack-overflow
     link: https://stackoverflow.com/questions/tagged/pyiron
+  -
+    name: LinkedIn
+    icon: linkedin
+    link: https://linkedin.com/company/pyiron

@@ -1,0 +1,59 @@
+<script>
+
+    $( document ).ready(function() {
+        Typer = new TxtType($("#condaInstall"), "", "conda install -c conda-forge pyiron");
+        Typer.type();
+    });
+
+    var TxtType = function(el, startTxt, endTxt) {
+        this.el = el;
+        this.txt = startTxt;
+        this.endTxt = endTxt;
+    };
+
+    TxtType.prototype.type = function() {
+        if (this.txt.length < this.endTxt.length) {
+
+            this.txt = this.endTxt.substring(0, this.txt.length + 1);
+
+            var htmlContent = this.txt.replace("install", "<span class='nb'>install</span>");
+            htmlContent = htmlContent.replace("-c", "<span class='nt'>-c</span>");
+            htmlContent = htmlContent.replace("pyiron", "<span class='kt'>pyiron</span>");
+
+            this.el.html('<span class="wrap cursor" id="wrap">'+htmlContent+'</span>');
+        } else {
+            var htmlContent = this.txt.replace("install", "<span class='nb'>install</span>");
+            htmlContent = htmlContent.replace("-c", "<span class='nt'>-c</span>");
+            htmlContent = htmlContent.replace("pyiron", "<span class='kt'>pyiron</span>");
+			this.el.html(htmlContent);
+
+            setTimeout(function() {
+                $("#screenshot").attr("data-aos-offset", "-300px");
+                AOS.init({
+                    offset: 300, // offset (in px) from the original trigger point
+                    duration: 1000, // values from 0 to 3000, with step 50ms
+                    easing: 'ease', // default easing for AOS animations
+                    once: true, // whether animation should happen only once - while scrolling down
+                });
+            }, 500);
+
+            var bgColor = $("#condaBox").css("background-color");
+
+            setTimeout(function() {
+                $("#condaBox").css("background", "rgba(255, 255, 255, 0.5)");
+            }, 180);
+
+            setTimeout(function() {
+                $("#condaBox").css("transition", "all 1.5s ease-in-out");
+                $("#condaBox").css("background", bgColor);
+            }, 280);
+
+			return;
+        };
+        var that = this;
+        setTimeout(function() {
+            that.type();
+        }, 90);
+    };
+
+</script>

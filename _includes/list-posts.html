@@ -1,8 +1,27 @@
 {% assign n_posts=0 %}
+{% assign news_icons = "releases, workshops, documentation, milestones" | split: ', ' %}
+
 {% for post in include.posts %}
 	{% assign n_posts = n_posts | plus: 1 %}
-	<li class="blog-post" id="post-{{n_posts}}" data-categories="{{ post.categories }}">
-		<a href="{{ post.url | relative_url }}"><h2>{{ post.title }}</h2></a>
+	<div id="post{{n_posts}}" class="blog-post">
+		<h3 style="color: {{ site.colors.main }}">{{ post.date | date: "%b %d, %Y"  }}</h3>
+		<p>
+		<a href="{{ post.url | relative_url }}">
+			{{ post.title }}
+		</a>
+			<div class="post-details">
+				{% for category in post.categories %}
+					{% if category != "news" and category != "publications" %}
+						<span class="blog-filter">
+							<a href="{{ site.baseurl }}/category/{{ category | slugify }}/">
+								{{ category }}
+							</a>
+						</span>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</p>
+		{% if post.categories contains "publications" %}
 		<h3>
 			{% assign first = true %}
 			{% for author in post.authors %}
@@ -14,10 +33,9 @@
 			{% endfor %}
 		</h3>
 		<i class="info">{{ post.journal }}</i>
-		{% include post-title.html post=post %}
 		<div class="post-content">
 			{% if post.full-text %}
-				<div class="button"><a href="{{ post.full-text }}" target="_blank">Read the paper</a></div>
+				<div class="button"><a href="{{ post.full-text }}" target="_blank">Full text</a></div>
 			{% endif %}
 			{% if post.mybinder %}
 				<a href="{{ post.mybinder }}" target="_blank">
@@ -25,7 +43,8 @@
 				</a>
 			{% endif %}
 		</div>
-	</li>
+		{% endif %}
+	</div>
 {% endfor %}
 
 <a class="post-loader" id="newer" onclick="n.decrease(); loadPosts(n.value);">Newer <i class="fa fa-arrow-right"></i></i></a>

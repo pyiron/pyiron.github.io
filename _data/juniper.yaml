@@ -1,0 +1,6 @@
+url: "https://mybinder.org"
+repo: "ashtonmv/pyiron_binder"
+theme: "monokai"
+isolateCells: false
+msgLoading: " "
+useStorage: true

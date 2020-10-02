@@ -1,8 +1,46 @@
+// Breakpoints
+$tablet: "(min-width: 450px)";
+$mid-point: "(min-width: 900px)";
+$desktop: "(min-width: 1000px)";
+
+// Colors
 $main-color: #2b2b40;
 $secondary-color: #37B8FF;
-$middle-gradient-color: mix($main-color, $secondary-color, 95%);
+
+$red:        hsl(0, 83%, 51%);
+$orange:     hsl(46, 100%, 77%);
+$yellow:     hsl(49, 100%, 61%);
+$green:      hsl(98, 64%, 68%);
+$blue:       hsl(199, 100%, 74%);
+$purple:     hsl(243, 100%, 80%);
+$pink:       hsl(327, 100%, 79%);
+$gray:       hsl(0, 0%, 78%);
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+$header-color: $purple;
+
+$body-color: darken($purple, 40%);
+$link-color: darken($blue, 10%);
+$mono-font: "Space Mono";
+
+$code-background: $main-color;
 
 // Breakpoints
 $tablet: "(min-width: 450px)";
 $mid-point: "(min-width: 900px)";
 $desktop: "(min-width: 1000px)";
+
+$code-font-size: 18px;
+
+$code-font-size-mobile: 12px;
+
+$syntax-hue: 350;
+$syntax-saturation: 100%;
+$syntax-brightness: 100%;
+
+$base: darken($purple, 5%);
+$text: hsl($syntax-hue, $syntax-saturation, $syntax-brightness);
+$subtle: $secondary-color;
+$highlight: hsl($syntax-hue, $syntax-saturation, 100%);
+$err: $red;

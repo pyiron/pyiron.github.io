@@ -1,0 +1,41 @@
+<script>
+
+    // Add syntax tab label to non-interactive snippets,
+    // like the .sh tab on the homepage's conda install snippet
+    var tabLabels = {
+        "python": ".py",
+        "sh": ".sh",
+    }
+
+    for (var i=0; i<$("div.highlight").length; i++) {
+        var snippet = $("div.highlight")[i];
+        var syntax = "";
+
+        // catches normal code snippets
+        if ($(snippet).parent().hasClass("highlighter-rouge")) {
+            var classes = $(snippet).parent().attr("class").split(" ");
+        }
+
+        // catches the conda install box and any other "manually"
+        // added snippets
+        else {
+            var classes = $(snippet).attr("class").split(" ");
+        }
+
+        for (var j=0; j < classes.length; j++) {
+            if (classes[j].includes("language")) {
+                syntax = classes[j].replace("language-", "");
+            }
+        }
+
+        var uniqueId = "tab"+i;
+        $(snippet).prepend("<div class='tab' id='" + uniqueId + "'></div>");
+
+        if (syntax in tabLabels) {
+            $("#"+uniqueId).text(tabLabels[syntax]);
+        } else {
+            $("#"+uniqueId).html("<i class='fas fa-code'></>");
+        }
+    }
+
+</script>

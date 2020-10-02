@@ -1,0 +1,25 @@
+-
+    header: Generic Interface
+    content: "<p>The pyiron IDE is built on top of an abstract class of Python objects,
+    which can be combined like building blocks.</p><p>So switching from density functional
+    theory (VASP, SPHInX) to interatomic potentials (LAMMPS) is as easy as changing
+    a variable.</p>"
+    icon: images/object.png
+    snippet: generic_interface.md
+
+-
+    header: Up-scaling
+    content: "<p>To up-scale the interactive calculation to HPC pyiron implements the
+    server object. This enables studying trends e.g. in the periodic table.</p><p>The resulting
+    large datasets can be quickly analyzed using the map-reduce pattern: The pyironTable
+    object aggregates the results in a single pandas Dataframe.</p>"
+    icon: images/upscaling.png
+    snippet: upscaling.md
+
+-
+    header: Extendability
+    content: "<p>New simulation codes can be added easily to the pyiron IDE either by
+    using the Python bindings (see example below) or by defining a <code class='inline'>write_input</code> and a
+    <code class='inline'>collect_output</code> function to parse the input and output files of the executable.</p>"
+    icon: images/app.png
+    snippet: extendability.md

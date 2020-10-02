@@ -62,11 +62,6 @@ RSpec.configure do |config|
   # of our jekyll site.
   Capybara.app = Rack::Jekyll.new(force_build: true)
 
-  Capybara.app_host = "http://127.0.0.1"
-  Capybara.server_port = 8200
-  Capybara.run_server = true #Whether start server when testing
-  Capybara.always_include_port = true
-
   # This option will default to `:apply_to_host_groups` in RSpec 4 (and will
   # have no way to turn it off -- the option exists only for backwards
   # compatibility in RSpec 3). It causes shared context metadata to be

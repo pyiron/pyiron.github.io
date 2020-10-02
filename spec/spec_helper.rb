@@ -49,16 +49,14 @@ RSpec.configure do |config|
   # Configure Capybara to use Selenium.
   Capybara.register_driver :selenium do |app|
     # Configure selenium to use Chrome.
-
     capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
       chromeOptions: {
         args: %w[
-          --headless --disable-gpu --no-sandbox --disable-dev-shm-usage
+          --no-sandbox --headless --disable-gpu --disable-dev-shm-usage
           --window-size=1980,1080 --enable-features=NetworkService,NetworkServiceInProcess
         ]
       }
     )
-
     Capybara::Selenium::Driver.new(app, browser: :chrome, desired_capabilities: capabilities)
   end
 

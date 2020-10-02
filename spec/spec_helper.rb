@@ -52,6 +52,9 @@ RSpec.configure do |config|
     Capybara::Selenium::Driver.new(app, :browser => :chrome)
   end
 
+  Capybara.app_host = "http://127.0.0.1"
+  Capybara.always_include_port = true
+
   # Configure Capybara to load the website through rack-jekyll.
   # (force_build: true) builds the site before the tests are run,
   # so our tests are always running against the latest version

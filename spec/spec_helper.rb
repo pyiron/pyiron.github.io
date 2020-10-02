@@ -46,19 +46,15 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  # Configure Capybara to use Selenium.
-  Capybara.register_driver :selenium do |app|
-    # Configure selenium to use Chrome.
-    capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-      chromeOptions: {
-        args: %w[
-          --no-sandbox --headless --disable-gpu --disable-dev-shm-usage
-          --window-size=1980,1080 --enable-features=NetworkService,NetworkServiceInProcess
-        ]
-      }
-    )
-    Capybara::Selenium::Driver.new(app, browser: :chrome, desired_capabilities: capabilities)
+  # Configure Capybara to use Chrome on travis.
+  require 'capybara'
+  Capybara.register_driver :chrome do |app|
+    options = Selenium::WebDriver::Chrome::Options.new(args: %w[no-sandbox headless disable-gpu])
+  
+    Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
   end
+  
+  Capybara.javascript_driver = :chrome
 
   # Configure Capybara to load the website through rack-jekyll.
   # (force_build: true) builds the site before the tests are run,

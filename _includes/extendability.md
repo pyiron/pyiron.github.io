@@ -1,7 +1,7 @@
 ```python
-from pyiron_base.job.template import TemplateJob
+from pyiron_base import PythonTemplateJob
 
-class ToyJob(PythonTemplateJob):  # Create a custom 
+class ToyJob(PythonTemplateJob):  # Create a custom job class
     def __init__(self, project, job_name):
         super().__init__(project, job_name) 
         self.input['input_energy'] = 100  # Define default input

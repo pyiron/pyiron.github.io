@@ -9,3 +9,12 @@ group :jekyll_plugins do
   gem 'jekyll-seo-tag', '2.6.1'
   gem 'jekyll-sitemap', '1.3.1'
 end
+
+group :development, :test do
+  gem "rspec"
+  gem 'webdrivers', '~> 4.0', require: false
+  gem "capybara"
+  gem "rack-jekyll"
+  gem "pry"
+  gem "puma"
+end

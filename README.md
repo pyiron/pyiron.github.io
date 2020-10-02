@@ -118,6 +118,26 @@ The news cards on the front page are automatically decorated with images based o
 Right now there is only one file to download directly from the site:
 - `LICENSE`: The BSD License for pyiron
 
+## Testing
+We have a pretty simple, brute-force set of tests that essentially clicks every link accessible within
+2 mouse clicks of the homepage and checks if they render the 404 page. The tests are written in Ruby, and
+their requirements are listed in the `:development, :test` group in the Gemfile.
+
+To run the tests locally - assuming you've already run bundle install - just run
+
+```sh
+bundle exec rake 
+```
+
+`rake` invokes the commands within the `Rakefile`, which tells Ruby to look for tests within `spec/` (which is also the default in most cases). `spec/spec_helper.rb` also provides several configuration options for running the tests. To write new tests, simply add them to `spec/links_spec.rb` based on the examples already in there.
+
+### CI integration
+We run the above-mentioned tests for every pull request using [travis CI](https://travis-ci.com). This is
+configured very minimalistically in .travis.yml in this repository's root.
+
+The tests should not take more than ~30s once the travis build has started, so let them all pass before merging your
+pull request. This makes it much harder to break the website with buggy commits.
+
 ## Future features (not set up)
 ### Google analytics
 If we ever want to set up google analytics, just add the key to the `_config.yml` file. That's all you should have to do, and it will be added to each page individually. However, we would also have to include some notice of this cookie usage in our privacy statement.

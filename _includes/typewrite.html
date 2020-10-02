@@ -1,7 +1,7 @@
 <script>
 
     $( document ).ready(function() {
-        Typer = new TxtType($("#condaInstall"), "", "conda install -c conda-forge pyiron");
+        Typer = new TxtType($("#condaInstall"), "", "{{ site.install_command }}");
         Typer.type();
     });
 
@@ -17,13 +17,11 @@
             this.txt = this.endTxt.substring(0, this.txt.length + 1);
 
             var htmlContent = this.txt.replace("install", "<span class='nb'>install</span>");
-            htmlContent = htmlContent.replace("-c", "<span class='nt'>-c</span>");
             htmlContent = htmlContent.replace("pyiron", "<span class='kt'>pyiron</span>");
 
             this.el.html('<span class="wrap cursor" id="wrap">'+htmlContent+'</span>');
         } else {
             var htmlContent = this.txt.replace("install", "<span class='nb'>install</span>");
-            htmlContent = htmlContent.replace("-c", "<span class='nt'>-c</span>");
             htmlContent = htmlContent.replace("pyiron", "<span class='kt'>pyiron</span>");
 			this.el.html(htmlContent);
 

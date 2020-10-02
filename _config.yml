@@ -13,6 +13,7 @@ disqus_shortname:
 email: pyiron@mpie.de
 formspree: https://formspree.io/xrgywnvn
 copyright: Max Planck Institut für Eisenforschung, GmbH - Computational Materials Design (CM) Department. All rights reserved.
+install_command: conda install pyiron
 
 colors:
   main: "#2b2b40"  # purple

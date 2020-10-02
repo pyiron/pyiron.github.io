@@ -53,7 +53,7 @@ RSpec.configure do |config|
     capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
       chromeOptions: {
         args: %w[
-          headless disable-gpu no-sandbox
+          --headless --disable-gpu --no-sandbox --disable-dev-shm-usage
           --window-size=1980,1080 --enable-features=NetworkService,NetworkServiceInProcess
         ]
       }

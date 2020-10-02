@@ -20,12 +20,12 @@ end
 describe "tests", type: :feature, js: true do
 
     it "404 raises error" do
-        visit '/nope'
+        visit 'http://127.0.0.1:8200/nope'
         expect(find('h2', match: :first).text).to eq('Something broke.')
     end
 
     it "test homepage links (max-depth=1)" do
-        visit '/'
+        visit 'http://127.0.0.1:8200/'
         home_links = page.all('a', visible: false).map { |a| a['href'] }
         visited_links = visit_internal_links(visited_links)
     end

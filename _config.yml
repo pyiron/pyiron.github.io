@@ -28,7 +28,7 @@ author:
 
 # -----
 # Build
-
+future: true
 timezone: Etc/UTC
 
 collections:

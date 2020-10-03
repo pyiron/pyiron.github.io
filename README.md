@@ -1,24 +1,40 @@
-<p align="center"><img src="images/logo_dark.png" alt="pyiron logo" width="150px;"/></p>
-
 This is where we host the landing page for [pyiron](https://pyiron.org).
 
 # Notes for developers + maintainers
 ## In general
-The site is rendered using [jekyll](https://jekyllrb.com/), with [hydra](https://jekyll-themes.com/hydra/) as its base theme.
-Mostly only superficial changes have been made to the hydra theme to create pyiron.org, so you will likely find everything
-you need to know about the site in the documentation for hydra and jekyll.
+The site is rendered using [jekyll](https://jekyllrb.com/) and doesn't have too many exotic options activated, so many questions
+can be answered in the jekyll documentation itself.
+
+Jump to:
+
+- [Running the server locally](#running-the-server-locally)
+  - [Install Ruby and Bundler](#install-ruby-and-bundler)
+  - [Install the website and serve it](#install-the-website-and-serve-it)
+
+- [Site layout](#site-layout)
+  - [Top-level configuration](#top-level-configuration)
+  - [HTML pages](#html-pages)
+  - [Blogs](#blogs)
+  - [Stylesheets](#stylesheets)
+  - [External links](#external-links)
+  - [Images](#images)
+  - [Downloads](#downloads)
+
+- [Testing](#testing)
+  - [Staging beta features](#staging-beta-features)
+  - [CI integration](#ci-integration)
 
 ## Running the server locally
 ### Install Ruby and Bundler
-Bundler is a package manager for Ruby, similar to how Conda works for python.
+Bundler is an environment/package manager for Ruby, similar to how Conda works for python.
 
-To install on Mac OS X (ruby is already installed but can still be updated/managed using homebrew if you have it installed):
+To install on Mac OS X (ruby should already be installed but can still be updated/managed using homebrew if you have it installed):
 ```
 brew install ruby
 gem install bundler
 ```
 
-**(Using Conda)**
+**Using Conda**
 Alternatively, for those who want to use conda to configure the ruby environment on Mac OS X:
 ```
 conda install clangxx_osx-64 ruby make rb-jekyll
@@ -58,7 +74,7 @@ changes made to `_config.yml` you will have to restart the server.
 
 ## Site layout
 
-### `_config.yml`
+### Top-level configuration
 
 As with most jekyll sites, a number of general settings can be controlled directly by editing the `_config.yml` file.
 This is where we control e.g. the contact email address, the website colors, names of alumni contributors + steering committee, etc.
@@ -118,6 +134,25 @@ The news cards on the front page are automatically decorated with images based o
 Right now there is only one file to download directly from the site:
 - `LICENSE`: The BSD License for pyiron
 
-## Future features (not set up)
-### Google analytics
-If we ever want to set up google analytics, just add the key to the `_config.yml` file. That's all you should have to do, and it will be added to each page individually. However, we would also have to include some notice of this cookie usage in our privacy statement.
+## Testing
+We have a pretty simple, brute-force set of tests that essentially clicks every link accessible within
+2 mouse clicks of the homepage and checks if they render the 404 page. The tests are written in Ruby, and
+their requirements are listed in the `:development, :test` group in the Gemfile.
+
+To run the tests locally - assuming you've already run bundle install - just run
+
+```sh
+bundle exec rake 
+```
+
+`rake` invokes the commands within the `Rakefile`, which tells Ruby to look for tests within `spec/` (which is also the default in most cases). `spec/spec_helper.rb` also provides several configuration options for running the tests. To write new tests, simply add them to `spec/links_spec.rb` based on the examples already in there.
+
+### Staging beta features
+It is recommended for more dramatic pull requests that you first publish and explore them somewhere on a live github pages server, since that environment has certain subtle differences from your local environment and from the one on travis. To do this, fork or mirror this repository to your own account and configure its github pages to publish from whatever branch you're working on.
+
+### CI integration
+We run the above-mentioned tests for every pull request using [travis CI](https://travis-ci.com). This is
+configured very minimalistically in .travis.yml in this repository's root.
+
+The tests should not take more than ~30s once the travis build has started, so let them all pass before merging your
+pull request. This makes it much harder to break the website with buggy commits.

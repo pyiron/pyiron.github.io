@@ -134,7 +134,7 @@ DEPENDENCIES
   pry
   puma
   rack-jekyll
-  rake
+  rake (>= 2.1.4)
   rspec
   webdrivers (~> 4.0)
 

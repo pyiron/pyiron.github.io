@@ -11,11 +11,11 @@ group :jekyll_plugins do
 end
 
 group :development, :test do
-  gem "rake", ">= 2.1.4"
   gem "rspec"
   gem 'webdrivers', '~> 4.0', require: false
   gem "capybara"
   gem "rack-jekyll"
+  gem "rack", ">= 2.1.4"
   gem "pry"
   gem "puma"
 end

@@ -11,7 +11,7 @@ group :jekyll_plugins do
 end
 
 group :development, :test do
-  gem "rake", ">= 2.1.4"
+  gem "rake"
   gem "rspec"
   gem 'webdrivers', '~> 4.0', require: false
   gem "capybara"

@@ -40,8 +40,8 @@
   link: https://phonopy.github.io/phonopy/
 -
   name: pyscal
-  image_path: https://pyscal.com/en/latest/_static/pyscal_logo1.png
-  link: http://pyscal.com
+  image_path: https://pyscal.org/_static/logo.png
+  link: http://pyscal.org
 - 
   name: QuickFF
   image_path: /images/quickff.png

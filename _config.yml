@@ -4,7 +4,7 @@
 title: pyiron
 alert: null
 # To add an alert/action message to the top of the home page:
-alert: 'The <a href="https://pyiron.org/phasediagram-workshop-2020/">pyiron tutorial</a> with video tutorials and jupyter notebook exercises is available at <a href="https://pyiron.org/phasediagram-workshop-2020/">pyiron.org/phasediagram-workshop-2020</a>'
+# alert: 'The <a href="https://pyiron.org/phasediagram-workshop-2020/">pyiron tutorial</a> with video tutorials and jupyter notebook exercises is available at <a href="https://pyiron.org/phasediagram-workshop-2020/">pyiron.org/phasediagram-workshop-2020</a>'
 url:
 baseurl:
 google_analytics_key:

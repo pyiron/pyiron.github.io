@@ -1,9 +1,9 @@
 links:
   -
-    - name: Getting started
-      link: /getting-started
-      new_window: false
-      download: false
+    - name: Virtual Course
+      link: http://pyiron.org/phasediagram-workshop-2020
+      new_window: true
+      highlight: false
     - name: Documentation
       link: https://pyiron.readthedocs.io/en/latest/
       new_window: true

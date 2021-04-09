@@ -18,10 +18,6 @@
   link: http://pyiron.org/phasediagram-workshop-2020
   new_window: true
   highlight: false
-- name: SWiMM Workshop
-  link: http://pyiron.org/swimm-workshop-2021/
-  new_window: true
-  highlight: false
 - name: News
   link: /news/
   new_window: false

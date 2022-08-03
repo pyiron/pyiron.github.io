@@ -1,5 +1,5 @@
 ---
-category: presentation
+category: milestones
 title: Congratulations Dr. Janssen 
 ---
 Phd thesis defense from Jan Janssen on his thesis "pyiron - an integrated development environment for ab-initio thermodynamics" on the 2nd of November 2021.

@@ -15,7 +15,7 @@
   new_window: true
   highlight: false
 - name: Workshops
-  link: https://pyiron.org/workshops
+  link: https://workshop.pyiron.org
   new_window: true
   highlight: false
 - name: News

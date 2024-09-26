@@ -1,17 +1,5 @@
 # Previous pyiron developers who are not on Github
 -
-  name: Muhammad Hassani
-  contribution: Development of the infrastructure
-  links:
-      github: muh-hassani
-  dates: 2021-2022
--
-  name: Sudarsan Surendralal
-  contribution: Development of core functionality and maintenance of VASP
-  links:
-      github: sudarsan-surendralal
-  dates: 2014-2022
--
   name: Ugur Aydin
   contribution: Developer of pyCMW (pyiron predecessor)
   dates: 2011-2015
@@ -47,3 +35,11 @@
   name: Ning Wang
   contribution: Using pyiron for TEM postprocessing
   dates: 2019-2020
+-
+  name: Muhammad Hassani
+  contribution: Development of the docker infrastructure for workshops and tutorials
+  dates: 2021-2022
+-
+  name: Sudarsan Surendralal
+  contribution: Leading the development of the VASP interface 
+  dates: 2014-2022

@@ -35,3 +35,11 @@
   name: Ning Wang
   contribution: Using pyiron for TEM postprocessing
   dates: 2019-2020
+-
+  name: Muhammad Hassani
+  contribution: Development of the docker infrastructure for workshops and tutorials
+  dates: 2021-2022
+-
+  name: Sudarsan Surendralal
+  contribution: Leading the development of the VASP interface 
+  dates: 2014-2022

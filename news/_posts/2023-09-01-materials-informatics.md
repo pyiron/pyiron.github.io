@@ -9,4 +9,4 @@ returned to the [Max Planck Institute for Sustainable Materials](https://www.mpi
 [Materials Informatics](https://www.mpie.de/5013829/matinf). A short introduction to the Materials Informatics Group is 
 available as video: 
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=Zv6r3DAYAOg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Zv6r3DAYAOg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

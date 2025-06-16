@@ -1,6 +1,6 @@
 ---
 category: releases
-title: executorlib package release 
+title: Executorlib package release 
 ---
 As part of the modularization strategy of pyiron, we are happy to announce the release of [executorlib version 1.0](https://github.com/pyiron/executorlib/releases/tag/executorlib-1.0.0).
 

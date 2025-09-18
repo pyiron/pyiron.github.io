@@ -1,0 +1,10 @@
+---
+title: "Comparative analysis of surface phase diagrams in aqueous environment: Implicit vs explicit solvation models"
+journal: J. Chem. Phys. 160, 164715
+authors:
+  - Jing Yang 
+  - Mira Todorova
+  - Jörg Neugebauer 
+abstract: Identifying the stable surface phases under a given electrochemical conditions serves as the basis for studying the atomistic mechanism of reactions at solid/water interfaces. In this work, we systematically compare the performance of the two main approaches that are used to capture the impact of an aqueous environment, implicit and explicit solvent, on surface energies and phase diagrams. As a model system, we consider the magnesium/water interface with (i) Ca substitution and (ii) proton and hydroxyl adsorption. We show that while the implicit solvent model is computationally very efficient, it suffers from two shortcomings. First, the choice of the implicit solvent parameters significantly influences the energy landscape in the vicinity of the surface. The default parameters benchmarked on solvation in water underestimate the energy of the dissolved Mg ion and lead to spontaneous dissolution of the surface atom, resulting in large differences in the surface energetics. Second, in systems containing a charged surface and a solvated ion, the implicit solvent model may not converge to the energetically stable ionic charge state but remain in a high-energy metastable configuration, representing the neutral charge state of the ion. When these two issues are addressed, surface phase diagrams that closely match the explicit water results can be obtained. This makes the implicit solvent model highly attractive as a computationally-efficient surrogate model to compute surface energies and phase diagrams.
+full-text: https://doi.org/10.1063/5.0190304
+---

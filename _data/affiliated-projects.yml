@@ -16,8 +16,8 @@
   link: https://www.ctcms.nist.gov/potentials/
 -
   name: LAMMPS
-  image_path: https://lammps.sandia.gov/movies/logo.gif
-  link: https://lammps.sandia.gov/
+  image_path: https://www.lammps.org/movies/logo.gif
+  link: https://www.lammps.org
 -
   name: Material D1g1tal
   image_path: https://www.materialdigital.de/img/Logo_MaterialDigital.svg
@@ -40,7 +40,7 @@
   link: https://phonopy.github.io/phonopy/
 -
   name: pyscal
-  image_path: https://pyscal.org/_static/logo.png
+  image_path: https://pyscal.org/en/latest/_images/pyscal_v2_logo_1.png
   link: http://pyscal.org
 - 
   name: QuickFF

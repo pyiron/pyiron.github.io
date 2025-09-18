@@ -16,12 +16,12 @@
 -
   name: Los Alamos National Laboratory
   location: Los Alamos, NM, USA
-  image_path: https://www.lanl.gov/_assets/images/lanl-logo-footer.png
+  image_path: https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/LANL_Logo.png/960px-LANL_Logo.png
   link: https://www.lanl.gov/org/ddste/aldsc/theoretical/physics-chemistry-materials/index.php
 -
   name: Montanuniversität Leoben
   location: Leoben, Austria 
-  image_path: https://presse.unileoben.ac.at/fileadmin/shares/presseaussendungen/2018/MUL_Logo_neu.jpg
+  image_path: https://www.citizen-science.at/images/partner/mu-logo_color_quer.jpg
   link: https://cms.unileoben.ac.at
 -
   name: University of British Columbia
@@ -33,8 +33,3 @@
   location: Ghent, Belgium
   image_path: https://molmod.ugent.be/sites/default/files/CMM-logo-2018.png
   link: https://molmod.ugent.be
--
-  name: Skolkovo Institute of Science and Technology
-  location: Moscow, Russia
-  image_path: https://old.sk.ru/resized-image.ashx/__size/550x0/__key/telligent-evolution-components-attachments/13-50-00-00-00-02-16-56/skoltech-rastr-ENG.png
-  link: https://crei.skoltech.ru/cest/

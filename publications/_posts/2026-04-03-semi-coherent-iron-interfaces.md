@@ -1,0 +1,10 @@
+---
+title: "DFT and MLIP study of solute segregation to coherent and semi-coherent α-Fe/Fe3C interfaces"
+journal: npj Comput Mater (2026)
+authors:
+  - Amin Reiners-Sakic
+  - Ronald Schnitzer
+  - David Holec
+abstract: Solute segregation to interfaces strongly affects material behavior. Most theoretical studies focus on grain boundaries and coherent interfaces, whereas semi-coherent interfaces remain largely unexplored due to structural complexity exceeding the practical capability of density functional theory (DFT) or chemical complexity constrained by the availability of classical interatomic potentials. Here, we investigate solute segregation to the coherent and semi-coherent α-Fe/Fe3C interface and its mechanical impact using novel universal machine-learning interatomic potentials (uMLIPs). DFT calculated solution enthalpies, segregation energetics, and cohesion changes at the coherent interface serve to benchmark several state-of-the-art uMLIPs, identifying GRACE-2L-OAM and GRACE-2L-OMAT as most consistent with quantum-mechanical predictions. Among the studied tramp and trace elements, Cu shows the strongest segregation energy to the coherent interface of ≈ − 0.3 eV. However, at the semi-coherent interface, all elements exhibit significantly stronger segregation energetics, reaching below ≈ − 1.5 eV, with the deepest traps near the misfit dislocation core. Sb, Sn, P, and As strongly reduce the coherent interface cohesion, Cu mildly, while Ni has a negligible influence, and Cr and Mo slightly enhance cohesion. At the semi-coherent interface, all solutes except P promote embrittlement, with Sn and Sb showing the strongest effect. These results underscore the importance of realistic interface structures for predictive materials design.
+full-text: https://doi.org/10.1038/s41524-026-02061-6
+---

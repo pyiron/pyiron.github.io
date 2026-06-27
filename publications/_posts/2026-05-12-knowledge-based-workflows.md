@@ -1,6 +1,6 @@
 ---
 title: "Toward Knowledge-Based Workflows: A Semantic Approach to Atomistic Simulations for Mechanical and Thermodynamic Properties"
-journal: J. Am. Chem. Soc. 2026, 148, 5, 5520–5532
+journal: Advanced Engineering Materials2026, 0, e70869
 authors:
   - Abril Azócar Guzmán
   - Hoang-Thien Luu

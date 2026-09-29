@@ -1,0 +1,75 @@
+---
+title: "Supporting AI Readiness Through Digital Workflows in Materials Science"
+journal: Advanced Engineering Materials
+authors:
+  - Marian Bruns
+  - Lateef Abdul
+  - Stephan Barth
+  - Martin Glauer
+  - Manuel Günther
+  - Fabian Neuhaus
+  - Jan-Ole Perschewski
+  - Thomas Bjarsch
+  - Henrik Abel
+  - Johannes Bosch
+  - Niklas Meyer
+  - Peter Hofmann
+  - Marc Drechsler
+  - Alexander Dyck
+  - Dhanunjaya Kumar Nerella
+  - Marvin Tegeler
+  - Oleg Shchyglo
+  - Ingo Steinbach
+  - Timo Klecker
+  - Henk Birkholz
+  - Ehsan Borzabadi Farahani
+  - Bernard Fedelich
+  - Cetin Haftaoglu
+  - Tarakeshwar Lakshmipathy
+  - Elena Garcia Trelles
+  - Christoph Schweizer
+  - Reza Darvishi Kamachali
+  - Lukas Koschmieder
+  - Janin Eiken
+  - Markus Apel
+  - Sung-Min Wi
+  - Jiangdong Zhao
+  - Andreas Fezer
+  - Nicolas Christ
+  - Patrick Schneider
+  - Eldor Urinov
+  - Veit Königer
+  - Volker Knoblauch
+  - Janik Harter
+  - Thomas Seifert
+  - Thitichai Janpheng
+  - Florian Fuchs
+  - Fabian Teichert
+  - Jörg Schuster
+  - Anke Bardehle
+  - Andreas Limper
+  - Ulrich Giese
+  - Carlos Lucke
+  - Mario Beiner
+  - Christoph Gögelein
+  - Lisa Leuchtenberger-Engel
+  - Christian Hopmann
+  - Felix Wentzien
+  - Heike Wittek
+  - Benjamin Klie
+  - Alexander Röhrs
+  - Ludger Overmeyer
+  - Achraf Atila
+  - Marcel Sadowski
+  - Leopold Talirz
+  - Jan Janssen
+  - Jesper R. Pedersen
+  - Peter Beck
+  - Tejs Vegge
+  - Ivano E. Castelli
+  - Wolfgang Wenzel
+  - Tilmann Hickel
+  - Jörg Schaarschmidt
+abstract: Materials science produces heterogeneous data across experiments, simulations, and industrial processes that often remain bound to local formats, manual procedures, and project-specific software. Digital workflows address this fragmentation through explicit, repeatable, and machine-actionable pipelines. This article examines 13 workflow contributions from the second and third funding phases of the MaterialDigital initiative. The contributions cover data acquisition and FAIR storage, simulation automation, multiscale integration, and AI/ML-driven optimization. Here, AI-readiness denotes the documented capacity of workflows and their artifacts to be reliably interpreted, executed, assessed, reused, and, where intended, invoked or adapted by automated systems; it does not require the direct application of artificial intelligence. Eight comparison aspects capture data and metadata, reusable artifacts, orchestration, robustness, cross-scale coupling, transfer validation, learning and optimization, and adaptive or agent-accessible operation. By distinguishing demonstrated capabilities from plans, the comparison shows how workflows support AI-ready research both through integrated AI methods and through structured, traceable, and reusable pipelines. Across the projects, stable data structures, persistent artifacts, executable orchestration, and scientific validation recur as foundations, whereas adaptive operation and agent-accessible interfaces remain specialized. Wider interoperability would additionally benefit from shared interfaces and explicit, portable descriptions of workflow artifacts.
+full-text: https://doi.org/10.1002/adem.71258
+---

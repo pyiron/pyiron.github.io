@@ -1,6 +1,6 @@
 ---
 category: documentation
-title: Toward Full Interoperability in Materials Science - Integrating Workflows With Knowledge Graphs
+title: Integrating Workflows With Knowledge Graphs
 ---
 Findable (F), Accessible (A), Interoperable (I) and Reusable (R) data requires keeping track of not only the output of a
 given simulation or experiment but also its inputs. This so called provenance is achieved by providing workflows which

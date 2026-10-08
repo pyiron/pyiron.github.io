@@ -21,15 +21,15 @@
 -
   name: Montanuniversität Leoben
   location: Leoben, Austria 
-  image_path: https://www.citizen-science.at/images/partner/mu-logo_color_quer.jpg
+  image_path: https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Motanunilogoneu.svg/500px-Motanunilogoneu.png
   link: https://cms.unileoben.ac.at
 -
   name: University of British Columbia
   location: Vancouver, Canada
-  image_path: https://brand3.sites.olt.ubc.ca/files/2018/09/5NarrowLogo_ex_768.png
-  link: https://mtrl.ubc.ca
+  image_path: https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/British_columbia_ca_univ_logo.svg/330px-British_columbia_ca_univ_logo.svg.png
+  link: https://www.ubc.ca
 -
   name: GHENT University - Center for Molecular Modeling
   location: Ghent, Belgium
-  image_path: https://molmod.ugent.be/sites/default/files/CMM-logo-2018.png
+  image_path: https://molmod.ugent.be/sites/default/files/molmod-logo.png
   link: https://molmod.ugent.be
